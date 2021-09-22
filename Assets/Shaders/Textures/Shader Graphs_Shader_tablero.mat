@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Shader_tablero
+  m_Shader: {fileID: -6465566751694194690, guid: 1570dca949ea96045ba06f04d0dedc7f,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - hexa_prefab:
+        m_Texture: {fileID: 2800000, guid: 33fbcfbf4a96b934c919a745116d93c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - uvs_hexa_1_png:
+        m_Texture: {fileID: 2800000, guid: 0a95effb80452f944bf867920750587b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2312A401: 1.09
+    m_Colors:
+    - Color_3D739ED8: {r: 24.283339, g: 34.11231, b: 55.215687, a: 0.13333334}
+    - Color_540ACBDC: {r: 0.79288065, g: 1.4188391, b: 4.632092, a: 1}
