@@ -10,13 +10,15 @@ public class test : MonoBehaviourPunCallbacks
     void Start()
     {
         print("connecting to server");
-        PhotonNetwork.GameVersion = "0.0.1";
+        PhotonNetwork.NickName = PMasterManager.gameSettings.nickName;
+        PhotonNetwork.GameVersion = PMasterManager.gameSettings.gameVersion;
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
         print("conected to master");
+        print(PhotonNetwork.LocalPlayer.NickName);
     }
 
 
