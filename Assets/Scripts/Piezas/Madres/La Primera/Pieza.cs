@@ -13,17 +13,11 @@ public enum Clase
     comodin
 }
 
-public enum Condiciones
-{
-    casillaVacia,
-    AdyacentePlaneta
-}
 
 public abstract class Pieza : MonoBehaviour
 {
-
+    [HideInInspector]
     public Clase clase;
-    public List<Condiciones> condiciones;
 
     [HideInInspector]
     public Casilla casilla;
@@ -34,6 +28,11 @@ public abstract class Pieza : MonoBehaviour
 
     public abstract List<Casilla> CasillasDisponibles();
 
+    public virtual void Colocar(Casilla c)
+    {
+        casilla = c;
+        casilla.pieza = this;
+    }
 
     public virtual bool CompareClase(Clase compare)
     {

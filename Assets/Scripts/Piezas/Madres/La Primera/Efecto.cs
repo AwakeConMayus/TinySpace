@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Efecto : MonoBehaviour
+public abstract class Efecto : Pieza
 {
-
-    [HideInInspector]
-    public Casilla casilla;
-    [HideInInspector]
-    public int jugador;
 
     public abstract void Accion();
 
-    public abstract List<Casilla> CasillasDisponibles();
+    public override int Puntos()
+    {
+        return 0;
+    }
 
-    public void Colocar(Casilla c)
+    public override void Colocar(Casilla c)
     {
         casilla = c;
         Accion();
