@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class InvestigadorMinerosMejorado : InvestigadorMineros
 {
-
+    public override bool Anulador()
+    {
+        return false;
+    }
+     
     public override int Puntos()
     {
-        int puntos  =  base.Puntos();
-
-        foreach(Casilla adyacentes in casilla.adyacentes)
+        int limite = 3;
+        int puntos = 0;
+        int incremento = 0;
+        foreach (Casilla adyacente in casilla.adyacentes)
         {
-            if (!adyacentes || !adyacentes.pieza) continue;
-            if(adyacentes.pieza.clase == Clase.explorador && adyacentes.pieza.jugador != jugador)
+            if (!adyacente || !adyacente.pieza) continue;
+            if (adyacente.pieza.CompareClase(Clase.explorador))
             {
-                puntos += 2;
-                break;
+                foreach (Casilla adyacente2 in adyacente.adyacentes)
+                {
+                    if (incremento < limite)
+                    {
+                        ++incremento;
+                        puntos += incremento;
+                    }
+                }
             }
         }
-
         return puntos;
     }
 }

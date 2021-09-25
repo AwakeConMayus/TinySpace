@@ -5,11 +5,17 @@ using UnityEngine;
 public class ExploradorMineroMejorado : ExploradorMinero
 {
 
-
     public override int Puntos()
     {
-        int puntos = base.Puntos();
-        if (puntos > 2) puntos += 2;
+        int puntos = 4;
+        foreach (Casilla c in casilla.adyacentes)
+        {
+            if(c.pieza != null)
+            {
+                puntos = 0;
+                break;
+            }
+        }
         return puntos;
     }
 }

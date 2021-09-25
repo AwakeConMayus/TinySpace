@@ -8,9 +8,12 @@ public class NaveCombateMinerosMejorada : NaveCombateMineros
     public override int Puntos()
     {
         int puntos =  base.Puntos();
-        if(puntos > 1)
+        foreach(Casilla c in casilla.adyacentes)
         {
-            puntos += 2;
+            if(c.pieza.CompareClase(Clase.combate) && c.pieza.jugador != jugador)
+            {
+                puntos += 2;
+            }
         }
         return puntos;
     }

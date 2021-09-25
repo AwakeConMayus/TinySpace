@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Investigador : Pieza
 {
+    public virtual bool Anulador()
+    {
+        return true;
+    }
+
     public override int Puntos()
     {
         int limite = 4;
@@ -18,7 +23,8 @@ public class Investigador : Pieza
                 {
                     if(adyacente2 && adyacente2 != casilla && adyacente2.pieza && adyacente2.pieza.CompareClase(Clase.investigador) && adyacente2.pieza.jugador == jugador)
                     {
-                        return 0;
+                        Investigador invAdyacente = (Investigador)adyacente2.pieza;
+                        if(invAdyacente.Anulador()) return 0;
                     }
 
                     if(incremento < limite)

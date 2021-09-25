@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EstrategaMinerosMejorada : EstrategaMineros
+public class EstrategaMinerosMejorada : Efecto
 {
-    public override int Puntos()
+    public override void Accion()
     {
-        int puntos = base.Puntos();
+        EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
+        ++objetivo.nivel;
+    }
 
-        foreach (Casilla adyacentes in casilla.adyacentes)
-        {
-            if (!adyacentes || !adyacentes.pieza) continue;
-            if (adyacentes.pieza.clase == Clase.combate && adyacentes.pieza.jugador != jugador)
-            {
-                puntos += 2;
-                break;
-            }
-        }
-
-        return puntos;
+    public override List<Casilla> CasillasDisponibles()
+    {
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+        return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.estratega}, casillasDisponibles);
     }
 }
