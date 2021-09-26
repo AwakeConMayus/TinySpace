@@ -8,15 +8,18 @@ public enum estados
     SelectCasilla    
 }
 
-public class TestingInstance : MonoBehaviour
+public class InstancePiezas : MonoBehaviour
 {
     public GameObject pieza;
     public Casilla casilla;
     public int jugador;
+    //* Para el tutorial, mineros 0, planetas 1
 
     estados estado = estados.SelectPieza;
 
     List<Casilla> casillasPosibles = new List<Casilla>();
+
+    public void SetJugador(int player) { jugador = player; }
 
     public void SetPieza(GameObject nave)
     {
@@ -29,15 +32,16 @@ public class TestingInstance : MonoBehaviour
 
     public void CrearPieza(Casilla c)
     {
-        if (estado == estados.SelectPieza) return;
+        if (estado == estados.SelectPieza || c == null) return; 
 
-        if (casillasPosibles.Contains(c))
-        {
+       //* Comentado porque no me sé bien como funciona la lógica de casillasPosibles, NO debe quedarse así
+       // if (casillasPosibles.Contains(c))
+       // {
             GameObject thisPieza = Instantiate(pieza);
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
             estado = estados.SelectPieza;
-        }
+       // }
     }
 }

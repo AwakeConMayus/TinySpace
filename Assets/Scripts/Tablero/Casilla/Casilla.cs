@@ -9,7 +9,4 @@ public class Casilla : MonoBehaviour
     public Casilla[] adyacentes = new Casilla[6];
     [HideInInspector]
     public Pieza pieza;
-
-
-
 }
