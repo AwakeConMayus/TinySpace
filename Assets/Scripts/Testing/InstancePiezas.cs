@@ -10,8 +10,11 @@ public enum estados
 
 public class InstancePiezas : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject pieza;
+    [HideInInspector]
     public Casilla casilla;
+    [HideInInspector]
     public int jugador;
     //* Para el tutorial, mineros 0, planetas 1
 
@@ -34,14 +37,28 @@ public class InstancePiezas : MonoBehaviour
     {
         if (estado == estados.SelectPieza || c == null) return; 
 
-       //* Comentado porque no me sé bien como funciona la lógica de casillasPosibles, NO debe quedarse así
-       // if (casillasPosibles.Contains(c))
-       // {
+        if (casillasPosibles.Contains(c))
+        {
             GameObject thisPieza = Instantiate(pieza);
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
             estado = estados.SelectPieza;
-       // }
+        }
+    }
+
+    public void RecuentoPuntosTest()
+    {
+        int[] puntuaciones = new int[2];
+
+        foreach(Casilla c in Tablero.instance.mapa)
+        {
+            if (c.pieza)
+            {
+                puntuaciones[c.pieza.jugador] += c.pieza.Puntos();
+            }
+        }
+
+        print("Mineros: " + puntuaciones[0] + " / Planetas: " + puntuaciones[1]);
     }
 }

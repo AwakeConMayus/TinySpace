@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Explorador : Pieza
 {
-
+    protected override void SetClase()
+    {
+        clase = Clase.explorador;
+    }
 
     public override int Puntos()
     {

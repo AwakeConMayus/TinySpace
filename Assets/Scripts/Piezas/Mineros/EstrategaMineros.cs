@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EstrategaMineros : Estratega
 {
+    [HideInInspector]
     public int nivel = 1;
 
     public override int Puntos()

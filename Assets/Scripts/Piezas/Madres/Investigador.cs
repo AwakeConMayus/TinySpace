@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Investigador : Pieza
 {
+    protected override void SetClase()
+    {
+        clase = Clase.investigador;
+    }
+
     public virtual bool Anulador()
     {
         return true;

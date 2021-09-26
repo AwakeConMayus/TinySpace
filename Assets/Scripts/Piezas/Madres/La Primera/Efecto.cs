@@ -7,6 +7,12 @@ public abstract class Efecto : Pieza
 
     public abstract void Accion();
 
+    protected override void SetClase()
+    {
+        clase = Clase.none;
+    }
+
+
     public override int Puntos()
     {
         return 0;

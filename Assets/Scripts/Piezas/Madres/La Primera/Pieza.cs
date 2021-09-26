@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum Clase
 {
+    none,
     explorador,
     combate,
     investigador,
@@ -24,9 +25,16 @@ public abstract class Pieza : MonoBehaviour
     [HideInInspector]
     public int jugador;
 
+    private void Start()
+    {
+        SetClase();
+    }
+
     public abstract int Puntos();
 
     public abstract List<Casilla> CasillasDisponibles();
+
+    protected abstract void SetClase();
 
     public virtual void Colocar(Casilla c)
     {

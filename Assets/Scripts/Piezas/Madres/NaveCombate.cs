@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NaveCombate : Pieza
 {
+    protected override void SetClase()
+    {
+        clase = Clase.combate;
+    }
 
     public override int Puntos()
     {

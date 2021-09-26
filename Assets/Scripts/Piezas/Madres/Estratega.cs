@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Estratega : Pieza
 {
+    protected override void SetClase()
+    {
+        clase = Clase.estratega;
+    }
 
     public override int Puntos()
     {

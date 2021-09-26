@@ -7,7 +7,7 @@ public class InvestigadorPlanetasTerraformador : InvestigadorPlanetas
 
     public override int Puntos()
     {
-        int limite = 4;
+        int limite = 3;
         int puntos = 0;
         int incremento = 0;
         foreach (Casilla adyacente in casilla.adyacentes)
