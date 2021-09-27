@@ -56,6 +56,20 @@ public static class FiltroCasillas
         return resultado;
     }
 
+    public static List<Casilla> CasillasDeUnTipo(Clase clase, List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+
+        foreach (Casilla candidata in listaBase)
+        {
+            if (candidata.pieza && clase == candidata.pieza.clase)
+            {
+                resultado.Add(candidata);
+            }
+        }
+        return resultado;
+    }
     public static List<Casilla> CasillasDeUnTipo(List<Clase> clases = null, List<Casilla> listaBase = null)
     {
         if (clases == null) return new List<Casilla>();
@@ -103,7 +117,28 @@ public static class FiltroCasillas
         return resultado;
     }
 
+    public static List<Casilla> RestaLista (List<Casilla> original, List<Casilla> resta)
+    {
+        List<Casilla> result = original;
 
+        foreach(Casilla c in resta)
+        {
+            if (result.Contains(c)) result.Remove(c);
+        }
 
+        return result;
+    }
+
+    public static List<Casilla> Suma(List<Casilla> original, List<Casilla> suma)
+    {
+        List<Casilla> result = original;
+
+        foreach (Casilla c in suma)
+        {
+            if (!result.Contains(c)) result.Add(c);
+        }
+
+        return result;
+    }
 
 }

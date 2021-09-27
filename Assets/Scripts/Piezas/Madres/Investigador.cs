@@ -31,12 +31,11 @@ public class Investigador : Pieza
                         Investigador invAdyacente = (Investigador)adyacente2.pieza;
                         if(invAdyacente.Anulador()) return 0;
                     }
-
-                    if(incremento < limite)
-                    {
-                        ++incremento;
-                        puntos += incremento;
-                    }
+                }
+                if(incremento < limite)
+                {
+                    ++incremento;
+                    puntos += incremento;
                 }
             }
         }

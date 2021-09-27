@@ -19,13 +19,10 @@ public class InvestigadorMinerosMejorado : InvestigadorMineros
             if (!adyacente || !adyacente.pieza) continue;
             if (adyacente.pieza.CompareClase(Clase.explorador))
             {
-                foreach (Casilla adyacente2 in adyacente.adyacentes)
+                if (incremento < limite)
                 {
-                    if (incremento < limite)
-                    {
-                        ++incremento;
-                        puntos += incremento;
-                    }
+                    ++incremento;
+                    puntos += incremento;
                 }
             }
         }
