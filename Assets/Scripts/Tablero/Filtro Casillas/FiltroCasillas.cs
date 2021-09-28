@@ -51,7 +51,7 @@ public static class FiltroCasillas
         List<Casilla> resultado = new List<Casilla>();
         foreach (Casilla candidata in listaBase)
         {
-            if (!candidata.pieza) resultado.Add(candidata);
+            if (candidata && !candidata.pieza) resultado.Add(candidata);
         }
         return resultado;
     }
