@@ -49,12 +49,14 @@ public class PlayerList : MonoBehaviourPunCallbacks
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
-       foreach(PlayerListing l in _playerList)
+        Debug.Log("hago esto");
+        for(int i = 0; i < _playerList.Count; ++i)
         {
-            if( l.GetName() == otherPlayer.NickName)
+            if( _playerList[i].GetName() == otherPlayer.NickName)
             {
-                _playerList.Remove(l);
-                Destroy(l);
+                print(_playerList[i]);
+                Destroy(_playerList[i].gameObject);
+                _playerList.Remove(_playerList[i]);
             }
         }
     }

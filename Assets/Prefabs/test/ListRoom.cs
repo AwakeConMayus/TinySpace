@@ -30,12 +30,13 @@ public class ListRoom : MonoBehaviourPunCallbacks
             //Si es asi se busca la etiqueta correspondiente y se borra
             if (info.RemovedFromList)
             {
-                foreach (RoomListing r in _roomList)
+                
+                for(int i = 0; i < _roomList.Count; ++i)
                 {
-                    if (r.roomInfo.Name == info.Name)
+                    if (_roomList[i].roomInfo.Name == info.Name)
                     {
-                        _roomList.Remove(r);
-                        Destroy(r);
+                        Destroy(_roomList[i].gameObject);
+                        _roomList.Remove(_roomList[i]);
                     }
                 }
             }
