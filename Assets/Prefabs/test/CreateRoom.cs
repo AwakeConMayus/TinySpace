@@ -16,6 +16,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
 
     public void OnClick_CreateRoom()
     {
+        
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
@@ -23,7 +24,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
             return;
         }
         //Caso limite de sin input en el nombre
-        if(_roomName.text == null)
+        if(_roomName.text == "")
         {
             Debug.Log("No se ha introducido nombre");
             return;
@@ -34,7 +35,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom( _roomName.text, options, TypedLobby.Default);
 
-        CanvasManager.instance.Hide_CreateRoomCanvas();
+        CanvasManager.instance.Hide_CreateRoomCanvas(_roomName.text);
 
     }
 

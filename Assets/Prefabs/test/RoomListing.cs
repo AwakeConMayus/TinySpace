@@ -23,7 +23,7 @@ public class RoomListing : MonoBehaviour
 
     public void OnClick()
     {
-        CanvasManager.instance.Hide_CreateRoomCanvas();
+        CanvasManager.instance.Hide_CreateRoomCanvas(roomInfo.Name);
         PhotonNetwork.JoinRoom(roomInfo.Name);
     }
 }
