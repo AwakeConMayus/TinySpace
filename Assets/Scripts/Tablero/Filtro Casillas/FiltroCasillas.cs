@@ -51,7 +51,7 @@ public static class FiltroCasillas
         List<Casilla> resultado = new List<Casilla>();
         foreach (Casilla candidata in listaBase)
         {
-            if (candidata && !candidata.pieza) resultado.Add(candidata);
+            if (!candidata.pieza) resultado.Add(candidata);
         }
         return resultado;
     }
@@ -100,17 +100,20 @@ public static class FiltroCasillas
     public static List<Casilla> CasillasAdyacentes(List<Casilla> listaBase, bool excluirOriginales)
     {
         List<Casilla> resultado = new List<Casilla>();
+
         foreach (Casilla candidata in listaBase)
         {
             foreach (Casilla adyacente in candidata.adyacentes)
             {
-                if (!resultado.Contains(adyacente)) resultado.Add(adyacente);
+                if (adyacente && !resultado.Contains(adyacente)) resultado.Add(adyacente);
+
             }
         }
         if (excluirOriginales)
         {
             foreach (Casilla original in listaBase)
             {
+
                 resultado.Remove(original);
             }
         }
