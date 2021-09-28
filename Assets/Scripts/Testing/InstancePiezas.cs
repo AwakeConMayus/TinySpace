@@ -29,7 +29,7 @@ public class InstancePiezas : MonoBehaviour
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        pieza.GetComponent<Pieza>().jugador = jugador;
+        pieza.GetComponent<Pieza>().jugador = jugador;;
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         estado = estados.SelectCasilla;

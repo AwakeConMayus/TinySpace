@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
 
+/// <summary>
+/// Etiqueta con el nombre y numero de jugadores de una habitacion
+/// </summary>
 public class RoomListing : MonoBehaviour
 {
 

@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
 
+
+/// <summary>
+/// Script de UI para la creacion de habitaciones
+/// </summary>
 public class CreateRoom : MonoBehaviourPunCallbacks
 {
     [SerializeField] Text _roomName;
@@ -12,17 +16,27 @@ public class CreateRoom : MonoBehaviourPunCallbacks
 
     public void OnClick_CreateRoom()
     {
+        //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
             Debug.Log("Sin conexion con el servidor");
             return;
         }
+        //Caso limite de sin input en el nombre
+        if(_roomName.text == null)
+        {
+            Debug.Log("No se ha introducido nombre");
+            return;
+        }
+        //Creacion de las rooms options
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
+        //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom( _roomName.text, options, TypedLobby.Default);
 
     }
 
+    //Info del intento de creación
     public override void OnCreatedRoom()
     {
         Debug.Log("Created room succesfully");

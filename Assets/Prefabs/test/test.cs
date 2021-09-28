@@ -4,6 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Pequeño script de conectar con el servidor
+/// (Carlos.TODO: habria que hacer un script serio con esta funcion)
+/// </summary>
 public class test : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
