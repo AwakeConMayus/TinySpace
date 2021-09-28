@@ -17,6 +17,8 @@ public class InstancePiezas : MonoBehaviour
     [HideInInspector]
     public int jugador;
     //* Para el tutorial, mineros 0, planetas 1
+    [HideInInspector]
+    ColorearCasillas coloreador;
 
     public GameObject planeta;
 
@@ -24,13 +26,22 @@ public class InstancePiezas : MonoBehaviour
 
     List<Casilla> casillasPosibles = new List<Casilla>();
 
+
+    private void Start()
+    {
+        
+        coloreador = GetComponent<ColorearCasillas>();
+    }
+
     public void SetJugador(int player) { jugador = player; }
 
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        pieza.GetComponent<Pieza>().jugador = jugador;;
+        pieza.GetComponent<Pieza>().jugador = jugador;
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
+
+        foreach(Casilla casilla in casillasPosibles) coloreador.reColor("green", casilla);
 
         estado = estados.SelectCasilla;
     }
@@ -45,6 +56,7 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
+            foreach (Casilla casilla in Tablero.instance.mapa) coloreador.initialColor(casilla);
             estado = estados.SelectPieza;
         }
     }

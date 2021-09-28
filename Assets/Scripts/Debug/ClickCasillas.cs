@@ -7,13 +7,13 @@ public class ClickCasillas : MonoBehaviour
     Camera MainCamera;
     Casilla CasillaHit;
     InstancePiezas instanciator;
-    ColorearCasillas coloreador;
+    //
 
     private void Start()
     {
         MainCamera = Camera.main;
         instanciator = GetComponent<InstancePiezas>();
-        coloreador = GetComponent<ColorearCasillas>();
+        //
 
     }
 
