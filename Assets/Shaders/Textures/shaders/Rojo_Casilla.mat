@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Shader_tablero
+  m_Name: Rojo_Casilla
   m_Shader: {fileID: -6465566751694194690, guid: 1570dca949ea96045ba06f04d0dedc7f,
     type: 3}
   m_ShaderKeywords: 
@@ -33,5 +33,5 @@ Material:
     m_Floats:
     - Vector1_2312A401: 1.09
     m_Colors:
-    - Color_3D739ED8: {r: 337.31766, g: 473.85098, b: 766.9961, a: 0.13333334}
-    - Color_540ACBDC: {r: 0.012745098, g: 0.02254902, b: 0.07254902, a: 1}
+    - Color_3D739ED8: {r: 1024, g: 66.30116, b: 97.22631, a: 0.13333334}
+    - Color_540ACBDC: {r: 0.07058824, g: 0.011764703, b: 0.012965941, a: 1}
