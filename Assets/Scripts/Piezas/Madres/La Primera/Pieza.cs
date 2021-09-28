@@ -25,7 +25,7 @@ public abstract class Pieza : MonoBehaviour
     [HideInInspector]
     public int jugador;
 
-    private void Start()
+    private void Awake()
     {
         SetClase();
     }
