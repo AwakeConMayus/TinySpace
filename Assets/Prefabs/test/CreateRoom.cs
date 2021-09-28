@@ -12,18 +12,23 @@ public class CreateRoom : MonoBehaviourPunCallbacks
 
     public void OnClick_CreateRoom()
     {
+        if (!PhotonNetwork.IsConnected)
+        {
+            Debug.Log("Sin conexion con el servidor");
+            return;
+        }
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
-        PhotonNetwork.JoinOrCreateRoom("basic", options, TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom( _roomName.text, options, TypedLobby.Default);
 
     }
 
     public override void OnCreatedRoom()
     {
-        base.OnCreatedRoom();
+        Debug.Log("Created room succesfully");
     }
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
-        base.OnCreateRoomFailed(returnCode, message);
+        Debug.Log("Room creation failed " + message);
     }
 }

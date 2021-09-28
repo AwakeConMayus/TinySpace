@@ -19,6 +19,8 @@ public class test : MonoBehaviourPunCallbacks
     {
         print("conected to master");
         print(PhotonNetwork.LocalPlayer.NickName);
+
+        PhotonNetwork.JoinLobby();
     }
 
 
