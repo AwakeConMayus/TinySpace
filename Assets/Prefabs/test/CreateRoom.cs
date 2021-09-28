@@ -34,6 +34,8 @@ public class CreateRoom : MonoBehaviourPunCallbacks
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom( _roomName.text, options, TypedLobby.Default);
 
+        CanvasManager.instance.Hide_CreateRoomCanvas();
+
     }
 
     //Info del intento de creación

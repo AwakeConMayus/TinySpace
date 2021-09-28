@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
+using Photon.Pun;
 
 /// <summary>
 /// Etiqueta con el nombre y numero de jugadores de una habitacion
@@ -18,5 +19,11 @@ public class RoomListing : MonoBehaviour
     {
         roomInfo = _roomInfo;
         _text.text = _roomInfo.MaxPlayers + " , " + _roomInfo.Name; 
+    }
+
+    public void OnClick()
+    {
+        CanvasManager.instance.Hide_CreateRoomCanvas();
+        PhotonNetwork.JoinRoom(roomInfo.Name);
     }
 }
