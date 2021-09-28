@@ -41,7 +41,14 @@ public class InstancePiezas : MonoBehaviour
         pieza.GetComponent<Pieza>().jugador = jugador;
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
-        foreach(Casilla casilla in casillasPosibles) coloreador.reColor("green", casilla);
+        //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
+        foreach (Casilla casilla in casillasPosibles) coloreador.reColor("green", casilla);
+        
+        //* Pinta de rojo las casillas sobre las que ha posicionado una pieza el rival
+        foreach (Casilla casilla in Tablero.instance.mapa) 
+        {
+            if (casilla.pieza != null && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
+        }
 
         estado = estados.SelectCasilla;
     }
