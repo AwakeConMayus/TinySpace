@@ -7,7 +7,7 @@ public class EstrategaPlanetas : Estratega
 
     public override List<Casilla> CasillasDisponibles()
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.astros });
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(Clase.astros);
 
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
 

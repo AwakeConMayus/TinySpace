@@ -45,10 +45,10 @@ public class InstancePiezas : MonoBehaviour
         foreach (Casilla casilla in casillasPosibles) coloreador.reColor("green", casilla);
         
         //* Pinta de rojo las casillas sobre las que ha posicionado una pieza el rival
-        foreach (Casilla casilla in Tablero.instance.mapa) 
-        {
-            if (casilla.pieza != null && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
-        }
+        //foreach (Casilla casilla in Tablero.instance.mapa) 
+        //{
+        //    if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
+        //}
 
         estado = estados.SelectCasilla;
     }
@@ -63,7 +63,11 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
-            foreach (Casilla casilla in Tablero.instance.mapa) coloreador.initialColor(casilla);
+            foreach (Casilla casilla in Tablero.instance.mapa)
+            {
+                if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
+                else coloreador.initialColor(casilla);
+            }
             estado = estados.SelectPieza;
         }
     }
@@ -87,6 +91,7 @@ public class InstancePiezas : MonoBehaviour
     {
         foreach(Casilla c in Tablero.instance.mapa)
         {
+            coloreador.initialColor(c);
             c.Clear();
         }
         for (int i = 0; i < 3; i++)
