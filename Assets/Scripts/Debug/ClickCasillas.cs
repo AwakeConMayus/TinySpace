@@ -7,6 +7,8 @@ public class ClickCasillas : MonoBehaviour
     Camera MainCamera;
     Casilla CasillaHit;
     InstancePiezas instanciator;
+
+    public static Casilla casillaClick;
     //
 
     private void Start()
@@ -31,8 +33,8 @@ public class ClickCasillas : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 ///Debug.Log(hit.collider);
-                CasillaHit = hit.collider.GetComponent<Casilla>();
-                instanciator.CrearPieza(CasillaHit);
+                casillaClick = hit.collider.GetComponent<Casilla>();
+                EventManager.TriggerEvent("ClickCasilla");
 
                 //coloreador.reColor("yellow", CasillaHit);
 

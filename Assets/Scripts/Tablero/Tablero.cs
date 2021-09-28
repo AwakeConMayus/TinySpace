@@ -89,11 +89,6 @@ public class Tablero : MonoBehaviour
         }
     }
 
-    public void Colocar (Pieza pieza, Casilla casilla, int jugador)
-    {
-        casilla.pieza = pieza;
-        pieza.casilla = casilla;
-        pieza.jugador = jugador;
-    }
+   
 
 }

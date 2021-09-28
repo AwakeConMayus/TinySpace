@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ColorearCasillas : MonoBehaviour
 {
+    public static ColorearCasillas instance;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this.gameObject);
+    }
+
     MeshRenderer MeshCasilla;
 
     [SerializeField]
