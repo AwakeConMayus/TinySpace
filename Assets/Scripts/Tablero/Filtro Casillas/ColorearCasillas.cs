@@ -30,11 +30,39 @@ public class ColorearCasillas : MonoBehaviour
         }
     }
 
+    public void reColor(string colorName, List <Casilla> listC)
+    {
+        foreach (Casilla c in listC) reColor(colorName, c);
+    }
+
     //* Restaura el color azul
     public void initialColor(Casilla c)
     {
         MeshRenderer MeshCasilla = c.GetComponentInChildren<MeshRenderer>();
         MeshCasilla.material = ShaderAzul;
     }
-    
+
+    public void initialColor(List <Casilla> listC = null)
+    {
+        if (listC == null) listC = Tablero.instance.mapa;
+
+        foreach (Casilla c in listC) initialColor(c);
+    }
+
+    //public void initialColor(string colorName, Casilla c)
+    //{
+    //    MeshRenderer MeshCasilla = c.GetComponentInChildren<MeshRenderer>();
+    //    Material materialALimpiar = ShaderVerde;
+    //    
+    //    switch (colorName)
+    //    {
+    //        case "blue":   materialALimpiar = ShaderAzul;     break;
+    //        case "red":    materialALimpiar = ShaderRojo;     break;
+    //        case "green":  materialALimpiar = ShaderVerde;    break;
+    //        case "yellow": materialALimpiar = ShaderAmarillo; break;
+    //    }
+    //
+    //    if(MeshCasilla.material == materialALimpiar) MeshCasilla.material = ShaderAzul;
+    //}
+
 }

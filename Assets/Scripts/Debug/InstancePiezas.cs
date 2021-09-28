@@ -27,13 +27,19 @@ public class InstancePiezas : MonoBehaviour
     List<Casilla> casillasPosibles = new List<Casilla>();
 
 
-    private void Start()
-    {
-        
-        coloreador = GetComponent<ColorearCasillas>();
-    }
+    private void Start() { coloreador = GetComponent<ColorearCasillas>(); }
 
-    public void SetJugador(int player) { jugador = player; }
+    public void SetJugador(int player) 
+    { 
+        jugador = player;
+        
+        foreach (Casilla casilla in Tablero.instance.mapa)
+        {
+            if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
+            else coloreador.initialColor(casilla);
+        }
+
+    }
 
     public void SetPieza(GameObject nave)
     {
@@ -55,7 +61,7 @@ public class InstancePiezas : MonoBehaviour
 
     public void CrearPieza(Casilla c)
     {
-        if (estado == estados.SelectPieza || c == null) return; 
+        if (estado == estados.SelectPieza || c == null || c.pieza) return; 
 
         if (casillasPosibles.Contains(c))
         {
@@ -63,13 +69,11 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
-            foreach (Casilla casilla in Tablero.instance.mapa)
-            {
-                if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
-                else coloreador.initialColor(casilla);
-            }
             estado = estados.SelectPieza;
         }
+
+        foreach(Casilla casilla in Tablero.instance.mapa)
+        if (c.pieza && c.pieza.jugador == jugador || !c.pieza) coloreador.initialColor(casilla);
     }
 
     public void RecuentoPuntosTest()
