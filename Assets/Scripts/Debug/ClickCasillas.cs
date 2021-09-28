@@ -7,22 +7,13 @@ public class ClickCasillas : MonoBehaviour
     Camera MainCamera;
     Casilla CasillaHit;
     InstancePiezas instanciator;
-
-    MeshRenderer MeshCasilla;
-
-    [SerializeField]
-    Material ShaderAzul;
-    [SerializeField]
-    Material ShaderRojo;
-    [SerializeField]
-    Material ShaderVerde;
-    [SerializeField]
-    Material ShaderAmarillo;
+    ColorearCasillas coloreador;
 
     private void Start()
     {
         MainCamera = Camera.main;
         instanciator = GetComponent<InstancePiezas>();
+        coloreador = GetComponent<ColorearCasillas>();
 
     }
 
@@ -43,15 +34,7 @@ public class ClickCasillas : MonoBehaviour
                 CasillaHit = hit.collider.GetComponent<Casilla>();
                 instanciator.CrearPieza(CasillaHit);
 
-                MeshCasilla = hit.collider.GetComponentInChildren<MeshRenderer>();
-
-                switch (Random.Range(0, 3))
-                {
-                    case 0: MeshCasilla.material = ShaderRojo; break;
-                    case 1: MeshCasilla.material = ShaderVerde; break;
-                    case 2: MeshCasilla.material = ShaderAmarillo; break;
-                }
-                
+                //coloreador.reColor("yellow", CasillaHit);
 
             }
         } 

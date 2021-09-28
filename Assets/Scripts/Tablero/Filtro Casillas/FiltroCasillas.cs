@@ -43,7 +43,7 @@ public static class FiltroCasillas
         return resultado;
     }
 
-
+    
     //Busca casillas sin ocupar
     public static List<Casilla> CasillasLibres(List<Casilla> listaBase = null)
     {
