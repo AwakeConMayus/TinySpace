@@ -88,7 +88,7 @@ public class InstancePiezas : MonoBehaviour
             do
             {
                 rnd = Random.Range(0, Tablero.instance.mapa.Count);
-            } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
+            } while (!planeta.GetComponent<Planetas>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
             //TODO: Los planetas a veces aparecen en casillas adyacentes cuando no deberian durante la colocacion inicial
 
             GameObject thisPieza = Instantiate(planeta);
