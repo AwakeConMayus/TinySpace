@@ -9,4 +9,13 @@ public class Casilla : MonoBehaviour
     public Casilla[] adyacentes = new Casilla[6];
     [HideInInspector]
     public Pieza pieza;
+
+    public void Clear()
+    {
+        if (pieza)
+        {
+            Destroy(pieza.gameObject);
+            pieza = null;
+        }
+    }
 }

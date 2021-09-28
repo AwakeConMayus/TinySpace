@@ -18,6 +18,8 @@ public class InstancePiezas : MonoBehaviour
     public int jugador;
     //* Para el tutorial, mineros 0, planetas 1
 
+    public GameObject planeta;
+
     estados estado = estados.SelectPieza;
 
     List<Casilla> casillasPosibles = new List<Casilla>();
@@ -60,5 +62,26 @@ public class InstancePiezas : MonoBehaviour
         }
 
         print("Mineros: " + puntuaciones[0] + " / Planetas: " + puntuaciones[1]);
+    }
+
+    public void SetInicialTable()
+    {
+        foreach(Casilla c in Tablero.instance.mapa)
+        {
+            c.Clear();
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            int rnd;
+            do
+            {
+                rnd = Random.Range(0, Tablero.instance.mapa.Count);
+            } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
+            //TODO: Los planetas a veces aparecen en casillas adyacentes cuando no deberian durante la colocacion inicial
+
+            GameObject thisPieza = Instantiate(planeta);
+            thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
+            thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
+        }
     }
 }
