@@ -31,13 +31,14 @@ public class InstancePiezas : MonoBehaviour
     {
         jugador = player;
 
+        ColorearCasillas.instance.initialColor();
 
         //Colores
-        foreach (Casilla casilla in Tablero.instance.mapa)
-        {
-            if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
-            else ColorearCasillas.instance.initialColor(casilla);
-        }
+        //foreach (Casilla casilla in Tablero.instance.mapa)
+        //{
+        //    if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
+        //    else ColorearCasillas.instance.initialColor(casilla);
+        //}
         //End Colores
     }
 
@@ -77,16 +78,18 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
-            foreach (Casilla casilla in Tablero.instance.mapa)
-            {
-                if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
-                else ColorearCasillas.instance.initialColor(casilla);
-            }
+            //foreach (Casilla casilla in Tablero.instance.mapa)
+            //{
+            //    if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
+            //    else ColorearCasillas.instance.initialColor(casilla);
+            //}
             estado = estados.SelectPieza;
-        }
 
-        foreach(Casilla casilla in Tablero.instance.mapa)
-        if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
+            ColorearCasillas.instance.initialColor();
+        }
+        
+        //foreach(Casilla casilla in Tablero.instance.mapa)
+        //if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
     }
 
     public void RecuentoPuntosTest()
