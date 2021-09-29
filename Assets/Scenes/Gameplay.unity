@@ -1853,6 +1853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ae0fa0a5379a644ab25af70e1b422c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   prefabsNaves:
   - {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
   - {fileID: 87433546748151837, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}
@@ -2650,6 +2651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ae0fa0a5379a644ab25af70e1b422c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 1
   prefabsNaves:
   - {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85, type: 3}
   - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
