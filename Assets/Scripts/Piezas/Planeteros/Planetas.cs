@@ -11,21 +11,20 @@ public class Planetas : Pieza
 
     public override int Puntos()
     {
-        int[] players = new int[2];
+        int colonizacion = 0;
 
         foreach (Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
-            ++players[adyacente.pieza.jugador];
+            if (adyacente.pieza.jugador == jugador)
+                ++colonizacion;
+            else --colonizacion;
         }
 
-        int diferencia = players[1] - players[0];
 
-        if (diferencia < 0) jugador = 0;
-        else if (diferencia > 0) jugador = 1;
-        else return 0;
+        if (colonizacion > 0) return 2;
 
-        return 3;
+        return 0;
     }
 
     public override List<Casilla> CasillasDisponibles()

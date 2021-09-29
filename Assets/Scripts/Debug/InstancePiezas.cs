@@ -26,26 +26,26 @@ public class InstancePiezas : MonoBehaviour
     List<Casilla> casillasPosibles = new List<Casilla>();
 
 
-<<<<<<< Updated upstream
-    private void Start() { coloreador = GetComponent<ColorearCasillas>(); }
 
-    public void SetJugador(int player) 
-    { 
+    public void SetJugador(int player)
+    {
         jugador = player;
-        
+
+
+        //Colores
         foreach (Casilla casilla in Tablero.instance.mapa)
         {
-            if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
-            else coloreador.initialColor(casilla);
+            if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
+            else ColorearCasillas.instance.initialColor(casilla);
         }
-=======
+        //End Colores
+    }
+
     private void Start()
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
     }
->>>>>>> Stashed changes
 
-    }
 
     public void SetPieza(GameObject nave)
     {
@@ -67,12 +67,9 @@ public class InstancePiezas : MonoBehaviour
 
     public void CrearPieza()
     {
-<<<<<<< Updated upstream
-        if (estado == estados.SelectPieza || c == null || c.pieza) return; 
-=======
+
         Casilla c = ClickCasillas.casillaClick;
         if (estado == estados.SelectPieza || c == null) return; 
->>>>>>> Stashed changes
 
         if (casillasPosibles.Contains(c))
         {
@@ -80,19 +77,16 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
-<<<<<<< Updated upstream
-=======
             foreach (Casilla casilla in Tablero.instance.mapa)
             {
                 if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
                 else ColorearCasillas.instance.initialColor(casilla);
             }
->>>>>>> Stashed changes
             estado = estados.SelectPieza;
         }
 
         foreach(Casilla casilla in Tablero.instance.mapa)
-        if (c.pieza && c.pieza.jugador == jugador || !c.pieza) coloreador.initialColor(casilla);
+        if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
     }
 
     public void RecuentoPuntosTest()
@@ -128,6 +122,7 @@ public class InstancePiezas : MonoBehaviour
 
             GameObject thisPieza = Instantiate(planeta);
             thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
+            thisPieza.GetComponent<Pieza>().jugador = 1;
             thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
         }
     }

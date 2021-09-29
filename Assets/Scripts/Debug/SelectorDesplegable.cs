@@ -5,11 +5,18 @@ using UnityEngine;
 public class SelectorDesplegable : MonoBehaviour
 {
     [SerializeField]
+    int player;
+    [SerializeField]
     List<GameObject> prefabsNaves;
     [SerializeField]
     InstancePiezas Instanciador;
 
     GameObject naveSelect;
+
+    private void Start()
+    {
+        naveSelect = prefabsNaves[0];
+    }
 
     public void SelectNave(int i)
     {
@@ -19,6 +26,7 @@ public class SelectorDesplegable : MonoBehaviour
 
     public void SetNave()
     {
+        Instanciador.SetJugador(player);
         Instanciador.SetPieza(naveSelect);
     }
 }
