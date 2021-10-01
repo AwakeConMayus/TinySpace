@@ -7,7 +7,11 @@ public class Comodin : Efecto
 {
     public override void Accion()
     {
-        if (GetComponent<PhotonView>().IsMine)
+        if (PhotonNetwork.InRoom && GetComponent<PhotonView>().IsMine)
+        {
+            MenuComodin.instance.Convocar(casilla);
+        }
+        else
         {
             MenuComodin.instance.Convocar(casilla);
         }
