@@ -71,7 +71,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsConnected && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-                base.photonView.RPC("RPC_ColocarPieza", RpcTarget.All, c, thisPieza);
+                base.photonView.RPC("RPC_ColocarPieza", RpcTarget.All,"FUCK YOU");
             }
             else
             {
@@ -136,10 +136,11 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void RPC_ColocarPieza(Casilla c, Pieza p)
+    public void RPC_ColocarPieza(string a)
     {
-        Debug.Log(c);
+        Debug.Log(a);
+        /*Debug.Log(c);
         Debug.Log(pieza);
-        p.Colocar(c);
+        p.Colocar(c);*/
     }
 }
