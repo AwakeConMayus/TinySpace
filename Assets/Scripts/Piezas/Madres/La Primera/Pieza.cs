@@ -48,15 +48,16 @@ public abstract class Pieza : MonoBehaviour
         else return false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.GetComponent<Casilla>())
+        Debug.Log("Hago la colision");
+        if (other.gameObject.GetComponent<Casilla>())
         {
-            Colocar(collision.gameObject.GetComponent<Casilla>());
+            Colocar(other.gameObject.GetComponent<Casilla>());
         }
     }
-
-
 
 }
 
