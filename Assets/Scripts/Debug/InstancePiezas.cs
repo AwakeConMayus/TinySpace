@@ -10,7 +10,7 @@ public enum estados
     SelectCasilla    
 }
 
-public class InstancePiezas : MonoBehaviour
+public class InstancePiezas : MonoBehaviourPunCallbacks
 {
     [HideInInspector]
     public GameObject pieza;
@@ -71,12 +71,15 @@ public class InstancePiezas : MonoBehaviour
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
+
+                base.photonView.RPC("RPC_realizarJugada", RpcTarget.All);
             }
             else
             {
                 GameObject thisPieza = Instantiate(pieza);
                 thisPieza.transform.position = c.transform.position;
                 thisPieza.GetComponent<Pieza>().Colocar(c);
+                GestorTurnos.instance.realizarJugada();
             }
 
             //foreach (Casilla casilla in Tablero.instance.mapa)
@@ -85,7 +88,7 @@ public class InstancePiezas : MonoBehaviour
             //    else ColorearCasillas.instance.initialColor(casilla);
             //}
 
-            GestorTurnos.instance.realizarJugada();
+            
             estado = estados.SelectPieza;
 
             ColorearCasillas.instance.initialColor();

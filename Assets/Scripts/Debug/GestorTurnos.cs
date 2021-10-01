@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class GestorTurnos : MonoBehaviour
 {
@@ -41,6 +42,30 @@ public class GestorTurnos : MonoBehaviour
         ++faseTurno;
        
         Debug.Log("Turno Jugado " + turno + " - Fase del Turno " + (faseTurno-1));
+
+        //* Si faseTurno llega a 3, vuelve a ser 1 y se avanza al siguiente turno
+        if (faseTurno == 3)
+        {
+            ++turno;
+            faseTurno = 1;
+        }
+    }
+
+    [PunRPC]
+    public void RPC_realizarJugada()
+    {
+        //* Si faseTurno es par, se invierte el jugador actual
+        if (faseTurno % 2 == 0) player = !player;
+
+        //* Obtiene un valor 1 o 2 del bool player para tener un número que darle a pieza.jugador
+        if (!player) playerNum = 1;
+        else playerNum = 2;
+
+        Debug.Log("Ha jugado Player " + playerNum);
+
+        ++faseTurno;
+
+        Debug.Log("Turno Jugado " + turno + " - Fase del Turno " + (faseTurno - 1));
 
         //* Si faseTurno llega a 3, vuelve a ser 1 y se avanza al siguiente turno
         if (faseTurno == 3)
