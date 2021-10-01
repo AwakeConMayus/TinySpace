@@ -18,14 +18,11 @@ public class InstancePiezas : MonoBehaviour
     public int jugador;
     //* Para el tutorial, mineros 0, planetas 1
     [HideInInspector]
-
     public GameObject planeta;
 
     estados estado = estados.SelectPieza;
 
     List<Casilla> casillasPosibles = new List<Casilla>();
-
-
 
     public void SetJugador(int player)
     {
@@ -51,7 +48,7 @@ public class InstancePiezas : MonoBehaviour
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        pieza.GetComponent<Pieza>().jugador = jugador;
+        pieza.GetComponent<Pieza>().jugador = GestorTurnos.instance.getPlayer();
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
@@ -83,6 +80,8 @@ public class InstancePiezas : MonoBehaviour
             //    if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
             //    else ColorearCasillas.instance.initialColor(casilla);
             //}
+
+            GestorTurnos.instance.realizarJugada();
             estado = estados.SelectPieza;
 
             ColorearCasillas.instance.initialColor();
@@ -114,6 +113,7 @@ public class InstancePiezas : MonoBehaviour
             ColorearCasillas.instance.initialColor(c);
             c.Clear();
         }
+        GestorTurnos.instance.resetTurnos();
         for (int i = 0; i < 3; i++)
         {
             int rnd;
