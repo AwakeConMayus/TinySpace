@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
+  jugador: 1
   nivel: 1
 --- !u!114 &-4361594507905850228
 MonoBehaviour:

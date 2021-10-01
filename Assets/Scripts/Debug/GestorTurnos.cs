@@ -56,7 +56,16 @@ public class GestorTurnos : MonoBehaviour
         playerNum = 1;
     }
 
-    public int getPlayer() { return playerNum; }
+    //* Tiene la comprobación de lógica que tiene realizar jugada para obtener el número de player de forma correcta
+    public int getPlayer() 
+    {
+        int turnoAuxCopy = turnoAux;
+        bool playerCopy = player;
+        if (turnoAuxCopy % 2 == 0) playerCopy = !playerCopy;
+
+        if (!playerCopy) return 1;
+        else return 2;
+    }
     public int getTurno()  { return turno; }
 
 }
