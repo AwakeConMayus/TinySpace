@@ -138,6 +138,8 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_ColocarPieza(Casilla c, Pieza p)
     {
+        Debug.Log(c);
+        Debug.Log(pieza);
         p.Colocar(c);
     }
 }
