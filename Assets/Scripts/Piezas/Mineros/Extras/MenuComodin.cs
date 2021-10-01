@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MenuComodin : MonoBehaviour
 {
@@ -23,9 +24,16 @@ public class MenuComodin : MonoBehaviour
 
     public void Seleccion(GameObject prefab)
     {
-        GameObject thisPieza = Instantiate(prefab);
-        thisPieza.transform.position = casilla.transform.position;
-        thisPieza.GetComponent<Pieza>().Colocar(casilla);
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            GameObject thisPieza = Instantiate(prefab);
+            thisPieza.transform.position = casilla.transform.position;
+            thisPieza.GetComponent<Pieza>().Colocar(casilla);
+        }
         gameObject.SetActive(false);
     }
 }

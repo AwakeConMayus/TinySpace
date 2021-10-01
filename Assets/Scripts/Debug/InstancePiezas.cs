@@ -68,7 +68,7 @@ public class InstancePiezas : MonoBehaviour
 
         if (casillasPosibles.Contains(c))
         {
-            if (PhotonNetwork.IsConnected && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
             }
