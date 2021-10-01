@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public enum estados
 {
@@ -42,7 +41,6 @@ public class InstancePiezas : MonoBehaviour
 
     private void Start()
     {
-
         EventManager.StartListening("ClickCasilla", CrearPieza);
     }
 
@@ -51,6 +49,7 @@ public class InstancePiezas : MonoBehaviour
     {
         pieza = nave;
         pieza.GetComponent<Pieza>().jugador = GestorTurnos.instance.getPlayer();
+        Debug.Log("Pieza asociada al Player " + GestorTurnos.instance.getPlayer());
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
@@ -73,19 +72,9 @@ public class InstancePiezas : MonoBehaviour
 
         if (casillasPosibles.Contains(c))
         {
-
-            if (PhotonNetwork.IsConnected && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-            {
-                Debug.Log("MAMA MIA");
-                GameObject thisPieza =  PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().Colocar(c);
-            }
-            else
-            {
-                GameObject thisPieza = Instantiate(pieza);
-                thisPieza.transform.position = c.transform.position;
-                thisPieza.GetComponent<Pieza>().Colocar(c);
-            }
+            GameObject thisPieza = Instantiate(pieza);
+            thisPieza.transform.position = c.transform.position;
+            thisPieza.GetComponent<Pieza>().Colocar(c);
 
             //foreach (Casilla casilla in Tablero.instance.mapa)
             //{
