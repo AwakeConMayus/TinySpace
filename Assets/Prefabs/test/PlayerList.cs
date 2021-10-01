@@ -30,6 +30,16 @@ public class PlayerList : MonoBehaviourPunCallbacks
             _playerList.Add(listing);
         }
 
+        if (PhotonNetwork.IsMasterClient)
+        {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.LoadLevel(0);
+            }
+
+        }
         
 
     }
