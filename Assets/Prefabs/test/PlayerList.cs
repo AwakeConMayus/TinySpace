@@ -36,6 +36,7 @@ public class PlayerList : MonoBehaviourPunCallbacks
             {
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.AutomaticallySyncScene = true;
                 PhotonNetwork.LoadLevel(0);
             }
 
