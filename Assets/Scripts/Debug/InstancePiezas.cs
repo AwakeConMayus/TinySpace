@@ -26,18 +26,12 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     List<Casilla> casillasPosibles = new List<Casilla>();
 
     public void SetJugador(int player)
+    //// esta función debería estar deprecated puesto que setPieza obtiene el player del Gestor de turnos
+    //// la dejo de momento porque puede ser util usando un .setPlayer en el Gestor y porque es llamada por
+    //// los botones de select facción (que también están deprecated y ocultos en la UI)
     {
         jugador = player;
-
         ColorearCasillas.instance.initialColor();
-
-        //Colores
-        //foreach (Casilla casilla in Tablero.instance.mapa)
-        //{
-        //    if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
-        //    else ColorearCasillas.instance.initialColor(casilla);
-        //}
-        //End Colores
     }
 
     private void Start()
