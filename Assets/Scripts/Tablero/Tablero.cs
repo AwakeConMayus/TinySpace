@@ -89,6 +89,28 @@ public class Tablero : MonoBehaviour
         }
     }
 
-   
+    public int Get_Numero_Casilla(GameObject c)
+    {
+        for(int i = 0; i < mapa.Count; ++i)
+        {
+            if(mapa[i].transform == c.transform)
+            {
+                return i;
+            }
+        }
+
+        Debug.LogError("No se ha encontrado la casilla");
+        return 0;
+    }
+
+    public Casilla Get_Casilla_By_Numero(int numero)
+    {
+        if (numero < 0 || numero > mapa.Count)
+        {
+            Debug.LogError("No se ha encontrado la casilla"); 
+            return null;
+        }
+        return mapa[numero].GetComponent<Casilla>();
+    }
 
 }
