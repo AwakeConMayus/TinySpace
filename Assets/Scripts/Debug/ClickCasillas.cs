@@ -33,7 +33,7 @@ public class ClickCasillas : MonoBehaviour
             {
                 ///Debug.Log(hit.collider);
                 casillaClick = hit.collider.GetComponent<Casilla>();
-                EventManager.TriggerEvent("ClickCasilla");
+                EventManager.TriggerEvent("CrearPieza");
 
                 //coloreador.reColor("yellow", CasillaHit);
 

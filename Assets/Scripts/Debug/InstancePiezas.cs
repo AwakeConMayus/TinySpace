@@ -37,7 +37,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        EventManager.StartListening("ClickCasilla", CrearPieza);
+        EventManager.StartListening("CrearPieza", CrearPieza);
     }
 
 
@@ -45,7 +45,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     {
         pieza = nave;
         pieza.GetComponent<Pieza>().jugador = GestorTurnos.instance.getPlayer();
-        Debug.Log("Pieza asociada al Player " + GestorTurnos.instance.getPlayer());
+        //Debug.Log("Pieza asociada al Player " + GestorTurnos.instance.getPlayer());
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
