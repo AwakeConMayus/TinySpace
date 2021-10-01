@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - PColocarPieza
   - RPC_ColocarPieza
+  - RPC_realizarJugada
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
