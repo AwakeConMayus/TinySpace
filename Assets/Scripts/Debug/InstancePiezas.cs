@@ -9,7 +9,7 @@ public enum estados
     SelectCasilla    
 }
 
-public class InstancePiezas : MonoBehaviour
+public class InstancePiezas : MonoBehaviourPunCallbacks
 {
     [HideInInspector]
     public GameObject pieza;
@@ -76,7 +76,7 @@ public class InstancePiezas : MonoBehaviour
             if (PhotonNetwork.IsConnected && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().Colocar(c);
+                base.photonView.RPC("PColocarPieza", RpcTarget.All, c, thisPieza);
             }
             else
             {
@@ -138,5 +138,11 @@ public class InstancePiezas : MonoBehaviour
             thisPieza.GetComponent<Pieza>().jugador = 1;
             thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
         }
+    }
+
+    [PunRPC]
+    public void PColocarPieza(Casilla c, Pieza p)
+    {
+        p.Colocar(c);
     }
 }
