@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &810495966617070839
+--- !u!1 &6490775113597745579
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 882212794073459310}
-  - component: {fileID: 324663895821786639}
+  - component: {fileID: 6706589400041865010}
+  - component: {fileID: 3720826336617624905}
+  - component: {fileID: 4044044366169718778}
   m_Layer: 0
-  m_Name: Investigador mineros mejorada
+  m_Name: Investigador planeteros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &882212794073459310
+--- !u!4 &6706589400041865010
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810495966617070839}
+  m_GameObject: {fileID: 6490775113597745579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
-  - {fileID: 6774981843359015052}
+  - {fileID: 1092468488104719824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &324663895821786639
+--- !u!114 &3720826336617624905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810495966617070839}
+  m_GameObject: {fileID: 6490775113597745579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c9e5a159a100f428a3fd9217135444, type: 3}
+  m_Script: {fileID: 11500000, guid: 26531293f6d64ea469ffbaa6e4d31881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
   jugador: 0
---- !u!1001 &6453424526043629415
+--- !u!114 &4044044366169718778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490775113597745579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!1001 &622485416753713723
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 882212794073459310}
+    m_TransformParent: {fileID: 6706589400041865010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ca214df4e8041ef4a92751c01c877999,
         type: 3}
@@ -128,7 +151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dbe6eea5345414c42b7ab4feac5996c4, type: 2}
+      objectReference: {fileID: 2100000, guid: 646657ca03400b24abb822a966b8bd35, type: 2}
     - target: {fileID: 919132149155446097, guid: ca214df4e8041ef4a92751c01c877999,
         type: 3}
       propertyPath: m_Name
@@ -136,9 +159,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca214df4e8041ef4a92751c01c877999, type: 3}
---- !u!4 &6774981843359015052 stripped
+--- !u!4 &1092468488104719824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca214df4e8041ef4a92751c01c877999,
     type: 3}
-  m_PrefabInstance: {fileID: 6453424526043629415}
+  m_PrefabInstance: {fileID: 622485416753713723}
   m_PrefabAsset: {fileID: 0}

@@ -60,7 +60,6 @@ public class PlayerList : MonoBehaviourPunCallbacks
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
-        Debug.Log("hago esto");
         for(int i = 0; i < _playerList.Count; ++i)
         {
             if( _playerList[i].GetName() == otherPlayer.NickName)

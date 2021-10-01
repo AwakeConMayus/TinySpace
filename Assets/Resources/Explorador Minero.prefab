@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8364613719665286529
+--- !u!1 &3258635846464971716
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8292351535817906968}
-  - component: {fileID: 3977120171592174765}
+  - component: {fileID: 3042263035259610461}
+  - component: {fileID: 5489607720312435552}
+  - component: {fileID: -1076835342190362296}
   m_Layer: 0
-  m_Name: Explorador Planetas
+  m_Name: Explorador Minero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8292351535817906968
+--- !u!4 &3042263035259610461
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8364613719665286529}
+  m_GameObject: {fileID: 3258635846464971716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
-  - {fileID: 652356732467303366}
+  - {fileID: 7101095436780594866}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3977120171592174765
+--- !u!114 &5489607720312435552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8364613719665286529}
+  m_GameObject: {fileID: 3258635846464971716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179c58fc3fae4324fb6d86dcdc106c0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8763c6557b46e6c4b84cee8b85ce09cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
   jugador: 0
---- !u!1001 &1046835677493277741
+--- !u!114 &-1076835342190362296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258635846464971716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!1001 &7279666171568783705
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8292351535817906968}
+    m_TransformParent: {fileID: 3042263035259610461}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 284e69210b5ae62419aa9f5edc40eb34,
         type: 3}
@@ -124,11 +147,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 284e69210b5ae62419aa9f5edc40eb34,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 646657ca03400b24abb822a966b8bd35, type: 2}
     - target: {fileID: 919132149155446097, guid: 284e69210b5ae62419aa9f5edc40eb34,
         type: 3}
       propertyPath: m_Name
@@ -136,9 +154,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284e69210b5ae62419aa9f5edc40eb34, type: 3}
---- !u!4 &652356732467303366 stripped
+--- !u!4 &7101095436780594866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 284e69210b5ae62419aa9f5edc40eb34,
     type: 3}
-  m_PrefabInstance: {fileID: 1046835677493277741}
+  m_PrefabInstance: {fileID: 7279666171568783705}
   m_PrefabAsset: {fileID: 0}
