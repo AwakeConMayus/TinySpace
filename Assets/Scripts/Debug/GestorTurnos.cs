@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class GestorTurnos : MonoBehaviour
 {
+    //* Turno actual
     private int turno = 1;
-    private int turnoAux = 1;
+    //* Fase interna del turno (hay 2 jugadas por turno)
+    private int faseTurno = 1;
 
     //* Jugador actual, false = Player 1, true = Player 2
     private bool player    = false;
+    //* Representación numérica del turno
     private int  playerNum = 1;
 
     public static GestorTurnos instance;
@@ -26,8 +29,8 @@ public class GestorTurnos : MonoBehaviour
 
     public void realizarJugada()
     {
-        //* Si turnoAux es par, se invierte el jugador actual
-        if (turnoAux % 2 == 0) player = !player;
+        //* Si faseTurno es par, se invierte el jugador actual
+        if (faseTurno % 2 == 0) player = !player;
 
         //* Obtiene un valor 1 o 2 del bool player para tener un número que darle a pieza.jugador
         if (!player) playerNum = 1;
@@ -35,15 +38,15 @@ public class GestorTurnos : MonoBehaviour
 
         Debug.Log("Ha jugado Player " + playerNum);
         
-        ++turnoAux;
+        ++faseTurno;
        
-        Debug.Log("Turno Actual " + turno + " - Turno Auxiliar " + turnoAux);
+        Debug.Log("Turno Jugado " + turno + " - Fase del Turno " + (faseTurno-1));
 
-        //* Si turnoAux llega a 3, vuelve a ser 1 y se avanza al siguiente turno
-        if (turnoAux == 3)
+        //* Si faseTurno llega a 3, vuelve a ser 1 y se avanza al siguiente turno
+        if (faseTurno == 3)
         {
             ++turno;
-            turnoAux = 1;
+            faseTurno = 1;
         }
     }
 
@@ -51,7 +54,7 @@ public class GestorTurnos : MonoBehaviour
     {
         //* Vuelve todo al estado incial
         turno = 1;
-        turnoAux = 1;
+        faseTurno = 1;
         player = false;
         playerNum = 1;
     }
@@ -59,9 +62,10 @@ public class GestorTurnos : MonoBehaviour
     //* Tiene la comprobación de lógica que tiene realizar jugada para obtener el número de player de forma correcta
     public int getPlayer() 
     {
-        int turnoAuxCopy = turnoAux;
-        bool playerCopy = player;
-        if (turnoAuxCopy % 2 == 0) playerCopy = !playerCopy;
+        int  faseTurnoCopy = faseTurno;
+        bool playerCopy    = player;
+        
+        if (faseTurnoCopy % 2 == 0) playerCopy = !playerCopy;
 
         if (!playerCopy) return 1;
         else return 2;
