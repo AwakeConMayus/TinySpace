@@ -68,17 +68,20 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
         if (casillasPosibles.Contains(c))
         {
+
+            // Comprobacion de si el game se esta realizando online u offline
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-
+                // Instanciacion que utiliza photon
+                PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
+                // Callback de paso de turno en los dos clientes
                 base.photonView.RPC("RPC_realizarJugada", RpcTarget.All);
             }
             else
             {
+                // Instanciacion de piezas en el offline
                 GameObject thisPieza = Instantiate(pieza);
                 thisPieza.transform.position = c.transform.position;
-                thisPieza.GetComponent<Pieza>().Colocar(c);
                 GestorTurnos.instance.realizarJugada();
             }
 

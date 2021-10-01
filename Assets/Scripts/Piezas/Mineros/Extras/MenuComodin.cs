@@ -32,7 +32,6 @@ public class MenuComodin : MonoBehaviour
         {
             GameObject thisPieza = Instantiate(prefab);
             thisPieza.transform.position = casilla.transform.position;
-            thisPieza.GetComponent<Pieza>().Colocar(casilla);
         }
         gameObject.SetActive(false);
     }
