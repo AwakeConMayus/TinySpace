@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public enum estados
 {
@@ -70,7 +71,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsConnected && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-                base.photonView.RPC("PColocarPieza", RpcTarget.All, c, thisPieza);
+                base.photonView.RPC("RPC_ColocarPieza", RpcTarget.All, c, thisPieza);
             }
             else
             {
@@ -135,7 +136,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void PColocarPieza(Casilla c, Pieza p)
+    public void RPC_ColocarPieza(Casilla c, Pieza p)
     {
         p.Colocar(c);
     }
