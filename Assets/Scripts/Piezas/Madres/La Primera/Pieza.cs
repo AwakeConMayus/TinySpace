@@ -52,7 +52,6 @@ public abstract class Pieza : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hago la colision");
         if (other.gameObject.GetComponent<Casilla>())
         {
             Colocar(other.gameObject.GetComponent<Casilla>());
