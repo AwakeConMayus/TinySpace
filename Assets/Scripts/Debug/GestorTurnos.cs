@@ -37,7 +37,7 @@ public class GestorTurnos : MonoBehaviour
         
         ++turnoAux;
        
-        Debug.Log("Turno " + turno);
+        Debug.Log("Turno Actual " + turno);
 
         //* Si turnoAux llega a 3, vuelve a ser 1 y se avanza al siguiente turno
         if (turnoAux == 3)
