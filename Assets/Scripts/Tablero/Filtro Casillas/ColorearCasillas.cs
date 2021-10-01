@@ -11,7 +11,7 @@ public class ColorearCasillas : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    MeshRenderer MeshCasilla;
+    //MeshRenderer MeshCasilla;
 
     [SerializeField]
     Material ShaderAzul;

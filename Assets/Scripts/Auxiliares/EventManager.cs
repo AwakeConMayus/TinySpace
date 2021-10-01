@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour
                 eventManager = FindObjectOfType<EventManager>();
                 if (!eventManager)
                 {
-                    Debug.Log("No hay EventMAnager");
+                    Debug.Log("No hay EventManager");
                 }
                 else
                 {

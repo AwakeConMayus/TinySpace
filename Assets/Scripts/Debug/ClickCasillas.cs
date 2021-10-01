@@ -5,8 +5,8 @@ using UnityEngine;
 public class ClickCasillas : MonoBehaviour
 {
     Camera MainCamera;
-    Casilla CasillaHit;
-    InstancePiezas instanciator;
+    //Casilla CasillaHit;
+    //InstancePiezas instanciator;
 
     public static Casilla casillaClick;
     //
@@ -14,8 +14,7 @@ public class ClickCasillas : MonoBehaviour
     private void Start()
     {
         MainCamera = Camera.main;
-        instanciator = GetComponent<InstancePiezas>();
-        //
+        //instanciator = GetComponent<InstancePiezas>();
 
     }
 
@@ -24,6 +23,8 @@ public class ClickCasillas : MonoBehaviour
        //* Al pulsar click izquierdo
         if (Input.GetMouseButtonDown(0))
         {
+            EventManager.TriggerEvent("Jugada");
+
             //* Genera un rayo a donde clickes con el mouse
             Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
