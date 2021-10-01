@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GestorTurnos : MonoBehaviour
 {
-    private  int turno = 1;
+    private int turno = 1;
     private int turnoAux = 1;
 
     //* Jugador actual, false = Player 1, true = Player 2
@@ -33,11 +33,11 @@ public class GestorTurnos : MonoBehaviour
         if (!player) playerNum = 1;
         else playerNum = 2;
 
-        Debug.Log("Ha jugado Player = " + player);
+        Debug.Log("Ha jugado Player " + playerNum);
         
         ++turnoAux;
-
-        Debug.Log("Turno = " + turno);
+       
+        Debug.Log("Turno " + turno);
 
         //* Si turnoAux llega a 3, vuelve a ser 1 y se avanza al siguiente turno
         if (turnoAux == 3)
@@ -53,9 +53,10 @@ public class GestorTurnos : MonoBehaviour
         turno = 1;
         turnoAux = 1;
         player = false;
+        playerNum = 1;
     }
 
     public int getPlayer() { return playerNum; }
-    public int getTurno() { return turno; }
+    public int getTurno()  { return turno; }
 
 }

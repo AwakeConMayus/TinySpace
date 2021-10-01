@@ -25,5 +25,6 @@ public class RoomListing : MonoBehaviour
     {
         CanvasManager.instance.Hide_CreateRoomCanvas(roomInfo.Name);
         PhotonNetwork.JoinRoom(roomInfo.Name);
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 }
