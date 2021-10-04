@@ -7,8 +7,10 @@ public class Casilla : MonoBehaviour
 
     [HideInInspector]
     public Casilla[] adyacentes = new Casilla[6];
-    [HideInInspector]
+    //[HideInInspector]
     public Pieza pieza;
+    //[HideInInspector]
+    public bool meteorito = false;
 
     public void Clear()
     {

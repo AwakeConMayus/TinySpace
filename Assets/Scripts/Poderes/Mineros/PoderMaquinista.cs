@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoderMaquinista : Poder
+public class PoderMaquinista : PoderMineros
 {
     Casilla origen;
     Casilla destino;
@@ -17,11 +17,7 @@ public class PoderMaquinista : Poder
         EventManager.StartListening("ClickCasilla", SelectDestino);
     }
 
-    public override void InitialAction()
-    {
-        print("Faltan los inerales por implementar");
-    }
-
+   
     public override void FirstAction()
     {
         List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);

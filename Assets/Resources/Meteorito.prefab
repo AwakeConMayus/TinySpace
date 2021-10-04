@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6623791176134881293
+--- !u!1 &30798531466839498
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 715647075228950539}
-  - component: {fileID: 2248001817049856206}
-  - component: {fileID: 418225310290849022}
+  - component: {fileID: 5940099312160347596}
+  - component: {fileID: 4950445958698487049}
+  - component: {fileID: 6795035010945194297}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -18,35 +18,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &715647075228950539
+--- !u!4 &5940099312160347596
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6623791176134881293}
+  m_GameObject: {fileID: 30798531466839498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 7698681891006637961}
+  m_Father: {fileID: 3555085584603238990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2248001817049856206
+--- !u!33 &4950445958698487049
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6623791176134881293}
+  m_GameObject: {fileID: 30798531466839498}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &418225310290849022
+--- !u!23 &6795035010945194297
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6623791176134881293}
+  m_GameObject: {fileID: 30798531466839498}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 646657ca03400b24abb822a966b8bd35, type: 2}
+  - {fileID: 2100000, guid: dbe6eea5345414c42b7ab4feac5996c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &7914650244640121104
+--- !u!1 &3915732085393200343
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,55 +87,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7698681891006637961}
-  - component: {fileID: 558210687910649218}
-  - component: {fileID: 3935059490195201988}
-  - component: {fileID: 6743518927480299044}
-  - component: {fileID: 4434676053380554264}
+  - component: {fileID: 3555085584603238990}
+  - component: {fileID: 7862482456145881603}
+  - component: {fileID: 438203072584068067}
+  - component: {fileID: 7352733034201770975}
+  - component: {fileID: 1842189033883354289}
   m_Layer: 0
-  m_Name: Planetas
-  m_TagString: Untagged
+  m_Name: Meteorito
+  m_TagString: Meteorito
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7698681891006637961
+--- !u!4 &3555085584603238990
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914650244640121104}
+  m_GameObject: {fileID: 3915732085393200343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
-  - {fileID: 715647075228950539}
+  - {fileID: 5940099312160347596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &558210687910649218
+--- !u!114 &7862482456145881603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914650244640121104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c504fd2f1b62e54f8074d83b717ac81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clase: 0
-  casilla: {fileID: 0}
-  jugador: 2
---- !u!114 &3935059490195201988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914650244640121104}
+  m_GameObject: {fileID: 3915732085393200343}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -151,26 +136,26 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!135 &6743518927480299044
+--- !u!135 &438203072584068067
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914650244640121104}
+  m_GameObject: {fileID: 3915732085393200343}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4434676053380554264
+--- !u!54 &7352733034201770975
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914650244640121104}
+  m_GameObject: {fileID: 3915732085393200343}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -180,3 +165,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1842189033883354289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915732085393200343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2116adf799a4b48428439477e438d040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clase: 0
+  casilla: {fileID: 0}
+  jugador: 0

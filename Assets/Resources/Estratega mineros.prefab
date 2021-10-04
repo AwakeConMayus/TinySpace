@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 1
+  jugador: 0
   nivel: 1
 --- !u!114 &-4361594507905850228
 MonoBehaviour:
@@ -81,7 +81,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87433546748151837}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5932865, y: 0.55904984, z: 0.63437176}

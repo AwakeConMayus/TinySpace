@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public enum estados
 {
@@ -117,11 +118,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void SetInicialTable()
     {
-        foreach(Casilla c in Tablero.instance.mapa)
-        {
-            ColorearCasillas.instance.initialColor(c);
-            c.Clear();
-        }
-        GestorTurnos.instance.resetTurnos();        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }

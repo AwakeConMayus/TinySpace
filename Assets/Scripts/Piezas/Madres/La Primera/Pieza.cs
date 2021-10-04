@@ -50,7 +50,7 @@ public abstract class Pieza : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Casilla>())
         {

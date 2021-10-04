@@ -56,6 +56,17 @@ public static class FiltroCasillas
         return resultado;
     }
 
+    public static List<Casilla> CasillasSinMeteorito(List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+        foreach (Casilla candidata in listaBase)
+        {
+            if (!candidata.meteorito) resultado.Add(candidata);
+        }
+        return resultado;
+    }
+
     public static List<Casilla> CasillasDeUnTipo(Clase clase, List<Casilla> listaBase = null)
     {
         if (listaBase == null) listaBase = Tablero.instance.mapa;
