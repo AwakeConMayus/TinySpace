@@ -6,13 +6,18 @@ public class PoderColono : Poder
 {
     [SerializeField]
     GameObject planeta;
+    [SerializeField]
+    int planetasFase1 = 1;
+
+    int planetasColocados = 0;
 
     bool SetPlaneta = false;
 
-    private void Start()
+    private void Awake()
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
     }
+    
 
     public override void InitialAction()
     {
@@ -65,5 +70,8 @@ public class PoderColono : Poder
             }
             SetPlaneta = false;
         }
+
+
+        if (++planetasColocados < planetasFase1) FirstAction();
     }
 }

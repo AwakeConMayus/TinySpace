@@ -57,7 +57,4 @@ public abstract class Pieza : MonoBehaviour
             Colocar(other.gameObject.GetComponent<Casilla>());
         }
     }
-
 }
-
-

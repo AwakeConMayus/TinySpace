@@ -34,8 +34,8 @@ public class GestorTurnos : MonoBehaviour
         if (faseTurno % 2 == 0) player = !player;
 
         //* Obtiene un valor 1 o 2 del bool player para tener un número que darle a pieza.jugador
-        if (!player) playerNum = 1;
-        else playerNum = 2;
+        if (!player) playerNum = 0;
+        else playerNum = 1;
 
         Debug.Log("Ha jugado Player " + playerNum);
         

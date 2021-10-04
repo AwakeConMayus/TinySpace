@@ -1,0 +1,80 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PoderMaquinista : Poder
+{
+    Casilla origen;
+    Casilla destino;
+    GameObject pieza;
+
+    bool selectOrigen = false;
+    bool selectDestino = false;
+
+    private void Awake()
+    {
+        EventManager.StartListening("ClickCasilla", SelectOrigen);
+        EventManager.StartListening("ClickCasilla", SelectDestino);
+    }
+
+    public override void InitialAction()
+    {
+        print("Faltan los inerales por implementar");
+    }
+
+    public override void FirstAction()
+    {
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+
+        ColorearCasillas.instance.initialColor();
+        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+
+        selectOrigen = true;
+    }
+
+    public override void SecondAction()
+    {
+        FirstAction();
+    }
+
+    void SelectOrigen ()
+    {
+        if (!selectOrigen) return;
+        Casilla c = ClickCasillas.casillaClick;
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+        if (casillasPosibles.Contains(c))
+        {
+            pieza = c.pieza.gameObject;
+            origen = c;
+            selectOrigen = false;
+            FirstAction2();
+        }
+    }
+    void FirstAction2()
+    {
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasLibres();
+
+        ColorearCasillas.instance.initialColor();
+        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+
+        selectDestino = true;
+    }
+    void SelectDestino()
+    {
+        if (!selectDestino) return;
+        Casilla c = ClickCasillas.casillaClick;
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasLibres();
+        if (casillasPosibles.Contains(c))
+        {
+            destino = c;
+            selectDestino = false;
+            Teleport();
+        }
+    }
+    void Teleport()
+    {
+        pieza.transform.position = destino.transform.position;
+        origen.pieza = null;
+        ColorearCasillas.instance.initialColor();
+    }
+}

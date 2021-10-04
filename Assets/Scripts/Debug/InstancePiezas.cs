@@ -37,15 +37,14 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        EventManager.StartListening("CrearPieza", CrearPieza);
+        EventManager.StartListening("ClickCasilla", CrearPieza);
     }
 
 
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        pieza.GetComponent<Pieza>().jugador = GestorTurnos.instance.getPlayer();
-        //Debug.Log("Pieza asociada al Player " + GestorTurnos.instance.getPlayer());
+        pieza.GetComponent<Pieza>().jugador = jugador;
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
@@ -123,19 +122,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             ColorearCasillas.instance.initialColor(c);
             c.Clear();
         }
-        GestorTurnos.instance.resetTurnos();
-        for (int i = 0; i < 3; i++)
-        {
-            int rnd;
-            do
-            {
-                rnd = Random.Range(0, Tablero.instance.mapa.Count);
-            } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
-
-            GameObject thisPieza = Instantiate(planeta);
-            thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
-            thisPieza.GetComponent<Pieza>().jugador = 1;
-            thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
-        }
+        GestorTurnos.instance.resetTurnos();        
     }
 }
