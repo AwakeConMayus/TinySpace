@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TextMineral : MonoBehaviour
 {
     [SerializeField]
-    PoderMineros poder;
+    OpcionesMineros poder;
     Text texto;
 
     private void Awake()
@@ -22,7 +22,6 @@ public class TextMineral : MonoBehaviour
 
     public void ActualizarTextoMineral()
     {
-        print("actualizo");
         texto.text = "Mineral: " + poder.mineral;
     }
 

@@ -13,7 +13,12 @@ public enum estados
 
 public class InstancePiezas : MonoBehaviourPunCallbacks
 {
-
+    public static InstancePiezas instance;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this.gameObject);
+    }
     //AVISO IMPORTANTE: el objeto en el que vaya este script debe tener un componente photonView
 
     [HideInInspector]
@@ -94,7 +99,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             //    else ColorearCasillas.instance.initialColor(casilla);
             //}
 
-            
+            EventManager.TriggerEvent("ColocarPieza");
             estado = estados.SelectPieza;
 
             ColorearCasillas.instance.initialColor();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Comodin : Efecto
+public class Comodin : EfectoEspecial
 {
     public override void Accion()
     {
