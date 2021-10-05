@@ -9,6 +9,10 @@ public abstract class PoderMineros : Poder
     public int mineral = 5;
     GameObject meteorito;
 
+    private void Start()
+    {
+        EventManager.StartListening("RecogerMineral", RecogerMineral);
+    }
     public void RecogerMineral()
     {
         ++mineral;
@@ -28,7 +32,6 @@ public abstract class PoderMineros : Poder
 
     public override void InitialAction()
     {
-        EventManager.StartListening("RecogerMineral", RecogerMineral);
         meteorito = Resources.Load("Meteorito", typeof(GameObject)) as GameObject;
         meteorito.GetComponent<Pieza>().jugador = jugador;
 
