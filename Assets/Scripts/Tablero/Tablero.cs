@@ -115,7 +115,7 @@ public class Tablero : MonoBehaviour
     }
 
     [PunRPC]
-    public void RPC_Move_FromC_ToC(int i, int j)
+    public void RPC_Move_FromC_ToC1(int i, int j)
     {
         Casilla c = mapa[i];
         c.pieza.transform.position = mapa[j].transform.position;
