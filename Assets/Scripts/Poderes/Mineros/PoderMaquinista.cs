@@ -70,8 +70,24 @@ public class PoderMaquinista : PoderMineros
     }
     void Teleport()
     {
-        pieza.transform.position = destino.transform.position;
-        origen.pieza = null;
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            if (pieza.GetPhotonView().IsMine)
+            {
+                pieza.transform.position = destino.transform.position;
+            }
+            else
+            {
+                int i = Tablero.instance.Get_Numero_Casilla(origen.gameObject);
+                int j = Tablero.instance.Get_Numero_Casilla(destino.gameObject);
+                base.photonView.RPC("RPC_Move_FromC_ToC", RpcTarget.Others, i, j);
+            }
+        }
+        else
+        {
+            pieza.transform.position = destino.transform.position;
+        }
+
         ColorearCasillas.instance.initialColor();
     }
 }
