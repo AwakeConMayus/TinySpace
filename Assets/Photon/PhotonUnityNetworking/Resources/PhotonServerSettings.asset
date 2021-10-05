@@ -42,6 +42,7 @@ MonoBehaviour:
   - PColocarPieza
   - RPC_ColocarPieza
   - RPC_realizarJugada
+  - RPC_LlenarCasillaConMeteorito
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -13,6 +13,9 @@ public enum estados
 
 public class InstancePiezas : MonoBehaviourPunCallbacks
 {
+
+    //AVISO IMPORTANTE: el objeto en el que vaya este script debe tener un componente photonView
+
     [HideInInspector]
     public GameObject pieza;
     [HideInInspector]

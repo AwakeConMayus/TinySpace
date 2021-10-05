@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class PoderColono : Poder
 {
     [SerializeField]
@@ -29,8 +29,14 @@ public class PoderColono : Poder
                 rnd = Random.Range(0, Tablero.instance.mapa.Count);
             } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
 
+            if(PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, rnd);
+
+            }
             GameObject thisPieza = Instantiate(planeta);
             thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
+            Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
     }
 
@@ -72,5 +78,13 @@ public class PoderColono : Poder
 
 
         if (++planetasColocados < planetasFase1) FirstAction();
+    }
+
+    [PunRPC]
+    public void RPC_InstanciarPlaneta(int i)
+    {
+        GameObject thisPieza = Instantiate(planeta);
+        thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
+        Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();
     }
 }

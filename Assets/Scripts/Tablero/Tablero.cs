@@ -112,5 +112,4 @@ public class Tablero : MonoBehaviour
         }
         return mapa[numero].GetComponent<Casilla>();
     }
-
 }

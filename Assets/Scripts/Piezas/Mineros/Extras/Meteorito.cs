@@ -47,9 +47,7 @@ public class Meteorito : Pieza
 
     public override void Colocar(Casilla c)
     {
-        print("colocar");
         casilla = c;
-        casilla.meteorito = true;
     }
 
     private void OnDestroy()
