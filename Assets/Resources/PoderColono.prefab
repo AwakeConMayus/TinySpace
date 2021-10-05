@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugador: 0
   planeta: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
+  planetasFase1: 1

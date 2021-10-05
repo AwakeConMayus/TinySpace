@@ -85,7 +85,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
                 // Instanciacion de piezas en el offline
                 GameObject thisPieza = Instantiate(pieza);
                 thisPieza.transform.position = c.transform.position;
-                GestorTurnos.instance.realizarJugada();
+                //GestorTurnos.instance.realizarJugada();
             }
 
             //foreach (Casilla casilla in Tablero.instance.mapa)

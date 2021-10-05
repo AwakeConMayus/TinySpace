@@ -68,11 +68,7 @@ public class PoderColono : Poder
             thisPieza.transform.position = c.transform.position;
             thisPieza.GetComponent<Pieza>().Colocar(c);
 
-            foreach (Casilla casilla in Tablero.instance.mapa)
-            {
-                if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
-                else ColorearCasillas.instance.initialColor(casilla);
-            }
+           
             SetPlaneta = false;
         }
 

@@ -8201,12 +8201,12 @@ PrefabInstance:
     - target: {fileID: 4965004640833250895, guid: e2aa146918929d94e8c794009b4cb48e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 942.8199
+      value: -925
       objectReference: {fileID: 0}
     - target: {fileID: 4965004640833250895, guid: e2aa146918929d94e8c794009b4cb48e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 465.49295
+      value: -468
       objectReference: {fileID: 0}
     - target: {fileID: 4965004640833250895, guid: e2aa146918929d94e8c794009b4cb48e,
         type: 3}
@@ -16819,6 +16819,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1796417149}
     m_Modifications:
+    - target: {fileID: 798282256294237362, guid: 929d1a003e8ed384c8e9640e8b51e0da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1878
+      objectReference: {fileID: 0}
+    - target: {fileID: 798282256294237362, guid: 929d1a003e8ed384c8e9640e8b51e0da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -921
+      objectReference: {fileID: 0}
     - target: {fileID: 6246422305320248225, guid: 929d1a003e8ed384c8e9640e8b51e0da,
         type: 3}
       propertyPath: m_Name
@@ -16878,6 +16888,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037798210458017644, guid: 929d1a003e8ed384c8e9640e8b51e0da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037798210458017644, guid: 929d1a003e8ed384c8e9640e8b51e0da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037798210458017644, guid: 929d1a003e8ed384c8e9640e8b51e0da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929d1a003e8ed384c8e9640e8b51e0da, type: 3}

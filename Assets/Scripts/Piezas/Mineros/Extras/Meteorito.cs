@@ -19,15 +19,7 @@ public class Meteorito : Pieza
         clase = Clase.none;
     }
 
-    /*private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.GetComponent<Pieza>())
-        {
-            Pieza p = other.gameObject.GetComponent<Pieza>();
-            if (p.jugador == jugador) EventManager.TriggerEvent("RecogerMineral");
-            Destroy(this.gameObject);
-        }
-    }*/
+    
 
     protected override void OnTriggerEnter(Collider other)
     {

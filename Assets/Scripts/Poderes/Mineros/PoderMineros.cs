@@ -12,7 +12,7 @@ public abstract class PoderMineros : Poder
     public void RecogerMineral()
     {
         ++mineral;
-        print("Recogido" + mineral);
+        EventManager.TriggerEvent("CambioMineral");
     }
 
     public bool GastarMineral(int i)
@@ -20,6 +20,7 @@ public abstract class PoderMineros : Poder
         if (mineral >= i)
         {
             mineral -= i;
+            EventManager.TriggerEvent("CambioMineral");
             return true;
         }
         else return false;

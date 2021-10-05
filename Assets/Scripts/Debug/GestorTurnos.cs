@@ -37,11 +37,11 @@ public class GestorTurnos : MonoBehaviour
         if (!player) playerNum = 0;
         else playerNum = 1;
 
-        Debug.Log("Ha jugado Player " + playerNum);
+        //Debug.Log("Ha jugado Player " + playerNum);
         
         ++faseTurno;
        
-        Debug.Log("Turno Jugado " + turno + " - Fase del Turno " + (faseTurno-1));
+        //Debug.Log("Turno Jugado " + turno + " - Fase del Turno " + (faseTurno-1));
 
         //* Si faseTurno llega a 3, vuelve a ser 1 y se avanza al siguiente turno
         if (faseTurno == 3)
