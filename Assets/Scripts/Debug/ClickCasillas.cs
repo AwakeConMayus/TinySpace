@@ -32,7 +32,6 @@ public class ClickCasillas : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 casillaClick = hit.collider.GetComponent<Casilla>();
-                if(casillaClick) Debug.Log("HE clikeado esta casilla " + casillaClick.transform.position);
                 EventManager.TriggerEvent("ClickCasilla");
 
                 //coloreador.reColor("yellow", CasillaHit);
