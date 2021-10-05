@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public class Tablero : MonoBehaviour
 {
@@ -112,12 +111,5 @@ public class Tablero : MonoBehaviour
             return null;
         }
         return mapa[numero].GetComponent<Casilla>();
-    }
-
-    [PunRPC]
-    public void RPC_Move_FromC_ToC1(int i, int j)
-    {
-        Casilla c = mapa[i];
-        c.pieza.transform.position = mapa[j].transform.position;
     }
 }

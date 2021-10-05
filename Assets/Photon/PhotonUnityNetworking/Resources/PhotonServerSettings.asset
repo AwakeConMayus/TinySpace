@@ -46,6 +46,7 @@ MonoBehaviour:
   - RPC_InstanciarPlaneta
   - RPC_Move_FromC_ToC
   - RPC_Move_FromC_ToC1
+  - RPC_Move_FromC_ToC2
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
