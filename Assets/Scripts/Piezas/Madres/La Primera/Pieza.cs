@@ -57,4 +57,12 @@ public abstract class Pieza : MonoBehaviour
             Colocar(other.gameObject.GetComponent<Casilla>());
         }
     }
+
+    protected virtual void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.GetComponent<Casilla>())
+        {
+            other.gameObject.GetComponent<Casilla>().pieza = null;
+        }
+    }
 }
