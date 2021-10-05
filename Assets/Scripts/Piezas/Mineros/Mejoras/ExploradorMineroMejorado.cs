@@ -10,7 +10,7 @@ public class ExploradorMineroMejorado : ExploradorMinero
         int puntos = 4;
         foreach (Casilla c in casilla.adyacentes)
         {
-            if(c.pieza != null)
+            if(c && c.pieza)
             {
                 puntos = 0;
                 break;
