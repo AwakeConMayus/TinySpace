@@ -103,6 +103,8 @@ public static class FiltroCasillas
         List<Casilla> resultado = new List<Casilla>();
         foreach (Casilla candidata in listaBase)
         {
+            Debug.Log(jugador);
+            if (candidata.pieza) Debug.Log(candidata.pieza.jugador);
             if (candidata.pieza && candidata.pieza.jugador == jugador) resultado.Add(candidata);
         }
         return resultado;
