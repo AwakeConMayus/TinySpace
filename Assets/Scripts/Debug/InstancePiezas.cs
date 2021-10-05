@@ -53,7 +53,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        pieza.GetComponent<Pieza>().jugador = jugador;
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
