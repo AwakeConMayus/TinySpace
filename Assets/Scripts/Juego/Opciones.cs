@@ -25,27 +25,25 @@ public abstract class Opciones : MonoBehaviour
             g.GetComponent<Pieza>().jugador = jugador;
         }
 
-        List<int> repetidos = new List<int>();
+        List<int> disponibles = new List<int>();
+        for (int i = 0; i < 5; i++)
+        {
+            disponibles.Add(i);
+        }
         int numero;
 
         for (int i = 0; i < 3; i++)
         {
-            do
-            {
-                numero = Random.Range(0, opcionesIniciales.Length);
-            } while (repetidos.Contains(numero));
+            numero = disponibles[Random.Range(0, disponibles.Count)];
             opcionesDisponibles.Add(numero);
-            repetidos.Add(numero);
+            disponibles.Remove(numero);
         }
 
         for (int i = 0; i < 2; i++)
         {
-            do
-            {
-                numero = Random.Range(0, opcionesIniciales.Length);
-            } while (repetidos.Contains(numero));
+            numero = disponibles[Random.Range(0, disponibles.Count)];
             opcionesEnfriamiento.Add(numero);
-            repetidos.Add(numero);
+            disponibles.Remove(numero);
         }
         EventManager.TriggerEvent("RotacionOpciones");
     }
