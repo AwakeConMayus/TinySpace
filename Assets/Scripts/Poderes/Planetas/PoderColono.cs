@@ -67,9 +67,17 @@ public class PoderColono : Poder
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
         if (casillasPosibles.Contains(c))
         {
-            GameObject thisPieza = Instantiate(planeta);
-            thisPieza.transform.position = c.transform.position;
-            thisPieza.GetComponent<Pieza>().Colocar(c);
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject));
+
+            }
+            else
+            {
+                GameObject thisPieza = Instantiate(planeta);
+                thisPieza.transform.position = c.transform.position;
+                thisPieza.GetComponent<Pieza>().Colocar(c);
+            }
 
            
             SetPlaneta = false;
