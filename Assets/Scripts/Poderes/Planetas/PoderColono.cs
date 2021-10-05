@@ -29,14 +29,17 @@ public class PoderColono : Poder
                 rnd = Random.Range(0, Tablero.instance.mapa.Count);
             } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
 
-            if(PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, rnd);
 
             }
-            GameObject thisPieza = Instantiate(planeta);
-            thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
-            Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
+            else
+            {
+                GameObject thisPieza = Instantiate(planeta);
+                thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
+                Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
+            }
         }
     }
 
