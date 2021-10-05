@@ -18,7 +18,7 @@ public class TextoOpciones : MonoBehaviour
 
     public void Actualizar()
     {
-        print(opciones.opcionesDisponibles.Count);
+        if (opciones.opcionesDisponibles.Count == 0) return;
         b1.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[0]].name;
         b2.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[1]].name;
         b3.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[2]].name;
