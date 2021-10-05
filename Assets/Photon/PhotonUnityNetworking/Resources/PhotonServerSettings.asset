@@ -43,6 +43,7 @@ MonoBehaviour:
   - RPC_ColocarPieza
   - RPC_realizarJugada
   - RPC_LlenarCasillaConMeteorito
+  - RPC_InstanciarPlaneta
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
