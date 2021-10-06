@@ -41,6 +41,7 @@ public class PoderColono : Poder
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
             }
         }
+        ColorearCasillas.instance.initialColor();
     }
 
 
@@ -83,6 +84,7 @@ public class PoderColono : Poder
             SetPlaneta = false;
         }
 
+        ColorearCasillas.instance.initialColor();
 
         if (++planetasColocados < planetasFase1) FirstAction();
     }
