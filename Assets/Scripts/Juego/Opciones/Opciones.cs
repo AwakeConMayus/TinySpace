@@ -20,6 +20,7 @@ public abstract class Opciones : MonoBehaviour
 
     public void Preparacion()
     {
+        Instantiate(poder, transform);
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
         foreach (GameObject g in opcionesIniciales)
