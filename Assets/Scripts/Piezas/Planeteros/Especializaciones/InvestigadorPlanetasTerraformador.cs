@@ -17,7 +17,7 @@ public class InvestigadorPlanetasTerraformador : InvestigadorPlanetas
             {
                 foreach (Casilla adyacente2 in adyacente.adyacentes)
                 {
-                    if (adyacente2 && adyacente2 != casilla && adyacente2.pieza && adyacente2.pieza.clase == Clase.investigador && adyacente2.pieza.jugador == jugador)
+                    if (adyacente2 && adyacente2 != casilla && adyacente2.pieza && adyacente2.pieza.clase == Clase.investigador && adyacente2.pieza.Get_Jugador() == jugador)
                     {
                         return 0;
                     }

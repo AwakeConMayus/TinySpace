@@ -31,7 +31,7 @@ public class Meteorito : Pieza
         if (other.gameObject.GetComponent<Pieza>() && !other.CompareTag("Meteorito"))
         {
             Pieza p = other.gameObject.GetComponent<Pieza>();
-            if (p.jugador == jugador) EventManager.TriggerEvent("RecogerMineral");
+            if (p.Get_Jugador() == jugador) EventManager.TriggerEvent("RecogerMineral");
             Destroy(this.gameObject);
         }
     }

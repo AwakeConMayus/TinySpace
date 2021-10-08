@@ -33,7 +33,7 @@ public abstract class Opciones : MonoBehaviour
         poder.GetComponent<Poder>().jugador = jugador;
         foreach (GameObject g in opcionesIniciales)
         {
-            g.GetComponent<Pieza>().jugador = jugador;
+            g.GetComponent<Pieza>().Set_Jugador(jugador);
         }
 
         List<int> disponibles = new List<int>();

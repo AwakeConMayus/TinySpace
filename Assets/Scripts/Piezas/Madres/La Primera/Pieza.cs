@@ -23,8 +23,8 @@ public abstract class Pieza : MonoBehaviour
 
     [HideInInspector]
     public Casilla casilla;
-    [HideInInspector]
-    public int jugador;
+
+    protected int jugador;
 
     private void Awake()
     {
@@ -66,5 +66,13 @@ public abstract class Pieza : MonoBehaviour
         {
             other.gameObject.GetComponent<Casilla>().pieza = null;
         }
+    }
+    public void Set_Jugador(int _jugador)
+    {
+        jugador = _jugador;
+    }
+    public int Get_Jugador()
+    {
+        return jugador;
     }
 }

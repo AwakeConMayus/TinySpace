@@ -13,7 +13,7 @@ public abstract class PoderMineros : Poder
     public override void InitialAction()
     {
         meteorito = Resources.Load("Meteorito", typeof(GameObject)) as GameObject;
-        meteorito.GetComponent<Pieza>().jugador = jugador;
+        meteorito.GetComponent<Pieza>().Set_Jugador(jugador);
 
 
         for (int i = 0; i < 10; i++)

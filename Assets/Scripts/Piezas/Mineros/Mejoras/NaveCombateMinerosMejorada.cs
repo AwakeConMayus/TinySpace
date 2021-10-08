@@ -10,7 +10,7 @@ public class NaveCombateMinerosMejorada : NaveCombateMineros
         int puntos =  base.Puntos();
         foreach(Casilla c in casilla.adyacentes)
         {
-            if(c && c.pieza && c.pieza.CompareClase(Clase.combate) && c.pieza.jugador != jugador)
+            if(c && c.pieza && c.pieza.CompareClase(Clase.combate) && c.pieza.Get_Jugador() != jugador)
             {
                 puntos += 1;
             }
