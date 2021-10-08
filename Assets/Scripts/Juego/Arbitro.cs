@@ -25,7 +25,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
-        EventManager.StartListening("AccionTerminadaIndividual", NextTurnoIndividual);
 
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
         {
@@ -76,11 +75,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (specialPhase) SpecialTurn();
         else Turn();
     }
-    public void NextTurnoIndividual()
-    {
-        if (specialPhase) SpecialTurn();
-        else Turn();
-    }
+
     void SpecialTurn()
     {
         bool estaVezToca = specialActive;
@@ -102,7 +97,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             specialActive = !specialActive;
         }
-
 
         if (estaVezToca) 
         {
@@ -131,6 +125,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             EndGame();
         }
+        Debug.Log(active);
+        Debug.Log(turno);
         if (!active)
         {
             if (inputActive) SwitchActive();
