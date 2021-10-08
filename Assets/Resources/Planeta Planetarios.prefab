@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4434676053380554264}
   - component: {fileID: 8868155255084135518}
   m_Layer: 0
-  m_Name: Planetas
+  m_Name: Planeta Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 2
+  jugador: 0
 --- !u!114 &3935059490195201988
 MonoBehaviour:
   m_ObjectHideFlags: 0

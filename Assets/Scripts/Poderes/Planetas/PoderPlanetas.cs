@@ -28,6 +28,7 @@ public abstract class PoderPlanetas : Poder
             {
                 GameObject thisPieza = Instantiate(planeta);
                 thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
+                thisPieza.GetComponent<Pieza>().jugador = jugador;
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
             }
         }

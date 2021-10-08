@@ -113,7 +113,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             }
         }
 
-        Debug.Log("Mineros: " + puntuaciones[0] + " / Planetarios: " + puntuaciones[1]);
+        Debug.Log("JugadorInicial: " + puntuaciones[0] + " / " + puntuaciones[1]);
     }
 
     public void SetInicialTable()

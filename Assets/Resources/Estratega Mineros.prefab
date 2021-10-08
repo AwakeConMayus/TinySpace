@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4337057069886504184}
   - component: {fileID: 315673364861665892}
   m_Layer: 0
-  m_Name: Estratega mineros
+  m_Name: Estratega Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

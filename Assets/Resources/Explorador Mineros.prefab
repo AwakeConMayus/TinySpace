@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 766544111927328113}
   - component: {fileID: 6073622353305821440}
   m_Layer: 0
-  m_Name: Explorador Minero
+  m_Name: Explorador Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

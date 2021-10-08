@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8822648280087641938}
   - component: {fileID: 1040492222989550201}
   m_Layer: 0
-  m_Name: Investigador planeteros
+  m_Name: Investigador Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 2
+  jugador: 0
 --- !u!114 &4044044366169718778
 MonoBehaviour:
   m_ObjectHideFlags: 0

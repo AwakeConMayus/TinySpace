@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8156218396458623999}
   - component: {fileID: 2676887809942984053}
   m_Layer: 0
-  m_Name: Combate planetas colonizadores
+  m_Name: Combate Planetarios Colonizadores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
