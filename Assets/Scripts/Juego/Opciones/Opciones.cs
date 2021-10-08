@@ -16,6 +16,8 @@ public abstract class Opciones : MonoBehaviour
 
     protected int opcionActual = -1;
 
+    public bool active = true;
+
     public void Preparacion()
     {
         EventManager.StartListening("ColocarPieza", Rotar);
@@ -50,6 +52,7 @@ public abstract class Opciones : MonoBehaviour
 
     public virtual void Seleccion(int i)
     {
+        if (!active) return;
         opcionActual = i;
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
     }
