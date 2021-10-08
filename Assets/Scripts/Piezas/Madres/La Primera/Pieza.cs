@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 
 public enum Clase
@@ -30,7 +31,6 @@ public abstract class Pieza : MonoBehaviour
         SetClase();
     }
 
-    public bool colocacionEfectiva = false;
     public abstract int Puntos();
 
     public abstract List<Casilla> CasillasDisponibles();
@@ -41,7 +41,7 @@ public abstract class Pieza : MonoBehaviour
     {
         casilla = c;
         casilla.pieza = this;
-        if(colocacionEfectiva) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(this.gameObject.GetPhotonView().IsMine) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public virtual bool CompareClase(Clase compare)

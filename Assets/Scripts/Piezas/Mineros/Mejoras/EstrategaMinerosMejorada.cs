@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class EstrategaMinerosMejorada : Efecto
 {
@@ -8,8 +9,8 @@ public class EstrategaMinerosMejorada : Efecto
     {
         EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
         ++objetivo.nivel;
-        if(colocacionEfectiva)
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+
+        if (this.gameObject.GetPhotonView().IsMine) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override List<Casilla> CasillasDisponibles()
