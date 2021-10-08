@@ -66,10 +66,11 @@ public class PoderColono : PoderPlanetas
     }
 
     [PunRPC]
-    public void RPC_InstanciarPlaneta(int i)
+    public void RPC_InstanciarPlaneta(int i, int _jugador)
     {
         GameObject thisPieza = Instantiate(planeta);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
+        thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();
     }
 }
