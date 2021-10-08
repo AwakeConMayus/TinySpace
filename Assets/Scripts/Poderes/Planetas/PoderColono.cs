@@ -70,7 +70,6 @@ public class PoderColono : PoderPlanetas
     {
         GameObject thisPieza = Instantiate(planeta);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
-        thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();
     }
 }

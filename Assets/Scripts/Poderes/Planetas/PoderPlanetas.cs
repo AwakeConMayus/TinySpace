@@ -13,6 +13,7 @@ public abstract class PoderPlanetas : Poder
         for (int i = 0; i < 3; i++)
         {
             List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
+            planeta.GetComponent<Pieza>().Set_Jugador(jugador);
             int rnd;
             do
             {
@@ -28,7 +29,6 @@ public abstract class PoderPlanetas : Poder
             {
                 GameObject thisPieza = Instantiate(planeta);
                 thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
             }
         }

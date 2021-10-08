@@ -69,6 +69,8 @@ public abstract class Pieza : MonoBehaviour
     }
     public void Set_Jugador(int _jugador)
     {
+        Debug.Log(this.gameObject.name);
+        Debug.Log("seteo a jugador: " + _jugador);
         jugador = _jugador;
     }
     public int Get_Jugador()

@@ -109,6 +109,9 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         {
             if (c.pieza)
             {
+                Debug.Log(c.pieza.name);
+                Debug.Log(c.pieza.Puntos());
+                Debug.Log(c.pieza.Get_Jugador());
                 puntuaciones[c.pieza.Get_Jugador()] += c.pieza.Puntos();
             }
         }
