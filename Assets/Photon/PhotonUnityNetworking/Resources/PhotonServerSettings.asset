@@ -48,6 +48,7 @@ MonoBehaviour:
   - RPC_Move_FromC_ToC1
   - RPC_Move_FromC_ToC2
   - RPC_SetNotInitial
+  - RPC_NextTurn
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
