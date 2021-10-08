@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public abstract class Opciones : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public abstract class Opciones : MonoBehaviour
     public void PrepararPreparacion()
     {
         print("preparo la preparacion");
-        Instantiate(poder, transform);
+        PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
     }
 
     public void Preparacion()
