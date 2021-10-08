@@ -29,6 +29,12 @@ public abstract class Pieza : MonoBehaviour
     private void Awake()
     {
         SetClase();
+
+        if (this.gameObject.GetPhotonView().IsMine)
+        {
+            jugador = InstancePiezas.instance.jugador;
+            Debug.Log("se setea una pieza");
+        }
     }
 
     public abstract int Puntos();

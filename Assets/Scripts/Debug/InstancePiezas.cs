@@ -38,9 +38,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     
 
     public void SetJugador(int player)
-    //// esta función debería estar deprecated puesto que setPieza obtiene el player del Gestor de turnos
-    //// la dejo de momento porque puede ser util usando un .setPlayer en el Gestor y porque es llamada por
-    //// los botones de select facción (que también están deprecated y ocultos en la UI)
     {
         jugador = player;
         ColorearCasillas.instance.initialColor();
@@ -79,7 +76,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             {
                 // Instanciacion que utiliza photon
                 PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-
+                
             }
             else
             {
