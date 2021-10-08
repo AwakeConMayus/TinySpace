@@ -22,7 +22,7 @@ public abstract class Opciones : MonoBehaviour
     public void PrepararPreparacion()
     {
         print("preparo la preparacion");
-        PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
+        poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
     }
 
     public void Preparacion()
