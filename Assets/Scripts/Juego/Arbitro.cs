@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Arbitro : MonoBehaviour
 {
-    public Opciones player;
+    public List<Opciones> opciones;
+    Opciones player;
     bool active;
     bool specialActive;
 
@@ -19,11 +22,30 @@ public class Arbitro : MonoBehaviour
         EventManager.StartListening("AccionTerminada", NextTurn);
     }
 
-    public void SetInitial(bool initialPlayer)
+    public void SetInitial()
     {
-        active = specialActive = initialPlayer;
-        if (initialPlayer) player.jugador = 0;
-        else player.jugador = 1;
+        active = specialActive = true;
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                player = opciones[0];
+                //Llamar a SetNotInitial(1) al otro arbitro;
+                break;
+            case 1:
+                player = opciones[1];
+                //Llamar a SetNotInitial(0) al otro arbitro;
+                break;
+        }
+        player.gameObject.SetActive(true);
+        player.jugador = 0;
+    }
+
+    public void SetNotInitial(int i)
+    {
+        active = specialActive = false;
+        player = opciones[i];
+        player.gameObject.SetActive(true);
+        player.jugador = 1;
     }
 
     public void NextTurn()
