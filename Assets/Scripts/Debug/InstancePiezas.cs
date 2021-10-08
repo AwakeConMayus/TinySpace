@@ -108,9 +108,10 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         //if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
     }
 
+    public int[] puntuaciones = new int[2];
     public void RecuentoPuntosTest()
     {
-        int[] puntuaciones = new int[2];
+        
 
         foreach(Casilla c in Tablero.instance.mapa)
         {
@@ -120,7 +121,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             }
         }
 
-        print("Mineros: " + puntuaciones[0] + " / Planetas: " + puntuaciones[1]);
+        print("Mineros: " + puntuaciones[0] + " / Planetarios: " + puntuaciones[1]);
     }
 
     public void SetInicialTable()
