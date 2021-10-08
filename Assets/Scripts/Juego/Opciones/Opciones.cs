@@ -17,6 +17,7 @@ public abstract class Opciones : MonoBehaviour
 
     protected int opcionActual = -1;
 
+    [HideInInspector]
     public bool active = true;
 
     public void PrepararPreparacion()
@@ -27,6 +28,7 @@ public abstract class Opciones : MonoBehaviour
 
     public void Preparacion()
     {
+        active = true;
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
         foreach (GameObject g in opcionesIniciales)
@@ -59,6 +61,7 @@ public abstract class Opciones : MonoBehaviour
 
     public virtual void Seleccion(int i)
     {
+        print(active);
         if (!active) return;
         opcionActual = i;
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);

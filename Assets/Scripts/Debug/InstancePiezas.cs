@@ -35,10 +35,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     List<Casilla> casillasPosibles = new List<Casilla>();
 
-    private int[] puntuaciones = new int[2];
-
-    public int getPuntuacion(int n) { return puntuaciones[n]; }
-    public int[] getPuntuacion() { return puntuaciones; }
+    
 
     public void SetJugador(int player)
     //// esta función debería estar deprecated puesto que setPieza obtiene el player del Gestor de turnos
@@ -63,11 +60,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
         
-        //* Pinta de rojo las casillas sobre las que ha posicionado una pieza el rival
-        //foreach (Casilla casilla in Tablero.instance.mapa) 
-        //{
-        //    if (casilla.pieza && casilla.pieza.jugador != jugador) coloreador.reColor("red", casilla);
-        //}
+    
 
         estado = estados.SelectCasilla;
     }
@@ -96,11 +89,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
                 //GestorTurnos.instance.realizarJugada();
             }
 
-            //foreach (Casilla casilla in Tablero.instance.mapa)
-            //{
-            //    if (casilla.pieza && casilla.pieza.jugador != jugador) ColorearCasillas.instance.reColor("red", casilla);
-            //    else ColorearCasillas.instance.initialColor(casilla);
-            //}
+    
 
             EventManager.TriggerEvent("ColocarPieza");
             estado = estados.SelectPieza;
@@ -114,8 +103,9 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void RecuentoPuntosTest()
     {
-        
-        foreach(Casilla c in Tablero.instance.mapa)
+        int[] puntuaciones = new int[2];
+
+        foreach (Casilla c in Tablero.instance.mapa)
         {
             if (c.pieza)
             {

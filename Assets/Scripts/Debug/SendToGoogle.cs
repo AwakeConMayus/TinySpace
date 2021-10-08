@@ -11,11 +11,11 @@ public class SendToGoogle : MonoBehaviour
     string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScwY7iChsmn_QTGxKEIYSI5Ytp0y4j_vGgZI35HpSsV7JQzdQ/formResponse";
 
     //* Función que es llamada por el botón Score (y que será llamada para subir los datos de los usuarios), aquí se obtienen/calculan los datos a subir
-    public void SendOnline()
+    public void SendOnline(int i, int j)
     {
         InstancePiezas.instance.RecuentoPuntosTest();
 
-        StartCoroutine(Upload(InstancePiezas.instance.getPuntuacion(0), InstancePiezas.instance.getPuntuacion(1)));
+        StartCoroutine(Upload(i, j));
     }
 
     //* Corrutina que sube los datos a la red, recibe por parametro todos los datos que vaya a subir

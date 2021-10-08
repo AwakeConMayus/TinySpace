@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8888788d095ddfc4abe3a274e573f2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  jugador: 1
   planeta: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
   planetasFase1: 1
 --- !u!114 &1250324347986563466

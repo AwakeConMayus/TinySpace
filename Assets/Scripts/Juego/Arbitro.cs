@@ -141,6 +141,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SwitchActive()
     {
+        print("switch");
         inputActive = player.active = !inputActive;
     }
 
