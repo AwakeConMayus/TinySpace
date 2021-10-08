@@ -17,8 +17,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
     int numeroPoder = 0;
 
     bool specialPhase = true;
-    int turno0 = 0;
-    int turno1 = 0;
+    int specialTurno = 0;
+    int turno = 0;
 
     bool inputActive = false;
 
@@ -111,12 +111,13 @@ public class Arbitro : MonoBehaviourPunCallbacks
             }
             ++numeroPoder; 
         }
-
-        if (turno0 % 2 != 0)
+        print(specialTurno + "turno especial");
+        print(specialActive);
+        if (specialTurno % 2 != 0)
         {
             specialPhase = false;
         }
-        if (++turno0 % 2 != 0)
+        if (++specialTurno % 2 != 0)
         {
             specialActive = !specialActive;
         }
@@ -124,7 +125,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        if(turno1 >= 19)
+        if(turno >= 19)
         {
             EndGame();
         }
@@ -136,11 +137,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (!inputActive) SwitchActive();
         }
-        if((turno1+1) % 10 == 0)
+        if((turno+1) % 10 == 0)
         {
             specialPhase = true;
         }
-        if (++turno1 % 2 != 0)
+        if (++turno % 2 != 0)
         {
             active = !active;
         }
