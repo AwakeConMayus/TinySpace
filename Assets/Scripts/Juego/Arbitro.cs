@@ -87,35 +87,38 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (inputActive) SwitchActive();
         }
-        else if(specialActive)
+        else if (specialActive)
         {
-            if (!inputActive) SwitchActive();        
+            if (!inputActive) SwitchActive();
         }
-        if(turno0 % 2 != 0)
+        if (turno0 % 2 != 0)
         {
             specialPhase = false;
         }
-        if(++turno0 % 2 != 0)
+        if (++turno0 % 2 != 0)
         {
             specialActive = !specialActive;
         }
 
-        switch (numeroPoder)
+        if (specialActive) 
         {
-            case 0:
-                player.poder.GetComponent<Poder>().InitialAction();
-                break;
+            switch (numeroPoder)
+            {
+                case 0:
+                    player.poder.GetComponent<Poder>().InitialAction();
+                    break;
                 case 1:
-                player.poder.GetComponent<Poder>().FirstAction();
-                break;
-            case 2:
-                player.poder.GetComponent<Poder>().SecondAction();
-                break;
-            default:
-                Debug.Log("el turno de poder no esta de acorde");
-                break;
+                    player.poder.GetComponent<Poder>().FirstAction();
+                    break;
+                case 2:
+                    player.poder.GetComponent<Poder>().SecondAction();
+                    break;
+                default:
+                    Debug.Log("el turno de poder no esta de acorde");
+                    break;
+            }
+            ++numeroPoder; 
         }
-        ++numeroPoder;
     }
 
     void Turn()
