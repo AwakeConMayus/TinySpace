@@ -7,13 +7,12 @@ public class ExploradorMineroMejorado : ExploradorMinero
 
     public override int Puntos()
     {
-        int puntos = 4;
+        int puntos = 0;
         foreach (Casilla c in casilla.adyacentes)
         {
-            if(c && c.pieza)
+            if(c && !c.pieza)
             {
-                puntos = 0;
-                break;
+                puntos += 1;
             }
         }
         return puntos;

@@ -39,6 +39,8 @@ public abstract class PoderMineros : Poder
             }
 
         }
+
+        EventManager.TriggerEvent("AccionTerminada");
     }
 
 

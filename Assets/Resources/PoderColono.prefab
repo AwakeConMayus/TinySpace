@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4965004640833250895}
   - component: {fileID: 8927011953913046043}
+  - component: {fileID: 1250324347986563466}
   m_Layer: 0
   m_Name: PoderColono
   m_TagString: Untagged
@@ -46,3 +47,26 @@ MonoBehaviour:
   jugador: 0
   planeta: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
   planetasFase1: 1
+--- !u!114 &1250324347986563466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320863858920773836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 0}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

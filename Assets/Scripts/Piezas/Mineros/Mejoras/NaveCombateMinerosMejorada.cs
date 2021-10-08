@@ -12,7 +12,7 @@ public class NaveCombateMinerosMejorada : NaveCombateMineros
         {
             if(c && c.pieza && c.pieza.CompareClase(Clase.combate) && c.pieza.jugador != jugador)
             {
-                puntos += 2;
+                puntos += 1;
             }
         }
         return puntos;

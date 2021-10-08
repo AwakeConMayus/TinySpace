@@ -15,7 +15,7 @@ public class NaveCombatePlanetasColonizadores : NaveCombatePlanetas
             if (!adyacente || !adyacente.pieza) continue;
             if(adyacente.pieza.clase == Clase.astros)
             {
-                ++puntos;
+                puntos += 2;
             }
         }
 

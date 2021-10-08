@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public abstract class Opciones : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public abstract class Opciones : MonoBehaviour
     public List<int> opcionesEnfriamiento = new List<int>();
 
     protected int opcionActual = -1;
+
+    public bool active = true;
+
+    public void PrepararPreparacion()
+    {
+        print("preparo la preparacion");
+        poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
+    }
 
     public void Preparacion()
     {
@@ -50,6 +59,7 @@ public abstract class Opciones : MonoBehaviour
 
     public virtual void Seleccion(int i)
     {
+        if (!active) return;
         opcionActual = i;
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
     }

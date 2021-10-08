@@ -44,7 +44,7 @@ public class OpcionesMineros : Opciones
         }
         else if (especial)
         {
-            if (GastarMineral(2))
+            if (GastarMineral(3))
             {
                 opcionActual = i;
                 if(opcionActual < 4) InstancePiezas.instance.SetPieza(mejoras[opcionesDisponibles[i]]);
