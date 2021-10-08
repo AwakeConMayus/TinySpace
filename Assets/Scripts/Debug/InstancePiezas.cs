@@ -80,15 +80,14 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 // Instanciacion que utiliza photon
-                GameObject thisPieza = PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().colocacionEfectiva = true;
+                PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
+
             }
             else
             {
                 // Instanciacion de piezas en el offline
                 GameObject thisPieza = Instantiate(pieza);
                 thisPieza.transform.position = c.transform.position;
-                thisPieza.GetComponent<Pieza>().colocacionEfectiva = true;
                 //GestorTurnos.instance.realizarJugada();
             }
 
