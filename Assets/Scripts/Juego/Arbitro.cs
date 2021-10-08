@@ -48,6 +48,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
                 break;
         }
         player.gameObject.SetActive(true);
+        player.PrepararPreparacion();
         player.jugador = 0;
     }
 
@@ -57,7 +58,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         active = specialActive = false;
         player = opciones[i];
         player.gameObject.SetActive(true);
+        player.PrepararPreparacion();
         player.jugador = 1;
+
+        print("¿Esta preparada la preparacion?");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

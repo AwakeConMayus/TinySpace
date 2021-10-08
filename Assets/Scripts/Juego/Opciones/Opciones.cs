@@ -18,9 +18,14 @@ public abstract class Opciones : MonoBehaviour
 
     public bool active = true;
 
+    public void PrepararPreparacion()
+    {
+        print("preparo la preparacion");
+        Instantiate(poder, transform);
+    }
+
     public void Preparacion()
     {
-        Instantiate(poder, transform);
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
         foreach (GameObject g in opcionesIniciales)
