@@ -14,7 +14,8 @@ public class SendToGoogle : MonoBehaviour
     public void SendOnline()
     {
         InstancePiezas.instance.RecuentoPuntosTest();
-        StartCoroutine(Upload(InstancePiezas.instance.puntuaciones[0], InstancePiezas.instance.puntuaciones[1]));
+
+        StartCoroutine(Upload(InstancePiezas.instance.getPuntuacion(0), InstancePiezas.instance.getPuntuacion(1)));
     }
 
     //* Corrutina que sube los datos a la red, recibe por parametro todos los datos que vaya a subir

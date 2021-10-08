@@ -35,6 +35,11 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     List<Casilla> casillasPosibles = new List<Casilla>();
 
+    private int[] puntuaciones = new int[2];
+
+    public int getPuntuacion(int n) { return puntuaciones[n]; }
+    public int[] getPuntuacion() { return puntuaciones; }
+
     public void SetJugador(int player)
     //// esta función debería estar deprecated puesto que setPieza obtiene el player del Gestor de turnos
     //// la dejo de momento porque puede ser util usando un .setPlayer en el Gestor y porque es llamada por
@@ -107,7 +112,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         //if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
     }
 
-    public int[] puntuaciones = new int[2];
     public void RecuentoPuntosTest()
     {
         
