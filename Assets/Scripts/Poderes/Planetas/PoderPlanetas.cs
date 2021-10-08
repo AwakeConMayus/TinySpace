@@ -12,11 +12,12 @@ public abstract class PoderPlanetas : Poder
     {
         for (int i = 0; i < 3; i++)
         {
+            List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
             int rnd;
             do
             {
                 rnd = Random.Range(0, Tablero.instance.mapa.Count);
-            } while (!planeta.GetComponent<Pieza>().CasillasDisponibles().Contains(Tablero.instance.mapa[rnd]));
+            } while (!casillasPosibles.Contains(Tablero.instance.mapa[rnd]));
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
