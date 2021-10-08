@@ -112,7 +112,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public void RecuentoPuntosTest()
     {
         
-
         foreach(Casilla c in Tablero.instance.mapa)
         {
             if (c.pieza)
