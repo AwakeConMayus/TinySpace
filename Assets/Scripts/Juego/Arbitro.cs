@@ -83,6 +83,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
     }
     void SpecialTurn()
     {
+        bool estaVezToca = specialActive;
+
         if (!specialActive)
         {
             if (inputActive) SwitchActive();
@@ -92,7 +94,17 @@ public class Arbitro : MonoBehaviourPunCallbacks
             if (!inputActive) SwitchActive();
         }
 
-        if (specialActive) 
+        if (specialTurno % 2 != 0)
+        {
+            specialPhase = false;
+        }
+        if (++specialTurno % 2 != 0)
+        {
+            specialActive = !specialActive;
+        }
+
+
+        if (estaVezToca) 
         {
             switch (numeroPoder)
             {
@@ -110,16 +122,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
                     break;
             }
             ++numeroPoder; 
-        }
-        print(specialTurno + "turno especial");
-        print(specialActive);
-        if (specialTurno % 2 != 0)
-        {
-            specialPhase = false;
-        }
-        if (++specialTurno % 2 != 0)
-        {
-            specialActive = !specialActive;
         }
     }
 
