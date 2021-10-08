@@ -26,12 +26,11 @@ public class PoderColono : PoderPlanetas
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);       
 
         SetPlaneta = true;
-        EventManager.TriggerEvent("AccionTerminada");
     }
 
     public override void SecondAction() 
     {
-        EventManager.TriggerEvent("AccionTerminada");
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }  
 
 
@@ -63,6 +62,7 @@ public class PoderColono : PoderPlanetas
         ColorearCasillas.instance.initialColor();
 
         if (++planetasColocados < planetasFase1) FirstAction();
+        else EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     [PunRPC]

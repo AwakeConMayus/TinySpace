@@ -24,7 +24,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        EventManager.StartListening("AccionTerminada", NextTurn);
+        EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
+        EventManager.StartListening("AccionTerminadaIndividual", NextTurnoIndividual);
 
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
         {
@@ -57,9 +58,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player = opciones[i];
         player.gameObject.SetActive(true);
         player.jugador = 1;
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
-    public void NextTurn()
+    public void NextTurnDoble()
     {
         base.photonView.RPC("RPC_NextTurn", RpcTarget.All);
     }
@@ -70,7 +72,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (specialPhase) SpecialTurn();
         else Turn();
     }
-
+    public void NextTurnoIndividual()
+    {
+        if (specialPhase) SpecialTurn();
+        else Turn();
+    }
     void SpecialTurn()
     {
         if (!specialActive)
@@ -126,7 +132,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             specialPhase = true;
         }
-        if (++turno1 % 2 == 0)
+        if (++turno1 % 2 != 0)
         {
             active = !active;
         }

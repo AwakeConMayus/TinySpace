@@ -8,7 +8,7 @@ public class EstrategaMinerosMejorada : Efecto
     {
         EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
         ++objetivo.nivel;
-        EventManager.TriggerEvent("AccionTerminada");
+        EventManager.TriggerEvent("AccionTerminadaIndividual");
     }
 
     public override List<Casilla> CasillasDisponibles()

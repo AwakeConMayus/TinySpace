@@ -31,6 +31,6 @@ public abstract class PoderPlanetas : Poder
             }
         }
         ColorearCasillas.instance.initialColor();
-        EventManager.TriggerEvent("AccionTerminada");
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 }
