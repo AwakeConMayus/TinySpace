@@ -27,6 +27,7 @@ public class PoderMaquinista : PoderMineros
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
 
         selectOrigen = true;
+
     }
 
     public override void SecondAction()

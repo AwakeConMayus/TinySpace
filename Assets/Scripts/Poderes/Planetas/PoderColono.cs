@@ -26,9 +26,13 @@ public class PoderColono : PoderPlanetas
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);       
 
         SetPlaneta = true;
+        EventManager.TriggerEvent("AccionTerminada");
     }
 
-    public override void SecondAction() { }  
+    public override void SecondAction() 
+    {
+        EventManager.TriggerEvent("AccionTerminada");
+    }  
 
 
     

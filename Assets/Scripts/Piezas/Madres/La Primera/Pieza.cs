@@ -30,6 +30,7 @@ public abstract class Pieza : MonoBehaviour
         SetClase();
     }
 
+    public bool colocacionEfectiva = false;
     public abstract int Puntos();
 
     public abstract List<Casilla> CasillasDisponibles();
@@ -40,6 +41,7 @@ public abstract class Pieza : MonoBehaviour
     {
         casilla = c;
         casilla.pieza = this;
+        if(colocacionEfectiva) EventManager.TriggerEvent("AccionTerminada");
     }
 
     public virtual bool CompareClase(Clase compare)

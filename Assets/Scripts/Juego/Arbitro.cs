@@ -14,6 +14,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
     bool active;
     bool specialActive;
 
+    int numeroPoder = 0;
+
     bool specialPhase = true;
     int turno0 = 0;
     int turno1 = 0;
@@ -59,6 +61,12 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     public void NextTurn()
     {
+        base.photonView.RPC("RPC_NextTurn", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void RPC_NextTurn()
+    {
         if (specialPhase) SpecialTurn();
         else Turn();
     }
@@ -68,7 +76,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (!specialActive)
         {
             if (inputActive) SwitchActive();
-            return;
+        }
+        else if(specialActive)
+        {
+            if (!inputActive) SwitchActive();        
         }
         if(turno0 % 2 != 0)
         {
@@ -78,6 +89,23 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             specialActive = !specialActive;
         }
+
+        switch (numeroPoder)
+        {
+            case 0:
+                player.poder.GetComponent<Poder>().InitialAction();
+                break;
+                case 1:
+                player.poder.GetComponent<Poder>().FirstAction();
+                break;
+            case 2:
+                player.poder.GetComponent<Poder>().SecondAction();
+                break;
+            default:
+                Debug.Log("el turno de poder no esta de acorde");
+                break;
+        }
+        ++numeroPoder;
     }
 
     void Turn()
@@ -89,7 +117,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (!active)
         {
             if (inputActive) SwitchActive();
-            return;
+        }
+        else if (active)
+        {
+            if (!inputActive) SwitchActive();
         }
         if((turno1+1) % 10 == 0)
         {
