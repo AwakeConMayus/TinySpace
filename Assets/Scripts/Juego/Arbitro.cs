@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 
 
-public class Arbitro : MonoBehaviour
+public class Arbitro : MonoBehaviourPunCallbacks
 {
+
+    //AVISO: El gameobject en el que vaya este script tiene que tener un photon view o dara error
     public List<Opciones> opciones;
     Opciones player;
     bool active;
@@ -20,6 +23,11 @@ public class Arbitro : MonoBehaviour
     private void Start()
     {
         EventManager.StartListening("AccionTerminada", NextTurn);
+
+        if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
+        {
+            SetInitial();
+        }
     }
 
     public void SetInitial()
@@ -29,18 +37,19 @@ public class Arbitro : MonoBehaviour
         {
             case 0:
                 player = opciones[0];
-                //Llamar a SetNotInitial(1) al otro arbitro;
+                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 1);
                 break;
             case 1:
                 player = opciones[1];
-                //Llamar a SetNotInitial(0) al otro arbitro;
+                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 0);
                 break;
         }
         player.gameObject.SetActive(true);
         player.jugador = 0;
     }
 
-    public void SetNotInitial(int i)
+    [PunRPC]
+    public void RPC_SetNotInitial(int i)
     {
         active = specialActive = false;
         player = opciones[i];

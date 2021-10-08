@@ -4,6 +4,10 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+
+/// <summary>
+/// Script encargado de buscar si hay otros jugadores en una sala o crea una si no hay
+/// </summary>
 public class Matchmaker : MonoBehaviourPunCallbacks
 {
 
