@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NaveCombate : Pieza
+public abstract class NaveCombate : Pieza
 {
     protected override void SetClase()
     {
@@ -17,14 +17,9 @@ public class NaveCombate : Pieza
             if (!adyacente || !adyacente.pieza) continue;
             if(adyacente.pieza.CompareClase(Clase.combate) && adyacente.pieza.jugador == jugador)
             {
-                ++puntos;
+                puntos += 3;
             }
         }
         return puntos;
-    }
-
-    public override List<Casilla> CasillasDisponibles()
-    {
-        throw new System.NotImplementedException();
     }
 }

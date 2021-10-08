@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explorador : Pieza
+public abstract class Explorador : Pieza
 {
     protected override void SetClase()
     {
@@ -23,13 +23,8 @@ public class Explorador : Pieza
                 clasesExploradas.Add(adyacete.pieza.clase);
             }
         }
-        puntosExploracion = clasesExploradas.Count;
+        puntosExploracion = clasesExploradas.Count * 2;
 
         return puntosExploracion;
-    }
-
-    public override List<Casilla> CasillasDisponibles()
-    {
-        throw new System.NotImplementedException();
     }
 }

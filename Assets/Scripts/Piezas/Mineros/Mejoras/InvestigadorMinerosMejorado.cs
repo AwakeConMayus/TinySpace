@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class InvestigadorMinerosMejorado : InvestigadorMineros
 {
-    public override bool Anulador()
-    {
-        return false;
-    }
-     
     public override int Puntos()
     {
         int limite = 3;

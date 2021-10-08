@@ -22,7 +22,7 @@ public class Planetas : Pieza
         }
 
 
-        if (colonizacion > 0) return 2;
+        if (colonizacion > 0) return 3;
 
         return 0;
     }

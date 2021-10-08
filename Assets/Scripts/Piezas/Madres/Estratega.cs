@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Estratega : Pieza
+public abstract class Estratega : Pieza
 {
     protected override void SetClase()
     {
@@ -22,10 +22,4 @@ public class Estratega : Pieza
         }
         return puntos;
     }
-
-    public override List<Casilla> CasillasDisponibles()
-    {
-        throw new System.NotImplementedException();
-    }
-
 }
