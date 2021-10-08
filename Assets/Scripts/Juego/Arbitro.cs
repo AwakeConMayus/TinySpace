@@ -38,7 +38,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         switch (Random.Range(0, 2))
         {
             case 0:
-                player = opciones[0];
+                player = opciones[0];              
                 base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 1);
                 break;
             case 1:
@@ -49,6 +49,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.gameObject.SetActive(true);
         player.PrepararPreparacion();
         player.jugador = 0;
+        InstancePiezas.instance.jugador = 0;
+        InstancePiezas.instance.jugadorEnemigo = 1;
     }
 
     [PunRPC]
@@ -59,7 +61,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.gameObject.SetActive(true);
         player.PrepararPreparacion();
         player.jugador = 1;
-
+        InstancePiezas.instance.jugador = 1;
+        InstancePiezas.instance.jugadorEnemigo = 0;
         print("¿Esta preparada la preparacion?");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }

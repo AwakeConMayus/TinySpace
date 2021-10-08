@@ -27,6 +27,8 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public Casilla casilla;
     [HideInInspector]
     public int jugador;
+    [HideInInspector]
+    public int jugadorEnemigo;
     //* Para el tutorial, mineros 0, planetas 1
     [HideInInspector]
     public GameObject planeta;

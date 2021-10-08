@@ -35,6 +35,10 @@ public abstract class Pieza : MonoBehaviour
             jugador = InstancePiezas.instance.jugador;
             Debug.Log("se setea una pieza");
         }
+        else
+        {
+            jugador = InstancePiezas.instance.jugadorEnemigo;
+        }
     }
 
     public abstract int Puntos();
