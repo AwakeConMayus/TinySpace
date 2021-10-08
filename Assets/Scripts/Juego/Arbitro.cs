@@ -91,14 +91,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (!inputActive) SwitchActive();
         }
-        if (turno0 % 2 != 0)
-        {
-            specialPhase = false;
-        }
-        if (++turno0 % 2 != 0)
-        {
-            specialActive = !specialActive;
-        }
 
         if (specialActive) 
         {
@@ -118,6 +110,15 @@ public class Arbitro : MonoBehaviourPunCallbacks
                     break;
             }
             ++numeroPoder; 
+        }
+
+        if (turno0 % 2 != 0)
+        {
+            specialPhase = false;
+        }
+        if (++turno0 % 2 != 0)
+        {
+            specialActive = !specialActive;
         }
     }
 
