@@ -41,7 +41,7 @@ public abstract class Pieza : MonoBehaviour
     {
         casilla = c;
         casilla.pieza = this;
-        if(colocacionEfectiva) EventManager.TriggerEvent("AccionTerminadaIndividual");
+        if(colocacionEfectiva) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public virtual bool CompareClase(Clase compare)

@@ -17,15 +17,14 @@ public class Arbitro : MonoBehaviourPunCallbacks
     int numeroPoder = 0;
 
     bool specialPhase = true;
-    int turno0 = 0;
-    int turno1 = 0;
+    int specialTurno = 0;
+    int turno = 0;
 
     bool inputActive = false;
 
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
-        EventManager.StartListening("AccionTerminadaIndividual", NextTurnoIndividual);
 
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
         {
@@ -76,13 +75,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (specialPhase) SpecialTurn();
         else Turn();
     }
-    public void NextTurnoIndividual()
-    {
-        if (specialPhase) SpecialTurn();
-        else Turn();
-    }
+
     void SpecialTurn()
     {
+        bool estaVezToca = specialActive;
+
         if (!specialActive)
         {
             if (inputActive) SwitchActive();
@@ -92,7 +89,16 @@ public class Arbitro : MonoBehaviourPunCallbacks
             if (!inputActive) SwitchActive();
         }
 
-        if (specialActive) 
+        if (specialTurno % 2 != 0)
+        {
+            specialPhase = false;
+        }
+        if (++specialTurno % 2 != 0)
+        {
+            specialActive = !specialActive;
+        }
+
+        if (estaVezToca) 
         {
             switch (numeroPoder)
             {
@@ -111,23 +117,16 @@ public class Arbitro : MonoBehaviourPunCallbacks
             }
             ++numeroPoder; 
         }
-
-        if (turno0 % 2 != 0)
-        {
-            specialPhase = false;
-        }
-        if (++turno0 % 2 != 0)
-        {
-            specialActive = !specialActive;
-        }
     }
 
     void Turn()
     {
-        if(turno1 >= 19)
+        if(turno >= 19)
         {
             EndGame();
         }
+        Debug.Log(active);
+        Debug.Log(turno);
         if (!active)
         {
             if (inputActive) SwitchActive();
@@ -136,11 +135,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (!inputActive) SwitchActive();
         }
-        if((turno1+1) % 10 == 0)
+        if((turno+1) % 10 == 0)
         {
             specialPhase = true;
         }
-        if (++turno1 % 2 != 0)
+        if (++turno % 2 != 0)
         {
             active = !active;
         }
