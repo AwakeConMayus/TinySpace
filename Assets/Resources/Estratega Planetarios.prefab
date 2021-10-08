@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1286754649014211341}
   - component: {fileID: 186988158987689574}
   m_Layer: 0
-  m_Name: Estratega planetros
+  m_Name: Estratega Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

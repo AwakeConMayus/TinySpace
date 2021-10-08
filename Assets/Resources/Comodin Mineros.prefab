@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7392189935978820289}
   - component: {fileID: 7875990928838441022}
   m_Layer: 0
-  m_Name: Comodin mineros
+  m_Name: Comodin Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

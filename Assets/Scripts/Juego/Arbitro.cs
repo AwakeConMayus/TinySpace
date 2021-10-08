@@ -119,8 +119,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             EndGame();
         }
-        Debug.Log(active);
-        Debug.Log(turno);
+        
         if (!active)
         {
             if (inputActive) SwitchActive();
@@ -141,7 +140,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SwitchActive()
     {
-        print("switch");
         inputActive = player.active = !inputActive;
     }
 

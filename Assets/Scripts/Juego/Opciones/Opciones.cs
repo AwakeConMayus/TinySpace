@@ -61,7 +61,6 @@ public abstract class Opciones : MonoBehaviour
 
     public virtual void Seleccion(int i)
     {
-        print(active);
         if (!active) return;
         opcionActual = i;
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);

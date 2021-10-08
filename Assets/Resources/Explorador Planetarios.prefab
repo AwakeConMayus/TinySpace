@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1861966634669639943}
   - component: {fileID: 583192479441006720}
   m_Layer: 0
-  m_Name: Explorador Planetas
+  m_Name: Explorador Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

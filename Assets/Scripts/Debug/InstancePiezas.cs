@@ -113,7 +113,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             }
         }
 
-        print("Mineros: " + puntuaciones[0] + " / Planetarios: " + puntuaciones[1]);
+        Debug.Log("Mineros: " + puntuaciones[0] + " / Planetarios: " + puntuaciones[1]);
     }
 
     public void SetInicialTable()
