@@ -40,7 +40,9 @@ public class OpcionesMineros : Opciones
 
     public override void Seleccion(int i)
     {
-        if(opcionesDisponibles[i] == 4)
+        if (!active) return;
+
+        if (opcionesDisponibles[i] == 4)
         {
             if (GastarMineral(opcionesIniciales[4].GetComponent<Especial>().coste))
             {
