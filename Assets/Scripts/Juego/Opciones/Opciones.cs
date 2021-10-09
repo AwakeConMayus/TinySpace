@@ -17,19 +17,16 @@ public abstract class Opciones : MonoBehaviour
 
     protected int opcionActual = -1;
 
-    [HideInInspector]
-    public bool active = false;
+    protected bool active = false;
 
     public void PrepararPreparacion()
     {
-        print("preparo la preparacion");
         poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
         poder.GetComponent<Poder>().SetPadre(this);
     }
 
     public void Preparacion()
     {
-        active = true;
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
 
@@ -79,5 +76,10 @@ public abstract class Opciones : MonoBehaviour
         opcionesEnfriamiento.Remove(opcionesEnfriamiento[0]);
         opcionActual = -1;
         EventManager.TriggerEvent("RotacionOpciones");
-    }    
+    }  
+    
+    public void SetActive(bool b)
+    {
+        active = b;
+    }
 }

@@ -80,6 +80,7 @@ public class PoderColono : PoderPlanetas
         GameObject thisPieza = Instantiate(planetaSagrado);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
         thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
+        thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();
     }
 }

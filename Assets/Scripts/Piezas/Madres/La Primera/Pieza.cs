@@ -26,6 +26,8 @@ public abstract class Pieza : MonoBehaviour
 
     protected int jugador;
 
+    private bool pieza_extra = false;
+
     private void Awake()
     {
         SetClase();
@@ -33,7 +35,6 @@ public abstract class Pieza : MonoBehaviour
         if (this.gameObject.GetPhotonView().IsMine)
         {
             jugador = InstancePiezas.instance.jugador;
-            Debug.Log("se setea una pieza");
         }
         else
         {
@@ -51,7 +52,7 @@ public abstract class Pieza : MonoBehaviour
     {
         casilla = c;
         casilla.pieza = this;
-        if(this.gameObject.GetPhotonView().IsMine) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(this.gameObject.GetPhotonView().IsMine && !pieza_extra) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public virtual bool CompareClase(Clase compare)
@@ -84,5 +85,10 @@ public abstract class Pieza : MonoBehaviour
     public int Get_Jugador()
     {
         return jugador;
+    }
+
+    public void Set_Pieza_Extra()
+    {
+        pieza_extra = true;
     }
 }

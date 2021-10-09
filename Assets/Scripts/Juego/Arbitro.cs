@@ -20,7 +20,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     int specialTurno = 0;
     int turno = 0;
 
-    bool inputActive = false;
+    bool inputActive = true;
 
     private void Start()
     {
@@ -63,7 +63,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.jugador = 1;
         InstancePiezas.instance.jugador = 1;
         InstancePiezas.instance.jugadorEnemigo = 0;
-        print("¿Esta preparada la preparacion?");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
@@ -119,11 +118,13 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        if(turno > 19)
+
+        if(turno >= 20)
         {
             EndGame();
         }
         
+
         if (!active)
         {
             if (inputActive) SwitchActive();
@@ -132,7 +133,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (!inputActive) SwitchActive();
         }
-        if((turno+1) % 10 == 0)
+
+
+        if ((turno+1) % 10 == 0)
         {
             specialPhase = true;
         }
@@ -144,8 +147,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SwitchActive()
     {
-        print("Activo: " + !inputActive);
-        inputActive = player.active = !inputActive;
+        inputActive = !inputActive;
+        player.SetActive(inputActive);
     }
 
     void EndGame()
