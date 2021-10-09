@@ -13,6 +13,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
 
     private int intervalo = 0;
     private List<RoomInfo> _roomList;
+    private bool first_time = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,11 @@ public class Matchmaker : MonoBehaviourPunCallbacks
             Debug.Log("Sin conexion con el servidor");
             return;
         }
-        StartCoroutine(Tiempo_De_Espera());
+        if (first_time)
+        {
+            StartCoroutine(Tiempo_De_Espera());
+            first_time = false;
+        }
 
     }
 
@@ -49,7 +54,8 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         Debug.Log("Mi lista contiene esto" + _roomList.Count);
         foreach(RoomInfo roomInfo in _roomList)
         {
-            if (roomInfo.IsOpen)
+            Debug.Log(roomInfo.IsOpen);
+            if (roomInfo.IsOpen && roomInfo.PlayerCount == 1)
             {
                 PhotonNetwork.JoinRoom(roomInfo.Name);
                 PhotonNetwork.AutomaticallySyncScene = true;
@@ -60,6 +66,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
 
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
+        options.EmptyRoomTtl = 1;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
         intervalo = Random.Range(6, 10);
@@ -93,8 +100,11 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(i);
         if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount < 2)
         {
-            PhotonNetwork.LeaveRoom();
-            Buscar_Sala();
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            Debug.Log(PhotonNetwork.CurrentRoom.IsOpen = false);
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+            PhotonNetwork.LeaveRoom(false);
+            StartCoroutine(Tiempo_De_Espera());
         }
     }
 }
