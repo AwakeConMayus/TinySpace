@@ -145,6 +145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -200,6 +205,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &51121875 stripped
@@ -219,6 +229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -275,6 +290,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &67691035
@@ -288,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -344,6 +369,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &67691036 stripped
@@ -363,6 +393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -419,6 +454,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &95520384
@@ -430,7 +470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 95520385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Black Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95520384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.697235, y: 263.56067, z: 86.5484}
+  m_LocalPosition: {x: 95.697235, y: 260.7, z: 86.5484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 972155004}
@@ -5281,6 +5321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -5335,6 +5380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -5428,6 +5478,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -5483,8 +5538,192 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
+--- !u!1 &153607798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153607799}
+  - component: {fileID: 153607802}
+  - component: {fileID: 153607800}
+  m_Layer: 0
+  m_Name: Main Camera (2)
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &153607799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153607798}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1444062506}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153607800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153607798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 7
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+  clearColorMode: 2
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.6
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 1
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  hasPersistentHistory: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 70297877217101
+      data2: 4539628425463136256
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+--- !u!20 &153607802
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153607798}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0.02
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &173700299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5496,6 +5735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -5552,6 +5796,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &194300709
@@ -5565,6 +5814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -5621,6 +5875,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &222651603 stripped
@@ -5628,6 +5887,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
     type: 3}
   m_PrefabInstance: {fileID: 426966730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &259423571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304308268}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &321452382 stripped
 Transform:
@@ -5752,6 +6017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -5807,6 +6077,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &409969101 stripped
@@ -5844,6 +6119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -5900,6 +6180,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &433245519
@@ -5913,7 +6198,7 @@ GameObject:
   - component: {fileID: 433245520}
   - component: {fileID: 433245522}
   - component: {fileID: 433245521}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10793,6 +11078,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -10847,6 +11137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -15685,6 +15980,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -15740,6 +16040,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &675513562 stripped
@@ -15783,7 +16088,7 @@ GameObject:
   - component: {fileID: 771244383}
   - component: {fileID: 771244382}
   - component: {fileID: 771244381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16105,8 +16410,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 5
+      scalar: 5
+      minScalar: 8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -16421,7 +16726,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 3
+    maxNumParticles: 20
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -17184,7 +17489,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.6037736, g: 0.088287644, b: 0.28125617, a: 0}
         key1: {r: 0.1258412, g: 0.10412958, b: 0.33962262, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -17199,8 +17504,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 30455
-        atime2: 65535
+        atime1: 14071
+        atime2: 52043
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -17208,7 +17513,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -20595,6 +20900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -20650,6 +20960,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &849260683
@@ -20663,6 +20978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -20719,6 +21039,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &864619118 stripped
@@ -20768,6 +21093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -20824,6 +21154,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &941421676
@@ -20837,6 +21172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -20898,6 +21238,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &941421677 stripped
@@ -20925,7 +21270,7 @@ GameObject:
   - component: {fileID: 972155002}
   - component: {fileID: 972155001}
   - component: {fileID: 972155005}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21037,6 +21382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -21092,6 +21442,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1031585649
@@ -21105,6 +21460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -21161,6 +21521,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1045931202 stripped
@@ -21186,6 +21551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -21242,6 +21612,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1103132055 stripped
@@ -21261,6 +21636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -21317,6 +21697,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &1183274685
@@ -21347,7 +21732,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1444062506}
-  - {fileID: 1642183955}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21375,7 +21759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204423454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110.597534, y: 186.97127, z: 32.403503}
+  m_LocalPosition: {x: 110.597534, y: 184.4, z: 32.403503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 67691036}
@@ -21422,6 +21806,7 @@ Transform:
   - {fileID: 675817119}
   - {fileID: 51121875}
   - {fileID: 132498740}
+  - {fileID: 259423571}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21436,6 +21821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -21491,6 +21881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -26328,7 +26723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1257444903
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -31082,6 +31477,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -31137,6 +31537,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1300558148 stripped
@@ -31145,6 +31550,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 194300709}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1304308268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1204423455}
+    m_Modifications:
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Name
+      value: Casilla (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 58.551483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.496498
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &1314136203
 GameObject:
   m_ObjectHideFlags: 0
@@ -31163,7 +31647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1314136204
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31251,6 +31735,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -31306,6 +31795,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1400467714
@@ -31319,6 +31813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -31375,6 +31874,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1407185000
@@ -31388,6 +31892,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -31444,6 +31953,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1442809973 stripped
@@ -31481,7 +31995,9 @@ Transform:
   m_LocalRotation: {x: 0.00061908655, y: 0.9387186, z: -0.34467983, w: 0.0016861442}
   m_LocalPosition: {x: 201.63449, y: 188.57005, z: 35.998497}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1642183955}
+  - {fileID: 153607799}
   m_Father: {fileID: 1183274686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31567,11 +32083,11 @@ MonoBehaviour:
   flipYMode: 0
   fullscreenPassthrough: 0
   allowDynamicResolution: 0
-  customRenderingSettings: 0
+  customRenderingSettings: 1
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   hasPersistentHistory: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
@@ -31628,7 +32144,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -31651,6 +32167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -31706,6 +32227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -36532,6 +37058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -36587,6 +37118,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1482295380
@@ -36600,6 +37136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -36655,6 +37196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -46304,6 +46850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -46358,6 +46909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -51282,6 +51838,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -51336,6 +51897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -51542,12 +52108,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642183952}
-  m_LocalRotation: {x: 0.8433789, y: -0.126171, z: 0.22598267, w: 0.4708767}
-  m_LocalPosition: {x: 210.13776, y: 460.8601, z: 150.91602}
+  m_LocalRotation: {x: -0.167515, y: -0.15139784, z: 0.9544563, w: -0.19501461}
+  m_LocalPosition: {x: -8.916058, y: 133.24664, z: -263.7917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1183274686}
-  m_RootOrder: 1
+  m_Father: {fileID: 1444062506}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 121.649, y: -30, z: 0}
 --- !u!1 &1646416027
 GameObject:
@@ -51568,7 +52134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1646416028
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -51674,6 +52240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -51729,6 +52300,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &1701040975
@@ -51740,7 +52316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1701040976}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51774,6 +52350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -51830,6 +52411,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1739600360
@@ -51843,6 +52429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -51899,6 +52490,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1779684214
@@ -51912,6 +52508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -51968,6 +52569,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1794997823
@@ -51981,6 +52587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -52037,6 +52648,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1802214183 stripped
@@ -52056,6 +52672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -52111,6 +52732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -52171,6 +52797,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -52226,6 +52857,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &1923708792 stripped
@@ -52251,6 +52887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -52307,6 +52948,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &1993236616
@@ -52320,6 +52966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -52376,6 +53027,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &1993421361
@@ -52389,7 +53045,7 @@ GameObject:
   - component: {fileID: 1993421362}
   - component: {fileID: 1993421364}
   - component: {fileID: 1993421363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57144,6 +57800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casilla (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -57199,6 +57860,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!4 &2011521473 stripped
@@ -57218,6 +57884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -57274,6 +57945,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &2052862451
@@ -57287,6 +57963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -57343,6 +58024,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1 &2071947295
@@ -57394,6 +58080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -57450,6 +58141,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
 --- !u!1001 &2140702158
@@ -57463,6 +58159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casilla (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263507486993769039, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1645240844728932294, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
         type: 3}
@@ -57518,6 +58219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009337449629836211, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa6eddc5f7c44c4995aa5a13fa60ba4, type: 3}
@@ -57626,7 +58332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148818887693}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.1, y: -12.98, z: -22.31}
+  m_LocalPosition: {x: -0.6972351, y: -12.560669, z: -22.5484}
   m_LocalScale: {x: 105.540764, y: 105.540764, z: 105.540764}
   m_Children: []
   m_Father: {fileID: 95520385}
@@ -57771,7 +58477,7 @@ GameObject:
   - component: {fileID: 543450653004766903}
   - component: {fileID: 3469287836853899538}
   - component: {fileID: 1711813856282699224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BH-Colas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57881,7 +58587,7 @@ GameObject:
   - component: {fileID: 1948386538943371705}
   - component: {fileID: 3217211355649037852}
   - component: {fileID: 810968884537500374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BH-Colas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58126,7 +58832,7 @@ GameObject:
   - component: {fileID: 2065099051731498317}
   - component: {fileID: 3100569121129806568}
   - component: {fileID: 928753596855242274}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BH-Colas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58166,13 +58872,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171463219478201091}
-  m_LocalRotation: {x: -0.6638451, y: -0.24353576, z: 0.24353585, w: 0.6638451}
-  m_LocalPosition: {x: -1.4362183, y: -13.103394, z: -22.309998}
+  m_LocalRotation: {x: 0.72947663, y: 0.000000666811, z: -0.00000033636198, w: -0.6840058}
+  m_LocalPosition: {x: -1.4000015, y: -11.200989, z: -23.22425}
   m_LocalScale: {x: 105.540764, y: 105.540764, z: 105.540764}
   m_Children: []
   m_Father: {fileID: 95520385}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -130.29199, y: 89.99999, z: -90}
+  m_LocalEulerAnglesHint: {x: 986.315, y: 0.0009918213, z: -0.0009765625}
 --- !u!23 &1970919246858750785
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77924,7 +78630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4181643869226726237
 Transform:
   m_ObjectHideFlags: 0
@@ -78143,13 +78849,13 @@ GameObject:
   - component: {fileID: 5203587728500609908}
   - component: {fileID: 9194381133852400849}
   - component: {fileID: 6376524933568374811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BH-Colas (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5203587728500609908
 Transform:
   m_ObjectHideFlags: 0
