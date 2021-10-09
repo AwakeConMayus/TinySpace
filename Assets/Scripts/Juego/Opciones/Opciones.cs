@@ -17,7 +17,7 @@ public abstract class Opciones : MonoBehaviour
 
     protected int opcionActual = -1;
 
-    bool active = false;
+    protected bool active = false;
 
     public void PrepararPreparacion()
     {
