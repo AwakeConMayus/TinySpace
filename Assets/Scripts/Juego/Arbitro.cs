@@ -20,7 +20,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     int specialTurno = 0;
     int turno = 0;
 
-    bool inputActive = false;
+    bool inputActive = true;
 
     private void Start()
     {
@@ -56,6 +56,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_SetNotInitial(int i)
     {
+        print("notInitial");
         active = specialActive = false;
         player = opciones[i];
         player.gameObject.SetActive(true);
@@ -81,6 +82,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SpecialTurn()
     {
+        print(inputActive + "inputActive");
+        print(active + "active");
         if (inputActive) SwitchActive();
 
         bool estaVezToca = specialActive;
@@ -119,11 +122,15 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        if(turno > 19)
+        print(inputActive + "turn1inputtive");
+        print(active + " :active");
+
+        if(turno >= 20)
         {
             EndGame();
         }
         
+
         if (!active)
         {
             if (inputActive) SwitchActive();
@@ -132,7 +139,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (!inputActive) SwitchActive();
         }
-        if((turno+1) % 10 == 0)
+
+        print(inputActive + "turn2inputtive");
+
+        if ((turno+1) % 10 == 0)
         {
             specialPhase = true;
         }
@@ -145,7 +155,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
     void SwitchActive()
     {
         print("Activo: " + !inputActive);
-        inputActive = player.active = !inputActive;
+        inputActive = !inputActive;
+        player.SetActive(inputActive);
     }
 
     void EndGame()
