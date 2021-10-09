@@ -11,7 +11,7 @@ using Photon.Realtime;
 public class Matchmaker : MonoBehaviourPunCallbacks
 {
 
-
+    private int intervalo = 0;
     private List<RoomInfo> _roomList;
     // Start is called before the first frame update
     void Start()
@@ -62,7 +62,9 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         options.MaxPlayers = 2;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
-        Debug.Log("he creado una sala");
+        intervalo = Random.Range(6, 10);
+        StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
+        Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -86,4 +88,13 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         Buscar_Sala();
     }
 
+    IEnumerator Tiempo_Hasta_Recarga(int i)
+    {
+        yield return new WaitForSeconds(i);
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount < 2)
+        {
+            PhotonNetwork.LeaveRoom();
+            Buscar_Sala();
+        }
+    }
 }
