@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2368695746359778014}
   - component: {fileID: 8343439762597072831}
   m_Layer: 0
-  m_Name: Combate planetas
+  m_Name: Combate Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &-7168219763204558265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,12 +180,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
@@ -201,7 +200,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
@@ -217,7 +216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 646657ca03400b24abb822a966b8bd35, type: 2}
+      objectReference: {fileID: 2100000, guid: 728213b7d1071ad4e801a8681c9435c9, type: 2}
     - target: {fileID: 919132149155446097, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
       propertyPath: m_Name

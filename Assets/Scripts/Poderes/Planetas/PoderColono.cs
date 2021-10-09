@@ -4,38 +4,51 @@ using UnityEngine;
 using Photon.Pun;
 public class PoderColono : PoderPlanetas
 {
-    [SerializeField]
-    int planetasFase1 = 1;
+    GameObject planetaSagrado;
 
-    int planetasColocados = 0;
-
-    bool SetPlaneta = false;
+    bool SetPlanetaSagrado = false;
 
     private void Awake()
     {
-        EventManager.StartListening("ClickCasilla", CrearPieza);
+        EventManager.StartListening("ClickCasilla", CrearPiezaCrearPlanetaSagrado);
     }
 
 
     public override void FirstActionPersonal()
     {
         Opciones padre = GetComponentInParent<Opciones>();
-        padre.SeleccionForzada(0);
+        if (padre)
+        {
+            padre.SeleccionForzada(0);
+        }
+        else
+        {
+            Debug.Log("No disponible en modo Debug :(");
+        }
     }
 
     public override void SecondAction() 
     {
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+        planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
+
+        List<Casilla> casillasPosibles = new List<Casilla>();
+        casillasPosibles = planetaSagrado.GetComponent<Pieza>().CasillasDisponibles();
+
+        ColorearCasillas.instance.initialColor();
+        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+
+        SetPlanetaSagrado = true;
+
     }  
 
 
     
-    void CrearPieza()
+    void CrearPiezaCrearPlanetaSagrado()
     {
-        if (!SetPlaneta) return;
+        if (!SetPlanetaSagrado) return;
         Casilla c = ClickCasillas.casillaClick;
         List<Casilla> casillasPosibles = new List<Casilla>();
-        casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
+        casillasPosibles = planetaSagrado.GetComponent<Pieza>().CasillasDisponibles();
         if (casillasPosibles.Contains(c))
         {
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
@@ -45,25 +58,26 @@ public class PoderColono : PoderPlanetas
             }
             else
             {
-                GameObject thisPieza = Instantiate(planeta);
+                c.Clear();
+                GameObject thisPieza = Instantiate(planetaSagrado);
                 thisPieza.transform.position = c.transform.position;
                 thisPieza.GetComponent<Pieza>().Colocar(c);
             }
 
-           
-            SetPlaneta = false;
+
+            SetPlanetaSagrado = false;
         }
 
         ColorearCasillas.instance.initialColor();
-
-        if (++planetasColocados < planetasFase1) FirstAction();
-        else EventManager.TriggerEvent("AccionTerminadaConjunta");
+        
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     [PunRPC]
     public void RPC_InstanciarPlaneta(int i, int _jugador)
     {
-        GameObject thisPieza = Instantiate(planeta);
+        ClickCasillas.casillaClick.Clear();
+        GameObject thisPieza = Instantiate(planetaSagrado);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
         thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();

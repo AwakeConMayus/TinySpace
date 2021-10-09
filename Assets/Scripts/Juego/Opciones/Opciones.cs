@@ -32,7 +32,6 @@ public abstract class Opciones : MonoBehaviour
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
 
-        Debug.Log("EL instnace se setea");
 
         List<int> disponibles = new List<int>();
         for (int i = 0; i < 5; i++)

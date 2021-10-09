@@ -5,18 +5,17 @@ using Photon.Pun;
 
 public abstract class PoderPlanetas : Poder
 {
-    [SerializeField]
-    protected GameObject planeta;
+    GameObject planeta;
 
     bool SetPlaneta = false;
 
-    private void Awake()
-    {
-        EventManager.StartListening("ClickCasilla", CrearPieza);
-    }
+    
 
     public override void InitialAction()
     {
+        EventManager.StartListening("ClickCasilla", CrearPieza);
+        planeta = Resources.Load<GameObject>("Planeta Planetarios");
+
         for (int i = 0; i < 3; i++)
         {
             List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
@@ -49,6 +48,7 @@ public abstract class PoderPlanetas : Poder
         planeta.GetComponent<Pieza>().Set_Jugador(jugador);
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
 
+        //ColorearCasillas.instance.initialColor();
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
 
         SetPlaneta = true;

@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 646657ca03400b24abb822a966b8bd35, type: 2}
+  - {fileID: 2100000, guid: 728213b7d1071ad4e801a8681c9435c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &3935059490195201988
 MonoBehaviour:
   m_ObjectHideFlags: 0

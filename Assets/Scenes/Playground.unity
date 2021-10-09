@@ -309,8 +309,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664416548}
-        m_MethodName: SendOnline
+      - m_Target: {fileID: 1664416543}
+        m_MethodName: RecuentoPuntosTest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24806,8 +24806,8 @@ MonoBehaviour:
   pieza: {fileID: 0}
   casilla: {fileID: 0}
   jugador: 0
+  jugadorEnemigo: 0
   planeta: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
-  puntuaciones: 0000000000000000
 --- !u!114 &1664416544
 MonoBehaviour:
   m_ObjectHideFlags: 0
