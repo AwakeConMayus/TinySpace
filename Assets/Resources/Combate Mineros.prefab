@@ -135,6 +135,25 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!95 &1078257344836109279
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658406341353152763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 723e227095343ae46842c54832414da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5811333038354537898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6769767fbdc6e9741a76ddbef1375ff1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b936670ecdd12bc459925cf6292ab52a, type: 2}
     - target: {fileID: 919132149155446097, guid: 6769767fbdc6e9741a76ddbef1375ff1,
         type: 3}
       propertyPath: m_Name
@@ -219,6 +243,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6769767fbdc6e9741a76ddbef1375ff1, type: 3}
+--- !u!1 &6658406341353152763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6769767fbdc6e9741a76ddbef1375ff1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5811333038354537898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6281599980723534401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6769767fbdc6e9741a76ddbef1375ff1,

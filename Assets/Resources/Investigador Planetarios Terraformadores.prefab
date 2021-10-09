@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3125984038978550624
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765389513905242095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 723e227095343ae46842c54832414da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6119831999288666414
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +34,7 @@ GameObject:
   - component: {fileID: 8610273849696450536}
   - component: {fileID: 3669817915743192026}
   m_Layer: 0
-  m_Name: Investigador planeteros terraformadores
+  m_Name: Investigador Planetarios Terraformadores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &-225502711159643296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8cbcfbb6fdb095c47a8cfcd89fc7c4b2, type: 2}
+      objectReference: {fileID: 2100000, guid: b887084746a473541b1e2e8ecd9039ca, type: 2}
     - target: {fileID: 919132149155446097, guid: ca214df4e8041ef4a92751c01c877999,
         type: 3}
       propertyPath: m_Name
@@ -225,6 +243,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca214df4e8041ef4a92751c01c877999, type: 3}
+--- !u!1 &765389513905242095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ca214df4e8041ef4a92751c01c877999,
+    type: 3}
+  m_PrefabInstance: {fileID: 458905800080638654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &131982187616609621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca214df4e8041ef4a92751c01c877999,
