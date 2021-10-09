@@ -77,6 +77,7 @@ public class PoderColono : PoderPlanetas
     public void RPC_InstanciarPlanetaSagrado(int i, int _jugador)
     {
         ClickCasillas.casillaClick.Clear();
+        if(!planetaSagrado) planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
         GameObject thisPieza = Instantiate(planetaSagrado);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
         thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
