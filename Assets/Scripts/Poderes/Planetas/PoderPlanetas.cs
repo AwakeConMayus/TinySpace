@@ -88,6 +88,7 @@ public abstract class PoderPlanetas : Poder
     [PunRPC]
     public void RPC_InstanciarPlaneta(int i, int _jugador)
     {
+        if(!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
         GameObject thisPieza = Instantiate(planeta);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
         thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador);
