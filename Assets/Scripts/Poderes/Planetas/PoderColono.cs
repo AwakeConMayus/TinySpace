@@ -16,7 +16,6 @@ public class PoderColono : PoderPlanetas
 
     public override void FirstActionPersonal()
     {
-        Opciones padre = GetComponentInParent<Opciones>();
         if (padre)
         {
             padre.SeleccionForzada(0);

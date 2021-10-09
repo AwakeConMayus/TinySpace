@@ -24,6 +24,7 @@ public abstract class Opciones : MonoBehaviour
     {
         print("preparo la preparacion");
         poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
+        poder.GetComponent<Poder>().SetPadre(this);
     }
 
     public void Preparacion()
