@@ -10,6 +10,8 @@ public class EstrategaMinerosMejorada : Efecto
         EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
         ++objetivo.nivel;
 
+        objetivo.transform.localScale *= 2; //Visual
+
         if (this.gameObject.GetPhotonView().IsMine) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

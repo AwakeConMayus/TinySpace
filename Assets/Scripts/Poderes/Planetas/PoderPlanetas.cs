@@ -8,6 +8,13 @@ public abstract class PoderPlanetas : Poder
     [SerializeField]
     protected GameObject planeta;
 
+    bool SetPlaneta = false;
+
+    private void Awake()
+    {
+        EventManager.StartListening("ClickCasilla", CrearPieza);
+    }
+
     public override void InitialAction()
     {
         for (int i = 0; i < 3; i++)
@@ -34,5 +41,56 @@ public abstract class PoderPlanetas : Poder
         }
         ColorearCasillas.instance.initialColor();
         EventManager.TriggerEvent("AccionTerminadaConjunta");
+    }
+
+    public override void FirstAction()
+    {
+        List<Casilla> casillasPosibles = new List<Casilla>();
+        planeta.GetComponent<Pieza>().Set_Jugador(jugador);
+        casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
+
+        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+
+        SetPlaneta = true;
+    }
+
+    void CrearPieza()
+    {
+        if (!SetPlaneta) return;
+        Casilla c = ClickCasillas.casillaClick;
+        List<Casilla> casillasPosibles = new List<Casilla>();
+        casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
+        if (casillasPosibles.Contains(c))
+        {
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject), jugador);
+
+            }
+            else
+            {
+                GameObject thisPieza = Instantiate(planeta);
+                thisPieza.transform.position = c.transform.position;
+                thisPieza.GetComponent<Pieza>().Colocar(c);
+            }
+
+
+            SetPlaneta = false;
+        }
+
+        ColorearCasillas.instance.initialColor();
+
+        FirstActionPersonal();
+    }
+
+    public abstract void FirstActionPersonal();
+
+    [PunRPC]
+    public void RPC_InstanciarPlaneta(int i, int _jugador)
+    {
+        GameObject thisPieza = Instantiate(planeta);
+        thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
+        thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador);
+        Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();
     }
 }

@@ -57,6 +57,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
+        ColorearCasillas.instance.initialColor();
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
         
     
@@ -96,8 +97,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             ColorearCasillas.instance.initialColor();
         }
         
-        //foreach(Casilla casilla in Tablero.instance.mapa)
-        //if (c.pieza && c.pieza.jugador == jugador || !c.pieza) ColorearCasillas.instance.initialColor(casilla);
+        
     }
 
     public void RecuentoPuntosTest()
