@@ -28,6 +28,7 @@ public class PoderColono : PoderPlanetas
 
     public override void SecondAction() 
     {
+        print("secondAction");
         planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
 
         List<Casilla> casillasPosibles = new List<Casilla>();
