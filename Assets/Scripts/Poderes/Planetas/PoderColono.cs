@@ -53,7 +53,7 @@ public class PoderColono : PoderPlanetas
         {
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject), jugador);
+                base.photonView.RPC("RPC_InstanciarPlanetaSagrado", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject), jugador);
 
             }
             else
@@ -74,7 +74,7 @@ public class PoderColono : PoderPlanetas
     }
 
     [PunRPC]
-    public void RPC_InstanciarPlaneta(int i, int _jugador)
+    public void RPC_InstanciarPlanetaSagrado(int i, int _jugador)
     {
         ClickCasillas.casillaClick.Clear();
         GameObject thisPieza = Instantiate(planetaSagrado);
