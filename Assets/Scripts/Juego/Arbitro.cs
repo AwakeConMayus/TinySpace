@@ -56,7 +56,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_SetNotInitial(int i)
     {
-        print("notInitial");
         active = specialActive = false;
         player = opciones[i];
         player.gameObject.SetActive(true);
@@ -64,7 +63,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.jugador = 1;
         InstancePiezas.instance.jugador = 1;
         InstancePiezas.instance.jugadorEnemigo = 0;
-        print("¿Esta preparada la preparacion?");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
@@ -82,8 +80,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SpecialTurn()
     {
-        print(inputActive + "inputActive");
-        print(active + "active");
         if (inputActive) SwitchActive();
 
         bool estaVezToca = specialActive;
@@ -122,8 +118,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        print(inputActive + "turn1inputtive");
-        print(active + " :active");
 
         if(turno >= 20)
         {
@@ -140,7 +134,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
             if (!inputActive) SwitchActive();
         }
 
-        print(inputActive + "turn2inputtive");
 
         if ((turno+1) % 10 == 0)
         {
@@ -154,7 +147,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SwitchActive()
     {
-        print("Activo: " + !inputActive);
         inputActive = !inputActive;
         player.SetActive(inputActive);
     }

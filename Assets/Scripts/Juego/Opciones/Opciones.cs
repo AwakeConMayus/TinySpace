@@ -27,7 +27,6 @@ public abstract class Opciones : MonoBehaviour
 
     public void Preparacion()
     {
-        active = true;
         EventManager.StartListening("ColocarPieza", Rotar);
         poder.GetComponent<Poder>().jugador = jugador;
 
