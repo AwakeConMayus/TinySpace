@@ -81,10 +81,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SpecialTurn()
     {
+        if (inputActive) SwitchActive();
+
         bool estaVezToca = specialActive;
 
         
-        if (inputActive) SwitchActive();
 
         if (specialTurno % 2 != 0)
         {
@@ -143,6 +144,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SwitchActive()
     {
+        print("Activo: " + !inputActive);
         inputActive = player.active = !inputActive;
     }
 
