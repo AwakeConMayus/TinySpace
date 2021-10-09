@@ -17,15 +17,10 @@ public class PoderColono : PoderPlanetas
     }
 
 
-    public override void FirstAction()
+    public override void FirstActionPersonal()
     {
-        List<Casilla> casillasPosibles = new List<Casilla>();
-        planeta.GetComponent<Pieza>().Set_Jugador(jugador);
-        casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
-
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);       
-
-        SetPlaneta = true;
+        Opciones padre = GetComponentInParent<Opciones>();
+        padre.SeleccionForzada(0);
     }
 
     public override void SecondAction() 

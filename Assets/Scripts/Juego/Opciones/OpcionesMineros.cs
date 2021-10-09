@@ -5,6 +5,7 @@ using UnityEngine;
 public class OpcionesMineros : Opciones
 {
     public GameObject[] mejoras = new GameObject[4];
+    GameObject[] backup = new GameObject[4];
     PoderMineros poderMinero;
 
     public int mineral = 5;
@@ -14,6 +15,10 @@ public class OpcionesMineros : Opciones
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", RecogerMineral);
+        for (int i = 0; i < 4; i++)
+        {
+            backup[i] = opcionesIniciales[i];
+        }
         Preparacion();
     }
     public void RecogerMineral()
@@ -46,10 +51,7 @@ public class OpcionesMineros : Opciones
         {
             if (GastarMineral(3))
             {
-                opcionActual = i;
-                if(opcionActual < 4) InstancePiezas.instance.SetPieza(mejoras[opcionesDisponibles[i]]);
-                else InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
-                especial = false;
+                base.Seleccion(i);
             }
         }
         else base.Seleccion(i);
@@ -58,5 +60,19 @@ public class OpcionesMineros : Opciones
     public void EspecialMode()
     {
         especial = !especial;
+        if (especial)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                opcionesIniciales[i] = mejoras[i];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                opcionesIniciales[i] = backup[i];
+            }
+        }
     }
 }

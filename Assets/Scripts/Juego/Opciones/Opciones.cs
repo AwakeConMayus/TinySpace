@@ -64,6 +64,12 @@ public abstract class Opciones : MonoBehaviour
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
     }
 
+    public virtual void SeleccionForzada(int i)
+    {
+        opcionActual = i;
+        InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
+    }
+
     public void Rotar()
     {
         if (opcionActual < 0) return;
