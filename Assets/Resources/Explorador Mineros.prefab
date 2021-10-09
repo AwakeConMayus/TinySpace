@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &-1076835342190362296
 MonoBehaviour:
   m_ObjectHideFlags: 0

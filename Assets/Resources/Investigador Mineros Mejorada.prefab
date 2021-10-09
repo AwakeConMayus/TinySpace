@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 551182612585260778}
   - component: {fileID: 5503041616192783480}
   m_Layer: 0
-  m_Name: Investigador mineros mejorada
+  m_Name: Investigador Mineros Mejorada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &-4864225567427421743
 MonoBehaviour:
   m_ObjectHideFlags: 0
