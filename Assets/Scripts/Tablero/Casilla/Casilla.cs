@@ -58,4 +58,6 @@ public class Casilla : MonoBehaviour
                 break;
         }
     }
+  
+
 }
