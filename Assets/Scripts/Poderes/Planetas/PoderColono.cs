@@ -30,10 +30,10 @@ public class PoderColono : PoderPlanetas
     {
         print("secondAction");
         planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
-
+        planetaSagrado.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> casillasPosibles = new List<Casilla>();
         casillasPosibles = planetaSagrado.GetComponent<Pieza>().CasillasDisponibles();
-
+        print(casillasPosibles.Count);
         ColorearCasillas.instance.initialColor();
         foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
 
