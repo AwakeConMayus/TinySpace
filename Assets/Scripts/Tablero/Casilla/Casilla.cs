@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum States
+{
+    normal,
+    select,
+    holy,
+    tpOut,
+    tpIn
+}
+
 public class Casilla : MonoBehaviour
 {
 
     [HideInInspector]
     public Casilla[] adyacentes = new Casilla[6];
-    //[HideInInspector]
+
     public Pieza pieza;
-    //[HideInInspector]
+
     public bool meteorito = false;
+
+    Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void Clear()
     {
@@ -18,6 +34,28 @@ public class Casilla : MonoBehaviour
         {
             Destroy(pieza.gameObject);
             pieza = null;
+        }
+    }
+
+    public void SetState(States s)
+    {
+        switch (s)
+        {
+            case States.normal:
+                anim.SetTrigger("Reset");
+                break;
+            case States.select:
+                anim.SetTrigger("Select");
+                break;
+            case States.holy:
+                anim.SetTrigger("Holy");
+                break;
+            case States.tpOut:
+                anim.SetTrigger("TPOut");
+                break;
+            case States.tpIn:
+                anim.SetTrigger("TPIn");
+                break;
         }
     }
 }

@@ -23,8 +23,8 @@ public class PoderMaquinista : PoderMineros
     {
         List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);
 
-        ColorearCasillas.instance.initialColor();
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+        Tablero.instance.ResetCasillasEfects();
+        foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
         selectOrigen = true;
 
@@ -52,8 +52,8 @@ public class PoderMaquinista : PoderMineros
     {
         List<Casilla> casillasPosibles = FiltroCasillas.CasillasLibres();
 
-        ColorearCasillas.instance.initialColor();
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+        Tablero.instance.ResetCasillasEfects();
+        foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
         selectDestino = true;
     }
@@ -71,6 +71,7 @@ public class PoderMaquinista : PoderMineros
     }
     void Teleport()
     {
+
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             if (pieza.GetPhotonView().IsMine)
@@ -84,12 +85,29 @@ public class PoderMaquinista : PoderMineros
                 Debug.Log(base.photonView);
                 base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j);
             }
+            base.photonView.RPC("RPC_TPEfects", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(origen.gameObject), Tablero.instance.Get_Numero_Casilla(destino.gameObject));
         }
         else
         {
+            TPEfects(origen, destino);
             pieza.transform.position = destino.transform.position;
         }
 
-        ColorearCasillas.instance.initialColor();
+
+        Tablero.instance.ResetCasillasEfects();
+    }
+
+    public void TPEfects(Casilla origen, Casilla destino)
+    {
+        origen.SetState(States.tpOut);
+        destino.SetState(States.tpIn);
+    }
+    [PunRPC]
+    public void RPC_TPEfects(int origen, int destino)
+    {
+        Casilla cOrigen = Tablero.instance.Get_Casilla_By_Numero(origen);
+        Casilla cDestino = Tablero.instance.Get_Casilla_By_Numero(origen);
+        cOrigen.SetState(States.tpOut);
+        cDestino.SetState(States.tpIn);
     }
 }

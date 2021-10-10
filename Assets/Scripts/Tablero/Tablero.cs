@@ -112,4 +112,12 @@ public class Tablero : MonoBehaviour
         }
         return mapa[numero].GetComponent<Casilla>();
     }
+
+    public void ResetCasillasEfects()
+    {
+        foreach(Casilla c in mapa)
+        {
+            c.SetState(States.normal);
+        }
+    }
 }

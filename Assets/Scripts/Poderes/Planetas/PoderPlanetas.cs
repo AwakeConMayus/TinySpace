@@ -38,7 +38,7 @@ public abstract class PoderPlanetas : Poder
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
             }
         }
-        ColorearCasillas.instance.initialColor();
+        Tablero.instance.ResetCasillasEfects();
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
@@ -48,8 +48,8 @@ public abstract class PoderPlanetas : Poder
         planeta.GetComponent<Pieza>().Set_Jugador(jugador);
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
 
-        //ColorearCasillas.instance.initialColor();
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+        Tablero.instance.ResetCasillasEfects();
+        foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
         SetPlaneta = true;
     }
@@ -77,7 +77,7 @@ public abstract class PoderPlanetas : Poder
 
             SetPlaneta = false;
 
-            ColorearCasillas.instance.initialColor();
+            Tablero.instance.ResetCasillasEfects();
 
             FirstActionPersonal();
         }

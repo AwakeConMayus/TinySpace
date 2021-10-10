@@ -42,7 +42,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public void SetJugador(int player)
     {
         jugador = player;
-        ColorearCasillas.instance.initialColor();
+        Tablero.instance.ResetCasillasEfects();
     }
 
     private void Start()
@@ -57,10 +57,10 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
-        ColorearCasillas.instance.initialColor();
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
-        
-    
+        Tablero.instance.ResetCasillasEfects();
+        foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
+
+
 
         estado = estados.SelectCasilla;
     }
@@ -94,7 +94,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
             EventManager.TriggerEvent("ColocarPieza");
             estado = estados.SelectPieza;
 
-            ColorearCasillas.instance.initialColor();
+            Tablero.instance.ResetCasillasEfects();
         }
         
         

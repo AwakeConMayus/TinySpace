@@ -34,8 +34,10 @@ public class PoderColono : PoderPlanetas
         List<Casilla> casillasPosibles = new List<Casilla>();
         casillasPosibles = planetaSagrado.GetComponent<Pieza>().CasillasDisponibles();
         print(casillasPosibles.Count);
-        ColorearCasillas.instance.initialColor();
-        foreach (Casilla casilla in casillasPosibles) ColorearCasillas.instance.reColor("green", casilla);
+
+     
+        Tablero.instance.ResetCasillasEfects();
+        foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
         SetPlanetaSagrado = true;
 
@@ -58,6 +60,7 @@ public class PoderColono : PoderPlanetas
             }
             else
             {
+                c.SetState(States.holy);
                 c.Clear();
                 GameObject thisPieza = Instantiate(planetaSagrado);
                 thisPieza.transform.position = c.transform.position;
@@ -66,8 +69,8 @@ public class PoderColono : PoderPlanetas
 
 
             SetPlanetaSagrado = false;
-            ColorearCasillas.instance.initialColor();
-        
+            Tablero.instance.ResetCasillasEfects();
+
             EventManager.TriggerEvent("AccionTerminadaConjunta");
         }
 
@@ -76,8 +79,10 @@ public class PoderColono : PoderPlanetas
     [PunRPC]
     public void RPC_InstanciarPlanetaSagrado(int i, int _jugador)
     {
-        if(_jugador == jugador) ClickCasillas.casillaClick.Clear();
-        if(!planetaSagrado) planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
+        Casilla c = Tablero.instance.Get_Casilla_By_Numero(i);
+        c.SetState(States.holy);
+        c.Clear();
+        if (!planetaSagrado) planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
         GameObject thisPieza = Instantiate(planetaSagrado);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
         thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
