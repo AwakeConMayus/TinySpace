@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Dissolve
+  m_Name: Disolve Whitte
   m_Shader: {fileID: -6465566751694194690, guid: 12087128e75e0cf4a82e069979e862f0,
     type: 3}
   m_ShaderKeywords: 

@@ -66,11 +66,11 @@ public class PoderColono : PoderPlanetas
 
 
             SetPlanetaSagrado = false;
+            ColorearCasillas.instance.initialColor();
+        
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
         }
 
-        ColorearCasillas.instance.initialColor();
-        
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     [PunRPC]

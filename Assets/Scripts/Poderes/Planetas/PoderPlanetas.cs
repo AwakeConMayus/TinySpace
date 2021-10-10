@@ -76,11 +76,12 @@ public abstract class PoderPlanetas : Poder
 
 
             SetPlaneta = false;
+
+            ColorearCasillas.instance.initialColor();
+
+            FirstActionPersonal();
         }
 
-        ColorearCasillas.instance.initialColor();
-
-        FirstActionPersonal();
     }
 
     public abstract void FirstActionPersonal();
