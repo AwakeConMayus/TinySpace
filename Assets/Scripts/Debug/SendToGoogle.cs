@@ -152,25 +152,13 @@ public class SendToGoogle : MonoBehaviour
         string[] facciones = new string[2];
         if(arbitroPartida.opciones[0] == jugador)
         {
-            if(jugador.jugador == 0)
-            {
-                facciones[0] = arbitroPartida.opciones[0].gameObject.name;
-            }
-            else
-            {
-                facciones[1] = arbitroPartida.opciones[0].gameObject.name;
-            }
+            facciones[0] = arbitroPartida.opciones[0].gameObject.name;
+            facciones[1] = arbitroPartida.opciones[1].gameObject.name;
         }
         else
         {
-            if (jugador.jugador == 0)
-            {
-                facciones[0] = arbitroPartida.opciones[1].gameObject.name;
-            }
-            else
-            {
-                facciones[1] = arbitroPartida.opciones[1].gameObject.name;
-            }
+            facciones[0] = arbitroPartida.opciones[1].gameObject.name;
+            facciones[1] = arbitroPartida.opciones[0].gameObject.name;
         }
 
         int jugadorGanador = 2;
