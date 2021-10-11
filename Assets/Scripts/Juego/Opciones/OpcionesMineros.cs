@@ -11,10 +11,13 @@ public class OpcionesMineros : Opciones
     public int mineral = 5;
 
     bool especial = false;
+
+    int mineralGastar;
     
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", RecogerMineral);
+        EventManager.StartListening("ColocarPieza", EjecutarPago);
         for (int i = 0; i < 4; i++)
         {
             backup[i] = opcionesIniciales[i];
@@ -31,11 +34,18 @@ public class OpcionesMineros : Opciones
     {
         if (mineral >= i)
         {
-            mineral -= i;
+            mineralGastar = i;
             EventManager.TriggerEvent("CambioMineral");
             return true;
         }
         else return false;
+    }
+
+    public void EjecutarPago()
+    {
+        if (mineralGastar == 0) return;
+        mineral -= mineralGastar;
+        mineralGastar = 0;
     }
 
     public override void Seleccion(int i)
