@@ -22,7 +22,7 @@ public class TextMineral : MonoBehaviour
 
     public void ActualizarTextoMineral()
     {
-        texto.text = "Mineral: " + poder.mineral;
+        texto.text = poder.mineral.ToString();
     }
 
 }

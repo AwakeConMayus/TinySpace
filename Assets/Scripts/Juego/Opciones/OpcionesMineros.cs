@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpcionesMineros : Opciones
 {
@@ -86,5 +87,14 @@ public class OpcionesMineros : Opciones
                 opcionesIniciales[i] = backup[i];
             }
         }
+        VisualUpdate();
+        EventManager.TriggerEvent("RotacionOpciones");
+    }
+
+    void VisualUpdate()
+    {
+        Image marco = GetComponent<Image>();
+        if (especial) marco.color = Color.yellow;
+        else marco.color = Color.white;
     }
 }
