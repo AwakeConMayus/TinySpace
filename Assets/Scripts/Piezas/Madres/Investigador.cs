@@ -12,7 +12,7 @@ public abstract class Investigador : Pieza
     public override int Puntos()
     {
         int puntosIniciales = 1;
-        int incremento = 1;
+        int incremento = 2;
 
         int puntos = 0;
 
