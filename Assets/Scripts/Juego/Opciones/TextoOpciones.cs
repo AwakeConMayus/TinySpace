@@ -80,27 +80,27 @@ public class TextoOpciones : MonoBehaviour
     #region explicaciones
     public void B1In()
     {
-        c1.text = textos.GetTexto(g1);
+        b1.text = textos.GetTexto(g1);
     }
     public void B1Out()
     {
-        c1.text = g1.name;
+        b1.text = g1.name;
     }
     public void B2In()
     {
-        c1.text = textos.GetTexto(g2);
+        b2.text = textos.GetTexto(g2);
     }
     public void B2Out()
     {
-        c1.text = g2.name;
+        b2.text = g2.name;
     }
     public void B3In()
     {
-        c1.text = textos.GetTexto(g3);
+        b3.text = textos.GetTexto(g3);
     }
     public void B3Out()
     {
-        c1.text = g3.name;
+        b3.text = g3.name;
     }
     #endregion
 }
