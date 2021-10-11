@@ -69,7 +69,7 @@ public class SendToGoogle : MonoBehaviour
 
     void rellenarFormulario()
     {
-        //BuscarDatos();
+        BuscarDatos();
 
         form = new WWWForm();
 
@@ -78,14 +78,14 @@ public class SendToGoogle : MonoBehaviour
         //* Ahí debes coger el número grande poco después de la variable del formulario a la que quieras asociar el field, por ejemplo: (...)"PuntosMineros",null,0,[[435469167,(...)"PuntosPlanetarios",null,0,[[1370920118,(...)
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
-        form.AddField("entry.1020366196", "a");     // Ganador
-        form.AddField("entry.2024526894", "true");  // GanaQuienEmpieza
+        form.AddField("entry.435469167",  "a");     // Ganador 
+        form.AddField("entry.1370920118", "true");  // GanaQuienEmpieza
 
-        form.AddField("entry.435469167",  "b");     // FaccionP1
-        form.AddField("entry.1370920118", "c");     // FaccionP2
+        form.AddField("entry.1874309661", "b");     // FaccionP1
+        form.AddField("entry.1214466468", "c");     // FaccionP2
 
-        form.AddField("entry.1874309661", 1);       // Score1
-        form.AddField("entry.1214466468", 2);       // Score2
+        form.AddField("entry.1020366196", 1);       // Score1
+        form.AddField("entry.2024526894", 2);       // Score2
 
         form.AddField("entry.1040339605", 3);       // ExploradorP1
         form.AddField("entry.1254542756", 4);       // CombateP1
