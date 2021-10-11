@@ -23068,7 +23068,6 @@ GameObject:
   - component: {fileID: 1837699344}
   - component: {fileID: 1837699343}
   - component: {fileID: 1837699342}
-  - component: {fileID: 1837699341}
   - component: {fileID: 1837699339}
   - component: {fileID: 1837699340}
   - component: {fileID: 1837699348}
@@ -23116,22 +23115,6 @@ MonoBehaviour:
   opciones:
   - {fileID: 1151235575}
   - {fileID: 383299237}
---- !u!114 &1837699341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837699338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc70abf88386034585e9f884e4fc327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShaderAzul: {fileID: 2100000, guid: ef70e38645adeb049bd72dafd97c343d, type: 2}
-  ShaderRojo: {fileID: 2100000, guid: f46f313ef0f0731439667e7837348b50, type: 2}
-  ShaderVerde: {fileID: 2100000, guid: c4c2465e8e35c6e4b87200b0d52a4ba1, type: 2}
-  ShaderAmarillo: {fileID: 2100000, guid: a2d81533395799a4184a9260a48f87c2, type: 2}
 --- !u!114 &1837699342
 MonoBehaviour:
   m_ObjectHideFlags: 0
