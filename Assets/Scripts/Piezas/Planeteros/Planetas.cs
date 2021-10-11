@@ -35,4 +35,9 @@ public class Planetas : Pieza
         result = FiltroCasillas.RestaLista(result, resta);
         return result;
     }
+    public override void Colocar(Casilla c)
+    {
+        base.Colocar(c);
+        c.SetState(States.planeta);
+    }
 }

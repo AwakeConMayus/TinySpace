@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6331547404648381298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Aterrizar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6331547404911417080}
   - component: {fileID: 6331547404911417086}
   - component: {fileID: 6331547404911417087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4858,7 +4858,7 @@ GameObject:
   - component: {fileID: 6331547404936397963}
   - component: {fileID: 6331547404936397961}
   - component: {fileID: 6331547404936397962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9679,7 +9679,7 @@ GameObject:
   - component: {fileID: 6331547405398104915}
   - component: {fileID: 6331547405398104913}
   - component: {fileID: 6331547405398104914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14606,7 +14606,7 @@ GameObject:
   - component: {fileID: 6331547406327779997}
   - component: {fileID: 6331547406327779987}
   - component: {fileID: 6331547406327779996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4826908166280245669}
   - component: {fileID: 4826908166280245675}
   - component: {fileID: 4826908166280245668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826908166618519626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Despegar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4874,7 +4874,7 @@ GameObject:
   - component: {fileID: 4826908166881867200}
   - component: {fileID: 4826908166881867206}
   - component: {fileID: 4826908166881867207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9687,7 +9687,7 @@ GameObject:
   - component: {fileID: 4826908166906292147}
   - component: {fileID: 4826908166906292145}
   - component: {fileID: 4826908166906292146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14508,7 +14508,7 @@ GameObject:
   - component: {fileID: 4826908167502477419}
   - component: {fileID: 4826908167502477417}
   - component: {fileID: 4826908167502477418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

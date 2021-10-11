@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Shader.ConoDeLuz
-  m_Shader: {fileID: -6465566751694194690, guid: c3760bb009c745f42acc718536ee613b,
+  m_Name: Shader Graphs_Shader_CreacionPlaneta
+  m_Shader: {fileID: -6465566751694194690, guid: 1570dca949ea96045ba06f04d0dedc7f,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -22,10 +22,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_310E024C_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 29d050fca4aec2a48a438eabb0493d20, type: 3}
+    - uvs_hexa_1_png:
+        m_Texture: {fileID: 2800000, guid: 1b287d4746aa10b4b9fef09ac584dab7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - Vector1_2312A401: 1.09
     m_Colors:
-    - Vector2_DFEAA945: {r: -110.4, g: 32.16, b: 0, a: 0}
+    - Color_3D739ED8: {r: 10.541177, g: 14.807843, b: 23.968628, a: 0.14117648}
+    - Color_540ACBDC: {r: 0.012745098, g: 0.02254902, b: 0.07254902, a: 1}

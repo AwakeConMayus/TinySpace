@@ -8,7 +8,8 @@ public enum States
     select,
     holy,
     tpOut,
-    tpIn
+    tpIn,
+    planeta
 }
 
 public class Casilla : MonoBehaviour
@@ -55,6 +56,9 @@ public class Casilla : MonoBehaviour
                 break;
             case States.tpIn:
                 anim.SetTrigger("TPIn");
+                break;
+            case States.planeta:
+                anim.SetTrigger("Planeta");
                 break;
         }
     }

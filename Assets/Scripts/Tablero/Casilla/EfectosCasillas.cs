@@ -26,6 +26,7 @@ public class EfectosCasillas : MonoBehaviour
         efects.Add(g);
     }
 
+
     public void ResetEfects()
     {
         int counter = efects.Count;
