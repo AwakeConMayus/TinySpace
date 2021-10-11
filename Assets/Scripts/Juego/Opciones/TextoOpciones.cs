@@ -7,35 +7,51 @@ public class TextoOpciones : MonoBehaviour
 {
     public Text b1, b2, b3;
     public Text c1, c2;
-    public Button bColor1, bColor2, bColor3;
+    Button buton1, buton2, buton3;
     [HideInInspector]
     public Opciones opciones;
+
+    GameObject g1, g2, g3;
+
+    TextoExplicativo textos;
 
     private void Awake()
     {
         opciones = GetComponent<Opciones>();
         EventManager.StartListening("RotacionOpciones", Actualizar);
+
+        textos = Resources.Load<TextoExplicativo>("Textos");
+
+        buton1 = b1.GetComponentInParent<Button>();
+        buton2 = b2.GetComponentInParent<Button>();
+        buton3 = b3.GetComponentInParent<Button>();
+
     }
 
     public void Actualizar()
     {
         if (opciones.opcionesDisponibles.Count == 0) return;
-        b1.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[0]].name;
-        b2.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[1]].name;
-        b3.text = opciones.opcionesIniciales[opciones.opcionesDisponibles[2]].name;
+
+        g1 = opciones.opcionesIniciales[opciones.opcionesDisponibles[0]];
+        g2 = opciones.opcionesIniciales[opciones.opcionesDisponibles[1]];
+        g3 = opciones.opcionesIniciales[opciones.opcionesDisponibles[2]];
+
+        b1.text = g1.name;
+        b2.text = g2.name;
+        b3.text = g3.name;
 
         c1.text = opciones.opcionesIniciales[opciones.opcionesEnfriamiento[0]].name;
         c2.text = opciones.opcionesIniciales[opciones.opcionesEnfriamiento[1]].name;
 
 
         // Esto se borrará cuando sustituyamos los placeholders
-        bColor1 = b1.GetComponentInParent<Button>();
-        bColor2 = b2.GetComponentInParent<Button>();
-        bColor3 = b3.GetComponentInParent<Button>();
+        buton1 = b1.GetComponentInParent<Button>();
+        buton2 = b2.GetComponentInParent<Button>();
+        buton3 = b3.GetComponentInParent<Button>();
 
-        changeColor(bColor1);
-        changeColor(bColor2);
-        changeColor(bColor3);   
+        changeColor(buton1);
+        changeColor(buton2);
+        changeColor(buton3);   
     }
 
     //* Función totalmente debug, cambia los colores de los botones solo para que, mientras haya botones placeholders,
@@ -60,4 +76,31 @@ public class TextoOpciones : MonoBehaviour
             case "Planeta Planetarios": b.image.color = Color.grey; break;
         }
     }
+
+    #region explicaciones
+    public void B1In()
+    {
+        c1.text = textos.GetTexto(g1);
+    }
+    public void B1Out()
+    {
+        c1.text = g1.name;
+    }
+    public void B2In()
+    {
+        c1.text = textos.GetTexto(g2);
+    }
+    public void B2Out()
+    {
+        c1.text = g2.name;
+    }
+    public void B3In()
+    {
+        c1.text = textos.GetTexto(g3);
+    }
+    public void B3Out()
+    {
+        c1.text = g3.name;
+    }
+    #endregion
 }
