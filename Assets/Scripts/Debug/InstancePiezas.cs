@@ -102,16 +102,8 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void RecuentoPuntosTest()
     {
-        int[] puntuaciones = new int[2];
-
-        foreach (Casilla c in Tablero.instance.mapa)
-        {
-            if (c.pieza)
-            {
-                puntuaciones[c.pieza.Get_Jugador()] += c.pieza.Puntos();
-            }
-        }
-
+        int[] puntuaciones = Tablero.instance.RecuentoPuntos();
+        
         Debug.Log("JugadorInicial: " + puntuaciones[0] + " / " + puntuaciones[1]);
     }
 

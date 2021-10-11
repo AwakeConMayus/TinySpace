@@ -10,7 +10,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     //AVISO: El gameobject en el que vaya este script tiene que tener un photon view o dara error
     public List<Opciones> opciones;
-    Opciones player;
+    public Opciones player;
     bool active;
     bool specialActive;
 

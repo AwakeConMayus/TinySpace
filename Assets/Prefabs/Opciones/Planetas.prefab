@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 6911489721328290437}
   - component: {fileID: 4342080752881257989}
   m_Layer: 5
-  m_Name: OpcionesPlanetas
+  m_Name: Planetas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

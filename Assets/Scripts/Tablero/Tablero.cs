@@ -120,4 +120,20 @@ public class Tablero : MonoBehaviour
                 c.SetState(States.normal);
         }
     }
+
+
+    public int[] RecuentoPuntos()
+    {
+        int[] puntuaciones = new int[2];
+
+        foreach (Casilla c in Tablero.instance.mapa)
+        {
+            if (c.pieza)
+            {
+                puntuaciones[c.pieza.Get_Jugador()] += c.pieza.Puntos();
+            }
+        }
+
+        return puntuaciones;
+    }
 }

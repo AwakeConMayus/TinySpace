@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 8289901984810774623}
   - component: {fileID: 377442513347563283}
   m_Layer: 5
-  m_Name: OpcionesMineros
+  m_Name: Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
