@@ -35,7 +35,6 @@ public class OpcionesMineros : Opciones
         if (mineral >= i)
         {
             mineralGastar = i;
-            EventManager.TriggerEvent("CambioMineral");
             return true;
         }
         else return false;
@@ -45,6 +44,7 @@ public class OpcionesMineros : Opciones
     {
         if (mineralGastar == 0) return;
         mineral -= mineralGastar;
+        EventManager.TriggerEvent("CambioMineral");
         mineralGastar = 0;
     }
 
