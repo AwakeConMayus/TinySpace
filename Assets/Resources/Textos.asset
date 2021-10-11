@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b66e681179fc9e4eaa3f47a16b045af, type: 3}
   m_Name: Textos
   m_EditorClassIdentifier: 
-  explorador: 
-  combate: 
-  laboratorio: 
-  estratega: 
+  explorador: +2p tipo de nave diferente adyacente
+  combate: +3p combate aliado adyacente
+  laboratorio: +1p explorador adyacente, incrementa +1 cada explorador
+  estratega: +3p combate adyacente
+  exploradorMejora: "+1p casilla vac\xEDa adyacente"
+  combateMejora: +3p combate aliado adyacente, +2p enemigo adyacente
+  laboratorioMejora: +2p explorador enemigo adyacente, incrementa +3 cada explorador
+  estrategaMejora: Mejora estratega aliado (+2p extra combate adyacente)
+  combateColonizador: +3p combate aliado adyacente, +2p astro adyacente,
+  comodin: "(1) Coloca una nave basica a tu elecci\xF3n"
+  planeta: Coloca un planeta
