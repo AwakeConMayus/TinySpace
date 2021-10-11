@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class BotonesOpciones : MonoBehaviour
+public class BotonesOpciones : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     TextoOpciones textOpciones;
     public int index;
@@ -15,10 +15,8 @@ public class BotonesOpciones : MonoBehaviour
         textOpciones = GetComponentInParent<TextoOpciones>();
     }
 
-
-    private void OnMouseOver()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        print("Entro en el boton");
         switch (index)
         {
             case 1:
@@ -33,9 +31,8 @@ public class BotonesOpciones : MonoBehaviour
         }
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        print("Salgo del boton");
         switch (index)
         {
             case 1:
