@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6246262229412995126}
   - component: {fileID: 2920229312688944017}
   m_Layer: 0
-  m_Name: Estratega mineros mejorado
+  m_Name: Estratega Mineros Mejorado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  jugador: 0
 --- !u!114 &1838438465116716367
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,13 @@ public class EstrategaMineros : Estratega
 
     public override int Puntos()
     {
-        return base.Puntos() * nivel;
+        int puntosExtraNivel = 2;
+
+        int navesNetas = base.Puntos() / 3;
+
+        int incremento = 3 + nivel * puntosExtraNivel;
+
+        return navesNetas * incremento;
     }
 
     public override List<Casilla> CasillasDisponibles()

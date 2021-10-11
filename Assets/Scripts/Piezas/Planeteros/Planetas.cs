@@ -11,6 +11,8 @@ public class Planetas : Pieza
 
     public override int Puntos()
     {
+        int puntosColonizacion = 3;
+
         int colonizacion = 0;
 
         foreach (Casilla adyacente in casilla.adyacentes)
@@ -22,7 +24,7 @@ public class Planetas : Pieza
         }
 
 
-        if (colonizacion > 0) return 3;
+        if (colonizacion > 0) return puntosColonizacion;
 
         return 0;
     }

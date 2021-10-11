@@ -11,6 +11,8 @@ public abstract class Explorador : Pieza
 
     public override int Puntos()
     {
+        int numPuntosPorClase = 2;
+
         List<Clase> clasesExploradas = new List<Clase>();
         int puntosExploracion = 0;
 
@@ -23,7 +25,7 @@ public abstract class Explorador : Pieza
                 clasesExploradas.Add(adyacete.pieza.clase);
             }
         }
-        puntosExploracion = clasesExploradas.Count * 2;
+        puntosExploracion = clasesExploradas.Count * numPuntosPorClase;
 
         return puntosExploracion;
     }
