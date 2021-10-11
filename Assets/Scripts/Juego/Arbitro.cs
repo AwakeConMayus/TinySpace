@@ -119,6 +119,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
     void Turn()
     {
         EventManager.TriggerEvent("PasoTurno");
+        SendToGoogle.instance.SendOnline();
+
 
         if (turno >= 20)
         {

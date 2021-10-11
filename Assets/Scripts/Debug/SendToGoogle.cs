@@ -80,6 +80,8 @@ public class SendToGoogle : MonoBehaviour
         //* Ahí debes coger el número grande poco después de la variable del formulario a la que quieras asociar el field, por ejemplo: (...)"PuntosMineros",null,0,[[435469167,(...)"PuntosPlanetarios",null,0,[[1370920118,(...)
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
+        print("Ganador dice: |" + Ganador + "|");
+
         form.AddField("entry.435469167",  Ganador);                         // Ganador 
         form.AddField("entry.1370920118", GanaQuienEmpieza);     // GanaQuienEmpieza
 
