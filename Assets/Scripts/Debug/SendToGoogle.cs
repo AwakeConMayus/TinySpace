@@ -11,7 +11,7 @@ public class SendToGoogle : MonoBehaviour
 
     //Auxiliares
     string Ganador;
-    bool GanaQuienEmpieza;
+    string GanaQuienEmpieza;
 
     //Faccion Escogida
     string FaccionP1, FaccionP2;
@@ -81,7 +81,7 @@ public class SendToGoogle : MonoBehaviour
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
         form.AddField("entry.435469167",  Ganador);                         // Ganador 
-        form.AddField("entry.1370920118", GanaQuienEmpieza.ToString());     // GanaQuienEmpieza
+        form.AddField("entry.1370920118", GanaQuienEmpieza);     // GanaQuienEmpieza
 
         form.AddField("entry.1874309661", FaccionP1);     // FaccionP1
         form.AddField("entry.1214466468", FaccionP2);     // FaccionP2
@@ -184,7 +184,10 @@ public class SendToGoogle : MonoBehaviour
         if (jugadorGanador < 2) Ganador = facciones[jugadorGanador];
 
         //GanaQuienEmpieza
-        GanaQuienEmpieza = jugadorGanador == jugador.jugador;
+        if (jugadorGanador == 2) GanaQuienEmpieza = "empate";
+
+        else if (jugadorGanador == jugador.jugador) GanaQuienEmpieza = "true";
+        else GanaQuienEmpieza = "false";
 
         //FaccionP1, FaccionP2
         FaccionP1 = facciones[0];
