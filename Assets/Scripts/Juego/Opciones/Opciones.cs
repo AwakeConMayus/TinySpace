@@ -28,6 +28,7 @@ public abstract class Opciones : MonoBehaviour
     public void Preparacion()
     {
         EventManager.StartListening("ColocarPieza", Rotar);
+        EventManager.StartListening("BloquearInput", BloquearInput);
         poder.GetComponent<Poder>().jugador = jugador;
 
 
@@ -81,5 +82,10 @@ public abstract class Opciones : MonoBehaviour
     public void SetActive(bool b)
     {
         active = b;
+    }
+
+    public void BloquearInput()
+    {
+        active = false;
     }
 }

@@ -7,6 +7,7 @@ public class Comodin : EfectoEspecial
 {
     public override void Accion()
     {
+        EventManager.TriggerEvent("BloquearInput");
         if (PhotonNetwork.InRoom)
         {
             if(GetComponent<PhotonView>().IsMine)
