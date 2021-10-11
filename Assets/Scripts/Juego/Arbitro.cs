@@ -118,8 +118,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
+        EventManager.TriggerEvent("PasoTurno");
 
-        if(turno >= 20)
+        if (turno >= 20)
         {
             EndGame();
         }
@@ -138,6 +139,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if ((turno+1) % 10 == 0)
         {
             specialPhase = true;
+            EventManager.TriggerEvent("PasoTurno");
         }
         if (++turno % 2 != 0)
         {
