@@ -155,6 +155,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void EndGame()
     {
+        Debug.Log("Se va a hacer send to google");
         SendToGoogle.instance.SendOnline();
         Debug.Log("NO HAY FINAL, EMPIEZAN LOS ERRORES :)");
     }

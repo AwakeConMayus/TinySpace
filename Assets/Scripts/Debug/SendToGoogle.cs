@@ -64,12 +64,14 @@ public class SendToGoogle : MonoBehaviour
         byte[] rawData = form.data;
         WWW url = new WWW(BASE_URL, rawData);
 
+        Debug.Log("se han subido los datos");
         yield return url;
     }
 
     void rellenarFormulario()
     {
         BuscarDatos();
+        Debug.Log("se han buscado los datos, procedemos a meterlos a form");
 
         form = new WWWForm();
 
@@ -154,7 +156,6 @@ public class SendToGoogle : MonoBehaviour
             else
             {
                 facciones[1] = arbitroPartida.opciones[0].gameObject.name;
-
             }
         }
         else
@@ -166,7 +167,6 @@ public class SendToGoogle : MonoBehaviour
             else
             {
                 facciones[1] = arbitroPartida.opciones[1].gameObject.name;
-
             }
         }
 
@@ -194,10 +194,12 @@ public class SendToGoogle : MonoBehaviour
         ScoreP2 = puntosFinal[1];
 
 
-
+        int recuento = 0;
         //Recuento de naves y puntos
         foreach(Casilla c in Tablero.instance.mapa)
         {
+            Debug.Log("Interacción del recuento:" + recuento);
+
             if (c.pieza)
             {
                 if(c.pieza.gameObject.GetComponent<Explorador>())
