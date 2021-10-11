@@ -74,6 +74,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_NextTurn()
     {
+        EventManager.TriggerEvent("Siguiente_turno");
         if (specialPhase) SpecialTurn();
         else Turn();
     }
@@ -118,9 +119,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        EventManager.TriggerEvent("PasoTurno");
-
-
         if (turno >= 20)
         {
             EndGame();
@@ -140,7 +138,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if ((turno+1) % 10 == 0)
         {
             specialPhase = true;
-            EventManager.TriggerEvent("PasoTurno");
         }
         if (++turno % 2 != 0)
         {
