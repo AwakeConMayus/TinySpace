@@ -15,23 +15,23 @@ public class InterfazTurnos : MonoBehaviour
 
     public void Start()
     {
-        EventManager.StartListening("PasoTurno", Siguiente_Turno);
+        EventManager.StartListening("Siguiente_turno", Siguiente_Turno);
 
     }
     public void Siguiente_Turno()
     {
         Debug.Log("turno interfaz" + turno_actual);
 
-        if(turno_actual > 10)
+        if(turno_actual > 13)
         {
-            turno_actual = 0;
+            turno_actual = 2;
             Reset();
         }
-        if(turno_actual < 10)
+        if(turno_actual < 12 && turno_actual > 1)
         {
             Encender_Bombilla(turno_actual);
         }
-        if (turno_actual == 10)
+        if (turno_actual == 12)
         {
             Bombilla_Poder();
         }
@@ -40,19 +40,19 @@ public class InterfazTurnos : MonoBehaviour
 
     public void Encender_Bombilla(int turno_actual)
     {
-        if(turno_actual == 0)
+        if(turno_actual == 2)
         {
-            lista_bombillas[turno_actual].GetComponent<Animator>().SetTrigger("actual");
+            lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
         }
         else
         {
-            lista_bombillas[turno_actual].GetComponent<Animator>().SetTrigger("actual");
-            lista_bombillas[turno_actual - 1].GetComponent<Animator>().SetTrigger("pasado");
+            lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
+            lista_bombillas[turno_actual - 3].GetComponent<Animator>().SetTrigger("pasado");
         }
     }
     public void Bombilla_Poder()
     {
-        lista_bombillas[turno_actual-1].GetComponent<Animator>().SetTrigger("pasado");
+        lista_bombillas[turno_actual-3].GetComponent<Animator>().SetTrigger("pasado");
         bombilla_poder.GetComponent<Animator>().SetTrigger("actual");
     }
     public void Reset()
