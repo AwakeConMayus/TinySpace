@@ -14,7 +14,6 @@ public class Planetas : Pieza
         int puntosColonizacion = 3;
 
         int colonizacion = 0;
-
         foreach (Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
