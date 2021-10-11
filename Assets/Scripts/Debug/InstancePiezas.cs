@@ -102,6 +102,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void RecuentoPuntosTest()
     {
+        SendToGoogle.instance.SendOnline();
         int[] puntuaciones = Tablero.instance.RecuentoPuntos();
         
         Debug.Log("JugadorInicial: " + puntuaciones[0] + " / " + puntuaciones[1]);
