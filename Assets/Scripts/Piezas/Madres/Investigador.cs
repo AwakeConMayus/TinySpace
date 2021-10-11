@@ -21,7 +21,6 @@ public abstract class Investigador : Pieza
             if (!adyacente || !adyacente.pieza) continue;
             if(adyacente.pieza.CompareClase(Clase.explorador))
             {
-                print(adyacente.pieza.clase);
                 puntos += puntosIniciales;
                 puntosIniciales += incremento;
             }
