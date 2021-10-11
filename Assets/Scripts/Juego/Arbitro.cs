@@ -128,7 +128,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
         if(turno == 3)
         {
-            SendToGoogle.instance.SendOnline();
+            if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
+                SendToGoogle.instance.SendOnline();
         }
 
 
@@ -161,7 +162,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void EndGame()
     {
-        SendToGoogle.instance.SendOnline();
+        if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
+            SendToGoogle.instance.SendOnline();
+
+
         Debug.Log("NO HAY FINAL, EMPIEZAN LOS ERRORES :)");
     }
 }
