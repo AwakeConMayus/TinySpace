@@ -77,6 +77,9 @@ public class TextoOpciones : MonoBehaviour
             case "Explorador Mineros":     b.image.color = Color.cyan; break;
             case "Explorador Planetarios": b.image.color = Color.cyan; break;
 
+            case "Laboratorio Mineros":     b.image.color = Color.yellow; break;
+            case "Laboratorio Planetarios": b.image.color = Color.yellow; break;
+
             case "Comodin Mineros":     b.image.color = Color.grey; break;
             case "Planeta Planetarios": b.image.color = Color.grey; break;
         }
