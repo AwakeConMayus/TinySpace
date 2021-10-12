@@ -20,8 +20,6 @@ public class InterfazTurnos : MonoBehaviour
     }
     public void Siguiente_Turno()
     {
-        Debug.Log("turno interfaz" + turno_actual);
-
         if(turno_actual > 13)
         {
             turno_actual = 2;
