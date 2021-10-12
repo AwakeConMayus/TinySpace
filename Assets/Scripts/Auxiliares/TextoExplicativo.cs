@@ -6,7 +6,10 @@ using UnityEngine;
 public class TextoExplicativo : ScriptableObject
 {
     [SerializeField]
-    string  explorador, combate, laboratorio, estratega,
+    string  mineral,
+            heroeMaquinista,
+            heroeColono,
+            explorador, combate, laboratorio, estratega,
             exploradorMejora, combateMejora, laboratorioMejora, estrategaMejora,
             combateColonizador,
             comodin,
@@ -69,6 +72,23 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Planetas>())
         {
             texto = planeta;
+        }
+
+        else if (prefab.GetComponent<Poder>())
+        {
+            if (prefab.GetComponent<PoderMaquinista>())
+            {
+                texto = heroeMaquinista;
+            }
+            else if (prefab.GetComponent<PoderColono>())
+            {
+                texto = heroeColono;
+            }
+        }
+
+        else if (prefab.GetComponent<TextMineral>())
+        {
+            texto = mineral;
         }
 
         return texto;
