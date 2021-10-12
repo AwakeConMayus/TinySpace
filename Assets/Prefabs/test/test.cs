@@ -33,4 +33,5 @@ public class test : MonoBehaviourPunCallbacks
     {
         print("disconected form server for reason " + cause.ToString());
     }
+
 }

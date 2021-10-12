@@ -2689,6 +2689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1991250675}
   - component: {fileID: 1991250676}
+  - component: {fileID: 1991250677}
   m_Layer: 0
   m_Name: canvases
   m_TagString: Untagged
@@ -2727,6 +2728,19 @@ MonoBehaviour:
   createRoomCanvas: {fileID: 181360628}
   onJoinedRoomCanvas: {fileID: 1708455524}
   roomName: {fileID: 608733328}
+--- !u!114 &1991250677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991250674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48514e75b86051941bbd3a820d13a9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFPS: 30
 --- !u!1 &2034928268
 GameObject:
   m_ObjectHideFlags: 0

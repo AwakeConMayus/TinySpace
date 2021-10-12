@@ -22,6 +22,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     bool inputActive = true;
 
+    [SerializeField]
+    MenuFinalParitda mi_menu;
+
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
@@ -156,6 +159,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
             SendToGoogle.instance.SendOnline();
 
+        
+        mi_menu.gameObject.SetActive(true);
+        mi_menu.Final_Partida(Tablero.instance.RecuentoPuntos());
 
         Debug.Log("NO HAY FINAL, EMPIEZAN LOS ERRORES :)");
     }
