@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Este script hay que refactorizarlo :S
+/// </summary>
+
 public class TextoOpciones : MonoBehaviour
 {
     public Text b1, b2, b3;
@@ -54,8 +58,9 @@ public class TextoOpciones : MonoBehaviour
         changeColor(buton3);   
     }
 
-    //* Función totalmente debug, cambia los colores de los botones solo para que, mientras haya botones placeholders,
-    //* sea más sencillo para la gente diferenciar que carta es cual. Los nombres que comprueba son los del Prefab (nombradlos bien cabrones!)
+    /// <summary>
+    /// Esta funcion hay que eliminarla y sustituirla por una mejor cuando tengamos sprites y botones personalizados
+    /// </summary>
     private void changeColor(Button b)
     {
         switch (b.GetComponentInChildren<Text>().text)

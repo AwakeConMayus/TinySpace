@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mineral: "Recoge minerales colocando naves en meteoritos. Gasta 3 minerales para
     jugar una versi\xF3n mejorada de una nave b\xE1sica."
-  heroeMaquinista: 'Inicio: Coloca 10 meteoritos en casillas aleatorias del mapa.<br>Mitad
-    y Final de partida: Mueve una nave aliada a otra casilla del mapa.'
+  heroeMaquinista: 'Inicio: Coloca 10 meteoritos en casillas aleatorias del mapa.    
+    Mitad y Final de partida: Mueve una nave aliada a otra casilla del mapa.'
   heroeColono: "Pasiva: Coloca tres planetas en casillas aleatorias. Al final de
     la partida gana tres puntos por cada planeta en el que tengas m\xE1s naves adyacentes
     que tu rival.     Mitad de partida: Coloca un planeta en el mapa. Despu\xE9s
