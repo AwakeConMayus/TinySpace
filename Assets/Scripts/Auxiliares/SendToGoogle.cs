@@ -147,7 +147,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.794890710",  PlanetaSagradoP1);            // PlanetaSagradoP1
         form.AddField("entry.1157758824", PlanetaSagradoP2);            // PlanetaSagradoP2
         form.AddField("entry.978047630",  scorePlanetaSagradoP1);       // scorePlanetaSagradoP1
-        form.AddField("entry.1821666122", scorePlanetaSagradoP1);       // scorePlanetaSagradoP2
+        form.AddField("entry.1821666122", scorePlanetaSagradoP2);       // scorePlanetaSagradoP2
     }
 
 
