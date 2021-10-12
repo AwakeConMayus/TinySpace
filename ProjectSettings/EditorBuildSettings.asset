@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: fb07a80ee1ca106448d9c243933f9a36
+  - enabled: 1
+    path: Assets/Scenes/matchmaking.unity
+    guid: 13a9413c689b6e842b088561d885fbca
   m_configObjects: {}
