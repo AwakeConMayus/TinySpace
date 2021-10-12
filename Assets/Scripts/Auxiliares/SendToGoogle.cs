@@ -33,6 +33,11 @@ public class SendToGoogle : MonoBehaviour
         scorePlanetaP2, scoreExploradorMejP2, scoreCombateMejP2, scoreLaboratorioMejP2, 
         scoreEstrategaMejP2, scoreCombateEspP2;
 
+    //Variables Despistadas
+    int PlanetaSagradoP1, PlanetaSagradoP2, scorePlanetaSagradoP1,
+        scorePlanetaSagradoP2;
+
+
 
     public static SendToGoogle instance;
     private void Awake()
@@ -336,16 +341,33 @@ public class SendToGoogle : MonoBehaviour
 
                 else if (c.pieza.gameObject.GetComponent<Planetas>())
                 {
-                    if (c.pieza.Get_Jugador() == 0)
+                    if (c.pieza.gameObject.GetComponent<PlanetaSagrado>())
                     {
-                        ++PlanetaP1;
-                        scorePlanetaP1 += c.pieza.Puntos();
+                        if (c.pieza.Get_Jugador() == 0)
+                        {
+                            ++PlanetaSagradoP1;
+                            scorePlanetaSagradoP1 += c.pieza.Puntos();
+                        }
+                        else
+                        {
+                            ++PlanetaSagradoP2;
+                            scorePlanetaSagradoP2 += c.pieza.Puntos();
+                        }
                     }
+
                     else
                     {
-                        ++PlanetaP2;
-                        scorePlanetaP2 += c.pieza.Puntos();
-                    }
+                        if (c.pieza.Get_Jugador() == 0)
+                        {
+                            ++PlanetaP1;
+                            scorePlanetaP1 += c.pieza.Puntos();
+                        }
+                        else
+                        {
+                            ++PlanetaP2;
+                            scorePlanetaP2 += c.pieza.Puntos();
+                        }
+                    }                    
                 }
             }
         }
