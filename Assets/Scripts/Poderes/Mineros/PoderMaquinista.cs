@@ -106,7 +106,7 @@ public class PoderMaquinista : PoderMineros
     public void RPC_TPEfects(int origen, int destino)
     {
         Casilla cOrigen = Tablero.instance.Get_Casilla_By_Numero(origen);
-        Casilla cDestino = Tablero.instance.Get_Casilla_By_Numero(origen);
+        Casilla cDestino = Tablero.instance.Get_Casilla_By_Numero(destino);
         cOrigen.SetState(States.tpOut);
         cDestino.SetState(States.tpIn);
     }
