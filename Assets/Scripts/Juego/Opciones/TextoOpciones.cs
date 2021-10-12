@@ -65,20 +65,25 @@ public class TextoOpciones : MonoBehaviour
     {
         switch (b.GetComponentInChildren<Text>().text)
         {
-            case "Estratega Mineros":     b.image.color = Color.magenta; break;
-            case "Estratega Planetarios": b.image.color = Color.magenta; break;
+            case "Estratega Mineros":          b.image.color = Color.magenta; break;
+            case "Estratega Mineros Mejorado": b.image.color = Color.magenta; break;
+            case "Estratega Planetarios":      b.image.color = Color.magenta; break;
 
-            case "Investigador Mineros":     b.image.color = Color.green; break;
-            case "Investigador Planetarios": b.image.color = Color.green; break;
+            case "Investigador Mineros":          b.image.color = Color.green; break;
+            case "Investigador Mineros Mejorado": b.image.color = Color.green; break;
+            case "Investigador Planetarios":      b.image.color = Color.green; break;
 
             case "Combate Mineros":                   b.image.color = Color.red; break;
+            case "Combate Mineros Mejorado":          b.image.color = Color.red; break;
             case "Combate Planetarios Colonizadores": b.image.color = Color.red; break;
 
-            case "Explorador Mineros":     b.image.color = Color.cyan; break;
-            case "Explorador Planetarios": b.image.color = Color.cyan; break;
+            case "Explorador Mineros":          b.image.color = Color.cyan; break;
+            case "Explorador Mineros Mejorado": b.image.color = Color.cyan; break;
+            case "Explorador Planetarios":      b.image.color = Color.cyan; break;
 
-            case "Laboratorio Mineros":     b.image.color = Color.yellow; break;
-            case "Laboratorio Planetarios": b.image.color = Color.yellow; break;
+            case "Laboratorio Mineros":          b.image.color = Color.yellow; break;
+            case "Laboratorio Mineros Mejorado": b.image.color = Color.yellow; break;
+            case "Laboratorio Planetarios":      b.image.color = Color.yellow; break;
 
             case "Comodin Mineros":     b.image.color = Color.grey; break;
             case "Planeta Planetarios": b.image.color = Color.grey; break;
