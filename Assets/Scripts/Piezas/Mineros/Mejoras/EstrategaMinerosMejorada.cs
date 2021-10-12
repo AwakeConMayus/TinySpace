@@ -8,7 +8,7 @@ public class EstrategaMinerosMejorada : Efecto
     public override void Accion()
     {
         EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
-        ++objetivo.nivel;
+        ++objetivo.nivelInicial;
 
         objetivo.transform.localScale *= 2; //Visual
 

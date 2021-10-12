@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EstrategaMineros : Estratega
 {
-    [HideInInspector]
-    public int nivel = 0;
+    public int nivelInicial = 0;
 
     public override int Puntos()
     {
@@ -13,7 +12,7 @@ public class EstrategaMineros : Estratega
 
         int navesNetas = base.Puntos() / 3;
 
-        int incremento = 3 + nivel * puntosExtraNivel;
+        int incremento = 3 + nivelInicial * puntosExtraNivel;
 
         return navesNetas * incremento;
     }

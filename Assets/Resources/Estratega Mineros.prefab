@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clase: 0
   casilla: {fileID: 0}
-  nivel: 1
+  nivel: 0
 --- !u!114 &-4361594507905850228
 MonoBehaviour:
   m_ObjectHideFlags: 0
