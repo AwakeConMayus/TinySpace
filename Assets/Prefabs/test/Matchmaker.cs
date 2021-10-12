@@ -23,7 +23,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
-            Debug.Log("Sin conexion con el servidor");
+            //Debug.Log("Sin conexion con el servidor");
         }
         _roomList = new List<RoomInfo>();   
     }
@@ -33,7 +33,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
-            Debug.Log("Sin conexion con el servidor");
+            //Debug.Log("Sin conexion con el servidor");
             return;
         }
         if (first_time)
@@ -47,21 +47,17 @@ public class Matchmaker : MonoBehaviourPunCallbacks
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         _roomList = roomList;
-        Debug.Log("Actualizo la lista de salas");
     }
 
     public void Buscar_Sala()
     {
-
-        Debug.Log("Mi lista contiene esto" + _roomList.Count);
         foreach(RoomInfo roomInfo in _roomList)
         {
-            Debug.Log(roomInfo.IsOpen);
+            //Debug.Log(roomInfo.IsOpen);
             if (roomInfo.IsOpen && roomInfo.PlayerCount == 1)
             {
                 PhotonNetwork.JoinRoom(roomInfo.Name);
                 PhotonNetwork.AutomaticallySyncScene = true;
-                Debug.Log("me he unido a una sala");
                 return;
             }
         }
@@ -73,7 +69,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
         intervalo = Random.Range(15, 50);
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
-        Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
+        //Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
         texto.SetActive(true);
     }
 
@@ -83,7 +79,6 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                Debug.Log("un jugador se ha unido a mi sala");
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.AutomaticallySyncScene = true;

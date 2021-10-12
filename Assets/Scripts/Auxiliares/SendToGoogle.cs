@@ -69,15 +69,13 @@ public class SendToGoogle : MonoBehaviour
         byte[] rawData = form.data;
         WWW url = new WWW(BASE_URL, rawData);
 
-        Debug.Log("se han subido los datos"); ///////////////////////
         yield return url;
     }
 
     void rellenarFormulario()
     {
         BuscarDatos();
-        Debug.Log("se han buscado los datos, procedemos a meterlos a form");  /////////////////////////////
-
+       
         form = new WWWForm();
 
         //* Crea un nuevo formulario al que le añade los fields correspondientes a los del formulario de google forms, para obtener el dato entry.XXXXXX debes de:
@@ -153,7 +151,6 @@ public class SendToGoogle : MonoBehaviour
 
     void BuscarDatos()
     {
-        Debug.Log("entro a buscar datos");  ///////////////////////////////
         //Variables Auxiliares
         int[] puntosFinal = Tablero.instance.RecuentoPuntos();
 
@@ -198,12 +195,9 @@ public class SendToGoogle : MonoBehaviour
         ScoreP2 = puntosFinal[1];
 
 
-        int recuento = 0;
         //Recuento de naves y puntos
         foreach(Casilla c in Tablero.instance.mapa)
         {
-            Debug.Log("Interacción del recuento:" + recuento); ///////////////////////////////////
-
             if (c.pieza)
             {
                 if(c.pieza.gameObject.GetComponent<Explorador>())
