@@ -22,11 +22,13 @@ public class Casilla : MonoBehaviour
 
     public bool meteorito = false;
 
+    EfectosCasillas efectos;
     Animator anim;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        efectos = GetComponent<EfectosCasillas>();
     }
 
     public void Clear()
@@ -49,13 +51,13 @@ public class Casilla : MonoBehaviour
                 anim.SetTrigger("Select");
                 break;
             case States.holy:
-                anim.SetTrigger("Holy");
+                efectos.Holy();
                 break;
             case States.tpOut:
-                anim.SetTrigger("TPOut");
+                efectos.TPOut();
                 break;
             case States.tpIn:
-                anim.SetTrigger("TPIn");
+                efectos.TPIn();
                 break;
             case States.planeta:
                 anim.SetTrigger("Planeta");
