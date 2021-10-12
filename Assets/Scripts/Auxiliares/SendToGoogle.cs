@@ -143,6 +143,11 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.552524032", scoreLaboratorioMejP2);    // scoreLaboratorioMejP2
         form.AddField("entry.489967046", scoreEstrategaMejP2);      // scoreEstrategaMejP2
         form.AddField("entry.786605642", scoreCombateEspP2);        // scoreCombateEspP2
+
+        form.AddField("entry.794890710",  PlanetaSagradoP1);            // PlanetaSagradoP1
+        form.AddField("entry.1157758824", PlanetaSagradoP2);            // PlanetaSagradoP2
+        form.AddField("entry.978047630",  scorePlanetaSagradoP1);       // scorePlanetaSagradoP1
+        form.AddField("entry.1821666122", scorePlanetaSagradoP1);       // scorePlanetaSagradoP2
     }
 
 
