@@ -79,7 +79,7 @@ public class PoderColono : PoderPlanetas
     [PunRPC]
     public void RPC_InstanciarPlanetaSagrado(int i, int _jugador)
     {
-        Casilla c = Tablero.instance.Get_Casilla_By_Numero(i);
+        Casilla c = Tablero.instance.mapa[i];
         c.SetState(States.holy);
         c.Clear();
         if (!planetaSagrado) planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");

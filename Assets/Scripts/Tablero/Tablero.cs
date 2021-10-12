@@ -103,16 +103,6 @@ public class Tablero : MonoBehaviour
         return 0;
     }
 
-    public Casilla Get_Casilla_By_Numero(int numero)
-    {
-        if (numero < 0 || numero > mapa.Count)
-        {
-            Debug.LogError("No se ha encontrado la casilla"); 
-            return null;
-        }
-        return mapa[numero].GetComponent<Casilla>();
-    }
-
     public void ResetCasillasEfects()
     {
         foreach(Casilla c in mapa)
