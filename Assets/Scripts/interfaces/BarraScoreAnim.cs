@@ -8,7 +8,7 @@ public class BarraScoreAnim : MonoBehaviour
     RectTransform myTransform;
 
     float targetSize;
-    float error = 1f;
+    float error = 0.01f;
     public float speed = 1;
 
     private void Awake()
