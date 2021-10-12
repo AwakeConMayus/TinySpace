@@ -82,7 +82,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.AutomaticallySyncScene = true;
-                PhotonNetwork.LoadLevel(1);
+                PhotonNetwork.LoadLevel(0);
             }
         }
     }
@@ -110,7 +110,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
 }
