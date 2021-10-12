@@ -7,20 +7,19 @@ public class BarraScoreAnim : MonoBehaviour
 {
     RectTransform myTransform;
 
-    float targetSize;
+    float targetSize = 250;
     float error = 0.01f;
-    public float time_toChange = 2;
+    public float time_toChange = 3;
     private float counter;
 
     private void Awake()
     {
-        myTransform = GetComponent<RectTransform>();
-        
+        myTransform = GetComponent<RectTransform>();        
     }
 
     private void Update()
     {
-        if(myTransform.sizeDelta.y - targetSize > error)
+        if(Mathf.Abs(myTransform.sizeDelta.y - targetSize) > error)
         {
             counter += Time.deltaTime;
 
