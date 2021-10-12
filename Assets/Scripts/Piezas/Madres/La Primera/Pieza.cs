@@ -52,7 +52,12 @@ public abstract class Pieza : MonoBehaviour
     {
         casilla = c;
         casilla.pieza = this;
-        if(this.gameObject.GetPhotonView().IsMine && !pieza_extra) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (this.gameObject.GetPhotonView().IsMine && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
+    }
+
+    void TerminarAccionConjunta()
+    {
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public virtual bool CompareClase(Clase compare)

@@ -119,7 +119,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        if (turno >= 20)
+        if (turno == 20)
         {
             EndGame();
         }
