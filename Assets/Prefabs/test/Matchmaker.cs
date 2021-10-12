@@ -23,7 +23,12 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
-            //Debug.Log("Sin conexion con el servidor");
+            Debug.Log("Sin conexion con el servidor");
+        }
+        else
+        {
+            StartCoroutine(Tiempo_De_Espera());
+            first_time = false;
         }
         _roomList = new List<RoomInfo>();   
     }
@@ -33,7 +38,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
-            //Debug.Log("Sin conexion con el servidor");
+            Debug.Log("Sin conexion con el servidor");
             return;
         }
         if (first_time)
