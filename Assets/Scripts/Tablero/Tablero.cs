@@ -107,7 +107,7 @@ public class Tablero : MonoBehaviour
     {
         foreach(Casilla c in mapa)
         {
-                c.SetState(States.normal);
+                c.SetState(States.none);
         }
     }
 

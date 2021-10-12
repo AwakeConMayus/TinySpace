@@ -9,7 +9,10 @@ public enum States
     holy,
     tpOut,
     tpIn,
-    planeta
+    planeta,
+    oyente,
+    none,
+    minero
 }
 
 public class Casilla : MonoBehaviour
@@ -45,6 +48,10 @@ public class Casilla : MonoBehaviour
         switch (s)
         {
             case States.normal:
+                anim.SetBool("Oyente", false);
+                anim.SetBool("Minero", false);
+                break;
+            case States.none:
                 anim.SetTrigger("Reset");
                 break;
             case States.select:
@@ -62,8 +69,12 @@ public class Casilla : MonoBehaviour
             case States.planeta:
                 anim.SetTrigger("Planeta");
                 break;
+            case States.oyente:
+                anim.SetBool("Oyente", true);
+                break;
+            case States.minero:
+                anim.SetBool("Minero", true);
+                break;
         }
     }
-  
-
 }

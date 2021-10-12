@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EstrategaOyentes
+  m_Shader: {fileID: -6465566751694194690, guid: c67d5ac578b620d4c80346cb6b799dfc,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_nave:
+        m_Texture: {fileID: 2800000, guid: 759bcd80339099d4da160dc7fcbed625, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3182302F: 2
+    - Vector1_5D12A3A7: 0.03
+    - Vector1_C4FFEE7: -1
+    m_Colors:
+    - Color_1FDD30BB: {r: 0, g: 6.18396, b: 23.35168, a: 1}
+    - Color_chasis: {r: 1, g: 1, b: 1, a: 0}
+    - Color_windows: {r: 0.50890046, g: 1.0676931, b: 1.9058821, a: 0}
