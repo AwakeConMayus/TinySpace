@@ -13,7 +13,6 @@ public class InterfazScore : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("Siguiente_turno", Update_Score);
-        Debug.Log(fillAliado.GetComponent<RectTransform>().sizeDelta);
     }
 
     public void Update_Score()
@@ -24,14 +23,12 @@ public class InterfazScore : MonoBehaviour
         {
             scoreAliado.text = aux_puntuacion[0].ToString();
             scoreEnemigo.text = aux_puntuacion[1].ToString();
-            Debug.Log("soy el primero");
             FillRects(aux_puntuacion[0], aux_puntuacion[1]);
         }
         else
         {
             scoreAliado.text = aux_puntuacion[1].ToString();
             scoreEnemigo.text = aux_puntuacion[0].ToString();
-            Debug.Log("soy el segundo");
             FillRects(aux_puntuacion[1], aux_puntuacion[0]);
         }
 
@@ -39,14 +36,15 @@ public class InterfazScore : MonoBehaviour
 
     public void FillRects(int puntuacion_aliada, int puntuacion_enemiga)
     {
-        int colchon = 1;
+        int colchon = 2;
+        if (puntuacion_aliada != 0 && puntuacion_enemiga != 0) colchon = 0;
+
         puntuacion_aliada += colchon;
         puntuacion_enemiga += colchon;
         int aux_puntuaciones = puntuacion_aliada + puntuacion_enemiga;
         Debug.Log(aux_puntuaciones);
         Debug.Log(puntuacion_aliada);
         Debug.Log(((puntuacion_aliada / (float)aux_puntuaciones)) * 500);
-        fillAliado.GetComponent<RectTransform>().sizeDelta = new Vector2(fillAliado.GetComponent<RectTransform>().sizeDelta.x , ((puntuacion_aliada / (float)aux_puntuaciones) * 500));
-        fillEnemigo.GetComponent<RectTransform>().sizeDelta = new Vector2(fillEnemigo.GetComponent<RectTransform>().sizeDelta.x, 500 - ((puntuacion_aliada / (float)aux_puntuaciones) * 500));
+        fillAliado.GetComponent<BarraScoreAnim>().SetTargetSize((puntuacion_aliada / (float)aux_puntuaciones) * 500);
     }
 }
