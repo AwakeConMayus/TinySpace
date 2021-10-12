@@ -33,6 +33,7 @@ public class MenuComodin : MonoBehaviour
             GameObject thisPieza = Instantiate(prefab);
             thisPieza.transform.position = casilla.transform.position;
         }
+        EventManager.TriggerEvent("DesbloquearInput");
         gameObject.SetActive(false);
     }
 }
