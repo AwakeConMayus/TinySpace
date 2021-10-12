@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -10,6 +11,8 @@ using Photon.Realtime;
 /// </summary>
 public class Matchmaker : MonoBehaviourPunCallbacks
 {
+
+    [SerializeField] GameObject texto;
 
     private int intervalo = 0;
     private List<RoomInfo> _roomList;
@@ -21,7 +24,6 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected)
         {
             Debug.Log("Sin conexion con el servidor");
-            return;
         }
         _roomList = new List<RoomInfo>();   
     }
@@ -69,9 +71,10 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         options.EmptyRoomTtl = 1;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
-        intervalo = Random.Range(20, 40);
+        intervalo = Random.Range(15, 50);
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
         Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
+        texto.SetActive(true);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -98,13 +101,21 @@ public class Matchmaker : MonoBehaviourPunCallbacks
     IEnumerator Tiempo_Hasta_Recarga(int i)
     {
         yield return new WaitForSeconds(i);
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount < 2)
+        /*if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount < 2)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             Debug.Log(PhotonNetwork.CurrentRoom.IsOpen = false);
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.LeaveRoom(false);
             StartCoroutine(Tiempo_De_Espera());
-        }
+        }*/
+        PhotonNetwork.Disconnect();
+
     }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        SceneManager.LoadScene(2);
+    }
+
 }
