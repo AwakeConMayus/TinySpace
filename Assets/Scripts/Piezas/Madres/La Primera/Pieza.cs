@@ -14,10 +14,19 @@ public enum Clase
     astros,
     comodin
 }
+public enum Faccion
+{
+    none,
+    minero,
+    oyente
+}
 
 
 public abstract class Pieza : MonoBehaviour
 {
+    [SerializeField]
+    protected Faccion faccion;
+
     [HideInInspector]
     public Clase clase;
 
@@ -73,6 +82,15 @@ public abstract class Pieza : MonoBehaviour
         if (other.gameObject.GetComponent<Casilla>())
         {
             Colocar(other.gameObject.GetComponent<Casilla>());
+            switch (faccion)
+            {
+                case Faccion.minero:
+                    other.gameObject.GetComponent<Casilla>().SetState(States.minero);
+                    break;
+                case Faccion.oyente:
+                    other.gameObject.GetComponent<Casilla>().SetState(States.oyente);
+                    break;
+            }
         }
     }
 
@@ -81,6 +99,7 @@ public abstract class Pieza : MonoBehaviour
         if(other.gameObject.GetComponent<Casilla>())
         {
             other.gameObject.GetComponent<Casilla>().pieza = null;
+            other.gameObject.GetComponent<Casilla>().SetState(States.normal);
         }
     }
     public void Set_Jugador(int _jugador)
