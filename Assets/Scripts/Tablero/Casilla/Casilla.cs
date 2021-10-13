@@ -48,8 +48,8 @@ public class Casilla : MonoBehaviour
         switch (s)
         {
             case States.normal:
-                anim.SetBool("Oyente", false);
-                anim.SetBool("Minero", false);
+                anim.SetBool("Oyentes", false);
+                anim.SetBool("Mineros", false);
                 break;
             case States.none:
                 anim.SetTrigger("Reset");
@@ -70,10 +70,10 @@ public class Casilla : MonoBehaviour
                 anim.SetTrigger("Planeta");
                 break;
             case States.oyente:
-                anim.SetBool("Oyente", true);
+                anim.SetBool("Oyentes", true);
                 break;
-            case States.minero:
-                anim.SetBool("Minero", true);
+            case States.minero: 
+                anim.SetBool("Mineros", true);
                 break;
         }
     }
