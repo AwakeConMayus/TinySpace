@@ -9,111 +9,75 @@ using UnityEngine.UI;
 
 public class TextoOpciones : MonoBehaviour
 {
-    public Text b1, b2, b3;
-    public Text c1, c2;
-    Button buton1, buton2, buton3;
-    [HideInInspector]
-    public Opciones opciones;
+    public GameObject[] botones = new GameObject[5];
 
-    GameObject g1, g2, g3;
+    public Sprite[] cartas = new Sprite[5];
 
-    TextoExplicativo textos;
+    public Sprite cartaBlanca;
+
+    protected Opciones opciones;
+
+    protected GameObject[] prefabsOrdenados = new GameObject[5];
+
+    protected TextoExplicativo textos;
 
     private void Awake()
     {
         opciones = GetComponent<Opciones>();
+
         EventManager.StartListening("RotacionOpciones", Actualizar);
 
-        textos = Resources.Load<TextoExplicativo>("Textos");
+        textos = Resources.Load<TextoExplicativo>("Textos");   
+    }   
 
-        buton1 = b1.GetComponentInParent<Button>();
-        buton2 = b2.GetComponentInParent<Button>();
-        buton3 = b3.GetComponentInParent<Button>();
-
-    }
-
-    public void Actualizar()
+    public virtual void Actualizar()
     {
-        if (opciones.opcionesDisponibles.Count == 0) return;
-
-        g1 = opciones.opcionesIniciales[opciones.opcionesDisponibles[0]];
-        g2 = opciones.opcionesIniciales[opciones.opcionesDisponibles[1]];
-        g3 = opciones.opcionesIniciales[opciones.opcionesDisponibles[2]];
-
-        b1.text = g1.name;
-        b2.text = g2.name;
-        b3.text = g3.name;
-
-        c1.text = opciones.opcionesIniciales[opciones.opcionesEnfriamiento[0]].name;
-        c2.text = opciones.opcionesIniciales[opciones.opcionesEnfriamiento[1]].name;
-
-
-        // Esto se borrará cuando sustituyamos los placeholders
-        buton1 = b1.GetComponentInParent<Button>();
-        buton2 = b2.GetComponentInParent<Button>();
-        buton3 = b3.GetComponentInParent<Button>();
-
-        changeColor(buton1);
-        changeColor(buton2);
-        changeColor(buton3);   
-    }
-
-    /// <summary>
-    /// Esta funcion hay que eliminarla y sustituirla por una mejor cuando tengamos sprites y botones personalizados
-    /// </summary>
-    private void changeColor(Button b)
-    {
-        switch (b.GetComponentInChildren<Text>().text)
+        for (int i = 0; i < 5; i++)
         {
-            case "Estratega Mineros":          b.image.color = Color.magenta; break;
-            case "Estratega Mineros Mejorado": b.image.color = Color.magenta; break;
-            case "Estratega Planetarios":      b.image.color = Color.magenta; break;
-
-            case "Investigador Mineros":          b.image.color = Color.green; break;
-            case "Investigador Mineros Mejorado": b.image.color = Color.green; break;
-            case "Investigador Planetarios":      b.image.color = Color.green; break;
-
-            case "Combate Mineros":                   b.image.color = Color.red; break;
-            case "Combate Mineros Mejorado":          b.image.color = Color.red; break;
-            case "Combate Planetarios Colonizadores": b.image.color = Color.red; break;
-
-            case "Explorador Mineros":          b.image.color = Color.cyan; break;
-            case "Explorador Mineros Mejorado": b.image.color = Color.cyan; break;
-            case "Explorador Planetarios":      b.image.color = Color.cyan; break;
-
-            case "Laboratorio Mineros":          b.image.color = Color.yellow; break;
-            case "Laboratorio Mineros Mejorado": b.image.color = Color.yellow; break;
-            case "Laboratorio Planetarios":      b.image.color = Color.yellow; break;
-
-            case "Comodin Mineros":     b.image.color = Color.grey; break;
-            case "Planeta Planetarios": b.image.color = Color.grey; break;
+            prefabsOrdenados[i] = opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+        }
+        for (int i = 3; i < 5; i++)
+        {
+            botones[i].GetComponentInChildren<Text>().text = prefabsOrdenados[i].name;
         }
     }
+
+    
 
     #region explicaciones
     public void B1In()
     {
-        b1.text = textos.GetTexto(g1);
+        botones[0].GetComponent<Image>().sprite = cartaBlanca;
+        botones[0].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[0]);
     }
     public void B1Out()
     {
-        b1.text = g1.name;
+        botones[0].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[0]];
+        botones[0].GetComponentInChildren<Text>().text = "";
     }
     public void B2In()
     {
-        b2.text = textos.GetTexto(g2);
+        botones[1].GetComponent<Image>().sprite = cartaBlanca;
+        botones[1].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[1]);
     }
     public void B2Out()
     {
-        b2.text = g2.name;
+        botones[1].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[1]];
+        botones[1].GetComponentInChildren<Text>().text = "";
     }
     public void B3In()
     {
-        b3.text = textos.GetTexto(g3);
+        botones[2].GetComponent<Image>().sprite = cartaBlanca;
+        botones[2].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[2]);
     }
     public void B3Out()
     {
-        b3.text = g3.name;
+        botones[2].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[2]];
+        botones[2].GetComponentInChildren<Text>().text = "";
     }
     #endregion
 }

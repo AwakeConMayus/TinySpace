@@ -12,8 +12,6 @@ public abstract class Opciones : MonoBehaviour
 
     [HideInInspector]
     public List<int> opcionesDisponibles = new List<int>();
-    [HideInInspector]
-    public List<int> opcionesEnfriamiento = new List<int>();
 
     protected int opcionActual = -1;
 
@@ -40,19 +38,13 @@ public abstract class Opciones : MonoBehaviour
         }
         int numero;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < opcionesIniciales.Length; i++)
         {
             numero = disponibles[Random.Range(0, disponibles.Count)];
             opcionesDisponibles.Add(numero);
             disponibles.Remove(numero);
         }
-
-        for (int i = 0; i < 2; i++)
-        {
-            numero = disponibles[Random.Range(0, disponibles.Count)];
-            opcionesEnfriamiento.Add(numero);
-            disponibles.Remove(numero);
-        }
+        
         EventManager.TriggerEvent("RotacionOpciones");
     }
 
@@ -72,10 +64,9 @@ public abstract class Opciones : MonoBehaviour
     public void Rotar()
     {
         if (opcionActual < 0) return;
-        opcionesEnfriamiento.Add(opcionesDisponibles[opcionActual]);
-        opcionesDisponibles.Remove(opcionesDisponibles[opcionActual]);
-        opcionesDisponibles.Add(opcionesEnfriamiento[0]);
-        opcionesEnfriamiento.Remove(opcionesEnfriamiento[0]);
+        int aux = opcionesDisponibles[opcionActual];
+        opcionesDisponibles.Remove(aux);
+        opcionesDisponibles.Add(aux);
         opcionActual = -1;
         EventManager.TriggerEvent("RotacionOpciones");
     }  

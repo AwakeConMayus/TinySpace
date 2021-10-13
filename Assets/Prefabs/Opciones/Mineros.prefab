@@ -188,10 +188,10 @@ RectTransform:
   m_Father: {fileID: 3541346310643180501}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.538366, y: 0.021000002}
-  m_AnchorMax: {x: 0.69526803, y: 0.518}
-  m_AnchoredPosition: {x: -0.5999756, y: 0.69999695}
-  m_SizeDelta: {x: 2.3215332, y: 2.3963928}
+  m_AnchorMin: {x: 0.536366, y: 0.021000002}
+  m_AnchorMax: {x: 0.69526803, y: 0.5612424}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3541346308979147044
 CanvasRenderer:
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -407,10 +407,10 @@ RectTransform:
   m_Father: {fileID: 3541346310643180501}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22200002, y: 0.021000002}
-  m_AnchorMax: {x: 0.37800002, y: 0.518}
-  m_AnchoredPosition: {x: -0.10003662, y: 0.69999695}
-  m_SizeDelta: {x: 3.3215332, y: 2.3963928}
+  m_AnchorMin: {x: 0.22161375, y: 0.021000002}
+  m_AnchorMax: {x: 0.37800002, y: 0.5612424}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_SizeDelta: {x: 0.000030517578, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3541346309553648777
 CanvasRenderer:
@@ -439,8 +439,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -551,10 +551,10 @@ RectTransform:
   m_Father: {fileID: 3541346310643180501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38000003, y: 0.021000002}
-  m_AnchorMax: {x: 0.536366, y: 0.518}
-  m_AnchoredPosition: {x: -0.099975586, y: 0.69999695}
-  m_SizeDelta: {x: 3.3215332, y: 2.3963928}
+  m_AnchorMin: {x: 0.37800002, y: 0.021000002}
+  m_AnchorMax: {x: 0.536366, y: 0.5612424}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3541346309859420334
 CanvasRenderer:
@@ -583,8 +583,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -900,10 +900,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3541346310643180501}
-  - component: {fileID: 3541346310643180496}
   - component: {fileID: 6565830607770217036}
   - component: {fileID: 8289901984810774623}
   - component: {fileID: 377442513347563283}
+  - component: {fileID: 1584302664836564271}
   m_Layer: 5
   m_Name: Mineros
   m_TagString: Untagged
@@ -938,24 +938,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1577.2644, y: 338.09528}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &3541346310643180496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541346310643180500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb2a94849db51844dac5d5200afcaf5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b1: {fileID: 3541346310823362328}
-  b2: {fileID: 3541346309907224647}
-  b3: {fileID: 3541346310570818944}
-  c1: {fileID: 3541346308975339851}
-  c2: {fileID: 3541346311024763426}
-  opciones: {fileID: 0}
 --- !u!114 &6565830607770217036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,13 +959,13 @@ MonoBehaviour:
   - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
   jugador: 0
   opcionesDisponibles: 
-  opcionesEnfriamiento: 
   mejoras:
   - {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052, type: 3}
   - {fileID: 2018414652591469658, guid: 9c3c9d960ee00ce4081c1c8739945112, type: 3}
   - {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6, type: 3}
   - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
   mineral: 5
+  especial: 0
 --- !u!222 &8289901984810774623
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1021,6 +1003,38 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1584302664836564271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541346310643180500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d39e9f782f6424380d2b705ab01524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botones:
+  - {fileID: 3541346309553648781}
+  - {fileID: 3541346309859420306}
+  - {fileID: 3541346308979147048}
+  - {fileID: 3541346309298432417}
+  - {fileID: 3541346310321834208}
+  cartas:
+  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
+  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
+  - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
+  - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
+  - {fileID: 21300000, guid: d40550c673877194cae4d733d69d4615, type: 3}
+  cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  cartasMejoradas:
+  - {fileID: 21300000, guid: 465538158071c894fa914378c678c743, type: 3}
+  - {fileID: 21300000, guid: dd0bbf490916db744abcf646dff09f5a, type: 3}
+  - {fileID: 21300000, guid: 2f54a7dd3cf5c5a4682451cb7e7cc45f, type: 3}
+  - {fileID: 21300000, guid: c3a3225f02faf9a45ab3ef490719c524, type: 3}
+  cartaBlancaMejorada: {fileID: 21300000, guid: 58ee13d26d277514f81e76acf0ef3cd8,
+    type: 3}
 --- !u!1 &3541346310823362334
 GameObject:
   m_ObjectHideFlags: 0

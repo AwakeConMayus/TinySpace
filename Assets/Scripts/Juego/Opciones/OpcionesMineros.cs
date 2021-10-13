@@ -11,7 +11,7 @@ public class OpcionesMineros : Opciones
 
     public int mineral = 5;
 
-    bool especial = false;
+    public bool especial = false;
 
     int mineralGastar;
     
@@ -60,6 +60,7 @@ public class OpcionesMineros : Opciones
                 base.Seleccion(i);
             }
         }
+
         else if (especial)
         {
             if (GastarMineral(3))
@@ -87,14 +88,6 @@ public class OpcionesMineros : Opciones
                 opcionesIniciales[i] = backup[i];
             }
         }
-        VisualUpdate();
         EventManager.TriggerEvent("RotacionOpciones");
-    }
-
-    void VisualUpdate()
-    {
-        Image marco = GetComponent<Image>();
-        if (especial) marco.color = Color.yellow;
-        else marco.color = Color.white;
     }
 }

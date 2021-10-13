@@ -308,8 +308,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -752,12 +752,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2a94849db51844dac5d5200afcaf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b1: {fileID: 3654762340693942022}
-  b2: {fileID: 3654762340183677737}
-  b3: {fileID: 3654762341520651128}
-  c1: {fileID: 3654762341875106651}
-  c2: {fileID: 3654762341151070206}
-  opciones: {fileID: 0}
+  botones:
+  - {fileID: 3654762340048444673}
+  - {fileID: 3654762341705148441}
+  - {fileID: 3654762341487019261}
+  - {fileID: 3654762341094785498}
+  - {fileID: 3654762341743343478}
+  cartas:
+  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
+  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
+  - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
+  - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
+  - {fileID: 21300000, guid: a79dde3d38d34764dad0f4c39d601015, type: 3}
+  cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
 --- !u!114 &5151446134719442962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +786,6 @@ MonoBehaviour:
   - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
   jugador: 1
   opcionesDisponibles: 
-  opcionesEnfriamiento: 
 --- !u!222 &6911489721328290437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -884,8 +890,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1106,8 +1112,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
