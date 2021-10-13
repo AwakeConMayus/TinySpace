@@ -10,26 +10,25 @@ public class TextoOpcionesMinero : TextoOpciones
     Sprite[] copiaCartas = new Sprite[5];
     Sprite copiaCartaBlanca;
 
-    private void Start()
-    {
-        for (int i = 0; i < cartas.Length; i++)
-        {
-            copiaCartas[i] = cartas[i];
-        }
-        copiaCartaBlanca = cartaBlanca;
-    }
+   
 
     public override void Actualizar()
     {
         if (opciones.gameObject.GetComponent<OpcionesMineros>().especial)
         {
+            for (int i = 0; i < cartas.Length; i++)
+            {
+                copiaCartas[i] = cartas[i];
+            }
+            copiaCartaBlanca = cartaBlanca;
+
             for (int i = 0; i < 4; i++)
             {
                 cartas[i] = cartasMejoradas[i];
             }
             cartaBlanca = cartaBlancaMejorada;
         }
-        else
+        else if (copiaCartas[0] != null)
         {
             for (int i = 0; i < cartas.Length; i++)
             {
