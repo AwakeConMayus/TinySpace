@@ -14,7 +14,7 @@ public class InvestigadorMinerosMejorado : InvestigadorMineros
         foreach (Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
-            if (adyacente.pieza.CompareClase(Clase.explorador) && adyacente.pieza.Get_Jugador() == jugador)
+            if (adyacente.pieza.CompareClase(Clase.explorador) && adyacente.pieza.Get_Jugador() != jugador)
             {
                 puntos += puntosIniciales;
                 puntosIniciales += incremento;
