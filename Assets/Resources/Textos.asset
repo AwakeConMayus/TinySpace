@@ -33,7 +33,8 @@ MonoBehaviour:
     es enemiga.
   laboratorioMejora: +2 puntos por cada nave exploradora enemiga adyacente, incrementa
     en +3 puntos el valor de cada nave exploradora.
-  estrategaMejora: Mejora estratega aliado (+2p extra combate adyacente)
+  estrategaMejora: +2 puntos extra por cada nave de combate adyacente, independientemente
+    si es aliada o rival.
   combateColonizador: +3 puntos nave de combate aliada adyacente, +2 puntos por cada
     planeta adyacente.
   comodin: "Coloca cualquier tipo de nave basica a tu elecci\xF3n consumiendo 1 unidad
