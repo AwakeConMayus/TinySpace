@@ -64,6 +64,12 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         estado = estados.SelectCasilla;
     }
 
+    public void LimpiarPieza()
+    {
+        estado = estados.SelectPieza;
+        Tablero.instance.ResetCasillasEfects();
+    }
+
     public void CrearPieza()
     {
 
