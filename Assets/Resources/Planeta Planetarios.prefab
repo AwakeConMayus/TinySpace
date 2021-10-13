@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c504fd2f1b62e54f8074d83b717ac81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faccion: 2
   clase: 0
   casilla: {fileID: 0}
 --- !u!114 &3935059490195201988

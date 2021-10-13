@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64cdbbb988d1da4f964abe78bbe6701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faccion: 2
   clase: 0
   casilla: {fileID: 0}
 --- !u!114 &-2892591131323983161

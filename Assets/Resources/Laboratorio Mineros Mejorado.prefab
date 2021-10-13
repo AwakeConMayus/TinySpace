@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 551182612585260778}
   - component: {fileID: 5503041616192783480}
   m_Layer: 0
-  m_Name: Laboratorio Mineros Mejorada
+  m_Name: Laboratorio Mineros Mejorado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c9e5a159a100f428a3fd9217135444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faccion: 1
   clase: 0
   casilla: {fileID: 0}
 --- !u!114 &-4864225567427421743

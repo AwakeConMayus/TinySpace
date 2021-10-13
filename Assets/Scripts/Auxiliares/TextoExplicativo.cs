@@ -57,11 +57,11 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Estratega>())
         {
             texto = estratega;
+        }
 
-            if (prefab.GetComponent<EstrategaMinerosMejorada>())
-            {
-                texto = estrategaMejora;
-            }
+        else if (prefab.GetComponent<EstrategaMinerosMejorada>())
+        {
+            texto = estrategaMejora;
         }
 
         else if (prefab.GetComponent<Comodin>())
