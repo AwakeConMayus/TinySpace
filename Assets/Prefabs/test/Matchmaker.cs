@@ -72,7 +72,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         options.EmptyRoomTtl = 1;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
-        intervalo = Random.Range(5, 15); // fuck u lantaron, 2c was here
+        intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
         //Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
         texto.SetActive(true);
