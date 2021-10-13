@@ -17,6 +17,7 @@ public class EstrategaMinerosMejorada : Efecto
 
     public override List<Casilla> CasillasDisponibles()
     {
+        print("jugador estratega mej:" + jugador);
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador);
         return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.estratega}, casillasDisponibles);
     }

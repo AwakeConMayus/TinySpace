@@ -54,15 +54,20 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
+        nave.GetComponent<Pieza>().Set_Jugador(jugador);
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
-
-
         estado = estados.SelectCasilla;
+    }
+
+    public void LimpiarPieza()
+    {
+        estado = estados.SelectPieza;
+        Tablero.instance.ResetCasillasEfects();
     }
 
     public void CrearPieza()
@@ -88,7 +93,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
                 thisPieza.transform.position = c.transform.position;
                 //GestorTurnos.instance.realizarJugada();
             }
-
     
 
             EventManager.TriggerEvent("ColocarPieza");
