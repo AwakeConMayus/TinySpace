@@ -46,38 +46,15 @@ public class TextoOpciones : MonoBehaviour
         }
     }
 
-    
 
-    #region explicaciones
-    public void B1In()
+    public virtual void In(int i)
     {
-        botones[0].GetComponent<Image>().sprite = cartaBlanca;
-        botones[0].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[0]);
+        botones[i].GetComponent<Image>().sprite = cartaBlanca;
+        botones[i].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[i]);
     }
-    public void B1Out()
+    public void Out(int i)
     {
-        botones[0].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[0]];
-        botones[0].GetComponentInChildren<Text>().text = "";
+        botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+        botones[i].GetComponentInChildren<Text>().text = "";
     }
-    public void B2In()
-    {
-        botones[1].GetComponent<Image>().sprite = cartaBlanca;
-        botones[1].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[1]);
-    }
-    public void B2Out()
-    {
-        botones[1].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[1]];
-        botones[1].GetComponentInChildren<Text>().text = "";
-    }
-    public void B3In()
-    {
-        botones[2].GetComponent<Image>().sprite = cartaBlanca;
-        botones[2].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[2]);
-    }
-    public void B3Out()
-    {
-        botones[2].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[2]];
-        botones[2].GetComponentInChildren<Text>().text = "";
-    }
-    #endregion
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextoOpcionesMinero : TextoOpciones
 {
@@ -38,5 +39,25 @@ public class TextoOpcionesMinero : TextoOpciones
         }
 
         base.Actualizar();
+    }
+
+    public override void In(int i)
+    {
+        if(opciones.opcionesDisponibles[i] == 4)
+        {
+            if(copiaCartaBlanca == null)
+            {
+                copiaCartaBlanca = cartaBlanca;
+            }
+
+            botones[i].GetComponent<Image>().sprite = copiaCartaBlanca;
+        }
+
+        else
+        {
+            botones[i].GetComponent<Image>().sprite = cartaBlanca;
+        }
+
+        botones[i].GetComponentInChildren<Text>().text = textos.GetTexto(prefabsOrdenados[i]);
     }
 }
