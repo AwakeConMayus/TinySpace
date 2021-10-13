@@ -29,8 +29,8 @@ Material:
     m_Floats:
     - Vector1_3182302F: 2
     - Vector1_5D12A3A7: 0.03
-    - Vector1_C4FFEE7: 1
+    - Vector1_C4FFEE7: -1
     m_Colors:
     - Color_1FDD30BB: {r: 0, g: 6.18396, b: 23.35168, a: 1}
     - Color_chasis: {r: 0.8018868, g: 0.6514556, b: 0.6014151, a: 0}
-    - Color_windows: {r: 7.623529, g: 6.52549, b: 2.007843, a: 0}
+    - Color_windows: {r: 0.50890046, g: 1.0676931, b: 1.9058821, a: 0}
