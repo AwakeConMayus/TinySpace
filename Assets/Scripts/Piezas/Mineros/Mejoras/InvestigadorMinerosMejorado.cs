@@ -10,7 +10,7 @@ public class InvestigadorMinerosMejorado : Efecto
 
     public override void Accion()
     {
-
+        if (!gameObject.GetPhotonView().IsMine) return;
         casilla.Clear();
 
         // Comprobacion de si el game se esta realizando online u offline

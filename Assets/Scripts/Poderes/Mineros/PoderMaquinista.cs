@@ -88,7 +88,6 @@ public class PoderMaquinista : PoderMineros
             {
                 int i = Tablero.instance.Get_Numero_Casilla(origen.gameObject);
                 int j = Tablero.instance.Get_Numero_Casilla(destino.gameObject);
-                Debug.Log(base.photonView);
                 base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j);
             }
             base.photonView.RPC("RPC_TPEfects", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(origen.gameObject), Tablero.instance.Get_Numero_Casilla(destino.gameObject));
