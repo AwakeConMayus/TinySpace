@@ -26,6 +26,12 @@ public class MenuFinalParitda : MonoBehaviour
             else texto_final_partida.text = "Victoria";
         }
     }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void Salir()
     {
         SceneManager.LoadScene(0);
