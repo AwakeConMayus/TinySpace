@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3424900223941597707}
   - component: {fileID: 7915210133073511629}
   - component: {fileID: 6911349227758941619}
+  - component: {fileID: 2008479792663994181}
   m_Layer: 0
   m_Name: Casilla
   m_TagString: Untagged
@@ -103,6 +104,28 @@ MonoBehaviour:
   holy: {fileID: 6244155209451675236, guid: 1c43850734967e54c8bc095e77067b69, type: 3}
   tpOut: {fileID: 4826908166618519627, guid: f59ea42bc84a840439ba0a9a84c7e8e3, type: 3}
   tpIn: {fileID: 6331547404648381299, guid: 2610a241f002c544d9604396b5509b07, type: 3}
+--- !u!114 &2008479792663994181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263507486993769039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &4279949044695326434
 PrefabInstance:
   m_ObjectHideFlags: 0

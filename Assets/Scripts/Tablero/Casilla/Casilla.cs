@@ -37,17 +37,7 @@ public class Casilla : MonoBehaviour
 
     public void Clear()
     {
-        if (pieza)
-        {
-            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-            {
-                PhotonNetwork.Destroy(pieza.gameObject);
-            }
-            else
-            {
-                Destroy(pieza.gameObject);
-            }
-        }
+            if(pieza) Destroy(pieza.gameObject);
     }
 
     public void SetState(States s)

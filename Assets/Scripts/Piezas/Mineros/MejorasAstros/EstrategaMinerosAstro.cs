@@ -19,7 +19,7 @@ public class EstrategaMinerosAstro : EstrategaMineros
             if (adyacente && adyacente.pieza && adyacente.pieza.Get_Jugador() == InstancePiezas.instance.jugador &&
                 adyacente.pieza.clase != Clase.combate && adyacente.pieza.clase != Clase.astros)
             {
-                adyacente.Clear();
+                OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
                 GameObject thisPieza = Instantiate(combateMinero);
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.transform.position = adyacente.transform.position;

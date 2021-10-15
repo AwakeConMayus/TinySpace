@@ -49,7 +49,9 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
 
         if (objetivos.Contains(c))
         {
-            c.Clear();
+
+            OnlineManager.instance.Destroy_This_Pieza(c.pieza);
+
             preparado_para_disparar = false;
             Tablero.instance.ResetCasillasEfects();
             EventManager.TriggerEvent("AccionTerminadaConjunta");
