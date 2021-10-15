@@ -18,11 +18,11 @@ public class TitleScreen : MonoBehaviour
 
     private void Start()
     {
+        btnFacciones = new Button[5];
         btnFacciones = menuFaccion.GetComponentsInChildren<Button>();
 
         menuInicio.SetActive(true);
         menuFaccion.SetActive(false);
-        btnFacciones = new Button[5];
     }
 
     public void ChangeButtons()
