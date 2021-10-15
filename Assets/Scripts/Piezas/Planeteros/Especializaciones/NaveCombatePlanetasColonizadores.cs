@@ -8,7 +8,7 @@ public class NaveCombatePlanetasColonizadores : NaveCombatePlanetas
 
     public override int Puntos()
     {
-        int puntosAstroAdyacente = 2;
+        int puntosAstroAdyacente = 3;
 
         int puntos = base.Puntos();
 

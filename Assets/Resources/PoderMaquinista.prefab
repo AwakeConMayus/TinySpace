@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: 0
+  numeroTps: 2
 --- !u!114 &8683823905794375602
 MonoBehaviour:
   m_ObjectHideFlags: 0

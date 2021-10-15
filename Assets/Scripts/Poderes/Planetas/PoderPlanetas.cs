@@ -16,14 +16,25 @@ public abstract class PoderPlanetas : Poder
         EventManager.StartListening("ClickCasilla", CrearPieza);
         planeta = Resources.Load<GameObject>("Planeta Planetarios");
 
-        for (int i = 0; i < 3; i++)
+        Casilla planetaReferencia = null;
+
+        for (int i = 0; i < 4; i++)
         {
             List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
+            if (i == 1)
+            {
+                casillasPosibles = FiltroCasillas.CasillasAdyacentes(planetaReferencia, true);
+                casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, true);
+                casillasPosibles = FiltroCasillas.CasillasSinMeteorito(casillasPosibles);
+                casillasPosibles = FiltroCasillas.Interseccion(casillasPosibles, planeta.GetComponent<Pieza>().CasillasDisponibles());
+            }
             int rnd;
             do
             {
                 rnd = Random.Range(0, Tablero.instance.mapa.Count);
             } while (!casillasPosibles.Contains(Tablero.instance.mapa[rnd]));
+
+            if (i == 0) planetaReferencia = Tablero.instance.mapa[rnd];
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
