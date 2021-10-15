@@ -24,7 +24,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     public void Preparar()
     {
         objetivos = FiltroCasillas.CasillasAdyacentes(casilla, false);
-        objetivos = FiltroCasillas.CasillasAdyacentes(objetivos, true);
+        objetivos = FiltroCasillas.CasillasAdyacentes(objetivos, false);
         objetivos = FiltroCasillas.CasillasDeUnJugador(InstancePiezas.instance.jugadorEnemigo, objetivos);
         objetivos = FiltroCasillas.RestaLista(objetivos, FiltroCasillas.CasillasDeUnTipo(Clase.astros, objetivos));
 
