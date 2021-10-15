@@ -9,6 +9,8 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
 
     List<Casilla> objetivos = new List<Casilla>();
 
+    int puntosDestruidos;
+
     protected override void SetClase()
     {
         clase = Clase.astros;
@@ -48,7 +50,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
 
         if (objetivos.Contains(c))
         {
-
+            puntosDestruidos = c.pieza.Puntos();
             OnlineManager.instance.Destroy_This_Pieza(c.pieza);
 
             preparado_para_disparar = false;
@@ -57,5 +59,8 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         }
     }
 
-
+    public int GetPuntosDestruidos()
+    {
+        return puntosDestruidos;
+    }
 }

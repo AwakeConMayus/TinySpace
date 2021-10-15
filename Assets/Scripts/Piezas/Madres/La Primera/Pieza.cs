@@ -25,7 +25,7 @@ public enum Faccion
 public abstract class Pieza : MonoBehaviour
 {
     [SerializeField]
-    protected Faccion faccion;
+    public Faccion faccion;
 
     [HideInInspector]
     public Clase clase;

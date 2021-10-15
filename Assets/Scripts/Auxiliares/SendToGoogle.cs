@@ -14,28 +14,22 @@ public class SendToGoogle : MonoBehaviour
     string GanaQuienEmpieza;
 
     //Faccion Escogida
-    string FaccionP1, FaccionP2;
+    string FaccionP1;
 
     //Score
     int ScoreP1, ScoreP2;
 
     //Numero Naves Cada Tipo
-    int ExploradorP1, CombateP1, LaboratorioP1, EstrategaP1, PlanetaP1,
-        ExploradorMejP1, CombateMejP1, LaboratorioMejP1, EstrategaMejP1, CombateEspP1;
-    int ExploradorP2, CombateP2, LaboratorioP2, EstrategaP2, PlanetaP2,
-        ExploradorMejP2, CombateMejP2, LaboratorioMejP2, EstrategaMejP2, CombateEspP2;
+    int ExploradorP1, CombateP1, LaboratorioP1, EstrategaP1,
+        ExploradorMejP1, CombateMejP1, LaboratorioMejP1, EstrategaMejP1;
+    int ExploradorP2, CombateP2, LaboratorioP2, EstrategaP2, 
+        PlanetaP2, PlanetaSagradoP2, CombateEspP2;
 
     //Numero Puntos Cada Tipo de Nave
     int scoreExploradorP1, scoreCombateP1, scoreLaboratorioP1, scoreEstrategaP1,
-        scorePlanetaP1, scoreExploradorMejP1, scoreCombateMejP1, scoreLaboratorioMejP1,
-        scoreEstrategaMejP1, scoreCombateEspP1;
+        scoreExploradorMejP1, scoreCombateMejP1, scoreLaboratorioMejP1, scoreEstrategaMejP1;
     int scoreExploradorP2, scoreCombateP2, scoreLaboratorioP2, scoreEstrategaP2,
-        scorePlanetaP2, scoreExploradorMejP2, scoreCombateMejP2, scoreLaboratorioMejP2, 
-        scoreEstrategaMejP2, scoreCombateEspP2;
-
-    //Variables Despistadas
-    int PlanetaSagradoP1, PlanetaSagradoP2, scorePlanetaSagradoP1,
-        scorePlanetaSagradoP2;
+        scorePlanetaP2, scorePlanetaSagradoP2, scoreCombateEspP2;
 
 
 
@@ -85,50 +79,41 @@ public class SendToGoogle : MonoBehaviour
 
         print("Ganador dice: |" + Ganador + "|");
 
-        form.AddField("entry.435469167",  Ganador);                         // Ganador 
-        form.AddField("entry.1370920118", GanaQuienEmpieza);     // GanaQuienEmpieza
+        form.AddField("entry.435469167",  Ganador);             // Ganador 
+        form.AddField("entry.1370920118", GanaQuienEmpieza);    // GanaQuienEmpieza
 
-        form.AddField("entry.1874309661", FaccionP1);     // FaccionP1
-        form.AddField("entry.1214466468", FaccionP2);     // FaccionP2
+        form.AddField("entry.1874309661", FaccionP1);           // FaccionP1
 
-        form.AddField("entry.1020366196", ScoreP1);       // Score1
-        form.AddField("entry.2024526894", ScoreP2);       // Score2
+        form.AddField("entry.1020366196", ScoreP1);             // Score1
+        form.AddField("entry.2024526894", ScoreP2);             // Score2
 
-        form.AddField("entry.1040339605", ExploradorP1);    // ExploradorP1
-        form.AddField("entry.1254542756", CombateP1);       // CombateP1
-        form.AddField("entry.840516388",  LaboratorioP1);   // LaboratorioP1
-        form.AddField("entry.1915383336", EstrategaP1);     // EstrategaP1
-        form.AddField("entry.1910669193", PlanetaP1);       // PlanetaP1
+        form.AddField("entry.1040339605", ExploradorP1);        // ExploradorP1
+        form.AddField("entry.1254542756", CombateP1);           // CombateP1
+        form.AddField("entry.840516388",  LaboratorioP1);       // LaboratorioP1
+        form.AddField("entry.1915383336", EstrategaP1);         // EstrategaP1
 
         form.AddField("entry.306931683",  ExploradorMejP1);     // ExploradorMejP1
         form.AddField("entry.1935103977", CombateMejP1);        // CombateMejP1
         form.AddField("entry.1788277006", LaboratorioMejP1);    // LaboratorioMejP1
         form.AddField("entry.2144116206", EstrategaMejP1);      // EstrategaMejP1
-        form.AddField("entry.397139689",  CombateEspP1);        // CombateEspP1
 
-        form.AddField("entry.2010821728", ExploradorP2);    // ExploradorP2
-        form.AddField("entry.1698841726", CombateP2);       // CombateP2
-        form.AddField("entry.726993894",  LaboratorioP2);   // LaboratorioP2
-        form.AddField("entry.2007228196", EstrategaP2);     // EstrategaP2
-        form.AddField("entry.307780979",  PlanetaP2);       // PlanetaP2
+        form.AddField("entry.2010821728", ExploradorP2);        // ExploradorP2
+        form.AddField("entry.1698841726", CombateP2);           // CombateP2
+        form.AddField("entry.726993894",  LaboratorioP2);       // LaboratorioP2
+        form.AddField("entry.2007228196", EstrategaP2);         // EstrategaP2
+        form.AddField("entry.307780979",  PlanetaP2);           // PlanetaP2
 
-        form.AddField("entry.496397925",  ExploradorMejP2);     // ExploradorMejP2
-        form.AddField("entry.46395252",   CombateMejP2);        // CombateMejP2
-        form.AddField("entry.1378000763", LaboratorioMejP2);    // LaboratorioMejP2
-        form.AddField("entry.340695916",  EstrategaMejP2);      // EstrategaMejP2
         form.AddField("entry.831687966",  CombateEspP2);        // CombateEspP2
 
         form.AddField("entry.1761560571", scoreExploradorP1);   // scoreExploradorP1
         form.AddField("entry.1824586309", scoreCombateP1);      // scoreCombateP1
         form.AddField("entry.1134179669", scoreLaboratorioP1);  // scoreLaboratorioP1
         form.AddField("entry.2126107367", scoreEstrategaP1);    // scoreEstrategaP1
-        form.AddField("entry.1579320810", scorePlanetaP1);      // scorePlanetaP1
 
-        form.AddField("entry.839756224", scoreExploradorMejP1);     // scoreExploradorMejP1
-        form.AddField("entry.627397951", scoreCombateMejP1);        // scoreCombateMejP1
-        form.AddField("entry.8614594",   scoreLaboratorioMejP1);    // scoreLaboratorioMejP1
-        form.AddField("entry.127181305", scoreEstrategaMejP1);      // scoreEstrategaMejP1
-        form.AddField("entry.873678886", scoreCombateEspP1);        // scoreCombateEspP1
+        form.AddField("entry.839756224", scoreExploradorMejP1); // scoreExploradorMejP1
+        form.AddField("entry.627397951", scoreCombateMejP1);    // scoreCombateMejP1
+        form.AddField("entry.8614594",   scoreLaboratorioMejP1);// scoreLaboratorioMejP1
+        form.AddField("entry.127181305", scoreEstrategaMejP1);  // scoreEstrategaMejP1
 
         form.AddField("entry.169886086",  scoreExploradorP2);   // scoreExploradorP2
         form.AddField("entry.487198462",  scoreCombateP2);      // scoreCombateP2
@@ -136,16 +121,10 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1709659503", scoreEstrategaP2);    // scoreEstrategaP2
         form.AddField("entry.2024345642", scorePlanetaP2);      // scorePlanetaP2
 
-        form.AddField("entry.205301163", scoreExploradorMejP2);     // scoreExploradorMejP2
-        form.AddField("entry.280659382", scoreCombateMejP2);        // scoreCombateMejP2
-        form.AddField("entry.552524032", scoreLaboratorioMejP2);    // scoreLaboratorioMejP2
-        form.AddField("entry.489967046", scoreEstrategaMejP2);      // scoreEstrategaMejP2
-        form.AddField("entry.786605642", scoreCombateEspP2);        // scoreCombateEspP2
+        form.AddField("entry.786605642", scoreCombateEspP2);    // scoreCombateEspP2
 
-        form.AddField("entry.794890710",  PlanetaSagradoP1);            // PlanetaSagradoP1
-        form.AddField("entry.1157758824", PlanetaSagradoP2);            // PlanetaSagradoP2
-        form.AddField("entry.978047630",  scorePlanetaSagradoP1);       // scorePlanetaSagradoP1
-        form.AddField("entry.1821666122", scorePlanetaSagradoP2);       // scorePlanetaSagradoP2
+        form.AddField("entry.1157758824", PlanetaSagradoP2);        // PlanetaSagradoP2
+        form.AddField("entry.1821666122", scorePlanetaSagradoP2);   // scorePlanetaSagradoP2
     }
 
 
@@ -183,16 +162,22 @@ public class SendToGoogle : MonoBehaviour
         //GanaQuienEmpieza
         if (jugadorGanador == 2) GanaQuienEmpieza = "empate";
 
-        else if (jugadorGanador == jugador.jugador) GanaQuienEmpieza = "true";
-        else GanaQuienEmpieza = "false";
+        else if (jugadorGanador == jugador.jugador) GanaQuienEmpieza = "SI";
+        else GanaQuienEmpieza = "NO";
 
         //FaccionP1, FaccionP2
-        FaccionP1 = facciones[0];
-        FaccionP2 = facciones[1];
+        FaccionP1 = arbitroPartida.player.gameObject.name;
 
-        //ScoreP1, ScoreP2
-        ScoreP1 = puntosFinal[0];
-        ScoreP2 = puntosFinal[1];
+        if(FaccionP1 == "Mineros")
+        {
+            ScoreP1 = puntosFinal[0];
+            ScoreP2 = puntosFinal[1];
+        }
+        else
+        {
+            ScoreP1 = puntosFinal[1];
+            ScoreP2 = puntosFinal[0];
+        }
 
 
         //Recuento de naves y puntos
@@ -204,21 +189,13 @@ public class SendToGoogle : MonoBehaviour
                 {
                     if (c.pieza.gameObject.GetComponent<ExploradorMineroMejorado>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++ExploradorMejP1;
-                            scoreExploradorMejP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++ExploradorMejP2;
-                            scoreExploradorMejP2 += c.pieza.Puntos();
-                        }
+                        ++ExploradorMejP1;
+                        scoreExploradorMejP1 += c.pieza.Puntos();
                     }
 
                     else
                     {
-                        if (c.pieza.Get_Jugador() == 0)
+                        if (c.pieza.faccion == Faccion.minero)
                         {
                             ++ExploradorP1;
                             scoreExploradorP1 += c.pieza.Puntos();
@@ -235,35 +212,19 @@ public class SendToGoogle : MonoBehaviour
                 {
                     if (c.pieza.gameObject.GetComponent<NaveCombatePlanetasColonizadores>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++CombateEspP1;
-                            scoreCombateEspP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++CombateEspP2;
-                            scoreCombateEspP2 += c.pieza.Puntos();
-                        }
+                        ++CombateEspP2;
+                        scoreCombateEspP2 += c.pieza.Puntos();
                     }
 
                     else if(c.pieza.gameObject.GetComponent<NaveCombateMinerosMejorada>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++CombateMejP1;
-                            scoreCombateMejP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++CombateMejP2;
-                            scoreCombateMejP2 += c.pieza.Puntos();
-                        }
+                        ++CombateMejP1;
+                        scoreCombateMejP1 += c.pieza.Puntos();
                     }
 
                     else
                     {
-                        if (c.pieza.Get_Jugador() == 0)
+                        if (c.pieza.faccion == Faccion.minero)
                         {
                             ++CombateP1;
                             scoreCombateP1 += c.pieza.Puntos();
@@ -278,23 +239,17 @@ public class SendToGoogle : MonoBehaviour
 
                 else if (c.pieza.gameObject.GetComponent<Investigador>())
                 {
-                     if (c.pieza.gameObject.GetComponent<InvestigadorMinerosMejorado>())
+                    if (c.pieza.gameObject.GetComponent<InvestigadorMinerosAstro>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++LaboratorioMejP1;
-                            scoreLaboratorioMejP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++LaboratorioMejP2;
-                            scoreLaboratorioMejP2 += c.pieza.Puntos();
-                        }
+                        ++LaboratorioMejP1;
+                        scoreLaboratorioMejP1 += c.pieza.gameObject.GetComponent<InvestigadorMinerosAstro>().GetPuntosDestruidos();
+                        ++LaboratorioP1;
+                        scoreLaboratorioP1 += c.pieza.Puntos();
                     }
 
                     else
                     {
-                        if (c.pieza.Get_Jugador() == 0)
+                        if (c.pieza.faccion == Faccion.minero)
                         {
                             ++LaboratorioP1;
                             scoreLaboratorioP1 += c.pieza.Puntos();
@@ -311,21 +266,13 @@ public class SendToGoogle : MonoBehaviour
                 {
                     if (c.pieza.gameObject.GetComponent<EstrategaMinerosAstro>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++EstrategaMejP1;
-                            scoreEstrategaMejP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++EstrategaMejP2;
-                            scoreEstrategaMejP2 += c.pieza.Puntos();
-                        }
+                        ++EstrategaMejP1;
+                        scoreEstrategaMejP1 += c.pieza.Puntos();
                     }
 
                     else
                     {
-                        if (c.pieza.Get_Jugador() == 0)
+                        if (c.pieza.faccion == Faccion.minero)
                         {
                             ++EstrategaP1;
                             scoreEstrategaP1 += c.pieza.Puntos();
@@ -342,30 +289,20 @@ public class SendToGoogle : MonoBehaviour
                 {
                     if (c.pieza.gameObject.GetComponent<PlanetaSagrado>())
                     {
-                        if (c.pieza.Get_Jugador() == 0)
+                        ++PlanetaP2;
+                        if (c.pieza.Puntos() > 0)
                         {
-                            ++PlanetaSagradoP1;
-                            scorePlanetaSagradoP1 += c.pieza.Puntos();
+                            scorePlanetaP2 += 3;
+                            scorePlanetaSagradoP2 -= 3;
                         }
-                        else
-                        {
-                            ++PlanetaSagradoP2;
-                            scorePlanetaSagradoP2 += c.pieza.Puntos();
-                        }
+                        ++PlanetaSagradoP2;
+                        scorePlanetaSagradoP2 += c.pieza.Puntos();
                     }
 
                     else
                     {
-                        if (c.pieza.Get_Jugador() == 0)
-                        {
-                            ++PlanetaP1;
-                            scorePlanetaP1 += c.pieza.Puntos();
-                        }
-                        else
-                        {
-                            ++PlanetaP2;
-                            scorePlanetaP2 += c.pieza.Puntos();
-                        }
+                        ++PlanetaP2;
+                        scorePlanetaP2 += c.pieza.Puntos();
                     }                    
                 }
             }
