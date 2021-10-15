@@ -13,7 +13,7 @@ public class InterfazTurnos : MonoBehaviour
 
     private int turno_actual = 0;
 
-    public void Start()
+    public void Awake()
     {
         EventManager.StartListening("Siguiente_turno", Siguiente_Turno);
 
