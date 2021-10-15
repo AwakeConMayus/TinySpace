@@ -103,6 +103,12 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         intervalo = Random.Range(10, 30);
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
     }
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Debug.Log("fallo en entrar ha habitacion");
+        intervalo = Random.Range(10, 30);
+        StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
+    }
     IEnumerator Tiempo_De_Espera()
     {
         yield return new WaitForSeconds(2);
