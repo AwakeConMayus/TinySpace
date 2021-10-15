@@ -124,6 +124,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     {
         if (turno == 20)
         {
+            PhotonNetwork.AutomaticallySyncScene = false;
             EndGame();
         }
         
