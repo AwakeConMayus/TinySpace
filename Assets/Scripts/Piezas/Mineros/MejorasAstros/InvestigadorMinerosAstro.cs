@@ -25,7 +25,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     {
         objetivos = FiltroCasillas.CasillasAdyacentes(casilla, false);
         objetivos = FiltroCasillas.CasillasAdyacentes(objetivos, true);
-        objetivos = FiltroCasillas.CasillasDeUnJugador(InstancePiezas.instance.jugadorEnemigo);
+        objetivos = FiltroCasillas.CasillasDeUnJugador(InstancePiezas.instance.jugadorEnemigo, objetivos);
         objetivos = FiltroCasillas.RestaLista(objetivos, FiltroCasillas.CasillasDeUnTipo(Clase.astros, objetivos));
 
         if(objetivos.Count == 0)
@@ -51,6 +51,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         {
             c.Clear();
             preparado_para_disparar = false;
+            Tablero.instance.ResetCasillasEfects();
             EventManager.TriggerEvent("AccionTerminadaConjunta");
         }
     }
