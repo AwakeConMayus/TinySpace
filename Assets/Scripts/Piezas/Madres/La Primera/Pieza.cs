@@ -115,4 +115,13 @@ public abstract class Pieza : MonoBehaviour
     {
         pieza_extra = true;
     }
+
+    private void OnDestroy()
+    {
+        if (casilla)
+        {
+            casilla.pieza = null;
+            casilla.SetState(States.normal);
+        }  
+    }
 }

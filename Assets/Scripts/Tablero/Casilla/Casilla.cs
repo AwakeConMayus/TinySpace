@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public enum States
 {
@@ -38,10 +39,14 @@ public class Casilla : MonoBehaviour
     {
         if (pieza)
         {
-            Destroy(pieza.gameObject);
-            pieza = null;
-
-            SetState(States.normal);
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                PhotonNetwork.Destroy(pieza.gameObject);
+            }
+            else
+            {
+                Destroy(pieza.gameObject);
+            }
         }
     }
 
