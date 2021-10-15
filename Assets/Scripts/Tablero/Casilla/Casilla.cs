@@ -16,7 +16,7 @@ public enum States
     minero
 }
 
-public class Casilla : MonoBehaviourPunCallbacks
+public class Casilla : MonoBehaviour
 {
 
     [HideInInspector]
@@ -37,25 +37,9 @@ public class Casilla : MonoBehaviourPunCallbacks
 
     public void Clear()
     {
-
-        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-        {
-            if(pieza && pieza.gameObject.GetPhotonView().IsMine) PhotonNetwork.Destroy(pieza.gameObject);
-            else { base.photonView.RPC("RPC_Clear", RpcTarget.Others); }
-        }
-        else
-        {
             if(pieza) Destroy(pieza.gameObject);
-        }
-
-
     }
 
-    [PunRPC]
-    public void RPC_Clear()
-    {
-        if(pieza) PhotonNetwork.Destroy(pieza.gameObject);
-    }
     public void SetState(States s)
     {
         switch (s)
