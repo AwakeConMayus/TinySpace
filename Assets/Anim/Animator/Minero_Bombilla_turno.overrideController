@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Minero_Bombilla_turno
+  m_Controller: {fileID: 9100000, guid: f2d52c3ffa2331346a1cb2e1db74aa19, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e7a706b9279987640b9e2122f4faf9cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 79bbbac8101b7544d800ad09f54391e7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1777fea79ffaa9f41b86ea91dc399306, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c1898d2ac04075c43854c0c73d30f75f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5821ccc1b7a5397429d2f456eb42e51c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 28c15f2483322e74db466a6b59ae4e55, type: 2}
