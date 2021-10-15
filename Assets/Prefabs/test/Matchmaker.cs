@@ -20,6 +20,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        _roomList = new List<RoomInfo>();   
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
@@ -27,14 +28,16 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         }
         else
         {
-            StartCoroutine(Tiempo_De_Espera());
-            first_time = false;
+
+            if (PhotonNetwork.InRoom) PhotonNetwork.Disconnect();
+            if (!PhotonNetwork.InLobby) PhotonNetwork.JoinLobby();
+            else { Buscar_Sala(); }
         }
-        _roomList = new List<RoomInfo>();   
     }
 
     public override void OnJoinedLobby()
     {
+        Debug.Log("joined lobby");
         //Caso limite de sin conexion al servidor
         if (!PhotonNetwork.IsConnected)
         {
@@ -56,9 +59,10 @@ public class Matchmaker : MonoBehaviourPunCallbacks
 
     public void Buscar_Sala()
     {
-        foreach(RoomInfo roomInfo in _roomList)
+        Debug.Log(_roomList.Count);
+        foreach (RoomInfo roomInfo in _roomList)
         {
-            //Debug.Log(roomInfo.IsOpen);
+            Debug.Log(roomInfo.IsOpen  + "   " + roomInfo.PlayerCount);
             if (roomInfo.IsOpen && roomInfo.PlayerCount == 1)
             {
                 PhotonNetwork.JoinRoom(roomInfo.Name);
@@ -72,7 +76,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         options.EmptyRoomTtl = 1;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
-        intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here
+        intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here; clanta:one day i will crush ya bitch; 
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
         //Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
         texto.SetActive(true);
@@ -92,6 +96,13 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("entro");
+        Debug.Log("numero de jugadores en sala: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        intervalo = Random.Range(10, 30);
+        StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
+    }
     IEnumerator Tiempo_De_Espera()
     {
         yield return new WaitForSeconds(2);

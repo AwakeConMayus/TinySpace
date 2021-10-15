@@ -14,10 +14,13 @@ public class test : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        print("connecting to server");
-        PhotonNetwork.NickName = PMasterManager.gameSettings.nickName;
-        PhotonNetwork.GameVersion = PMasterManager.gameSettings.gameVersion;
-        PhotonNetwork.ConnectUsingSettings();
+        if (!PhotonNetwork.IsConnected)
+        {
+            print("connecting to server");
+            PhotonNetwork.NickName = PMasterManager.gameSettings.nickName;
+            PhotonNetwork.GameVersion = PMasterManager.gameSettings.gameVersion;
+            PhotonNetwork.ConnectUsingSettings();
+        }
     }
 
     public override void OnConnectedToMaster()
