@@ -12,6 +12,9 @@ public class PoderMaquinista : PoderMineros
     bool selectOrigen = false;
     bool selectDestino = false;
 
+    public int numeroTps;
+    int tps;
+
     private void Awake()
     {
         EventManager.StartListening("ClickCasilla", SelectOrigen);
@@ -67,6 +70,9 @@ public class PoderMaquinista : PoderMineros
             destino = c;
             selectDestino = false;
             Teleport();
+            ++tps;
+            if (tps < numeroTps) Invoke("FirstAction", 1f);
+            else tps = 0;
         }
     }
     void Teleport()

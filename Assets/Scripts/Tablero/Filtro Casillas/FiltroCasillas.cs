@@ -131,6 +131,32 @@ public static class FiltroCasillas
         return resultado;
     }
 
+    public static List<Casilla> CasillasAdyacentes(Casilla casillaBase, bool excluirOriginal)
+    {
+        List<Casilla> resultado = new List<Casilla>();
+        List<Casilla> listaBase = new List<Casilla>();
+
+        listaBase.Add(casillaBase);
+
+        foreach (Casilla candidata in listaBase)
+        {
+            foreach (Casilla adyacente in candidata.adyacentes)
+            {
+                if (adyacente && !resultado.Contains(adyacente)) resultado.Add(adyacente);
+
+            }
+        }
+        if (excluirOriginal)
+        {
+            foreach (Casilla original in listaBase)
+            {
+
+                resultado.Remove(original);
+            }
+        }
+        return resultado;
+    }
+
     public static List<Casilla> RestaLista (List<Casilla> original, List<Casilla> resta)
     {
         List<Casilla> result = original;
@@ -152,6 +178,17 @@ public static class FiltroCasillas
             if (!result.Contains(c)) result.Add(c);
         }
 
+        return result;
+    }
+
+    public static List<Casilla> Interseccion(List<Casilla> a, List<Casilla> b)
+    {
+        List<Casilla> result = new List<Casilla>();
+
+        foreach(Casilla c in a)
+        {
+            if (b.Contains(c)) result.Add(c); 
+        }
         return result;
     }
 

@@ -20,7 +20,7 @@ public abstract class Explorador : Pieza
         {
             if (!adyacete || !adyacete.pieza) continue;
 
-            if(!clasesExploradas.Contains(adyacete.pieza.clase) && !adyacete.pieza.CompareClase(Clase.explorador))
+            if(!clasesExploradas.Contains(adyacete.pieza.clase))
             {
                 clasesExploradas.Add(adyacete.pieza.clase);
             }
