@@ -309,16 +309,16 @@ public class SendToGoogle : MonoBehaviour
 
                 else if (c.pieza.gameObject.GetComponent<Estratega>())
                 {
-                    if (c.pieza.gameObject.GetComponent<EstrategaMineros>() && c.pieza.gameObject.GetComponent<EstrategaMineros>().nivelInicial != 0)
+                    if (c.pieza.gameObject.GetComponent<EstrategaMinerosAstro>())
                     {
                         if (c.pieza.Get_Jugador() == 0)
                         {
-                            EstrategaMejP1 += c.pieza.gameObject.GetComponent<EstrategaMineros>().nivelInicial;
+                            ++EstrategaMejP1;
                             scoreEstrategaMejP1 += c.pieza.Puntos();
                         }
                         else
                         {
-                            EstrategaMejP2 += c.pieza.gameObject.GetComponent<EstrategaMineros>().nivelInicial;
+                            ++EstrategaMejP2;
                             scoreEstrategaMejP2 += c.pieza.Puntos();
                         }
                     }

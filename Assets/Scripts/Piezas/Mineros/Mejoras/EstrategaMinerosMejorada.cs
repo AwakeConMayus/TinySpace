@@ -5,14 +5,25 @@ using Photon.Pun;
 
 public class EstrategaMinerosMejorada : Efecto
 {
+    [SerializeField] GameObject estratega_astro;
     public override void Accion()
     {
-        EstrategaMineros objetivo = (EstrategaMineros)casilla.pieza;
-        ++objetivo.nivelInicial;
 
-        objetivo.transform.localScale *= 2; //Visual
+        casilla.Clear();
+        // Comprobacion de si el game se esta realizando online u offline
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            // Instanciacion que utiliza photon
+            PhotonNetwork.Instantiate(estratega_astro.name, casilla.transform.position, Quaternion.identity);
 
-        if (this.gameObject.GetPhotonView().IsMine) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
+        else
+        {
+            // Instanciacion de piezas en el offline
+            GameObject thisPieza = Instantiate(estratega_astro);
+            thisPieza.transform.position = casilla.transform.position;
+            //GestorTurnos.instance.realizarJugada();
+        }
     }
 
     public override List<Casilla> CasillasDisponibles()
