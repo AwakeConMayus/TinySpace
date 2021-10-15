@@ -91,7 +91,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.AutomaticallySyncScene = true;
-                PhotonNetwork.LoadLevel(2);
+                PhotonNetwork.LoadLevel(3);  // Esto tendrá que ser LoadLevel(2) cuando funcione la selección de unidades de facción
             }
         }
     }
