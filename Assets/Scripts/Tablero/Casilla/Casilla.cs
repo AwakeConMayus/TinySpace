@@ -40,6 +40,8 @@ public class Casilla : MonoBehaviour
         {
             Destroy(pieza.gameObject);
             pieza = null;
+
+            SetState(States.normal);
         }
     }
 

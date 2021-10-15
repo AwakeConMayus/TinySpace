@@ -1,25 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class InvestigadorMinerosMejorado : InvestigadorMineros
+public class InvestigadorMinerosMejorado : Efecto
 {
-    public override int Puntos()
+
+    [SerializeField] GameObject investigador_astro;
+
+    public override void Accion()
     {
-        int puntosIniciales = 2;
-        int incremento = 3;
 
-        int puntos = 0;
+        casilla.Clear();
 
-        foreach (Casilla adyacente in casilla.adyacentes)
+        // Comprobacion de si el game se esta realizando online u offline
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            if (!adyacente || !adyacente.pieza) continue;
-            if (adyacente.pieza.CompareClase(Clase.explorador) && adyacente.pieza.Get_Jugador() != jugador)
-            {
-                puntos += puntosIniciales;
-                puntosIniciales += incremento;
-            }
+            // Instanciacion que utiliza photon
+            PhotonNetwork.Instantiate(investigador_astro.name, casilla.transform.position, Quaternion.identity);
+
         }
-        return puntos;
+        else
+        {
+            // Instanciacion de piezas en el offline
+            GameObject thisPieza = Instantiate(investigador_astro);
+            thisPieza.transform.position = casilla.transform.position;
+            //GestorTurnos.instance.realizarJugada();
+        }
+
+
+    }
+
+
+    public override List<Casilla> CasillasDisponibles()
+    {
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+        return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.investigador }, casillasDisponibles);
     }
 }
