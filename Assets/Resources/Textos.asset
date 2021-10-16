@@ -16,31 +16,35 @@ MonoBehaviour:
     para jugar una versi\xF3n mejorada de una nave b\xE1sica pulsando sobre este
     engranaje (vu\xE9lvelo a pulsar para salir del modo mejora)."
   heroeMaquinista: 'Inicio: Coloca 10 meteoritos en casillas aleatorias del mapa.
-    Mitad y final de partida: Teletransporta una nave aliada a otra casilla del mapa.'
-  heroeColono: "Inicio: Coloca tres planetas en casillas aleatorias, obtendr\xE1s
-    3 puntos por cada planeta en el que tengas m\xE1s naves adyacentes que tu rival.
+    Mitad y final de partida: Teletransporta 2 naves aliadas a otras casillas del
+    mapa.'
+  heroeColono: "Inicio: Coloca 4 planetas en casillas aleatorias, obtendr\xE1s 3
+    puntos por cada planeta en el que tengas m\xE1s naves adyacentes que tu rival.
     Mitad de partida: Coloca un planeta. Despu\xE9s coloca gratis la nave que m\xE1s
     tiempo lleves sin jugar. Final de partida: Santifica un planeta. Un planeta santificado
     sin naves enemigas adyacentes otorga 3 puntos por cada nave aliada adyacente."
-  explorador: +2 puntos por cada tipo de nave diferente adyacente que no sea otro
-    explorador (independientemente de si es aliada o rival).
+  explorador: +2 puntos por cada tipo de nave diferente adyacente (independientemente
+    de si es aliada o rival).
   combate: +3 puntos por cada nave de combate aliada adyacente.
   laboratorio: "+1 punto por la primera nave exploradora adyacente (ya sea aliada
     o enemiga). Cada nave adicional aumenta en 2 puntos esta puntuaci\xF3n (1, 3,
     5, 7...)."
   estratega: +3 puntos por cada nave de combate adyacente, independientemente si
     es aliada o rival.
-  exploradorMejora: "+1 punto por cada casilla vac\xEDa adyacente."
+  exploradorMejora: "+4 puntos por cada nave del tipo m\xE1s repetido entre sus naves
+    adyacentes."
   combateMejora: +3 puntos por cada nave de combate aliada adyacente. Obten +2 puntos
     por cualquier nave rival adyacente (de cualquier tipo).
-  laboratorioMejora: "+2 puntos por la primera nave exploradora enemiga adyacente.
-    Cada nave adicional aumenta en 3 puntos esta puntuaci\xF3n (2, 5, 8, 11...)."
-  estrategaMejora: No coloca nave, mejora un estratega ya colocado. Este estratega
-    obtiene +2 puntos extra por cada nave de combate adyacente, independientemente
-    de si es aliada o rival.
-  combateColonizador: +3 puntos nave de combate aliada adyacente, +2 puntos por cada
+  laboratorioMejora: "Mejora un laboratorio ya colocado. Punt\xFAa igual pero es
+    un astro (nave distinta e indestructible) y destruye una nave enemiga a tu elecci\xF3n
+    a 2 casillas de distancia."
+  estrategaMejora: "Mejora un estratega ya colocado. Punt\xFAa igual pero es un astro
+    (nave distinta e indestructible) y transforma todas las naves aliadas adyacentes
+    en naves de combate."
+  combateColonizador: +3 puntos nave de combate aliada adyacente, +3 puntos por cada
     planeta adyacente.
   comodin: "Coloca cualquier tipo de nave b\xE1sica a tu elecci\xF3n consumiendo
-    1 unidad de mineral."
+    2 unidades de mineral."
   planeta: "Coloca un planeta para poder colocar naves en sus casillas adyacentes.
-    Si tienes m\xE1s naves adyacentes al planeta que tu rival, obtienes +3 puntos."
+    Si tienes m\xE1s naves adyacentes al planeta que tu rival, obtienes +3 puntos.
+    El planeta es un astro (indestructible)."
