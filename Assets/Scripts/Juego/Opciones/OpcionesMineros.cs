@@ -74,6 +74,7 @@ public class OpcionesMineros : Opciones
     public void EspecialMode()
     {
         InstancePiezas.instance.LimpiarPieza();
+        mineralGastar = 0;
         especial = !especial;
         if (especial)
         {
