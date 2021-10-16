@@ -45,10 +45,10 @@ public class SendToGoogle : MonoBehaviour
     Arbitro arbitroPartida;
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
-    string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScwY7iChsmn_QTGxKEIYSI5Ytp0y4j_vGgZI35HpSsV7JQzdQ/formResponse";
+    string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScGjJts-KwsMlpdMi-FbrFI6edqkbDnIenlQdc2VHlc6cPIkw/formResponse";
     WWWForm form;
 
-    //* Función que es llamada por el botón Score (y que será llamada para subir los datos de los usuarios), aquí se obtienen/calculan los datos a subir
+    //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
     public void SendOnline()
     {
         StartCoroutine(Upload());
@@ -66,6 +66,7 @@ public class SendToGoogle : MonoBehaviour
         yield return url;
     }
 
+    //* Introduce la información en el formulario que crea
     void rellenarFormulario()
     {
         BuscarDatos();
@@ -77,57 +78,53 @@ public class SendToGoogle : MonoBehaviour
         //* Ahí debes coger el número grande poco después de la variable del formulario a la que quieras asociar el field, por ejemplo: (...)"PuntosMineros",null,0,[[435469167,(...)"PuntosPlanetarios",null,0,[[1370920118,(...)
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
-        print("Ganador dice: |" + Ganador + "|");
+        form.AddField("entry.744986798",  Ganador);                 // Ganador 
+        form.AddField("entry.1898422490", GanaQuienEmpieza);        // GanaQuienEmpieza
 
-        form.AddField("entry.435469167",  Ganador);             // Ganador 
-        form.AddField("entry.1370920118", GanaQuienEmpieza);    // GanaQuienEmpieza
+        form.AddField("entry.1823031720", FaccionP1);               // FaccionP1
 
-        form.AddField("entry.1874309661", FaccionP1);           // FaccionP1
+        form.AddField("entry.1396022188", ScoreP1);                 // Score1
+        form.AddField("entry.2084878629", ScoreP2);                 // Score2
 
-        form.AddField("entry.1020366196", ScoreP1);             // Score1
-        form.AddField("entry.2024526894", ScoreP2);             // Score2
+        form.AddField("entry.743563174",  ExploradorP1);            // ExploradorP1
+        form.AddField("entry.1680791580", CombateP1);               // CombateP1
+        form.AddField("entry.2031779512", LaboratorioP1);           // LaboratorioP1
+        form.AddField("entry.2087586458", EstrategaP1);             // EstrategaP1
 
-        form.AddField("entry.1040339605", ExploradorP1);        // ExploradorP1
-        form.AddField("entry.1254542756", CombateP1);           // CombateP1
-        form.AddField("entry.840516388",  LaboratorioP1);       // LaboratorioP1
-        form.AddField("entry.1915383336", EstrategaP1);         // EstrategaP1
+        form.AddField("entry.1592083320", ExploradorMejP1);         // ExploradorMejP1
+        form.AddField("entry.57859528",   CombateMejP1);            // CombateMejP1
+        form.AddField("entry.1568221146", LaboratorioMejP1);        // LaboratorioMejP1
+        form.AddField("entry.1623494950", EstrategaMejP1);          // EstrategaMejP1
 
-        form.AddField("entry.306931683",  ExploradorMejP1);     // ExploradorMejP1
-        form.AddField("entry.1935103977", CombateMejP1);        // CombateMejP1
-        form.AddField("entry.1788277006", LaboratorioMejP1);    // LaboratorioMejP1
-        form.AddField("entry.2144116206", EstrategaMejP1);      // EstrategaMejP1
+        form.AddField("entry.2143636952", ExploradorP2);            // ExploradorP2
+        form.AddField("entry.1510679630", CombateP2);               // CombateP2
+        form.AddField("entry.724512350",  LaboratorioP2);           // LaboratorioP2
+        form.AddField("entry.82857284",   EstrategaP2);             // EstrategaP2
+        form.AddField("entry.5292467",    PlanetaP2);               // PlanetaP2
+        form.AddField("entry.364573089",  PlanetaSagradoP2);        // PlanetaSagradoP2
+        form.AddField("entry.743639779",  CombateEspP2);            // CombateEspP2
 
-        form.AddField("entry.2010821728", ExploradorP2);        // ExploradorP2
-        form.AddField("entry.1698841726", CombateP2);           // CombateP2
-        form.AddField("entry.726993894",  LaboratorioP2);       // LaboratorioP2
-        form.AddField("entry.2007228196", EstrategaP2);         // EstrategaP2
-        form.AddField("entry.307780979",  PlanetaP2);           // PlanetaP2
+        form.AddField("entry.2006495554", scoreExploradorP1);       // scoreExploradorP1
+        form.AddField("entry.2022311863", scoreCombateP1);          // scoreCombateP1
+        form.AddField("entry.1012944182", scoreLaboratorioP1);      // scoreLaboratorioP1
+        form.AddField("entry.848013273",  scoreEstrategaP1);        // scoreEstrategaP1
 
-        form.AddField("entry.831687966",  CombateEspP2);        // CombateEspP2
+        form.AddField("entry.2081159488", scoreExploradorMejP1);     // scoreExploradorMejP1
+        form.AddField("entry.827129007",  scoreCombateMejP1);        // scoreCombateMejP1
+        form.AddField("entry.157811916",  scoreLaboratorioMejP1);    // scoreLaboratorioMejP1
+        form.AddField("entry.1361294743", scoreEstrategaMejP1);      // scoreEstrategaMejP1
 
-        form.AddField("entry.1761560571", scoreExploradorP1);   // scoreExploradorP1
-        form.AddField("entry.1824586309", scoreCombateP1);      // scoreCombateP1
-        form.AddField("entry.1134179669", scoreLaboratorioP1);  // scoreLaboratorioP1
-        form.AddField("entry.2126107367", scoreEstrategaP1);    // scoreEstrategaP1
-
-        form.AddField("entry.839756224", scoreExploradorMejP1); // scoreExploradorMejP1
-        form.AddField("entry.627397951", scoreCombateMejP1);    // scoreCombateMejP1
-        form.AddField("entry.8614594",   scoreLaboratorioMejP1);// scoreLaboratorioMejP1
-        form.AddField("entry.127181305", scoreEstrategaMejP1);  // scoreEstrategaMejP1
-
-        form.AddField("entry.169886086",  scoreExploradorP2);   // scoreExploradorP2
-        form.AddField("entry.487198462",  scoreCombateP2);      // scoreCombateP2
-        form.AddField("entry.1810626703", scoreLaboratorioP2);  // scoreLaboratorioP2
-        form.AddField("entry.1709659503", scoreEstrategaP2);    // scoreEstrategaP2
-        form.AddField("entry.2024345642", scorePlanetaP2);      // scorePlanetaP2
-
-        form.AddField("entry.786605642", scoreCombateEspP2);    // scoreCombateEspP2
-
-        form.AddField("entry.1157758824", PlanetaSagradoP2);        // PlanetaSagradoP2
-        form.AddField("entry.1821666122", scorePlanetaSagradoP2);   // scorePlanetaSagradoP2
+        form.AddField("entry.1327141632", scoreExploradorP2);       // scoreExploradorP2
+        form.AddField("entry.1722183929", scoreCombateP2);          // scoreCombateP2
+        form.AddField("entry.1655902867", scoreLaboratorioP2);      // scoreLaboratorioP2
+        form.AddField("entry.409777714",  scoreEstrategaP2);        // scoreEstrategaP2
+        form.AddField("entry.388807094",  scorePlanetaP2);          // scorePlanetaP2
+        form.AddField("entry.218373057",  scorePlanetaSagradoP2);   // scorePlanetaSagradoP2
+        form.AddField("entry.488067953",  scoreCombateEspP2);       // scoreCombateEspP2       
     }
 
-
+    
+    //* Obtiene la información que introducirá en el formulario
     void BuscarDatos()
     {
         //Variables Auxiliares
