@@ -157,8 +157,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void EndGame()
     {
-        //if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
-            //SendToGoogle.instance.SendOnline();
+        if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
+            SendToGoogle.instance.SendOnline();
 
         
         mi_menu.gameObject.SetActive(true);
