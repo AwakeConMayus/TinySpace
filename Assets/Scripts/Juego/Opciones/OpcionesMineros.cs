@@ -47,6 +47,7 @@ public class OpcionesMineros : Opciones
         mineral -= mineralGastar;
         EventManager.TriggerEvent("CambioMineral");
         mineralGastar = 0;
+        if (especial) EspecialMode();
     }
 
     public override void Seleccion(int i)
