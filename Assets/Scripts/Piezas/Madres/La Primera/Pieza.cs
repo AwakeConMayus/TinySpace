@@ -120,8 +120,7 @@ public abstract class Pieza : MonoBehaviour
     {
         if (casilla)
         {
-            casilla.pieza = null;
-            casilla.SetState(States.normal);
+            casilla.Limpiar_Pieza(this);
         }  
     }
 }

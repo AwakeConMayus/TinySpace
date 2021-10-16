@@ -39,7 +39,15 @@ public class Casilla : MonoBehaviour
     {
             if(pieza) Destroy(pieza.gameObject);
     }
-
+    
+    public void Limpiar_Pieza(Pieza _pieza)
+    {
+        if(_pieza == pieza)
+        {
+            pieza = null;
+            SetState(States.normal);
+        }
+    }
     public void SetState(States s)
     {
         switch (s)
