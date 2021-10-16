@@ -67,9 +67,9 @@ public class Matchmaker : MonoBehaviourPunCallbacks
             if (roomInfo.IsOpen && roomInfo.PlayerCount == 1)
             {
                 string[] name_info = roomInfo.Name.Split(',');
-                Debug.Log("gameversion de la sala" + name_info[1]);
-                Debug.Log("gameversion mio" + PhotonNetwork.GameVersion);
-                if (name_info[1] == PhotonNetwork.GameVersion)
+                Debug.Log("gameversion de la sala: " + name_info[1]);
+                Debug.Log("gameversion mio: " + PMasterManager.gameSettings.gameVersion);
+                if (name_info[1] == PMasterManager.gameSettings.gameVersion)
                 {
                     PhotonNetwork.JoinRoom(roomInfo.Name);
                     PhotonNetwork.AutomaticallySyncScene = true;
@@ -81,7 +81,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
         options.EmptyRoomTtl = 1;
-        string name = PhotonNetwork.NickName + "," + PhotonNetwork.GameVersion;
+        string name = PhotonNetwork.NickName + "," + PMasterManager.gameSettings.gameVersion;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(name , options, TypedLobby.Default);
         intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here; clanta:one day i will crush ya bitch; 

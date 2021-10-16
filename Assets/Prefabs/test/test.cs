@@ -20,6 +20,7 @@ public class test : MonoBehaviourPunCallbacks
             PhotonNetwork.NickName = PMasterManager.gameSettings.nickName;
             PhotonNetwork.GameVersion = PMasterManager.gameSettings.gameVersion;
             PhotonNetwork.ConnectUsingSettings();
+            print(PMasterManager.gameSettings.gameVersion);
         }
     }
 
