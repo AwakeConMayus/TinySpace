@@ -51,7 +51,6 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
-  nivelInicial: 0
 --- !u!114 &-4361594507905850228
 MonoBehaviour:
   m_ObjectHideFlags: 0

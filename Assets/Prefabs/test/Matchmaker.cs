@@ -62,20 +62,28 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         Debug.Log(_roomList.Count);
         foreach (RoomInfo roomInfo in _roomList)
         {
+            
             Debug.Log(roomInfo.IsOpen  + "   " + roomInfo.PlayerCount);
             if (roomInfo.IsOpen && roomInfo.PlayerCount == 1)
             {
-                PhotonNetwork.JoinRoom(roomInfo.Name);
-                PhotonNetwork.AutomaticallySyncScene = true;
-                return;
+                string[] name_info = roomInfo.Name.Split(',');
+                Debug.Log("gameversion de la sala" + name_info[1]);
+                Debug.Log("gameversion mio" + PhotonNetwork.GameVersion);
+                if (name_info[1] == PhotonNetwork.GameVersion)
+                {
+                    PhotonNetwork.JoinRoom(roomInfo.Name);
+                    PhotonNetwork.AutomaticallySyncScene = true;
+                    return;
+                }
             }
         }
 
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
         options.EmptyRoomTtl = 1;
+        string name = PhotonNetwork.NickName + "," + PhotonNetwork.GameVersion;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
-        PhotonNetwork.JoinOrCreateRoom(PhotonNetwork.NickName , options, TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom(name , options, TypedLobby.Default);
         intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here; clanta:one day i will crush ya bitch; 
         StartCoroutine(Tiempo_Hasta_Recarga(intervalo));
         //Debug.Log("he creado una sala, tiempo hasta desconexion: " + intervalo);
