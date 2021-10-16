@@ -29,6 +29,7 @@ public class OnlineManager : MonoBehaviourPunCallbacks
         {
             if (p.gameObject.GetPhotonView() && p.gameObject.GetPhotonView().IsMine)
             {
+                Debug.Log("destruyo la pieza");
                 PhotonNetwork.Destroy(p.gameObject);
             }
             else
