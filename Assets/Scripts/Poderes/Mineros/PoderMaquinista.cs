@@ -72,7 +72,11 @@ public class PoderMaquinista : PoderMineros
             Teleport();
             ++tps;
             if (tps < numeroTps) Invoke("FirstAction", 1f);
-            else tps = 0;
+            else
+            {
+                tps = 0;
+                EventManager.TriggerEvent("AccionTerminadaConjunta");
+            }
         }
     }
     void Teleport()
@@ -82,10 +86,12 @@ public class PoderMaquinista : PoderMineros
         {
             if (pieza.GetPhotonView().IsMine)
             {
+                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 pieza.transform.position = destino.transform.position;
             }
             else
             {
+                //si todo sale bien esto no tendria que pasar porque el minero solo mueve piezas aliadas;
                 int i = Tablero.instance.Get_Numero_Casilla(origen.gameObject);
                 int j = Tablero.instance.Get_Numero_Casilla(destino.gameObject);
                 base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j);
