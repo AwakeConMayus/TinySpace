@@ -44,6 +44,8 @@ public class SendToGoogle : MonoBehaviour
 
     Arbitro arbitroPartida;
 
+    bool SendingDataOnline = true;
+
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
     string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScGjJts-KwsMlpdMi-FbrFI6edqkbDnIenlQdc2VHlc6cPIkw/formResponse";
     WWWForm form;
@@ -51,7 +53,7 @@ public class SendToGoogle : MonoBehaviour
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
     public void SendOnline()
     {
-        StartCoroutine(Upload());
+        if(SendingDataOnline) StartCoroutine(Upload());
     }
 
     //* Corrutina que sube los datos a la red
