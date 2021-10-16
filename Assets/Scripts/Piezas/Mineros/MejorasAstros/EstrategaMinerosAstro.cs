@@ -22,19 +22,11 @@ public class EstrategaMinerosAstro : EstrategaMineros
                     adyacente.pieza.clase != Clase.combate && adyacente.pieza.clase != Clase.astros)
                 {
                     OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
-                    //StartCoroutine(Instanciar_nave_Combate(adyacente));
                     GameObject thisPieza = PhotonNetwork.Instantiate(combateMinero.name, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
             }
         }
         base.Colocar(c);
-    }
-
-    IEnumerator Instanciar_nave_Combate(Casilla adyacente)
-    {
-        yield return new WaitForSeconds(1);
-        GameObject thisPieza = PhotonNetwork.Instantiate(combateMinero.name, adyacente.transform.position, Quaternion.identity);
-        thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
     }
 }
