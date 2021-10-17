@@ -241,7 +241,6 @@ public class SendToGoogle : MonoBehaviour
                     if (c.pieza.gameObject.GetComponent<InvestigadorMinerosAstro>())
                     {
                         ++LaboratorioMejP1;
-                        scoreLaboratorioMejP1 += c.pieza.gameObject.GetComponent<InvestigadorMinerosAstro>().GetPuntosDestruidos();
                         ++LaboratorioP1;
                         scoreLaboratorioP1 += c.pieza.Puntos();
                     }
@@ -266,7 +265,8 @@ public class SendToGoogle : MonoBehaviour
                     if (c.pieza.gameObject.GetComponent<EstrategaMinerosAstro>())
                     {
                         ++EstrategaMejP1;
-                        scoreEstrategaMejP1 += c.pieza.Puntos();
+                        ++EstrategaP1;
+                        scoreEstrategaP1 += c.pieza.Puntos();
                     }
 
                     else
