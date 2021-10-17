@@ -69,7 +69,11 @@ public class OpcionesMineros : Opciones
                 base.Seleccion(i);
             }
         }
-        else base.Seleccion(i);
+        else
+        {
+            GastarMineral(0);
+            base.Seleccion(i);
+        }
     }
 
     public void EspecialMode()
