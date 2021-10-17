@@ -17,8 +17,8 @@ public class MenuComodin : MonoBehaviour
 
     public void Convocar(Casilla c)
     {
-        transform.position = Input.mousePosition;
         gameObject.SetActive(true);
+        transform.position = Input.mousePosition;
         casilla = c;
     }
 
