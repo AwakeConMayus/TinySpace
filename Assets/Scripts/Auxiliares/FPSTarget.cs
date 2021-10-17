@@ -14,6 +14,8 @@ public class FPSTarget : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFPS;
+
+        Screen.SetResolution(1920, 1080, true);
     }
 
     void Update()
