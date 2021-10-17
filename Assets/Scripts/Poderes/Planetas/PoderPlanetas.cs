@@ -18,7 +18,7 @@ public abstract class PoderPlanetas : Poder
 
         Casilla planetaReferencia = null;
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
             if (i == 1)

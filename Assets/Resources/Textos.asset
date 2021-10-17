@@ -18,7 +18,7 @@ MonoBehaviour:
   heroeMaquinista: 'Inicio: Coloca 10 meteoritos en casillas aleatorias del mapa.
     Mitad y final de partida: Teletransporta 2 naves aliadas a otras casillas del
     mapa.'
-  heroeColono: "Inicio: Coloca 4 planetas en casillas aleatorias, obtendr\xE1s 3
+  heroeColono: "Inicio: Coloca 3 planetas en casillas aleatorias, obtendr\xE1s 3
     puntos por cada planeta en el que tengas m\xE1s naves adyacentes que tu rival.
     Mitad de partida: Coloca un planeta. Despu\xE9s coloca gratis la nave que m\xE1s
     tiempo lleves sin jugar. Final de partida: Santifica un planeta. Un planeta santificado
