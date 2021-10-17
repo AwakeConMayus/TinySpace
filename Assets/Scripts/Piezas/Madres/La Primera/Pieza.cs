@@ -111,9 +111,9 @@ public abstract class Pieza : MonoBehaviour
         return jugador;
     }
 
-    public void Set_Pieza_Extra()
+    public void Set_Pieza_Extra(bool extra = true)
     {
-        pieza_extra = true;
+        pieza_extra = extra;
     }
 
     private void OnDestroy()

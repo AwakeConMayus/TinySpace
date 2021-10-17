@@ -74,8 +74,7 @@ public class PoderMaquinista : PoderMineros
             if (tps < numeroTps) Invoke("FirstAction", 1f);
             else
             {
-                tps = 0;
-                EventManager.TriggerEvent("AccionTerminadaConjunta");
+                tps = 0; 
             }
         }
     }
@@ -86,8 +85,16 @@ public class PoderMaquinista : PoderMineros
         {
             if (pieza.GetPhotonView().IsMine)
             {
-                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                if (tps + 1 < numeroTps)
+                {
+                    pieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                }
+                else
+                {
+                    pieza.GetComponent<Pieza>().Set_Pieza_Extra(false);
+                }
                 pieza.transform.position = destino.transform.position;
+                
             }
             else
             {
