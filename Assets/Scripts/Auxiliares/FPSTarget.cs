@@ -9,13 +9,19 @@ public class FPSTarget : MonoBehaviour
 
     [SerializeField]
     private int targetFPS = 30;
+    [SerializeField]
+    private int width = 1920;
+    [SerializeField]
+    private int height = 1080;
+    [SerializeField]
+    private bool fullscreen = true;
 
     void Awake()
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFPS;
 
-        Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(width, height, fullscreen);
     }
 
     void Update()
@@ -27,4 +33,28 @@ public class FPSTarget : MonoBehaviour
     void setFPS(int t) { targetFPS = t; }
     int  getFPS() { return targetFPS; }
 
+    void setResolution(int w, int h)
+    {
+        width = w;
+        height = h;
+
+        ChangeScreen();
+    }
+    int[] getResolution()
+    {
+        int[] resolution = { width, height };
+        return resolution;
+    }
+
+    void setFullScreen(bool s) 
+    { 
+        fullscreen = s;
+        ChangeScreen();
+    }
+    bool getFullScreen() { return fullscreen; }
+
+    void ChangeScreen()
+    {
+        Screen.SetResolution(width, height, fullscreen);
+    }
 }
