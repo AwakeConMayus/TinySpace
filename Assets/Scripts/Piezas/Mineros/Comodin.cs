@@ -19,8 +19,8 @@ public class Comodin : EfectoEspecial
         }
     }
 
-    public override List<Casilla> CasillasDisponibles()
+    public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return FiltroCasillas.CasillasLibres();
+        return FiltroCasillas.CasillasLibres(referencia);
     }
 }

@@ -28,10 +28,10 @@ public class Planetas : Pieza
         return 0;
     }
 
-    public override List<Casilla> CasillasDisponibles()
+    public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> result = FiltroCasillas.CasillasLibres();
-        List<Casilla> resta = FiltroCasillas.CasillasDeUnTipo(Clase.astros);
+        List<Casilla> result = FiltroCasillas.CasillasLibres(referencia);
+        List<Casilla> resta = FiltroCasillas.CasillasDeUnTipo(Clase.astros, referencia);
         resta = FiltroCasillas.CasillasAdyacentes(resta, true);
         result = FiltroCasillas.RestaLista(result, resta);
         return result;

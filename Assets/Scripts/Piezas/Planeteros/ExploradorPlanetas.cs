@@ -6,9 +6,9 @@ public class ExploradorPlanetas : Explorador
 {
 
 
-    public override List<Casilla> CasillasDisponibles()
+    public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo (new List<Clase> { Clase.astros });
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo (new List<Clase> { Clase.astros }, referencia);
 
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
 

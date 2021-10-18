@@ -53,7 +53,7 @@ public abstract class Pieza : MonoBehaviour
 
     public abstract int Puntos();
 
-    public abstract List<Casilla> CasillasDisponibles();
+    public abstract List<Casilla> CasillasDisponibles(List<Casilla> referencia = null);
 
     protected abstract void SetClase();
 

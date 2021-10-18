@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Meteorito : Pieza
 {
-    public override List<Casilla> CasillasDisponibles()
+    public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return FiltroCasillas.CasillasSinMeteorito(FiltroCasillas.CasillasLibres());
+        return FiltroCasillas.CasillasSinMeteorito(FiltroCasillas.CasillasLibres(referencia));
     }
 
     public override int Puntos()

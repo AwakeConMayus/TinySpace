@@ -5,9 +5,9 @@ using UnityEngine;
 public class EstrategaMineros : Estratega
 {
 
-    public override List<Casilla> CasillasDisponibles()
+    public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return FiltroCasillas.CasillasLibres();
+        return FiltroCasillas.CasillasLibres(referencia);
     }
  
 }
