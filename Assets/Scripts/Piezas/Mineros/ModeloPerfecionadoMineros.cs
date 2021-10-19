@@ -27,6 +27,6 @@ public class ModeloPerfecionadoMineros : EfectoEspecial
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return FiltroCasillas.CasillasLibres(referencia);
+        return pieza_a_mejorar.GetComponent<Pieza>().CasillasDisponibles();
     }
 }
