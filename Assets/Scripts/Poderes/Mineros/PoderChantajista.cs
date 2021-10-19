@@ -30,5 +30,6 @@ public class PoderChantajista : PoderMineros
         } 
         WalkitolkiGarrapata.instance.Setear_Nivel(i);
         menu_chantaje.SetActive(false);
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 }
