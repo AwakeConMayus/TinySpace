@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InterfazTurnos : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class InterfazTurnos : MonoBehaviour
 
     [SerializeField]
     GameObject bombilla_poder;
+
+    [SerializeField]
+    Text texto_informativo;
+
+    private int jugador = 0;
 
     private int turno_actual = 0;
 
@@ -23,7 +29,8 @@ public class InterfazTurnos : MonoBehaviour
     {
         if(turno_actual == 0)
         {
-            if(InstancePiezas.instance.jugador == 1)
+            jugador = InstancePiezas.instance.jugador;
+            if(jugador == 1)
             {
                 Debug.Log("reposicion de lo de los turn0s");
                 this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
@@ -56,9 +63,20 @@ public class InterfazTurnos : MonoBehaviour
             lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
             lista_bombillas[turno_actual - 3].GetComponent<Animator>().SetTrigger("pasado");
         }
+        if(jugador == 0)
+        {
+            if (turno_actual % 2 == 0) texto_informativo.text = "Tu Turno";        
+            else texto_informativo.text = "Turno del Rival";
+        }
+        else
+        {
+            if (turno_actual % 2 != 0) texto_informativo.text = "Tu turno";
+            else texto_informativo.text = "Turno del Rival";
+        }
     }
     public void Bombilla_Poder()
     {
+        texto_informativo.text = "Poderes";
         lista_bombillas[turno_actual-3].GetComponent<Animator>().SetTrigger("pasado");
         bombilla_poder.GetComponent<Animator>().SetTrigger("actual");
     }
