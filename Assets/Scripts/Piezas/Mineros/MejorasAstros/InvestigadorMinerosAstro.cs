@@ -6,7 +6,7 @@ using Photon.Pun;
 public class InvestigadorMinerosAstro : InvestigadorMineros
 {
     private bool preparado_para_disparar = false;
-
+    bool primera_vez = true;
     List<Casilla> objetivos = new List<Casilla>();
 
     int puntosDestruidos;
@@ -20,7 +20,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     {
         casilla = c;
         casilla.pieza = this;
-        if (this.gameObject.GetPhotonView().IsMine) Preparar();
+        if (this.gameObject.GetPhotonView().IsMine && primera_vez) Preparar();
     }
 
     public void Preparar()
@@ -32,6 +32,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         if (objetivos.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");
+            primera_vez = false;
         }
         else
         {
@@ -56,6 +57,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
             preparado_para_disparar = false;
             Tablero.instance.ResetCasillasEfects();
             EventManager.TriggerEvent("AccionTerminadaConjunta");
+            primera_vez = false;
         }
     }
 

@@ -44,7 +44,7 @@ public class SendToGoogle : MonoBehaviour
 
     Arbitro arbitroPartida;
 
-    bool SendingDataOnline = true;
+    public bool SendingDataOnline = true;
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
     string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScGjJts-KwsMlpdMi-FbrFI6edqkbDnIenlQdc2VHlc6cPIkw/formResponse";
