@@ -38,7 +38,12 @@ public abstract class PoderPlanetas : Poder
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, rnd, jugador);
+                if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
+                GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, Tablero.instance.mapa[rnd].transform.position, Quaternion.identity);
+                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd] ;
+                Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
 
             }
             else
@@ -75,8 +80,12 @@ public abstract class PoderPlanetas : Poder
         {
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                base.photonView.RPC("RPC_InstanciarPlaneta", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject), jugador);
-
+                if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
+                GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, c.transform.position, Quaternion.identity);
+                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                thisPieza.GetComponent<Pieza>().casilla = c;
+                c.pieza = thisPieza.GetComponent<Pieza>();
             }
             else
             {
