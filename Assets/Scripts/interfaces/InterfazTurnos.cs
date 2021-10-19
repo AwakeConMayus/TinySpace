@@ -19,7 +19,7 @@ public class InterfazTurnos : MonoBehaviour
 
     private int turno_actual = 0;
 
-    bool rival = false;
+    bool rival = true;
 
     
     public void Awake()
@@ -35,7 +35,8 @@ public class InterfazTurnos : MonoBehaviour
             if (jugador == 1)
             {
                 this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
-                rival = true;
+                rival = false;
+                texto_informativo.text = "Turno del Rival";
             }
             
         }
@@ -68,10 +69,12 @@ public class InterfazTurnos : MonoBehaviour
             lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
             lista_bombillas[turno_actual - 3].GetComponent<Animator>().SetTrigger("pasado");
         }
+        Debug.Log(turno_actual);
+        Debug.Log(rival);
         if (turno_actual % 2 != 0)
         {
-            if (rival) texto_informativo.text = "turno del rival";
-            else texto_informativo.text = "Tu tuno";
+            if (rival) texto_informativo.text = "Turno del Rival";
+            else texto_informativo.text = "Tu Turno";
             rival = !rival;
         }       
 
