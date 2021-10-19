@@ -51,11 +51,12 @@ public class PropulsorCambioOrbital : Efecto
             {
                 OnlineManager.instance.Destroy_This_Pieza(c.pieza);
             }
-
+            
             casilla.pieza.transform.position = c.transform.position;
+            Tablero.instance.ResetCasillasEfects();
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+            Destroy(this.gameObject);
         }
-
-        Destroy(this.gameObject);
     }
 
     public override void Colocar(Casilla c)
