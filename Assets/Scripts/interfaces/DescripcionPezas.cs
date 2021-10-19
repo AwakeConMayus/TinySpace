@@ -8,6 +8,7 @@ public class DescripcionPezas : MonoBehaviour
     public GameObject puntosPieza;
     Text textoExplicatvo;
     TextoExplicativo explicaciones;
+    bool clantamaforo = false;
 
     private void Awake()
     {
@@ -23,6 +24,11 @@ public class DescripcionPezas : MonoBehaviour
     public void Active()
     {
         if (!ClickCasillas.casillaClick || !ClickCasillas.casillaClick.pieza || !puntosPieza.activeSelf) return;
+        if (!clantamaforo)
+        {
+            clantamaforo = true;
+            return;
+        }
         CancelInvoke();
         Pieza pieza = ClickCasillas.casillaClick.pieza;
         gameObject.SetActive(true);
@@ -32,6 +38,7 @@ public class DescripcionPezas : MonoBehaviour
 
     public void Desactive()
     {
+        clantamaforo = false;
         gameObject.SetActive(false);
     }
 }
