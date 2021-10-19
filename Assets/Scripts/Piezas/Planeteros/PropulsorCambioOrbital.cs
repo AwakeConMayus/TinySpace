@@ -23,6 +23,21 @@ public class PropulsorCambioOrbital : Efecto
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
         List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(jugador, posibles_destinos);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
+
+        if (posibles_destinos.Count == 0)
+        {
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+            preaparado_para_mover = false;
+        }
+        else
+        {
+            EventManager.StartListening("ClickCasilla", Mover);
+            Tablero.instance.ResetCasillasEfects();
+            foreach (Casilla casilla in posibles_destinos) casilla.SetState(States.select);
+
+            preaparado_para_mover = true; 
+        }
+        preaparado_para_mover = true;
     }
 
     public void Mover()
