@@ -19,11 +19,7 @@ public class PoderColono : PoderPlanetas
         if (padre)
         {
             padre.SeleccionForzada(0);
-        }
-        else
-        {
-            Debug.Log("No disponible en modo Debug :(");
-        }
+        }        
     }
 
     public override void SecondAction() 
