@@ -20,6 +20,7 @@ public class IndicadorPuntos : MonoBehaviour
         myCanvas = GetComponentInParent<Canvas>();
 
         EventManager.StartListening("ClickCasilla", Active);
+        EventManager.StartListening("DesClickCasilla", Desactive);
 
         gameObject.SetActive(false);
     }
