@@ -73,7 +73,7 @@ public abstract class Pieza : MonoBehaviour
 
     public virtual bool CompareClase(Clase compare)
     {
-        if (clase == compare || compare == Clase.comodin) return true;
+        if (clase == compare || clase == Clase.comodin) return true;
         else return false;
     }
 

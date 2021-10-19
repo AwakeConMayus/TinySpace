@@ -67,6 +67,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void LimpiarPieza()
     {
+        if (estado != estados.SelectCasilla) return;
         estado = estados.SelectPieza;
         Tablero.instance.ResetCasillasEfects();
     }
