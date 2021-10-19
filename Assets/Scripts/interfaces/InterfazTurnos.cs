@@ -34,6 +34,7 @@ public class InterfazTurnos : MonoBehaviour
             {
                 Debug.Log("reposicion de lo de los turn0s");
                 this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
+                texto_informativo.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
             }
         }
         if(turno_actual > 13)
