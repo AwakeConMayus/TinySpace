@@ -34,7 +34,9 @@ public class InterfazTurnos : MonoBehaviour
             jugador = InstancePiezas.instance.jugador;
             if (jugador == 1)
             {
-                this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
+                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                free.x += 180;
+                this.GetComponent<RectTransform>().rotation = free;
                 rival = false;
                 texto_informativo.text = "Turno del Rival";
             }
@@ -43,8 +45,18 @@ public class InterfazTurnos : MonoBehaviour
         if(turno_actual > 13)
         {
             turno_actual = 2;
-            if (jugador == 1) this.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 1);
-            else this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
+            if (jugador == 1)
+            {
+                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                free.x -= 180;
+                this.GetComponent<RectTransform>().rotation = free;
+            }
+            else
+            {
+                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                free.x += 180;
+                this.GetComponent<RectTransform>().rotation = free;
+            }
             Reset();
         }
         if(turno_actual < 12 && turno_actual > 1)
