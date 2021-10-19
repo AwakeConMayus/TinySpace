@@ -22,6 +22,7 @@ public class PropulsorCambioOrbital : Efecto
 
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
         List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(jugador, posibles_destinos);
+        mis_cosas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, mis_cosas);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
 
         if (posibles_destinos.Count == 0)
