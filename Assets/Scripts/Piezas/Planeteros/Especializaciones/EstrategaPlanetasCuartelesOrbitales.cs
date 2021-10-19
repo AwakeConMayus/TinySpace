@@ -18,4 +18,9 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
 
         return casillasDisponibles;
     }
+
+    protected override void SetClase()
+    {
+        clase = Clase.astros;
+    }
 }
