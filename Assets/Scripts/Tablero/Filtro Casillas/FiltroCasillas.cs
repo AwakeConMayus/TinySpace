@@ -97,6 +97,7 @@ public static class FiltroCasillas
         return resultado;
     }
 
+
     public static List<Casilla> CasillasDeUnJugador(int jugador, List<Casilla> listaBase = null)
     {
         if (listaBase == null) listaBase = Tablero.instance.mapa;

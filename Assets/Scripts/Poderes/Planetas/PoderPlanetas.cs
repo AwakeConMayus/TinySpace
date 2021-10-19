@@ -11,7 +11,7 @@ public abstract class PoderPlanetas : Poder
 
     
 
-    public override void InitialAction()
+    public override void InitialAction(bool pasarTurno = true)
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
         planeta = Resources.Load<GameObject>("Planeta Planetarios");
@@ -42,7 +42,7 @@ public abstract class PoderPlanetas : Poder
                 GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, Tablero.instance.mapa[rnd].transform.position, Quaternion.identity);
                 thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
-                thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd] ;
+                thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd];
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
 
             }
