@@ -37,7 +37,6 @@ public class PropulsorCambioOrbital : Efecto
 
             preaparado_para_mover = true; 
         }
-        preaparado_para_mover = true;
     }
 
     public void Mover()
