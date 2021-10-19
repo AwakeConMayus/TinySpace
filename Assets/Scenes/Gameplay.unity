@@ -14854,6 +14854,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: barra puntos
       objectReference: {fileID: 0}
+    - target: {fileID: 5576838714855008023, guid: e56fc5f2617fcbc46a400ef63257789d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576838714855008023, guid: e56fc5f2617fcbc46a400ef63257789d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576838714855008023, guid: e56fc5f2617fcbc46a400ef63257789d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 8731659053276622453, guid: e56fc5f2617fcbc46a400ef63257789d,
         type: 3}
       propertyPath: m_Pivot.x
