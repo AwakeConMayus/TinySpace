@@ -92,6 +92,8 @@ public class InterfazTurnos : MonoBehaviour
         {
             g.GetComponent<Animator>().SetTrigger("reset");
         }
+        if (!rival) texto_informativo.text = "Turno del Rival";
+        else texto_informativo.text = "Tu Turno";
     }
 
 }
