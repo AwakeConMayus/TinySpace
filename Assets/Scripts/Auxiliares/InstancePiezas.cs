@@ -48,6 +48,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     private void Start()
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
+        EventManager.StartListening("DesClickCasilla", LimpiarPieza);
     }
 
 
