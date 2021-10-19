@@ -19,6 +19,7 @@ public class PoderMaquinista : PoderMineros
     {
         EventManager.StartListening("ClickCasilla", SelectOrigen);
         EventManager.StartListening("ClickCasilla", SelectDestino);
+        EventManager.StartListening("DesClickCasilla", Cancel);
     }
 
    
@@ -35,6 +36,13 @@ public class PoderMaquinista : PoderMineros
 
     public override void SecondAction()
     {
+        FirstAction();
+    }
+
+    public void Cancel()
+    {
+        if (!selectDestino) return;
+        selectDestino = false;
         FirstAction();
     }
 
