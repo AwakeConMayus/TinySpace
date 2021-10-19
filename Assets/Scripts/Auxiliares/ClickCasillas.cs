@@ -22,10 +22,6 @@ public class ClickCasillas : MonoBehaviour
                 casillaClick = hit.collider.GetComponent<Casilla>();
                 EventManager.TriggerEvent("ClickCasilla");
             }
-            else
-            {
-                EventManager.TriggerEvent("DesClickCasilla");
-            }
         }
         if (Input.GetMouseButtonDown(1))
         {
