@@ -25,17 +25,20 @@ public class SateliteComunicacion : Pieza
     }
 
     int puntosPorPlaneta = 2;
+    int porFavorParaYa = 0;
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
+        ++porFavorParaYa;
         print("direccion: " + direccion);
+        print(c.transform.position);
         int puntos = 0;
-        if(casilla.pieza && casilla.pieza.GetComponent<Planetas>())
+        if(c.pieza && c.pieza.GetComponent<Planetas>())
         {
             puntos += puntosPorPlaneta;
         }
-        if (casilla.adyacentes[direccion] != null)
+        if (c.adyacentes[direccion] != null && porFavorParaYa < 100)
         {
-            puntos += puntosPorPlanetasAlineados(casilla.adyacentes[direccion],direccion);
+            puntos += puntosPorPlanetasAlineados(c.adyacentes[direccion],direccion);
         }
         return puntos;
     }
