@@ -16,51 +16,9 @@ public class PoderLunatico : PoderPlanetas
         EventManager.StartListening("ClickCasilla", PlaceLuna);        
     }
 
-    public override void InitialAction()
+    public override void InitialAction(bool pasar_turno = true)
     {
-        EventManager.StartListening("ClickCasilla", CrearPieza);
-        planeta = Resources.Load<GameObject>("Planeta Planetarios");
-
-        Casilla planetaReferencia = null;
-
-        for (int i = 0; i < 3; i++)
-        {
-            List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
-            if (i == 1)
-            {
-                casillasPosibles = FiltroCasillas.CasillasAdyacentes(planetaReferencia, true);
-                casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, true);
-                casillasPosibles = FiltroCasillas.CasillasSinMeteorito(casillasPosibles);
-                casillasPosibles = FiltroCasillas.Interseccion(casillasPosibles, planeta.GetComponent<Pieza>().CasillasDisponibles());
-            }
-            int rnd;
-            do
-            {
-                rnd = Random.Range(0, Tablero.instance.mapa.Count);
-            } while (!casillasPosibles.Contains(Tablero.instance.mapa[rnd]));
-
-            if (i == 0) planetaReferencia = Tablero.instance.mapa[rnd];
-
-            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-            {
-                if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
-                GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, Tablero.instance.mapa[rnd].transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
-                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
-                thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd];
-                Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
-
-            }
-            else
-            {
-                GameObject thisPieza = Instantiate(planeta);
-                thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
-                Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
-            }
-        }
-        Tablero.instance.ResetCasillasEfects();
-
+        base.InitialAction(false);
         List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(jugador);
 
         foreach (Casilla c in planetas)
@@ -80,7 +38,7 @@ public class PoderLunatico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(!pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override void FirstActionPersonal()

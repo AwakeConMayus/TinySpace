@@ -10,7 +10,7 @@ public abstract class PoderMineros : Poder
 
     
 
-    public override void InitialAction()
+    public override void InitialAction(bool pasar_turno)
     {
         meteorito = Resources.Load("Meteorito", typeof(GameObject)) as GameObject;
         meteorito.GetComponent<Pieza>().Set_Jugador(jugador);
@@ -40,7 +40,7 @@ public abstract class PoderMineros : Poder
 
         }
 
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(!pasar_turno)EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
 

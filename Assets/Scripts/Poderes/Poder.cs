@@ -6,7 +6,7 @@ using Photon.Pun;
 public abstract class Poder : MonoBehaviourPunCallbacks
 {
     public int jugador;
-    public abstract void InitialAction();
+    public abstract void InitialAction(bool sin_pasar_turno = false);
     public abstract void FirstAction();
     public abstract void SecondAction();
 
