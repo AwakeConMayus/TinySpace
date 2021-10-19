@@ -13,6 +13,7 @@ public class InterfazTurnos : MonoBehaviour
 
     private int turno_actual = 0;
 
+    
     public void Awake()
     {
         EventManager.StartListening("Siguiente_turno", Siguiente_Turno);
@@ -20,6 +21,14 @@ public class InterfazTurnos : MonoBehaviour
     }
     public void Siguiente_Turno()
     {
+        if(turno_actual == 0)
+        {
+            if(InstancePiezas.instance.jugador == 1)
+            {
+                Debug.Log("reposicion de lo de los turn0s");
+                this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
+            }
+        }
         if(turno_actual > 13)
         {
             turno_actual = 2;
