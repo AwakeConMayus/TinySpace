@@ -8,6 +8,7 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     public static WalkitolkiGarrapata instance;
 
     public int seleccion = 0;
+    private int posicion = 0;
 
     public GarrapataMinero mi_garrapata;
 
@@ -22,7 +23,7 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     }
     public void Espiar()
     {
-        if(seleccion == mi_garrapata.nivel)
+        if(seleccion == posicion)
         {
             base.photonView.RPC("RPC_Avisar", RpcTarget.All);
             seleccion = 0;
@@ -46,5 +47,17 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     public void RPC_SetearNivel(int i)
     {
         mi_garrapata.nivel = i;
+        switch (i)
+        {
+            case 1:
+                posicion = 3;
+                break;
+            case 2:
+                posicion = 2;
+                break;
+            case 3:
+                posicion = 1;
+                break;
+        }
     }
 }
