@@ -13,6 +13,7 @@ public class InterfazScore : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("Siguiente_turno", Update_Score);
+        EventManager.StartListening("UpdateScore", Update_Score);
     }
 
     public void Update_Score()
