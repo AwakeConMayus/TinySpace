@@ -11,7 +11,7 @@ public abstract class PoderPlanetas : Poder
 
     
 
-    public override void InitialAction(bool pasarTurno = true)
+    public override void InitialAction()
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
         planeta = Resources.Load<GameObject>("Planeta Planetarios");

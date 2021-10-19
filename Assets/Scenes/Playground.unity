@@ -1107,6 +1107,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4999847
       objectReference: {fileID: 0}
+    - target: {fileID: 5318447557788326678, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: poder
+      value: 
+      objectReference: {fileID: 7655988863949034424, guid: f5040215ec6fc1a4fb0e061331c8e1bc,
+        type: 3}
     - target: {fileID: 5318447557788326679, guid: 1c33861baca68794fa4078d40fcadc3e,
         type: 3}
       propertyPath: m_RootOrder
