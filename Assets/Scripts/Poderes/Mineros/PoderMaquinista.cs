@@ -41,7 +41,7 @@ public class PoderMaquinista : PoderMineros
 
     public void Cancel()
     {
-        if (!selectDestino) return;
+        if (!selectDestino && !selectOrigen) return;
         selectDestino = false;
         FirstAction();
     }

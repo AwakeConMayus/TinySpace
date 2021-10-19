@@ -12,7 +12,8 @@ public enum Clase
     investigador,
     estratega,
     astros,
-    comodin
+    comodin,
+    satelite
 }
 public enum Faccion
 {
