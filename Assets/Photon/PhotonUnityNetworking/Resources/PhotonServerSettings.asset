@@ -53,6 +53,8 @@ MonoBehaviour:
   - RPC_TPEfects
   - RPC_Clear
   - RPC_Destroy_this_Pieza
+  - RPC_Avisar
+  - RPC_SetearNivel
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
