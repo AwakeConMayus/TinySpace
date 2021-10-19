@@ -126,4 +126,11 @@ public class Tablero : MonoBehaviour
 
         return puntuaciones;
     }
+
+    public GameObject Crear_Casilla_Vacia()
+    {
+        GameObject c = Instantiate(casilla, new Vector3(0, 0, 0), Quaternion.identity);
+        mapa.Add(c.GetComponent<Casilla>());
+        return c;
+    }
 }

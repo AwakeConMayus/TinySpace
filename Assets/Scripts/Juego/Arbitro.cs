@@ -127,7 +127,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
             PhotonNetwork.AutomaticallySyncScene = false;
             EndGame();
         }
-        
 
         if (!active)
         {
