@@ -19,6 +19,8 @@ public class InterfazTurnos : MonoBehaviour
 
     private int turno_actual = 0;
 
+    bool rival = false;
+
     
     public void Awake()
     {
@@ -30,16 +32,18 @@ public class InterfazTurnos : MonoBehaviour
         if(turno_actual == 0)
         {
             jugador = InstancePiezas.instance.jugador;
-            if(jugador == 1)
+            if (jugador == 1)
             {
-                Debug.Log("reposicion de lo de los turn0s");
                 this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
-                texto_informativo.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
+                rival = true;
             }
+            
         }
         if(turno_actual > 13)
         {
             turno_actual = 2;
+            if (jugador == 1) this.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 1);
+            else this.GetComponent<RectTransform>().rotation = new Quaternion(180, 0, 0, 1);
             Reset();
         }
         if(turno_actual < 12 && turno_actual > 1)
@@ -64,16 +68,13 @@ public class InterfazTurnos : MonoBehaviour
             lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
             lista_bombillas[turno_actual - 3].GetComponent<Animator>().SetTrigger("pasado");
         }
-        if(jugador == 0)
+        if (turno_actual % 2 != 0)
         {
-            if (turno_actual % 2 == 0) texto_informativo.text = "Tu Turno";        
-            else texto_informativo.text = "Turno del Rival";
-        }
-        else
-        {
-            if (turno_actual % 2 != 0) texto_informativo.text = "Tu turno";
-            else texto_informativo.text = "Turno del Rival";
-        }
+            if (rival) texto_informativo.text = "turno del rival";
+            else texto_informativo.text = "Tu tuno";
+            rival = !rival;
+        }       
+
     }
     public void Bombilla_Poder()
     {
