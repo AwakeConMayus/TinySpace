@@ -25,7 +25,6 @@ public class InterfazTurnos : MonoBehaviour
     public void Awake()
     {
         EventManager.StartListening("Siguiente_turno", Siguiente_Turno);
-
     }
     public void Siguiente_Turno()
     {
@@ -34,9 +33,9 @@ public class InterfazTurnos : MonoBehaviour
             jugador = InstancePiezas.instance.jugador;
             if (jugador == 1)
             {
-                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                Quaternion free = this.GetComponent<RectTransform>().localRotation;
                 free.x += 180;
-                this.GetComponent<RectTransform>().rotation = free;
+                this.GetComponent<RectTransform>().localRotation = free;
                 rival = false;
                 texto_informativo.text = "Turno del Rival";
             }
@@ -47,15 +46,15 @@ public class InterfazTurnos : MonoBehaviour
             turno_actual = 2;
             if (jugador == 1)
             {
-                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                Quaternion free = this.GetComponent<RectTransform>().localRotation;
                 free.x -= 180;
-                this.GetComponent<RectTransform>().rotation = free;
+                this.GetComponent<RectTransform>().localRotation = free;
             }
             else
             {
-                Quaternion free = this.GetComponent<RectTransform>().rotation;
+                Quaternion free = this.GetComponent<RectTransform>().localRotation;
                 free.x += 180;
-                this.GetComponent<RectTransform>().rotation = free;
+                this.GetComponent<RectTransform>().localRotation = free;
             }
             Reset();
         }
