@@ -934,8 +934,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5318447557788326679}
-  - component: {fileID: 5639069245857444213}
   - component: {fileID: 5318447557788326678}
+  - component: {fileID: 5639069245857444213}
   - component: {fileID: 8150101709208110616}
   - component: {fileID: 962588593823115262}
   m_Layer: 5
@@ -973,6 +973,27 @@ RectTransform:
   m_AnchoredPosition: {x: 819.5, y: -901.5}
   m_SizeDelta: {x: 1639, y: 357}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5318447557788326678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320570456647825995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f1f0edebd7aa240b78508ea04588db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poder: {fileID: 8320863858920773836, guid: e2aa146918929d94e8c794009b4cb48e, type: 3}
+  opcionesIniciales:
+  - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
+  - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
+  - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
+  - {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d, type: 3}
+  - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
+  jugador: 1
+  opcionesDisponibles: 
 --- !u!114 &5639069245857444213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,27 +1019,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
   - {fileID: 21300000, guid: a79dde3d38d34764dad0f4c39d601015, type: 3}
   cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
---- !u!114 &5318447557788326678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6320570456647825995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f1f0edebd7aa240b78508ea04588db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poder: {fileID: 8320863858920773836, guid: e2aa146918929d94e8c794009b4cb48e, type: 3}
-  opcionesIniciales:
-  - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
-  - {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1, type: 3}
-  - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
-  - {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3, type: 3}
-  - {fileID: 1627388167130017577, guid: 0096fbb343e5ffb4a9a9efc16070c275, type: 3}
-  jugador: 1
-  opcionesDisponibles: 
 --- !u!222 &8150101709208110616
 CanvasRenderer:
   m_ObjectHideFlags: 0
