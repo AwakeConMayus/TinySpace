@@ -881,11 +881,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8893391407862685002, guid: ee4d7da3fdb7a1e4fbdf2c7f3388e07f,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 33
-      objectReference: {fileID: 0}
     - target: {fileID: 8893391407862685005, guid: ee4d7da3fdb7a1e4fbdf2c7f3388e07f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2109,6 +2104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459638289783770517, guid: bdd14f22d490b264da62fa29670411c7,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd14f22d490b264da62fa29670411c7, type: 3}
