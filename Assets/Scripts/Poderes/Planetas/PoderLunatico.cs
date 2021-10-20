@@ -24,14 +24,21 @@ public class PoderLunatico : PoderPlanetas
         foreach (Casilla c in planetas)
         {
             List<Casilla> posibles = new List<Casilla>();
-            foreach(Casilla cc in c.adyacentes)
+            foreach (Casilla cc in c.adyacentes)
             {
                 if (cc) posibles.Add(cc);
             }
             posibles = FiltroCasillas.CasillasSinMeteorito(posibles);
             int rnd = Random.Range(0, posibles.Count);
-
-            GameObject thisPieza = PhotonNetwork.Instantiate(luna.name, posibles[rnd].transform.position, Quaternion.identity);
+            GameObject thisPieza;
+            if (PhotonNetwork.InRoom)
+            {
+                thisPieza = PhotonNetwork.Instantiate(luna.name, posibles[rnd].transform.position, Quaternion.identity);
+            }
+            else
+            {
+                thisPieza = Instantiate(luna, posibles[rnd].transform.position, Quaternion.identity);
+            }
             thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             thisPieza.GetComponent<Pieza>().casilla = posibles[rnd];
@@ -63,7 +70,15 @@ public class PoderLunatico : PoderPlanetas
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
         if (casillasPosibles.Contains(c))
         {
-            GameObject thisPieza = PhotonNetwork.Instantiate(luna.name, c.transform.position, Quaternion.identity);
+            GameObject thisPieza;
+            if (PhotonNetwork.InRoom)
+            {
+                thisPieza = PhotonNetwork.Instantiate(luna.name, c.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                thisPieza = Instantiate(luna, c.transform.position, Quaternion.identity);
+            }
             thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             thisPieza.GetComponent<Pieza>().casilla = c;
