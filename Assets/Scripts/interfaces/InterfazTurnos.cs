@@ -80,8 +80,6 @@ public class InterfazTurnos : MonoBehaviour
             lista_bombillas[turno_actual-2].GetComponent<Animator>().SetTrigger("actual");
             lista_bombillas[turno_actual - 3].GetComponent<Animator>().SetTrigger("pasado");
         }
-        Debug.Log(turno_actual);
-        Debug.Log(rival);
         if (turno_actual % 2 != 0)
         {
             if (rival) texto_informativo.text = "Turno del Rival";
