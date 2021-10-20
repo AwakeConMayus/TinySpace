@@ -32,7 +32,8 @@ public class IndicadorPuntos : MonoBehaviour
         CancelInvoke();
         Pieza pieza = ClickCasillas.casillaClick.pieza;
         gameObject.SetActive(true);
-        transform.localPosition = Camera.main.WorldToScreenPoint(pieza.transform.position) - myCanvas.transform.localPosition + new Vector3(0,posicionVertical,0);
+        //transform.localPosition = Camera.main.WorldToScreenPoint(pieza.transform.position) - myCanvas.transform.localPosition + new Vector3(0,posicionVertical,0);
+        transform.position = pieza.transform.position + new Vector3(0, 12, 0);
         textoPuntos.text = pieza.Puntos().ToString();
         Invoke("Desactive", 2f);
     }
