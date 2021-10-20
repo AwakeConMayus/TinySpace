@@ -29,4 +29,19 @@ public class EstrategaMinerosAstro : EstrategaMineros
         }
         base.Colocar(c);
     }
+    public override int Puntos()
+    {
+        int puntosCombateCercano = 4;
+
+        int puntos = 0;
+        foreach (Casilla adyacente in casilla.adyacentes)
+        {
+            if (!adyacente || !adyacente.pieza) continue;
+            if (adyacente.pieza.CompareClase(Clase.combate))
+            {
+                puntos += puntosCombateCercano;
+            }
+        }
+        return puntos;
+    }
 }
