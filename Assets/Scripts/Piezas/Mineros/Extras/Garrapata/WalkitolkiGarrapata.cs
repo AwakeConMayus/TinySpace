@@ -23,9 +23,6 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     }
     public void Espiar()
     {
-        Debug.Log("espio");
-        Debug.Log("Seleccion: " + seleccion);
-        Debug.Log("Posicion: " + posicion);
         if(seleccion == posicion)
         {
             base.photonView.RPC("RPC_Avisar", RpcTarget.All);
@@ -40,7 +37,6 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     }
     public void Avisar()
     {
-        Debug.Log("aviso");
         mi_garrapata.Chantaje();
     }
     public void Setear_Nivel(int i)
@@ -50,18 +46,17 @@ public class WalkitolkiGarrapata : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_SetearNivel(int i)
     {
-        Debug.Log("Garrapata nivel:" + i);
         mi_garrapata.nivel = i;
         switch (i)
         {
             case 1:
-                posicion = 3;
-                break;
-            case 2:
                 posicion = 2;
                 break;
-            case 3:
+            case 2:
                 posicion = 1;
+                break;
+            case 3:
+                posicion = 0;
                 break;
         }
     }
