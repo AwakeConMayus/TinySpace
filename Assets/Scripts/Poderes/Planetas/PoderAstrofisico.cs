@@ -83,7 +83,6 @@ public class PoderAstrofisico : PoderPlanetas
                 this_pieza = Instantiate(blackHole, c.transform.position, Quaternion.identity);
             }
             this_pieza.GetComponent<Pieza>().Set_Pieza_Extra();
-            this_pieza.GetComponent<Pieza>().Colocar(c);
             
             for(int i = 0; i < mis_BalckHoles.Length; ++i)
             {
@@ -96,7 +95,7 @@ public class PoderAstrofisico : PoderPlanetas
             preparado_para_instanciar = false;
             Tablero.instance.ResetCasillasEfects();
 
-            Activar();
+            //Activar();
         }
     }
 

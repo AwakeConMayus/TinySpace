@@ -54,10 +54,8 @@ public abstract class Opciones : MonoBehaviour
         opcionActual = i;
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
         //Clanta: Pochez del poder del chantajista
-        Debug.Log("existe garrapata" +  WalkitolkiGarrapata.instance);
         if (WalkitolkiGarrapata.instance)
         {
-            Debug.Log("Es mi garrapata" + (WalkitolkiGarrapata.instance.mi_garrapata.Get_Jugador() != jugador));
             if(WalkitolkiGarrapata.instance.mi_garrapata.Get_Jugador() != jugador) 
             WalkitolkiGarrapata.instance.seleccion = i;
         }
