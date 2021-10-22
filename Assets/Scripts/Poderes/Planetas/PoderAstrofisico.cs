@@ -90,11 +90,11 @@ public class PoderAstrofisico : PoderPlanetas
             preparado_para_instanciar = false;
             Tablero.instance.ResetCasillasEfects();
 
-            Activar();
+           StartCoroutine( Activar());
         }
     }
 
-    public void Activar()
+    IEnumerator Activar()
     {
         for (int i = 0; i < mis_BalckHoles.Count; ++i)
         {
@@ -110,6 +110,7 @@ public class PoderAstrofisico : PoderPlanetas
                 }
                 Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
             }
+            yield return new WaitForSeconds(1.5f);
         }
 
 
