@@ -12,6 +12,11 @@ public class PoderAstrofisico : PoderPlanetas
 
     bool preparado_para_instanciar = false;
 
+    private void Awake()
+    {
+        EventManager.StartListening("ClickCasilla", Crear_BlackHole);
+    }
+
     public override void InitialAction(bool pasar_turno = false)
     {
         base.InitialAction(false);
@@ -57,13 +62,15 @@ public class PoderAstrofisico : PoderPlanetas
 
     public void Crear_BlackHole()
     {
+        Debug.Log(preparado_para_instanciar);
         if (!preparado_para_instanciar) return;
 
         Casilla c = ClickCasillas.casillaClick;
 
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
 
-
+        Debug.Log(posibles_lugares.Count);
+        Debug.Log(posibles_lugares.Contains(c));
         if (posibles_lugares.Contains(c))
         {
             GameObject this_pieza;
