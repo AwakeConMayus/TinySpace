@@ -113,6 +113,7 @@ public class PoderAstrofisico : PoderPlanetas
                     if (origen.adyacentes[j] && origen.adyacentes[j].pieza && origen.adyacentes[j].pieza.clase != Clase.astros)
                     {
                         Debug.Log("destruyo en esta direccon: " + j);
+                        Debug.Log("destruyo esta pieza: " + origen.adyacentes[j].pieza);
                         OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
                     }
                     Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
@@ -133,6 +134,7 @@ public class PoderAstrofisico : PoderPlanetas
         if (!c) return;
         if (c.pieza)
         {
+            Debug.Log("Pieza a mover: " + c.pieza);
             if (c.pieza.clase == Clase.astros) return;
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
