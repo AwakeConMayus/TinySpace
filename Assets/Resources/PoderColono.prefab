@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4965004640833250895}
   - component: {fileID: 8927011953913046043}
   - component: {fileID: 1250324347986563466}
+  - component: {fileID: -9096320393748666623}
   m_Layer: 0
   m_Name: PoderColono
   m_TagString: Untagged
@@ -68,3 +69,18 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-9096320393748666623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320863858920773836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaa422aab5c3b4fbda9f787c369ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fases:
+  - {fileID: 5799308104470610915, guid: fd3024e3369cb2b478f22b18bd6d3aa8, type: 3}
+  - {fileID: 332963790995355371, guid: f3a35e11a7f2b354c84c8d4ac712ac27, type: 3}

@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 2426654377821019527}
   - component: {fileID: 2368695746359778014}
   - component: {fileID: 8343439762597072831}
+  - component: {fileID: -2820213803055642899}
   m_Layer: 0
   m_Name: Combate Planetarios
   m_TagString: Untagged
@@ -155,6 +156,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-2820213803055642899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661006566940933543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6793bae3ffafe794f9e9f7eaf2c35251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0
 --- !u!1001 &6930045320451655743
 PrefabInstance:
   m_ObjectHideFlags: 0

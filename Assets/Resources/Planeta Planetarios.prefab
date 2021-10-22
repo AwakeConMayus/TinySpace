@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6743518927480299044}
   - component: {fileID: 4434676053380554264}
   - component: {fileID: 8868155255084135518}
+  - component: {fileID: -2925669552993428296}
   m_Layer: 0
   m_Name: Planeta Planetarios
   m_TagString: Untagged
@@ -235,3 +236,16 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-2925669552993428296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914650244640121104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44924440f35a47d49b07b02dbbcf3513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0

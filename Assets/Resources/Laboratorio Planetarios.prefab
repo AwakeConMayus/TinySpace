@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 8170672256780006658}
   - component: {fileID: -8822648280087641938}
   - component: {fileID: 1040492222989550201}
+  - component: {fileID: 2660376856032684620}
   m_Layer: 0
   m_Name: Laboratorio Planetarios
   m_TagString: Untagged
@@ -155,6 +156,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &2660376856032684620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490775113597745579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aaae30b36a10a846be21818e9a980a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0
 --- !u!1001 &5622185420403164201
 PrefabInstance:
   m_ObjectHideFlags: 0
