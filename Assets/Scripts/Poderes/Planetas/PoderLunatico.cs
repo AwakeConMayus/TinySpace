@@ -28,7 +28,7 @@ public class PoderLunatico : PoderPlanetas
             {
                 if (cc) posibles.Add(cc);
             }
-            posibles = FiltroCasillas.CasillasSinMeteorito(posibles);
+            posibles = FiltroCasillas.CasillasSinMeteorito(FiltroCasillas.CasillasLibres(posibles));
             int rnd = Random.Range(0, posibles.Count);
             GameObject thisPieza;
             if (PhotonNetwork.InRoom)
