@@ -41,7 +41,7 @@ public class PoderLunatico : PoderPlanetas
             }
             thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
-            thisPieza.GetComponent<Pieza>().casilla = posibles[rnd];
+            thisPieza.GetComponent<Pieza>().Colocar(posibles[rnd]);
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 

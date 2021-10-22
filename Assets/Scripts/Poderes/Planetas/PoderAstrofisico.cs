@@ -43,7 +43,7 @@ public class PoderAstrofisico : PoderPlanetas
             }
             thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
-            thisPieza.GetComponent<Pieza>().casilla = posibles[rnd];
+            thisPieza.GetComponent<Pieza>().Colocar(posibles[rnd]);
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
@@ -107,10 +107,12 @@ public class PoderAstrofisico : PoderPlanetas
             if (mis_BalckHoles[i])
             {
                 Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
+
                 for(int j = 0; j < origen.adyacentes.Length; ++j)
                 {
                     if (origen.adyacentes[j] && origen.adyacentes[j].pieza && origen.adyacentes[j].pieza.clase != Clase.astros)
                     {
+                        Debug.Log("destruyo en esta direccon: " + j);
                         OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
                     }
                     Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
