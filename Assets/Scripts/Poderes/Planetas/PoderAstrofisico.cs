@@ -8,7 +8,7 @@ public class PoderAstrofisico : PoderPlanetas
 
     [SerializeField] GameObject blackHole;
 
-    GameObject[] mis_BalckHoles = new GameObject[2];
+    List<GameObject> mis_BalckHoles = new List<GameObject>();
 
     bool preparado_para_instanciar = false;
 
@@ -84,14 +84,8 @@ public class PoderAstrofisico : PoderPlanetas
             }
             this_pieza.GetComponent<Pieza>().Set_Pieza_Extra();
             this_pieza.GetComponent<Pieza>().Colocar(c);
-            
-            for(int i = 0; i < mis_BalckHoles.Length; ++i)
-            {
-                if (!mis_BalckHoles[i])
-                {
-                    mis_BalckHoles[i] = this_pieza;
-                }
-            }
+
+            mis_BalckHoles.Add(this_pieza);
 
             preparado_para_instanciar = false;
             Tablero.instance.ResetCasillasEfects();
@@ -102,22 +96,19 @@ public class PoderAstrofisico : PoderPlanetas
 
     public void Activar()
     {
-        for(int i = 0; i < mis_BalckHoles.Length; ++i)
+        for (int i = 0; i < mis_BalckHoles.Count; ++i)
         {
-            if (mis_BalckHoles[i])
-            {
-                Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
+            Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
 
-                for(int j = 0; j < origen.adyacentes.Length; ++j)
+            for (int j = 0; j < origen.adyacentes.Length; ++j)
+            {
+                if (origen.adyacentes[j] && origen.adyacentes[j].pieza && origen.adyacentes[j].pieza.clase != Clase.astros)
                 {
-                    if (origen.adyacentes[j] && origen.adyacentes[j].pieza && origen.adyacentes[j].pieza.clase != Clase.astros)
-                    {
-                        Debug.Log("destruyo en esta direccon: " + j);
-                        Debug.Log("destruyo esta pieza: " + origen.adyacentes[j].pieza);
-                        OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
-                    }
-                    Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
+                    Debug.Log("destruyo en esta direccon: " + j);
+                    Debug.Log("destruyo esta pieza: " + origen.adyacentes[j].pieza);
+                    OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
                 }
+                Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
             }
         }
 
