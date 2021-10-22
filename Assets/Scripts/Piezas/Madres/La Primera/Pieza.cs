@@ -63,7 +63,6 @@ public abstract class Pieza : MonoBehaviour
         casilla = c;
         casilla.pieza = this;
         EventManager.TriggerEvent("UpdateScore");
-        Debug.Log("La pieza es extra: " + (pieza_extra));
         if (this.gameObject.GetPhotonView().IsMine && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
         Set_Pieza_Extra(false);
     }

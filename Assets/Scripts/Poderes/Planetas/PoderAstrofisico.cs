@@ -119,7 +119,7 @@ public class PoderAstrofisico : PoderPlanetas
         }
 
 
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+        //EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
     public override void SecondAction()
     {
@@ -131,16 +131,13 @@ public class PoderAstrofisico : PoderPlanetas
         if (!c) return;
         if (c.pieza)
         {
-            Debug.Log(c.pieza.clase);
             if (c.pieza.clase == Clase.astros) return;
-            Debug.Log("encuentro una pieza");
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
             else aux_reverseDirection = direccion - 3;
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                Debug.Log("La pieza es mia:" + (c.pieza.gameObject.GetPhotonView().IsMine));
                 if (c.pieza.gameObject.GetPhotonView().IsMine)
                 {
                     c.pieza.Set_Pieza_Extra();
@@ -161,7 +158,6 @@ public class PoderAstrofisico : PoderPlanetas
                 c.pieza.transform.position = c.adyacentes[aux_reverseDirection].transform.position;
             }
         }
-        Debug.Log("Existe otra casilla: " + (c.adyacentes[direccion]));
         if (c.adyacentes[direccion])
         {
             Atraer_Todo_En_Una_Direccion(c.adyacentes[direccion], direccion);
