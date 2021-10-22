@@ -54,7 +54,7 @@ public class PoderAstrofisico : PoderPlanetas
     {
        
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
-        //Debug.Log(posibles_lugares.Count);
+        Debug.Log(posibles_lugares.Count);
 
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in posibles_lugares) casilla.SetState(States.select);
@@ -108,6 +108,10 @@ public class PoderAstrofisico : PoderPlanetas
                 Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
                 for(int j = 0; j < origen.adyacentes.Length; ++j)
                 {
+                    if (origen.adyacentes[j].pieza)
+                    {
+                        OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
+                    }
                     Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
                 }
             }
@@ -126,6 +130,7 @@ public class PoderAstrofisico : PoderPlanetas
         if (!c) return;
         if (c.pieza)
         {
+            Debug.Log(c.pieza.clase);
             if (c.pieza.clase == Clase.astros) return;
             Debug.Log("encuentro una pieza");
             int aux_reverseDirection;
