@@ -124,11 +124,9 @@ public class PoderAstrofisico : PoderPlanetas
     public void Atraer_Todo_En_Una_Direccion(Casilla c, int direccion)
     {
         if (!c) return;
-        Debug.Log(c.pieza);
-        Debug.Log(c.pieza.clase);
-        if (c.pieza.clase == Clase.astros) return;
         if (c.pieza)
         {
+            if (c.pieza.clase == Clase.astros) return;
             Debug.Log("encuentro una pieza");
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
