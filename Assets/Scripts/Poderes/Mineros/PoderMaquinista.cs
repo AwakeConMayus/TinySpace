@@ -106,10 +106,13 @@ public class PoderMaquinista : PoderMineros
             }
             else
             {
+                //Clanta: Este poder no deberia poder mover naves enemigas por eso he comentado este codigo
+                Debug.LogError("Poder Maquinista ha intentado mover una pieza que no era suya");
+                return;
                 //si todo sale bien esto no tendria que pasar porque el minero solo mueve piezas aliadas;
-                int i = Tablero.instance.Get_Numero_Casilla(origen.gameObject);
-                int j = Tablero.instance.Get_Numero_Casilla(destino.gameObject);
-                base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j);
+                //int i = Tablero.instance.Get_Numero_Casilla(origen.gameObject);
+                //int j = Tablero.instance.Get_Numero_Casilla(destino.gameObject);
+                //base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j, true);
             }
             base.photonView.RPC("RPC_TPEfects", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(origen.gameObject), Tablero.instance.Get_Numero_Casilla(destino.gameObject));
         }

@@ -25,7 +25,7 @@ public class SateliteComunicacion : Pieza
     }
 
     int puntosPorPlaneta = 2;
-    int porFavorParaYa = 0;
+    int porFavorParaYa = 0;         //Clanta: este int es prueba definitiva de la frustracion de mikel
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
         ++porFavorParaYa;
