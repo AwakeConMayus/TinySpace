@@ -109,7 +109,7 @@ public class PoderAstrofisico : PoderPlanetas
                 Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
                 for(int j = 0; j < origen.adyacentes.Length; ++j)
                 {
-                    if (origen.adyacentes[j] && origen.adyacentes[j].pieza)
+                    if (origen.adyacentes[j] && origen.adyacentes[j].pieza && origen.adyacentes[j].pieza.clase != Clase.astros)
                     {
                         OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
                     }
