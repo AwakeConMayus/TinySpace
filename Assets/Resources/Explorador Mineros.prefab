@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2334764632134478144}
   - component: {fileID: 766544111927328113}
   - component: {fileID: 6073622353305821440}
+  - component: {fileID: 2831806944137676225}
   m_Layer: 0
   m_Name: Explorador Mineros
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &2831806944137676225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258635846464971716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9632329bf42336049ba53c962c2c9268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0
 --- !u!95 &5420051746291535470
 Animator:
   serializedVersion: 3

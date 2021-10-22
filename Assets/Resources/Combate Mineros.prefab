@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 556817192583188386}
   - component: {fileID: 5537309011862387656}
   - component: {fileID: 5841048267662900650}
+  - component: {fileID: -2771539225944925340}
   m_Layer: 0
   m_Name: Combate Mineros
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-2771539225944925340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635237770601094281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e38f8e727a8c947983acf96ecfaf78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0
 --- !u!95 &8270442926753365526
 Animator:
   serializedVersion: 3

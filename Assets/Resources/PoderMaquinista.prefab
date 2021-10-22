@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7003421843665411362}
   - component: {fileID: 1022608353712755857}
   - component: {fileID: 8683823905794375602}
+  - component: {fileID: -2621285856385279322}
   m_Layer: 0
   m_Name: PoderMaquinista
   m_TagString: Untagged
@@ -69,3 +70,18 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-2621285856385279322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246422305320248225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaa422aab5c3b4fbda9f787c369ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fases:
+  - {fileID: 542748808900771469, guid: 8b5edf8c67d9f9d45a2a966637b029ef, type: 3}
+  - {fileID: 542748808900771469, guid: 8b5edf8c67d9f9d45a2a966637b029ef, type: 3}

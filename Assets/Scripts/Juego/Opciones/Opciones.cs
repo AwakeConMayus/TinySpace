@@ -17,13 +17,13 @@ public abstract class Opciones : MonoBehaviour
 
     protected bool active = true;
 
-    public void PrepararPreparacion()
+    public virtual void PrepararPreparacion()
     {
         poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
         poder.GetComponent<Poder>().SetPadre(this);
     }
 
-    public void Preparacion()
+    public virtual void Preparacion()
     {
         EventManager.StartListening("ColocarPieza", Rotar);
         EventManager.StartListening("BloquearInput", BloquearInput);
@@ -67,7 +67,7 @@ public abstract class Opciones : MonoBehaviour
         InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
     }
 
-    public void Rotar()
+    public virtual void Rotar()
     {
         if (opcionActual < 0) return;
         int aux = opcionesDisponibles[opcionActual];

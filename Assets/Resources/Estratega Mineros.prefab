@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3119613089578698829}
   - component: {fileID: 4337057069886504184}
   - component: {fileID: 315673364861665892}
+  - component: {fileID: -6865474447771486654}
   m_Layer: 0
   m_Name: Estratega Mineros
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-6865474447771486654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87433546748151837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fd8da70119869468c5f949a04080d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: 0
 --- !u!95 &3396834966714720217
 Animator:
   serializedVersion: 3
