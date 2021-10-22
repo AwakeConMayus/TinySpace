@@ -62,15 +62,12 @@ public class PoderAstrofisico : PoderPlanetas
 
     public void Crear_BlackHole()
     {
-        Debug.Log(preparado_para_instanciar);
         if (!preparado_para_instanciar) return;
 
         Casilla c = ClickCasillas.casillaClick;
 
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
 
-        Debug.Log(posibles_lugares.Count);
-        Debug.Log(posibles_lugares.Contains(c));
         if (posibles_lugares.Contains(c))
         {
             GameObject this_pieza;
@@ -102,6 +99,7 @@ public class PoderAstrofisico : PoderPlanetas
 
     public void Activar()
     {
+        Debug.Log("FAse de activacion");
         for(int i = 0; i < mis_BalckHoles.Length; ++i)
         {
             if (mis_BalckHoles[i])
@@ -109,6 +107,7 @@ public class PoderAstrofisico : PoderPlanetas
                 Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
                 for(int j = 0; j < origen.adyacentes.Length; ++j)
                 {
+                    Debug.Log("Fase de atraccion en direccion: " + j);
                     Atraer_Todo_En_Una_Direccion(origen, j);
                 }
             }
