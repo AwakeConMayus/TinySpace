@@ -96,6 +96,7 @@ public class PoderMaquinista : PoderMineros
             {
                 pieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 pieza.transform.position = destino.transform.position;
+                pieza.GetComponent<Pieza>().Colocar(destino);
             }
             else
             {

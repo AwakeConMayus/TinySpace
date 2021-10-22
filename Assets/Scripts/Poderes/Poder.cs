@@ -19,6 +19,7 @@ public abstract class Poder : MonoBehaviourPunCallbacks
         if (extra) c.pieza.Set_Pieza_Extra(true);
         c.pieza.transform.position = Tablero.instance.mapa[j].transform.position;
         c.pieza.Colocar(Tablero.instance.mapa[j]);
+        c.Limpiar_Pieza(c.pieza);
     }
 
     public void SetPadre(Opciones o)
