@@ -18,6 +18,7 @@ public abstract class Poder : MonoBehaviourPunCallbacks
         Casilla c = Tablero.instance.mapa[i];
         if (extra) c.pieza.Set_Pieza_Extra(true);
         c.pieza.transform.position = Tablero.instance.mapa[j].transform.position;
+        c.pieza.Colocar(Tablero.instance.mapa[j]);
     }
 
     public void SetPadre(Opciones o)

@@ -142,6 +142,7 @@ public class PoderAstrofisico : PoderPlanetas
                 {
                     c.pieza.Set_Pieza_Extra();
                     c.pieza.transform.position = c.adyacentes[aux_reverseDirection].transform.position;
+                    c.pieza.Colocar(c.adyacentes[aux_reverseDirection]);
                 }
                 else
                 {
