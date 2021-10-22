@@ -17,7 +17,7 @@ public class PoderAstrofisico : PoderPlanetas
         EventManager.StartListening("ClickCasilla", Crear_BlackHole);
     }
 
-    public override void InitialAction(bool pasar_turno = false)
+    public override void InitialAction(bool pasar_turno = true)
     {
         base.InitialAction(false);
 
@@ -47,7 +47,7 @@ public class PoderAstrofisico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        if (!pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override void FirstActionPersonal()
@@ -99,7 +99,6 @@ public class PoderAstrofisico : PoderPlanetas
 
     public void Activar()
     {
-        Debug.Log("FAse de activacion");
         for(int i = 0; i < mis_BalckHoles.Length; ++i)
         {
             if (mis_BalckHoles[i])
@@ -107,7 +106,6 @@ public class PoderAstrofisico : PoderPlanetas
                 Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
                 for(int j = 0; j < origen.adyacentes.Length; ++j)
                 {
-                    Debug.Log("Fase de atraccion en direccion: " + j);
                     Atraer_Todo_En_Una_Direccion(origen, j);
                 }
             }
@@ -127,16 +125,17 @@ public class PoderAstrofisico : PoderPlanetas
         if (c.pieza.clase == Clase.astros) return;
         if (c.pieza)
         {
+            Debug.Log("encuentro una pieza");
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
             else aux_reverseDirection = direccion - 3;
 
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
+                Debug.Log("La pieza es mia:" + (c.pieza.gameObject.GetPhotonView().IsMine));
                 if (c.pieza.gameObject.GetPhotonView().IsMine)
                 {
                     c.pieza.Set_Pieza_Extra();
-
                     c.pieza.transform.position = c.adyacentes[aux_reverseDirection].transform.position;
                 }
                 else
@@ -154,7 +153,7 @@ public class PoderAstrofisico : PoderPlanetas
                 c.pieza.transform.position = c.adyacentes[aux_reverseDirection].transform.position;
             }
         }
-
+        Debug.Log("Existe otra casilla: " + (c.adyacentes[direccion]));
         if (c.adyacentes[direccion])
         {
             Atraer_Todo_En_Una_Direccion(c.adyacentes[direccion], direccion);

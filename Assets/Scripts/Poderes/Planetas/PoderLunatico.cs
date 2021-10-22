@@ -45,7 +45,7 @@ public class PoderLunatico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        if(!pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override void FirstActionPersonal()
