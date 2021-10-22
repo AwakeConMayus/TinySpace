@@ -52,7 +52,8 @@ public class PoderAstrofisico : PoderPlanetas
 
     public override void FirstActionPersonal()
     {
-       
+        if (!gameObject.GetPhotonView().IsMine) return;
+        blackHole.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
         Debug.Log(posibles_lugares.Count);
 
