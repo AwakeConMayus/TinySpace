@@ -11,7 +11,7 @@ public abstract class PoderPlanetas : Poder
 
     
 
-    public override void InitialAction(bool pasar_turno = true)
+    public override void InitialAction(bool sin_pasar_turno = false)
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
         planeta = Resources.Load<GameObject>("Planeta Planetarios");
@@ -55,7 +55,7 @@ public abstract class PoderPlanetas : Poder
             }
         }
         Tablero.instance.ResetCasillasEfects();
-        if(pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(!sin_pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override void FirstAction()

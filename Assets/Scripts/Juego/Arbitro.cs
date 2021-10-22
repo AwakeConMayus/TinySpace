@@ -71,6 +71,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     public void NextTurnDoble()
     {
+        Debug.Log("paso turno");
         base.photonView.RPC("RPC_NextTurn", RpcTarget.All);
     }
 

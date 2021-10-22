@@ -17,9 +17,9 @@ public class PoderAstrofisico : PoderPlanetas
         EventManager.StartListening("ClickCasilla", Crear_BlackHole);
     }
 
-    public override void InitialAction(bool pasar_turno = true)
+    public override void InitialAction(bool sin_pasar_turno = false)
     {
-        base.InitialAction(false);
+        base.InitialAction(true);
 
         List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(jugador);
 
@@ -47,7 +47,7 @@ public class PoderAstrofisico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        if (pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (!sin_pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     public override void FirstActionPersonal()
