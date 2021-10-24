@@ -88,6 +88,13 @@ public class PoderLunatico : PoderPlanetas
             {
                 ++lunasPuestas;
                 FirstActionPersonal();
+                Debug.Log("lunas puestas: " + lunasPuestas);
+                Debug.Log("LUNas maximas: " + numeroLunasPorFase);
+            }
+            else
+            {
+                lunasPuestas = 0;
+                EventManager.TriggerEvent("AccionTerminadaConjunta");
             }
         }
     }
