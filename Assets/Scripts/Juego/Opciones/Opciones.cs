@@ -17,10 +17,6 @@ public abstract class Opciones : MonoBehaviour
 
     protected bool active = true;
 
-    private void Start()
-    {
-        EventManager.StartListening("ColocarPieza", BloquearInput);
-    }
     public virtual void PrepararPreparacion()
     {
         poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
