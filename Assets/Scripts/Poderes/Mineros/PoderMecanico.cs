@@ -13,7 +13,7 @@ public class PoderMecanico : PoderMineros
 
     private void Start()
     {
-        
+        EventManager.StartListening("ClickCasilla", Cambiar_Nave);
     }
 
     public override void FirstAction()
