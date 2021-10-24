@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b125c8ee26ba714f85e52ae133b64ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poder: {fileID: 6246422305320248225, guid: 929d1a003e8ed384c8e9640e8b51e0da, type: 3}
+  poder: {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13, type: 3}
   opcionesIniciales:
   - {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
   - {fileID: 87433546748151837, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}
