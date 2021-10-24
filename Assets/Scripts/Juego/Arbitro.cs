@@ -131,11 +131,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
         if (!active)
         {
-            if (inputActive) SwitchActive();
+            SetActiveActive(false);
         }
         else if (active)
         {
-            if (!inputActive) SwitchActive();
+            SetActiveActive(true);
         }
 
 
@@ -149,10 +149,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
     }
 
-    void SwitchActive()
+    void SetActiveActive(bool b)
     {
-        inputActive = !inputActive;
-        player.SetActive(inputActive);
+        inputActive = b;
+        player.SetActive(b);
     }
 
     void EndGame()

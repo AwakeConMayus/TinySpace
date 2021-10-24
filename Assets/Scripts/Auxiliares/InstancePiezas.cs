@@ -80,7 +80,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
         if (casillasPosibles.Contains(c))
         {
-            //EventManager.TriggerEvent("BloquearInput");
+            EventManager.TriggerEvent("BloquearInput");
             // Comprobacion de si el game se esta realizando online u offline
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
