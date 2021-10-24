@@ -85,7 +85,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void SpecialTurn()
     {
-        if (inputActive) SwitchActive();
+       SetActiveActive(false);
 
         bool estaVezToca = specialActive;
 
