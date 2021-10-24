@@ -50,8 +50,9 @@ public class PoderLunatico : PoderPlanetas
 
     public override void FirstActionPersonal()
     {
+        luna.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
-
+        Debug.Log(casillasPosibles.Count);
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
 
