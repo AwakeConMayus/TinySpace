@@ -900,12 +900,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207144591}
   m_CullTransparentMesh: 0
---- !u!224 &222509078 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7959002423286988763, guid: abe7ff18e5d2d02448e365b434f54084,
-    type: 3}
-  m_PrefabInstance: {fileID: 1214151067}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223973143
 GameObject:
   m_ObjectHideFlags: 0
@@ -11736,6 +11730,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601949447}
   m_CullTransparentMesh: 0
+--- !u!20 &605372704 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8893391407241225757, guid: ee4d7da3fdb7a1e4fbdf2c7f3388e07f,
+    type: 3}
+  m_PrefabInstance: {fileID: 141462420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &611678014
 GameObject:
   m_ObjectHideFlags: 0
@@ -17050,6 +17050,12 @@ Transform:
   m_Father: {fileID: 484560021}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 63.511, y: 5.9280005, z: -35.004}
+--- !u!224 &834198125 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3181267554940061582, guid: abe7ff18e5d2d02448e365b434f54084,
+    type: 3}
+  m_PrefabInstance: {fileID: 1214151067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &865581010
 GameObject:
   m_ObjectHideFlags: 0
@@ -22927,6 +22933,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1664416542}
     m_Modifications:
+    - target: {fileID: 3181267554940061582, guid: abe7ff18e5d2d02448e365b434f54084,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3541346309298432418, guid: abe7ff18e5d2d02448e365b434f54084,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -24019,8 +24030,8 @@ Canvas:
   m_GameObject: {fileID: 1664416538}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 605372704}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -24048,7 +24059,7 @@ RectTransform:
   - {fileID: 1247690207}
   - {fileID: 1026574435}
   - {fileID: 103097066}
-  - {fileID: 222509078}
+  - {fileID: 834198125}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
