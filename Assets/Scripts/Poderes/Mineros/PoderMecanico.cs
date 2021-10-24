@@ -52,6 +52,9 @@ public class PoderMecanico : PoderMineros
             }
             //Clanta: Tengo dudas de si habria que colocarla manualmente, si es neceseria hay que hacer una caso limite en la funcion colocar
             //Clanta: Para que una pieza no se coloque dos veces
+
+            preparado = false;
+            Tablero.instance.ResetCasillasEfects();
         }
     }
 }
