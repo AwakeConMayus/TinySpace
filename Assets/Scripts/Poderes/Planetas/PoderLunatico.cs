@@ -8,7 +8,7 @@ public class PoderLunatico : PoderPlanetas
     public GameObject luna;
 
     bool setLuna = false;
-    int numeroLunasPorFase = 3;
+    int numeroLunasPorFase = 2;
     int lunasPuestas = 0;
 
     private void Awake()
@@ -94,6 +94,7 @@ public class PoderLunatico : PoderPlanetas
             else
             {
                 lunasPuestas = 0;
+                Tablero.instance.ResetCasillasEfects();
                 EventManager.TriggerEvent("AccionTerminadaConjunta");
             }
         }
