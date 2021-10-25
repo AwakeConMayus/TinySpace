@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CanvasScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject Info;
+  public void ActivarInfo()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Info.activeInHierarchy == true)
+        {
+            Info.SetActive(false);
+        }
+        else
+            Info.SetActive(true);
     }
 }
