@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b66e681179fc9e4eaa3f47a16b045af, type: 3}
   m_Name: Textos
   m_EditorClassIdentifier: 
-  mineral: "Recoge minerales colocando naves sobre meteoritos. Gasta 3 minerales
+  mineral: "Recoge minerales<n>colocando naves sobre meteoritos. Gasta 3 minerales
     para jugar una versi\xF3n mejorada de una nave b\xE1sica pulsando sobre este
     engranaje (vu\xE9lvelo a pulsar para salir del modo mejora)."
   heroeMaquinista: 'Inicio: Coloca 10 meteoritos en casillas aleatorias del mapa.

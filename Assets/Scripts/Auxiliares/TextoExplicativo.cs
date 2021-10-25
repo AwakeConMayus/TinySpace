@@ -91,7 +91,12 @@ public class TextoExplicativo : ScriptableObject
             texto = mineral;
         }
 
+        texto = EditTextos(texto);
         return texto;
     }
             
+    string EditTextos(string s)
+    {
+        return s.Replace("<n>", "\n");
+    }
 }
