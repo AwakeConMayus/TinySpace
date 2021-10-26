@@ -54,6 +54,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
+        player.poder = mi_seleccion.mi_poder;
         player.PrepararPreparacion();
         player.jugador = 0;
         InstancePiezas.instance.jugador = 0;
@@ -66,6 +67,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
         active = specialActive = false;
         player = opciones[i];
         player.gameObject.SetActive(true);
+        player.opcionesIniciales = mi_seleccion.mis_opciones;
+        player.poder = mi_seleccion.mi_poder;
         player.PrepararPreparacion();
         player.jugador = 1;
         InstancePiezas.instance.jugador = 1;

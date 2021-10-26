@@ -35,11 +35,11 @@ public class PoderAstrofisico : PoderPlanetas
             GameObject thisPieza;
             if (PhotonNetwork.InRoom)
             {
-                thisPieza = PhotonNetwork.Instantiate(padre.opcionesIniciales[3].name, posibles[rnd].transform.position, Quaternion.identity);
+                thisPieza = PhotonNetwork.Instantiate(padre.opcionesIniciales[2].name, posibles[rnd].transform.position, Quaternion.identity);
             }
             else
             {
-                thisPieza = Instantiate(padre.opcionesIniciales[3], posibles[rnd].transform.position, Quaternion.identity);
+                thisPieza = Instantiate(padre.opcionesIniciales[2], posibles[rnd].transform.position, Quaternion.identity);
             }
             thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
