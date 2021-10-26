@@ -2792,11 +2792,12 @@ MonoBehaviour:
   menuEspeciales: {fileID: 1124747024}
   menuMejoradas: {fileID: 585213441}
   enterMatch: {fileID: 617268174}
-  faccion_rival: {fileID: 1987009869}
+  faccion_rival_text: {fileID: 0}
   opciones:
   - {fileID: 11400000, guid: 09aebd0a09df4a14f94a147ea5fa0349, type: 2}
   - {fileID: 11400000, guid: 4f0b3c85e0e2c1349a340ebe1ae8b292, type: 2}
   mi_Seleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  seleccion_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
 --- !u!114 &1876001362
 MonoBehaviour:
   m_ObjectHideFlags: 0

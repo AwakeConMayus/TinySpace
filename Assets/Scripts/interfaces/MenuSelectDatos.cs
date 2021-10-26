@@ -20,7 +20,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     [SerializeField]
     Button enterMatch;
     [SerializeField]
-    Text faccion_rival;
+    Text faccion_rival_text;
 
     Button[] btnHeroes;
     Button[] btnEspeciales;
@@ -36,8 +36,12 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     List<OpcionesFaccion> opciones = new List<OpcionesFaccion>();
     [SerializeField]
     TuSeleccion mi_Seleccion;
+    [SerializeField]
+    TuSeleccion seleccion_rival;
+
 
     OpcionesFaccion faccion_Seleccionada;
+    OpcionesFaccion opciones_rival;
 
     bool preparado = false;
 
@@ -67,6 +71,14 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     public void Preparar( )
     {
+        for(int i = 0; i < opciones.Count; ++i)
+        {
+            if(opciones[i].faccion == faccion_del_Rival)
+            {
+                opciones_rival = opciones[i];
+            }
+        }
+
         if (preparado) return;
         //Eleccion de las opciones correctas basadas en la faccion selecionado previamente
         for (int i = 0; i < opciones.Count; ++i)
@@ -99,7 +111,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         if(faccion_Seleccionada.faccion == Faccion.minero)
         {
             menuMejoradas.SetActive(false);
-            mejoradaSel = 1;
+            mejoradaSel = 11;
         }
 
         for(int j = 0; j < faccion_Seleccionada.piezas_Basicas.Length; ++j)
@@ -173,6 +185,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void Terminar()
     {
         base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
+        base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel);
         enterMatch.gameObject.SetActive(false);
     }
 
@@ -187,10 +200,20 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
+    public void Eleccion_Enemiga(int heroe, int especial, int espcializacion)
+    {
+        seleccion_rival.mi_poder = opciones_rival.posibles_Poders[heroe];
+        seleccion_rival.mis_opciones[4] = opciones_rival.posibles_Piezas_Especiales[especial];
+        //Clanta: Esto es para dejar fuera el caso del minero
+        if (espcializacion < 10) return;
+        seleccion_rival.mis_opciones[opciones_rival.huecos_Especializadas[espcializacion]] = opciones_rival.posibles_Piezas_Especializadas[espcializacion];
+    }
+
+    [PunRPC]
     public void RPC_Te_Toca_Preparar(Faccion mi_Faccion)
     {
         faccion_del_Rival = mi_Faccion;
-        faccion_rival.text = "Faccion del rival: " + mi_Faccion.ToString();
+        faccion_rival_text.text = "Faccion del rival: " + mi_Faccion.ToString();
         Preparar();
     }
 

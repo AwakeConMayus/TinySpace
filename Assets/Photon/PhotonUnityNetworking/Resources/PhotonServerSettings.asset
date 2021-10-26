@@ -57,6 +57,7 @@ MonoBehaviour:
   - RPC_SetearNivel
   - RPC_Te_Toca_Preparar
   - RPC_TerminarSeleccion
+  - Eleccion_Enemiga
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

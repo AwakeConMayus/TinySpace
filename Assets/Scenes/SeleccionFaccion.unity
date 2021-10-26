@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mi_Seleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  eleccion_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
 --- !u!1 &709050053
 GameObject:
   m_ObjectHideFlags: 0
