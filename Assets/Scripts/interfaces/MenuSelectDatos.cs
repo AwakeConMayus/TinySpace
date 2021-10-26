@@ -190,7 +190,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void RPC_Te_Toca_Preparar(Faccion mi_Faccion)
     {
         faccion_del_Rival = mi_Faccion;
-        faccion_rival.text = mi_Faccion.ToString();
+        faccion_rival.text = "Faccion del rival: " + mi_Faccion.ToString();
         Preparar();
     }
 
