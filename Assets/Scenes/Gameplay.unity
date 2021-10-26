@@ -3783,6 +3783,7 @@ MonoBehaviour:
   - {fileID: 292319426}
   player: {fileID: 0}
   mi_menu: {fileID: 1678499294}
+  mi_seleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
 --- !u!114 &1837699342
 MonoBehaviour:
   m_ObjectHideFlags: 0

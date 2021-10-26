@@ -55,6 +55,8 @@ MonoBehaviour:
   - RPC_Destroy_this_Pieza
   - RPC_Avisar
   - RPC_SetearNivel
+  - RPC_Te_Toca_Preparar
+  - RPC_TerminarSeleccion
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

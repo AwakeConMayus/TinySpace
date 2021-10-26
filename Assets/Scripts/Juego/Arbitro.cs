@@ -164,7 +164,10 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
             SendToGoogle.instance.SendOnline();
 
-        
+        mi_seleccion.mi_poder = null;
+        mi_seleccion.mis_opciones = new GameObject[5];
+        mi_seleccion.faccion = Faccion.none;
+
         mi_menu.gameObject.SetActive(true);
         mi_menu.Final_Partida(Tablero.instance.RecuentoPuntos());
 
