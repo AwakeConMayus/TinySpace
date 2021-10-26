@@ -158,7 +158,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     public void EnterGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void goBack()
