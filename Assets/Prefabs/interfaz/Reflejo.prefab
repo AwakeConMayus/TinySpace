@@ -510,7 +510,6 @@ GameObject:
   - component: {fileID: 1244807784705479085}
   - component: {fileID: 7856324485359530059}
   - component: {fileID: 7322158565528138267}
-  - component: {fileID: 110281684227194}
   m_Layer: 5
   m_Name: Reflejo
   m_TagString: Untagged
@@ -626,31 +625,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   opcionesDisponibles: 
---- !u!114 &110281684227194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4029495783508667902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2656d909b6e4f0a4383860874a7826df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botones:
-  - {fileID: 4276994700738603427}
-  - {fileID: 567550095303151711}
-  - {fileID: 2474760509057734080}
-  - {fileID: 8401543908232585571}
-  - {fileID: 5403139601950795582}
-  cartas:
-  - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
-  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
-  - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
-  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
-  - {fileID: 21300000, guid: 58ee13d26d277514f81e76acf0ef3cd8, type: 3}
-  cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
 --- !u!1 &4276994700738603427
 GameObject:
   m_ObjectHideFlags: 0
