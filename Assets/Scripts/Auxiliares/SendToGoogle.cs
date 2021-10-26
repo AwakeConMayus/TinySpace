@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 #pragma warning disable CS0618 //* Uso del método WWW en vez de UnityWebRequest puesto que este primero permite subir data binario a google forms
 
@@ -44,10 +44,10 @@ public class SendToGoogle : MonoBehaviour
 
     Arbitro arbitroPartida;
 
-    public bool SendingDataOnline = true;
+    public bool SendingDataOnline = false;
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
-    string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScGjJts-KwsMlpdMi-FbrFI6edqkbDnIenlQdc2VHlc6cPIkw/formResponse";
+    const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScGjJts-KwsMlpdMi-FbrFI6edqkbDnIenlQdc2VHlc6cPIkw/formResponse";
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
