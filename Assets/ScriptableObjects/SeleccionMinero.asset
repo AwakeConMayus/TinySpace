@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d0cdae15f440f44aa5e3b5f3a41ac3, type: 3}
+  m_Name: SeleccionMinero
+  m_EditorClassIdentifier: 
+  faccion: 1
+  posibles_Poders:
+  - {fileID: 6246422305320248225, guid: 929d1a003e8ed384c8e9640e8b51e0da, type: 3}
+  - {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13, type: 3}
+  - {fileID: 6870688844444362489, guid: a7a66aa09d3bbaa4da7e1ab6fd6806c8, type: 3}
+  posibles_Piezas_Especializadas:
+  - {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6, type: 3}
+  - {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052, type: 3}
+  - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
+  - {fileID: 2018414652591469658, guid: 9c3c9d960ee00ce4081c1c8739945112, type: 3}
+  posibles_Piezas_Especiales:
+  - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
+  - {fileID: 3830173338414123627, guid: f5b48c4e0353f9e4a939510aeb9e1313, type: 3}
+  - {fileID: 7526831259227872237, guid: dd72db3e40406b54ebfba52ac6eb78f8, type: 3}
+  piezas_Basicas:
+  - {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292, type: 3}
+  - {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
+  - {fileID: 5554239858979966999, guid: 31a92df0d34a3854cb9a32e104ac4499, type: 3}
+  - {fileID: 87433546748151837, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}

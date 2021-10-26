@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d0cdae15f440f44aa5e3b5f3a41ac3, type: 3}
+  m_Name: SeleccionOyente
+  m_EditorClassIdentifier: 
+  faccion: 2
+  posibles_Poders:
+  - {fileID: 8320863858920773836, guid: e2aa146918929d94e8c794009b4cb48e, type: 3}
+  - {fileID: 5174492570648314811, guid: f7ae77548596bbe45854b90edebe9095, type: 3}
+  - {fileID: 7655988863949034424, guid: f5040215ec6fc1a4fb0e061331c8e1bc, type: 3}
+  posibles_Piezas_Especializadas:
+  - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
+  - {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3, type: 3}
+  - {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1, type: 3}
+  posibles_Piezas_Especiales:
+  - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
+  - {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8, type: 3}
+  - {fileID: 1627388167130017577, guid: 0096fbb343e5ffb4a9a9efc16070c275, type: 3}
+  piezas_Basicas:
+  - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
+  - {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85, type: 3}
+  - {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d, type: 3}
+  - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
