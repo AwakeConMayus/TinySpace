@@ -8,7 +8,7 @@ public class IALabMejMineros : PiezaIA
     {
         Pieza piezaReferencia;
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new InvestigadorMinerosMejorado();
+        piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros Mejorado");
         piezaReferencia.Set_Jugador(jugador);
 
         List<Casilla> lc = new List<Casilla>(listaBase);
@@ -16,7 +16,7 @@ public class IALabMejMineros : PiezaIA
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
             listaBase = lc;
-            Pieza piezaColocar = new InvestigadorMinerosAstro();
+            Pieza piezaColocar = Resources.Load<Pieza>("LaboratorioMinerosAstro");
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;

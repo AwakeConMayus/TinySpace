@@ -6,14 +6,13 @@ public class IAComMejMineros : PiezaIA
 {
     public override List<List<Casilla>> Opcionificador(List<Casilla> listaBase)
     {
-        Pieza piezaReferencia;
+        Pieza piezaReferencia = Resources.Load<Pieza>("Combate Mineros Mejorado");
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new NaveCombateMinerosMejorada();
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new NaveCombateMinerosMejorada();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;

@@ -8,7 +8,7 @@ public class IAEstMejMineros : PiezaIA
     {
         Pieza piezaReferencia;
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new EstrategaMinerosMejorada();
+        piezaReferencia = Resources.Load<Pieza>("Estratega Mineros Mejorado");
         piezaReferencia.Set_Jugador(jugador);
 
         List<Casilla> lc = new List<Casilla>(listaBase);
@@ -16,7 +16,7 @@ public class IAEstMejMineros : PiezaIA
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
             listaBase = lc;
-            Pieza piezaColocar = new InvestigadorMinerosAstro();
+            Pieza piezaColocar = Resources.Load<Pieza>("EstrategaMinerosAstro");
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
@@ -27,7 +27,7 @@ public class IAEstMejMineros : PiezaIA
             {
                 if (cc && cc.pieza && cc.pieza.Get_Jugador() == jugador && !cc.pieza.CompareClase(Clase.combate))
                 {
-                    Pieza nuevaPieza = new NaveCombateMineros();
+                    Pieza nuevaPieza = Resources.Load<Pieza>("Combate Mineros");
                     nuevaPieza.Set_Jugador(jugador);
                     cc.pieza = nuevaPieza;
                 }

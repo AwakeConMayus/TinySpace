@@ -10,12 +10,12 @@ public class IAComodinMineros : PiezaIA
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
 
         //Explorador
-        piezaReferencia = new ExploradorMinero();
+        piezaReferencia = Resources.Load<Pieza>("Explorador Mineros");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new ExploradorMinero();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
@@ -25,12 +25,12 @@ public class IAComodinMineros : PiezaIA
         }
 
         //Combate
-        piezaReferencia = new NaveCombateMineros();
+        piezaReferencia = Resources.Load<Pieza>("Combate Mineros");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new NaveCombateMineros();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
@@ -41,12 +41,12 @@ public class IAComodinMineros : PiezaIA
 
 
         //Laboratorio
-        piezaReferencia = new InvestigadorMineros();
+        piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new InvestigadorMineros();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
@@ -56,12 +56,12 @@ public class IAComodinMineros : PiezaIA
         }
 
         //Estratega
-        piezaReferencia = new EstrategaMineros();
+        piezaReferencia = Resources.Load<Pieza>("Estratega Mineros");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new EstrategaMineros();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;

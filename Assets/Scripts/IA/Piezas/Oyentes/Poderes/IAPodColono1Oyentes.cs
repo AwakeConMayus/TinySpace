@@ -8,13 +8,12 @@ public class IAPodColono1Oyentes : PoderIABase
     {
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
 
-        Pieza piezaReferencia;
-        piezaReferencia = new Planetas();
+        Pieza piezaReferencia = Resources.Load<Pieza>("Planeta Planetarios");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new Planetas();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;

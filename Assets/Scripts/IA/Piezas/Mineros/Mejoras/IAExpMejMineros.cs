@@ -8,7 +8,7 @@ public class IAExpMejMineros : PiezaIA
     {
         Pieza piezaReferencia;
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new ExploradorMineroMejorado();
+        piezaReferencia = Resources.Load<Pieza>("Explorador Mineros Mejorado");
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
