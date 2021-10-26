@@ -2483,7 +2483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3181267554940061582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2597,17 +2597,17 @@ MonoBehaviour:
   - {fileID: 1472313238524120396}
   - {fileID: 570743342967530377}
   cartas:
-  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
-  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
   - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
+  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
   - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
+  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
   - {fileID: 21300000, guid: d40550c673877194cae4d733d69d4615, type: 3}
   cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
   cartasMejoradas:
-  - {fileID: 21300000, guid: 465538158071c894fa914378c678c743, type: 3}
-  - {fileID: 21300000, guid: dd0bbf490916db744abcf646dff09f5a, type: 3}
   - {fileID: 21300000, guid: 2f54a7dd3cf5c5a4682451cb7e7cc45f, type: 3}
+  - {fileID: 21300000, guid: 465538158071c894fa914378c678c743, type: 3}
   - {fileID: 21300000, guid: c3a3225f02faf9a45ab3ef490719c524, type: 3}
+  - {fileID: 21300000, guid: dd0bbf490916db744abcf646dff09f5a, type: 3}
   cartaBlancaMejorada: {fileID: 21300000, guid: 58ee13d26d277514f81e76acf0ef3cd8,
     type: 3}
 --- !u!1 &7733441485699774228

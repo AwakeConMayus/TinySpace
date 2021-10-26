@@ -1087,10 +1087,10 @@ MonoBehaviour:
   - {fileID: 1496549591509202646}
   - {fileID: 3073502855927885963}
   cartas:
-  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
-  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
   - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
+  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
   - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
+  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
   - {fileID: 21300000, guid: a79dde3d38d34764dad0f4c39d601015, type: 3}
   cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
 --- !u!222 &8150101709208110616
