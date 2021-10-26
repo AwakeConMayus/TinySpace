@@ -17,11 +17,8 @@ MonoBehaviour:
   - {fileID: 6246422305320248225, guid: 929d1a003e8ed384c8e9640e8b51e0da, type: 3}
   - {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13, type: 3}
   - {fileID: 6870688844444362489, guid: a7a66aa09d3bbaa4da7e1ab6fd6806c8, type: 3}
-  posibles_Piezas_Especializadas:
-  - {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6, type: 3}
-  - {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052, type: 3}
-  - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
-  - {fileID: 2018414652591469658, guid: 9c3c9d960ee00ce4081c1c8739945112, type: 3}
+  posibles_Piezas_Especializadas: []
+  huecos_Especializadas: 
   posibles_Piezas_Especiales:
   - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
   - {fileID: 3830173338414123627, guid: f5b48c4e0353f9e4a939510aeb9e1313, type: 3}

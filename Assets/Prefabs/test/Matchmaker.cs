@@ -83,6 +83,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         options.MaxPlayers = 2;
         options.EmptyRoomTtl = 1;
         string name = PhotonNetwork.NickName + "," + PMasterManager.gameSettings.gameVersion + "," + mi_Seleccion.faccion;
+        Debug.Log(name);
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(name , options, TypedLobby.Default);
         intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here; clanta:one day i will crush ya bitch; 

@@ -19,6 +19,8 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     GameObject menuMejoradas;
     [SerializeField]
     Button enterMatch;
+    [SerializeField]
+    Text faccion_rival;
 
     Button[] btnHeroes;
     Button[] btnEspeciales;
@@ -105,6 +107,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
             mi_Seleccion.mis_opciones[j] = faccion_Seleccionada.piezas_Basicas[j];
         }
         preparado = true;
+        Poner_Nombres();
         base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, faccion_Seleccionada.faccion);
     }
 
@@ -187,6 +190,20 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void RPC_Te_Toca_Preparar(Faccion mi_Faccion)
     {
         faccion_del_Rival = mi_Faccion;
+        faccion_rival.text = mi_Faccion.ToString();
         Preparar();
+    }
+
+    public void Poner_Nombres()
+    {
+        for(int i = 0; i < 3; ++i)
+        {
+            btnHeroes[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Poders[i].name;
+            btnEspeciales[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Piezas_Especiales[i].name;
+            if (faccion_Seleccionada.faccion != Faccion.minero)
+            {
+                btnMejoradas[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Piezas_Especializadas[i].name;
+            }
+        }
     }
 }
