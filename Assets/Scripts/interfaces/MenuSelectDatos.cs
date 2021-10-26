@@ -185,7 +185,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void Terminar()
     {
         base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
-        base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel);
+        base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel, mejoradaSel);
         enterMatch.gameObject.SetActive(false);
         menuHeroes.gameObject.SetActive(false);
         menuMejoradas.gameObject.SetActive(false);
