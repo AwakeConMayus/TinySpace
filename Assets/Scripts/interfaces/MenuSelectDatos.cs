@@ -3,11 +3,13 @@ using System.Collections.Generic;  //Clanta: debo empezar a acostumbrarme que Do
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class MenuSelectDatos : MonoBehaviour
+public class MenuSelectDatos : MonoBehaviourPunCallbacks
 {
     //Clanta: AVISO IMPORTANTE a este script le faltan todas las rpc necesarias. (Esperar al otro jugador para empezar)(Esperar a comprobar la faccion del rival para seleccionar aleatoriamente)(etc)
-
+    //Clanta: Tenia un dolor de cabeza bastante loko cuando hice esto deberia revisarlo mas tarde
 
     [SerializeField]
     GameObject menuHeroes;
@@ -26,6 +28,8 @@ public class MenuSelectDatos : MonoBehaviour
     int especialSel = -1;
     int mejoradaSel = -1;
 
+    int jugadores_listos;
+
     [SerializeField]
     List<OpcionesFaccion> opciones = new List<OpcionesFaccion>();
     [SerializeField]
@@ -33,8 +37,13 @@ public class MenuSelectDatos : MonoBehaviour
 
     OpcionesFaccion faccion_Seleccionada;
 
+    bool preparado = false;
+
+    Faccion faccion_del_Rival = Faccion.none;
+
     private void Start()
     {
+        jugadores_listos = 0;
         btnHeroes     = new Button[3];
         btnHeroes     = menuHeroes.GetComponentsInChildren<Button>();
 
@@ -44,11 +53,19 @@ public class MenuSelectDatos : MonoBehaviour
         btnMejoradas  = new Button[3];
         btnMejoradas  = menuMejoradas.GetComponentsInChildren<Button>();
 
-        Preparar();
+        if (PhotonNetwork.IsMasterClient && mi_Seleccion.faccion != Faccion.none)
+        {
+            Preparar();
+        }
+        else if (PhotonNetwork.IsMasterClient)
+        {
+            base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, Faccion.none);
+        }
     }
 
-    public void Preparar()
+    public void Preparar( )
     {
+        if (preparado) return;
         //Eleccion de las opciones correctas basadas en la faccion selecionado previamente
         for (int i = 0; i < opciones.Count; ++i)
         {
@@ -60,6 +77,14 @@ public class MenuSelectDatos : MonoBehaviour
         //Sistema de acceso aleatorio a la faccion 
         if (!faccion_Seleccionada)
         {
+            for(int i = 0; i < opciones.Count; ++i)
+            {
+                if(opciones[i].faccion == faccion_del_Rival)
+                {
+                    opciones.Remove(opciones[i]);
+                }
+            }
+
             Debug.Log("Selecciono faccion de maneras aleatoria");
 
             int rnd = Random.Range(0, opciones.Count);
@@ -72,13 +97,14 @@ public class MenuSelectDatos : MonoBehaviour
         if(faccion_Seleccionada.faccion == Faccion.minero)
         {
             menuMejoradas.SetActive(false);
-            mi_Seleccion.mis_mejoras = faccion_Seleccionada.posibles_Piezas_Especializadas;
         }
 
         for(int j = 0; j < faccion_Seleccionada.piezas_Basicas.Length; ++j)
         {
             mi_Seleccion.mis_opciones[j] = faccion_Seleccionada.piezas_Basicas[j];
         }
+        preparado = true;
+        base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, faccion_Seleccionada.faccion);
     }
 
     public void selectHeroe(int heroe)
@@ -138,5 +164,27 @@ public class MenuSelectDatos : MonoBehaviour
     public void goBack()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Terminar()
+    {
+        base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
+    }
+
+    [PunRPC]
+    public void RPC_TerminarSeleccion()
+    {
+        ++jugadores_listos;
+        if(jugadores_listos == 2)
+        {
+            EnterGame();
+        }
+    }
+
+    [PunRPC]
+    public void RPC_Te_Toca_Preparar(Faccion mi_Faccion)
+    {
+        faccion_del_Rival = mi_Faccion;
+        Preparar();
     }
 }

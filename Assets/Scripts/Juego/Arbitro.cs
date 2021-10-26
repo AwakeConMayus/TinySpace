@@ -25,6 +25,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [SerializeField]
     MenuFinalParitda mi_menu;
 
+    [SerializeField]
+    TuSeleccion mi_seleccion;
+
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
@@ -38,18 +41,19 @@ public class Arbitro : MonoBehaviourPunCallbacks
     public void SetInitial()
     {
         active = specialActive = true;
-        switch (Random.Range(0, 2))
+        switch (mi_seleccion.faccion)
         {
-            case 0:
+            case Faccion.minero:
                 player = opciones[0];              
                 base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 1);
                 break;
-            case 1:
+            case Faccion.oyente:
                 player = opciones[1];
                 base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 0);
                 break;
         }
         player.gameObject.SetActive(true);
+        player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.PrepararPreparacion();
         player.jugador = 0;
         InstancePiezas.instance.jugador = 0;

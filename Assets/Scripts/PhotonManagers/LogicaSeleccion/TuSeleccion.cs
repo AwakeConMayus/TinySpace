@@ -13,6 +13,4 @@ public class TuSeleccion : ScriptableObject
     public GameObject mi_poder;
 
     public GameObject[] mis_opciones = new GameObject[5];
-
-    public List<GameObject> mis_mejoras = new List<GameObject>();
 }
