@@ -36,7 +36,7 @@ public class IAPodMaquinista1Mineros : PoderIABase
                         cc2.pieza = c2.pieza;
                         c2.pieza = null;
 
-                        nuevosEstados.Add(new List<Casilla>(listaBase));
+                        nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
                     }
                 }
             }

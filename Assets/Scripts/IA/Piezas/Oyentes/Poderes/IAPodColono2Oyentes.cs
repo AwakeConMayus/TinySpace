@@ -21,7 +21,7 @@ public class IAPodColono2Oyentes : PoderIABase
                 c.pieza = nuevoPlaneta;
                 nuevoPlaneta.casilla = c;
 
-                nuevosEstados.Add(listaBase);
+                nuevosEstados.Add(Auxiliar.Copy(listaBase));
 
                 c.pieza = sc;
             }

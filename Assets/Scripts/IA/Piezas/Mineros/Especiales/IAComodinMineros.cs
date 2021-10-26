@@ -20,7 +20,7 @@ public class IAComodinMineros : PiezaIA
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
             c.pieza = null;
         }
 
@@ -35,7 +35,7 @@ public class IAComodinMineros : PiezaIA
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
             c.pieza = null;
         }
 
@@ -51,7 +51,7 @@ public class IAComodinMineros : PiezaIA
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
             c.pieza = null;
         }
 
@@ -66,7 +66,7 @@ public class IAComodinMineros : PiezaIA
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
             c.pieza = null;
         }
 

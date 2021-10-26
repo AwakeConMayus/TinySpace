@@ -31,6 +31,7 @@ public class IAOpcionesMineros : IAOpciones
             {
                 List<Casilla> newMapa = pieza.BestInmediateOpcion(Tablero.instance.mapa);
                 int puntuacion = PiezaIA.Evaluar(newMapa, pieza.jugador);
+                
 
                 if (puntuacion > bestPuntuacion)
                 {

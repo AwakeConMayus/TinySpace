@@ -13,12 +13,12 @@ public class IAExpMejMineros : PiezaIA
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new ExploradorMineroMejorado();
+            Pieza piezaColocar = Resources.Load<Pieza>("Explorador Mineros Mejorado");
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
             c.pieza = null;
         }
 

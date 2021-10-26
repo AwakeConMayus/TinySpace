@@ -33,7 +33,7 @@ public class IAEstMejMineros : PiezaIA
                 }
             }
 
-            nuevosEstados.Add(new List<Casilla>(listaBase));
+            nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
 
         }
         return nuevosEstados;

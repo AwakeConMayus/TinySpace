@@ -12,8 +12,8 @@ public class IAArbitro : MonoBehaviour
 
     
 
-    bool active;
-    bool specialActive;
+    bool active = true;
+    bool specialActive = true;
 
     int numeroPoder1 = 0, numeroPoder2 = 0;
 

@@ -23,7 +23,7 @@ public class IAPodColono1Oyentes : PoderIABase
 
             foreach(List<Casilla> opcion in ObtenerPiezaPoder.Opcionificador(listaBase))
             {
-                nuevosEstados.Add(opcion);
+                nuevosEstados.Add(Auxiliar.Copy(listaBase));
             }
 
             c.pieza = null;

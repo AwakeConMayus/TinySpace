@@ -30,7 +30,7 @@ public class IALabMejMineros : PiezaIA
                 {
                     Pieza pc = cc.pieza;
                     cc.pieza = null;
-                    nuevosEstados.Add(new List<Casilla>(listaBase));
+                    nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
                     cc.pieza = pc;
                 }
             }
