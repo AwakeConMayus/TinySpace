@@ -56,8 +56,24 @@ public class IAOpciones : Opciones
         {
             if(Tablero.instance.mapa[i].pieza != nuevo[i].pieza)
             {
+                if (Tablero.instance.mapa[i].pieza) Destroy(Tablero.instance.mapa[i].pieza.gameObject);
 
+                GameObject pieza = GetPiezabyIAPieza(nuevo[i].pieza);
+                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                InstancePiezas.instance.CrearPieza(Tablero.instance.mapa[i], pieza);
             }
         }
+    }
+
+    protected GameObject GetPiezabyIAPieza(Pieza script)
+    {
+        GameObject pieza = null;
+
+        foreach(GameObject g in opcionesIniciales)
+        {
+            if (g.GetComponent<Pieza>() == script) pieza = g;
+        }
+
+        return pieza;
     }
 }

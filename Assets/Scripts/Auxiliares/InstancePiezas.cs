@@ -76,6 +76,7 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     {
 
         Casilla c = ClickCasillas.casillaClick;
+
         if (estado == estados.SelectPieza || c == null) return; 
 
         if (casillasPosibles.Contains(c))
@@ -104,6 +105,41 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
         }
         
         
+    }
+    public void CrearPieza(Casilla casilla, GameObject piecita)
+    {
+
+        Casilla c = casilla;
+        pieza = piecita;
+
+        if (estado == estados.SelectPieza || c == null) return;
+
+        if (casillasPosibles.Contains(c))
+        {
+            EventManager.TriggerEvent("BloquearInput");
+            // Comprobacion de si el game se esta realizando online u offline
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                // Instanciacion que utiliza photon
+                PhotonNetwork.Instantiate(pieza.name, c.transform.position, Quaternion.identity);
+
+            }
+            else
+            {
+                // Instanciacion de piezas en el offline
+                GameObject thisPieza = Instantiate(pieza);
+                thisPieza.transform.position = c.transform.position;
+                //GestorTurnos.instance.realizarJugada();
+            }
+
+
+            EventManager.TriggerEvent("ColocarPieza");
+            estado = estados.SelectPieza;
+
+            Tablero.instance.ResetCasillasEfects();
+        }
+
+
     }
 
     public void RecuentoPuntosTest()
