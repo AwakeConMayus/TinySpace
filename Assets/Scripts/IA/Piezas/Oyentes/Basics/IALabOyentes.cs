@@ -8,12 +8,13 @@ public class IALabOyentes : PiezaIA
     {
         Pieza piezaReferencia;
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new InvestigadorPlanetas();
+        InvestigadorPlanetas piezaInstanciar = GetComponent<InvestigadorPlanetas>();
+        piezaReferencia = piezaInstanciar;
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new InvestigadorPlanetas();
+            Pieza piezaColocar = piezaInstanciar;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
