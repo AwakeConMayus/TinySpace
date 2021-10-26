@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: fb07a80ee1ca106448d9c243933f9a36
+  - enabled: 1
+    path: Assets/Scenes/SeleccionFaccion.unity
+    guid: e231720d2c234d84a874750595afdc11
   m_configObjects: {}
