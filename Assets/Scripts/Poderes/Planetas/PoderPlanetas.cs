@@ -51,7 +51,7 @@ public abstract class PoderPlanetas : Poder
                 GameObject thisPieza = Instantiate(planeta);
                 thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
                 thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
-                Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
+                thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
             }
         }
         Tablero.instance.ResetCasillasEfects();
