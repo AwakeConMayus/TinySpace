@@ -208,7 +208,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         seleccion_rival.mi_poder = opciones_rival.posibles_Poders[heroe];
         seleccion_rival.mis_opciones[4] = opciones_rival.posibles_Piezas_Especiales[especial];
         //Clanta: Esto es para dejar fuera el caso del minero
-        if (espcializacion < 10) return;
+        if (espcializacion > 10) return;
         seleccion_rival.mis_opciones[opciones_rival.huecos_Especializadas[espcializacion]] = opciones_rival.posibles_Piezas_Especializadas[espcializacion];
     }
 
