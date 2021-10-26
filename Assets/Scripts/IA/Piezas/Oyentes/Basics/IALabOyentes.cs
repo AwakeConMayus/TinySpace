@@ -6,15 +6,13 @@ public class IALabOyentes : PiezaIA
 {
     public override List<List<Casilla>> Opcionificador(List<Casilla> listaBase)
     {
-        Pieza piezaReferencia;
+        Pieza piezaReferencia = GetComponent<Pieza>();
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        InvestigadorPlanetas piezaInstanciar = GetComponent<InvestigadorPlanetas>();
-        piezaReferencia = piezaInstanciar;
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = piezaInstanciar;
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
