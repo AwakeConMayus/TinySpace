@@ -169,6 +169,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void Terminar()
     {
         base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
+        enterMatch.gameObject.SetActive(false);
     }
 
     [PunRPC]
