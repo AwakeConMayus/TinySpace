@@ -45,11 +45,11 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             case Faccion.minero:
                 player = opciones[0];              
-                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 1);
+                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others);
                 break;
             case Faccion.oyente:
                 player = opciones[1];
-                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others, 0);
+                base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others);
                 break;
         }
         player.gameObject.SetActive(true);
@@ -62,10 +62,18 @@ public class Arbitro : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void RPC_SetNotInitial(int i)
+    public void RPC_SetNotInitial()
     {
         active = specialActive = false;
-        player = opciones[i];
+        switch (mi_seleccion.faccion)
+        {
+            case Faccion.minero:
+                player = opciones[0];
+                break;
+            case Faccion.oyente:
+                player = opciones[1];
+                break;
+        }
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;

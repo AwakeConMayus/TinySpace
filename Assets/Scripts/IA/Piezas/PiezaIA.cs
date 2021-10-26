@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class PiezaIA : MonoBehaviour
 {
     public int jugador;
-    public abstract List<List<Casilla>> Opcionificador(List<Casilla> listaBase);
+    public abstract List<List<Casilla>> Opcionificador(List<Casilla> listaBase);   
+
     public virtual List<Casilla> BestInmediateOpcion(List<Casilla> listaBase)
     {
         List<Casilla> MejorOpcion = new List<Casilla>();

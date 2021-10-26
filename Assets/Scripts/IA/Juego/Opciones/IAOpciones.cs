@@ -43,4 +43,21 @@ public class IAOpciones : Opciones
         opcionesDisponibles.Add(aux);
     }
 
+    public virtual void Jugar() { }
+
+    public void ActualizarTablero(List<Casilla> nuevo)
+    {
+        while (Tablero.instance.mapa.Count < nuevo.Count)
+        {
+            Tablero.instance.Crear_Casilla_Vacia();
+        }
+
+        for (int i = 0; i < nuevo.Count; i++)
+        {
+            if(Tablero.instance.mapa[i].pieza != nuevo[i].pieza)
+            {
+
+            }
+        }
+    }
 }
