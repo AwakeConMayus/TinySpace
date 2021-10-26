@@ -6,14 +6,13 @@ public class IAExpMineros : PiezaIA
 {
     public override List<List<Casilla>> Opcionificador(List<Casilla> listaBase)
     {
-        Pieza piezaReferencia;
+        Pieza piezaReferencia = GetComponent<Pieza>();
         List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
-        piezaReferencia = new ExploradorMinero();
         piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
         {
-            Pieza piezaColocar = new ExploradorMinero();
+            Pieza piezaColocar = piezaReferencia;
             piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
