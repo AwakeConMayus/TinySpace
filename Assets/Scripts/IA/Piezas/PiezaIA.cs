@@ -15,9 +15,9 @@ public abstract class PiezaIA : MonoBehaviour
 
         foreach (List<Casilla> lc in Opcionificador(listaBase))
         {
-            if (Evaluar(lc) > mejorPuntuacion)
+            if (Evaluar(lc, jugador) > mejorPuntuacion)
             {
-                mejorPuntuacion = Evaluar(lc);
+                mejorPuntuacion = Evaluar(lc, jugador);
                 MejorOpcion = lc;
             }
         }
@@ -25,7 +25,7 @@ public abstract class PiezaIA : MonoBehaviour
         return MejorOpcion;
     }
 
-    int Evaluar(List<Casilla> mapa)
+    public static int Evaluar(List<Casilla> mapa, int jugador)
     {
         int puntos = 0;
         foreach(Casilla c in mapa)

@@ -13,6 +13,7 @@ public class IAOpciones : Opciones
             fase.padre = this;
             fase.padre = this;
         }
+        poder.GetComponent<Poder>().jugador = jugador;
 
         foreach(GameObject pieza in opcionesIniciales)
         {
@@ -44,6 +45,11 @@ public class IAOpciones : Opciones
     }
 
     public virtual void Jugar() { }
+    public virtual void JugarPoder(int i)        
+    {
+        List<Casilla> mapaPostPoder = poder.GetComponent<PoderIA>().Fases[i].BestInmediateOpcion(Tablero.instance.mapa);
+        ActualizarTablero(mapaPostPoder);
+    }
 
     public void ActualizarTablero(List<Casilla> nuevo)
     {
