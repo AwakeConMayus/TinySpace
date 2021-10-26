@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b60ed28b91315e43b335ef886eea97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mi_Seleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
   texto: {fileID: 741856831}
 --- !u!4 &111590621
 Transform:

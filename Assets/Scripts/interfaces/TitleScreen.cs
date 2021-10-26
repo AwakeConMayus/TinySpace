@@ -33,7 +33,7 @@ public class TitleScreen : MonoBehaviour
 
     public void EnterMatchMaking()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 
     public void ExitGame()

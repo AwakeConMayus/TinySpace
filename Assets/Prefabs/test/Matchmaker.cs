@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class Matchmaker : MonoBehaviourPunCallbacks
 {
-
+    [SerializeField] TuSeleccion mi_Seleccion;
     [SerializeField] GameObject texto;
 
     private int intervalo = 0;
@@ -69,7 +69,8 @@ public class Matchmaker : MonoBehaviourPunCallbacks
                 string[] name_info = roomInfo.Name.Split(',');
                 Debug.Log("gameversion de la sala: " + name_info[1]);
                 Debug.Log("gameversion mio: " + PMasterManager.gameSettings.gameVersion);
-                if (name_info[1] == PMasterManager.gameSettings.gameVersion)
+                Debug.Log("La faccion de mi rival es: " + name_info[2]);
+                if (name_info[1] == PMasterManager.gameSettings.gameVersion && (name_info[2] != mi_Seleccion.faccion.ToString() || name_info[2] == Faccion.none.ToString()))
                 {
                     PhotonNetwork.JoinRoom(roomInfo.Name);
                     PhotonNetwork.AutomaticallySyncScene = true;
@@ -81,7 +82,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 2;
         options.EmptyRoomTtl = 1;
-        string name = PhotonNetwork.NickName + "," + PMasterManager.gameSettings.gameVersion;
+        string name = PhotonNetwork.NickName + "," + PMasterManager.gameSettings.gameVersion + "," + mi_Seleccion.faccion;
         //Si la habitacion ya esta creada te mete en una si no la crea con el nombre y las opciones anteriormente mecionadas
         PhotonNetwork.JoinOrCreateRoom(name , options, TypedLobby.Default);
         intervalo = Random.Range(10, 30); // fuck u lantaron, 2c was here; clanta:one day i will crush ya bitch; 
