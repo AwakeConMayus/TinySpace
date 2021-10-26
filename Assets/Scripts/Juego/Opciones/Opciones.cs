@@ -17,6 +17,8 @@ public abstract class Opciones : MonoBehaviour
 
     protected bool active = true;
 
+    public OpcionesRival mi_reflejo;
+
     public virtual void PrepararPreparacion()
     {
         poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
@@ -44,7 +46,8 @@ public abstract class Opciones : MonoBehaviour
             opcionesDisponibles.Add(numero);
             disponibles.Remove(numero);
         }
-        
+        mi_reflejo.opcionesDisponibles = opcionesDisponibles;
+        mi_reflejo.Primera_vez();
         EventManager.TriggerEvent("RotacionOpciones");
     }
 
@@ -73,6 +76,7 @@ public abstract class Opciones : MonoBehaviour
         int aux = opcionesDisponibles[opcionActual];
         opcionesDisponibles.Remove(aux);
         opcionesDisponibles.Add(aux);
+        mi_reflejo.Rotar(opcionActual);
         opcionActual = -1;
         EventManager.TriggerEvent("RotacionOpciones");
     }  
