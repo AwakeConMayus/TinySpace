@@ -97,6 +97,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         if(faccion_Seleccionada.faccion == Faccion.minero)
         {
             menuMejoradas.SetActive(false);
+            mejoradaSel = 1;
         }
 
         for(int j = 0; j < faccion_Seleccionada.piezas_Basicas.Length; ++j)
