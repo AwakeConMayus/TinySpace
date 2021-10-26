@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c6c05169c5b264cb4410fdab7bffee, type: 3}
   m_Name: Mi_Seleccion
   m_EditorClassIdentifier: 
-  faccion: 2
+  faccion: 0
   mi_poder: {fileID: 0}
   mis_opciones:
   - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
@@ -20,8 +20,3 @@ MonoBehaviour:
   - {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1, type: 3}
   - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
   - {fileID: 1627388167130017577, guid: 0096fbb343e5ffb4a9a9efc16070c275, type: 3}
-  mis_mejoras:
-  - {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6, type: 3}
-  - {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052, type: 3}
-  - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
-  - {fileID: 2018414652591469658, guid: 9c3c9d960ee00ce4081c1c8739945112, type: 3}
