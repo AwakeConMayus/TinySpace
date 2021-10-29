@@ -10,7 +10,7 @@ public class OpcionesRivalMineros : OpcionesRival
 
     private void Start()
     {
-        EventManager.StartListening("PlusReflejo", Recogida_Mineral);
+        EventManager.StartListening("RecogerMineral", Recogida_Mineral);
     }
 
     public override void Rotar(int i)
