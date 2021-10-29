@@ -11,6 +11,8 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     //Clanta: AVISO IMPORTANTE a este script le faltan todas las rpc necesarias. (Esperar al otro jugador para empezar)(Esperar a comprobar la faccion del rival para seleccionar aleatoriamente)(etc)
     //Clanta: Tenia un dolor de cabeza bastante loko cuando hice esto deberia revisarlo mas tarde
 
+    //2C: dies uwus pa' ti mi pana
+
     [SerializeField]
     GameObject menuHeroes;
     [SerializeField]
