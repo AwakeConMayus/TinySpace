@@ -29,6 +29,7 @@ public class OpcionesRivalMineros : OpcionesRival
 
     public void Recogida_Mineral()
     {
+        if (!photonView.IsMine) return;
         mineral = poder.GetComponent<OpcionesMineros>().mineral;
         base.photonView.RPC("RPC_Mandar_Mineral", RpcTarget.Others, mineral);
     }
