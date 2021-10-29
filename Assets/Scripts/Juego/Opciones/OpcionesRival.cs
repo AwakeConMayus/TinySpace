@@ -16,21 +16,21 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
     public List<int> opcionesDisponibles = new List<int>();
 
 
-    public void Primera_vez(/*int opcion1, int opcion2, int opcion3, int opcion4, int */ List<int> disponible)
+    public void Primera_vez(int opcion1, int opcion2, int opcion3, int opcion4, int opcion5)
     {
 
-        base.photonView.RPC("RPC_Primer_Orden", RpcTarget.Others,disponible );
+        base.photonView.RPC("RPC_Primer_Orden", RpcTarget.Others, opcion1, opcion2, opcion3, opcion4, opcion5 );
     }
 
     [PunRPC]
-    public void RPC_Primer_Orden(/*int primera, int segunda, int tercera, int cuarta, int quinta*/List<int> disponibles)
+    public void RPC_Primer_Orden(int primera, int segunda, int tercera, int cuarta, int quinta)
     {
-        /*opcionesDisponibles.Add(primera);
+        opcionesDisponibles.Add(primera);
         opcionesDisponibles.Add(segunda);
         opcionesDisponibles.Add(tercera);
         opcionesDisponibles.Add(cuarta);
-        opcionesDisponibles.Add(quinta);*/
-        opcionesDisponibles = disponibles;
+        opcionesDisponibles.Add(quinta);
+
     }
 
     public void Rotar(int i)

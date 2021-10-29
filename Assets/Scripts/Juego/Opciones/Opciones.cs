@@ -46,7 +46,7 @@ public abstract class Opciones : MonoBehaviour
             opcionesDisponibles.Add(numero);
             disponibles.Remove(numero);
         }
-        mi_reflejo.Primera_vez(opcionesDisponibles);
+        mi_reflejo.Primera_vez(opcionesDisponibles[0], opcionesDisponibles[1], opcionesDisponibles[2], opcionesDisponibles[3], opcionesDisponibles[4]);
         EventManager.TriggerEvent("RotacionOpciones");
     }
 
