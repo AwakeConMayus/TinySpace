@@ -31,7 +31,7 @@ public abstract class Opciones : MonoBehaviour
         EventManager.StartListening("BloquearInput", BloquearInput);
         EventManager.StartListening("DesbloquearInput", DesbloquearInput);
         poder.GetComponent<Poder>().jugador = jugador;
-
+        mi_reflejo = OpcionesRival.instance;
 
         List<int> disponibles = new List<int>();
         for (int i = 0; i < 5; i++)
