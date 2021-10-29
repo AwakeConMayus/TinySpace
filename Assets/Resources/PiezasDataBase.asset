@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5706923c16b76af41ac580157be77bcd, type: 3}
+  m_Name: PiezasDataBase
+  m_EditorClassIdentifier: 
+  ExploradorMinero: {fileID: 0}
+  CombateMinero: {fileID: 0}
+  LaboratorioMinero: {fileID: 0}
+  EstrategaMinero: {fileID: 0}
+  ExploradorMineroMejorado: {fileID: 0}
+  CombateMineroMejorado: {fileID: 0}
+  LaboratorioMineroAstro: {fileID: 0}
+  EstrategaMineroAstro: {fileID: 0}
+  Planetas: {fileID: 0}
+  ExploradorOyentes: {fileID: 0}
+  CombateOyentes: {fileID: 0}
+  LaboratorioOyentes: {fileID: 0}
+  EstrategaOyentes: {fileID: 0}
+  CombateOyentesMejorado: {fileID: 0}

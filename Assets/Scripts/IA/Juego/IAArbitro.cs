@@ -51,8 +51,13 @@ public class IAArbitro : MonoBehaviour
 
 
         NextTurn();
-        NextTurn();        
+        NextTurn();
+
+
+
     }
+
+    
 
     private void Update()
     {

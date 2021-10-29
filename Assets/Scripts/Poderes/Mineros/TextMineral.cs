@@ -38,6 +38,7 @@ public class TextMineral : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!interfazExplicativa) return;
         interfazExplicativa.SetActive(true);
        
         interfazExplicativa.GetComponentInChildren<Text>().text = explicaciones.GetTexto(this.gameObject);
@@ -45,6 +46,7 @@ public class TextMineral : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!interfazExplicativa) return;
         interfazExplicativa.SetActive(false);
     }
 }
