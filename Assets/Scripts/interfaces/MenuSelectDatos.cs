@@ -216,8 +216,12 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     public void Eleccion_Enemiga(int heroe, int especial, int espcializacion)
     {
         seleccion_rival.faccion = opciones_rival.faccion;
-        seleccion_rival.mis_opciones = opciones_rival.piezas_Basicas;
+        for (int j = 0; j < faccion_Seleccionada.piezas_Basicas.Length; ++j)
+        {
+            seleccion_rival.mis_opciones[j] = opciones_rival.piezas_Basicas[j];
+        }
         seleccion_rival.mi_poder = opciones_rival.posibles_Poders[heroe];
+
         seleccion_rival.mis_opciones[4] = opciones_rival.posibles_Piezas_Especiales[especial];
         //Clanta: Esto es para dejar fuera el caso del minero
         if (espcializacion > 10) return;
