@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  faccion: 0
+  faccion: 2
   opcionesDisponibles: 
 --- !u!114 &7256041747507174492
 MonoBehaviour:
