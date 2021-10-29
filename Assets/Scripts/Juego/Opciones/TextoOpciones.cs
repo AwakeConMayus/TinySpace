@@ -17,8 +17,8 @@ public class TextoOpciones : MonoBehaviour
 
     protected Opciones opciones;
     protected OpcionesRival rival_opciones;
-
-    public bool rival = false;
+    [SerializeField]
+     bool rival;
 
     protected GameObject[] prefabsOrdenados = new GameObject[5];
 
@@ -29,6 +29,8 @@ public class TextoOpciones : MonoBehaviour
         if (!rival)
         {
             opciones = GetComponent<Opciones>();
+            Debug.Log(opciones);
+            Debug.Log(rival);
         }
         else
         {
