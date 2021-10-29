@@ -33,7 +33,6 @@ public class TextoOpciones : MonoBehaviour
         else
         {
             rival_opciones = GetComponent<OpcionesRival>();
-            rival_opciones.Primera_vez();
         }
 
         EventManager.StartListening("RotacionOpciones", Actualizar);
@@ -50,7 +49,8 @@ public class TextoOpciones : MonoBehaviour
         }
         for (int i = 0; i < 3; i++)
         {
-            botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+            if(!rival) botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+            else botones[i].GetComponent<Image>().sprite = cartas[rival_opciones.opcionesDisponibles[i]];
         }
         for (int i = 3; i < 5; i++)
         {
@@ -66,7 +66,8 @@ public class TextoOpciones : MonoBehaviour
     }
     public void Out(int i)
     {
-        botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+        if(!rival) botones[i].GetComponent<Image>().sprite = cartas[opciones.opcionesDisponibles[i]];
+        else botones[i].GetComponent<Image>().sprite = cartas[rival_opciones.opcionesDisponibles[i]];
         botones[i].GetComponentInChildren<Text>().text = "";
     }
 }

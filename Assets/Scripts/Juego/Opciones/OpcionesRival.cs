@@ -18,6 +18,7 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
 
     public void Primera_vez()
     {
+
         base.photonView.RPC("RPC_Primer_Orden", RpcTarget.Others, opcionesDisponibles[0], opcionesDisponibles[1], opcionesDisponibles[2], opcionesDisponibles[3], opcionesDisponibles[4]);
     }
 
