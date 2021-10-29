@@ -26,7 +26,6 @@ public class TextoOpciones : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(rival);
         if (!rival)
         {
             opciones = GetComponent<Opciones>();
