@@ -26,17 +26,17 @@ public class TextoOpciones : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(rival);
         if (!rival)
         {
             opciones = GetComponent<Opciones>();
-            Debug.Log(opciones);
-            Debug.Log(rival);
         }
         else
         {
             rival_opciones = GetComponent<OpcionesRival>();
         }
-
+        Debug.Log(opciones);
+        Debug.Log(rival_opciones);
         EventManager.StartListening("RotacionOpciones", Actualizar);
 
         textos = Resources.Load<TextoExplicativo>("Textos");   

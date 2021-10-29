@@ -506,7 +506,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2995566272929975458}
-  - component: {fileID: 3322943892995450560}
   - component: {fileID: 1244807784705479085}
   - component: {fileID: 7856324485359530059}
   - component: {fileID: 7322158565528138267}
@@ -544,32 +543,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1499, y: -94}
   m_SizeDelta: {x: 1639, y: 357}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3322943892995450560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4029495783508667902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb2a94849db51844dac5d5200afcaf5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botones:
-  - {fileID: 4276994700738603427}
-  - {fileID: 567550095303151711}
-  - {fileID: 2474760509057734080}
-  - {fileID: 8401543908232585571}
-  - {fileID: 5403139601950795582}
-  cartas:
-  - {fileID: 21300000, guid: 13abcbb021614894d9a5fd0c4189571c, type: 3}
-  - {fileID: 21300000, guid: e1f326b1e9e04224180cb121508ad215, type: 3}
-  - {fileID: 21300000, guid: d189ba21bdfcaf74d8c7768264ef3221, type: 3}
-  - {fileID: 21300000, guid: 3c127f5c1b65ddf409ac59ca50dcf953, type: 3}
-  - {fileID: 21300000, guid: a79dde3d38d34764dad0f4c39d601015, type: 3}
-  cartaBlanca: {fileID: 21300000, guid: b09fbe246c77bc04baae54ad11f2587a, type: 3}
-  rival: 0
 --- !u!222 &1244807784705479085
 CanvasRenderer:
   m_ObjectHideFlags: 0
