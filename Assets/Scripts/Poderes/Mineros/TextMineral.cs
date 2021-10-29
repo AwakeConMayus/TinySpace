@@ -8,6 +8,8 @@ public class TextMineral : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     [SerializeField]
     OpcionesMineros poder;
+    [SerializeField]
+    OpcionesRivalMineros rival_opciones;
 
     [SerializeField]
     GameObject interfazExplicativa;
@@ -29,12 +31,14 @@ public class TextMineral : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void ActualizarTextoMineral()
     {
-        texto.text = poder.mineral.ToString();
+        if (rival_opciones) texto.text = rival_opciones.mineral.ToString();
+        else texto.text = poder.mineral.ToString();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         interfazExplicativa.SetActive(true);
+       
         interfazExplicativa.GetComponentInChildren<Text>().text = explicaciones.GetTexto(this.gameObject);
     }
 

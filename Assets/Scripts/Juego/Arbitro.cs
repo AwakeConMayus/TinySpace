@@ -30,7 +30,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [SerializeField]
     TuSeleccion seleccion_del_rival;
     [SerializeField]
-    OpcionesRival reflejo;
+    EspejoMaestro espejo_Maestro;
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
@@ -58,7 +58,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;
-        player.mi_reflejo = reflejo;
+        player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion) ;
         player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
         player.PrepararPreparacion();
         player.jugador = 0;
@@ -82,7 +82,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;
-        player.mi_reflejo = reflejo;
+        player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion); 
         player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
         player.PrepararPreparacion();
         player.jugador = 1;

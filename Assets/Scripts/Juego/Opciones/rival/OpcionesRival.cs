@@ -11,6 +11,7 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
     public GameObject poder;
     public GameObject[] opcionesIniciales = new GameObject[5];
 
+    public Faccion faccion;
 
     [HideInInspector]
     public List<int> opcionesDisponibles = new List<int>();
@@ -35,7 +36,7 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
 
     }
 
-    public void Rotar(int i)
+    public virtual void Rotar(int i)
     {
         base.photonView.RPC("RPC_Rotar", RpcTarget.Others, i);
     }

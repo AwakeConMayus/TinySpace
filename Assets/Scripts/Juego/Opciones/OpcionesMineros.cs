@@ -24,6 +24,7 @@ public class OpcionesMineros : Opciones
             backup[i] = opcionesIniciales[i];
         }
         Preparacion();
+        mi_reflejo.poder = this.gameObject;
     }
     public void RecogerMineral()
     {

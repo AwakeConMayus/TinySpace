@@ -60,6 +60,8 @@ MonoBehaviour:
   - Eleccion_Enemiga
   - RPC_Primer_Orden
   - RPC_Rotar
+  - RPC_Mandar_Mineral
+  - RPC_MostrarReflejo
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
