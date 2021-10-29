@@ -8,6 +8,10 @@ public class OpcionesRivalMineros : OpcionesRival
 
     public int mineral = 0;
 
+    private void Start()
+    {
+        EventManager.StartListening("RecogerMineral", Recogida_Mineral);
+    }
 
     public override void Rotar(int i)
     {
@@ -23,4 +27,9 @@ public class OpcionesRivalMineros : OpcionesRival
         EventManager.TriggerEvent("CambioMineral");
     }
 
+    public void Recogida_Mineral()
+    {
+        mineral = poder.GetComponent<OpcionesMineros>().mineral;
+        base.photonView.RPC("RPC_Mandar_Mineral", RpcTarget.Others, mineral);
+    }
 }
