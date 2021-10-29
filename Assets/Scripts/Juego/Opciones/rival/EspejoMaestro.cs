@@ -20,7 +20,7 @@ public class EspejoMaestro : MonoBehaviourPunCallbacks
 
                 foreach (RectTransform gg in g.GetComponentsInChildren<RectTransform>())
                 {
-                    gg.gameObject.SetActive(true);
+                    gg.gameObject.SetActive(false);
                 }
                 return g.GetComponent<OpcionesRival>();
             }
