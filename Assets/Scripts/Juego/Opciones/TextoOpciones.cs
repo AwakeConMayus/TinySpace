@@ -16,6 +16,9 @@ public class TextoOpciones : MonoBehaviour
     public Sprite cartaBlanca;
 
     protected Opciones opciones;
+    protected OpcionesRival rival_opciones;
+
+    public bool rival = false;
 
     protected GameObject[] prefabsOrdenados = new GameObject[5];
 
@@ -23,7 +26,15 @@ public class TextoOpciones : MonoBehaviour
 
     private void Awake()
     {
-        opciones = GetComponent<Opciones>();
+        if (!rival)
+        {
+            opciones = GetComponent<Opciones>();
+        }
+        else
+        {
+            rival_opciones = GetComponent<OpcionesRival>();
+            rival_opciones.Primera_vez();
+        }
 
         EventManager.StartListening("RotacionOpciones", Actualizar);
 
@@ -34,7 +45,8 @@ public class TextoOpciones : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            prefabsOrdenados[i] = opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
+            if (!rival) prefabsOrdenados[i] = opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
+            else prefabsOrdenados[i] = rival_opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
         }
         for (int i = 0; i < 3; i++)
         {
