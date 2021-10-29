@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class OpcionesRival : MonoBehaviourPunCallbacks
 {
-    public static OpcionesRival instance; 
+
 
     public GameObject poder;
     public GameObject[] opcionesIniciales = new GameObject[5];
@@ -15,12 +15,6 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
     [HideInInspector]
     public List<int> opcionesDisponibles = new List<int>();
 
-
-    private void Awake()
-    {
-        if (instance == null) instance = this;
-        else Destroy(this.gameObject);
-    }
 
     public void Primera_vez(int opcion1, int opcion2, int opcion3, int opcion4, int opcion5)
     {
