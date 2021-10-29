@@ -248,4 +248,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44924440f35a47d49b07b02dbbcf3513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  jugador: 1

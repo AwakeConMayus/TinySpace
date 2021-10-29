@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241dea513db7c194391148015c4dfb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  jugador: 1
 --- !u!1001 &405680483753606359
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,17 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5706923c16b76af41ac580157be77bcd, type: 3}
   m_Name: PiezasDataBase
   m_EditorClassIdentifier: 
-  ExploradorMinero: {fileID: 0}
-  CombateMinero: {fileID: 0}
-  LaboratorioMinero: {fileID: 0}
-  EstrategaMinero: {fileID: 0}
-  ExploradorMineroMejorado: {fileID: 0}
-  CombateMineroMejorado: {fileID: 0}
-  LaboratorioMineroAstro: {fileID: 0}
-  EstrategaMineroAstro: {fileID: 0}
-  Planetas: {fileID: 0}
-  ExploradorOyentes: {fileID: 0}
-  CombateOyentes: {fileID: 0}
-  LaboratorioOyentes: {fileID: 0}
-  EstrategaOyentes: {fileID: 0}
-  CombateOyentesMejorado: {fileID: 0}
+  ExploradorMinero: {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292,
+    type: 3}
+  CombateMinero: {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6,
+    type: 3}
+  LaboratorioMinero: {fileID: 5554239858979966999, guid: 31a92df0d34a3854cb9a32e104ac4499,
+    type: 3}
+  EstrategaMinero: {fileID: 87433546748151837, guid: 21c9282e1f5ed064cac0fa06b0172e73,
+    type: 3}
+  ExploradorMineroMejorado: {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6,
+    type: 3}
+  CombateMineroMejorado: {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052,
+    type: 3}
+  LaboratorioMineroAstro: {fileID: 5471688164945184632, guid: 6bd3dfa786e831447a8959b6999f7283,
+    type: 3}
+  EstrategaMineroAstro: {fileID: 1510369916829354505, guid: 12da6aa56c81deb40b1052366faf3ff6,
+    type: 3}
+  Planetas: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3,
+    type: 3}
+  ExploradorOyentes: {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37,
+    type: 3}
+  CombateOyentes: {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85,
+    type: 3}
+  LaboratorioOyentes: {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d,
+    type: 3}
+  EstrategaOyentes: {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95,
+    type: 3}
+  CombateOyentesMejorado: {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2,
+    type: 3}
+  PlanetaSagrado: {fileID: 6596421712654070911, guid: 337f75c2a3274374eb8b71dafc256a85,
+    type: 3}
