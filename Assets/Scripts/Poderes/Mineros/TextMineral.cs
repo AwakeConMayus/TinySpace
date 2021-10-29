@@ -31,6 +31,7 @@ public class TextMineral : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void ActualizarTextoMineral()
     {
+        Debug.Log(!rival_opciones);
         if (rival_opciones) texto.text = rival_opciones.mineral.ToString();
         else texto.text = poder.mineral.ToString();
     }
