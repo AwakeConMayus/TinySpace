@@ -47,7 +47,7 @@ public class TextoOpciones : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             if (!rival) prefabsOrdenados[i] = opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
-            else prefabsOrdenados[i] = rival_opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
+            else prefabsOrdenados[i] = rival_opciones.opcionesIniciales[rival_opciones.opcionesDisponibles[i]];
         }
         for (int i = 0; i < 3; i++)
         {
