@@ -5,7 +5,8 @@ using Photon.Pun;
 
 public class EspejoMaestro : MonoBehaviourPunCallbacks
 {
-
+    [SerializeField]
+    TuSeleccion seleccion_rival;
     public List<GameObject> reflejos;
 
     public OpcionesRival Activar(Faccion f)
@@ -40,6 +41,7 @@ public class EspejoMaestro : MonoBehaviourPunCallbacks
             if (g.GetComponent<OpcionesRival>().faccion == f)
             {
                 g.SetActive(true);
+                g.GetComponent<OpcionesRival>().opcionesIniciales = seleccion_rival.mis_opciones;
             }
         }
     }

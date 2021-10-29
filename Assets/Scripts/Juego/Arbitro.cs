@@ -59,7 +59,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion) ;
-        player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
+        player.mi_reflejo.opcionesIniciales = mi_seleccion.mis_opciones;
         player.PrepararPreparacion();
         player.jugador = 0;
         InstancePiezas.instance.jugador = 0;

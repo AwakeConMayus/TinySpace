@@ -3803,6 +3803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5283b1bd20d3d914cbc4f836714e093a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seleccion_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
   reflejos:
   - {fileID: 1570815957}
   - {fileID: 667069081}
