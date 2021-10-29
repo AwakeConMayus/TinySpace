@@ -35,8 +35,6 @@ public class TextoOpciones : MonoBehaviour
         {
             rival_opciones = GetComponent<OpcionesRival>();
         }
-        Debug.Log(opciones);
-        Debug.Log(rival_opciones);
         EventManager.StartListening("RotacionOpciones", Actualizar);
 
         textos = Resources.Load<TextoExplicativo>("Textos");   
@@ -47,7 +45,11 @@ public class TextoOpciones : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             if (!rival) prefabsOrdenados[i] = opciones.opcionesIniciales[opciones.opcionesDisponibles[i]];
-            else prefabsOrdenados[i] = rival_opciones.opcionesIniciales[rival_opciones.opcionesDisponibles[i]];
+            else
+            {
+                if (rival_opciones.opcionesDisponibles.Count == 0) return;
+                prefabsOrdenados[i] = rival_opciones.opcionesIniciales[rival_opciones.opcionesDisponibles[i]];
+            }
         }
         for (int i = 0; i < 3; i++)
         {

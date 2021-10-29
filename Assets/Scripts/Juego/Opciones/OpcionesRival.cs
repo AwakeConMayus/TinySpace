@@ -30,6 +30,8 @@ public class OpcionesRival : MonoBehaviourPunCallbacks
         opcionesDisponibles.Add(tercera);
         opcionesDisponibles.Add(cuarta);
         opcionesDisponibles.Add(quinta);
+        Debug.Log("llego aqui");
+        EventManager.TriggerEvent("RotacionOpciones");
 
     }
 
