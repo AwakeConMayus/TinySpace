@@ -12,12 +12,18 @@ public class EspejoMaestro : MonoBehaviourPunCallbacks
     {
         foreach(GameObject g in reflejos)
         {
+            g.SetActive(true);
             if(g.GetComponent<OpcionesRival>().faccion == f)
             {
                 base.photonView.RPC("RPC_MostrarReflejo", RpcTarget.Others, (int)f);
+
+                foreach (RectTransform gg in g.GetComponentsInChildren<RectTransform>())
+                {
+                    gg.gameObject.SetActive(true);
+                }
                 return g.GetComponent<OpcionesRival>();
             }
-
+            g.SetActive(false);
            
         }
 
@@ -33,12 +39,7 @@ public class EspejoMaestro : MonoBehaviourPunCallbacks
         {
             if (g.GetComponent<OpcionesRival>().faccion == f)
             {
-               
-
-                foreach(RectTransform gg in g.GetComponentsInChildren<RectTransform>())
-                {
-                    gg.gameObject.SetActive(true);
-                }
+                g.SetActive(true);
             }
         }
     }
