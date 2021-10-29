@@ -69,6 +69,10 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         {
             base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, Faccion.none);
         }
+        else if(!PhotonNetwork.InRoom)
+        {
+            Preparar();
+        }
     }
 
     public void Preparar( )
@@ -122,7 +126,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         }
         preparado = true;
         Poner_Nombres();
-        base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, faccion_Seleccionada.faccion);
+        if(PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2) base.photonView.RPC("RPC_Te_Toca_Preparar", RpcTarget.Others, faccion_Seleccionada.faccion);
     }
 
     public void selectHeroe(int heroe)
@@ -186,12 +190,16 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     public void Terminar()
     {
-        base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
-        base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel, mejoradaSel);
+        if (PhotonNetwork.InRoom)
+        {
+            base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
+            base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel, mejoradaSel);
+        }
         enterMatch.gameObject.SetActive(false);
         menuHeroes.gameObject.SetActive(false);
         menuMejoradas.gameObject.SetActive(false);
         menuEspeciales.gameObject.SetActive(false);
+        //Clanta: Aqui hay que poner la funcion de que en caso de que no estes online te lleve a jugar con la maquina
     }
 
     [PunRPC]
