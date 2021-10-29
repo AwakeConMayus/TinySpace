@@ -32,6 +32,7 @@ public class Meteorito : Pieza
         {
             Pieza p = other.gameObject.GetComponent<Pieza>();
             if (p.Get_Jugador() == jugador) EventManager.TriggerEvent("RecogerMineral");
+            else EventManager.TriggerEvent("PlusReflejo");
             Destroy(this.gameObject);
         }
     }
