@@ -102,9 +102,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6251229901246371265}
   - component: {fileID: 1599954510241180975}
+  - component: {fileID: 8219196122678655869}
   - component: {fileID: 4577592070051363984}
   - component: {fileID: 4142227993904949436}
-  - component: {fileID: 8219196122678655869}
   - component: {fileID: 6273597340190092828}
   m_Layer: 0
   m_Name: Camera
@@ -172,6 +172,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &8219196122678655869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425305740018571558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48514e75b86051941bbd3a820d13a9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFPS: 30
+  width: 1920
+  height: 1080
+  fullscreen: 1
 --- !u!81 &4577592070051363984
 AudioListener:
   m_ObjectHideFlags: 0
@@ -212,22 +228,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &8219196122678655869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5425305740018571558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48514e75b86051941bbd3a820d13a9bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFPS: 30
-  width: 1920
-  height: 1080
-  fullscreen: 1
 --- !u!114 &6273597340190092828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3267175703563116549}
   - component: {fileID: 555765259365999274}
-  - component: {fileID: 1798129263060589722}
   - component: {fileID: 304117262883378453}
   m_Layer: 0
   m_Name: CameraFX&UI
@@ -316,14 +315,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1798129263060589722
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5487310825679883893}
-  m_Enabled: 1
 --- !u!114 &304117262883378453
 MonoBehaviour:
   m_ObjectHideFlags: 0

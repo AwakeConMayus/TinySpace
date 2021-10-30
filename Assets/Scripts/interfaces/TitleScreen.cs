@@ -19,6 +19,10 @@ public class TitleScreen : MonoBehaviour
     [SerializeField]
     TuSeleccion eleccion_rival;
 
+    [SerializeField]
+    Text FrameRateText;
+    float current;
+
     private void Start()
     {
         //* Obtiene todos las referencias a botones presentes en la parte del menú de selección de facción
@@ -39,6 +43,12 @@ public class TitleScreen : MonoBehaviour
             mi_Seleccion.mis_opciones[i] = null;
             eleccion_rival.mis_opciones[i] = null;
         }
+    }
+
+    private void Update()
+    {
+        current = (int)(1f / Time.unscaledDeltaTime);
+        FrameRateText.text = current.ToString() + " FPS";
     }
 
     //* Funcción asociada a jugar, cambiar botones
@@ -77,4 +87,5 @@ public class TitleScreen : MonoBehaviour
         //* Activa el botón de Buscar Partida (match making) una vez se vea que tienes una facción seleccionada
         if (!btnFacciones[4].interactable) btnFacciones[4].interactable = true;
     }
+
 }
