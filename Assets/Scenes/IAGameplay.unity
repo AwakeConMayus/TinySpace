@@ -214,7 +214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1640645060}
+      - m_Target: {fileID: 0}
         m_MethodName: SetNave
         m_Mode: 1
         m_Arguments:
@@ -11331,7 +11331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1657784406}
+      - m_Target: {fileID: 0}
         m_MethodName: SetNave
         m_Mode: 1
         m_Arguments:
@@ -13722,7 +13722,6 @@ GameObject:
   - component: {fileID: 1640645063}
   - component: {fileID: 1640645062}
   - component: {fileID: 1640645061}
-  - component: {fileID: 1640645060}
   m_Layer: 5
   m_Name: Desplegable mineros
   m_TagString: Untagged
@@ -13730,31 +13729,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1640645060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640645059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ae0fa0a5379a644ab25af70e1b422c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: 0
-  prefabsNaves:
-  - {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
-  - {fileID: 87433546748151837, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}
-  - {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292, type: 3}
-  - {fileID: 5554239858979966999, guid: 31a92df0d34a3854cb9a32e104ac4499, type: 3}
-  - {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052, type: 3}
-  - {fileID: 2018414652591469658, guid: 9c3c9d960ee00ce4081c1c8739945112, type: 3}
-  - {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6, type: 3}
-  - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
-  - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
-  Instanciador: {fileID: 1874230211}
-  naveSelect: {fileID: 0}
 --- !u!114 &1640645061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13824,7 +13798,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1640645060}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectNave
         m_Mode: 0
         m_Arguments:
@@ -13986,7 +13960,6 @@ GameObject:
   - component: {fileID: 1657784409}
   - component: {fileID: 1657784408}
   - component: {fileID: 1657784407}
-  - component: {fileID: 1657784406}
   m_Layer: 5
   m_Name: Desplegable Planetas
   m_TagString: Untagged
@@ -13994,30 +13967,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1657784406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657784405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ae0fa0a5379a644ab25af70e1b422c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: 1
-  prefabsNaves:
-  - {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85, type: 3}
-  - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
-  - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
-  - {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d, type: 3}
-  - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
-  - {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1, type: 3}
-  - {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3, type: 3}
-  - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
-  Instanciador: {fileID: 1874230211}
-  naveSelect: {fileID: 0}
 --- !u!114 &1657784407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14085,7 +14034,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1657784406}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectNave
         m_Mode: 0
         m_Arguments:
