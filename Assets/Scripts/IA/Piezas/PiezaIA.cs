@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PiezaIA : MonoBehaviour
 {
-    public int jugador;
+    [SerializeField]
+    public Faccion faccion;
     public virtual List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         Pieza piezaReferencia = GetComponent<Pieza>();
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
-        piezaReferencia.Set_Jugador(jugador);
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             Pieza piezaColocar = piezaReferencia;
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -36,7 +35,7 @@ public class PiezaIA : MonoBehaviour
         foreach (InfoTablero it in Opcionificador(tabBase))
         {
             IATablero.instance.PrintInfoTablero(it);
-            int puntosNuevos = Evaluar(IATablero.instance.mapa, jugador);
+            int puntosNuevos = Evaluar(IATablero.instance.mapa, faccion);
             if (puntosNuevos > mejorPuntuacion)
             {
                 mejorPuntuacion = puntosNuevos;
@@ -47,14 +46,14 @@ public class PiezaIA : MonoBehaviour
         return MejorOpcion;
     }
 
-    public static int Evaluar(List<Casilla> mapa, int jugador)
+    public static int Evaluar(List<Casilla> mapa, Faccion jugador)
     {
         int puntos = 0;
         foreach(Casilla c in mapa)
         {
             if (c.pieza)
             {
-                if (c.pieza.Get_Jugador() == jugador)
+                if (c.pieza.faccion == jugador)
                 {
                     puntos += c.pieza.Puntos();
                 }

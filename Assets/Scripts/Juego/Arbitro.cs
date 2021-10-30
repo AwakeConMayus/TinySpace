@@ -61,9 +61,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion) ;
         player.mi_reflejo.opcionesIniciales = mi_seleccion.mis_opciones;
         player.PrepararPreparacion();
-        player.jugador = 0;
-        InstancePiezas.instance.jugador = 0;
-        InstancePiezas.instance.jugadorEnemigo = 1;
     }
 
     [PunRPC]
@@ -85,9 +82,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion); 
         player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
         player.PrepararPreparacion();
-        player.jugador = 1;
-        InstancePiezas.instance.jugador = 1;
-        InstancePiezas.instance.jugadorEnemigo = 0;
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

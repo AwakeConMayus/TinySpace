@@ -13,7 +13,7 @@ public class PlanetaSagrado : Planetas
         {
             if(c && c.pieza)
             {
-                if (c.pieza.Get_Jugador() != jugador) return puntos;
+                if (c.pieza.faccion != faccion) return puntos;
 
                 puntosExtra += 3;
             }
@@ -26,7 +26,7 @@ public class PlanetaSagrado : Planetas
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillas = FiltroCasillas.CasillasDeUnJugador(jugador, referencia);
+        List<Casilla> casillas = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
         casillas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, casillas);
 
         return casillas;

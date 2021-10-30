@@ -34,22 +34,12 @@ public abstract class Pieza : MonoBehaviour
     [HideInInspector]
     public Casilla casilla;
 
-    protected int jugador;
 
     private bool pieza_extra = false;
 
     private void Awake()
     {
-        SetClase();
-
-        if (this.gameObject.GetPhotonView().IsMine)
-        {
-            jugador = InstancePiezas.instance.jugador;
-        }
-        else
-        {
-            jugador = InstancePiezas.instance.jugadorEnemigo;
-        }
+        SetClase();        
     }
 
     public abstract int Puntos();
@@ -104,14 +94,7 @@ public abstract class Pieza : MonoBehaviour
             other.gameObject.GetComponent<Casilla>().SetState(States.normal);
         }
     }
-    public void Set_Jugador(int _jugador)
-    {
-        jugador = _jugador;
-    }
-    public int Get_Jugador()
-    {
-        return jugador;
-    }
+   
 
     public void Set_Pieza_Extra(bool extra = true)
     {

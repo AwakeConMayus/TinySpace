@@ -1066,7 +1066,7 @@ MonoBehaviour:
   - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
   - {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d, type: 3}
   - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
-  jugador: 1
+  faccion: 2
   opcionesDisponibles: 
   mi_reflejo: {fileID: 0}
 --- !u!114 &5639069245857444213

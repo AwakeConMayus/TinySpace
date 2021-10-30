@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9324cf2059c984fa7a670cc0e0282f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1

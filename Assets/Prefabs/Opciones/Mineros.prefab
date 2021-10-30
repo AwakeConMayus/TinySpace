@@ -2533,7 +2533,7 @@ MonoBehaviour:
   - {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292, type: 3}
   - {fileID: 5554239858979966999, guid: 31a92df0d34a3854cb9a32e104ac4499, type: 3}
   - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
-  jugador: 0
+  faccion: 1
   opcionesDisponibles: 
   mi_reflejo: {fileID: 0}
   mejoras:

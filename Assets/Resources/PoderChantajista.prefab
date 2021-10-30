@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eaebcda4725664687e41ade9a812e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1
   menu_chantaje: {fileID: 8551802012764411778}
   garrapata_prefab: {fileID: 1987810124455813147, guid: 8bd13c07ffc82b8498d9cc313d0b6147,
     type: 3}

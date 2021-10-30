@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f409742fbb1dd624d83acc739bd3090e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1
   numeroTps: 2
 --- !u!114 &8683823905794375602
 MonoBehaviour:

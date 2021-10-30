@@ -9,7 +9,6 @@ public class IALabMejMineros : PiezaIA
         Pieza piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
         piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros Mejorado");
-        piezaReferencia.Set_Jugador(jugador);
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
@@ -18,7 +17,6 @@ public class IALabMejMineros : PiezaIA
             IATablero.instance.PrintInfoTablero(tabBase);
 
             Pieza piezaColocar = Resources.Load<Pieza>("LaboratorioMinerosAstro");
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -27,7 +25,7 @@ public class IALabMejMineros : PiezaIA
 
             foreach(Casilla cc in rangoDestrucciones)
             {
-                if(cc.pieza && cc.pieza.Get_Jugador() != jugador)
+                if(cc.pieza && cc.pieza.faccion != faccion)
                 {
                     Pieza pc = cc.pieza;
                     cc.pieza = null;

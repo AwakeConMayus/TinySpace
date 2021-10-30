@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6229,6 +6229,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510984301}
   m_CullTransparentMesh: 0
+--- !u!20 &524649847 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1599954510241180975, guid: 0eef586c647ae5a4bb14828724955f26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1280656726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &537445187
 GameObject:
   m_ObjectHideFlags: 0
@@ -13748,6 +13754,7 @@ MonoBehaviour:
   - {fileID: 810495966617070839, guid: 1e31e0ff1436cfd4da0ff8b6b91449ab, type: 3}
   - {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4, type: 3}
   Instanciador: {fileID: 1874230211}
+  naveSelect: {fileID: 0}
 --- !u!114 &1640645061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14010,6 +14017,7 @@ MonoBehaviour:
   - {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3, type: 3}
   - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
   Instanciador: {fileID: 1874230211}
+  naveSelect: {fileID: 0}
 --- !u!114 &1657784407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14665,8 +14673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieza: {fileID: 0}
   casilla: {fileID: 0}
-  jugador: 0
-  jugadorEnemigo: 0
+  faccion: 0
   planeta: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
 --- !u!114 &1874230212
 MonoBehaviour:
@@ -14729,7 +14736,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 524649847}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

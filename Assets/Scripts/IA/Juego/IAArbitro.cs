@@ -44,8 +44,7 @@ public class IAArbitro : MonoBehaviour
 
 
 
-        jugador1.jugador = 0;
-        jugador2.jugador = 1;
+        
         jugador1.Preparacion();
         jugador2.Preparacion();
 

@@ -14,8 +14,8 @@ public class MenuFinalParitda : MonoBehaviour
 
     public void Final_Partida(int[] puntos)
     {
-    
-        if(InstancePiezas.instance.jugador == 0)
+        //Hay que adaptar el final de aprtida al nuevo sistema sin jugadores por facciones VVV
+        if(InstancePiezas.instance.faccion == 0)
         {
             if (puntos[0] - puntos[1] > 0) texto_final_partida.text = "Victoria";
             else texto_final_partida.text = "Derrota";
@@ -25,6 +25,7 @@ public class MenuFinalParitda : MonoBehaviour
             if (puntos[0] - puntos[1] > 0) texto_final_partida.text = "Derrota";
             else texto_final_partida.text = "Victoria";
         }
+        //   ^^^
     }
 
     public void Replay()

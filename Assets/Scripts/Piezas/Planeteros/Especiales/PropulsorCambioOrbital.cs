@@ -11,7 +11,7 @@ public class PropulsorCambioOrbital : Efecto
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador, referencia);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
         return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.astros }, casillasDisponibles);
     }
 
@@ -21,7 +21,7 @@ public class PropulsorCambioOrbital : Efecto
         if (!gameObject.GetPhotonView().IsMine) return;
 
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
-        List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(jugador, posibles_destinos);
+        List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_destinos);
         mis_cosas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, mis_cosas);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
 

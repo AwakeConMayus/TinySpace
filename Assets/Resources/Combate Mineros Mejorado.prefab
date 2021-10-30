@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1
 --- !u!95 &2475317344554468508
 Animator:
   serializedVersion: 3

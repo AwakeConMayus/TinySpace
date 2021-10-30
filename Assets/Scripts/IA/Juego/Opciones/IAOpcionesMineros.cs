@@ -31,7 +31,7 @@ public class IAOpcionesMineros : IAOpciones
             {
                 InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
                 IATablero.instance.PrintInfoTablero(newMapa);
-                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.jugador);
+                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
                 
 
                 if (puntuacion > bestPuntuacion)
@@ -54,7 +54,7 @@ public class IAOpcionesMineros : IAOpciones
 
                 InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
                 IATablero.instance.PrintInfoTablero(newMapa);
-                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.jugador);
+                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
 
                 if (puntuacion > bestPuntuacion)
                 {

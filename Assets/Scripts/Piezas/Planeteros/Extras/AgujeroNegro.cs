@@ -16,7 +16,7 @@ public class AgujeroNegro : Pieza
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> posibles_lugares = FiltroCasillas.CasillasDeUnTipo(Clase.investigador);
-        posibles_lugares = FiltroCasillas.CasillasDeUnJugador(jugador, posibles_lugares);
+        posibles_lugares = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_lugares);
         posibles_lugares = FiltroCasillas.CasillasAdyacentes(posibles_lugares, true);
         posibles_lugares = FiltroCasillas.CasillasLibres(posibles_lugares);
         return posibles_lugares;

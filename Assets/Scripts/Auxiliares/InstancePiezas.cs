@@ -25,10 +25,10 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public GameObject pieza;
     [HideInInspector]
     public Casilla casilla;
+
     [HideInInspector]
-    public int jugador;
-    [HideInInspector]
-    public int jugadorEnemigo;
+    public Faccion faccion;
+   
     //* Para el tutorial, mineros 0, planetas 1
     [HideInInspector]
     public GameObject planeta;
@@ -41,7 +41,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
 
     public void SetJugador(int player)
     {
-        jugador = player;
         Tablero.instance.ResetCasillasEfects();
     }
 
@@ -55,7 +54,6 @@ public class InstancePiezas : MonoBehaviourPunCallbacks
     public void SetPieza(GameObject nave)
     {
         pieza = nave;
-        nave.GetComponent<Pieza>().Set_Jugador(jugador);
         casillasPosibles = nave.GetComponent<Pieza>().CasillasDisponibles();
 
         //* Pinta de verde las casillas sobre las que se puede posicionar una pieza

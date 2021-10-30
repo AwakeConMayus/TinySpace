@@ -17,7 +17,6 @@ public class IAPodColono2Oyentes : PoderIABase
             if (c.pieza.GetComponent<Planetas>())
             {
                 PlanetaSagrado nuevoPlaneta = new PlanetaSagrado();
-                nuevoPlaneta.Set_Jugador(jugador);
 
                 c.pieza = nuevoPlaneta;
                 nuevoPlaneta.casilla = c;

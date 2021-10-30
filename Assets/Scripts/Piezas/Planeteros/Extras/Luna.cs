@@ -14,7 +14,7 @@ public class Luna : Pieza
     }
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador, referencia);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
         for (int i = casillasDisponibles.Count-1; i >= 0; i--)
         {
             if (!casillasDisponibles[i].pieza.gameObject.GetComponent<Planetas>())

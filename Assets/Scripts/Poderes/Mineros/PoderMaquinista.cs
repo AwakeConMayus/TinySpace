@@ -25,7 +25,7 @@ public class PoderMaquinista : PoderMineros
    
     public override void FirstAction()
     {
-        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(faccion);
 
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
@@ -50,7 +50,7 @@ public class PoderMaquinista : PoderMineros
     {
         if (!selectOrigen) return;
         Casilla c = ClickCasillas.casillaClick;
-        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(jugador);
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(faccion);
         if (casillasPosibles.Contains(c))
         {
             pieza = c.pieza.gameObject;

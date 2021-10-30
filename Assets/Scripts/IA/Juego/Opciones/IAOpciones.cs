@@ -13,12 +13,8 @@ public class IAOpciones : Opciones
             fase.padre = this;
             fase.padre = this;
         }
-        poder.GetComponent<Poder>().jugador = jugador;
 
-        foreach(GameObject pieza in opcionesIniciales)
-        {
-            pieza.GetComponent<PiezaIA>().jugador = jugador;
-        }
+        
 
 
         List<int> disponibles = new List<int>();

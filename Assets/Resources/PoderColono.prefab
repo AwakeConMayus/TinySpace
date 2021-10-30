@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8888788d095ddfc4abe3a274e573f2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 1
+  faccion: 2
 --- !u!114 &1250324347986563466
 MonoBehaviour:
   m_ObjectHideFlags: 0

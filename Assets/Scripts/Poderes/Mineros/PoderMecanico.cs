@@ -18,7 +18,7 @@ public class PoderMecanico : PoderMineros
 
     public override void FirstAction()
     {
-        opciones = FiltroCasillas.CasillasDeUnJugador(jugador);
+        opciones = FiltroCasillas.CasillasDeUnJugador(faccion);
 
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in opciones) casilla.SetState(States.select);

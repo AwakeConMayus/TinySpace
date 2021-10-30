@@ -10,7 +10,7 @@ public class IAPodMaquinista1Mineros : PoderIABase
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
-        List<Casilla> posiblesMovimientos1 = FiltroCasillas.CasillasDeUnJugador(jugador, IATablero.instance.mapa);
+        List<Casilla> posiblesMovimientos1 = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
         List<Casilla> posiblesDestinos1 = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
 
         foreach (Casilla c1 in posiblesMovimientos1)
@@ -24,7 +24,7 @@ public class IAPodMaquinista1Mineros : PoderIABase
 
                 InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
 
-                List<Casilla> posiblesMovimientos2 = FiltroCasillas.CasillasDeUnJugador(jugador, IATablero.instance.mapa);
+                List<Casilla> posiblesMovimientos2 = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
                 List<Casilla> posiblesDestinos2 = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
 
                 foreach (Casilla c2 in posiblesMovimientos2)

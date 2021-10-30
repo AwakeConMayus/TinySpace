@@ -30,7 +30,8 @@ public class InterfazTurnos : MonoBehaviour
     {
         if(turno_actual == 0)
         {
-            jugador = InstancePiezas.instance.jugador;
+            //Hay que adaptar el sistema al nuevo sin jugadores por facciones
+            jugador = (int)InstancePiezas.instance.faccion;
             if (jugador == 1)
             {
                 Quaternion free = this.GetComponent<RectTransform>().localRotation;

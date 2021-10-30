@@ -9,7 +9,6 @@ public class IAEstMejMineros : PiezaIA
         Pieza piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
         piezaReferencia = GetComponent<Pieza>();
-        piezaReferencia.Set_Jugador(jugador);
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
@@ -18,7 +17,6 @@ public class IAEstMejMineros : PiezaIA
             IATablero.instance.PrintInfoTablero(tabBase);
 
             Pieza piezaColocar = Resources.Load<Pieza>("EstrategaMinerosAstro");
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -26,10 +24,9 @@ public class IAEstMejMineros : PiezaIA
 
             foreach (Casilla cc in c.adyacentes)
             {
-                if (cc && cc.pieza && cc.pieza.Get_Jugador() == jugador && !cc.pieza.CompareClase(Clase.combate))
+                if (cc && cc.pieza && cc.pieza.faccion == faccion && !cc.pieza.CompareClase(Clase.combate))
                 {
                     Pieza nuevaPieza = Resources.Load<Pieza>("Combate Mineros");
-                    nuevaPieza.Set_Jugador(jugador);
                     cc.pieza = nuevaPieza;
                 }
             }

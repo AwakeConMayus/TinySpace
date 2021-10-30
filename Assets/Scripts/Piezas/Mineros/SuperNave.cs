@@ -40,7 +40,7 @@ public class SuperNave : Especial
         foreach (Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
-            if (adyacente.pieza.CompareClase(Clase.combate) && adyacente.pieza.Get_Jugador() == jugador)
+            if (adyacente.pieza.CompareClase(Clase.combate) && adyacente.pieza.faccion == faccion)
             {
                 puntos += numPuntosCombateAliadas;
             }

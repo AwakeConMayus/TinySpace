@@ -35,7 +35,7 @@ public class InvestigadorMinerosMejorado : Efecto
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(jugador, referencia);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
         return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.investigador }, casillasDisponibles);
     }
 }

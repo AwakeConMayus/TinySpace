@@ -40,7 +40,6 @@ public abstract class PoderPlanetas : Poder
             {
                 if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
                 GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, Tablero.instance.mapa[rnd].transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd];
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
@@ -50,7 +49,6 @@ public abstract class PoderPlanetas : Poder
             {
                 GameObject thisPieza = Instantiate(planeta);
                 thisPieza.transform.position = Tablero.instance.mapa[rnd].transform.position;
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
                 thisPieza.GetComponent<Pieza>().Colocar(Tablero.instance.mapa[rnd]);
             }
         }
@@ -61,7 +59,6 @@ public abstract class PoderPlanetas : Poder
     public override void FirstAction()
     {
         List<Casilla> casillasPosibles = new List<Casilla>();
-        planeta.GetComponent<Pieza>().Set_Jugador(jugador);
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
 
         Tablero.instance.ResetCasillasEfects();
@@ -82,7 +79,6 @@ public abstract class PoderPlanetas : Poder
             {
                 if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
                 GameObject thisPieza = PhotonNetwork.Instantiate(planeta.name, c.transform.position, Quaternion.identity);
-                thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.GetComponent<Pieza>().casilla = c;
                 c.pieza = thisPieza.GetComponent<Pieza>();
@@ -112,7 +108,6 @@ public abstract class PoderPlanetas : Poder
         if(!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
         GameObject thisPieza = Instantiate(planeta);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
-        thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador);
         thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
         thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[i];
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();

@@ -26,7 +26,6 @@ public class PoderColono : PoderPlanetas
     {
         print("secondAction");
         planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
-        planetaSagrado.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> casillasPosibles = new List<Casilla>();
         casillasPosibles = planetaSagrado.GetComponent<Pieza>().CasillasDisponibles();
         print(casillasPosibles.Count);
@@ -51,7 +50,7 @@ public class PoderColono : PoderPlanetas
         {
             if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                base.photonView.RPC("RPC_InstanciarPlanetaSagrado", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject), jugador);
+                base.photonView.RPC("RPC_InstanciarPlanetaSagrado", RpcTarget.All, Tablero.instance.Get_Numero_Casilla(c.gameObject));
 
             }
             else
@@ -73,7 +72,7 @@ public class PoderColono : PoderPlanetas
     }
 
     [PunRPC]
-    public void RPC_InstanciarPlanetaSagrado(int i, int _jugador)
+    public void RPC_InstanciarPlanetaSagrado(int i)
     {
         Casilla c = Tablero.instance.mapa[i];
         c.SetState(States.holy);
@@ -81,7 +80,6 @@ public class PoderColono : PoderPlanetas
         if (!planetaSagrado) planetaSagrado = Resources.Load<GameObject>("Planeta Sagrado Planetarios");
         GameObject thisPieza = Instantiate(planetaSagrado);
         thisPieza.transform.position = Tablero.instance.mapa[i].transform.position;
-        thisPieza.GetComponent<Pieza>().Set_Jugador(_jugador) ;
         thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
         thisPieza.GetComponent<Pieza>().casilla = c;
         Tablero.instance.mapa[i].pieza = thisPieza.GetComponent<Pieza>();

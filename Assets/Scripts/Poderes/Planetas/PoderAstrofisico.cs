@@ -21,7 +21,7 @@ public class PoderAstrofisico : PoderPlanetas
     {
         base.InitialAction(true);
 
-        List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(jugador);
+        List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(faccion);
 
         foreach (Casilla c in planetas)
         {
@@ -41,7 +41,6 @@ public class PoderAstrofisico : PoderPlanetas
             {
                 thisPieza = Instantiate(padre.opcionesIniciales[2], posibles[rnd].transform.position, Quaternion.identity);
             }
-            thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             thisPieza.GetComponent<Pieza>().Colocar(posibles[rnd]);
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
@@ -53,7 +52,6 @@ public class PoderAstrofisico : PoderPlanetas
     public override void FirstActionPersonal()
     {
         if (!gameObject.GetPhotonView().IsMine) return;
-        blackHole.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
         Debug.Log(posibles_lugares.Count);
 

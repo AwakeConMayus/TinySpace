@@ -8,7 +8,8 @@ public abstract class Opciones : MonoBehaviour
     public GameObject poder;
     public GameObject[] opcionesIniciales = new GameObject[5];
 
-    public int jugador;
+    [SerializeField]
+    public Faccion faccion;
 
     [HideInInspector]
     public List<int> opcionesDisponibles = new List<int>();
@@ -30,7 +31,6 @@ public abstract class Opciones : MonoBehaviour
         EventManager.StartListening("ColocarPieza", Rotar);
         EventManager.StartListening("BloquearInput", BloquearInput);
         EventManager.StartListening("DesbloquearInput", DesbloquearInput);
-        poder.GetComponent<Poder>().jugador = jugador;
 
         List<int> disponibles = new List<int>();
         for (int i = 0; i < 5; i++)
@@ -57,7 +57,7 @@ public abstract class Opciones : MonoBehaviour
         //Clanta: Pochez del poder del chantajista
         if (WalkitolkiGarrapata.instance)
         {
-            if(WalkitolkiGarrapata.instance.mi_garrapata.Get_Jugador() != jugador) 
+            if(WalkitolkiGarrapata.instance.mi_garrapata.faccion != faccion) 
             WalkitolkiGarrapata.instance.seleccion = i;
         }
     }

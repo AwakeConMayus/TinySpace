@@ -98,13 +98,23 @@ public static class FiltroCasillas
     }
 
 
-    public static List<Casilla> CasillasDeUnJugador(int jugador, List<Casilla> listaBase = null)
+    public static List<Casilla> CasillasDeUnJugador(Faccion jugador, List<Casilla> listaBase = null)
     {
         if (listaBase == null) listaBase = Tablero.instance.mapa;
         List<Casilla> resultado = new List<Casilla>();
         foreach (Casilla candidata in listaBase)
         {
-            if (candidata.pieza && candidata.pieza.Get_Jugador() == jugador) resultado.Add(candidata);
+            if (candidata.pieza && candidata.pieza.faccion == jugador) resultado.Add(candidata);
+        }
+        return resultado;
+    }
+    public static List<Casilla> CasillasDeOtroJugador(Faccion jugador, List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+        foreach (Casilla candidata in listaBase)
+        {
+            if (candidata.pieza && candidata.pieza.faccion != jugador) resultado.Add(candidata);
         }
         return resultado;
     }

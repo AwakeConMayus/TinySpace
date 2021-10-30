@@ -20,7 +20,8 @@ public class InterfazScore : MonoBehaviour
     {
         int[] aux_puntuacion = Tablero.instance.RecuentoPuntos();
 
-        if(InstancePiezas.instance.jugador == 0)
+        //Hay que adaptar el score al nuevo sistema sin jugadores por facciones VVV
+        if(InstancePiezas.instance.faccion == 0)
         {
             scoreAliado.text = aux_puntuacion[0].ToString();
             scoreEnemigo.text = aux_puntuacion[1].ToString();
@@ -32,6 +33,7 @@ public class InterfazScore : MonoBehaviour
             scoreEnemigo.text = aux_puntuacion[0].ToString();
             FillRects(aux_puntuacion[1], aux_puntuacion[0]);
         }
+        //   ^^^^^
 
     }
 

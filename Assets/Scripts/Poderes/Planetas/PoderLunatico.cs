@@ -19,7 +19,7 @@ public class PoderLunatico : PoderPlanetas
     public override void InitialAction(bool sin_pasar_turno = false)
     {
         base.InitialAction(true);
-        List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(jugador);
+        List<Casilla> planetas = FiltroCasillas.CasillasDeUnJugador(faccion);
 
         foreach (Casilla c in planetas)
         {
@@ -39,7 +39,6 @@ public class PoderLunatico : PoderPlanetas
             {
                 thisPieza = Instantiate(luna, posibles[rnd].transform.position, Quaternion.identity);
             }
-            thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             thisPieza.GetComponent<Pieza>().Colocar(posibles[rnd]);
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
@@ -50,7 +49,6 @@ public class PoderLunatico : PoderPlanetas
 
     public override void FirstActionPersonal()
     {
-        luna.GetComponent<Pieza>().Set_Jugador(jugador);
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
         Debug.Log(casillasPosibles.Count);
         Tablero.instance.ResetCasillasEfects();
@@ -80,7 +78,6 @@ public class PoderLunatico : PoderPlanetas
             {
                 thisPieza = Instantiate(luna, c.transform.position, Quaternion.identity);
             }
-            thisPieza.GetComponent<Pieza>().Set_Jugador(jugador);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             thisPieza.GetComponent<Pieza>().casilla = c;
             c.pieza = thisPieza.GetComponent<Pieza>();

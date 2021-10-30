@@ -18,7 +18,7 @@ public class EstrategaMinerosAstro : EstrategaMineros
         {
             foreach (Casilla adyacente in c.adyacentes)
             {
-                if (adyacente && adyacente.pieza && adyacente.pieza.Get_Jugador() == jugador &&
+                if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
                     adyacente.pieza.clase != Clase.combate && adyacente.pieza.clase != Clase.astros)
                 {
                     OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);

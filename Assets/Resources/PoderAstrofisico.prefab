@@ -67,6 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4d0010c4e924d40ba3bfd64b0c1baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 2
   blackHole: {fileID: 4774487309657227320, guid: c935041cbb15fd34793ce3c49cf919cf,
     type: 3}

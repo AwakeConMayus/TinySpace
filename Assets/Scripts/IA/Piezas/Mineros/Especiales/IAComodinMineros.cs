@@ -11,14 +11,12 @@ public class IAComodinMineros : PiezaIA
 
         //Explorador
         piezaReferencia = Resources.Load<Pieza>("Explorador Mineros");
-        piezaReferencia.Set_Jugador(jugador);
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             Pieza piezaColocar = piezaReferencia;
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -28,12 +26,10 @@ public class IAComodinMineros : PiezaIA
 
         //Combate
         piezaReferencia = Resources.Load<Pieza>("Combate Mineros");
-        piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             Pieza piezaColocar = piezaReferencia;
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -44,12 +40,10 @@ public class IAComodinMineros : PiezaIA
 
         //Laboratorio
         piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros");
-        piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             Pieza piezaColocar = piezaReferencia;
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
@@ -59,12 +53,10 @@ public class IAComodinMineros : PiezaIA
 
         //Estratega
         piezaReferencia = Resources.Load<Pieza>("Estratega Mineros");
-        piezaReferencia.Set_Jugador(jugador);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             Pieza piezaColocar = piezaReferencia;
-            piezaColocar.Set_Jugador(jugador);
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;

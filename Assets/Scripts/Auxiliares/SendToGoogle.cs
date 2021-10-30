@@ -161,7 +161,7 @@ public class SendToGoogle : MonoBehaviour
         //GanaQuienEmpieza
         if (jugadorGanador == 2) GanaQuienEmpieza = "empate";
 
-        else if (jugadorGanador == jugador.jugador) GanaQuienEmpieza = "SI";
+        //else if (jugadorGanador == jugador.jugador) GanaQuienEmpieza = "SI";
         else GanaQuienEmpieza = "NO";
 
         //FaccionP1, FaccionP2

@@ -114,13 +114,13 @@ public class Tablero : MonoBehaviour
 
     public int[] RecuentoPuntos()
     {
-        int[] puntuaciones = new int[2];
+        int[] puntuaciones = new int[4];
 
         foreach (Casilla c in Tablero.instance.mapa)
         {
             if (c.pieza)
             {
-                puntuaciones[c.pieza.Get_Jugador()] += c.pieza.Puntos();
+                puntuaciones[(int)c.pieza.faccion-1] += c.pieza.Puntos();
             }
         }
 

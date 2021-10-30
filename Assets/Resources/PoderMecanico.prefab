@@ -67,6 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918a06fd8f5fb2242b4b88bd01b10011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1
   miComodin: {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4,
     type: 3}

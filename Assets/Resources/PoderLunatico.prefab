@@ -67,5 +67,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1774af9993bb5c45bdd83677756d52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 1
+  faccion: 2
   luna: {fileID: 4745022161135342171, guid: 5f501839762e0514c94976ec748dde0d, type: 3}
