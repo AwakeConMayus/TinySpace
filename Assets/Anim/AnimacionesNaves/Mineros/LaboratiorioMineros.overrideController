@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Naves.Oyentes
+  m_Name: LaboratiorioMineros
   m_Controller: {fileID: 9100000, guid: 723e227095343ae46842c54832414da0, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 04b4d8b165dccac47826b15f411eed4d, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: fe44f25c6220f6944bfa50e3399c9cfc, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d3ba7971dce0c0a498d79407da385519, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f36f020c8b65b13478f8f42d8e5be6ea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d3ba7971dce0c0a498d79407da385519, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 04b4d8b165dccac47826b15f411eed4d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 35ae6755866d33e4b9ce20dac99910da, type: 2}

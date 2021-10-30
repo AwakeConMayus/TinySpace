@@ -31,7 +31,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_nave:
-        m_Texture: {fileID: 2800000, guid: c8fb53a2720eb504bbd5e09275d49090, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5596bdce7ed83a74fb773d3e65115537, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -248,7 +248,7 @@ Material:
     m_Colors:
     - Color_1FDD30BB: {r: 0, g: 6.18396, b: 23.35168, a: 1}
     - Color_chasis: {r: 1, g: 1, b: 1, a: 0}
-    - Color_windows: {r: 6.6461353, g: 0.97430235, b: 0.6263372, a: 0}
+    - Color_windows: {r: 28.533148, g: 15.310469, b: 14.475352, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
