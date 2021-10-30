@@ -2,23 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PiezaIA : MonoBehaviour
+public class PiezaIA : MonoBehaviour
 {
     public int jugador;
-    public abstract List<List<Casilla>> Opcionificador(List<Casilla> listaBase);   
-
-    public virtual List<Casilla> BestInmediateOpcion(List<Casilla> listaBase)
+    public virtual List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        List<Casilla> MejorOpcion = new List<Casilla>();
+        Pieza piezaReferencia = GetComponent<Pieza>();
+        List<InfoTablero> nuevosEstados = new List<InfoTablero>();
+        piezaReferencia.Set_Jugador(jugador);
+
+        IATablero.instance.PrintInfoTablero(tabBase);
+
+        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
+        {
+            Pieza piezaColocar = piezaReferencia;
+            piezaColocar.Set_Jugador(jugador);
+
+            c.pieza = piezaColocar;
+            piezaColocar.casilla = c;
+            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+            c.pieza = null;
+        }
+
+        return nuevosEstados;
+    }   
+
+    public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase)
+    {
+        InfoTablero MejorOpcion = new InfoTablero();
         int mejorPuntuacion = -1000;
 
 
-        foreach (List<Casilla> lc in Opcionificador(listaBase))
+        foreach (InfoTablero it in Opcionificador(tabBase))
         {
-            if (Evaluar(lc, jugador) > mejorPuntuacion)
+            IATablero.instance.PrintInfoTablero(it);
+            int puntosNuevos = Evaluar(IATablero.instance.mapa, jugador);
+            if (puntosNuevos > mejorPuntuacion)
             {
-                mejorPuntuacion = Evaluar(lc, jugador);
-                MejorOpcion = lc;
+                mejorPuntuacion = puntosNuevos;
+                MejorOpcion = it;
             }
         }
 

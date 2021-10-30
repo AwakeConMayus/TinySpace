@@ -15,7 +15,7 @@ public class IAOpcionesMineros : IAOpciones
     public override void Jugar()
     {
         int bestPuntuacion = -100;
-        List<Casilla> bestMapa = new List<Casilla>();
+        InfoTablero bestMapa = new InfoTablero();
         int bestMineral = 0;
         int bestOpcion = 0;
 
@@ -29,8 +29,9 @@ public class IAOpcionesMineros : IAOpciones
 
             if (mineral >= mineralGastar)
             {
-                List<Casilla> newMapa = pieza.BestInmediateOpcion(Tablero.instance.mapa);
-                int puntuacion = PiezaIA.Evaluar(newMapa, pieza.jugador);
+                InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
+                IATablero.instance.PrintInfoTablero(newMapa);
+                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.jugador);
                 
 
                 if (puntuacion > bestPuntuacion)
@@ -51,8 +52,9 @@ public class IAOpcionesMineros : IAOpciones
 
                 PiezaIA pieza = mejoras[opcionesDisponibles[i]].GetComponent<PiezaIA>();
 
-                List<Casilla> newMapa = pieza.BestInmediateOpcion(Tablero.instance.mapa);
-                int puntuacion = PiezaIA.Evaluar(newMapa, pieza.jugador);
+                InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
+                IATablero.instance.PrintInfoTablero(newMapa);
+                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.jugador);
 
                 if (puntuacion > bestPuntuacion)
                 {

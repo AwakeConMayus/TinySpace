@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class IAPodColono2Oyentes : PoderIABase
 {
-    public override List<List<Casilla>> Opcionificador(List<Casilla> listaBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
+        List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
-        foreach (Casilla c in listaBase)
+        IATablero.instance.PrintInfoTablero(tabBase);
+
+        foreach (Casilla c in IATablero.instance.mapa)
         {
+            IATablero.instance.PrintInfoTablero(tabBase);
 
             if (c.pieza.GetComponent<Planetas>())
             {
-                Planetas sc = (Planetas)c.pieza;
-
                 PlanetaSagrado nuevoPlaneta = new PlanetaSagrado();
                 nuevoPlaneta.Set_Jugador(jugador);
 
                 c.pieza = nuevoPlaneta;
                 nuevoPlaneta.casilla = c;
 
-                nuevosEstados.Add(Auxiliar.Copy(listaBase));
-
-                c.pieza = sc;
+                nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
             }
 
         }

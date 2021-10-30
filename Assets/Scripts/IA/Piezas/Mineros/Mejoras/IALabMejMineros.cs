@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class IALabMejMineros : PiezaIA
 {
-    public override List<List<Casilla>> Opcionificador(List<Casilla> listaBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         Pieza piezaReferencia;
-        List<List<Casilla>> nuevosEstados = new List<List<Casilla>>();
+        List<InfoTablero> nuevosEstados = new List<InfoTablero>();
         piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros Mejorado");
         piezaReferencia.Set_Jugador(jugador);
 
-        List<Casilla> lc = new List<Casilla>(listaBase);
+        IATablero.instance.PrintInfoTablero(tabBase);
 
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(listaBase))
+        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
-            listaBase = lc;
+            IATablero.instance.PrintInfoTablero(tabBase);
+
             Pieza piezaColocar = Resources.Load<Pieza>("LaboratorioMinerosAstro");
             piezaColocar.Set_Jugador(jugador);
 
@@ -30,7 +31,7 @@ public class IALabMejMineros : PiezaIA
                 {
                     Pieza pc = cc.pieza;
                     cc.pieza = null;
-                    nuevosEstados.Add(new List<Casilla>(Auxiliar.Copy(listaBase)));
+                    nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
                     cc.pieza = pc;
                 }
             }

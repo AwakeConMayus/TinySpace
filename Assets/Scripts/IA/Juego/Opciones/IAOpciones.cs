@@ -47,12 +47,15 @@ public class IAOpciones : Opciones
     public virtual void Jugar() { }
     public virtual void JugarPoder(int i)        
     {
-        List<Casilla> mapaPostPoder = poder.GetComponent<PoderIA>().Fases[i].BestInmediateOpcion(Tablero.instance.mapa);
+        InfoTablero mapaPostPoder = poder.GetComponent<PoderIA>().Fases[i].BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
         ActualizarTablero(mapaPostPoder);
     }
 
-    public void ActualizarTablero(List<Casilla> nuevo)
+    public void ActualizarTablero(InfoTablero newTab)
     {
+        IATablero.instance.PrintInfoTablero(newTab);
+        List<Casilla> nuevo = IATablero.instance.mapa;
+
         while (Tablero.instance.mapa.Count < nuevo.Count)
         {
             Tablero.instance.Crear_Casilla_Vacia();

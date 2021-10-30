@@ -146,10 +146,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5476155095479601583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f68f906c9d016247aa1ff45711ab970, type: 3}
+  m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 1
+  jugador: 0
 --- !u!95 &5860008944539887361
 Animator:
   serializedVersion: 3
