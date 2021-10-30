@@ -102,6 +102,7 @@ public class Matchmaker : MonoBehaviourPunCallbacks
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.AutomaticallySyncScene = true;
                 PhotonNetwork.LoadLevel(2);  // Esto tendrá que ser LoadLevel(2) cuando funcione la selección de unidades de facción
+                //LoadScene -> Escribo esto aqui para que al hacer un Ctrl F de LoadScene aparezca aqui por si hay que cambiarlo
             }
         }
     }
