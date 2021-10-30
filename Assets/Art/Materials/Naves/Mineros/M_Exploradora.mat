@@ -40,7 +40,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_nave:
-        m_Texture: {fileID: 2800000, guid: c24033888fdf4cb488f726b121f207cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5395792242b0a324d93f27aae641d20d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
