@@ -101,6 +101,11 @@ public abstract class Pieza : MonoBehaviour
         pieza_extra = extra;
     }
 
+    public void SelfDestruction()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void OnDestroy()
     {
         if (casilla)

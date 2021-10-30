@@ -28,7 +28,7 @@ public class PiezaIA : MonoBehaviour
 
     public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase)
     {
-        InfoTablero MejorOpcion = new InfoTablero();
+        InfoTablero MejorOpcion = tabBase;
         int mejorPuntuacion = -1000;
 
 

@@ -49,36 +49,6 @@ public class IAOpciones : Opciones
 
     public void ActualizarTablero(InfoTablero newTab)
     {
-        IATablero.instance.PrintInfoTablero(newTab);
-        List<Casilla> nuevo = IATablero.instance.mapa;
-
-        while (Tablero.instance.mapa.Count < nuevo.Count)
-        {
-            Tablero.instance.Crear_Casilla_Vacia();
-        }
-
-        for (int i = 0; i < nuevo.Count; i++)
-        {
-            if(Tablero.instance.mapa[i].pieza != nuevo[i].pieza)
-            {
-                if (Tablero.instance.mapa[i].pieza) Destroy(Tablero.instance.mapa[i].pieza.gameObject);
-
-                GameObject pieza = GetPiezabyIAPieza(nuevo[i].pieza);
-                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
-                InstancePiezas.instance.CrearPieza(Tablero.instance.mapa[i], pieza);
-            }
-        }
-    }
-
-    protected GameObject GetPiezabyIAPieza(Pieza script)
-    {
-        GameObject pieza = null;
-
-        foreach(GameObject g in opcionesIniciales)
-        {
-            if (g.GetComponent<Pieza>() == script) pieza = g;
-        }
-
-        return pieza;
+        Tablero.instance.PrintInfoTablero(newTab);
     }
 }

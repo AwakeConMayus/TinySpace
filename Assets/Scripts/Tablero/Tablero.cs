@@ -10,6 +10,8 @@ public class Tablero : MonoBehaviour
     [SerializeField] GameObject casilla;
     [SerializeField] float relacion_lateral;
 
+    PiezasDataBase DataBase;
+
     public List<Casilla> mapa = new List<Casilla>();
 
     private void Awake()
@@ -19,7 +21,9 @@ public class Tablero : MonoBehaviour
     
         CreacionDeMapa();
         CreacionDeConexiones();
-        
+
+        DataBase = Resources.Load<PiezasDataBase>("PiezasDataBase");
+
     }
 
     void CreacionDeMapa()
@@ -132,5 +136,33 @@ public class Tablero : MonoBehaviour
         GameObject c = Instantiate(casilla, new Vector3(0, 0, 0), Quaternion.identity);
         mapa.Add(c.GetComponent<Casilla>());
         return c;
+    }
+
+    public void PrintInfoTablero(InfoTablero newTab)
+    {
+        while (newTab.tablero.Length > mapa.Count) Crear_Casilla_Vacia();
+
+        for (int i = 0; i < newTab.tablero.Length; i++)
+        {
+            //Ya esta igual a como debe ser
+            if (!mapa[i].pieza && newTab.tablero[i] == 0) continue;
+            if (mapa[i].pieza && newTab.tablero[i] == (int)DataBase.GetPieza(mapa[i].pieza.gameObject)) continue;
+
+            //Hay algo que no debe estar
+            if (mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
+            {
+                mapa[i].pieza.SelfDestruction();
+                mapa[i].pieza = null;
+            }
+
+            //Hay que Crear una Pieza
+            if (newTab.tablero[i] != 0)
+            {
+                GameObject pieza = Instantiate(DataBase.GetPieza((IDPieza)newTab.tablero[i]));
+                pieza.transform.position = mapa[i].transform.position;
+                pieza.GetComponent<Pieza>().casilla = mapa[i];
+                mapa[i].pieza = pieza.GetComponent<Pieza>();
+            }
+        }
     }
 }

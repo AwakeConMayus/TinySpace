@@ -41,6 +41,8 @@ public class IAOpcionesMineros : IAOpciones
                     bestMineral = mineralGastar;
                     bestOpcion = i;
                 }
+
+                print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
             }
         }
 
@@ -63,6 +65,8 @@ public class IAOpcionesMineros : IAOpciones
                     bestMineral = 3;
                     bestOpcion = i;
                 }
+
+                print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
             }
         }
 

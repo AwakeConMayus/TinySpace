@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5706923c16b76af41ac580157be77bcd, type: 3}
   m_Name: PiezasDataBase
   m_EditorClassIdentifier: 
-  ExploradorMinero: {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292,
+  ExploradorMinero: {fileID: 8256386953750067650, guid: 568512d94d6280b4cbc552b99bd6c135,
     type: 3}
   CombateMinero: {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6,
     type: 3}

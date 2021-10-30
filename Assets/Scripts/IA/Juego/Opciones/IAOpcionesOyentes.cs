@@ -24,6 +24,8 @@ public class IAOpcionesOyentes : IAOpciones
                 bestMapa = newMapa;
                 bestOpcion = i;
             }
+
+            print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
         }
 
         IARotarOpcion(bestOpcion);

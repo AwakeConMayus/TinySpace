@@ -139,17 +139,18 @@ public class IATablero : MonoBehaviour
 
     public void PrintInfoTablero(InfoTablero newTab)
     {
-        while (newTab.tablero.Count > mapa.Count) Crear_Casilla_Vacia();
+        while (newTab.tablero.Length > mapa.Count) Crear_Casilla_Vacia();
 
-        for (int i = 0; i < newTab.tablero.Count; i++)
+        for (int i = 0; i < newTab.tablero.Length; i++)
         {
             //Ya esta igual a como debe ser
+            if (!mapa[i].pieza && newTab.tablero[i] == 0) continue;
             if (mapa[i].pieza && newTab.tablero[i] == (int)DataBase.GetPieza(mapa[i].pieza.gameObject)) continue;
 
             //Hay algo que no debe estar
             if(mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
             {
-                Destroy(mapa[i].pieza.gameObject);
+                mapa[i].pieza.SelfDestruction();
                 mapa[i].pieza = null;
             }
 
@@ -167,17 +168,18 @@ public class IATablero : MonoBehaviour
 
 public struct InfoTablero
 {
-    public List<int> tablero;
+    public int[] tablero;
+    
 
     public InfoTablero(List<Casilla> tabBase)
     {
         PiezasDataBase DataBase = Resources.Load<PiezasDataBase>("PiezasDataBase");
-        tablero = new List<int>();
+        tablero = new int[tabBase.Count];
 
-        foreach(Casilla c in tabBase)
+        for (int i = 0; i < tablero.Length; i++)
         {
-            if (c.pieza) tablero.Add((int)DataBase.GetPieza(c.pieza.gameObject));
-            else tablero.Add(0);
+            if (tabBase[i].pieza) tablero[i] = ((int)DataBase.GetPieza(tabBase[i].pieza.gameObject));
+            else tablero[i] = (0);
         }
     }
 }

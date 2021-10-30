@@ -21,6 +21,8 @@ public class IAArbitro : MonoBehaviour
     int specialTurno = 0;
     int turno = 0;
 
+    bool end = false;
+
     private void Start()
     {
         switch (player1)
@@ -69,6 +71,7 @@ public class IAArbitro : MonoBehaviour
 
     public void NextTurn()
     {
+        if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
     }
@@ -158,5 +161,6 @@ public class IAArbitro : MonoBehaviour
     public void EndGame()
     {
         print("Wiiiiiin");
+        end = true;
     }
 }
