@@ -152,8 +152,8 @@ public class PVEArbitro : MonoBehaviour
             {
                 active = !active;
             }
-        }       
-
+        }
+        Debug.Log("chamber " + turno + " " + specialTurno + " " + specialPhase);
     }
 
     void IASpecialTurn()
