@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -301,14 +301,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 105328048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f69099e5fa82a43af14a7b6b30171a, type: 3}
+  m_Script: {fileID: 11500000, guid: a88bbb7710a6dff44a621f9d71e00fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opciones:
+  opcionesIA:
   - {fileID: 1908177881}
   - {fileID: 612584450}
-  player1: 1
-  player2: 2
+  - {fileID: 0}
+  - {fileID: 0}
+  opciones:
+  - {fileID: 234606603}
+  - {fileID: 599466621}
+  - {fileID: 0}
+  - {fileID: 0}
+  mySeleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  seleccioRival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
 --- !u!114 &105328050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +914,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211546514}
   m_CullTransparentMesh: 0
+--- !u!114 &234606603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3181267554940061581, guid: abe7ff18e5d2d02448e365b434f54084,
+    type: 3}
+  m_PrefabInstance: {fileID: 312140734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b125c8ee26ba714f85e52ae133b64ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241858859
 GameObject:
   m_ObjectHideFlags: 0
@@ -6859,6 +6878,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &599466621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5318447557788326678, guid: 1c33861baca68794fa4078d40fcadc3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 116538533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f1f0edebd7aa240b78508ea04588db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &612584449
 PrefabInstance:
   m_ObjectHideFlags: 0

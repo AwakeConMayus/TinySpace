@@ -45,6 +45,7 @@ public class PVEArbitro : MonoBehaviour
 
 
         InstancePiezas.instance.faccion = mySeleccion.faccion;
+
         jugador1.gameObject.SetActive(true);
         jugador1.opcionesIniciales = mySeleccion.mis_opciones;
         jugador1.poder = mySeleccion.mi_poder;
@@ -174,6 +175,8 @@ public class PVEArbitro : MonoBehaviour
                 break;
         }
         ++numeroPoder2;
+
+        NextTurn();
     }
 
     void IATurn()
@@ -184,6 +187,8 @@ public class PVEArbitro : MonoBehaviour
         }
 
         jugador2.Jugar();
+
+        NextTurn();
     }
 
     public void EndGame()
