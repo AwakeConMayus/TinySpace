@@ -61,9 +61,10 @@ public class PVEArbitro : MonoBehaviour
             initial = active = specialActive = false;
         }
 
+        EventManager.StartListening("AccionTerminadaConjunta", NextTurn);
+
         NextTurn();
 
-        EventManager.StartListening("AccionTerminadaConjunta", NextTurn);
     }
 
 
