@@ -159,6 +159,7 @@ public class Tablero : MonoBehaviour
             if (newTab.tablero[i] != 0)
             {
                 GameObject pieza = Instantiate(DataBase.GetPieza((IDPieza)newTab.tablero[i]));
+                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 pieza.transform.position = mapa[i].transform.position;
                 pieza.GetComponent<Pieza>().casilla = mapa[i];
                 mapa[i].pieza = pieza.GetComponent<Pieza>();

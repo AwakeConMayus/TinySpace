@@ -14,6 +14,7 @@ public class IAOpcionesMineros : IAOpciones
 
     public override void Jugar()
     {
+        print("Nuevo Turno Minero");
         int bestPuntuacion = -100;
         InfoTablero bestMapa = new InfoTablero();
         int bestMineral = 0;
@@ -32,7 +33,8 @@ public class IAOpcionesMineros : IAOpciones
                 InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
                 IATablero.instance.PrintInfoTablero(newMapa);
                 int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
-                
+
+                --puntuacion;
 
                 if (puntuacion > bestPuntuacion)
                 {
@@ -42,7 +44,7 @@ public class IAOpcionesMineros : IAOpciones
                     bestOpcion = i;
                 }
 
-                print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
+                print("Minero Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
             }
         }
 
@@ -58,6 +60,8 @@ public class IAOpcionesMineros : IAOpciones
                 IATablero.instance.PrintInfoTablero(newMapa);
                 int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
 
+                --puntuacion;
+
                 if (puntuacion > bestPuntuacion)
                 {
                     bestPuntuacion = puntuacion;
@@ -66,10 +70,11 @@ public class IAOpcionesMineros : IAOpciones
                     bestOpcion = i;
                 }
 
-                print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
+                print("Minero Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
             }
         }
 
+        mineral -= bestMineral;
         IARotarOpcion(bestOpcion);
         ActualizarTablero(bestMapa);
     }

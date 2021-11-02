@@ -6,12 +6,15 @@ public class IAOpcionesOyentes : IAOpciones
 {
     public override void Jugar()
     {
+        print("Nuevo Turno Oyente");
+
         int bestPuntuacion = -100;
         InfoTablero bestMapa = new InfoTablero();
         int bestOpcion = 0;
 
         for (int i = 0; i < 3; i++)
         {
+
             PiezaIA pieza = opcionesIniciales[opcionesDisponibles[i]].GetComponent<PiezaIA>();
 
             InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));

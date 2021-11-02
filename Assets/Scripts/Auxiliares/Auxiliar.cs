@@ -13,4 +13,16 @@ public static class Auxiliar
         }
         return copy;
     }
+
+    public static string StringListInt(List<int> list)
+    {
+        string s = "Opciones: [";
+        for (int i = 0; i < list.Count; i++)
+        {
+            s += list[i];
+            if (i < list.Count - 1) s += ", ";
+        }
+        s += "]";
+        return s;
+    }
 }

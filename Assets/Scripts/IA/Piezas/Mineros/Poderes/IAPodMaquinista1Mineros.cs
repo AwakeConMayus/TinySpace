@@ -6,12 +6,14 @@ public class IAPodMaquinista1Mineros : PoderIABase
 {
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
+        print("poderMaquinista");
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
         List<Casilla> posiblesMovimientos1 = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
         List<Casilla> posiblesDestinos1 = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
+
 
         foreach (Casilla c1 in posiblesMovimientos1)
         {

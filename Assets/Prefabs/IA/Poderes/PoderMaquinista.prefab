@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666b12443f664b14bba9084833a4f81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
+  faccion: 1
   padre: {fileID: 0}

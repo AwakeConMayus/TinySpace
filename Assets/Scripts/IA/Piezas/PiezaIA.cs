@@ -31,9 +31,10 @@ public class PiezaIA : MonoBehaviour
         InfoTablero MejorOpcion = tabBase;
         int mejorPuntuacion = -1000;
 
-
+        int numOpciones = 0;
         foreach (InfoTablero it in Opcionificador(tabBase))
         {
+            ++numOpciones;
             IATablero.instance.PrintInfoTablero(it);
             int puntosNuevos = Evaluar(IATablero.instance.mapa, faccion);
             if (puntosNuevos > mejorPuntuacion)
@@ -42,7 +43,7 @@ public class PiezaIA : MonoBehaviour
                 MejorOpcion = it;
             }
         }
-
+        print(numOpciones);
         return MejorOpcion;
     }
 

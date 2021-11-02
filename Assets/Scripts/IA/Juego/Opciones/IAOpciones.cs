@@ -8,6 +8,7 @@ public class IAOpciones : Opciones
 
     public override void Preparacion()
     {
+        opcionesDisponibles = new List<int>();
         foreach(PoderIABase fase in poder.GetComponent<PoderIA>().Fases)
         {
             fase.padre = this;
@@ -23,7 +24,6 @@ public class IAOpciones : Opciones
             disponibles.Add(i);
         }
         int numero;
-
         for (int i = 0; i < opcionesIniciales.Length; i++)
         {
             numero = disponibles[Random.Range(0, disponibles.Count)];
