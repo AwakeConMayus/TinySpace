@@ -9,6 +9,7 @@ public class InterfazScore : MonoBehaviour
     [SerializeField] Text scoreEnemigo;
     [SerializeField] GameObject fillEnemigo;
     [SerializeField] GameObject fillAliado;
+    [SerializeField] TuSeleccion mi_seleccion;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +21,19 @@ public class InterfazScore : MonoBehaviour
     {
         int[] aux_puntuacion = Tablero.instance.RecuentoPuntos();
 
-        //Hay que adaptar el score al nuevo sistema sin jugadores por facciones VVV
-        if(InstancePiezas.instance.faccion == 0)
+        int enemigo = 0;
+        int aliado = aux_puntuacion[(int)InstancePiezas.instance.faccion - 1];
+        for(int i = 0; i < aux_puntuacion.Length; ++i)
         {
-            scoreAliado.text = aux_puntuacion[0].ToString();
-            scoreEnemigo.text = aux_puntuacion[1].ToString();
-            FillRects(aux_puntuacion[0], aux_puntuacion[1]);
+            if (aux_puntuacion[i] != 0 && i != ((int)InstancePiezas.instance.faccion - 1))
+            {
+                enemigo = aux_puntuacion[i];
+            }
         }
-        else
-        {
-            scoreAliado.text = aux_puntuacion[1].ToString();
-            scoreEnemigo.text = aux_puntuacion[0].ToString();
-            FillRects(aux_puntuacion[1], aux_puntuacion[0]);
-        }
-        //   ^^^^^
+        scoreAliado.text =aliado.ToString();
+        scoreEnemigo.text = enemigo.ToString();
 
+        FillRects(aliado, enemigo);
     }
 
     public void FillRects(int puntuacion_aliada, int puntuacion_enemiga)
