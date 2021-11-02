@@ -55,6 +55,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
                 base.photonView.RPC("RPC_SetNotInitial", RpcTarget.Others);
                 break;
         }
+        InstancePiezas.instance.faccion = mi_seleccion.faccion;
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;
@@ -76,6 +77,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
                 player = opciones[1];
                 break;
         }
+        InstancePiezas.instance.faccion = mi_seleccion.faccion;
         player.gameObject.SetActive(true);
         player.opcionesIniciales = mi_seleccion.mis_opciones;
         player.poder = mi_seleccion.mi_poder;
