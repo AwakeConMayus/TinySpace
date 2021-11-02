@@ -61,6 +61,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.poder = mi_seleccion.mi_poder;
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion) ;
         player.mi_reflejo.opcionesIniciales = mi_seleccion.mis_opciones;
+        player.GetComponentInChildren<InterfazTurnos>().primero = true;
         player.PrepararPreparacion();
     }
 
@@ -83,6 +84,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         player.poder = mi_seleccion.mi_poder;
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion); 
         player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
+        player.GetComponentInChildren<InterfazTurnos>().primero = false;
         player.PrepararPreparacion();
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }

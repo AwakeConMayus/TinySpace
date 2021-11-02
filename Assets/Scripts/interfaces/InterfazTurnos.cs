@@ -15,13 +15,11 @@ public class InterfazTurnos : MonoBehaviour
     [SerializeField]
     Text texto_informativo;
 
-    private int jugador = 0;
-
     private int turno_actual = 0;
 
     bool rival = true;
 
-    
+    public bool primero = false;
     public void Awake()
     {
         EventManager.StartListening("Siguiente_turno", Siguiente_Turno);
@@ -30,9 +28,7 @@ public class InterfazTurnos : MonoBehaviour
     {
         if(turno_actual == 0)
         {
-            //Hay que adaptar el sistema al nuevo sin jugadores por facciones
-            jugador = (int)InstancePiezas.instance.faccion;
-            if (jugador == 1)
+            if (!primero)
             {
                 Quaternion free = this.GetComponent<RectTransform>().localRotation;
                 free.x += 180;
@@ -45,7 +41,7 @@ public class InterfazTurnos : MonoBehaviour
         if(turno_actual > 13)
         {
             turno_actual = 2;
-            if (jugador == 1)
+            if (!primero)
             {
                 Quaternion free = this.GetComponent<RectTransform>().localRotation;
                 free.x -= 180;
