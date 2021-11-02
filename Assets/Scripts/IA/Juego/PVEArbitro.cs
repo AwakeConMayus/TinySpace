@@ -82,7 +82,7 @@ public class PVEArbitro : MonoBehaviour
     {
         SetActiveActive(false);
 
-
+        Debug.Log("chambefull " + specialActive);
         bool estaVezToca = specialActive;
 
 
@@ -128,7 +128,7 @@ public class PVEArbitro : MonoBehaviour
             EndGame();
         }
 
-        if (!active)
+        if (!active && !end)
         {
             SetActiveActive(false);
             if ((turno + 1) % 10 == 0)
@@ -180,10 +180,6 @@ public class PVEArbitro : MonoBehaviour
 
     void IATurn()
     {
-        if (turno == 20)
-        {
-            EndGame();
-        }
 
         jugador2.Jugar();
 

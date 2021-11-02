@@ -43,6 +43,7 @@ public class IAOpciones : Opciones
     public virtual void Jugar() { }
     public virtual void JugarPoder(int i)        
     {
+        Debug.Log("IA PODR");
         InfoTablero mapaPostPoder = poder.GetComponent<PoderIA>().Fases[i].BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
         ActualizarTablero(mapaPostPoder);
     }
