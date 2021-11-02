@@ -62,7 +62,6 @@ public class PVEArbitro : MonoBehaviour
         }
 
         NextTurn();
-        NextTurn();
 
         EventManager.StartListening("AccionTerminadaConjunta", NextTurn);
     }
@@ -166,17 +165,17 @@ public class PVEArbitro : MonoBehaviour
                 break;
             case 1:
                 jugador2.JugarPoder(0);
+                NextTurn();
                 break;
             case 2:
                 jugador2.JugarPoder(1);
+                NextTurn();
                 break;
             default:
                 Debug.Log("el turno de poder no esta de acorde");
                 break;
         }
-        ++numeroPoder2;
-
-        NextTurn();
+        ++numeroPoder2;       
     }
 
     void IATurn()
