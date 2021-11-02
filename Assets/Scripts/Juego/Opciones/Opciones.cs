@@ -22,7 +22,8 @@ public abstract class Opciones : MonoBehaviour
 
     public virtual void PrepararPreparacion()
     {
-        poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
+        if (PhotonNetwork.InRoom) poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
+        else poder = Instantiate(poder, transform.position, Quaternion.identity);
         poder.GetComponent<Poder>().SetPadre(this);
     }
 
