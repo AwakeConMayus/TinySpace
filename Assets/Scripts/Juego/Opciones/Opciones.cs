@@ -75,7 +75,7 @@ public abstract class Opciones : MonoBehaviour
         int aux = opcionesDisponibles[opcionActual];
         opcionesDisponibles.Remove(aux);
         opcionesDisponibles.Add(aux);
-        mi_reflejo.Rotar(opcionActual);
+        if(mi_reflejo) mi_reflejo.Rotar(opcionActual);
         opcionActual = -1;
         EventManager.TriggerEvent("RotacionOpciones");
     }  

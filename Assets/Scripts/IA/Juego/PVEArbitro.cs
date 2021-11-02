@@ -67,15 +67,7 @@ public class PVEArbitro : MonoBehaviour
 
     }
 
-
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            NextTurn();
-        }
-    }
+    
 
 
     public void NextTurn()
