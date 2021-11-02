@@ -113,6 +113,7 @@ public class PoderMaquinista : PoderMineros
         else
         {
             TPEfects(origen, destino);
+            pieza.GetComponent<Pieza>().Set_Pieza_Extra();
             pieza.transform.position = destino.transform.position;
         }
 

@@ -72,6 +72,7 @@ public class PVEArbitro : MonoBehaviour
 
     public void NextTurn()
     {
+        Debug.Log( specialTurno + "   " + turno + "  paso de turno desesperado dios");
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
@@ -131,22 +132,29 @@ public class PVEArbitro : MonoBehaviour
         if (!active)
         {
             SetActiveActive(false);
+            if ((turno + 1) % 10 == 0)
+            {
+                specialPhase = true;
+            }
+            if (++turno % 2 != 0)
+            {
+                active = !active;
+            }
             IATurn();
         }
         else if (active)
         {
             SetActiveActive(true);
-        }
+            if ((turno + 1) % 10 == 0)
+            {
+                specialPhase = true;
+            }
+            if (++turno % 2 != 0)
+            {
+                active = !active;
+            }
+        }       
 
-
-        if ((turno + 1) % 10 == 0)
-        {
-            specialPhase = true;
-        }
-        if (++turno % 2 != 0)
-        {
-            active = !active;
-        }
     }
 
     void IASpecialTurn()
@@ -179,8 +187,9 @@ public class PVEArbitro : MonoBehaviour
         }
 
         jugador2.Jugar();
+        Debug.Log("turno dios" + turno + "  " + active);
 
-        NextTurn();
+       NextTurn();
     }
 
     public void EndGame()
