@@ -72,7 +72,6 @@ public class PVEArbitro : MonoBehaviour
 
     public void NextTurn()
     {
-        Debug.Log( specialTurno + "   " + turno + "  paso de turno desesperado dios");
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
@@ -187,7 +186,6 @@ public class PVEArbitro : MonoBehaviour
         }
 
         jugador2.Jugar();
-        Debug.Log("turno dios" + turno + "  " + active);
 
        NextTurn();
     }

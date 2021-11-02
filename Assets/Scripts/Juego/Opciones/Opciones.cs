@@ -32,6 +32,7 @@ public abstract class Opciones : MonoBehaviour
         EventManager.StartListening("ColocarPieza", Rotar);
         EventManager.StartListening("BloquearInput", BloquearInput);
         EventManager.StartListening("DesbloquearInput", DesbloquearInput);
+        opcionesDisponibles = new List<int>();
 
         List<int> disponibles = new List<int>();
         for (int i = 0; i < 5; i++)
@@ -73,8 +74,13 @@ public abstract class Opciones : MonoBehaviour
     {
         if (opcionActual < 0) return;
         int aux = opcionesDisponibles[opcionActual];
+        Debug.Log("chamber sherif " + aux);
         opcionesDisponibles.Remove(aux);
         opcionesDisponibles.Add(aux);
+        for(int i = 0; i < opcionesDisponibles.Count; ++i)
+        {
+            Debug.Log("chamber ult" + opcionesDisponibles[i]);
+        }
         if(mi_reflejo) mi_reflejo.Rotar(opcionActual);
         opcionActual = -1;
         EventManager.TriggerEvent("RotacionOpciones");

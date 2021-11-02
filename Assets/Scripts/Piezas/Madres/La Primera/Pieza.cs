@@ -55,8 +55,6 @@ public abstract class Pieza : MonoBehaviour
         EventManager.TriggerEvent("UpdateScore");
         if (this.gameObject.GetPhotonView().IsMine && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
         else if(!PhotonNetwork.InRoom && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
-        Debug.Log((!PhotonNetwork.InRoom && !pieza_extra) + "dios");
-        Debug.Log(gameObject.name + "dios");
     }
 
     void TerminarAccionConjunta()
