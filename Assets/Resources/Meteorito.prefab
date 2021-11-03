@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9207863745990842345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4906215171946210881}
   - component: {fileID: 784670252773565571}
   - component: {fileID: 8468658165071251748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3875921691903781337}
   - component: {fileID: 2001434886304995200}
   - component: {fileID: 3041882126022058515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200634310006974684}
   m_LocalRotation: {x: -0.6194611, y: -0.007923087, z: 0.006252586, w: 0.78496253}
-  m_LocalPosition: {x: -0, y: 0.19, z: -0.79}
+  m_LocalPosition: {x: -0, y: 0.19, z: -0.25}
   m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_Children: []
   m_Father: {fileID: 3555085584603238990}
@@ -4934,7 +4934,7 @@ GameObject:
   - component: {fileID: 2779808253269788870}
   - component: {fileID: 3303588752604609943}
   - component: {fileID: 1888558503987930124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,7 +5014,7 @@ GameObject:
   - component: {fileID: 2783357818023049443}
   - component: {fileID: 7393914464439587143}
   - component: {fileID: 4992202389086069556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5097,7 +5097,7 @@ GameObject:
   - component: {fileID: 7352733034201770975}
   - component: {fileID: 1842189033883354289}
   - component: {fileID: 4568335288921070774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Meteorito
   m_TagString: Meteorito
   m_Icon: {fileID: 0}
@@ -5231,7 +5231,7 @@ GameObject:
   - component: {fileID: 3727738908801968179}
   - component: {fileID: 6888047891802296307}
   - component: {fileID: 5018093813960453003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5310,7 +5310,7 @@ GameObject:
   - component: {fileID: 4206243477685344619}
   - component: {fileID: 5263364631119472078}
   - component: {fileID: 2270680718388211919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5390,7 +5390,7 @@ GameObject:
   - component: {fileID: 915125283755835158}
   - component: {fileID: 1880518548061533743}
   - component: {fileID: 7491625886938259434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10144,7 +10144,7 @@ GameObject:
   - component: {fileID: 3033617059623525086}
   - component: {fileID: 4872771920840175817}
   - component: {fileID: 4391303866877962373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AnimMeteorito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10209,7 +10209,7 @@ GameObject:
   - component: {fileID: 176078248954073866}
   - component: {fileID: 3842813148440294995}
   - component: {fileID: 4932991211504158233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere001 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
