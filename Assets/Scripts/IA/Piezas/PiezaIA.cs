@@ -29,7 +29,7 @@ public class PiezaIA : MonoBehaviour
     public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase)
     {
         InfoTablero MejorOpcion = tabBase;
-        int mejorPuntuacion = -1000;
+        int mejorPuntuacion = int.MinValue;
 
         int numOpciones = 0;
         foreach (InfoTablero it in Opcionificador(tabBase))
