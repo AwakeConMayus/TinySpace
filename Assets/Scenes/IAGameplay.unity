@@ -5675,6 +5675,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barra puntos
       objectReference: {fileID: 0}
+    - target: {fileID: 3891012674338539136, guid: e56fc5f2617fcbc46a400ef63257789d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7068288461630124458, guid: e56fc5f2617fcbc46a400ef63257789d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6009,7 +6014,7 @@ PrefabInstance:
     - target: {fileID: 7390753274491824267, guid: abe7ff18e5d2d02448e365b434f54084,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe7ff18e5d2d02448e365b434f54084, type: 3}

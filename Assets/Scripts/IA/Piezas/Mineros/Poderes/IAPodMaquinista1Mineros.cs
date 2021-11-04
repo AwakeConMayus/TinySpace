@@ -7,44 +7,55 @@ public class IAPodMaquinista1Mineros : PoderIABase
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         print("poderMaquinista");
+
+        InfoTablero estadoIntermedio = SingleBestInmediateOpcion(tabBase);        
+
+        return SingleOpcionificador(estadoIntermedio);
+    }
+
+    List<InfoTablero> SingleOpcionificador (InfoTablero tabBase)
+    {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
-        List<Casilla> posiblesMovimientos1 = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
-        List<Casilla> posiblesDestinos1 = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
+        List<Casilla> posiblesMovimientos = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
+        List<Casilla> posiblesDestinos = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
 
-
-        foreach (Casilla c1 in posiblesMovimientos1)
+        foreach (Casilla c in posiblesMovimientos)
         {
-            foreach (Casilla cc1 in posiblesDestinos1)
+            foreach (Casilla cc in posiblesDestinos)
             {
                 IATablero.instance.PrintInfoTablero(tabBase);
 
-                cc1.pieza = c1.pieza;
-                c1.pieza = null;
+                cc.pieza = c.pieza;
+                c.pieza = null;
 
-                InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
-
-                List<Casilla> posiblesMovimientos2 = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
-                List<Casilla> posiblesDestinos2 = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
-
-                foreach (Casilla c2 in posiblesMovimientos2)
-                {
-                    foreach (Casilla cc2 in posiblesDestinos2)
-                    {
-                        IATablero.instance.PrintInfoTablero(estadoIntermedio);
-
-                        cc2.pieza = c2.pieza;
-                        c2.pieza = null;
-
-                        nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
-                    }
-                }
+                nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
             }
         }
 
         return nuevosEstados;
+    }
+
+    InfoTablero SingleBestInmediateOpcion(InfoTablero tabBase)
+    {
+        InfoTablero MejorOpcion = tabBase;
+        int mejorPuntuacion = -1000;
+
+        int numOpciones = 0;
+        foreach (InfoTablero it in SingleOpcionificador(tabBase))
+        {
+            ++numOpciones;
+            IATablero.instance.PrintInfoTablero(it);
+            int puntosNuevos = Evaluar(IATablero.instance.mapa, faccion);
+            if (puntosNuevos > mejorPuntuacion)
+            {
+                mejorPuntuacion = puntosNuevos;
+                MejorOpcion = it;
+            }
+        }
+        return MejorOpcion;
     }
 } 
 
