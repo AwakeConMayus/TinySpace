@@ -8,8 +8,7 @@ using UnityEngine;
 public class SendToGoogle : MonoBehaviour
 {
     //* Tiene que ser true para que se envíen los datos
-    [SerializeField]
-    private bool SendingDataOnline;
+    private bool SendingDataOnline = true;
 
 
     //Variables
