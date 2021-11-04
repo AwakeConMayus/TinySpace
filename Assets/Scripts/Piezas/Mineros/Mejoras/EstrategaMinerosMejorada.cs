@@ -8,8 +8,7 @@ public class EstrategaMinerosMejorada : Efecto
     [SerializeField] GameObject estratega_astro;
     public override void Accion()
     {
-        if (!gameObject.GetPhotonView().IsMine) return;
-
+        
         // Comprobacion de si el game se esta realizando online u offline
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
@@ -18,11 +17,12 @@ public class EstrategaMinerosMejorada : Efecto
             PhotonNetwork.Instantiate(estratega_astro.name, casilla.transform.position, Quaternion.identity);
 
         }
-        else
+        else if(!PhotonNetwork.InRoom)
         {
-            casilla.Clear();
+            Debug.Log("hola");
+            Destroy(casilla.pieza.gameObject);
             // Instanciacion de piezas en el offline
-            GameObject thisPieza = Instantiate(estratega_astro);
+            GameObject thisPieza = Instantiate(estratega_astro, casilla.transform.position, Quaternion.identity);
             thisPieza.transform.position = casilla.transform.position;
             //GestorTurnos.instance.realizarJugada();
         }

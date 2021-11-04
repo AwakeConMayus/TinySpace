@@ -40,6 +40,7 @@ public class EspejoMaestro : MonoBehaviourPunCallbacks
         {
             if (g.GetComponent<OpcionesRival>().faccion == f)
             {
+                Debug.Log("este print tendria que borrarse");
                 g.SetActive(true);
                 g.GetComponent<OpcionesRival>().opcionesIniciales = seleccion_rival.mis_opciones;
             }
