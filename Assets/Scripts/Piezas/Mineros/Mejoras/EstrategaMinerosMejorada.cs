@@ -19,7 +19,6 @@ public class EstrategaMinerosMejorada : Efecto
         }
         else if(!PhotonNetwork.InRoom)
         {
-            Debug.Log("hola");
             Destroy(casilla.pieza.gameObject);
             // Instanciacion de piezas en el offline
             GameObject thisPieza = Instantiate(estratega_astro, casilla.transform.position, Quaternion.identity);
