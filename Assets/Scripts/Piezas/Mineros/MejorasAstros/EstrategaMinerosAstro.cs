@@ -14,7 +14,7 @@ public class EstrategaMinerosAstro : EstrategaMineros
 
     public override void Colocar(Casilla c)
     {
-        if (gameObject.GetPhotonView().IsMine)
+        if (PhotonNetwork.InRoom && gameObject.GetPhotonView().IsMine)
         {
             foreach (Casilla adyacente in c.adyacentes)
             {
@@ -23,6 +23,19 @@ public class EstrategaMinerosAstro : EstrategaMineros
                 {
                     OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
                     GameObject thisPieza = PhotonNetwork.Instantiate(combateMinero.name, adyacente.transform.position, Quaternion.identity);
+                    thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                }
+            }
+        }
+        else if (!PhotonNetwork.InRoom)
+        {
+            foreach (Casilla adyacente in c.adyacentes)
+            {
+                if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
+                    adyacente.pieza.clase != Clase.combate && adyacente.pieza.clase != Clase.astros)
+                {
+                    Destroy(adyacente.pieza.gameObject);
+                    GameObject thisPieza = Instantiate(combateMinero, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
             }
