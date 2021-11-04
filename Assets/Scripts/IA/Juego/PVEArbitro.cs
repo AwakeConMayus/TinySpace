@@ -80,6 +80,7 @@ public class PVEArbitro : MonoBehaviour
 
     void SpecialTurn()
     {
+        EventManager.TriggerEvent("Siguiente_turno");
         SetActiveActive(false);
 
         Debug.Log("chambefull " + specialActive);
@@ -123,6 +124,7 @@ public class PVEArbitro : MonoBehaviour
 
     void Turn()
     {
+        EventManager.TriggerEvent("Siguiente_turno");
         if (turno == 20)
         {
             EndGame();
@@ -153,7 +155,6 @@ public class PVEArbitro : MonoBehaviour
                 active = !active;
             }
         }
-        Debug.Log("chamber " + turno + " " + specialTurno + " " + specialPhase);
     }
 
     void IASpecialTurn()
