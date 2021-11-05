@@ -12,6 +12,7 @@ public class PropulsorCambioOrbital : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
+        casillasDisponibles = FiltroCasillas.CasillasPlaneta(casillasDisponibles);
         return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.astros }, casillasDisponibles);
     }
 
@@ -22,7 +23,7 @@ public class PropulsorCambioOrbital : Efecto
 
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
         List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_destinos);
-        mis_cosas = FiltroCasillas.CasillasPlaneta(mis_cosas);
+        mis_cosas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, mis_cosas);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
 
         if (posibles_destinos.Count == 0)
