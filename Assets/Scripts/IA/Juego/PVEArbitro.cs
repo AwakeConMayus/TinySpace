@@ -29,6 +29,8 @@ public class PVEArbitro : MonoBehaviour
     bool end = false;
     bool initial = true;
 
+    int turnoAbsoluto = 0;
+
 
     private void Start()
     {
@@ -75,6 +77,7 @@ public class PVEArbitro : MonoBehaviour
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
+        ++turnoAbsoluto;
     }
 
 
@@ -164,16 +167,8 @@ public class PVEArbitro : MonoBehaviour
             case 0:
                 jugador2.poder.GetComponent<Poder>().InitialAction();
                 break;
-            case 1:
-                jugador2.JugarPoder(0);
-                NextTurn();
-                break;
-            case 2:
-                jugador2.JugarPoder(1);
-                NextTurn();
-                break;
             default:
-                Debug.Log("el turno de poder no esta de acorde");
+                jugador2.Jugar(jugador1, turnoAbsoluto);
                 break;
         }
         ++numeroPoder2;       
@@ -182,7 +177,7 @@ public class PVEArbitro : MonoBehaviour
     void IATurn()
     {
 
-        jugador2.Jugar();
+        jugador2.Jugar(jugador1,turnoAbsoluto);
 
        NextTurn();
     }

@@ -7,19 +7,26 @@ public class IAOpcionesMineros : IAOpciones
     public GameObject[] mejoras = new GameObject[4];
     public int mineral = 5;
 
+    List<InfoTablero>[] tablerosPorCostes = new List<InfoTablero>[10];
+    List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
+
+
+
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", AddMineral);
+        ResetTableros();
     }
 
-    public override void Jugar()
+    public override List<InfoTablero> JugadaSimple()
     {
         print("Nuevo Turno Minero");
-        int bestPuntuacion = -100;
-        InfoTablero bestMapa = new InfoTablero();
-        int bestMineral = 0;
-        int bestOpcion = 0;
 
+        List<InfoTablero> opciones = new List<InfoTablero>();
+
+        InfoTablero tabBase = new InfoTablero(Tablero.instance.mapa);
+
+        ResetTableros();
 
         for (int i = 0; i < 3; i++)
         {
@@ -30,21 +37,13 @@ public class IAOpcionesMineros : IAOpciones
 
             if (mineral >= mineralGastar)
             {
-                InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
-                IATablero.instance.PrintInfoTablero(newMapa);
-                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
-
-                --puntuacion;
-
-                if (puntuacion > bestPuntuacion)
+                foreach(InfoTablero newTab in pieza.Opcionificador(tabBase))
                 {
-                    bestPuntuacion = puntuacion;
-                    bestMapa = newMapa;
-                    bestMineral = mineralGastar;
-                    bestOpcion = i;
+                    opciones.Add(newTab);
+                    tablerosPorCostes[mineralGastar].Add(newTab);
+                    tablerosOrden[i].Add(newTab);
                 }
-
-                print("Minero Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
+                
             }
         }
 
@@ -56,31 +55,54 @@ public class IAOpcionesMineros : IAOpciones
 
                 PiezaIA pieza = mejoras[opcionesDisponibles[i]].GetComponent<PiezaIA>();
 
-                InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
-                IATablero.instance.PrintInfoTablero(newMapa);
-                int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
-
-                --puntuacion;
-
-                if (puntuacion > bestPuntuacion)
+                foreach (InfoTablero newTab in pieza.Opcionificador(tabBase))
                 {
-                    bestPuntuacion = puntuacion;
-                    bestMapa = newMapa;
-                    bestMineral = 3;
-                    bestOpcion = i;
+                    opciones.Add(newTab);
+                    tablerosPorCostes[3].Add(newTab);
+                    tablerosOrden[i].Add(newTab);
                 }
-
-                print("Minero Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
             }
         }
 
-        mineral -= bestMineral;
-        IARotarOpcion(bestOpcion);
-        ActualizarTablero(bestMapa);
+        return opciones;
     }
 
     public void AddMineral()
     {
         ++mineral;
+    }
+
+    void ResetTableros()
+    {
+        for (int i = 0; i < tablerosPorCostes.Length; i++)
+        {
+            tablerosPorCostes[i] = new List<InfoTablero>();
+        }
+        for (int i = 0; i < tablerosOrden.Length; i++)
+        {
+            tablerosOrden[i] = new List<InfoTablero>();
+        }
+    }
+
+    public override void EjecutarJugada(InfoTablero newTab)
+    {
+        base.EjecutarJugada(newTab);
+
+        for (int i = 0; i < tablerosPorCostes.Length; i++)
+        {
+            if (tablerosPorCostes[i].Contains(newTab))
+            {
+                mineral -= i;
+            }
+        }
+        for (int i = 0; i < tablerosOrden.Length; i++)
+        {
+            if (tablerosOrden[i].Contains(newTab))
+            {
+                IARotarOpcion(i);
+            }
+        }
+
+        ResetTableros();
     }
 }

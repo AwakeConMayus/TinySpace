@@ -4,34 +4,56 @@ using UnityEngine;
 
 public class IAOpcionesOyentes : IAOpciones
 {
-    public override void Jugar()
+
+    List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
+
+
+    public override List<InfoTablero> JugadaSimple()
     {
+        ResetTableros();
         print("Nuevo Turno Oyente");
 
-        int bestPuntuacion = -100;
-        InfoTablero bestMapa = new InfoTablero();
-        int bestOpcion = 0;
+        List<InfoTablero> jugadas = new List<InfoTablero>();
+
+        InfoTablero tabBase = new InfoTablero(Tablero.instance.mapa);
+
 
         for (int i = 0; i < 3; i++)
         {
 
             PiezaIA pieza = opcionesIniciales[opcionesDisponibles[i]].GetComponent<PiezaIA>();
-
-            InfoTablero newMapa = pieza.BestInmediateOpcion(new InfoTablero(Tablero.instance.mapa));
-            IATablero.instance.PrintInfoTablero(newMapa);
-            int puntuacion = PiezaIA.Evaluar(IATablero.instance.mapa, pieza.faccion);
-
-            if(puntuacion > bestPuntuacion)
+            print(pieza.gameObject.name);
+            foreach (InfoTablero newTab in pieza.Opcionificador(tabBase))
             {
-                bestPuntuacion = puntuacion;
-                bestMapa = newMapa;
-                bestOpcion = i;
+                jugadas.Add(newTab);
+                tablerosOrden[i].Add(newTab);
             }
-
-            print("Oyente Opcion: " + pieza.gameObject.name + "   -> " + puntuacion);
         }
 
-        IARotarOpcion(bestOpcion);
-        ActualizarTablero(bestMapa);
+        return jugadas;
+    }
+
+    void ResetTableros()
+    {
+        for (int i = 0; i < tablerosOrden.Length; i++)
+        {
+            tablerosOrden[i] = new List<InfoTablero>();
+        }
+    }
+
+    public override void EjecutarJugada(InfoTablero newTab)
+    {
+        base.EjecutarJugada(newTab);
+
+        
+        for (int i = 0; i < tablerosOrden.Length; i++)
+        {
+            if (tablerosOrden[i].Contains(newTab))
+            {
+                IARotarOpcion(i);
+            }
+        }
+
+        ResetTableros();
     }
 }

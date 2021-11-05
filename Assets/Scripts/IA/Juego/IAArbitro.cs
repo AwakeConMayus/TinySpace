@@ -21,6 +21,8 @@ public class IAArbitro : MonoBehaviour
     int specialTurno = 0;
     int turno = 0;
 
+    int turnoAbsoluto = 0;
+
     bool end = false;
 
     private void Start()
@@ -74,6 +76,7 @@ public class IAArbitro : MonoBehaviour
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
+        ++turnoAbsoluto;
     }
 
     void SpecialTurn()
@@ -97,15 +100,9 @@ public class IAArbitro : MonoBehaviour
             {
                 case 0:
                     jugador1.poder.GetComponent<Poder>().InitialAction();
-                    break;
-                case 1:
-                    jugador1.JugarPoder(0);
-                    break;
-                case 2:
-                    jugador1.JugarPoder(1);
-                    break;
+                    break;                
                 default:
-                    Debug.Log("el turno de poder no esta de acorde");
+                    jugador1.Jugar(jugador2, turnoAbsoluto);
                     break;
             }
             ++numeroPoder1;
@@ -116,15 +113,9 @@ public class IAArbitro : MonoBehaviour
             {
                 case 0:
                     jugador2.poder.GetComponent<Poder>().InitialAction();
-                    break;
-                case 1:
-                    jugador2.JugarPoder(0);
-                    break;
-                case 2:
-                    jugador2.JugarPoder(1);
-                    break;
+                    break;               
                 default:
-                    Debug.Log("el turno de poder no esta de acorde");
+                    jugador2.Jugar(jugador1, turnoAbsoluto);
                     break;
             }
             ++numeroPoder2;
@@ -140,11 +131,11 @@ public class IAArbitro : MonoBehaviour
 
         if (!active)
         {
-            jugador2.Jugar();
+            jugador2.Jugar(jugador1,turnoAbsoluto);
         }
         else if (active)
         {
-            jugador1.Jugar();
+            jugador1.Jugar(jugador2,turnoAbsoluto);
         }
 
 
