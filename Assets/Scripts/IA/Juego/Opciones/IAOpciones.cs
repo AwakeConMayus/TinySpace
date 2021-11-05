@@ -106,7 +106,7 @@ public abstract class IAOpciones : Opciones
         }
         else if (jugadasCombinada.Contains(turno))
         {
-            List<JugadaDerivada> jugadas = JugadaCombinada(rival);
+            List<InfoTablero> jugadas = JugadaCombinada(rival);
             jugada = DecidirJugada(jugadas);
         }
         else if (poderesSimple.Contains(turno))
@@ -116,46 +116,40 @@ public abstract class IAOpciones : Opciones
         }
         else if (poderesCombinado.Contains(turno))
         {
-            List<JugadaDerivada> jugadas = PoderCombinado(rival, fase);
+            List<InfoTablero> jugadas = PoderCombinado(rival, fase);
             jugada = DecidirJugada(jugadas);
         }
         else if (poderesCombinadoPoder.Contains(turno))
         {
-            List<JugadaDerivada> jugadas = PoderCombinadoPoder(rival, fase);
+            List<InfoTablero> jugadas = PoderCombinadoPoder(rival, fase);
             jugada = DecidirJugada(jugadas);
         }
         EjecutarJugada(jugada);
-
     }
 
     public abstract List<InfoTablero> JugadaSimple();
 
-    public List<JugadaDerivada> JugadaCombinada(Opciones enemigo)
+    public List<InfoTablero> JugadaCombinada(Opciones enemigo)
     {
-        List<JugadaDerivada> jugadas = new List<JugadaDerivada>();
+        List<InfoTablero> jugadas = new List<InfoTablero>();
 
         foreach(InfoTablero tabBase in JugadaSimple())
         {
-            foreach(InfoTablero newTab in SimulacionEnemiga(enemigo, tabBase))
-            {
-                jugadas.Add(new JugadaDerivada(newTab, tabBase));
-            }
+            jugadas.Add(SimulacionEnemiga(enemigo, tabBase));
+
         }
 
         return jugadas;
     }
 
 
-    public List<JugadaDerivada> JugadaCombinadaPoder(Opciones enemigo, int fase)
+    public List<InfoTablero> JugadaCombinadaPoder(Opciones enemigo, int fase)
     {
-        List<JugadaDerivada> jugadas = new List<JugadaDerivada>();
+        List<InfoTablero> jugadas = new List<InfoTablero>();
 
         foreach (InfoTablero tabBase in JugadaSimple())
         {
-            foreach (InfoTablero newTab in SimulacionPoderEnemigo(enemigo, tabBase, fase))
-            {
-                jugadas.Add(new JugadaDerivada(newTab, tabBase));
-            }
+            jugadas.Add(SimulacionPoderEnemigo(enemigo, tabBase, fase));
         }
 
         return jugadas;
@@ -173,31 +167,26 @@ public abstract class IAOpciones : Opciones
         return jugadas;
     }
 
-    public List<JugadaDerivada> PoderCombinado(Opciones rival, int fase)
+    public List<InfoTablero> PoderCombinado(Opciones rival, int fase)
     {
-        List<JugadaDerivada> jugadas = new List<JugadaDerivada>();
+        List<InfoTablero> jugadas = new List<InfoTablero>();
 
         foreach (InfoTablero tabBase in PoderSimple(fase))
         {
-            foreach (InfoTablero newTab in SimulacionEnemiga(rival, tabBase))
-            {
-                jugadas.Add(new JugadaDerivada(newTab, tabBase));
-            }
+            jugadas.Add(SimulacionEnemiga(rival, tabBase));
+
         }
 
         return jugadas;
     }
 
-    public List<JugadaDerivada> PoderCombinadoPoder(Opciones enemigo, int fase)
+    public List<InfoTablero> PoderCombinadoPoder(Opciones enemigo, int fase)
     {
-        List<JugadaDerivada> jugadas = new List<JugadaDerivada>();
+        List<InfoTablero> jugadas = new List<InfoTablero>();
 
         foreach (InfoTablero tabBase in PoderSimple(fase))
         {
-            foreach (InfoTablero newTab in SimulacionPoderEnemigo(enemigo, tabBase, fase))
-            {
-                jugadas.Add(new JugadaDerivada(newTab, tabBase));
-            }
+            jugadas.Add(SimulacionPoderEnemigo(enemigo, tabBase, fase));            
         }
 
         return jugadas;
@@ -208,16 +197,20 @@ public abstract class IAOpciones : Opciones
         Tablero.instance.PrintInfoTablero(newTab);
     }
 
-    public List<InfoTablero> SimulacionEnemiga(Opciones enemigo, InfoTablero tabBase)
+    public InfoTablero SimulacionEnemiga(Opciones enemigo, InfoTablero tabBase)
     {
-        List<InfoTablero> simulaciones = new List<InfoTablero>();
+        InfoTablero worstJugada = new InfoTablero();
+        int worstPuntos = int.MaxValue;
 
-        foreach(GameObject pieza in enemigo.opcionesIniciales)
+        foreach (GameObject pieza in enemigo.opcionesIniciales)
         {
             PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
             foreach(InfoTablero newTab in iaPieza.Opcionificador(tabBase))
             {
-                simulaciones.Add(newTab);
+                IATablero.instance.PrintInfoTablero(newTab);
+                int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+                if (worstPuntos == puntos) worstJugada = newTab;
             }
         }
 
@@ -228,7 +221,10 @@ public abstract class IAOpciones : Opciones
                 PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
                 foreach (InfoTablero newTab in iaPieza.Opcionificador(tabBase))
                 {
-                    simulaciones.Add(newTab);
+                    IATablero.instance.PrintInfoTablero(newTab);
+                    int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                    worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+                    if (worstPuntos == puntos) worstJugada = newTab;
                 }
             }
         }
@@ -240,26 +236,38 @@ public abstract class IAOpciones : Opciones
                 PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
                 foreach (InfoTablero newTab in iaPieza.Opcionificador(tabBase))
                 {
-                    simulaciones.Add(newTab);
+                    IATablero.instance.PrintInfoTablero(newTab);
+                    int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                    worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+                    if (worstPuntos == puntos) worstJugada = newTab;
                 }
             }
         }
 
-        return simulaciones;
+        
+
+        
+
+        return worstJugada;
     }
 
-    public List<InfoTablero> SimulacionPoderEnemigo(Opciones enemigo, InfoTablero tabBase, int fase)
+    public InfoTablero SimulacionPoderEnemigo(Opciones enemigo, InfoTablero tabBase, int fase)
     {
-        List<InfoTablero> simulaciones = new List<InfoTablero>();
+        InfoTablero worstJugada = new InfoTablero();
+
+        int worstPuntos = int.MaxValue;
 
         PoderIA iaPoder = enemigo.poder.GetComponent<PoderIA>();
 
         foreach(InfoTablero newTab in iaPoder.Fases[fase].Opcionificador(tabBase))
         {
-            simulaciones.Add(newTab);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+            if (worstPuntos == puntos) worstJugada = newTab;
         }
 
-        return simulaciones;
+        return worstJugada;
     }
 
     public InfoTablero DecidirJugada(List<InfoTablero> posibilidades)
@@ -279,25 +287,7 @@ public abstract class IAOpciones : Opciones
         return bestJugada;
     }
 
-    public InfoTablero DecidirJugada(List<JugadaDerivada> posibilidades)
-    {
-        print("Opciones Evaluar: " + posibilidades.Count);
-        int bestPuntos = int.MinValue;
-        InfoTablero bestJugada = new InfoTablero();
-
-        foreach (JugadaDerivada jugada in posibilidades)
-        {
-            IATablero.instance.PrintInfoTablero(jugada.jugada);
-            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            if (puntos > bestPuntos)
-            {
-                bestPuntos = puntos;
-                bestJugada = jugada.padre;
-            }
-        }
-
-        return bestJugada;
-    }
+    
 
     public virtual void EjecutarJugada(InfoTablero newTab)
     {
@@ -305,13 +295,4 @@ public abstract class IAOpciones : Opciones
     }
 }
 
-public struct JugadaDerivada
-{
-    public InfoTablero jugada, padre;
 
-    public JugadaDerivada(InfoTablero nueva, InfoTablero original)
-    {
-        jugada = nueva;
-        padre = original;
-    }
-}
