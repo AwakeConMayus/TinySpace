@@ -20,23 +20,22 @@ public class SateliteComunicacion : Pieza
         for (int i = 0; i < casilla.adyacentes.Length; i++)
         {
             puntos += puntosPorPlanetasAlineados(casilla.adyacentes[i], i);
+            Debug.Log("finales: " + puntos);
         }
         return puntos;
     }
 
     int puntosPorPlaneta = 2;
-    int porFavorParaYa = 0;         //Clanta: este int es prueba definitiva de la frustracion de mikel
+        //Clanta: este int es prueba definitiva de la frustracion de mikel
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
-        ++porFavorParaYa;
-        print("direccion: " + direccion);
-        print(c.transform.position);
         int puntos = 0;
-        if(c.pieza && c.pieza.GetComponent<Planetas>())
+        if(c.pieza && (c.pieza.GetComponent<Planetas>() || c.pieza.GetComponent<PlanetaSagrado>()))
         {
             puntos += puntosPorPlaneta;
+            Debug.Log("puntos añadidos" + puntos);
         }
-        if (c.adyacentes[direccion] != null && porFavorParaYa < 100)
+        if (c.adyacentes[direccion] != null)
         {
             puntos += puntosPorPlanetasAlineados(c.adyacentes[direccion],direccion);
         }
