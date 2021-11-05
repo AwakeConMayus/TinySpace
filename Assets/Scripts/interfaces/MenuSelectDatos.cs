@@ -195,11 +195,20 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
             base.photonView.RPC("RPC_TerminarSeleccion", RpcTarget.MasterClient);
             base.photonView.RPC("Eleccion_Enemiga", RpcTarget.Others, heroeSel, especialSel, mejoradaSel);
         }
+        else
+        {
+            SeleccionIA();
+        }
         enterMatch.gameObject.SetActive(false);
         menuHeroes.gameObject.SetActive(false);
         menuMejoradas.gameObject.SetActive(false);
         menuEspeciales.gameObject.SetActive(false);
         //Clanta: Aqui hay que poner la funcion de que en caso de que no estes online te lleve a jugar con la maquina
+    }
+
+    void SeleccionIA()
+    {
+
     }
 
     [PunRPC]

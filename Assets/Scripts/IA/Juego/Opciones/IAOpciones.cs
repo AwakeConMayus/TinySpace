@@ -210,7 +210,7 @@ public abstract class IAOpciones : Opciones
                 IATablero.instance.PrintInfoTablero(newTab);
                 int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
                 worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-                if (worstPuntos == puntos) worstJugada = newTab;
+                if (worstPuntos == puntos) worstJugada = tabBase;
             }
         }
 
@@ -224,7 +224,7 @@ public abstract class IAOpciones : Opciones
                     IATablero.instance.PrintInfoTablero(newTab);
                     int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
                     worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-                    if (worstPuntos == puntos) worstJugada = newTab;
+                    if (worstPuntos == puntos) worstJugada = tabBase;
                 }
             }
         }
@@ -239,7 +239,7 @@ public abstract class IAOpciones : Opciones
                     IATablero.instance.PrintInfoTablero(newTab);
                     int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
                     worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-                    if (worstPuntos == puntos) worstJugada = newTab;
+                    if (worstPuntos == puntos) worstJugada = tabBase;
                 }
             }
         }
@@ -264,7 +264,7 @@ public abstract class IAOpciones : Opciones
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
             worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-            if (worstPuntos == puntos) worstJugada = newTab;
+            if (worstPuntos == puntos) worstJugada = tabBase;
         }
 
         return worstJugada;
@@ -278,8 +278,10 @@ public abstract class IAOpciones : Opciones
         foreach(InfoTablero jugada in posibilidades)
         {
             IATablero.instance.PrintInfoTablero(jugada);
-            if(PiezaIA.Evaluar(IATablero.instance.mapa,faccion) > bestPuntos)
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos > bestPuntos)
             {
+                bestPuntos = puntos;
                 bestJugada = jugada;
             }
         }
