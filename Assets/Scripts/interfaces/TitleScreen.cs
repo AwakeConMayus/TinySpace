@@ -10,6 +10,8 @@ public class TitleScreen : MonoBehaviour
     GameObject menuInicio;
     [SerializeField]
     GameObject menuFaccion;
+    [SerializeField]
+    GameObject salir;
 
     Button[] btnFacciones;
     int faccionSeleccionada;
@@ -18,6 +20,8 @@ public class TitleScreen : MonoBehaviour
     TuSeleccion mi_Seleccion;
     [SerializeField]
     TuSeleccion eleccion_rival;
+
+    bool pve = false;
 
     [SerializeField]
     Text FrameRateText;
@@ -28,7 +32,6 @@ public class TitleScreen : MonoBehaviour
         //* Obtiene todos las referencias a botones presentes en la parte del menú de selección de facción
         //* btnFaccione[0] = mineros, [1] Oyentes, [2] Honorables, [3] Simbiontes, [4] Buscar Partida, [5] Salir del juego
         btnFacciones = menuFaccion.GetComponentsInChildren<Button>();
-
         //* Se asegura de que, independientemente del estado de la escena, al ejecutar se muestren bien los botones
         menuInicio.SetActive(true);
         menuFaccion.SetActive(false);
@@ -52,15 +55,20 @@ public class TitleScreen : MonoBehaviour
     }
 
     //* Funcción asociada a jugar, cambiar botones
-    public void ChangeButtons()
+    public void ChangeButtons(bool setPve = false)
     {
         menuInicio.SetActive(false);
         menuFaccion.SetActive(true);
+        pve = setPve;
     }
 
     public void EnterMatchMaking()
     {
-        SceneManager.LoadScene(1);
+        if(!pve) SceneManager.LoadScene(1);
+        else
+        {
+
+        }
     }
 
     public void ExitGame()
@@ -73,19 +81,21 @@ public class TitleScreen : MonoBehaviour
         faccionSeleccionada = faccion;
 
         //* Activa todos los botones de facción cuando seleccionas una (para desactivar luego el botón en específico pulsado)
-        for (int i = 0; i < 2; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
+        for (int i = 0; i < 3; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
         {
+            Debug.Log(btnFacciones[i].gameObject.name);
             btnFacciones[i].interactable = true;
         }
-        
+
         //* Desactiva el botón seleccionado 
-        btnFacciones[faccionSeleccionada-1].interactable = false;
+        btnFacciones[faccionSeleccionada].interactable = false;
         
         //* Asocia la facción seleccionada a la del scriptable object
         mi_Seleccion.faccion = (Faccion)faccionSeleccionada;
 
+        
         //* Activa el botón de Buscar Partida (match making) una vez se vea que tienes una facción seleccionada
-        if (!btnFacciones[4].interactable) btnFacciones[4].interactable = true;
+        salir.SetActive(true);
     }
 
 }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2525,6 +2525,7 @@ MonoBehaviour:
   menuMejoradas: {fileID: 585213441}
   enterMatch: {fileID: 617268174}
   faccion_rival_text: {fileID: 1987009869}
+  datosIA: {fileID: 11400000, guid: 2d8d9939a51ef2c4cb62a84495bccb76, type: 2}
   opciones:
   - {fileID: 11400000, guid: 09aebd0a09df4a14f94a147ea5fa0349, type: 2}
   - {fileID: 11400000, guid: 4f0b3c85e0e2c1349a340ebe1ae8b292, type: 2}

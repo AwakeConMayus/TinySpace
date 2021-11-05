@@ -23,6 +23,8 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     Button enterMatch;
     [SerializeField]
     Text faccion_rival_text;
+    [SerializeField]
+    DatosIA datosIA;
 
     Button[] btnHeroes;
     Button[] btnEspeciales;
@@ -198,6 +200,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         else
         {
             SeleccionIA();
+            SceneManager.LoadScene(4);
         }
         enterMatch.gameObject.SetActive(false);
         menuHeroes.gameObject.SetActive(false);
@@ -208,7 +211,200 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     void SeleccionIA()
     {
+        float bestwinrate = float.MinValue;
+        List<int> bestOpciones = new List<int>();
+        int bestOption = 0;
+        float winrat = 0;
 
+        switch (mi_Seleccion.faccion)
+        {
+            case Faccion.minero:
+                //Faccion
+                seleccion_rival.faccion = Faccion.oyente;                
+
+                //Heroe
+                winrat = datosIA.Oyentes.vsMineros.heroe1WinRate();
+                if(winrat >= bestwinrate)
+                {
+                    if(winrat > bestwinrate) 
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(0);
+                }
+                winrat = datosIA.Oyentes.vsMineros.heroe2WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(1);
+                }
+                winrat = datosIA.Oyentes.vsMineros.heroe3WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(2);
+                }
+                bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+
+                seleccion_rival.mi_poder = opciones[0].posibles_Poders[bestOption];
+
+                //Mejora
+                winrat = datosIA.Oyentes.vsMineros.mejora1WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(0);
+                }
+                winrat = datosIA.Oyentes.vsMineros.mejora2WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(1);
+                }
+                winrat = datosIA.Oyentes.vsMineros.mejora3WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(2);
+                }
+                bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+
+                seleccion_rival.mi_poder = opciones[0].posibles_Piezas_Especializadas[bestOption];
+
+                //Especial
+                winrat = datosIA.Oyentes.vsMineros.especial1WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(0);
+                }
+                winrat = datosIA.Oyentes.vsMineros.especial2WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(1);
+                }
+                winrat = datosIA.Oyentes.vsMineros.especial3WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(2);
+                }
+                bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+
+                seleccion_rival.mi_poder = opciones[0].posibles_Piezas_Especiales[bestOption];
+                break;
+
+            case Faccion.oyente:
+                //Faccion
+                seleccion_rival.faccion = Faccion.minero;
+
+                //Heroe
+                winrat = datosIA.Mineros.vsOyentes.heroe1WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(0);
+                }
+                winrat = datosIA.Mineros.vsOyentes.heroe2WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(1);
+                }
+                winrat = datosIA.Mineros.vsOyentes.heroe3WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(2);
+                }
+
+                bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+
+                seleccion_rival.mi_poder = opciones[1].posibles_Poders[bestOption];
+
+                
+
+                //Especial
+                winrat = datosIA.Mineros.vsOyentes.especial1WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(0);
+                }
+                winrat = datosIA.Mineros.vsOyentes.especial2WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(1);
+                }
+                winrat = datosIA.Mineros.vsOyentes.especial3WinRate();
+                if (winrat >= bestwinrate)
+                {
+                    if (winrat > bestwinrate)
+                    {
+                        bestOpciones = new List<int>();
+                        bestwinrate = winrat;
+                    }
+                    bestOpciones.Add(2);
+                }
+                bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+                seleccion_rival.mi_poder = opciones[1].posibles_Piezas_Especiales[bestOption];
+                break;
+        }
     }
 
     [PunRPC]
