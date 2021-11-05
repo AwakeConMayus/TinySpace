@@ -9,6 +9,8 @@ public class InvestigadorPlanetas : Investigador
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.astros }, referencia);
 
+        casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(Faccion.oyente, casillasDisponibles);
+
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
 
         casillasDisponibles = FiltroCasillas.CasillasLibres(casillasDisponibles);

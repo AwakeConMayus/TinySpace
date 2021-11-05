@@ -9,9 +9,12 @@ public class EstrategaPlanetas : Estratega
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(Clase.astros, referencia);
 
+        casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(Faccion.oyente, casillasDisponibles);
+
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
 
         casillasDisponibles = FiltroCasillas.CasillasLibres(casillasDisponibles);
+
 
         return casillasDisponibles;
 

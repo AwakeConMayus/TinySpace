@@ -18,11 +18,11 @@ public class PropulsorCambioOrbital : Efecto
 
     public override void Accion()
     {
-        if (!gameObject.GetPhotonView().IsMine) return;
+        if (PhotonNetwork.InRoom && !gameObject.GetPhotonView().IsMine && PhotonNetwork.InRoom) return;
 
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
         List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_destinos);
-        mis_cosas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, mis_cosas);
+        mis_cosas = FiltroCasillas.CasillasPlaneta(mis_cosas);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
 
         if (posibles_destinos.Count == 0)

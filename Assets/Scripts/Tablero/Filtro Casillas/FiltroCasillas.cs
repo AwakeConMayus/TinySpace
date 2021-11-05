@@ -81,6 +81,21 @@ public static class FiltroCasillas
         }
         return resultado;
     }
+
+    public static List<Casilla> CasillasPlaneta(List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+
+        foreach(Casilla candidata in listaBase)
+        {
+            if(candidata.pieza && candidata.pieza.GetComponent<Planetas>())
+            {
+                resultado.Add(candidata);
+            }
+        }
+        return resultado;
+    }
     public static List<Casilla> CasillasDeUnTipo(List<Clase> clases = null, List<Casilla> listaBase = null)
     {
         if (clases == null) return new List<Casilla>();
