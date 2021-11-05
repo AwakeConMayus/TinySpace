@@ -29,7 +29,7 @@ public class PVEArbitro : MonoBehaviour
     bool end = false;
     bool initial = true;
 
-    int turnoAbsoluto = 0;
+    int turnoAbsoluto = -1;
 
 
     private void Start()
@@ -77,12 +77,12 @@ public class PVEArbitro : MonoBehaviour
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
-        ++turnoAbsoluto;
     }
 
 
     void SpecialTurn()
     {
+        ++turnoAbsoluto;
         EventManager.TriggerEvent("Siguiente_turno");
         SetActiveActive(false);
 
@@ -127,6 +127,8 @@ public class PVEArbitro : MonoBehaviour
 
     void Turn()
     {
+        ++turnoAbsoluto;
+        Debug.Log(turnoAbsoluto);
         EventManager.TriggerEvent("Siguiente_turno");
         if (turno == 20)
         {
@@ -176,7 +178,7 @@ public class PVEArbitro : MonoBehaviour
 
     void IATurn()
     {
-
+        Debug.Log(turnoAbsoluto);
         jugador2.Jugar(jugador1,turnoAbsoluto);
 
        NextTurn();
