@@ -40,6 +40,8 @@ public class EstrategaMinerosAstro : EstrategaMineros
                 }
             }
         }
+
+
         base.Colocar(c);
     }
     public override int Puntos()

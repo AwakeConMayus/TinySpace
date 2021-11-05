@@ -44,6 +44,7 @@ public class Casilla : MonoBehaviour
     {
         if(_pieza == pieza)
         {
+            Debug.Log("limpio esto: " + pieza.gameObject.name);
             pieza = null;
             SetState(States.normal);
         }
