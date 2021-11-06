@@ -8,7 +8,7 @@ public class IAOpcionesOyentes : IAOpciones
     List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
 
 
-    public override List<InfoTablero> JugadaSimple()
+    public override List<InfoTablero> JugadaSimpleOpciones()
     {
         ResetTableros();
         print("Nuevo Turno Oyente");

@@ -18,7 +18,7 @@ public class IAOpcionesMineros : IAOpciones
         ResetTableros();
     }
 
-    public override List<InfoTablero> JugadaSimple()
+    public override List<InfoTablero> JugadaSimpleOpciones()
     {
         print("Nuevo Turno Minero");
 
