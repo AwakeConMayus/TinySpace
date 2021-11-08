@@ -150,8 +150,11 @@ public class IATablero : MonoBehaviour
             //Hay algo que no debe estar
             if(mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
             {
-                mapa[i].pieza.SelfDestruction();
+                if(mapa[i].pieza.gameObject.transform) mapa[i].pieza.SelfDestruction();
                 mapa[i].pieza = null;
+
+                mapa[i].SetState(States.normal);
+                mapa[i].SetState(States.none);
             }
 
             //Hay que Crear una Pieza

@@ -8,27 +8,15 @@ public class IAPodColono1Oyentes : PoderIABase
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
-        Pieza piezaReferencia = Resources.Load<Pieza>("Planeta Planetarios");
+        PiezaIA piezaReferencia = Resources.Load<PiezaIA>("Planeta Planetarios");
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
-        {
-            Pieza piezaColocar = piezaReferencia;
+        InfoTablero newTabBase = piezaReferencia.BestInmediateOpcion(tabBase);
 
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
+        PiezaIA ObtenerPiezaPoder = padre.opcionesIniciales[padre.opcionesDisponibles[0]].GetComponent<PiezaIA>();
 
-            PiezaIA ObtenerPiezaPoder = padre.opcionesIniciales[padre.opcionesDisponibles[0]].GetComponent<PiezaIA>();
-
-
-            foreach(InfoTablero opcion in ObtenerPiezaPoder.Opcionificador(new InfoTablero(IATablero.instance.mapa)))
-            {
-                nuevosEstados.Add(opcion);
-            }
-
-            c.pieza = null;
-        }
+        nuevosEstados = ObtenerPiezaPoder.Opcionificador(newTabBase);        
 
         return nuevosEstados;
     }

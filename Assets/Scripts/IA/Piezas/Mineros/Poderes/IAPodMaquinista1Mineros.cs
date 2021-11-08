@@ -22,17 +22,35 @@ public class IAPodMaquinista1Mineros : PoderIABase
         List<Casilla> posiblesMovimientos = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
         List<Casilla> posiblesDestinos = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
 
+        Pieza candidata = null;
+        InfoTablero candidato = new InfoTablero();
+        int bestPuntos = int.MinValue;
+
         foreach (Casilla c in posiblesMovimientos)
         {
-            foreach (Casilla cc in posiblesDestinos)
+            IATablero.instance.PrintInfoTablero(tabBase);
+
+            Pieza posibleCandidata = c.pieza;
+            c.pieza = null;
+
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+
+            if(puntos > bestPuntos)
             {
-                IATablero.instance.PrintInfoTablero(tabBase);
-
-                cc.pieza = c.pieza;
-                c.pieza = null;
-
-                nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+                bestPuntos = puntos;
+                candidata = posibleCandidata;
+                candidato = new InfoTablero(IATablero.instance.mapa);
             }
+        }
+
+        IATablero.instance.PrintInfoTablero(candidato);
+
+        foreach (Casilla c in posiblesDestinos)
+        {
+            IATablero.instance.PrintInfoTablero(candidato);
+            c.pieza = candidata;
+
+            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
         }
 
         return nuevosEstados;

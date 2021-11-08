@@ -274,39 +274,36 @@ public abstract class IAOpciones : Opciones
         foreach (GameObject pieza in enemigo.opcionesIniciales)
         {
             PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
-            foreach(InfoTablero newTab in iaPieza.Opcionificador(tabBase))
+
+            InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+        }
+
+        if (enemigo.gameObject.GetComponent<OpcionesMineros>() && enemigo.gameObject.GetComponent<OpcionesMineros>().mineral >= 3)
+        {
+            foreach (GameObject pieza in enemigo.gameObject.GetComponent<OpcionesMineros>().mejoras)
             {
+                PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
+
+                InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
                 IATablero.instance.PrintInfoTablero(newTab);
                 int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
                 worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
             }
         }
 
-        if (enemigo.gameObject.GetComponent<OpcionesMineros>())
-        {
-            foreach (GameObject pieza in enemigo.gameObject.GetComponent<OpcionesMineros>().mejoras)
-            {
-                PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
-                foreach (InfoTablero newTab in iaPieza.Opcionificador(tabBase))
-                {
-                    IATablero.instance.PrintInfoTablero(newTab);
-                    int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-                    worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-                }
-            }
-        }
-
-        else if (enemigo.gameObject.GetComponent<IAOpcionesMineros>())
+        else if (enemigo.gameObject.GetComponent<IAOpcionesMineros>() && enemigo.gameObject.GetComponent<IAOpcionesMineros>().mineral >= 3)
         {
             foreach (GameObject pieza in enemigo.gameObject.GetComponent<IAOpcionesMineros>().mejoras)
             {
                 PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
-                foreach (InfoTablero newTab in iaPieza.Opcionificador(tabBase))
-                {
-                    IATablero.instance.PrintInfoTablero(newTab);
-                    int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-                    worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-                }
+
+                InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+                IATablero.instance.PrintInfoTablero(newTab);
+                int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
             }
         }
 
@@ -323,12 +320,13 @@ public abstract class IAOpciones : Opciones
 
         PoderIA iaPoder = enemigo.poder.GetComponent<PoderIA>();
 
-        foreach(InfoTablero newTab in iaPoder.Fases[fase].Opcionificador(tabBase))
-        {
-            IATablero.instance.PrintInfoTablero(newTab);
-            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
-        }
+        PiezaIA iaPieza = iaPoder.Fases[fase];
+
+
+        InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+        IATablero.instance.PrintInfoTablero(newTab);
+        int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+        worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
 
         return worstPuntos;
     }

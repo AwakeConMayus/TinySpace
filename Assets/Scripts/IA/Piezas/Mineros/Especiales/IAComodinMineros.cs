@@ -6,63 +6,28 @@ public class IAComodinMineros : PiezaIA
 {
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        Pieza piezaReferencia;
+        PiezaIA piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
         //Explorador
-        piezaReferencia = Resources.Load<Pieza>("Explorador Mineros");
+        piezaReferencia = Resources.Load<PiezaIA>("Explorador Mineros");
+        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
 
-        IATablero.instance.PrintInfoTablero(tabBase);
-
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
-        {
-            Pieza piezaColocar = piezaReferencia;
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
-            c.pieza = null;
-        }
-
+        
         //Combate
-        piezaReferencia = Resources.Load<Pieza>("Combate Mineros");
-
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
-        {
-            Pieza piezaColocar = piezaReferencia;
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
-            c.pieza = null;
-        }
+        piezaReferencia = Resources.Load<PiezaIA>("Combate Mineros");
+        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
 
 
         //Laboratorio
-        piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros");
+        piezaReferencia = Resources.Load<PiezaIA>("Laboratorio Mineros");
+        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
 
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
-        {
-            Pieza piezaColocar = piezaReferencia;
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
-            c.pieza = null;
-        }
 
         //Estratega
-        piezaReferencia = Resources.Load<Pieza>("Estratega Mineros");
+        piezaReferencia = Resources.Load<PiezaIA>("Estratega Mineros");
+        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
 
-        foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
-        {
-            Pieza piezaColocar = piezaReferencia;
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
-            c.pieza = null;
-        }
 
         return nuevosEstados;
     }
