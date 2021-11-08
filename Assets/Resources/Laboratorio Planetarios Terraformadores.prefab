@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 8608822224267157163}
   - component: {fileID: 8610273849696450536}
   - component: {fileID: 3669817915743192026}
+  - component: {fileID: 1269792074125651973}
   m_Layer: 0
   m_Name: Laboratorio Planetarios Terraformadores
   m_TagString: Untagged
@@ -155,6 +156,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &1269792074125651973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6119831999288666414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 2
 --- !u!1001 &458905800080638654
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PiezasDataBase : ScriptableObject
 {
     [SerializeField]
     GameObject
+    //Mineros
     ExploradorMinero,
     CombateMinero,
     LaboratorioMinero,
@@ -18,6 +19,12 @@ public class PiezasDataBase : ScriptableObject
     LaboratorioMineroAstro,
     EstrategaMineroAstro,
 
+    //Especiales
+    Supernave,
+
+    //Poderes
+    Garrapata,
+
     //Oyentes
     Planetas,
     ExploradorOyentes,
@@ -27,9 +34,16 @@ public class PiezasDataBase : ScriptableObject
 
     //Mejoras
     CombateOyentesMejorado,
+    LaboratorioOyentesMejorado,
+    EstrategaOyentesMejorado,
+
+    //Especiales
+    Satelite,
 
     //Poderes
-    PlanetaSagrado;
+    PlanetaSagrado,
+    Luna,
+    AgujeroNegro;
 
 
     public GameObject GetPieza(IDPieza ID)
@@ -59,6 +73,14 @@ public class PiezasDataBase : ScriptableObject
             case IDPieza.EstrategaMineroAstro:
                 return EstrategaMineroAstro;
 
+            //Especiales
+            case IDPieza.Supernave:
+                return Supernave;
+
+            //Poderes
+            case IDPieza.Garrapata:
+                return Garrapata;
+
             //Oyentes
             case IDPieza.Planetas:
                 return Planetas;
@@ -74,10 +96,22 @@ public class PiezasDataBase : ScriptableObject
             //Mejoras
             case IDPieza.CombateOyentesMejorado:
                 return CombateOyentesMejorado;
+            case IDPieza.LaboratorioOyentesMejorado:
+                return LaboratorioOyentesMejorado;
+            case IDPieza.EstrategaOyentesMejorado:
+                return EstrategaOyentesMejorado;
+
+            //Especiales
+            case IDPieza.Satelite:
+                return Satelite;
 
             //Poderes
             case IDPieza.PlanetaSagrado:
                 return PlanetaSagrado;
+            case IDPieza.Luna:
+                return Luna;
+            case IDPieza.AgujeroNegro:
+                return AgujeroNegro;
         }
         return null;
     }
@@ -97,6 +131,12 @@ public class PiezasDataBase : ScriptableObject
         else if (piezaName == LaboratorioMineroAstro.name) return IDPieza.LaboratorioMineroAstro;
         else if (piezaName == EstrategaMineroAstro.name) return IDPieza.EstrategaMineroAstro;
 
+        //Especiales
+        else if (piezaName == Supernave.name) return IDPieza.Supernave;
+
+        //Poderes
+        else if (piezaName == Garrapata.name) return IDPieza.Garrapata;
+
         //Oyentes
         else if (piezaName == Planetas.name) return IDPieza.Planetas;
         else if (piezaName == ExploradorOyentes.name) return IDPieza.ExploradorOyentes;
@@ -106,9 +146,17 @@ public class PiezasDataBase : ScriptableObject
 
         //Mejoras
         else if (piezaName == CombateOyentesMejorado.name) return IDPieza.CombateOyentesMejorado;
+        else if (piezaName == LaboratorioOyentesMejorado.name) return IDPieza.LaboratorioOyentesMejorado;
+        else if (piezaName == EstrategaOyentesMejorado.name) return IDPieza.EstrategaOyentesMejorado;
+
+        //Especiales
+        else if (piezaName == Satelite.name) return IDPieza.Satelite;
 
         //Poderes
         else if (piezaName == PlanetaSagrado.name) return IDPieza.PlanetaSagrado;
+        else if (piezaName == Luna.name) return IDPieza.Luna;
+        else if (piezaName == AgujeroNegro.name) return IDPieza.AgujeroNegro;
+
 
         return IDPieza.None;
     }
@@ -130,6 +178,12 @@ public enum IDPieza
     LaboratorioMineroAstro,
     EstrategaMineroAstro,
 
+    //Especiales
+    Supernave,
+
+    //Poderes
+    Garrapata,
+
     //Oyentes
     Planetas,
     ExploradorOyentes,
@@ -139,7 +193,14 @@ public enum IDPieza
 
     //Mejoras
     CombateOyentesMejorado,
+    LaboratorioOyentesMejorado,
+    EstrategaOyentesMejorado,
+
+    //Especiales
+    Satelite,
 
     //Poderes
-    PlanetaSagrado
+    PlanetaSagrado,
+    Luna,
+    AgujeroNegro
 }

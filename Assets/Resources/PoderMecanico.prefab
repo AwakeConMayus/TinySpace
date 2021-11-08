@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5233522989683985114}
   - component: {fileID: 5842067793964181578}
   - component: {fileID: 9169238251903890520}
+  - component: {fileID: 3816620273131127514}
   m_Layer: 0
   m_Name: PoderMecanico
   m_TagString: Untagged
@@ -70,3 +71,18 @@ MonoBehaviour:
   faccion: 1
   miComodin: {fileID: 1272930542544058060, guid: 7a4fb95771d1a1845a122276437946a4,
     type: 3}
+--- !u!114 &3816620273131127514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169238251903890521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaa422aab5c3b4fbda9f787c369ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fases:
+  - {fileID: 2760007379067458026, guid: 73594cac7dd010c468c0c2dbc876bdb9, type: 3}
+  - {fileID: 2760007379067458026, guid: 73594cac7dd010c468c0c2dbc876bdb9, type: 3}

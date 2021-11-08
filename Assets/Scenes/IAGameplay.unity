@@ -6385,6 +6385,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: OpcionesOyentes
       objectReference: {fileID: 0}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
+      propertyPath: poder
+      value: 
+      objectReference: {fileID: 7655988863949034424, guid: f5040215ec6fc1a4fb0e061331c8e1bc,
+        type: 3}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
+      propertyPath: opcionesIniciales.Array.data[4]
+      value: 
+      objectReference: {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e50795851fd6e14d8f66567381bf096, type: 3}
 --- !u!1 &566565432
@@ -13200,6 +13212,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: OpcionesMineros
       objectReference: {fileID: 0}
+    - target: {fileID: 5049628685469694633, guid: aa91082bb652d5c45a9d4dc6d086afdc,
+        type: 3}
+      propertyPath: poder
+      value: 
+      objectReference: {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13,
+        type: 3}
+    - target: {fileID: 5049628685469694633, guid: aa91082bb652d5c45a9d4dc6d086afdc,
+        type: 3}
+      propertyPath: opcionesIniciales.Array.data[4]
+      value: 
+      objectReference: {fileID: 7526831259227872237, guid: dd72db3e40406b54ebfba52ac6eb78f8,
+        type: 3}
     - target: {fileID: 7698440812159669028, guid: aa91082bb652d5c45a9d4dc6d086afdc,
         type: 3}
       propertyPath: m_RootOrder
@@ -15018,3 +15042,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 554818258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6233391544738470965
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 447974262349440640, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_Name
+      value: PoderAstrofisico2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 119.49589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 218.8227
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.818207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 424d05d450fa9ee4887347fbb0b5af85, type: 3}

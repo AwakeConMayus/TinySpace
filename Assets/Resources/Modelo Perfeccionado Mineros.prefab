@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4763555353116921446}
   - component: {fileID: 5314526610291999897}
   - component: {fileID: 3076061011095963741}
+  - component: {fileID: 7594946243373346601}
   m_Layer: 0
   m_Name: Modelo Perfeccionado Mineros
   m_TagString: Untagged
@@ -102,3 +103,17 @@ MonoBehaviour:
   casilla: {fileID: 0}
   coste: 2
   pieza_a_mejorar: {fileID: 0}
+--- !u!114 &7594946243373346601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830173338414123627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3676c5d74e1f1fe409060eb6cffe7e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 1
+  padre: {fileID: 0}

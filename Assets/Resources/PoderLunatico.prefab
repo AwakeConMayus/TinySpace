@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6746693221337050427}
   - component: {fileID: 584385523978492670}
   - component: {fileID: 1743254521925771294}
+  - component: {fileID: 8980170307032814463}
   m_Layer: 0
   m_Name: PoderLunatico
   m_TagString: Untagged
@@ -69,3 +70,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faccion: 2
   luna: {fileID: 4745022161135342171, guid: 5f501839762e0514c94976ec748dde0d, type: 3}
+--- !u!114 &8980170307032814463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655988863949034424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaa422aab5c3b4fbda9f787c369ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fases:
+  - {fileID: 7589136272694054665, guid: aa1d5050a51d5814889edddb60206593, type: 3}
+  - {fileID: 7589136272694054665, guid: aa1d5050a51d5814889edddb60206593, type: 3}

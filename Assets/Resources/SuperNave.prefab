@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 5469473948049851691}
   - component: {fileID: 1042407472842862873}
   - component: {fileID: 7595300090276514150}
+  - component: {fileID: -4150461432680932876}
   m_Layer: 0
   m_Name: SuperNave
   m_TagString: Untagged
@@ -156,6 +157,19 @@ MonoBehaviour:
   clase: 0
   casilla: {fileID: 0}
   coste: 5
+--- !u!114 &-4150461432680932876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7526831259227872237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 1
 --- !u!1001 &4234777304323223677
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class IAOpcionesMineros : IAOpciones
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", AddMineral);
+        if (opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>()) opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>().padre = this;
         ResetTableros();
     }
 

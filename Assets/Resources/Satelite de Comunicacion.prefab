@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4520581295737972241}
   - component: {fileID: 8657452144441216087}
   - component: {fileID: 4948554734091143129}
+  - component: {fileID: 921505130782005172}
   m_Layer: 0
   m_Name: Satelite de Comunicacion
   m_TagString: Untagged
@@ -229,3 +230,16 @@ MonoBehaviour:
   faccion: 2
   clase: 0
   casilla: {fileID: 0}
+--- !u!114 &921505130782005172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989678852759279897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 2

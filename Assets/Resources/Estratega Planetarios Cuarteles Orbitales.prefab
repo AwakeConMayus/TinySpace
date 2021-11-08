@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7557705591382178515}
   - component: {fileID: 1887151674148140175}
   - component: {fileID: 5814793967773629180}
+  - component: {fileID: 1200239324090830781}
   m_Layer: 0
   m_Name: Estratega Planetarios Cuarteles Orbitales
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &1200239324090830781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106339053813578794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a5ebc0d221d7c4688739afd558dbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 2
 --- !u!1 &8540021387996202408
 GameObject:
   m_ObjectHideFlags: 0

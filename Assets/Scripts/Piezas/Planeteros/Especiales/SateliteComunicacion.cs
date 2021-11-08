@@ -29,6 +29,7 @@ public class SateliteComunicacion : Pieza
         //Clanta: este int es prueba definitiva de la frustracion de mikel
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
+        if (!c) return 0;
         int puntos = 0;
         if(c.pieza && (c.pieza.GetComponent<Planetas>() || c.pieza.GetComponent<PlanetaSagrado>()))
         {

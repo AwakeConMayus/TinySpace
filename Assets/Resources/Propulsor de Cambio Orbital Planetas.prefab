@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7037343819831716644}
   - component: {fileID: 7670434435602129371}
   - component: {fileID: 2441570627131757450}
+  - component: {fileID: -3779590854172769078}
   m_Layer: 0
-  m_Name: PropulsordeCambioOrbitalPlanetas
+  m_Name: Propulsor de Cambio Orbital Planetas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,3 +101,16 @@ MonoBehaviour:
   faccion: 2
   clase: 0
   casilla: {fileID: 0}
+--- !u!114 &-3779590854172769078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627388167130017577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0ba734be30ea641abf60171adb4365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 2

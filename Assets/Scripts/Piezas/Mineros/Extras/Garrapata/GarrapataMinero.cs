@@ -7,7 +7,7 @@ public class GarrapataMinero : Pieza
 {
 
 
-    public int nivel;
+    public int nivel = 1;
     int acumulacion = 0;
 
     private void Start()
@@ -17,7 +17,7 @@ public class GarrapataMinero : Pieza
     }
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return referencia;
+        return null;
     }
     protected override void SetClase()
     {

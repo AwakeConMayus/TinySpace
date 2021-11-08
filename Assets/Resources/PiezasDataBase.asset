@@ -28,6 +28,10 @@ MonoBehaviour:
     type: 3}
   EstrategaMineroAstro: {fileID: 1510369916829354505, guid: 12da6aa56c81deb40b1052366faf3ff6,
     type: 3}
+  Supernave: {fileID: 7526831259227872237, guid: dd72db3e40406b54ebfba52ac6eb78f8,
+    type: 3}
+  Garrapata: {fileID: 1987810124455813147, guid: 8bd13c07ffc82b8498d9cc313d0b6147,
+    type: 3}
   Planetas: {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3,
     type: 3}
   ExploradorOyentes: {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37,
@@ -40,5 +44,14 @@ MonoBehaviour:
     type: 3}
   CombateOyentesMejorado: {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2,
     type: 3}
+  LaboratorioOyentesMejorado: {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3,
+    type: 3}
+  EstrategaOyentesMejorado: {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1,
+    type: 3}
+  Satelite: {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8,
+    type: 3}
   PlanetaSagrado: {fileID: 6596421712654070911, guid: 337f75c2a3274374eb8b71dafc256a85,
+    type: 3}
+  Luna: {fileID: 4745022161135342171, guid: 5f501839762e0514c94976ec748dde0d, type: 3}
+  AgujeroNegro: {fileID: 4774487309657227320, guid: c935041cbb15fd34793ce3c49cf919cf,
     type: 3}
