@@ -10,6 +10,8 @@ public class IAArbitro : MonoBehaviour
 
     IAOpciones jugador1, jugador2;
 
+    public DatosIA datos;
+
     
 
     bool active = true;

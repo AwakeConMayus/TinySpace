@@ -290,7 +290,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
 
-                seleccion_rival.mi_poder = opciones[0].posibles_Piezas_Especializadas[bestOption];
+                seleccion_rival.mis_opciones[opciones[0].huecos_Especializadas[bestOption]] = opciones[0].posibles_Piezas_Especializadas[bestOption];
 
                 //Especial
                 winrat = datosIA.Oyentes.vsMineros.especial1WinRate();
@@ -325,7 +325,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
 
-                seleccion_rival.mi_poder = opciones[0].posibles_Piezas_Especiales[bestOption];
+                seleccion_rival.mis_opciones[4] = opciones[0].posibles_Piezas_Especiales[bestOption];
                 break;
 
             case Faccion.oyente:
@@ -402,7 +402,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-                seleccion_rival.mi_poder = opciones[1].posibles_Piezas_Especiales[bestOption];
+                seleccion_rival.mis_opciones[4] = opciones[1].posibles_Piezas_Especiales[bestOption];
                 break;
         }
     }

@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5406214056487733327}
+      - m_Target: {fileID: 0}
         m_MethodName: Crear_Chantaje
         m_Mode: 3
         m_Arguments:
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5406214056487733327}
+      - m_Target: {fileID: 0}
         m_MethodName: Crear_Chantaje
         m_Mode: 3
         m_Arguments:
@@ -504,7 +504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5418807119069881213}
   - component: {fileID: -3835332425438342933}
-  - component: {fileID: 5406214056487733327}
+  - component: {fileID: 4932934626668303865}
+  - component: {fileID: -204975585110325709}
   m_Layer: 0
   m_Name: PoderChantajista
   m_TagString: Untagged
@@ -549,7 +550,7 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5406214056487733327
+--- !u!114 &4932934626668303865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,13 +559,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6870688844444362489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00eaebcda4725664687e41ade9a812e5, type: 3}
+  m_Script: {fileID: 11500000, guid: a91d254402cc0ab459bd1b549473c80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
-  menu_chantaje: {fileID: 8551802012764411778}
-  garrapata_prefab: {fileID: 1987810124455813147, guid: 8bd13c07ffc82b8498d9cc313d0b6147,
-    type: 3}
+--- !u!114 &-204975585110325709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870688844444362489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaa422aab5c3b4fbda9f787c369ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fases:
+  - {fileID: 7718263774849030981, guid: 3e7d3f78cb96df9499571d9dba140672, type: 3}
+  - {fileID: 7718263774849030981, guid: 3e7d3f78cb96df9499571d9dba140672, type: 3}
 --- !u!1 &8551802012764411778
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +824,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5406214056487733327}
+      - m_Target: {fileID: 0}
         m_MethodName: Crear_Chantaje
         m_Mode: 3
         m_Arguments:

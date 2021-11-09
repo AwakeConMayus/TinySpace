@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class IAPodLunaticoOyentes : PoderIABase
 {
+    public bool fase2 = false;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
+        if (!fase2) tabBase = PonerMejorPlaneta(tabBase);
+
         for (int i = 0; i < 2; i++)
         {
             tabBase = BestLuna(tabBase);

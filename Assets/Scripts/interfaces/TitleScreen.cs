@@ -67,7 +67,7 @@ public class TitleScreen : MonoBehaviour
         if(!pve) SceneManager.LoadScene(1);
         else
         {
-
+            SceneManager.LoadScene(2);
         }
     }
 

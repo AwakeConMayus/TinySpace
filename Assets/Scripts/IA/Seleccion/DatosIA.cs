@@ -5,18 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/DatosIA", order = 1)]
 public class DatosIA : ScriptableObject
 {
-    public DatosIAFaccion Mineros, Oyentes, Honorables, Simbionte;
+    public DatosIAFaccion Mineros, Oyentes, Honorables, Simbionte;    
 }
 
+[System.Serializable]
 public struct DatosIAFaccion
 {
     public DatosVS vsMineros, vsOyentes, vsHonorables, vsSimbionte;
 }
 
+[System.Serializable]
 public struct DatosVS
 {
     public float jugadas, ganadas;
-
+    
     public float heroe1jugadas, heroe1ganadas;
     public float heroe2jugadas, heroe2ganadas;
     public float heroe3jugadas, heroe3ganadas;

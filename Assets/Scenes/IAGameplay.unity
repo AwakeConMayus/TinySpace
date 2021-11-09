@@ -14771,6 +14771,7 @@ MonoBehaviour:
   - {fileID: 2050365361}
   player1: 1
   player2: 2
+  datos: {fileID: 11400000, guid: 2d8d9939a51ef2c4cb62a84495bccb76, type: 2}
 --- !u!114 &1874230210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15042,72 +15043,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 554818258}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6233391544738470965
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 447974262349440640, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_Name
-      value: PoderAstrofisico2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 119.49589
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 218.8227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 42.818207
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974028345607544695, guid: 424d05d450fa9ee4887347fbb0b5af85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 424d05d450fa9ee4887347fbb0b5af85, type: 3}
