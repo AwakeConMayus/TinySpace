@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6963,6 +6963,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: OpcionesOyentes
       objectReference: {fileID: 0}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
+      propertyPath: faccion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
+      propertyPath: opcionesIniciales.Array.data[1]
+      value: 
+      objectReference: {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e50795851fd6e14d8f66567381bf096, type: 3}
 --- !u!114 &612584450 stripped
