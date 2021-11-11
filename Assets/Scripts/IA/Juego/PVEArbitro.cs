@@ -171,6 +171,7 @@ public class PVEArbitro : MonoBehaviour
                 break;
             default:
                 jugador2.Jugar(jugador1, turnoAbsoluto);
+                NextTurn();
                 break;
         }
         ++numeroPoder2;       

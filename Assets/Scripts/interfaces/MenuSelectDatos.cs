@@ -220,9 +220,16 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         {
             case Faccion.minero:
                 //Faccion
-                seleccion_rival.faccion = Faccion.oyente;                
+                seleccion_rival.faccion = Faccion.oyente;
+
+                //Basico
+                for (int i = 0; i < opciones[1].piezas_Basicas.Length; i++)
+                {
+                    seleccion_rival.mis_opciones[i] = opciones[1].piezas_Basicas[i];
+                }
 
                 //Heroe
+                bestwinrate = float.MinValue;
                 winrat = datosIA.Oyentes.vsMineros.heroe1WinRate();
                 if(winrat >= bestwinrate)
                 {
@@ -255,9 +262,10 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
 
-                seleccion_rival.mi_poder = opciones[0].posibles_Poders[bestOption];
+                seleccion_rival.mi_poder = opciones[1].posibles_Poders[bestOption];
 
                 //Mejora
+                bestwinrate = float.MinValue;
                 winrat = datosIA.Oyentes.vsMineros.mejora1WinRate();
                 if (winrat >= bestwinrate)
                 {
@@ -289,10 +297,11 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-
-                seleccion_rival.mis_opciones[opciones[0].huecos_Especializadas[bestOption]] = opciones[0].posibles_Piezas_Especializadas[bestOption];
+               
+                seleccion_rival.mis_opciones[opciones[1].huecos_Especializadas[bestOption]] = opciones[1].posibles_Piezas_Especializadas[bestOption];
 
                 //Especial
+                bestwinrate = float.MinValue;
                 winrat = datosIA.Oyentes.vsMineros.especial1WinRate();
                 if (winrat >= bestwinrate)
                 {
@@ -325,14 +334,21 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
 
-                seleccion_rival.mis_opciones[4] = opciones[0].posibles_Piezas_Especiales[bestOption];
+                seleccion_rival.mis_opciones[4] = opciones[1].posibles_Piezas_Especiales[bestOption];
                 break;
 
             case Faccion.oyente:
                 //Faccion
                 seleccion_rival.faccion = Faccion.minero;
 
+                //Basico
+                for (int i = 0; i < opciones[0].piezas_Basicas.Length; i++)
+                {
+                    seleccion_rival.mis_opciones[i] = opciones[0].piezas_Basicas[i];
+                }
+
                 //Heroe
+                bestwinrate = float.MinValue;
                 winrat = datosIA.Mineros.vsOyentes.heroe1WinRate();
                 if (winrat >= bestwinrate)
                 {
@@ -368,9 +384,10 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
                 seleccion_rival.mi_poder = opciones[1].posibles_Poders[bestOption];
 
-                
+
 
                 //Especial
+                bestwinrate = float.MinValue;
                 winrat = datosIA.Mineros.vsOyentes.especial1WinRate();
                 if (winrat >= bestwinrate)
                 {

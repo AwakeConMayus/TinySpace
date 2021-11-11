@@ -10,8 +10,6 @@ public class InvestigadorMinerosMejorado : Efecto
 
     public override void Accion()
     {
-        if (!gameObject.GetPhotonView().IsMine) return;
-
         // Comprobacion de si el game se esta realizando online u offline
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
@@ -20,7 +18,7 @@ public class InvestigadorMinerosMejorado : Efecto
             PhotonNetwork.Instantiate(investigador_astro.name, casilla.transform.position, Quaternion.identity);
 
         }
-        else
+        else if(!PhotonNetwork.InRoom)
         {
             casilla.Clear();
             // Instanciacion de piezas en el offline

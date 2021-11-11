@@ -11,7 +11,6 @@ public class IAOpcionesOyentes : IAOpciones
     public override List<InfoTablero> JugadaSimpleOpciones()
     {
         ResetTableros();
-        print("Nuevo Turno Oyente");
 
         List<InfoTablero> jugadas = new List<InfoTablero>();
 
@@ -22,7 +21,6 @@ public class IAOpcionesOyentes : IAOpciones
         {
 
             PiezaIA pieza = opcionesIniciales[opcionesDisponibles[i]].GetComponent<PiezaIA>();
-            print(pieza.gameObject.name);
             foreach (InfoTablero newTab in pieza.Opcionificador(tabBase))
             {
                 jugadas.Add(newTab);

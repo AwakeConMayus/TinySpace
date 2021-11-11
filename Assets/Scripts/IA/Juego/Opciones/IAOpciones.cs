@@ -42,7 +42,6 @@ public abstract class IAOpciones : Opciones
 
     public void Jugar(Opciones rival, int turno) 
     {
-        print("Empieza el show");
         List<int> jugadasSimples = new List<int> { 2, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 };
         List<int> jugadasCombinada = new List<int> {4, 6, 8, 10, 14, 16, 18, 20, 22 };
         List<int> poderesSimple = new List<int> { 25 };
