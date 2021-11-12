@@ -92,7 +92,7 @@ public abstract class Pieza : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Casilla>())
         {
-            other.gameObject.GetComponent<Casilla>().pieza = null;
+            other.gameObject.GetComponent<Casilla>().Limpiar_Pieza(this);
             other.gameObject.GetComponent<Casilla>().SetState(States.normal);
         }
     }
