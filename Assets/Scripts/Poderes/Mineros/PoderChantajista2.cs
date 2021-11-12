@@ -88,11 +88,11 @@ public class PoderChantajista2 : PoderMineros
         }
         else if(PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            int i = Tablero.instance.Get_Numero_Casilla(Pieza2.GetComponent<Pieza>().casilla.gameObject);
-            int j = Tablero.instance.Get_Numero_Casilla(Pieza1.GetComponent<Pieza>().casilla.gameObject);
+            int i = Tablero.instance.Get_Numero_Casilla(Pieza1.GetComponent<Pieza>().casilla.gameObject);
+            int j = Tablero.instance.Get_Numero_Casilla(Pieza2.GetComponent<Pieza>().casilla.gameObject);
 
-            Pieza1.GetComponent<Pieza>().Set_Pieza_Extra();
-            Pieza1.transform.position = Pieza2.transform.position;
+            Pieza2.GetComponent<Pieza>().Set_Pieza_Extra();
+            Pieza2.transform.position = Pieza2.transform.position;
             base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j, true);
             base.photonView.RPC("RPC_TPEfects2", RpcTarget.All, i, j);
 
