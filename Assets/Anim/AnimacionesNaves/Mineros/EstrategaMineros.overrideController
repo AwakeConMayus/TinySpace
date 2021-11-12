@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EstrategaMineros
+  m_Controller: {fileID: 9100000, guid: 723e227095343ae46842c54832414da0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d3ba7971dce0c0a498d79407da385519, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 47c1a74896b6ff441bae7f0f7cc9446d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fff4eef518392ca45bbe635212db974b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3be4ce69c99f97c488974771f39e694a, type: 2}

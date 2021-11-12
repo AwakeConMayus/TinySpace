@@ -39,6 +39,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_1593164A:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_2538BA08:
         m_Texture: {fileID: 2800000, guid: b29657a17fea4764b83c7a57dff917c7, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -267,7 +271,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_1FDD30BB: {r: 0, g: 6.18396, b: 23.35168, a: 1}
+    - Color_1FDD30BB: {r: 3.8970406, g: 0.16810764, b: 0, a: 1}
     - Color_chasis: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
     - Color_windows: {r: 6.6461353, g: 0.97430235, b: 0.6263372, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
