@@ -42,8 +42,6 @@ public class PVEArbitro : MonoBehaviour
 
         jugador1.gameObject.SetActive(true);
 
-        jugador1.Preparacion();
-        jugador2.Preparacion();
 
 
         InstancePiezas.instance.faccion = mySeleccion.faccion;
@@ -53,7 +51,10 @@ public class PVEArbitro : MonoBehaviour
         jugador1.poder = mySeleccion.mi_poder;
         jugador1.GetComponentInChildren<InterfazTurnos>().primero = true;
         jugador1.PrepararPreparacion();
+        jugador2.PrepararPreparacion();
 
+        jugador1.Preparacion();
+        jugador2.Preparacion();
         jugador2.opcionesIniciales = seleccioRival.mis_opciones;
         jugador2.poder = seleccioRival.mi_poder;
 
@@ -121,7 +122,7 @@ public class PVEArbitro : MonoBehaviour
         }
         else
         {
-            IASpecialTurn();
+            Invoke("IASpecialTurn", 1);
         }
     }
 
@@ -146,7 +147,8 @@ public class PVEArbitro : MonoBehaviour
             {
                 active = !active;
             }
-            IATurn();
+
+            Invoke("IATurn", 1);
         }
         else if (active)
         {
@@ -170,6 +172,7 @@ public class PVEArbitro : MonoBehaviour
                 jugador2.poder.GetComponent<Poder>().InitialAction();
                 break;
             default:
+                Debug.Log(jugador1);
                 jugador2.Jugar(jugador1, turnoAbsoluto);
                 NextTurn();
                 break;

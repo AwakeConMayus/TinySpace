@@ -340,7 +340,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
             case Faccion.oyente:
                 //Faccion
                 seleccion_rival.faccion = Faccion.minero;
-
+                
                 //Basico
                 for (int i = 0; i < opciones[0].piezas_Basicas.Length; i++)
                 {
@@ -382,7 +382,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
 
-                seleccion_rival.mi_poder = opciones[1].posibles_Poders[bestOption];
+                seleccion_rival.mi_poder = opciones[0].posibles_Poders[bestOption];
 
 
 
@@ -419,7 +419,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-                seleccion_rival.mis_opciones[4] = opciones[1].posibles_Piezas_Especiales[bestOption];
+                seleccion_rival.mis_opciones[4] = opciones[0].posibles_Piezas_Especiales[bestOption];
                 break;
         }
     }
