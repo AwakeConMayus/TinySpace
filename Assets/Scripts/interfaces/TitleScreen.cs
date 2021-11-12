@@ -71,6 +71,12 @@ public class TitleScreen : MonoBehaviour
         }
     }
 
+    public void Reload()
+    {
+        //* Con esta sintaxis se evita cambiar el número de la escena si se quiere recargarla y se cambia su número en el orden de la build
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
+    }
+
     public void ExitGame()
     {
         Application.Quit();
