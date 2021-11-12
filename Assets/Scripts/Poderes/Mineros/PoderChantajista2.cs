@@ -91,10 +91,10 @@ public class PoderChantajista2 : PoderMineros
             int i = Tablero.instance.Get_Numero_Casilla(Pieza1.GetComponent<Pieza>().casilla.gameObject);
             int j = Tablero.instance.Get_Numero_Casilla(Pieza2.GetComponent<Pieza>().casilla.gameObject);
 
-            Pieza2.GetComponent<Pieza>().Set_Pieza_Extra();
-            Pieza2.transform.position = Pieza2.transform.position;
             base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j, true);
             base.photonView.RPC("RPC_TPEfects2", RpcTarget.All, i, j);
+            Pieza2.GetComponent<Pieza>().Set_Pieza_Extra();
+            Pieza2.transform.position = Pieza2.transform.position;
 
         }
         Tablero.instance.ResetCasillasEfects(); //No se si esto hace falta lo pongo por si acaso
