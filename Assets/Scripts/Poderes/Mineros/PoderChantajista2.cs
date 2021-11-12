@@ -95,7 +95,6 @@ public class PoderChantajista2 : PoderMineros
             base.photonView.RPC("RPC_TPEfects2", RpcTarget.All, i, j);
             Pieza2.GetComponent<Pieza>().Set_Pieza_Extra();
             Pieza2.transform.position = aux;
-
         }
         Tablero.instance.ResetCasillasEfects(); //No se si esto hace falta lo pongo por si acaso
     }
