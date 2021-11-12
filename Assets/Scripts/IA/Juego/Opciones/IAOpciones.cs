@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class IAOpciones : Opciones
 {
-    public override void PrepararPreparacion() { }
+
 
     public override void Preparacion()
     {
@@ -190,7 +190,6 @@ public abstract class IAOpciones : Opciones
 
     public List<InfoTablero> PoderSimpleOpciones(int i)        
     {
-        Debug.Log("IA PODR");
         List<InfoTablero> jugadas = new List<InfoTablero>();
         foreach(InfoTablero jugada in poder.GetComponent<PoderIA>().Fases[i].Opcionificador(new InfoTablero(Tablero.instance.mapa)))
         {

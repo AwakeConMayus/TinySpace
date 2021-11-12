@@ -21,8 +21,6 @@ public class IAOpcionesMineros : IAOpciones
 
     public override List<InfoTablero> JugadaSimpleOpciones()
     {
-        print("Nuevo Turno Minero");
-
         List<InfoTablero> opciones = new List<InfoTablero>();
 
         InfoTablero tabBase = new InfoTablero(Tablero.instance.mapa);

@@ -51,12 +51,12 @@ public class PVEArbitro : MonoBehaviour
         jugador1.poder = mySeleccion.mi_poder;
         jugador1.GetComponentInChildren<InterfazTurnos>().primero = true;
         jugador1.PrepararPreparacion();
+        jugador2.poder = seleccioRival.mi_poder;
+        jugador2.opcionesIniciales = seleccioRival.mis_opciones;
         jugador2.PrepararPreparacion();
 
         jugador1.Preparacion();
         jugador2.Preparacion();
-        jugador2.opcionesIniciales = seleccioRival.mis_opciones;
-        jugador2.poder = seleccioRival.mi_poder;
 
 
         if(Random.Range(0,2) == 0)
@@ -75,6 +75,7 @@ public class PVEArbitro : MonoBehaviour
 
     public void NextTurn()
     {
+        if (turnoAbsoluto == 25) EndGame();
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
@@ -131,10 +132,7 @@ public class PVEArbitro : MonoBehaviour
         ++turnoAbsoluto;
         Debug.Log(turnoAbsoluto);
         EventManager.TriggerEvent("Siguiente_turno");
-        if (turno == 20)
-        {
-            EndGame();
-        }
+        
 
         if (!active && !end)
         {
@@ -172,7 +170,6 @@ public class PVEArbitro : MonoBehaviour
                 jugador2.poder.GetComponent<Poder>().InitialAction();
                 break;
             default:
-                Debug.Log(jugador1);
                 jugador2.Jugar(jugador1, turnoAbsoluto);
                 NextTurn();
                 break;
@@ -182,7 +179,6 @@ public class PVEArbitro : MonoBehaviour
 
     void IATurn()
     {
-        Debug.Log(turnoAbsoluto);
         jugador2.Jugar(jugador1,turnoAbsoluto);
 
        NextTurn();

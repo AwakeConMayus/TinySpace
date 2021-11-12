@@ -43,7 +43,6 @@ public class PiezaIA : MonoBehaviour
                 MejorOpcion = it;
             }
         }
-        print(numOpciones);
         return MejorOpcion;
     }
 

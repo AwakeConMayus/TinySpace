@@ -39,6 +39,7 @@ public class PoderAstrofisico : PoderPlanetas
             }
             else
             {
+                Debug.Log("instanciacion");
                 thisPieza = Instantiate(padre.opcionesIniciales[2], posibles[rnd].transform.position, Quaternion.identity);
             }
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
