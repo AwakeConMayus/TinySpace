@@ -89,6 +89,7 @@ public abstract class PoderPlanetas : Poder
                 GameObject thisPieza = Instantiate(planeta);
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.transform.position = c.transform.position;
+                thisPieza.GetComponent<Pieza>().Colocar(c);
             }
 
 
