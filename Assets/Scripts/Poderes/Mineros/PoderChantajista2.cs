@@ -76,9 +76,9 @@ public class PoderChantajista2 : PoderMineros
     //Esto hay que adaptarlo al online
     void Intercambio()
     {
+        Vector3 aux = Pieza1.transform.position;
         if (!PhotonNetwork.InRoom)
         {
-            Vector3 aux = Pieza1.transform.position;
             Pieza1.GetComponent<Pieza>().casilla.SetState(States.tpOut);
             Pieza2.GetComponent<Pieza>().casilla.SetState(States.tpOut);
             Pieza1.GetComponent<Pieza>().Set_Pieza_Extra();
@@ -94,7 +94,7 @@ public class PoderChantajista2 : PoderMineros
             base.photonView.RPC("RPC_Move_FromC_ToC2", RpcTarget.Others, i, j, true);
             base.photonView.RPC("RPC_TPEfects2", RpcTarget.All, i, j);
             Pieza2.GetComponent<Pieza>().Set_Pieza_Extra();
-            Pieza2.transform.position = Pieza2.transform.position;
+            Pieza2.transform.position = aux;
 
         }
         Tablero.instance.ResetCasillasEfects(); //No se si esto hace falta lo pongo por si acaso
