@@ -49,7 +49,6 @@ public class PVEArbitro : MonoBehaviour
         jugador1.gameObject.SetActive(true);
         jugador1.opcionesIniciales = mySeleccion.mis_opciones;
         jugador1.poder = mySeleccion.mi_poder;
-        jugador1.GetComponentInChildren<InterfazTurnos>().primero = true;
         jugador1.PrepararPreparacion();
         jugador2.poder = seleccioRival.mi_poder;
         jugador2.opcionesIniciales = seleccioRival.mis_opciones;
@@ -62,6 +61,7 @@ public class PVEArbitro : MonoBehaviour
         if(Random.Range(0,2) == 0)
         {
             initial = active = specialActive = false;
+            jugador1.GetComponentInChildren<InterfazTurnos>().primero = false;
         }
 
 
