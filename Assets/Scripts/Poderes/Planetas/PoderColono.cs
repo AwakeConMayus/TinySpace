@@ -58,6 +58,7 @@ public class PoderColono : PoderPlanetas
                 c.SetState(States.holy);
                 c.Clear();
                 GameObject thisPieza = Instantiate(planetaSagrado);
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.transform.position = c.transform.position;
                 thisPieza.GetComponent<Pieza>().Colocar(c);
             }
