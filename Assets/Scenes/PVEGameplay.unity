@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.000024774721, g: 0.0000004262058, b: 9.6624625e-11,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -286,6 +287,7 @@ GameObject:
   - component: {fileID: 105328050}
   - component: {fileID: 105328049}
   - component: {fileID: 105328057}
+  - component: {fileID: 105328058}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -468,6 +470,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dede994e46df2264a91519949b3e8ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &105328058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105328048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897c466ee86e86449e63e2bc02a2795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miSeleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  SeleccionRival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
 --- !u!1001 &116538533
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,23 +31,27 @@ public class SendToGoogle : MonoBehaviour
 
 
     public static SendToGoogle instance;
+
+    bool IA = false;
+    Faccion inicial = Faccion.none;
+    [SerializeField] TuSeleccion miSeleccion, SeleccionRival;
+
     private void Awake()
     {
         if (instance == null) instance = this;
         else Destroy(this.gameObject);
-
-        arbitroPartida = GetComponent<Arbitro>();
-    }
-
-    Arbitro arbitroPartida;
+        
+    }    
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
     const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2Ht626ha_IM_aG0_wbf6DPJNyruJ82Hi0im_LdYgfjP-RvA/formResponse";
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
-    public void SendOnline()
+    public void SendOnline(Faccion _inicial, bool _IA = false)
     {
+        inicial = _inicial;
+        IA = _IA;
         if (SendingDataOnline) StartCoroutine(Upload());
     }
 
@@ -105,39 +109,80 @@ public class SendToGoogle : MonoBehaviour
     void BuscarDatos()
     {
         //Variables Auxiliares
-        int[] puntosFinal = Tablero.instance.RecuentoPuntos();
 
-        Opciones jugador = arbitroPartida.player;
-
-        string[] facciones = new string[2];
-        if(arbitroPartida.opciones[0] == jugador)
-        {
-            facciones[0] = arbitroPartida.opciones[0].gameObject.name;
-            facciones[1] = arbitroPartida.opciones[1].gameObject.name;
-        }
-        else
-        {
-            facciones[0] = arbitroPartida.opciones[1].gameObject.name;
-            facciones[1] = arbitroPartida.opciones[0].gameObject.name;
-        }
-
-        int jugadorGanador = 2;
-        if (puntosFinal[0] > puntosFinal[1]) jugadorGanador = 0;
-        else if (puntosFinal[1] > puntosFinal[0]) jugadorGanador = 1;
-
-
-        //Variables Formulario
-
+        //Partida IA
+        if (IA) PartidaConIA = "SI";
+        else PartidaConIA = "NO";
 
         //Ganador
-        Ganador = "empate";
-        if (jugadorGanador < 2) Ganador = facciones[jugadorGanador];
+        int[] puntosFinal = Tablero.instance.RecuentoPuntos();
 
+        int bestPuntos = int.MinValue;
+        int winner = -1;
 
-      
+        {
+            for (int i = 0; i < puntosFinal.Length; i++)
+            {
+                if (puntosFinal[i] == bestPuntos) winner = -1;
+                else if(puntosFinal[i] > bestPuntos)
+                {
+                    bestPuntos = puntosFinal[i];
+                    winner = i;
+                }
+            }
+        }
 
         
+        Ganador = ((Faccion)(winner + 1)).ToString();
 
-       
+        //Facciones
+        Faccion1 = inicial.ToString();
+
+        Faccion noInicial = Faccion.none;
+
+        for (int i = 0; i < puntosFinal.Length; i++)
+        {
+            if(puntosFinal[i] != 0 && inicial != (Faccion)(puntosFinal[i] + 1))
+            {
+                noInicial = (Faccion)(i + 1);
+                Faccion2 = noInicial.ToString();
+            }
+        }
+
+
+        //Elecciones       
+        
+        //Heroes
+
+        //Mineros
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderMaquinista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderMaquinista")) Maquinista = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderMecanico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderMecanico")) Mecanico = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderChantajista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderChantajista")) Chantajista = 1;
+
+        //Oyentes
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderColono") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderColono")) Colono = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderLunatico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderLunatico")) Lunatico = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderAstrofisico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderAstrofisico")) Astrofisico = 1;
+
+
+        //Especiales
+
+        //Mineros
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros")) Comodin = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros")) ModelPerfeccionado = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Supernave")) Supernave = 1;
+
+        //Oyentes
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios")) Comodin = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion")) Satelite = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas")) CambioOrbital = 1;
+
+
+        //Mejoras
+
+        //Oyentes
+        if (miSeleccion.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores") || SeleccionRival.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores")) Combate = 1;
+        else if (miSeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores") || SeleccionRival.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores")) Laboratorio = 1;
+        else if (miSeleccion.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales") || SeleccionRival.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales")) Estratega = 1;
     }
 }

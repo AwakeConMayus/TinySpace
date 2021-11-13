@@ -31,6 +31,8 @@ public class PVEArbitro : MonoBehaviour
 
     int turnoAbsoluto = -1;
 
+    [SerializeField] bool SendOnline = true;
+
 
     private void Start()
     {
@@ -187,6 +189,10 @@ public class PVEArbitro : MonoBehaviour
     public void EndGame()
     {
         print("Wiiiiiin");
+        Faccion initialF = Faccion.none;
+        if (initial) initialF = jugador1.faccion;
+        else initialF = jugador2.faccion;
+        if (SendOnline) SendToGoogle.instance.SendOnline(initialF, true);
         end = true;
     }
 

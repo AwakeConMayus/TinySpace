@@ -139,7 +139,7 @@ public class IATablero : MonoBehaviour
 
     public void PrintInfoTablero(InfoTablero newTab)
     {
-        while (newTab.tablero.Length > mapa.Count) Crear_Casilla_Vacia();
+        if (newTab.tablero == null) return;
 
         for (int i = 0; i < newTab.tablero.Length; i++)
         {

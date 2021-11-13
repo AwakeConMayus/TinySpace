@@ -12,6 +12,8 @@ public class IAArbitro : MonoBehaviour
 
     public DatosIA datos;
 
+    [SerializeField] bool SendOnline = true;
+
     
 
     bool active = true;
@@ -154,6 +156,7 @@ public class IAArbitro : MonoBehaviour
     public void EndGame()
     {
         print("Wiiiiiin");
+        if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, true);
         end = true;
     }
 }

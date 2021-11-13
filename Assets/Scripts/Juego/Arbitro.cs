@@ -20,6 +20,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     int specialTurno = 0;
     int turno = 0;
 
+
     bool inputActive = true;
 
     [SerializeField]
@@ -31,6 +32,9 @@ public class Arbitro : MonoBehaviourPunCallbacks
     TuSeleccion seleccion_del_rival;
     [SerializeField]
     EspejoMaestro espejo_Maestro;
+
+    [SerializeField] bool SendOnline = true;
+
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
@@ -177,8 +181,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void EndGame()
     {
-        if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
-            SendToGoogle.instance.SendOnline();
+        if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient && SendOnline)
+            SendToGoogle.instance.SendOnline(player.faccion);
 
         mi_seleccion.mi_poder = null;
         mi_seleccion.mis_opciones = new GameObject[5];

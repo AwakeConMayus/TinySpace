@@ -62,6 +62,7 @@ MonoBehaviour:
   - RPC_Rotar
   - RPC_Mandar_Mineral
   - RPC_MostrarReflejo
+  - RPC_TPEfects2
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
