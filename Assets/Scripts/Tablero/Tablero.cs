@@ -131,6 +131,24 @@ public class Tablero : MonoBehaviour
         return puntuaciones;
     }
 
+    public Faccion Winner()
+    {
+        Faccion winner = Faccion.none;
+        int[] puntos = RecuentoPuntos();
+        int winerPuntos = int.MinValue;
+        for (int i = 0; i < puntos.Length; i++)
+        {
+            if (puntos[i] == winerPuntos) winner = Faccion.none;
+            if(puntos[i] > winerPuntos)
+            {
+                winerPuntos = puntos[i];
+                winner = (Faccion)(i + 1);
+            }
+        }
+
+        return winner;
+    }
+
     public GameObject Crear_Casilla_Vacia()
     {
         GameObject c = Instantiate(casilla, new Vector3(0, 0, 0), Quaternion.identity);

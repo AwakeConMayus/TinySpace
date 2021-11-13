@@ -52,7 +52,8 @@ public class IAArbitro : MonoBehaviour
 
 
 
-        
+        jugador1.PrepararPreparacion();
+        jugador2.PrepararPreparacion();
         jugador1.Preparacion();
         jugador2.Preparacion();
 

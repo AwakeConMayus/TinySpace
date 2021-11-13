@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88bbb7710a6dff44a621f9d71e00fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  datosIA: {fileID: 11400000, guid: 2d8d9939a51ef2c4cb62a84495bccb76, type: 2}
   opcionesIA:
   - {fileID: 1908177881}
   - {fileID: 612584450}
@@ -319,6 +320,7 @@ MonoBehaviour:
   - {fileID: 0}
   mySeleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
   seleccioRival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
+  SendOnline: 1
 --- !u!114 &105328050
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,8 +5,126 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/DatosIA", order = 1)]
 public class DatosIA : ScriptableObject
 {
-    public DatosIAFaccion Mineros, Oyentes, Honorables, Simbionte;    
-}
+    [SerializeField] TuSeleccion IASeleccion, PlayerSelection;
+    public DatosIAFaccion Mineros, Oyentes, Honorables, Simbionte;
+
+    public void AddData(bool win)
+    {
+        switch (IASeleccion.faccion)
+        {
+            //Mineros
+            case Faccion.minero:
+                switch (PlayerSelection.faccion)
+                {
+                    //VS Oyentes
+                    case Faccion.oyente:
+
+                        Mineros.vsOyentes.jugadas++;
+                        if(win) Mineros.vsOyentes.ganadas++;
+
+                        //Heroes
+                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderMaquinista"))
+                        {
+                            Mineros.vsOyentes.heroe1jugadas++;
+                            if (win) Mineros.vsOyentes.heroe1ganadas++;
+                        }
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderMecanico"))
+                        {
+                            Mineros.vsOyentes.heroe2jugadas++;
+                            if (win) Mineros.vsOyentes.heroe2ganadas++;
+                        }
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderChantajista"))
+                        {
+                            Mineros.vsOyentes.heroe3jugadas++;
+                            if (win) Mineros.vsOyentes.heroe3ganadas++;
+                        }
+
+                        //Especiales
+                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros"))
+                        {
+                            Mineros.vsOyentes.especial1jugadas++;
+                            if (win) Mineros.vsOyentes.especial1ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros"))
+                        {
+                            Mineros.vsOyentes.especial2jugadas++;
+                            if (win) Mineros.vsOyentes.especial2ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave"))
+                        {
+                            Mineros.vsOyentes.especial3jugadas++;
+                            if (win) Mineros.vsOyentes.especial3ganadas++;
+                        }
+
+                        break;
+                }
+                break;
+
+            //Oyentes
+            case Faccion.oyente:
+                switch (PlayerSelection.faccion)
+                {
+                    //VS Mineros
+                    case Faccion.minero:
+                        Oyentes.vsMineros.jugadas++;
+                        if (win) Oyentes.vsMineros.ganadas++;
+
+                        //Heroes
+                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderColono"))
+                        {
+                            Oyentes.vsMineros.heroe1jugadas++;
+                            if (win) Oyentes.vsMineros.heroe1ganadas++;
+                        }
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderLunatico"))
+                        {
+                            Oyentes.vsMineros.heroe2jugadas++;
+                            if (win) Oyentes.vsMineros.heroe2ganadas++;
+                        }
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderAstrofisico"))
+                        {
+                            Oyentes.vsMineros.heroe3jugadas++;
+                            if (win) Oyentes.vsMineros.heroe3ganadas++;
+                        }
+
+                        //Especiales
+                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios"))
+                        {
+                            Oyentes.vsMineros.heroe1jugadas++;
+                            if (win) Oyentes.vsMineros.heroe1ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion"))
+                        {
+                            Oyentes.vsMineros.heroe2jugadas++;
+                            if (win) Oyentes.vsMineros.heroe2ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas"))
+                        {
+                            Oyentes.vsMineros.heroe3jugadas++;
+                            if (win) Oyentes.vsMineros.heroe3ganadas++;
+                        }
+
+                        //Mejoras
+                        if (IASeleccion.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores"))
+                        {
+                            Oyentes.vsMineros.heroe1jugadas++;
+                            if (win) Oyentes.vsMineros.heroe1ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores"))
+                        {
+                            Oyentes.vsMineros.heroe2jugadas++;
+                            if (win) Oyentes.vsMineros.heroe2ganadas++;
+                        }
+                        else if (IASeleccion.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales"))
+                        {
+                            Oyentes.vsMineros.heroe3jugadas++;
+                            if (win) Oyentes.vsMineros.heroe3ganadas++;
+                        }
+                        break;
+                }
+                break;
+        }
+    }
+    }
 
 [System.Serializable]
 public struct DatosIAFaccion
@@ -77,7 +195,7 @@ public struct DatosVS
     {
         if (especial3jugadas == 0) return 0.5f;
         return (especial3ganadas / especial3jugadas);
-    }
+    }    
 }
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PVEArbitro : MonoBehaviour
 {
+    [SerializeField] DatosIA datosIA;
     public IAOpciones[] opcionesIA = new IAOpciones[4];
     public Opciones[] opciones = new Opciones[4];
 
@@ -188,6 +189,9 @@ public class PVEArbitro : MonoBehaviour
 
     public void EndGame()
     {
+        bool IAWin = false;
+        if (Tablero.instance.Winner() == jugador2.faccion) IAWin = true;
+        datosIA.AddData(IAWin);
         print("Wiiiiiin");
         Faccion initialF = Faccion.none;
         if (initial) initialF = jugador1.faccion;

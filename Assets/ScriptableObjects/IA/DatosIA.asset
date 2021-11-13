@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a65bf0281832a4e9f80b643c6d0b35, type: 3}
   m_Name: DatosIA
   m_EditorClassIdentifier: 
+  IASeleccion: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
+  PlayerSelection: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
   Mineros:
     vsMineros:
       jugadas: 0
