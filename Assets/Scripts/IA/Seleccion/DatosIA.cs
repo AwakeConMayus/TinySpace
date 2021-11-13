@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/DatosIA", order = 1)]
 public class DatosIA : ScriptableObject
@@ -20,7 +21,7 @@ public class DatosIA : ScriptableObject
                     case Faccion.oyente:
 
                         Mineros.vsOyentes.jugadas++;
-                        if(win) Mineros.vsOyentes.ganadas++;
+                        if (win) Mineros.vsOyentes.ganadas++;
 
                         //Heroes
                         if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderMaquinista"))
@@ -124,12 +125,21 @@ public class DatosIA : ScriptableObject
                 break;
         }
     }
+
+    public void ResetData()
+    {
+        Mineros = new DatosIAFaccion();
+        Oyentes = new DatosIAFaccion();
+        Honorables = new DatosIAFaccion();
+        Simbionte = new DatosIAFaccion();
     }
+}
 
 [System.Serializable]
 public struct DatosIAFaccion
 {
     public DatosVS vsMineros, vsOyentes, vsHonorables, vsSimbionte;
+    
 }
 
 [System.Serializable]
@@ -196,6 +206,24 @@ public struct DatosVS
         if (especial3jugadas == 0) return 0.5f;
         return (especial3ganadas / especial3jugadas);
     }    
+}
+
+
+
+[CustomEditor(typeof(DatosIA))]
+public class TestScriptableEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        var script = (DatosIA)target;
+
+        if (GUILayout.Button("Reset Values", GUILayout.Height(20)))
+        {
+            script.ResetData();
+        }
+
+    }
 }
 
 
