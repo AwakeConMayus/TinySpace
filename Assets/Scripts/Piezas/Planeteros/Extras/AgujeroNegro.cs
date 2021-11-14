@@ -26,7 +26,7 @@ public class AgujeroNegro : Pieza
     {
         for (int  i = 0;  i < casilla.adyacentes.Length;  i++)
         {
-            if (casilla.adyacentes[i])
+            if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && casilla.adyacentes[i].pieza.clase != Clase.astros)
             {
                 casilla.adyacentes[i].pieza = null;
                 Atraer_Todo_En_Una_Direccion(casilla.adyacentes[i], i);

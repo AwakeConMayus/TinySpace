@@ -112,6 +112,9 @@ public class PiezasDataBase : ScriptableObject
                 return Luna;
             case IDPieza.AgujeroNegro:
                 return AgujeroNegro;
+            default:
+                Debug.LogError("Esta pieza no la entiendo");
+                break;
         }
         return null;
     }
@@ -156,6 +159,9 @@ public class PiezasDataBase : ScriptableObject
         else if (piezaName == PlanetaSagrado.name) return IDPieza.PlanetaSagrado;
         else if (piezaName == Luna.name) return IDPieza.Luna;
         else if (piezaName == AgujeroNegro.name) return IDPieza.AgujeroNegro;
+
+
+        else Debug.LogError("Esta pieza no la entiendo");
 
 
         return IDPieza.None;

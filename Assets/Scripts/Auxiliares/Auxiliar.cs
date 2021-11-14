@@ -25,4 +25,16 @@ public static class Auxiliar
         s += "]";
         return s;
     }
+
+    public static string StringArrayInt(int[] list)
+    {
+        string s = "Opciones: [";
+        for (int i = 0; i < list.Length; i++)
+        {
+            s += list[i];
+            if (i < list.Length - 1) s += ", ";
+        }
+        s += "]";
+        return s;
+    }
 }

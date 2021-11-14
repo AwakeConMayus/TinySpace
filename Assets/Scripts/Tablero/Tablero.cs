@@ -158,6 +158,9 @@ public class Tablero : MonoBehaviour
 
     public void PrintInfoTablero(InfoTablero newTab)
     {
+        print("CambioTab");
+        print(Auxiliar.StringArrayInt(new InfoTablero(mapa).tablero));
+        print(Auxiliar.StringArrayInt(newTab.tablero));
         if (newTab.tablero == null) return;
 
         for (int i = 0; i < newTab.tablero.Length; i++)
@@ -169,7 +172,7 @@ public class Tablero : MonoBehaviour
             //Hay algo que no debe estar
             if (mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
             {
-                if (mapa[i].pieza.gameObject) mapa[i].pieza.SelfDestruction();
+                if (mapa[i].pieza.gameObject.transform.position == mapa[i].transform.position) mapa[i].pieza.SelfDestruction();
                 mapa[i].pieza = null;
 
                 mapa[i].SetState(States.normal);
