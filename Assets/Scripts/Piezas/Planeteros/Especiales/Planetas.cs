@@ -6,7 +6,7 @@ public class Planetas : Pieza
 {
     protected override void SetClase()
     {
-        clase = Clase.astros;
+        clase = Clase.planeta;
     }
 
     public override int Puntos()
@@ -31,7 +31,7 @@ public class Planetas : Pieza
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> result = FiltroCasillas.CasillasLibres(referencia);
-        List<Casilla> resta = FiltroCasillas.CasillasDeUnTipo(Clase.astros, referencia);
+        List<Casilla> resta = FiltroCasillas.CasillasDeUnTipo(Clase.planeta, referencia);
         resta = FiltroCasillas.CasillasAdyacentes(resta, true);
         result = FiltroCasillas.RestaLista(result, resta);
         return result;

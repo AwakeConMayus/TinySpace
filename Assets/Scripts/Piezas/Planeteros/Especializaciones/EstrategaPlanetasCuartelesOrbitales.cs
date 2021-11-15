@@ -8,7 +8,7 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(Clase.astros, referencia);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(Clase.planeta, referencia);
 
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
 
@@ -21,6 +21,6 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
 
     protected override void SetClase()
     {
-        clase = Clase.astros;
+        clase = Clase.planeta;
     }
 }

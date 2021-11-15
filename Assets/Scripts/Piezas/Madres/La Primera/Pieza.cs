@@ -11,9 +11,11 @@ public enum Clase
     combate,
     investigador,
     estratega,
-    astros,
+    planeta,
     comodin,
-    satelite
+    satelite,
+    luna,
+    agujeroNegro
 }
 public enum Faccion
 {
@@ -33,6 +35,9 @@ public abstract class Pieza : MonoBehaviour
 
     [HideInInspector]
     public Casilla casilla;
+
+    [SerializeField]
+    public bool astro;
 
 
     private bool pieza_extra = false;
@@ -66,6 +71,11 @@ public abstract class Pieza : MonoBehaviour
     public virtual bool CompareClase(Clase compare)
     {
         if (clase == compare || clase == Clase.comodin) return true;
+        else return false;
+    }
+    public virtual bool CompareClase(List<Clase> compare)
+    {
+        if (compare.Contains(clase) || clase == Clase.comodin) return true;
         else return false;
     }
 

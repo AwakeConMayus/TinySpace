@@ -22,7 +22,7 @@ public class PoderChantajista2 : PoderMineros
         casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion);
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles,true);
         casillasDisponibles = FiltroCasillas.CasillasDeOtroJugador(faccion, casillasDisponibles);
-        casillasDisponibles = FiltroCasillas.RestaLista(casillasDisponibles, FiltroCasillas.CasillasDeUnTipo(Clase.astros));
+        casillasDisponibles = FiltroCasillas.CasillasNoAstro(casillasDisponibles);
 
         foreach(Casilla c in casillasDisponibles)
         {

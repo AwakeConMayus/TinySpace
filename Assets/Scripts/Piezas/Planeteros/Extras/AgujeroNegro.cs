@@ -7,7 +7,7 @@ public class AgujeroNegro : Pieza
 
     protected override void SetClase()
     {
-        clase = Clase.astros;
+        clase = Clase.agujeroNegro;
     }
     public override int Puntos()
     {
@@ -26,7 +26,7 @@ public class AgujeroNegro : Pieza
     {
         for (int  i = 0;  i < casilla.adyacentes.Length;  i++)
         {
-            if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && casilla.adyacentes[i].pieza.clase != Clase.astros)
+            if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && !casilla.adyacentes[i].pieza.astro)
             {
                 casilla.adyacentes[i].pieza = null;
                 Atraer_Todo_En_Una_Direccion(casilla.adyacentes[i], i);
@@ -52,7 +52,7 @@ public class AgujeroNegro : Pieza
         if (!c) return;
         if (c.pieza)
         {
-            if (c.pieza.clase == Clase.astros) return;
+            if (c.pieza.astro) return;
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
             else aux_reverseDirection = direccion - 3;

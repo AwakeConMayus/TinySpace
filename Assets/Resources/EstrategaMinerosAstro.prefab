@@ -136,6 +136,7 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
+  astro: 1
   combateMinero: {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6,
     type: 3}
 --- !u!95 &4242586908817137101

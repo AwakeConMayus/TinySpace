@@ -21,7 +21,7 @@ public class IAPropulsorCambioOrbitalOyentes : PiezaIA
             foreach(Casilla cc in c.adyacentes)
             {
                 IATablero.instance.PrintInfoTablero(newTab);
-                if(cc && (!cc.pieza || (cc.pieza.faccion != faccion && !cc.pieza.CompareClase(Clase.astros))))
+                if(cc && (!cc.pieza || (cc.pieza.faccion != faccion && !cc.pieza.astro)))
                 {
                     cc.pieza = planetaMover;
                     opciones.Add(new InfoTablero(IATablero.instance.mapa));

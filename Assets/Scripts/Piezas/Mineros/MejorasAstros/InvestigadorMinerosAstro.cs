@@ -13,7 +13,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
 
     protected override void SetClase()
     {
-        clase = Clase.astros;
+        clase = Clase.investigador;
     }
 
     public override void Colocar(Casilla c)
@@ -28,7 +28,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         objetivos = FiltroCasillas.CasillasAdyacentes(casilla, false);
         objetivos = FiltroCasillas.CasillasAdyacentes(objetivos, false);
         objetivos = FiltroCasillas.CasillasDeOtroJugador(faccion, objetivos);
-        objetivos = FiltroCasillas.RestaLista(objetivos, FiltroCasillas.CasillasDeUnTipo(Clase.astros, objetivos));
+        objetivos = FiltroCasillas.CasillasNoAstro(objetivos);
         if (objetivos.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");

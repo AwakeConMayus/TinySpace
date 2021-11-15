@@ -6,7 +6,7 @@ public class Luna : Pieza
 {
     protected override void SetClase()
     {
-        clase = Clase.astros;
+        clase = Clase.luna;
     }
     public override int Puntos()
     {

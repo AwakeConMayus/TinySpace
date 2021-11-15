@@ -5187,6 +5187,7 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
+  astro: 0
 --- !u!114 &4568335288921070774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10143,7 +10144,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3033617059623525086}
   - component: {fileID: 4872771920840175817}
-  - component: {fileID: 4391303866877962373}
   m_Layer: 8
   m_Name: AnimMeteorito
   m_TagString: Untagged
@@ -10186,18 +10186,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4391303866877962373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8646753493386216231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7dc95eb9c45fa94fa4e62d6af2e8623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8924151553854853777
 GameObject:
   m_ObjectHideFlags: 0

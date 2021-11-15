@@ -12,7 +12,7 @@ public class IAPodChantajistaMineros : PoderIABase
         List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
         casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, true);
         casillasPosibles = FiltroCasillas.CasillasDeOtroJugador(faccion, casillasPosibles);
-        casillasPosibles = FiltroCasillas.RestaLista(casillasPosibles, FiltroCasillas.CasillasDeUnTipo(Clase.astros, IATablero.instance.mapa));
+        casillasPosibles = FiltroCasillas.CasillasNoAstro(casillasPosibles);
 
 
         foreach (Casilla c in casillasPosibles)

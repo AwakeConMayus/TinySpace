@@ -27,7 +27,7 @@ public class PlanetaSagrado : Planetas
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillas = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        casillas = FiltroCasillas.CasillasDeUnTipo(Clase.astros, casillas);
+        casillas = FiltroCasillas.CasillasDeUnTipo(Clase.planeta, casillas);
 
         return casillas;
     }

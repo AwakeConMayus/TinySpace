@@ -136,6 +136,7 @@ MonoBehaviour:
   faccion: 2
   clase: 0
   casilla: {fileID: 0}
+  astro: 1
 --- !u!1 &8638931097256543046
 GameObject:
   m_ObjectHideFlags: 0

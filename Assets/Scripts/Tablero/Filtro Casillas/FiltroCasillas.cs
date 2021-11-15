@@ -4,6 +4,17 @@ using UnityEngine;
 
 public static class FiltroCasillas 
 {
+    public static List<Casilla> CasillasNoAstro(List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+        foreach(Casilla c in listaBase)
+        {
+            if (!c.pieza || !c.pieza.astro) resultado.Add(c);            
+        }
+        return resultado;
+    }
+
 
     //Busca todas las casillas que esten en el rango desde X casilla
     public static List<Casilla> CasillasEnRango(int rango, Casilla origen, bool incluirOrigen = true, List<Casilla> listaBase = null)
