@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class IAOpciones : Opciones
 {
-
+    int PuntosOrigen = 0;
 
     public override void Preparacion()
     {
@@ -42,6 +42,8 @@ public abstract class IAOpciones : Opciones
 
     public void Jugar(Opciones rival, int turno) 
     {
+        PuntosOrigen = PiezaIA.Evaluar(Tablero.instance.mapa, faccion);
+
         List<int> jugadasSimples = new List<int> { 2, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 };
         List<int> jugadasCombinada = new List<int> {4, 6, 8, 10, 14, 16, 18, 20, 22 };
         List<int> poderesSimple = new List<int> { 25 };
@@ -151,7 +153,11 @@ public abstract class IAOpciones : Opciones
 
         foreach (InfoTablero newTab in JugadaSimpleOpciones())
         {
-            int puntos = SimulacionEnemiga(enemigo, newTab);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+                
+            puntos = SimulacionEnemiga(enemigo, newTab);
 
             if (puntos > bestPuntos)
             {
@@ -173,7 +179,11 @@ public abstract class IAOpciones : Opciones
 
         foreach (InfoTablero newTab in JugadaSimpleOpciones())
         {
-            int puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
 
             if (puntos > bestPuntos)
             {
@@ -225,7 +235,11 @@ public abstract class IAOpciones : Opciones
 
         foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
         {
-            int puntos = SimulacionEnemiga(enemigo, newTab);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionEnemiga(enemigo, newTab);
 
             if (puntos > bestPuntos)
             {
@@ -246,7 +260,11 @@ public abstract class IAOpciones : Opciones
 
         foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
         {
-            int puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
 
             if (puntos > bestPuntos)
             {

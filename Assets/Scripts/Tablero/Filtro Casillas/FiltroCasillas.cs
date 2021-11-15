@@ -15,6 +15,23 @@ public static class FiltroCasillas
         return resultado;
     }
 
+    public static List<Casilla> CasillasConPiezaAdyacente(List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+        List<Casilla> resultado = new List<Casilla>();
+        foreach(Casilla c in listaBase)
+        {
+            foreach(Casilla cc in c.adyacentes)
+            {
+                if(c && c.pieza)
+                {
+                    resultado.Add(c);
+                    break;
+                }
+            }
+        }
+        return resultado;
+    }
 
     //Busca todas las casillas que esten en el rango desde X casilla
     public static List<Casilla> CasillasEnRango(int rango, Casilla origen, bool incluirOrigen = true, List<Casilla> listaBase = null)
