@@ -77,10 +77,6 @@ public class PiezasDataBase : ScriptableObject
             case IDPieza.Supernave:
                 return Supernave;
 
-            //Poderes
-            case IDPieza.Garrapata:
-                return Garrapata;
-
             //Oyentes
             case IDPieza.Planetas:
                 return Planetas;
@@ -137,9 +133,6 @@ public class PiezasDataBase : ScriptableObject
         //Especiales
         else if (piezaName == Supernave.name) return IDPieza.Supernave;
 
-        //Poderes
-        else if (piezaName == Garrapata.name) return IDPieza.Garrapata;
-
         //Oyentes
         else if (piezaName == Planetas.name) return IDPieza.Planetas;
         else if (piezaName == ExploradorOyentes.name) return IDPieza.ExploradorOyentes;
@@ -186,9 +179,6 @@ public enum IDPieza
 
     //Especiales
     Supernave,
-
-    //Poderes
-    Garrapata,
 
     //Oyentes
     Planetas,
