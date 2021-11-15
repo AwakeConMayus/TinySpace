@@ -8,7 +8,7 @@ public class ExploradorPlanetas : Explorador
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo (Clase.planeta, referencia);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.planeta, Clase.luna }, referencia);
 
         casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(Faccion.oyente, casillasDisponibles);
 
