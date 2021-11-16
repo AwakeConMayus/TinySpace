@@ -140,14 +140,29 @@ public class SendToGoogle : MonoBehaviour
 
         Faccion noInicial = Faccion.none;
 
-        for (int i = 0; i < puntosFinal.Length; i++)
+        if(miSeleccion.faccion == inicial)
         {
+            Faccion2 = SeleccionRival.faccion.ToString();
+        }
+        else
+        {
+            Faccion2 = miSeleccion.faccion.ToString();
+        }
+        /*
+        for (int i = 0; i < 2; i++)
+        {
+            
+            //Clanta: el parseo ese del if no tiene sentido, si me equivoco que alguien me lo diga.
+            Debug.Log(puntosFinal[i]);
+            Debug.Log((Faccion)(puntosFinal[i] + 1));
             if(puntosFinal[i] != 0 && inicial != (Faccion)(puntosFinal[i] + 1))
             {
                 noInicial = (Faccion)(i + 1);
                 Faccion2 = noInicial.ToString();
             }
-        }
+
+
+        }*/
 
 
         //Elecciones       

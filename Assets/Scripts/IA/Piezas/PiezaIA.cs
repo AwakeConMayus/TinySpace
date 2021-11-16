@@ -48,7 +48,6 @@ public class PiezaIA : MonoBehaviour
 
     public static int Evaluar(List<Casilla> mapa, Faccion jugador)
     {
-        Debug.Log("EVALUO");
         int puntos = 0;
         foreach(Casilla c in mapa)
         {
