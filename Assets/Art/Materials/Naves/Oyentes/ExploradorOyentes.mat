@@ -51,6 +51,6 @@ Material:
     - Vector1_5D12A3A7: 0.03
     - Vector1_C4FFEE7: -0.75
     m_Colors:
-    - Color_1FDD30BB: {r: 0.6314497, g: 0.62877405, b: 0.1953213, a: 1}
+    - Color_1FDD30BB: {r: 24.76144, g: 18.538671, b: 0.77784634, a: 1}
     - Color_chasis: {r: 0.8018868, g: 0.6514556, b: 0.6014151, a: 0}
     - Color_windows: {r: 0.50890046, g: 1.0676931, b: 1.9058821, a: 0}
