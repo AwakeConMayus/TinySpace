@@ -137,6 +137,7 @@ MonoBehaviour:
   faccion: 2
   clase: 0
   casilla: {fileID: 0}
+  astro: 1
 --- !u!95 &6390127833629797175
 Animator:
   serializedVersion: 3

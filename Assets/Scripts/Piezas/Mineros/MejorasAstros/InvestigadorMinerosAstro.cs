@@ -20,7 +20,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     {
         casilla = c;
         casilla.pieza = this;
-        if ((this.gameObject.GetPhotonView().IsMine && primera_vez) || (!PhotonNetwork.InRoom && primera_vez)) Preparar();
+        if ((this.gameObject.GetPhotonView().IsMine && primera_vez) || (!PhotonNetwork.InRoom && primera_vez && InstancePiezas.instance.faccion == faccion )) Preparar();
     }
 
     public void Preparar()
