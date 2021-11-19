@@ -50,11 +50,17 @@ public class PVEArbitro : MonoBehaviour
         InstancePiezas.instance.faccion = mySeleccion.faccion;
 
         jugador1.gameObject.SetActive(true);
-        jugador1.opcionesIniciales = mySeleccion.mis_opciones;
+        for(int i = 0; i < mySeleccion.mis_opciones.Length; ++i)
+        {
+            jugador1.opcionesIniciales[i] = mySeleccion.mis_opciones[i];
+        }
         jugador1.poder = mySeleccion.mi_poder;
         jugador1.PrepararPreparacion();
         jugador2.poder = seleccioRival.mi_poder;
-        jugador2.opcionesIniciales = seleccioRival.mis_opciones;
+        for (int i = 0; i < seleccioRival.mis_opciones.Length; ++i)
+        {
+            jugador2.opcionesIniciales[i] = seleccioRival.mis_opciones[i];
+        }
         jugador2.PrepararPreparacion();
 
         jugador1.Preparacion();

@@ -61,10 +61,16 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
         InstancePiezas.instance.faccion = mi_seleccion.faccion;
         player.gameObject.SetActive(true);
-        player.opcionesIniciales = mi_seleccion.mis_opciones;
+        for(int i = 0; i < mi_seleccion.mis_opciones.Length; ++i)
+        {
+            player.opcionesIniciales[i] = mi_seleccion.mis_opciones[i];
+        }
         player.poder = mi_seleccion.mi_poder;
         player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion) ;
-        player.mi_reflejo.opcionesIniciales = mi_seleccion.mis_opciones;
+        for (int i = 0; i < mi_seleccion.mis_opciones.Length; ++i)
+        {
+            player.mi_reflejo.opcionesIniciales[i] = mi_seleccion.mis_opciones[i];
+        }
         player.GetComponentInChildren<InterfazTurnos>().primero = true;
         player.PrepararPreparacion();
     }
@@ -84,10 +90,16 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
         InstancePiezas.instance.faccion = mi_seleccion.faccion;
         player.gameObject.SetActive(true);
-        player.opcionesIniciales = mi_seleccion.mis_opciones;
+        for (int i = 0; i < mi_seleccion.mis_opciones.Length; ++i)
+        {
+            player.opcionesIniciales[i] = mi_seleccion.mis_opciones[i];
+        }
         player.poder = mi_seleccion.mi_poder;
-        player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion); 
-        player.mi_reflejo.opcionesIniciales = seleccion_del_rival.mis_opciones;
+        player.mi_reflejo = espejo_Maestro.Activar(mi_seleccion.faccion);
+        for (int i = 0; i < mi_seleccion.mis_opciones.Length; ++i)
+        {
+            player.mi_reflejo.opcionesIniciales[i] = mi_seleccion.mis_opciones[i];
+        }
         player.GetComponentInChildren<InterfazTurnos>().primero = false;
         player.PrepararPreparacion();
         EventManager.TriggerEvent("AccionTerminadaConjunta");
