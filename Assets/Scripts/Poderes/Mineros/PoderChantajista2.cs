@@ -23,7 +23,11 @@ public class PoderChantajista2 : PoderMineros
         casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles,true);
         casillasDisponibles = FiltroCasillas.CasillasDeOtroJugador(faccion, casillasDisponibles);
         casillasDisponibles = FiltroCasillas.CasillasNoAstro(casillasDisponibles);
-
+        if(casillasDisponibles.Count == 0)
+        {
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+            return;
+        }
         foreach(Casilla c in casillasDisponibles)
         {
             c.SetState(States.select);

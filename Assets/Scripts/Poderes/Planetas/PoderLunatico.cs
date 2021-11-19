@@ -50,6 +50,11 @@ public class PoderLunatico : PoderPlanetas
     public override void FirstActionPersonal()
     {
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
+        if(casillasPosibles.Count == 0)
+        {
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+            return;
+        }
         Debug.Log(casillasPosibles.Count);
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in casillasPosibles) casilla.SetState(States.select);
@@ -67,6 +72,11 @@ public class PoderLunatico : PoderPlanetas
         if (!setLuna) return;
         Casilla c = ClickCasillas.casillaClick;
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
+        if(casillasPosibles.Count == 0)
+        {
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+            return;
+        }
         if (casillasPosibles.Contains(c))
         {
             GameObject thisPieza;
