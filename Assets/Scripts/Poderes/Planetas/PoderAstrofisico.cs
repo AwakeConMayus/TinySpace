@@ -51,7 +51,11 @@ public class PoderAstrofisico : PoderPlanetas
 
     public override void FirstActionPersonal()
     {
-        if (!gameObject.GetPhotonView().IsMine) return;
+
+        if (!gameObject.GetPhotonView().IsMine && PhotonNetwork.InRoom) return;
+
+        if(mis_BalckHoles.Count > 0) StartCoroutine(Activar(mis_BalckHoles[0].GetComponent<Pieza>().casilla));
+
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
         Debug.Log(posibles_lugares.Count);
 
@@ -88,29 +92,24 @@ public class PoderAstrofisico : PoderPlanetas
             preparado_para_instanciar = false;
             Tablero.instance.ResetCasillasEfects();
 
-           StartCoroutine( Activar());
+           StartCoroutine( Activar(c));
         }
     }
 
-    IEnumerator Activar()
+    IEnumerator Activar(Casilla origen)
     {
-        for (int i = 0; i < mis_BalckHoles.Count; ++i)
+
+        for (int j = 0; j < origen.adyacentes.Length; ++j)
         {
-            Casilla origen = mis_BalckHoles[i].GetComponent<Pieza>().casilla;
-
-            for (int j = 0; j < origen.adyacentes.Length; ++j)
+            if (origen.adyacentes[j] && origen.adyacentes[j].pieza && !origen.adyacentes[j].pieza.astro)
             {
-                if (origen.adyacentes[j] && origen.adyacentes[j].pieza && !origen.adyacentes[j].pieza.astro)
-                {
-                    Debug.Log("destruyo en esta direccon: " + j);
-                    Debug.Log("destruyo esta pieza: " + origen.adyacentes[j].pieza);
-                    OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
-                }
-                Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
+                Debug.Log("destruyo en esta direccon: " + j);
+                Debug.Log("destruyo esta pieza: " + origen.adyacentes[j].pieza);
+                OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
             }
-            yield return new WaitForSeconds(1.5f);
+            Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
         }
-
+        yield return new WaitForSeconds(1.5f);
 
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }

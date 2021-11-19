@@ -158,10 +158,8 @@ public class Tablero : MonoBehaviour
 
     public void PrintInfoTablero(InfoTablero newTab)
     {
-        print("CambioTab");
-        print(Auxiliar.StringArrayInt(new InfoTablero(mapa).tablero));
-        print(Auxiliar.StringArrayInt(newTab.tablero));
         if (newTab.tablero == null) return;
+
 
         for (int i = 0; i < newTab.tablero.Length; i++)
         {

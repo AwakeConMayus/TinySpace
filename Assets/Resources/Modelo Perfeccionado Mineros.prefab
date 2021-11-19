@@ -101,8 +101,10 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
-  coste: 2
-  pieza_a_mejorar: {fileID: 0}
+  astro: 0
+  coste: 1
+  pieza_a_mejorar: {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6,
+    type: 3}
 --- !u!114 &7594946243373346601
 MonoBehaviour:
   m_ObjectHideFlags: 0
