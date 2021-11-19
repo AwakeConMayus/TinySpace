@@ -25,16 +25,15 @@ public class SateliteComunicacion : Pieza
         return puntos;
     }
 
-    int puntosPorPlaneta = 2;
+    int puntosPorPlaneta = 3;
         //Clanta: este int es prueba definitiva de la frustracion de mikel
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
         if (!c) return 0;
         int puntos = 0;
-        if(c.pieza && (c.pieza.GetComponent<Planetas>() || c.pieza.GetComponent<PlanetaSagrado>()))
+        if(c.pieza && (c.pieza.CompareClase(Clase.planeta)))
         {
             puntos += puntosPorPlaneta;
-            Debug.Log("puntos añadidos" + puntos);
         }
         if (c.adyacentes[direccion] != null)
         {

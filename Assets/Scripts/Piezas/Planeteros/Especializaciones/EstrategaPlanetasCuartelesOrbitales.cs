@@ -19,6 +19,28 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
         return casillasDisponibles;
     }
 
+    public override int Puntos()
+    {
+        int puntos = base.Puntos();
+
+        int puntosColonizacion = 3;
+
+        int colonizacion = 0;
+        foreach (Casilla adyacente in casilla.adyacentes)
+        {
+            if (!adyacente || !adyacente.pieza) continue;
+            if (adyacente.pieza.faccion == faccion)
+                ++colonizacion;
+            else --colonizacion;
+        }
+
+
+        if (colonizacion > 0) puntos += puntosColonizacion;
+
+
+        return puntos;
+    }
+
     protected override void SetClase()
     {
         clase = Clase.planeta;
