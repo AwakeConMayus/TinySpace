@@ -104,4 +104,23 @@ public class IAOpcionesMineros : IAOpciones
 
         ResetTableros();
     }
+
+    public override bool Ahogado()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (opcionesIniciales[opcionesDisponibles[i]].GetComponent<Pieza>().CasillasDisponibles().Count > 0 &&
+                (opcionesDisponibles[i] != 4 || mineral >= opcionesIniciales[4].GetComponent<Especial>().coste))
+                return false;
+
+            if (mineral >= 3)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (j != 4 && mejoras[opcionesDisponibles[j]].GetComponent<Pieza>().CasillasDisponibles().Count > 0) return false;
+                }
+            }
+        }
+        return true;
+    }
 }

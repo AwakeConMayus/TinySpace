@@ -8,4 +8,13 @@ public class OpcionesPlanetas : Opciones
     {
         Preparacion();
     }
+
+    public override bool Ahogado()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (opcionesIniciales[opcionesDisponibles[i]].GetComponent<Pieza>().CasillasDisponibles().Count > 0) return false;            
+        }
+        return true;
+    }
 }

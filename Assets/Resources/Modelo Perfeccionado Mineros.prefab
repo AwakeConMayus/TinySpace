@@ -103,7 +103,7 @@ MonoBehaviour:
   casilla: {fileID: 0}
   astro: 0
   coste: 1
-  pieza_a_mejorar: {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6,
+  pieza_a_mejorar: {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052,
     type: 3}
 --- !u!114 &7594946243373346601
 MonoBehaviour:

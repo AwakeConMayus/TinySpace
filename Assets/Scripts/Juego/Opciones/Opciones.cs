@@ -58,13 +58,7 @@ public abstract class Opciones : MonoBehaviour
     {
         if (!active) return;
         opcionActual = i;
-        InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);
-        //Clanta: Pochez del poder del chantajista
-        if (WalkitolkiGarrapata.instance)
-        {
-            if(WalkitolkiGarrapata.instance.mi_garrapata.faccion != faccion) 
-            WalkitolkiGarrapata.instance.seleccion = i;
-        }
+        InstancePiezas.instance.SetPieza(opcionesIniciales[opcionesDisponibles[i]]);        
     }
 
     public virtual void SeleccionForzada(int i)
@@ -97,4 +91,6 @@ public abstract class Opciones : MonoBehaviour
     {
         active = true;
     }
+
+    public abstract bool Ahogado();
 }
