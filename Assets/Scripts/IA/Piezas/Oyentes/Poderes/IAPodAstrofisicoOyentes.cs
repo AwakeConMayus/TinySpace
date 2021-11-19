@@ -28,9 +28,9 @@ public class IAPodAstrofisicoOyentes : PoderIABase
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            c.pieza = agujeroNegro;
             AgujeroNegro.ActivarAgujeroNegro(c);
-
+            c.pieza = agujeroNegro;
+            print("post apocaliptic simulator: " + Auxiliar.StringArrayInt(new InfoTablero(IATablero.instance.mapa).tablero));
             opciones.Add(new InfoTablero(IATablero.instance.mapa));
         }
 
