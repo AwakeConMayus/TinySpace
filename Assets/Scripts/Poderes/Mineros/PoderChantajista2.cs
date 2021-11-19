@@ -73,7 +73,6 @@ public class PoderChantajista2 : PoderMineros
     }
 
 
-    //Esto hay que adaptarlo al online
     void Intercambio()
     {
         Vector3 aux = Pieza1.transform.position;

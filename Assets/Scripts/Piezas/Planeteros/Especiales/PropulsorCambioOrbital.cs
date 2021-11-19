@@ -12,7 +12,6 @@ public class PropulsorCambioOrbital : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        casillasDisponibles = FiltroCasillas.CasillasPlaneta(casillasDisponibles);
         return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.planeta, Clase.luna }, casillasDisponibles);
     }
 

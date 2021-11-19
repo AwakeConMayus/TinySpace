@@ -92,11 +92,11 @@ public class PoderAstrofisico : PoderPlanetas
             preparado_para_instanciar = false;
             Tablero.instance.ResetCasillasEfects();
 
-           StartCoroutine( Activar(c));
+           StartCoroutine( Activar(c, true));
         }
     }
 
-    IEnumerator Activar(Casilla origen)
+    IEnumerator Activar(Casilla origen, bool last = false)
     {
 
         for (int j = 0; j < origen.adyacentes.Length; ++j)
@@ -111,7 +111,7 @@ public class PoderAstrofisico : PoderPlanetas
         }
         yield return new WaitForSeconds(1.5f);
 
-        EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if(last)EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
     public override void SecondAction()
     {
