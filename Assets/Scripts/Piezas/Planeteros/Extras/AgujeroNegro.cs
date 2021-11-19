@@ -38,7 +38,7 @@ public class AgujeroNegro : Pieza
     {
         foreach(Casilla c in casillas)
         {
-            if (c.GetComponent<AgujeroNegro>())
+            if (c.pieza.GetComponent<AgujeroNegro>())
             {
                 ActivarAgujeroNegro(c);
             }
