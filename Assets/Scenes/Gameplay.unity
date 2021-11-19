@@ -7122,6 +7122,12 @@ PrefabInstance:
       propertyPath: m_Colors.m_DisabledColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7459638289783770517, guid: bdd14f22d490b264da62fa29670411c7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8256386953750067650, guid: 568512d94d6280b4cbc552b99bd6c135,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd14f22d490b264da62fa29670411c7, type: 3}
 --- !u!224 &966300975 stripped
@@ -8866,6 +8872,7 @@ MonoBehaviour:
   seleccion_del_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94,
     type: 2}
   espejo_Maestro: {fileID: 1616715973}
+  SendOnline: 1
 --- !u!114 &1837699342
 MonoBehaviour:
   m_ObjectHideFlags: 0
