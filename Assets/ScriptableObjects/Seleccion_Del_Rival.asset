@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Seleccion_Del_Rival
   m_EditorClassIdentifier: 
   faccion: 2
-  mi_poder: {fileID: 8320863858920773836, guid: e2aa146918929d94e8c794009b4cb48e,
+  mi_poder: {fileID: 5174492570648314811, guid: f7ae77548596bbe45854b90edebe9095,
     type: 3}
   mis_opciones:
   - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
-  - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
+  - {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85, type: 3}
   - {fileID: 6490775113597745579, guid: 9ee559b0e5c3a7f47855e4dcb925df2d, type: 3}
-  - {fileID: 5476155095479601583, guid: 434e1a411e179b649bcf6d6d54899b95, type: 3}
-  - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
+  - {fileID: 2106339053813578794, guid: 2824cdd155745504491337b7c8ae95a1, type: 3}
+  - {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8, type: 3}

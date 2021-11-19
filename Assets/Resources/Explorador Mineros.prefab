@@ -15181,6 +15181,7 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
+  astro: 0
 --- !u!54 &8603675589480875151
 Rigidbody:
   m_ObjectHideFlags: 0
