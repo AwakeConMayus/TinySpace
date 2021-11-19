@@ -19,6 +19,7 @@ public class OpcionesMineros : Opciones
     {
         EventManager.StartListening("RecogerMineral", RecogerMineral);
         EventManager.StartListening("ColocarPieza", EjecutarPago);
+        if (opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>()) opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>().padre2 = this;
         for (int i = 0; i < 4; i++)
         {
             backup[i] = opcionesIniciales[i];

@@ -14,14 +14,14 @@ public class ModeloPerfecionadoMineros : EfectoEspecial
             Debug.LogError("Fallo en la adquisicion de pieza a mejorar del modelo perfeccionado");
             return;
         }
-        
-        if (PhotonNetwork.InRoom)
+
+        if (PhotonNetwork.InRoom && GetComponent<PhotonView>().IsMine)
         {
-            if (GetComponent<PhotonView>().IsMine)
-            {
-                PhotonNetwork.Instantiate(pieza_a_mejorar.name, casilla.transform.position, Quaternion.identity);
-            }
-                
+            PhotonNetwork.Instantiate(pieza_a_mejorar.name, casilla.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(pieza_a_mejorar, casilla.transform.position, Quaternion.identity);
         }
     }
 

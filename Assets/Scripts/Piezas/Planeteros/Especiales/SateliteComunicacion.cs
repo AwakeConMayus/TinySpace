@@ -20,13 +20,11 @@ public class SateliteComunicacion : Pieza
         for (int i = 0; i < casilla.adyacentes.Length; i++)
         {
             puntos += puntosPorPlanetasAlineados(casilla.adyacentes[i], i);
-            Debug.Log("finales: " + puntos);
         }
         return puntos;
     }
 
     int puntosPorPlaneta = 3;
-        //Clanta: este int es prueba definitiva de la frustracion de mikel
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
         if (!c) return 0;
