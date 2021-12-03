@@ -8,13 +8,7 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.planeta, Clase.luna }, referencia);
-
-        casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, true);
-
-        casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles, false);
-
-        casillasDisponibles = FiltroCasillas.CasillasLibres(casillasDisponibles);
+        List<Casilla> casillasDisponibles = FiltroCasillas.CasillasLibres(referencia);
 
         return casillasDisponibles;
     }
@@ -23,26 +17,30 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
     {
         int puntos = base.Puntos();
 
-        int puntosColonizacion = 3;
-
-        int colonizacion = 0;
-        foreach (Casilla adyacente in casilla.adyacentes)
+        for (int i = 0; i < casilla.adyacentes.Length; i++)
         {
-            if (!adyacente || !adyacente.pieza) continue;
-            if (adyacente.pieza.faccion == faccion)
-                ++colonizacion;
-            else --colonizacion;
+            puntos += puntosPorPlanetasAlineados(casilla.adyacentes[i], i);
         }
-
-
-        if (colonizacion > 0) puntos += puntosColonizacion;
-
-
         return puntos;
     }
 
     protected override void SetClase()
     {
-        clase = Clase.planeta;
+        clase = Clase.estratega;
+    }
+    int puntosPorPlaneta = 3;
+    int puntosPorPlanetasAlineados(Casilla c, int direccion)
+    {
+        if (!c) return 0;
+        int puntos = 0;
+        if (c.pieza && (c.pieza.CompareClase(Clase.planeta)))
+        {
+            puntos += puntosPorPlaneta;
+        }
+        if (c.adyacentes[direccion] != null)
+        {
+            puntos += puntosPorPlanetasAlineados(c.adyacentes[direccion], direccion);
+        }
+        return puntos;
     }
 }
