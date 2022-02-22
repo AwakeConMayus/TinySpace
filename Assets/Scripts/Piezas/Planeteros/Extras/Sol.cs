@@ -5,8 +5,8 @@ using UnityEngine;
 public class Sol : Planetas
 {
     [SerializeField] int[] puntos_6Casillas;
-    [SerializeField] int[] puntos_5Casillas;
     [SerializeField] int[] puntos_4Casillas;
+    [SerializeField] int[] puntos_3Casillas;
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillas = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
@@ -40,10 +40,10 @@ public class Sol : Planetas
                 puntos = puntos_6Casillas[nPiezas];
                 break;
             case 5:
-                puntos = puntos_5Casillas[nPiezas];
+                puntos = puntos_4Casillas[nPiezas];
                 break;
             case 4:
-                puntos = puntos_4Casillas[nCasillas];
+                puntos = puntos_3Casillas[nCasillas];
                 break;
             default:
                 Debug.LogError("En el sol no se estan contando bien las casillas adyacentes");
