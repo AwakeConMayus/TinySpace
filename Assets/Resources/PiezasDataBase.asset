@@ -50,6 +50,11 @@ MonoBehaviour:
     type: 3}
   Satelite: {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8,
     type: 3}
+  PlanetaHelado: {fileID: 6742238933231433789, guid: 9f675a892861fbe4b9521034b0072d14,
+    type: 3}
+  PlanetaVolcanico: {fileID: 763168805342163853, guid: 2b2d381f9b670b14e9e116f03964622e,
+    type: 3}
+  Sol: {fileID: 7024440420229625860, guid: b8fe6bd237c0a8f49846a5d29c470a8d, type: 3}
   PlanetaSagrado: {fileID: 6596421712654070911, guid: 337f75c2a3274374eb8b71dafc256a85,
     type: 3}
   Luna: {fileID: 4745022161135342171, guid: 5f501839762e0514c94976ec748dde0d, type: 3}
