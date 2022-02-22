@@ -39,6 +39,9 @@ public class PiezasDataBase : ScriptableObject
 
     //Especiales
     Satelite,
+    PlanetaHelado,
+    PlanetaVolcanico,
+    Sol,
 
     //Poderes
     PlanetaSagrado,
@@ -100,6 +103,12 @@ public class PiezasDataBase : ScriptableObject
             //Especiales
             case IDPieza.Satelite:
                 return Satelite;
+            case IDPieza.PlanetaHelado:
+                return PlanetaHelado;
+            case IDPieza.PlanetaVolcanico:
+                return PlanetaVolcanico;
+            case IDPieza.Sol:
+                return Sol;
 
             //Poderes
             case IDPieza.PlanetaSagrado:
@@ -147,6 +156,9 @@ public class PiezasDataBase : ScriptableObject
 
         //Especiales
         else if (piezaName == Satelite.name) return IDPieza.Satelite;
+        else if (piezaName == PlanetaHelado.name) return IDPieza.PlanetaHelado;
+        else if (piezaName == PlanetaVolcanico.name) return IDPieza.PlanetaVolcanico;
+        else if (piezaName == Sol.name) return IDPieza.Sol;
 
         //Poderes
         else if (piezaName == PlanetaSagrado.name) return IDPieza.PlanetaSagrado;
@@ -194,6 +206,9 @@ public enum IDPieza
 
     //Especiales
     Satelite,
+    PlanetaHelado,
+    PlanetaVolcanico,
+    Sol,
 
     //Poderes
     PlanetaSagrado,
