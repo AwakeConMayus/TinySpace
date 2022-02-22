@@ -38,7 +38,7 @@ public class IATerraformador : PiezaIA
 
         foreach(Casilla c in IATablero.instance.mapa)
         {
-            if (c.pieza.GetComponent<Planetas>())
+            if (c.pieza && c.pieza.GetComponent<Planetas>())
             {
                 c.pieza = nuevoPlaneta;
                 opciones.Add(new InfoTablero(IATablero.instance.mapa));
