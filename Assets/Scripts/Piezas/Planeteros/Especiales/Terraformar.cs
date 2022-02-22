@@ -14,6 +14,7 @@ public class Terraformar : Efecto
     [SerializeField] GameObject sagrado;
     public override void Accion()
     {
+        Debug.Log(tipo_a_terraformar + " TIPO A TERRAFORMAR");
         // Comprobacion de si el game se esta realizando online u offline
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {

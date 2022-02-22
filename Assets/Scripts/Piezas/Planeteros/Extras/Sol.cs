@@ -43,10 +43,11 @@ public class Sol : Planetas
                 puntos = puntos_4Casillas[nPiezas];
                 break;
             case 4:
-                puntos = puntos_3Casillas[nCasillas];
+                Debug.Log(nPiezas + " puntuaje IA");
+                puntos = puntos_3Casillas[nPiezas];
                 break;
             default:
-                Debug.LogError("En el sol no se estan contando bien las casillas adyacentes");
+                Debug.LogError("En el sol no se estan contando bien las casillas adyacentes: " + nCasillas);
                 break;
 
         }
