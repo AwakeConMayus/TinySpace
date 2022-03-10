@@ -17,7 +17,7 @@ public class InvestigadorMinerosMejorado : Efecto
             // Instanciacion que utiliza photon
             GameObject thisPieza = PhotonNetwork.Instantiate(investigador_astro.name, casilla.transform.position, Quaternion.identity);
             thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
-            Debug.Log("EFECTO");
+
 
         }
         else if(!PhotonNetwork.InRoom)

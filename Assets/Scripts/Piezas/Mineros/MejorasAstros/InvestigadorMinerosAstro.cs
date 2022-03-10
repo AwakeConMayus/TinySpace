@@ -19,8 +19,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     public override void Colocar(Casilla c)
     {
         base.Colocar(c);
-        Debug.Log(" primera condicion " + (this.gameObject.GetPhotonView().IsMine && primera_vez));
-        Debug.Log("segundda condicion " + (!PhotonNetwork.InRoom && primera_vez && InstancePiezas.instance.faccion == faccion));
+
         if ((this.gameObject.GetPhotonView().IsMine && primera_vez) || (!PhotonNetwork.InRoom && primera_vez && InstancePiezas.instance.faccion == faccion )) Preparar();
     }
 
@@ -30,7 +29,6 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         objetivos = FiltroCasillas.CasillasAdyacentes(objetivos, false);
         objetivos = FiltroCasillas.CasillasDeOtroJugador(faccion, objetivos);
         objetivos = FiltroCasillas.CasillasNoAstro(objetivos);
-        Debug.Log(objetivos.Count);
         if (objetivos.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");
