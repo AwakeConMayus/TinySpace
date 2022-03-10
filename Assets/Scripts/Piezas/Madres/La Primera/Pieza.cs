@@ -55,6 +55,7 @@ public abstract class Pieza : MonoBehaviour
 
     public virtual void Colocar(Casilla c)
     {
+        Debug.Log(this.gameObject + " Se ha colocado correctamente");
         casilla = c;
         casilla.pieza = this;
         EventManager.TriggerEvent("UpdateScore");

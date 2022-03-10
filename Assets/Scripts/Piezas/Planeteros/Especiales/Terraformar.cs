@@ -16,7 +16,7 @@ public class Terraformar : Efecto
     {
         Debug.Log(tipo_a_terraformar + " TIPO A TERRAFORMAR");
         // Comprobacion de si el game se esta realizando online u offline
-        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2 && GetComponent<PhotonView>().IsMine)
         {
             OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
             // Instanciacion que utiliza photon
