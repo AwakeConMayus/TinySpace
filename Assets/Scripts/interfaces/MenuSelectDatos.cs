@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class MenuSelectDatos : MonoBehaviourPunCallbacks
 {
@@ -462,11 +463,11 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     {
         for(int i = 0; i < 3; ++i)
         {
-            btnHeroes[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Poders[i].name;
-            btnEspeciales[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Piezas_Especiales[i].name;
+            btnHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Poders[i].name;
+            btnEspeciales[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especiales[i].name;
             if (faccion_Seleccionada.faccion != Faccion.minero)
             {
-                btnMejoradas[i].GetComponentInChildren<Text>().text = faccion_Seleccionada.posibles_Piezas_Especializadas[i].name;
+                btnMejoradas[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especializadas[i].name;
             }
         }
     }
