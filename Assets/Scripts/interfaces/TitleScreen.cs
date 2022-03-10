@@ -108,12 +108,13 @@ public class TitleScreen : MonoBehaviour
     }
     public void selectFaccion(int faccion)
     {
-        if(faccion!=0)
+        if ((faccion == 0))
         faccionSeleccionada = AuxFaccionSelecionada;
         else
-        faccionSeleccionada = faccion;
+        faccionSeleccionada = 0;
+       
         //* Activa todos los botones de facción cuando seleccionas una (para desactivar luego el botón en específico pulsado)
-        for (int i = 0; i < 1; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
+        for (int i = 0; i < 2; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
         {
             Debug.Log(btnFacciones[i].gameObject.name);
             btnFacciones[i].interactable = true;
