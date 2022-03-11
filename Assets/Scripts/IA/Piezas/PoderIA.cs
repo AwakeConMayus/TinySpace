@@ -13,7 +13,7 @@ public abstract class PoderIABase : PiezaIA
 
     protected InfoTablero PonerMejorPlaneta(InfoTablero tabBase)
     {
-        PiezaIA piezaReferencia = Resources.Load<PiezaIA>("Planeta Planetarios");
+        PiezaIA piezaReferencia = Resources.Load<PiezaIA>("Planeta");
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
