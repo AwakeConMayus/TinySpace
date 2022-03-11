@@ -21,6 +21,10 @@ public class TitleScreen : MonoBehaviour
     TuSeleccion mi_Seleccion;
     [SerializeField]
     TuSeleccion eleccion_rival;
+    [SerializeField]
+    GameObject infoMineros;
+    [SerializeField]
+    GameObject infoOyentes;
 
     bool pve = false;
 
@@ -102,9 +106,19 @@ public class TitleScreen : MonoBehaviour
 
     public void SeleccionMinerosOOyentes(bool f)
     {
-        if (f) AuxFaccionSelecionada= 1;
-        else AuxFaccionSelecionada = 2;
-       
+        if (f)
+        {
+            AuxFaccionSelecionada = 1;
+            infoMineros.SetActive(true);
+            infoOyentes.SetActive(false);
+        }
+        else
+        {
+            AuxFaccionSelecionada = 2;
+            infoMineros.SetActive(false);
+            infoOyentes.SetActive(true);
+        }
+
     }
     public void selectFaccion(int faccion)
     {
@@ -131,4 +145,15 @@ public class TitleScreen : MonoBehaviour
         salir.SetActive(true);
     }
 
+    public void ActivarInfo(bool f)
+    {
+        if (f)
+        {
+           
+        }
+        if (!f)
+        {
+            
+        }
+    }
 }
