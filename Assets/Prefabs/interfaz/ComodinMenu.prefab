@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1124, y: -39}
-  m_SizeDelta: {x: 246.16809, y: 225.55475}
+  m_SizeDelta: {x: 344.8, y: 341.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7459638288793721665
 MonoBehaviour:
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 91.6, y: 84}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!114 &7459638288793721664
@@ -589,7 +589,7 @@ MonoBehaviour:
         m_MethodName: Seleccion
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3258635846464971716, guid: bcdcb3942126dae42941150ae9086292,
+          m_ObjectArgument: {fileID: 8256386953750067650, guid: 568512d94d6280b4cbc552b99bd6c135,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
