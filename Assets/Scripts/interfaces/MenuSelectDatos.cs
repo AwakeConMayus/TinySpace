@@ -28,8 +28,11 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     DatosIA datosIA;
 
     Button[] btnHeroes;
+    SpriteRenderer[] ImgHeroes;
     Button[] btnEspeciales;
+    SpriteRenderer[] ImgEspeciales;
     Button[] btnMejoradas;
+    SpriteRenderer[] ImgMejoradas;
 
     int heroeSel    = -1;
     int especialSel = -1;
@@ -44,7 +47,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     [SerializeField]
     TuSeleccion seleccion_rival;
 
-
+   
     OpcionesFaccion faccion_Seleccionada;
     OpcionesFaccion opciones_rival;
 
@@ -55,14 +58,22 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     private void Start()
     {
         jugadores_listos = 0;
+
         btnHeroes     = new Button[3];
         btnHeroes     = menuHeroes.GetComponentsInChildren<Button>();
+        ImgHeroes     = new SpriteRenderer[3];
+        ImgHeroes     = menuHeroes.GetComponentsInChildren<SpriteRenderer>();
+
 
         btnEspeciales = new Button[3];
         btnEspeciales = menuEspeciales.GetComponentsInChildren<Button>();
+        ImgEspeciales = new SpriteRenderer[3];
+        ImgEspeciales = menuEspeciales.GetComponentsInChildren<SpriteRenderer>();
 
         btnMejoradas  = new Button[3];
         btnMejoradas  = menuMejoradas.GetComponentsInChildren<Button>();
+        ImgMejoradas = new SpriteRenderer[3];
+        ImgMejoradas = menuMejoradas.GetComponentsInChildren<SpriteRenderer>();
 
         if (PhotonNetwork.IsMasterClient && mi_Seleccion.faccion != Faccion.none)
         {
@@ -464,10 +475,16 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         for(int i = 0; i < 3; ++i)
         {
             btnHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Poders[i].name;
+            ImgHeroes[i].sprite = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<Image>().sprite;
+            ImgHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<TextMeshPro>().text;
             btnEspeciales[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especiales[i].name;
+            ImgEspeciales[i].sprite = faccion_Seleccionada.PosiblesImagenesEspeciales[i].GetComponentInChildren<Image>().sprite;
+            ImgEspeciales[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesEspeciales[i].GetComponentInChildren<TextMeshPro>().text;
             if (faccion_Seleccionada.faccion != Faccion.minero)
             {
                 btnMejoradas[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especializadas[i].name;
+                ImgMejoradas[i].sprite = faccion_Seleccionada.PosiblesImagenesMejoras[i].GetComponentInChildren<Image>().sprite;
+                ImgMejoradas[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesMejoras[i].GetComponentInChildren<TextMeshPro>().text;
             }
         }
     }

@@ -135,7 +135,7 @@ public class TitleScreen : MonoBehaviour
         }
         Debug.Log(AuxFaccionSelecionada);
         //* Desactiva el botón seleccionado 
-        btnFacciones[faccionSeleccionada].interactable = false;
+      //  btnFacciones[faccionSeleccionada].interactable = false;
         
         //* Asocia la facción seleccionada a la del scriptable object
         mi_Seleccion.faccion = (Faccion)faccionSeleccionada;
@@ -145,15 +145,5 @@ public class TitleScreen : MonoBehaviour
         salir.SetActive(true);
     }
 
-    public void ActivarInfo(bool f)
-    {
-        if (f)
-        {
-           
-        }
-        if (!f)
-        {
-            
-        }
-    }
+   
 }

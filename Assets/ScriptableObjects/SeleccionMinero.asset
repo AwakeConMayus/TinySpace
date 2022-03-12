@@ -17,6 +17,15 @@ MonoBehaviour:
   - {fileID: 6246422305320248225, guid: 929d1a003e8ed384c8e9640e8b51e0da, type: 3}
   - {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13, type: 3}
   - {fileID: 6870688844444362489, guid: a7a66aa09d3bbaa4da7e1ab6fd6806c8, type: 3}
+  PosiblesImagenesHeroes:
+  - {fileID: 6498057449747774420, guid: b83fa6b954bc4114b82cb620313420dd, type: 3}
+  - {fileID: 7745489094217348544, guid: d0a98020d43bba04b90e0100f280b982, type: 3}
+  - {fileID: 117819568245696851, guid: 2a2c6dd77bced254ea1824c525be475f, type: 3}
+  PosiblesImagenesEspeciales:
+  - {fileID: 6498057449747774420, guid: 25c6f7c377e71e142a9f3fd2c5775bd4, type: 3}
+  - {fileID: 7745489094217348544, guid: 8c86199502c2bb44fa3292302769db87, type: 3}
+  - {fileID: 117819568245696851, guid: ba4cdb729ec10284eaff132e273473ac, type: 3}
+  PosiblesImagenesMejoras: []
   posibles_Piezas_Especializadas: []
   huecos_Especializadas: 
   posibles_Piezas_Especiales:

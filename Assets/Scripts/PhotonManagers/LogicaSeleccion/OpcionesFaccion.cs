@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Opciones_Faccion")]
 public class OpcionesFaccion : ScriptableObject
@@ -11,8 +12,13 @@ public class OpcionesFaccion : ScriptableObject
 
 
     public GameObject[] posibles_Poders = new GameObject[3];
+    public GameObject[] PosiblesImagenesHeroes = new GameObject[3];
+    public GameObject[] PosiblesImagenesEspeciales = new GameObject[3];
+    public GameObject[] PosiblesImagenesMejoras = new GameObject[3];
+
 
     public List<GameObject> posibles_Piezas_Especializadas = new List<GameObject>();
+
 
     public List<int> huecos_Especializadas = new List<int>();
 
