@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CombateOyentes+ Ojo
+  m_Name: ShaderMenuUI.Dissolve
   m_Shader: {fileID: -6465566751694194690, guid: c67d5ac578b620d4c80346cb6b799dfc,
     type: 3}
   m_ShaderKeywords: 
@@ -15,10 +15,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -27,33 +25,34 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_2538BA08:
-        m_Texture: {fileID: 2800000, guid: 931b0138eed005144af4b8462fb163dd, type: 3}
+        m_Texture: {fileID: 28268798066460806, guid: 2e498d1c8094910479dc3e1b768306a4,
+          type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_4296E0C8:
-        m_Texture: {fileID: 2800000, guid: dfa124c72fa113d44b76671377568d1b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fc1f07a874bdc8438b283a594027f79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_E8F222A5:
-        m_Texture: {fileID: 2800000, guid: 2199ac4eefc07d348a4374d542a11481, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0ab726b7c4ca0ed419111f917657f97a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_FC600546:
-        m_Texture: {fileID: 2800000, guid: f1750c0b494beba4b9f0d2e884f9d9ba, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fc1f07a874bdc8438b283a594027f79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_nave:
-        m_Texture: {fileID: 2800000, guid: 46cfc4530c4cd9146b4a23c112c28e69, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0ab726b7c4ca0ed419111f917657f97a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3182302F: 2
+    - Vector1_3182302F: 5.04
     - Vector1_5D12A3A7: 0.03
     - Vector1_835FA898: 1
-    - Vector1_C4FFEE7: -1
+    - Vector1_C4FFEE7: -1.54
     - Vector1_E7E823AB: 1
     m_Colors:
-    - Color_1FDD30BB: {r: 1367.1202, g: 1168.4266, b: 677.11145, a: 1}
+    - Color_1FDD30BB: {r: 3.7019608, g: 0.1882353, b: 0.1882353, a: 1}
     - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}
-    - Color_chasis: {r: 1, g: 1, b: 1, a: 0}
-    - Color_windows: {r: 0.50890046, g: 1.0676931, b: 1.9058821, a: 0}
+    - Color_chasis: {r: 0.735849, g: 0.14231041, b: 0.14231041, a: 0}
+    - Color_windows: {r: 1.4196079, g: 0, b: 0, a: 0}

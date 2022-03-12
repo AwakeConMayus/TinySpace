@@ -25,13 +25,28 @@ public class TitleScreen : MonoBehaviour
     GameObject infoMineros;
     [SerializeField]
     GameObject infoOyentes;
-
+    [SerializeField]
+    GameObject FondoM1;
+    [SerializeField]
+    GameObject FondoM2;
+    [SerializeField]
+    GameObject FondoO1;
+    [SerializeField]
+    GameObject FondoO2;
     bool pve = false;
 
     [SerializeField]
     Text FrameRateText;
     float current;
+    private void Awake()
+    {
 
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", 2);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", 2);
+        FondoM1.GetComponent<Animator>().SetInteger("Posicion", 0);
+        FondoM2.GetComponent<Animator>().SetInteger("Posicion", 0);
+    }
+    
     private void Start()
     {
         //* Obtiene todos las referencias a botones presentes en la parte del menú de selección de facción
@@ -145,5 +160,17 @@ public class TitleScreen : MonoBehaviour
         salir.SetActive(true);
     }
 
-   
+    public void ActivarMenuMineros()
+    {
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", -1);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", -1);
+        
+    }
+    public void ActivarMenuOyentes()
+    {
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", 1);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", 1);
+        
+    }
+
 }
