@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -18478,7 +18478,6 @@ MonoBehaviour:
   eleccion_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
   infoMineros: {fileID: 893090878}
   infoOyentes: {fileID: 432552316}
-  MenuMinero: {fileID: 1983796111}
   FondoM1: {fileID: 183888631}
   FondoM2: {fileID: 721896826}
   FondoO1: {fileID: 253083560}

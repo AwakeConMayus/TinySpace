@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Hielo
+  m_Shader: {fileID: -6465566751694194690, guid: e56b8ecd3a4e1ca4882390c659442894,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Texture2DAsset_7CC23F28_Out_0:
+        m_Texture: {fileID: 2800000, guid: 7489fa3bee81a7448b341576f1687caf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_34BDD965: 1.62
+    - Vector1_5156343D: 0.623
+    - Vector1_8896981B: 3
+    - Vector1_AA05A891: 0.86
+    - Vector1_CED3231E: 0.792
+    m_Colors:
+    - Color_F4E6121: {r: 5.439648, g: 5.664767, b: 10.579866, a: 0}
+    - Color_FD051EF4: {r: 1.5255927, g: 1.5255927, b: 6.7764697, a: 0}
+    - Vector2_4FC6C53: {r: 5.21, g: 0.4, b: 0, a: 0}
