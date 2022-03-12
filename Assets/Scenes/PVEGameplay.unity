@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -419,7 +419,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1720331359}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7546,7 +7546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776328989}
   m_LocalRotation: {x: 0.38269165, y: -0.013835304, z: -0.0009418308, w: 0.9237721}
-  m_LocalPosition: {x: 9, y: 128, z: -25}
+  m_LocalPosition: {x: -24, y: 128, z: -25}
   m_LocalScale: {x: 784.46173, y: 40.857384, z: 441.25983}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13956,7 +13956,7 @@ PrefabInstance:
     - target: {fileID: 5425305740018571558, guid: 0eef586c647ae5a4bb14828724955f26,
         type: 3}
       propertyPath: m_Name
-      value: Camera (1)
+      value: Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5425305740018571558, guid: 0eef586c647ae5a4bb14828724955f26,
         type: 3}
@@ -14020,6 +14020,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eef586c647ae5a4bb14828724955f26, type: 3}
+--- !u!20 &1720331359 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 555765259365999274, guid: 0eef586c647ae5a4bb14828724955f26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720331358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722806487
 GameObject:
   m_ObjectHideFlags: 0
@@ -14318,6 +14324,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FondoEstrellas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711136005160509194, guid: 2476fd1ef3306d74682aa2ac814c7a78,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711136005160509194, guid: 2476fd1ef3306d74682aa2ac814c7a78,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -29.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711136005160509194, guid: 2476fd1ef3306d74682aa2ac814c7a78,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 226.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2476fd1ef3306d74682aa2ac814c7a78, type: 3}
