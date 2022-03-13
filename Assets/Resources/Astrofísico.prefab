@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6965823337272319900}
   - component: {fileID: 806894247262205160}
   m_Layer: 0
-  m_Name: PoderAstrofisico
+  m_Name: "Astrof\xEDsico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
