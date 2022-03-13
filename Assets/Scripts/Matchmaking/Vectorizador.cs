@@ -49,7 +49,7 @@ public static class Vectorizador
 
         //Nucleo Planetas C o I
         List<Casilla> casillasPlanetas = new List<Casilla>();
-        foreach (Casilla casilla in tablero) if (casilla.pieza.clase == Clase.planeta) casillasPlanetas.Add(casilla);
+        foreach (Casilla casilla in tablero) if (casilla.pieza && casilla.pieza.clase == Clase.planeta) casillasPlanetas.Add(casilla);
 
         List<Casilla> planetasNucleo = new List<Casilla>();
         foreach(Casilla casilla in casillasPlanetas)
@@ -61,7 +61,7 @@ public static class Vectorizador
 
             foreach(Casilla c in casillas2Dist)
             {
-                if(c.pieza.clase == Clase.planeta)
+                if(c.pieza && c.pieza.clase == Clase.planeta)
                 {
                     planetasNucleo.Add(casilla);
                     planetasNucleo.Add(c);
@@ -95,7 +95,7 @@ public static class Vectorizador
             areabsuqueda = FiltroCasillas.CasillasAdyacentes(areabsuqueda, false);
             foreach(Casilla c in areabsuqueda)
             {
-                if(c.pieza.clase == Clase.planeta)
+                if(c.pieza && c.pieza.clase == Clase.planeta)
                 {
                     buscando = false;
                     break;
@@ -137,10 +137,10 @@ public static class Vectorizador
         {
             foreach(Casilla casilla in tablero)
             {
-                if(casilla.pieza.clase == Clase.investigador)
+                if(casilla.pieza && casilla.pieza.clase == Clase.investigador)
                     foreach(Casilla c in FiltroCasillas.CasillasAdyacentes(casilla, true))
                     {
-                        if(c.pieza.clase == Clase.investigador)
+                        if(c.pieza && c.pieza.clase == Clase.investigador)
                         {
                             vector[4] = 1;
                         }
@@ -154,7 +154,7 @@ public static class Vectorizador
                 int lunas = 0;
                 foreach(Casilla c in FiltroCasillas.CasillasAdyacentes(casilla, true))
                 {
-                    if (c.pieza.clase == Clase.luna) ++lunas;
+                    if (c.pieza && c.pieza.clase == Clase.luna) ++lunas;
                 }
                 if (lunas > 1) vector[4] = 1;
             }
