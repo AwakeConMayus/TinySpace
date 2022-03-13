@@ -33,7 +33,6 @@ public class Sol : Planetas
                 }
             }
         }
-        Debug.Log(nCasillas);
         switch (nCasillas)
         {
             case 6:
