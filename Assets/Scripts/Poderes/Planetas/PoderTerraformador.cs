@@ -100,7 +100,7 @@ public class PoderTerraformador : PoderPlanetas
             thisPieza.GetComponent<Pieza>().casilla = c;
             c.pieza = thisPieza.GetComponent<Pieza>();
             setPLaneta = false;
-            if (planetasPuestos < numeroPlanetasFase)
+            if (planetasPuestos < numeroPlanetasFase-2)
             {
                 ++planetasPuestos;
                 FirstActionPersonal();

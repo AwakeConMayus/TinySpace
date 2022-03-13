@@ -55,7 +55,6 @@ public abstract class Pieza : MonoBehaviour
 
     public virtual void Colocar(Casilla c)
     {
-        Debug.Log(this.gameObject + " Se ha colocado correctamente");
         casilla = c;
         casilla.pieza = this;
         EventManager.TriggerEvent("UpdateScore");
@@ -65,7 +64,6 @@ public abstract class Pieza : MonoBehaviour
 
     void TerminarAccionConjunta()
     {
-        Debug.Log("pasa turno pieza: " + this.gameObject.name);
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
