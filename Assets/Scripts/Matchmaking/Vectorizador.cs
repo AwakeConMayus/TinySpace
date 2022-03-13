@@ -71,7 +71,7 @@ public static class Vectorizador
 
             if (planetasNucleo.Count != 0) break;
         }
-        List<Casilla> lista1 = FiltroCasillas.CasillasAdyacentes(planetasNucleo[0],true);
+        List<Casilla> lista1 = FiltroCasillas.CasillasAdyacentes(planetasNucleo[0], true);
         List<Casilla> lista2 = FiltroCasillas.CasillasAdyacentes(planetasNucleo[1], true);
         int coincidencias = 0;
         foreach(Casilla c in lista1)
