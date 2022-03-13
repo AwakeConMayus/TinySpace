@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8868155255084135518}
   - component: {fileID: -2925669552993428296}
   m_Layer: 0
-  m_Name: Planeta Planetarios
+  m_Name: Planeta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
