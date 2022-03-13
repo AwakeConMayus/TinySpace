@@ -75,6 +75,14 @@ public class PVEArbitro : MonoBehaviour
 
 
         EventManager.StartListening("AccionTerminadaConjunta", NextTurn);
+
+        //Vectorizacion
+        List<int[]> vectores = new List<int[]>();
+        if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador1, jugador2);
+        else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, jugador1);
+
+        
+
         NextTurn();
 
     }
