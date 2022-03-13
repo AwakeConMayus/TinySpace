@@ -34,6 +34,8 @@ public class PVEArbitro : MonoBehaviour
 
     [SerializeField] bool SendOnline = true;
 
+    List<int[]> vectores = new List<int[]>();
+
 
     private void Start()
     {
@@ -76,11 +78,6 @@ public class PVEArbitro : MonoBehaviour
 
         EventManager.StartListening("AccionTerminadaConjunta", NextTurn);
 
-        //Vectorizacion
-        List<int[]> vectores = new List<int[]>();
-        if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador1, jugador2);
-        else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, jugador1);
-
         
 
         NextTurn();
@@ -92,12 +89,21 @@ public class PVEArbitro : MonoBehaviour
 
     public void NextTurn()
     {
+        if (turnoAbsoluto == 1) Vectorizacion();        
         if (turnoAbsoluto == 25) EndGame();
         if (end) return;
         if (specialPhase) SpecialTurn();
         else Turn();
     }
 
+    void Vectorizacion()
+    {
+        //Vectorizacion
+        if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador1, jugador2);
+        else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, jugador1);
+
+        print(Auxiliar.StringArrayInt(vectores[0]) + " // " + Auxiliar.StringArrayInt(vectores[1]));
+    }
 
     void SpecialTurn()
     {

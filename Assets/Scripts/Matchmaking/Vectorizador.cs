@@ -95,6 +95,7 @@ public static class Vectorizador
             areabsuqueda = FiltroCasillas.CasillasAdyacentes(areabsuqueda, false);
             foreach(Casilla c in areabsuqueda)
             {
+                if (c == planetaAislado) continue;
                 if(c.pieza && c.pieza.clase == Clase.planeta)
                 {
                     buscando = false;
