@@ -33,16 +33,16 @@ public class Sol : Planetas
                 }
             }
         }
-
+        Debug.Log(nCasillas);
         switch (nCasillas)
         {
             case 6:
                 puntos = puntos_6Casillas[nPiezas];
                 break;
-            case 5:
+            case 4:
                 puntos = puntos_4Casillas[nPiezas];
                 break;
-            case 4:
+            case 3:
                 Debug.Log(nPiezas + " puntuaje IA");
                 puntos = puntos_3Casillas[nPiezas];
                 break;
