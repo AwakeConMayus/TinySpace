@@ -17,6 +17,7 @@ public class MenuTerraformador : MonoBehaviour
 
     public void Convocar(Casilla c)
     {
+        
         gameObject.SetActive(true);
         transform.position = c.transform.position;
         casilla = c;
@@ -26,10 +27,12 @@ public class MenuTerraformador : MonoBehaviour
     {
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
+            OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
             PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
         }
         else
         {
+            casilla.Clear();
             GameObject thisPieza = Instantiate(prefab);
             thisPieza.transform.position = casilla.transform.position;
         }
