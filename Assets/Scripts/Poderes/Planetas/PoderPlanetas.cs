@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public abstract class PoderPlanetas : Poder
 {
-    GameObject planeta;
+    protected GameObject planeta;
 
     bool SetPlaneta = false;
 
