@@ -10,9 +10,9 @@ public class IAPodColono1Oyentes : PoderIABase
 
         tabBase = PonerMejorPlaneta(tabBase);
 
-        PiezaIA ObtenerPiezaPoder = padre.opcionesIniciales[padre.opcionesDisponibles[0]].GetComponent<PiezaIA>();
+        PiezaIA planetaIA = Resources.Load<GameObject>("Planeta").GetComponent<PiezaIA>();
 
-        nuevosEstados = ObtenerPiezaPoder.Opcionificador(tabBase);        
+        nuevosEstados = planetaIA.Opcionificador(tabBase);        
 
         return nuevosEstados;
     }

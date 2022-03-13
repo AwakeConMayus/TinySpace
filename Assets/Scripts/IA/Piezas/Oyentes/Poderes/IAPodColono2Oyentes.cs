@@ -8,7 +8,11 @@ public class IAPodColono2Oyentes : PoderIABase
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
-        Pieza piezaReferencia = Resources.Load<Pieza>("Planeta Sagrado Planetarios");
+        List<Pieza> planetas = new List<Pieza>();
+        planetas.Add(Resources.Load<Pieza>("Planeta Sol Planetarios"));
+        planetas.Add(Resources.Load<Pieza>("Planeta Helado Planetarios"));
+        planetas.Add(Resources.Load<Pieza>("Planeta Volcanico Planetarios"));
+        planetas.Add(Resources.Load<Pieza>("Planeta Sagrado Planetarios"));
 
 
         IATablero.instance.PrintInfoTablero(tabBase);
@@ -19,11 +23,15 @@ public class IAPodColono2Oyentes : PoderIABase
 
             if (c.pieza && c.pieza.GetComponent<Planetas>())
             {
-                
-                c.pieza = piezaReferencia;
-                piezaReferencia.casilla = c;
+                foreach(Pieza planeta in planetas)
+                {
+                    IATablero.instance.PrintInfoTablero(tabBase);
 
-                nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+                    c.pieza = planeta;
+                    planeta.casilla = c;
+
+                    nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+                }
             }
 
         }
