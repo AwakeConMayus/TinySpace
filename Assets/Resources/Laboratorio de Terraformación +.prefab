@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 3669817915743192026}
   - component: {fileID: 1269792074125651973}
   m_Layer: 0
-  m_Name: Laboratorio Planetarios Terraformadores
+  m_Name: "Laboratorio de Terraformaci\xF3n +"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
