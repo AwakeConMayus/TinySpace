@@ -91,6 +91,8 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     public void Preparar( )
     {
+        Debug.Log("PREPARA");
+
         for(int i = 0; i < opciones.Count; ++i)
         {
             if(opciones[i].faccion == faccion_del_Rival)
@@ -474,6 +476,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     {
         for(int i = 0; i < 3; ++i)
         {
+            Debug.Log(faccion_Seleccionada);
             btnHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Poders[i].name;
             ImgHeroes[i].sprite = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<Image>().sprite;
             ImgHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<TextMeshPro>().text;

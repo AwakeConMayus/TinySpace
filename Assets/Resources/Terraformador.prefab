@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2019985237896747794}
   - component: {fileID: -2397303647024700769}
   m_Layer: 0
-  m_Name: Terraformar Planetarios
+  m_Name: Terraformador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
