@@ -7,18 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_BarraPuntos Enemigo
-  m_Shader: {fileID: -6465566751694194690, guid: 49e6f0db2f0f8ef4fbae77c9dcbe7192,
+  m_Name: Shader Graphs_BarraPuntos 2
+  m_Shader: {fileID: -6465566751694194690, guid: 5273d44cd5e3f3a49b63e5f2677e88d6,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -26,12 +24,8 @@ Material:
         m_Texture: {fileID: 2800000, guid: c03ec31d4feeeaa4fa61e3164f111417, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_72D91A58_Texture_1:
-        m_Texture: {fileID: 2800000, guid: c03ec31d4feeeaa4fa61e3164f111417, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_32005B5B: 0
-    - Vector1_DD631911: 0.5
+    - Vector1_32005B5B: 1.61
+    - Vector1_DD631911: -1.12
     m_Colors:
-    - Color_74BDB3D9: {r: 0.49607843, g: 0, b: 0.003921569, a: 0}
+    - Color_74BDB3D9: {r: 0.1657732, g: 0.990566, b: 0, a: 0}
