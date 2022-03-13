@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6459,6 +6459,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721451987}
   m_CullTransparentMesh: 0
+--- !u!1 &756349658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756349659}
+  - component: {fileID: 756349661}
+  - component: {fileID: 756349660}
+  m_Layer: 5
+  m_Name: HeroeExp3 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &756349659
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756349658}
+  m_LocalRotation: {x: -0, y: -0, z: 4.601225e-19, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00004950988}
+  m_LocalScale: {x: 1.2639445, y: 1.5559366, z: 0.9743637}
+  m_Children:
+  - {fileID: 809746205}
+  m_Father: {fileID: 1697326274}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2064.7183, y: 1012.3998}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &756349660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756349658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 5f14a763449f04e46889f93a98bcb6de, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 40596fc320435764b9f29802698caaeb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &756349661
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756349658}
+  m_CullTransparentMesh: 0
 --- !u!1 &763821387
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,17 +7179,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809746204}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8}
-  m_LocalScale: {x: 1.7972069, y: 1.7972069, z: 1.7972069}
+  m_LocalRotation: {x: -0, y: -0, z: -4.601225e-19, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -44}
+  m_LocalScale: {x: 0.9479877, y: 0.77008533, z: 1.2297295}
   m_Children: []
-  m_Father: {fileID: 828090489}
-  m_RootOrder: 1
+  m_Father: {fileID: 756349659}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 911, y: 365.59665}
-  m_SizeDelta: {x: 300, y: 120}
+  m_AnchoredPosition: {x: -12, y: 24}
+  m_SizeDelta: {x: 426.7915, y: 149.4278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809746206
 MonoBehaviour:
@@ -7412,7 +7487,6 @@ RectTransform:
   m_LocalScale: {x: 0.018599734, y: 0.018599734, z: 0.018599734}
   m_Children:
   - {fileID: 18915027}
-  - {fileID: 809746205}
   m_Father: {fileID: 262560458}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15318,6 +15392,7 @@ Transform:
   - {fileID: 1439881327}
   - {fileID: 686834605}
   - {fileID: 2082354577}
+  - {fileID: 756349659}
   m_Father: {fileID: 18915027}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
