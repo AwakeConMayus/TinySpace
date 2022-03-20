@@ -31,7 +31,7 @@ public class PVEArbitro : MonoBehaviour
     bool initial = true;
 
     int turnoAbsoluto = -1;
-
+    [SerializeField] GameObject MenuFinalGame;
     [SerializeField] bool SendOnline = true;
 
     List<int[]> vectores = new List<int[]>();
@@ -210,6 +210,7 @@ public class PVEArbitro : MonoBehaviour
     public void EndGame()
     {
         bool IAWin = false;
+        MenuFinalGame.GetComponent<MenuFinalParitda>().Final_Partida(  new int[2]);
         if (Tablero.instance.Winner() == jugador2.faccion) IAWin = true;
         datosIA.AddData(IAWin);
         print("Wiiiiiin");
