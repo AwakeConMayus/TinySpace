@@ -20,7 +20,7 @@ public class SendToGoogle : MonoBehaviour
     string Faccion1, Faccion2;
 
     //Partida con IA
-    string PartidaConIA = "NO";
+    string PartidaConIA;
 
     //Elecciones
     int Maquinista, Mecanico, Chantajista, Comodin, ModelPerfeccionado, Supernave;
@@ -44,7 +44,7 @@ public class SendToGoogle : MonoBehaviour
     }    
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
-    const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2Ht626ha_IM_aG0_wbf6DPJNyruJ82Hi0im_LdYgfjP-RvA/formResponse";
+    const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdmH1u9Py0CUHifpeVFgVl-14fxbuQTHJLQiXwpDzSehkgYJw/formResponse";
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
@@ -91,6 +91,9 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1391571527", ModelPerfeccionado);  
         form.AddField("entry.144225273",  Supernave);
 
+
+
+
         form.AddField("entry.675215660", Colono);  
         form.AddField("entry.396095084", Lunatico);  
         form.AddField("entry.154332309", Astrofisico);
@@ -101,6 +104,10 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.273910366",  Planeta);     
         form.AddField("entry.672572753",  Satelite);   
         form.AddField("entry.633594529",  CambioOrbital);
+
+
+
+
 
     }
 
