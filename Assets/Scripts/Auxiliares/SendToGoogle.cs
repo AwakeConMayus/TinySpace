@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 #pragma warning disable CS0618 //* Uso del método WWW en vez de UnityWebRequest puesto que este primero permite subir data binario a google forms
 
 // En esta url se explica de forma menos específica que como obtengo las entries para el formulario https://ninest.vercel.app/html/google-forms-embed
@@ -24,9 +25,11 @@ public class SendToGoogle : MonoBehaviour
 
     //Elecciones
     int Maquinista, Mecanico, Chantajista, Comodin, ModelPerfeccionado, Supernave;
-    int Colono, Lunatico, Astrofisico, Combate, Laboratorio, Estratega, Planeta, Satelite, CambioOrbital;
+    int Colono, Lunatico, Astrofisico, Combate, Laboratorio, Estratega, Planeta, Terraformador, CambioOrbital;
 
 
+    int inicialV, grupoPlanetario, distTercerPlaneta, rotecionMejorada, handicapHéroe;
+    int grupoMineral, malaMano;
 
 
 
@@ -48,10 +51,33 @@ public class SendToGoogle : MonoBehaviour
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
-    public void SendOnline(Faccion _inicial, bool _IA = false)
+    public void SendOnline(Faccion _inicial, bool _IA = false, List<int[]> vectores = null)
     {
         inicial = _inicial;
         IA = _IA;
+        if(vectores != null)
+        {
+            foreach(int[] a in vectores)
+            {
+                if(a.Length == 3)
+                {
+                    grupoMineral = a[1];
+                    malaMano = a[2];
+                }
+                else if(a.Length == 5) 
+                {
+                    inicialV = a[0];
+                    grupoPlanetario = a[1];
+                    distTercerPlaneta = a[2];
+                    rotecionMejorada = a[3];
+                    handicapHéroe = a[4];
+                }
+                else
+                {
+                    Debug.Log("HAY UN VECTOR QUE SE HA COJIDO MAL");
+                }
+            }
+        }
         if (SendingDataOnline) StartCoroutine(Upload());
     }
 
@@ -79,32 +105,37 @@ public class SendToGoogle : MonoBehaviour
         //* Ahí debes coger el número grande poco después de la variable del formulario a la que quieras asociar el field, por ejemplo: (...)"PuntosMineros",null,0,[[435469167,(...)"PuntosPlanetarios",null,0,[[1370920118,(...)
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
-        form.AddField("entry.952161928",  Ganador);
-        form.AddField("entry.917130770",  Faccion1);
-        form.AddField("entry.1479737980", Faccion2);
-        form.AddField("entry.940617184",  PartidaConIA);
+        form.AddField("entry.1671880236", Ganador);
+        form.AddField("entry.1997505452", inicialV);
+        form.AddField("entry.1747506782", Faccion1);
+        form.AddField("entry.14402550", Faccion2);
+        form.AddField("entry.572210542", PartidaConIA);
 
-        form.AddField("entry.724103590",  Maquinista);   
-        form.AddField("entry.1738738836", Mecanico);  
-        form.AddField("entry.1171462077", Chantajista);  
-        form.AddField("entry.2125969092", Comodin);  
-        form.AddField("entry.1391571527", ModelPerfeccionado);  
-        form.AddField("entry.144225273",  Supernave);
+        form.AddField("entry.864094340", Maquinista);
+        form.AddField("entry.1172698563", Mecanico);
+        form.AddField("entry.1792845175", Chantajista);
+        form.AddField("entry.725644111", Comodin);
 
+        form.AddField("entry.1313404459", ModelPerfeccionado);
+        form.AddField("entry.241310762", Supernave);
+        form.AddField("entry.2103168586", grupoMineral);
+        form.AddField("entry.561605195", malaMano);
 
+        form.AddField("entry.1367708030", Colono);
+        form.AddField("entry.1263929892", Lunatico);
+        form.AddField("entry.550311028", Astrofisico);
 
+        form.AddField("entry.1474848063", Combate);
+        form.AddField("entry.758557112", Laboratorio);
+        form.AddField("entry.747600312", Estratega);
+        form.AddField("entry.901872699", Planeta);
+        form.AddField("entry.1834529338", Terraformador);
 
-        form.AddField("entry.675215660", Colono);  
-        form.AddField("entry.396095084", Lunatico);  
-        form.AddField("entry.154332309", Astrofisico);
-
-        form.AddField("entry.205489418",  Combate);  
-        form.AddField("entry.1471576595", Laboratorio);   
-        form.AddField("entry.535514923",  Estratega);    
-        form.AddField("entry.273910366",  Planeta);     
-        form.AddField("entry.672572753",  Satelite);   
-        form.AddField("entry.633594529",  CambioOrbital);
-
+        form.AddField("entry.1328728453", CambioOrbital);
+        form.AddField("entry.1923921435", grupoPlanetario);
+        form.AddField("entry.1822730851", distTercerPlaneta);
+        form.AddField("entry.820196545", rotecionMejorada);
+        form.AddField("entry.1935288395", handicapHéroe);
 
 
 
@@ -196,8 +227,8 @@ public class SendToGoogle : MonoBehaviour
 
         //Oyentes
         if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios")) Comodin = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion")) Satelite = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas")) CambioOrbital = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Terraformador")) Terraformador = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital")) CambioOrbital = 1;
 
 
         //Mejoras

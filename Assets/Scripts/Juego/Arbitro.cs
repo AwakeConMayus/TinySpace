@@ -19,7 +19,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     bool specialPhase = true;
     int specialTurno = 0;
     int turno = 0;
-
+    bool initial = false;
 
     bool inputActive = true;
 
@@ -34,7 +34,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     EspejoMaestro espejo_Maestro;
 
     [SerializeField] bool SendOnline = true;
-
+    List<int[]> vectores = new List<int[]>();
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
@@ -47,7 +47,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     public void SetInitial()
     {
-        active = specialActive = true;
+        active = specialActive = initial = true;
         switch (mi_seleccion.faccion)
         {
             case Faccion.minero:
@@ -78,7 +78,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     [PunRPC]
     public void RPC_SetNotInitial()
     {
-        active = specialActive = false;
+        active = specialActive = initial = false;
         switch (mi_seleccion.faccion)
         {
             case Faccion.minero:
@@ -159,6 +159,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
+        if (turno == 1 && initial) Vectorizacion();
         if (turno == 20)
         {
             PhotonNetwork.AutomaticallySyncScene = false;
@@ -185,6 +186,22 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
     }
 
+    void Vectorizacion()
+    {
+        Opciones jugador2 = opciones[0];
+        //ESTO VA A ROMPERSER CUANDO HAYA MAS DE DOS FACCIONES
+
+        foreach(Opciones op in opciones)
+        {
+            if (op != player) jugador2 = op;
+        }
+        //Vectorizacion
+        if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, player, jugador2);
+        else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, player);
+
+        print(Auxiliar.StringArrayInt(vectores[0]) + " // " + Auxiliar.StringArrayInt(vectores[1]));
+    }
+
     void SetActiveActive(bool b)
     {
         inputActive = b;
@@ -194,7 +211,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     void EndGame()
     {
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient && SendOnline)
-            SendToGoogle.instance.SendOnline(player.faccion);
+            SendToGoogle.instance.SendOnline(player.faccion, false, vectores);
 
         mi_seleccion.mi_poder = null;
         mi_seleccion.mis_opciones = new GameObject[5];

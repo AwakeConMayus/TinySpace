@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1272930542544058060
+--- !u!1 &6304254719590537824
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1633418534342111317}
-  - component: {fileID: 132265879854292404}
-  - component: {fileID: 8515297877346532280}
-  - component: {fileID: 7392189935978820289}
-  - component: {fileID: 7875990928838441022}
-  - component: {fileID: -5521382791994187919}
+  - component: {fileID: 5799647108148714745}
+  - component: {fileID: 3529423100598015764}
+  - component: {fileID: 2324200753262976621}
+  - component: {fileID: 3141904868370699410}
+  - component: {fileID: 2019985237896747794}
+  - component: {fileID: -2397303647024700769}
   m_Layer: 0
-  m_Name: Comodin
+  m_Name: Terraformar Planetarios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1633418534342111317
+--- !u!4 &5799647108148714745
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
+  m_GameObject: {fileID: 6304254719590537824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
@@ -35,30 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &132265879854292404
+--- !u!114 &3529423100598015764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a45975cd170f5045961207b42e2baa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faccion: 1
-  clase: 0
-  casilla: {fileID: 0}
-  astro: 0
-  coste: 2
---- !u!114 &8515297877346532280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
+  m_GameObject: {fileID: 6304254719590537824}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -74,26 +57,26 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!65 &7392189935978820289
+--- !u!65 &2324200753262976621
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
+  m_GameObject: {fileID: 6304254719590537824}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7875990928838441022
+--- !u!54 &3141904868370699410
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
+  m_GameObject: {fileID: 6304254719590537824}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -103,16 +86,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-5521382791994187919
+--- !u!114 &2019985237896747794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272930542544058060}
+  m_GameObject: {fileID: 6304254719590537824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d455f631c33e4eb499fe43625e220946, type: 3}
+  m_Script: {fileID: 11500000, guid: 1623fbab5121a0644b8378b866d61feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faccion: 1
+  faccion: 2
+  clase: 0
+  casilla: {fileID: 0}
+  astro: 0
+  sol: {fileID: 7024440420229625860, guid: b8fe6bd237c0a8f49846a5d29c470a8d, type: 3}
+  hielo: {fileID: 6742238933231433789, guid: 9f675a892861fbe4b9521034b0072d14, type: 3}
+  volcanico: {fileID: 763168805342163853, guid: 2b2d381f9b670b14e9e116f03964622e,
+    type: 3}
+  sagrado: {fileID: 6596421712654070911, guid: 337f75c2a3274374eb8b71dafc256a85, type: 3}
+--- !u!114 &-2397303647024700769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304254719590537824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9c2ea150b11424c8cee28f98a31cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 2
