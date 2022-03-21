@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_FC600546:
-        m_Texture: {fileID: 2800000, guid: 666c231839190284c8f8d8da33563a78, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fc1f07a874bdc8438b283a594027f79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_nave:
@@ -148,9 +148,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3182302F: 2
+    - Vector1_3182302F: 3.06
     - Vector1_5D12A3A7: 0.03
-    - Vector1_C4FFEE7: -1
+    - Vector1_835FA898: 1
+    - Vector1_C4FFEE7: -1.6
+    - Vector1_E7E823AB: 1
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -271,9 +273,10 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_1FDD30BB: {r: 9.73429, g: 0.9683325, b: 0, a: 1}
+    - Color_1FDD30BB: {r: 0.30419657, g: 0.030260392, b: 0, a: 1}
+    - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}
     - Color_chasis: {r: 0.6509434, g: 0.54347634, b: 0.54347634, a: 0}
-    - Color_windows: {r: 6.6461353, g: 0.97430235, b: 0.6263372, a: 0}
+    - Color_windows: {r: 26.584541, g: 3.8972104, b: 2.5053496, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

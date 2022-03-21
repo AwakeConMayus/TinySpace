@@ -17,6 +17,18 @@ MonoBehaviour:
   - {fileID: 8320863858920773836, guid: e2aa146918929d94e8c794009b4cb48e, type: 3}
   - {fileID: 5174492570648314811, guid: f7ae77548596bbe45854b90edebe9095, type: 3}
   - {fileID: 7655988863949034424, guid: f5040215ec6fc1a4fb0e061331c8e1bc, type: 3}
+  PosiblesImagenesHeroes:
+  - {fileID: 6498057449747774420, guid: 4a353b7d70588f04893757f96e02c4ba, type: 3}
+  - {fileID: 117819568245696851, guid: 978696608f852c74198de9ef9a33cb11, type: 3}
+  - {fileID: 7745489094217348544, guid: e3eca6f588525ed45a4b81a0e49de619, type: 3}
+  PosiblesImagenesEspeciales:
+  - {fileID: 6498057449747774420, guid: 4463700de1751a048aed1e90917e090d, type: 3}
+  - {fileID: 117819568245696851, guid: e1fd07ae1f1e5d94cab1a2bb6b5cc1cb, type: 3}
+  - {fileID: 7745489094217348544, guid: 99a25dfcd66ab6a42b4309397c7d807b, type: 3}
+  PosiblesImagenesMejoras:
+  - {fileID: 6498057449747774420, guid: 649ca7b84137031469fbceef2f544e7b, type: 3}
+  - {fileID: 117819568245696851, guid: 098ab1f56712d604582c69291256b57f, type: 3}
+  - {fileID: 7745489094217348544, guid: 551a7e474d3279d48bcd495e5d8ebac9, type: 3}
   posibles_Piezas_Especializadas:
   - {fileID: 8742882276933945149, guid: f3e8102840e3665409c05aaf70dbf0b2, type: 3}
   - {fileID: 6119831999288666414, guid: bbe2be5017ad1f945972fba0189b34d3, type: 3}
@@ -24,8 +36,8 @@ MonoBehaviour:
   huecos_Especializadas: 010000000200000003000000
   posibles_Piezas_Especiales:
   - {fileID: 7914650244640121104, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3, type: 3}
-  - {fileID: 7989678852759279897, guid: 9db775dc3298b75479018c7577eeaca8, type: 3}
   - {fileID: 1627388167130017577, guid: 0096fbb343e5ffb4a9a9efc16070c275, type: 3}
+  - {fileID: 6304254719590537824, guid: 1d671ccf364363b4cb978bf210704869, type: 3}
   piezas_Basicas:
   - {fileID: 8364613719665286529, guid: 6059c1cc280486a4194395ca916f6f37, type: 3}
   - {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85, type: 3}

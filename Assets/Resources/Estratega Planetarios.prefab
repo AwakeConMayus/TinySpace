@@ -52,6 +52,7 @@ MonoBehaviour:
   faccion: 2
   clase: 0
   casilla: {fileID: 0}
+  astro: 0
 --- !u!114 &4527237692562439129
 MonoBehaviour:
   m_ObjectHideFlags: 0

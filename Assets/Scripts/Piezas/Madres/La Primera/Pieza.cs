@@ -64,7 +64,6 @@ public abstract class Pieza : MonoBehaviour
 
     void TerminarAccionConjunta()
     {
-        Debug.Log("pasa turno pieza: " + this.gameObject.name);
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

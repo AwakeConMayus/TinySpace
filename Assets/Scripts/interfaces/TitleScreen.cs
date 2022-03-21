@@ -12,26 +12,46 @@ public class TitleScreen : MonoBehaviour
     GameObject menuFaccion;
     [SerializeField]
     GameObject salir;
-
-    Button[] btnFacciones;
+    [SerializeField]
+    GameObject EscojerEjercito;
+    Toggle[] btnFacciones;
     int faccionSeleccionada;
-
+    int AuxFaccionSelecionada;
     [SerializeField]
     TuSeleccion mi_Seleccion;
     [SerializeField]
     TuSeleccion eleccion_rival;
-
+    [SerializeField]
+    GameObject infoMineros;
+    [SerializeField]
+    GameObject infoOyentes;
+    [SerializeField]
+    GameObject FondoM1;
+    [SerializeField]
+    GameObject FondoM2;
+    [SerializeField]
+    GameObject FondoO1;
+    [SerializeField]
+    GameObject FondoO2;
     bool pve = false;
 
     [SerializeField]
     Text FrameRateText;
     float current;
+    private void Awake()
+    {
 
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", 2);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", 2);
+        FondoM1.GetComponent<Animator>().SetInteger("Posicion", 0);
+        FondoM2.GetComponent<Animator>().SetInteger("Posicion", 0);
+    }
+    
     private void Start()
     {
         //* Obtiene todos las referencias a botones presentes en la parte del menú de selección de facción
         //* btnFaccione[0] = mineros, [1] Oyentes, [2] Honorables, [3] Simbiontes, [4] Buscar Partida, [5] Salir del juego
-        btnFacciones = menuFaccion.GetComponentsInChildren<Button>();
+        btnFacciones = menuFaccion.GetComponentsInChildren<Toggle>();
         //* Se asegura de que, independientemente del estado de la escena, al ejecutar se muestren bien los botones
         menuInicio.SetActive(true);
         menuFaccion.SetActive(false);
@@ -57,18 +77,35 @@ public class TitleScreen : MonoBehaviour
     //* Funcción asociada a jugar, cambiar botones
     public void ChangeButtons(bool setPve = false)
     {
-        menuInicio.SetActive(false);
+
+        //  menuInicio.SetActive(false);
+        if (menuFaccion.activeSelf)
+        {
+        menuInicio.SetActive(true);
+        menuFaccion.SetActive(false);
+        }
+      else if (!menuFaccion.activeSelf)
+        {
         menuFaccion.SetActive(true);
+        }
         pve = setPve;
     }
 
     public void EnterMatchMaking()
     {
-        if(!pve) SceneManager.LoadScene(1);
-        else
-        {
-            SceneManager.LoadScene(2);
-        }
+        print(pve);
+         if(!pve) SceneManager.LoadScene(1);
+          else
+          {
+             // SceneManager.LoadScene(2);
+            EscojerEjercito.SetActive(true);
+             menuInicio.SetActive(false);
+          }
+    }
+    public void SalirMatchmaking()
+    {
+        EscojerEjercito.SetActive(false);
+       // menuInicio.SetActive(true);
     }
 
     public void Reload()
@@ -82,19 +119,38 @@ public class TitleScreen : MonoBehaviour
         Application.Quit();
     }
 
+    public void SeleccionMinerosOOyentes(bool f)
+    {
+        if (f)
+        {
+            AuxFaccionSelecionada = 1;
+            infoMineros.SetActive(true);
+            infoOyentes.SetActive(false);
+        }
+        else
+        {
+            AuxFaccionSelecionada = 2;
+            infoMineros.SetActive(false);
+            infoOyentes.SetActive(true);
+        }
+
+    }
     public void selectFaccion(int faccion)
     {
-        faccionSeleccionada = faccion;
-
+        if ((faccion == 0))
+        faccionSeleccionada = AuxFaccionSelecionada;
+        else
+        faccionSeleccionada = 0;
+       
         //* Activa todos los botones de facción cuando seleccionas una (para desactivar luego el botón en específico pulsado)
-        for (int i = 0; i < 3; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
+        for (int i = 0; i < 2; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
         {
             Debug.Log(btnFacciones[i].gameObject.name);
             btnFacciones[i].interactable = true;
         }
-
+        Debug.Log(AuxFaccionSelecionada);
         //* Desactiva el botón seleccionado 
-        btnFacciones[faccionSeleccionada].interactable = false;
+      //  btnFacciones[faccionSeleccionada].interactable = false;
         
         //* Asocia la facción seleccionada a la del scriptable object
         mi_Seleccion.faccion = (Faccion)faccionSeleccionada;
@@ -102,6 +158,19 @@ public class TitleScreen : MonoBehaviour
         
         //* Activa el botón de Buscar Partida (match making) una vez se vea que tienes una facción seleccionada
         salir.SetActive(true);
+    }
+
+    public void ActivarMenuMineros()
+    {
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", -1);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", -1);
+        
+    }
+    public void ActivarMenuOyentes()
+    {
+        FondoO1.GetComponent<Animator>().SetInteger("Posicion", 1);
+        FondoO2.GetComponent<Animator>().SetInteger("Posicion", 1);
+        
     }
 
 }

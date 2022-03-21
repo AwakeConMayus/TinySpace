@@ -4,14 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using TMPro;
 
 public class MenuFinalParitda : MonoBehaviour
 {
 
-    [SerializeField] Text texto_final_partida;
+    [SerializeField] TextMeshPro texto_final_partida_Enemigo;
+    [SerializeField] TextMeshPro texto_final_partida_Jugador;
+    [SerializeField]
+    TuSeleccion mi_Seleccion;
+    [SerializeField]
+    TuSeleccion seleccion_rival;
+    [SerializeField] GameObject ImagenesRival;
+    [SerializeField] GameObject ImagenesJugador;
+    [SerializeField] ScriptableObject infoMineros;
+    [SerializeField] ScriptableObject infoOyentes;
+    [SerializeField] GameObject Activar;
     // Start is called before the first frame update
-  
 
+    private void Start()
+    {
+        ImagenesJugador.GetComponentInChildren<TextMeshPro>().text = mi_Seleccion.mi_poder.name;
+        ImagenesRival.GetComponentInChildren<TextMeshPro>().text = seleccion_rival.mi_poder.name;
+       /* for (int i = 0; i <3; ++i)
+        {
+            if(mi_Seleccion.mi_poder.name ==  opcionesFaccion.PosiblesImagenesHeroes[i].name)
+            ImagenesJugador.GetComponentInChildren<SpriteRenderer>().sprite = opcionesFaccion.PosiblesImagenesHeroes[i].GetComponentInChildren<Image>().sprite;
+        }*/
+    }
+    
     public void Final_Partida(int[] puntos)
     {
         int[] aux_puntuacion = Tablero.instance.RecuentoPuntos();
@@ -28,17 +49,19 @@ public class MenuFinalParitda : MonoBehaviour
             }
         }
 
-        if(aliado - enemigo > 0) texto_final_partida.text = "Victoria";
-        else texto_final_partida.text = "Derrota";
-
+        if (aliado - enemigo > 0) {
+            texto_final_partida_Enemigo.text = "Derrota";
+         texto_final_partida_Jugador.text = "Victoria"; }
+        else
+        {
+            texto_final_partida_Enemigo.text = "Victoria";
+            texto_final_partida_Jugador.text = "Derrota";
+        }
+        Activar.SetActive(true);
     }
+    
 
-    public void Replay()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void Salir()
+    public void VolverMenuPrincipal()
     {
         SceneManager.LoadScene(0);
     }

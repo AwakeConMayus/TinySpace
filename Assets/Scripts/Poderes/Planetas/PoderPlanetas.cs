@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public abstract class PoderPlanetas : Poder
 {
-    GameObject planeta;
+    protected GameObject planeta;
 
     bool SetPlaneta = false;
 
@@ -14,7 +14,7 @@ public abstract class PoderPlanetas : Poder
     public override void InitialAction(bool sin_pasar_turno = false)
     {
         EventManager.StartListening("ClickCasilla", CrearPieza);
-        planeta = Resources.Load<GameObject>("Planeta Planetarios");
+        planeta = Resources.Load<GameObject>("Planeta");//SEGUN CLANTA ESTO ES UNA CACA HAY QUE CHANGEARLO
 
         Casilla planetaReferencia = null;
 
@@ -59,6 +59,7 @@ public abstract class PoderPlanetas : Poder
 
     public override void FirstAction()
     {
+        Debug.Log("PADRE");
         List<Casilla> casillasPosibles = new List<Casilla>();
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
 
