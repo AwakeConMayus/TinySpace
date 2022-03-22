@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9169238251903890520}
   - component: {fileID: 3816620273131127514}
   m_Layer: 0
-  m_Name: PoderMecanico
+  m_Name: "Mec\xE1nico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

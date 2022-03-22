@@ -178,8 +178,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mitad: 1\xBADescubre un planeta, 2\xBA Coloca la nave de la posicion izquierda
-    de tu mano.\nFinal: Santifica un planeta."
+  m_text: 'Mitad: Descubre un Planeta extra.
+
+    Final: Terraformas un Planeta a
+    la forma que quieras(Sol,Helado,Volcanico o Sagrado).'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -261,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2230020812158888269}
   m_Layer: 0
-  m_Name: InfoOyentes
+  m_Name: Colono
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

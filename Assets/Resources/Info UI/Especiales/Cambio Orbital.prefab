@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4536116964164056830}
   m_Layer: 0
-  m_Name: InfoOyentes4
+  m_Name: Cambio Orbital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Colocalo en linea con Planetas para obtener PI, cuantos mas mejor para
-    todos el suyo beneficio politico.
+  m_text: Mueve un astro aliado a una casilla adyacente, destruyendo la nave si es
+    que estuviese ocupada.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2441570627131757450}
   - component: {fileID: -3779590854172769078}
   m_Layer: 0
-  m_Name: Propulsor de Cambio Orbital Planetas
+  m_Name: Propulsor de Cambio Orbital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

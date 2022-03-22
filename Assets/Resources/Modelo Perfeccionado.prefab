@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3076061011095963741}
   - component: {fileID: 7594946243373346601}
   m_Layer: 0
-  m_Name: Modelo Perfeccionado Mineros
+  m_Name: Modelo Perfeccionado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

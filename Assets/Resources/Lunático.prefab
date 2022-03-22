@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1743254521925771294}
   - component: {fileID: 8980170307032814463}
   m_Layer: 0
-  m_Name: PoderLunatico
+  m_Name: "Lun\xE1tico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

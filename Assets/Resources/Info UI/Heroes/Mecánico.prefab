@@ -178,8 +178,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mitad : Transforma una nave en cualquier otra nave b\xE1sica.\nFinal :
-    Transforma una nave en cualquier otra nave b\xE1sica."
+  m_text: "Mitad y final de partida : Transforma una nave en cualquier otra nave
+    b\xE1sica.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870797806870874726}
   m_Layer: 0
-  m_Name: InfoMinero2
+  m_Name: "Mec\xE1nico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
