@@ -26,6 +26,7 @@ public class InvestigadorMinerosMejorado : Efecto
             // Instanciacion de piezas en el offline
             GameObject thisPieza = Instantiate(investigador_astro);
             thisPieza.transform.position = casilla.transform.position;
+            thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             //GestorTurnos.instance.realizarJugada();
         }
 
