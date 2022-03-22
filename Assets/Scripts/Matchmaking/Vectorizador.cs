@@ -117,6 +117,8 @@ public static class Vectorizador
             }
         }
 
+        Debug.Log("t" + player);
+        Debug.Log("p"+ player.opcionesDisponibles.Count);
         if (player.opcionesDisponibles[4] == piezaMejorada) vector[3] = 2;
         else if (player.opcionesDisponibles[3] == piezaMejorada) vector[3] = 1;
 

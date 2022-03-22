@@ -26,7 +26,7 @@ public class AgujeroNegro : Pieza
     {
         for (int  i = 0;  i < casilla.adyacentes.Length;  i++)
         {
-            if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && !casilla.adyacentes[i].pieza.astro)
+            if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && !casilla.adyacentes[i].pieza.astro || casilla.adyacentes[i] && !casilla.adyacentes[i].pieza)
             {
                 casilla.adyacentes[i].pieza = null;
                 Atraer_Todo_En_Una_Direccion(casilla.adyacentes[i], i);
@@ -40,6 +40,7 @@ public class AgujeroNegro : Pieza
         {
             if (c.pieza && c.pieza.GetComponent<AgujeroNegro>())
             {
+                Debug.Log("encontre agujero " + c.gameObject);
                 ActivarAgujeroNegro(c);
             }
         }
@@ -49,14 +50,18 @@ public class AgujeroNegro : Pieza
 
     static void Atraer_Todo_En_Una_Direccion(Casilla c, int direccion)
     {
+        Debug.Log(c);
         if (!c) return;
         if (c.pieza)
         {
+            Debug.Log(c.pieza);
             if (c.pieza.astro) return;
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;
             else aux_reverseDirection = direccion - 3;
 
+            //c.pieza.Set_Pieza_Extra();
+            
             c.adyacentes[aux_reverseDirection].pieza = c.pieza;
             c.pieza = null;
 

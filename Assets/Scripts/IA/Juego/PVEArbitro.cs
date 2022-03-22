@@ -107,6 +107,7 @@ public class PVEArbitro : MonoBehaviour
 
     void SpecialTurn()
     {
+        Debug.Log(turnoAbsoluto + " " + specialActive);
         ++turnoAbsoluto;
         EventManager.TriggerEvent("Siguiente_turno");
         SetActiveActive(false);

@@ -58,6 +58,7 @@ public abstract class Pieza : MonoBehaviour
         casilla = c;
         casilla.pieza = this;
         EventManager.TriggerEvent("UpdateScore");
+        if((this.gameObject.GetPhotonView().IsMine && !pieza_extra) || (!PhotonNetwork.InRoom && !pieza_extra)) Debug.Log(this.gameObject);
         if (this.gameObject.GetPhotonView().IsMine && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
         else if(!PhotonNetwork.InRoom && !pieza_extra) Invoke("TerminarAccionConjunta", 1f);
     }

@@ -195,6 +195,17 @@ public class Arbitro : MonoBehaviourPunCallbacks
         {
             if (op != player) jugador2 = op;
         }
+        jugador2.poder = seleccion_del_rival.mi_poder;
+
+        foreach (GameObject g in espejo_Maestro.reflejos)
+        {
+            if (g.GetComponent<OpcionesRival>().faccion == jugador2.faccion)
+            {
+
+                jugador2.opcionesDisponibles = g.GetComponent<OpcionesRival>().opcionesDisponibles;
+            }
+        }
+        //jugador2.opcionesDisponibles;
         //Vectorizacion
         if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, player, jugador2);
         else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, player);
