@@ -210,7 +210,7 @@ public struct DatosVS
 
 
 
-[CustomEditor(typeof(DatosIA))]
+/*[CustomEditor(typeof(DatosIA))]
 public class TestScriptableEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -224,6 +224,6 @@ public class TestScriptableEditor : Editor
         }
 
     }
-}
+}*/
 
 
