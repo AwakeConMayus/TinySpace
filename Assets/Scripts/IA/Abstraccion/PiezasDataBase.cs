@@ -101,8 +101,6 @@ public class PiezasDataBase : ScriptableObject
                 return EstrategaOyentesMejorado;
 
             //Especiales
-            case IDPieza.Satelite:
-                return Satelite;
             case IDPieza.PlanetaHelado:
                 return PlanetaHelado;
             case IDPieza.PlanetaVolcanico:
@@ -155,7 +153,6 @@ public class PiezasDataBase : ScriptableObject
         else if (piezaName == EstrategaOyentesMejorado.name) return IDPieza.EstrategaOyentesMejorado;
 
         //Especiales
-        else if (piezaName == Satelite.name) return IDPieza.Satelite;
         else if (piezaName == PlanetaHelado.name) return IDPieza.PlanetaHelado;
         else if (piezaName == PlanetaVolcanico.name) return IDPieza.PlanetaVolcanico;
         else if (piezaName == Sol.name) return IDPieza.Sol;
@@ -205,7 +202,6 @@ public enum IDPieza
     EstrategaOyentesMejorado,
 
     //Especiales
-    Satelite,
     PlanetaHelado,
     PlanetaVolcanico,
     Sol,
