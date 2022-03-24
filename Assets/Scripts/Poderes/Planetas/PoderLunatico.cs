@@ -8,7 +8,7 @@ public class PoderLunatico : PoderPlanetas
     public GameObject luna;
 
     bool setLuna = false;
-    int numeroLunasPorFase = 2;
+    int numeroLunasPorFase = 1;
     int lunasPuestas = 0;
 
     private void Awake()

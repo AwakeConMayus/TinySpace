@@ -21,12 +21,14 @@ public abstract class PoderPlanetas : Poder
         for (int i = 0; i < 3; i++)
         {
             List<Casilla> casillasPosibles = FiltroCasillas.CasillasSinMeteorito(planeta.GetComponent<Pieza>().CasillasDisponibles());
+            casillasPosibles = FiltroCasillas.EliminarBordes(casillasPosibles);
             if (i == 1)
             {
                 casillasPosibles = FiltroCasillas.CasillasAdyacentes(planetaReferencia, true);
                 casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, true);
                 casillasPosibles = FiltroCasillas.CasillasSinMeteorito(casillasPosibles);
                 casillasPosibles = FiltroCasillas.Interseccion(casillasPosibles, planeta.GetComponent<Pieza>().CasillasDisponibles());
+                casillasPosibles = FiltroCasillas.EliminarBordes(casillasPosibles);
             }
             int rnd;
             do
@@ -43,7 +45,6 @@ public abstract class PoderPlanetas : Poder
                 thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 thisPieza.GetComponent<Pieza>().casilla = Tablero.instance.mapa[rnd];
                 Tablero.instance.mapa[rnd].pieza = thisPieza.GetComponent<Pieza>();
-
             }
             else
             {

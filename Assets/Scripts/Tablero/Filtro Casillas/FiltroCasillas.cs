@@ -246,4 +246,20 @@ public static class FiltroCasillas
         return result;
     }
 
+    public static List<Casilla> EliminarBordes(List<Casilla> listaBase)
+    {
+        List<Casilla> result = new List<Casilla>();
+
+        foreach(Casilla c in listaBase)
+        {
+            bool valida = true;
+            for (int i = 0; i < c.adyacentes.Length; i++)
+            {
+                if (c.adyacentes[i] == null) valida = false;
+            }
+            if (valida) result.Add(c);
+        }
+
+        return result;
+    }
 }
