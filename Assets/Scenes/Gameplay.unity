@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5960,7 +5960,7 @@ PrefabInstance:
         type: 3}
       propertyPath: puntosPieza
       value: 
-      objectReference: {fileID: 723017229}
+      objectReference: {fileID: 0}
     - target: {fileID: 6885807775370401813, guid: f39130e3a562f444090cb4c7d82a85a7,
         type: 3}
       propertyPath: m_Name
@@ -6390,12 +6390,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681835640}
   m_CullTransparentMesh: 0
---- !u!1 &723017229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4499122095681811271, guid: 333696683afa6294d888165e57620952,
-    type: 3}
-  m_PrefabInstance: {fileID: 4499122095616224308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731098601
 GameObject:
   m_ObjectHideFlags: 0
@@ -7985,6 +7979,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455810890}
   m_CullTransparentMesh: 0
+--- !u!114 &1470917006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7322020158935723555, guid: 1c33861baca68794fa4078d40fcadc3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5318447557543209940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562759216
 GameObject:
   m_ObjectHideFlags: 0
@@ -10471,6 +10477,11 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6940180839010864392, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: texto_informativo
+      value: 
+      objectReference: {fileID: 1470917006}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c33861baca68794fa4078d40fcadc3e, type: 3}
 --- !u!224 &5711970574419363082 stripped
