@@ -1670,80 +1670,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432196417}
   m_CullTransparentMesh: 0
---- !u!1 &436540310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 436540311}
-  - component: {fileID: 436540313}
-  - component: {fileID: 436540312}
-  m_Layer: 5
-  m_Name: LuzUIGanar/perderPuntos (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &436540311
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436540310}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -15.8}
-  m_LocalScale: {x: 0.3758812, y: 0.79296356, z: 0.40531614}
-  m_Children: []
-  m_Father: {fileID: 1439792388}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.5999985, y: -1.5}
-  m_SizeDelta: {x: 0, y: 10}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &436540312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436540310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 9f1745373fd2c5d4da0f343e80ed9bfe, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &436540313
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436540310}
-  m_CullTransparentMesh: 0
 --- !u!1 &442381594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,80 +1865,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485801199}
-  m_CullTransparentMesh: 0
---- !u!1 &503603194
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 503603195}
-  - component: {fileID: 503603197}
-  - component: {fileID: 503603196}
-  m_Layer: 5
-  m_Name: LuzUIGanar/perderPuntos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &503603195
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503603194}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -15.8}
-  m_LocalScale: {x: 0.3758812, y: 0.79296356, z: 0.40531614}
-  m_Children: []
-  m_Father: {fileID: 1439792388}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.5999985, y: -1.56}
-  m_SizeDelta: {x: 0, y: 10}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &503603196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503603194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: d38a7b0bfbb0bab4788833e7fe4ba0f0, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &503603197
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503603194}
   m_CullTransparentMesh: 0
 --- !u!1 &570677112
 GameObject:
@@ -8683,12 +8535,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1436191403}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1439792388 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5425714407659678656, guid: e56fc5f2617fcbc46a400ef63257789d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2078385543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1442774700
 GameObject:
   m_ObjectHideFlags: 0
@@ -14139,18 +13985,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 44.992, y: -2.13, z: -0.9990001}
---- !u!114 &1798944761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6363099241096631881, guid: e56fc5f2617fcbc46a400ef63257789d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2078385543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1828063257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14785,36 +14619,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barra puntos
-      objectReference: {fileID: 0}
-    - target: {fileID: 4372169783164088424, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: LuzUi
-      value: 
-      objectReference: {fileID: 503603194}
-    - target: {fileID: 4372169783164088424, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: LuzUialiada
-      value: 
-      objectReference: {fileID: 503603194}
-    - target: {fileID: 4372169783164088424, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: LuzUienemiga
-      value: 
-      objectReference: {fileID: 436540310}
-    - target: {fileID: 4477443053622872681, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: Fill
-      value: 
-      objectReference: {fileID: 1798944761}
-    - target: {fileID: 7068288461630124458, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 254.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7068288461630124458, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 9.899994
       objectReference: {fileID: 0}
     - target: {fileID: 8731659053276622453, guid: e56fc5f2617fcbc46a400ef63257789d,
         type: 3}

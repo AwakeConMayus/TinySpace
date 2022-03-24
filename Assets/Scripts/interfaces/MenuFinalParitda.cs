@@ -20,6 +20,8 @@ public class MenuFinalParitda : MonoBehaviour
     [SerializeField] ScriptableObject infoMineros;
     [SerializeField] ScriptableObject infoOyentes;
     [SerializeField] GameObject Activar;
+    [SerializeField] GameObject MenuOcultar;
+    [SerializeField] TextMeshPro OcularMostrar;
     // Start is called before the first frame update
 
     private void Start()
@@ -65,5 +67,19 @@ public class MenuFinalParitda : MonoBehaviour
     public void VolverMenuPrincipal()
     {
         SceneManager.LoadScene(0);
+    }
+    public void OcultarMenu()
+    {
+        if (MenuOcultar.activeInHierarchy)
+        {
+            OcularMostrar.text = "Mostrar";
+            MenuOcultar.SetActive(false);
+        }
+        else
+        {
+
+            MenuOcultar.SetActive(true);
+             OcularMostrar.text = "Ocultar";
+        }
     }
 }
