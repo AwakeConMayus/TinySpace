@@ -5956,6 +5956,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6885807775370401811, guid: f39130e3a562f444090cb4c7d82a85a7,
+        type: 3}
+      propertyPath: puntosPieza
+      value: 
+      objectReference: {fileID: 723017229}
     - target: {fileID: 6885807775370401813, guid: f39130e3a562f444090cb4c7d82a85a7,
         type: 3}
       propertyPath: m_Name
@@ -6385,6 +6390,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681835640}
   m_CullTransparentMesh: 0
+--- !u!1 &723017229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4499122095681811271, guid: 333696683afa6294d888165e57620952,
+    type: 3}
+  m_PrefabInstance: {fileID: 4499122095616224308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731098601
 GameObject:
   m_ObjectHideFlags: 0
@@ -10323,6 +10334,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837699347}
     m_Modifications:
+    - target: {fileID: 849787671750241584, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6d93822628af9d4085e3ec57de8daae,
+        type: 3}
+    - target: {fileID: 4407035560545249478, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6d93822628af9d4085e3ec57de8daae,
+        type: 3}
+    - target: {fileID: 4615515517830386769, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5318447557788326679, guid: 1c33861baca68794fa4078d40fcadc3e,
         type: 3}
       propertyPath: m_Pivot.x

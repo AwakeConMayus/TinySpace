@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 4932934626668303865}
   - component: {fileID: -204975585110325709}
   m_Layer: 0
-  m_Name: PoderChantajista
+  m_Name: Chantajista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
