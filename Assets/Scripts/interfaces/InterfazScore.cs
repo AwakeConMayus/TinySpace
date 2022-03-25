@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class InterfazScore : MonoBehaviour
 {
-    [SerializeField] Text scoreAliado;
-    [SerializeField] Text scoreEnemigo;
+    [SerializeField] TextMeshPro scoreAliado;
+    [SerializeField] TextMeshPro scoreEnemigo;
     [SerializeField] GameObject fillEnemigo;
     [SerializeField] GameObject fillAliado;
     [SerializeField] TuSeleccion mi_seleccion;
