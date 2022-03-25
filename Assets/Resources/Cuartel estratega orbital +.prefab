@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5814793967773629180}
   - component: {fileID: 1200239324090830781}
   m_Layer: 0
-  m_Name: Cuartel de estrategia orbital +
+  m_Name: Cuartel estratega orbital +
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

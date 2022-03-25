@@ -116,5 +116,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
-  padre1: {fileID: 0}
-  padre2: {fileID: 0}
