@@ -19,9 +19,7 @@ public class PoderChantajista2 : PoderMineros
 
     public override void FirstAction()
     {
-        casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion);
-        casillasDisponibles = FiltroCasillas.CasillasAdyacentes(casillasDisponibles,true);
-        casillasDisponibles = FiltroCasillas.CasillasDeOtroJugador(faccion, casillasDisponibles);
+        casillasDisponibles = FiltroCasillas.CasillasDeOtroJugador(faccion);
         casillasDisponibles = FiltroCasillas.CasillasNoAstro(casillasDisponibles);
         if(casillasDisponibles.Count == 0)
         {

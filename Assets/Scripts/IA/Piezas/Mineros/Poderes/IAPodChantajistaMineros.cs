@@ -9,9 +9,7 @@ public class IAPodChantajistaMineros : PoderIABase
         List<InfoTablero> opciones = new List<InfoTablero>();
 
         IATablero.instance.PrintInfoTablero(tabBase);
-        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
-        casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, true);
-        casillasPosibles = FiltroCasillas.CasillasDeOtroJugador(faccion, casillasPosibles);
+        List<Casilla> casillasPosibles = FiltroCasillas.CasillasDeOtroJugador(faccion);
         casillasPosibles = FiltroCasillas.CasillasNoAstro(casillasPosibles);
 
 
