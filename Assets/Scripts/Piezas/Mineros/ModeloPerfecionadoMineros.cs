@@ -5,28 +5,48 @@ using Photon.Pun;
 
 public class ModeloPerfecionadoMineros : EfectoEspecial
 {
-    public GameObject pieza_a_mejorar;
-
     public override void Accion()
     {
-        if (!pieza_a_mejorar)
+        GameObject piezaMejorada = null;
+
+        switch (casilla.pieza.clase)
         {
-            Debug.LogError("Fallo en la adquisicion de pieza a mejorar del modelo perfeccionado");
-            return;
-        }
+            case Clase.explorador:
+                piezaMejorada = Resources.Load<GameObject>("Explorador Mineros Mejorado");
+                break;
+            case Clase.combate:
+                piezaMejorada = Resources.Load<GameObject>("Combate Mineros Mejorado");
+                break;
+            case Clase.investigador:
+                piezaMejorada = Resources.Load<GameObject>("Laboratorio Mineros Mejorado");
+                break;
+            case Clase.estratega:
+                piezaMejorada = Resources.Load<GameObject>("Estratega Mineros Mejorado");
+                break;            
+            default:
+                break;
+        }        
 
         if (PhotonNetwork.InRoom && GetComponent<PhotonView>().IsMine)
         {
-            PhotonNetwork.Instantiate(pieza_a_mejorar.name, casilla.transform.position, Quaternion.identity);
+            OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
+            PhotonNetwork.Instantiate(piezaMejorada.name, casilla.transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(pieza_a_mejorar, casilla.transform.position, Quaternion.identity);
+            casilla.Clear();
+            Instantiate(piezaMejorada, casilla.transform.position, Quaternion.identity);
         }
     }
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        return pieza_a_mejorar.GetComponent<Pieza>().CasillasDisponibles();
+        List<Casilla> casillasDisponiblesBrutas =  FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
+        List<Casilla> casillasDisponiblesNetas = new List<Casilla>();
+        foreach (Casilla c in casillasDisponiblesBrutas)
+        {
+            if (!c.pieza.astro && c.pieza.gameObject.name.Split(' ').Length <= 2) casillasDisponiblesNetas.Add(c);
+        }
+        return casillasDisponiblesNetas;
     }
 }

@@ -4,36 +4,45 @@ using UnityEngine;
 
 public class IAModeloPerfeccionadoMineros : PiezaIA
 {
-    public IAOpcionesMineros padre1;
-    public OpcionesMineros padre2;
-
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        PiezaIA pieza = null;
+        List<InfoTablero> opciones = new List<InfoTablero>();
 
-        if(padre1 != null)
+        PiezaIA laboratorioMejorado = Resources.Load<GameObject>("Laboratorio Mineros Mejorado").GetComponent<PiezaIA>();
+
+        opciones.Add(laboratorioMejorado.BestInmediateOpcion(tabBase));
+
+        PiezaIA estrategaMejorado = Resources.Load<GameObject>("Estratega Mineros Mejorado").GetComponent<PiezaIA>();
+
+        opciones.Add(estrategaMejorado.BestInmediateOpcion(tabBase));
+
+        
+        IATablero.instance.PrintInfoTablero(tabBase);
+        Pieza exploradorMejorado = Resources.Load<Pieza>("Explorador Mineros Mejorado");
+        Pieza combateMejorado = Resources.Load<Pieza>("Combate Mineros Mejorado");
+
+
+        foreach (Casilla c in IATablero.instance.mapa)
         {
-            if (padre1.opcionesDisponibles[0] != 4)
+            if (c.pieza && c.pieza.faccion == faccion)
             {
-                pieza = padre1.mejoras[padre1.opcionesDisponibles[0]].GetComponent<PiezaIA>();
-            }
-            else
-            {
-                pieza = padre1.mejoras[padre1.opcionesDisponibles[1]].GetComponent<PiezaIA>();
+                if(c.pieza.clase == Clase.explorador)
+                {
+                    c.pieza = exploradorMejorado;
+                    c.pieza.casilla = c;
+                    opciones.Add(new InfoTablero(IATablero.instance.mapa));
+                    IATablero.instance.PrintInfoTablero(tabBase);
+                }
+                else if (c.pieza.clase == Clase.combate)
+                {
+                    c.pieza = combateMejorado;
+                    c.pieza.casilla = c;
+                    opciones.Add(new InfoTablero(IATablero.instance.mapa));
+                    IATablero.instance.PrintInfoTablero(tabBase);
+                }
             }
         }
-        else if (padre2 != null)
-        {
-            if (padre2.opcionesDisponibles[0] != 4)
-            {
-                pieza = padre2.mejoras[padre2.opcionesDisponibles[0]].GetComponent<PiezaIA>();
-            }
-            else
-            {
-                pieza = padre2.mejoras[padre2.opcionesDisponibles[1]].GetComponent<PiezaIA>();
-            }
-        }
 
-        return pieza.Opcionificador(tabBase);
+        return opciones;
     }
 }

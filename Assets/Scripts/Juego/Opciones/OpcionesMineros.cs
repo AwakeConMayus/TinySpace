@@ -19,7 +19,6 @@ public class OpcionesMineros : Opciones
     {
         EventManager.StartListening("RecogerMineral", RecogerMineral);
         EventManager.StartListening("ColocarPieza", EjecutarPago);
-        if (opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>()) opcionesIniciales[4].GetComponent<IAModeloPerfeccionadoMineros>().padre2 = this;
         for (int i = 0; i < 4; i++)
         {
             backup[i] = opcionesIniciales[i];
@@ -59,20 +58,7 @@ public class OpcionesMineros : Opciones
         if (opcionesDisponibles[i] == 4)
         {
             if (GastarMineral(opcionesIniciales[4].GetComponent<Especial>().coste))
-            {
-                //Clanta: Este codigo no gustar a clanta. Clanta no saber programar. If (clanta == mejor programador) --clanta if's;
-                if (opcionesIniciales[4].GetComponent<ModeloPerfecionadoMineros>())
-                {
-                    if(opcionesDisponibles[0] != 4)
-                    {
-                        opcionesIniciales[4].GetComponent<ModeloPerfecionadoMineros>().pieza_a_mejorar = mejoras[opcionesDisponibles[0]];
-                    }
-                    else
-                    {
-                        opcionesIniciales[4].GetComponent<ModeloPerfecionadoMineros>().pieza_a_mejorar = mejoras[opcionesDisponibles[1]];
-
-                    }
-                }
+            {                
                 base.Seleccion(i);
             }
         }
