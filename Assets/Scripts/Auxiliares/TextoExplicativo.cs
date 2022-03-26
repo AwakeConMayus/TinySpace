@@ -7,13 +7,13 @@ public class TextoExplicativo : ScriptableObject
 {
     [SerializeField]
     string  mineral,
-            heroeMaquinista,
-            heroeColono,
+            heroeMaquinista, heroeMecanico, heroeChantajista,
+            heroeColono, heroeAstrofisico, heroeLunatico,
             explorador, combate, laboratorio, estratega,
             exploradorMejora, combateMejora, laboratorioMejora, estrategaMejora,
-            combateColonizador,
-            comodin,
-            planeta;
+            combateColonizador, laboratorioTerraformador, estrategaOrbital,
+            comodin, modeloPerfeccionado, supernave,
+            planeta, propulsorOrbital, terraformacion;
 
 
     public string GetTexto(GameObject prefab)
@@ -47,6 +47,11 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Investigador>())
         {
             texto = laboratorio;
+
+            if (prefab.GetComponent<InvestigadorPlanetasTerraformador>())
+            {
+                texto = laboratorioTerraformador;
+            }
         }
 
         else if (prefab.GetComponent<InvestigadorMinerosMejorado>())
@@ -57,6 +62,11 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Estratega>())
         {
             texto = estratega;
+
+            if (prefab.GetComponent<EstrategaPlanetasCuartelesOrbitales>())
+            {
+                texto = estrategaOrbital;
+            }
         }
 
         else if (prefab.GetComponent<EstrategaMinerosMejorada>())
@@ -69,9 +79,29 @@ public class TextoExplicativo : ScriptableObject
             texto = comodin;
         }
 
+        else if (prefab.GetComponent<ModeloPerfecionadoMineros>())
+        {
+            texto = modeloPerfeccionado;
+        }
+
+        else if (prefab.GetComponent<SuperNave>())
+        {
+            texto = supernave;
+        }
+
         else if (prefab.GetComponent<Planetas>())
         {
             texto = planeta;
+        }
+
+        else if (prefab.GetComponent<PropulsorCambioOrbital>())
+        {
+            texto = propulsorOrbital;
+        }
+
+        else if (prefab.GetComponent<Terraformar>())
+        {
+            texto = terraformacion;
         }
 
         else if (prefab.GetComponent<Poder>())
@@ -80,9 +110,25 @@ public class TextoExplicativo : ScriptableObject
             {
                 texto = heroeMaquinista;
             }
+            else if (prefab.GetComponent<PoderMecanico>())
+            {
+                texto = heroeMecanico;
+            }
+            else if (prefab.GetComponent<PoderChantajista2>())
+            {
+                texto = heroeChantajista;
+            }
             else if (prefab.GetComponent<PoderColono>())
             {
                 texto = heroeColono;
+            }
+            else if (prefab.GetComponent<PoderAstrofisico>())
+            {
+                texto = heroeAstrofisico;
+            }
+            else if (prefab.GetComponent<PoderLunatico>())
+            {
+                texto = heroeLunatico;
             }
         }
 

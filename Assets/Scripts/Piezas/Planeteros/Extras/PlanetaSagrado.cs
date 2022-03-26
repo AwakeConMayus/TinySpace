@@ -15,7 +15,7 @@ public class PlanetaSagrado : Planetas
             {
                 if (c.pieza.faccion != faccion) return puntos;
 
-                puntosExtra += 3;
+                puntosExtra += 4;
             }
         }
 
