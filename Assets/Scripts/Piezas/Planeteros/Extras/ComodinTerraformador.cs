@@ -13,7 +13,7 @@ public class ComodinTerraformador : EfectoEspecial
         }
         else
         {
-            MenuComodin.instance.Convocar(casilla);
+            MenuTerraformador.instance.Convocar(casilla);
         }
 
     }

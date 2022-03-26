@@ -65,6 +65,7 @@ public class PoderTerraformador : PoderPlanetas
             }
             else
             {
+                Debug.Log("poder" + comodinTerraformar.name);
                  Instantiate(comodinTerraformar, c.transform.position, Quaternion.identity);
             }
 
