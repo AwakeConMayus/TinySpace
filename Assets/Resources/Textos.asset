@@ -50,7 +50,7 @@ MonoBehaviour:
   laboratorioTerraformador: "<b>Compenetraci\xF3n (+0PI):</b>Nave Exploradora o Astros<n><n>Cada
     vez que se active compenetracion, aumenta su valor en 2PI."
   estrategaOrbital: "Puede colocarse en cualquier casilla libre.<n><b>Compenetraci\xF3n
-    (+3PI):</b> Por Nave de Combate aliada o enemiga.<n><b>+3PI</b> por cada planeta
+    (+2PI):</b> Por Nave de Combate aliada o enemiga.<n><b>+3PI</b> por cada planeta
     en sus diagonales"
   comodin: "<b>2 Minerales</b><n>Coloca cualquier tipo de nave b\xE1sica a tu elecci\xF3n."
   modeloPerfeccionado: <b>0 Minerales</b><n>Mejora una nave aliada sin mejorar.
@@ -67,3 +67,16 @@ MonoBehaviour:
     nave distinta adyacente.<n><b>1\xAA Planeta volc\xE1nico:</b> +4PI por cada nave
     enemiga adyacente.<n><b>1\xAA Planeta sagrado:</b> Si no tiene naves enemigas
     adyacentes +4PI por cada nave aliada adyacente"
+  sol: "Obtines PI en funcion de las casillas adyacentes ocupadas (0,1,3,5,10,5,1
+    // 0,1,3,7,1 // 0,1,5,1)<n>Si tienes m\xE1s naves adyacentes que tu rival, obtienes
+    +3 puntos."
+  planetaHelado: "Obtines +2PI por cada tipo de nave diferente adyacente.<n>Si tienes
+    m\xE1s naves adyacentes que tu rival, obtienes +3 puntos."
+  planetaVolcanico: "Obtines +4PI por cada nave enemiga adyacente.<n>Si tienes m\xE1s
+    naves adyacentes que tu rival, obtienes +3 puntos."
+  planetaSagrdo: "Si no tiene naves enemigas adyacentes +3PI por nave aliada.<n>Si
+    tienes m\xE1s naves adyacentes que tu rival, obtienes +3 puntos."
+  luna: Puedes colocar naves adyacentes a la luna como si de un planeta se tratase.
+  agujeroNegro: El agujero negro destruye todo lo que le rodea y atrae hacia el todas
+    las naves que esten en sus diagonales. Los astros no se ven afectados por la
+    habilidad del agujero negro y cortan su poder de atraccion en la diagonal.
