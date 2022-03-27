@@ -225,9 +225,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient && SendOnline)
             SendToGoogle.instance.SendOnline(player.faccion, false, vectores);
 
-        mi_seleccion.mi_poder = null;
-        mi_seleccion.mis_opciones = new GameObject[5];
-        mi_seleccion.faccion = Faccion.none;
+        
         Invoke("ActivarMenuFinal",2f);
         mi_menu.gameObject.SetActive(true);
         mi_menu.Final_Partida(Tablero.instance.RecuentoPuntos());
