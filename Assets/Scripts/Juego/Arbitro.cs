@@ -229,8 +229,6 @@ public class Arbitro : MonoBehaviourPunCallbacks
         Invoke("ActivarMenuFinal",2f);
         mi_menu.gameObject.SetActive(true);
         mi_menu.Final_Partida(Tablero.instance.RecuentoPuntos());
-
-        Debug.Log("NO HAY FINAL, EMPIEZAN LOS ERRORES :)");
     }
     public void ActivarMenuFinal()
     {
