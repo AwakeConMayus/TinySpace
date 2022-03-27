@@ -10,8 +10,7 @@ using UnityEngine;
 public class GameSettings : ScriptableObject
 {
     //La version del juego 
-    [SerializeField] string _gameVersion = "0.0.0";
-    public string gameVersion { get { return _gameVersion; } }
+    public string gameVersion { get { return Application.version; } }
     //Nickname dek jugador, aleatorio por el momento
     [SerializeField] string _nickName = "Punfish";
     public string nickName
