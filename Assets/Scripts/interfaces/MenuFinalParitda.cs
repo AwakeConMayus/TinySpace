@@ -59,6 +59,8 @@ public class MenuFinalParitda : MonoBehaviour
             texto_final_partida_Jugador.text = "Derrota";
         }
         Activar.SetActive(true);
+        print(ImagenesJugador.GetComponentInChildren<TextMeshPro>());
+        print(mi_Seleccion.mi_poder);
         ImagenesJugador.GetComponentInChildren<TextMeshPro>().text = mi_Seleccion.mi_poder.name;
         ImagenesRival.GetComponentInChildren<TextMeshPro>().text = seleccion_rival.mi_poder.name;
     }
