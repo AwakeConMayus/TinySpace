@@ -12,7 +12,8 @@ public class OpcionesPlanetas : Opciones
             int index = opcionesDisponibles.IndexOf(4);
             opcionesDisponibles[index] = opcionesDisponibles[0];
             opcionesDisponibles[0] = 4;
-        }        
+            EventManager.TriggerEvent("RotacionOpciones");
+        }
     }
 
     public override bool Ahogado()
