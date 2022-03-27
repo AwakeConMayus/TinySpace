@@ -13,7 +13,9 @@ public class TextoExplicativo : ScriptableObject
             exploradorMejora, combateMejora, laboratorioMejora, estrategaMejora,
             combateColonizador, laboratorioTerraformador, estrategaOrbital,
             comodin, modeloPerfeccionado, supernave,
-            planeta, propulsorOrbital, terraformacion;
+            planeta, propulsorOrbital, terraformacion,
+            sol, planetaHelado, planetaVolcanico, planetaSagrdo,
+            luna, agujeroNegro;
 
 
     public string GetTexto(GameObject prefab)
@@ -92,6 +94,23 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Planetas>())
         {
             texto = planeta;
+
+            if (prefab.GetComponent<Sol>())
+            {
+                texto = sol;
+            }
+            else if (prefab.GetComponent<PlanetaHelado>())
+            {
+                texto = planetaHelado;
+            }
+            else if (prefab.GetComponent<PlanetaVolcanico>())
+            {
+                texto = planetaVolcanico;
+            }
+            else if (prefab.GetComponent<PlanetaSagrado>())
+            {
+                texto = planetaSagrdo;
+            }
         }
 
         else if (prefab.GetComponent<PropulsorCambioOrbital>())
@@ -102,6 +121,16 @@ public class TextoExplicativo : ScriptableObject
         else if (prefab.GetComponent<Terraformar>())
         {
             texto = terraformacion;
+        }
+
+        else if (prefab.GetComponent<AgujeroNegro>())
+        {
+            texto = agujeroNegro;
+        }
+
+        else if (prefab.GetComponent<Luna>())
+        {
+            texto = luna;
         }
 
         else if (prefab.GetComponent<Poder>())
