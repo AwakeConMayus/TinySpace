@@ -39,6 +39,7 @@ public class PVEArbitro : MonoBehaviour
 
     private void Start()
     {
+        Terraformar.Reset();
         player1 = mySeleccion.faccion;
         player2 = seleccioRival.faccion;
 

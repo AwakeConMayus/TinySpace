@@ -38,6 +38,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     private void Start()
     {
         EventManager.StartListening("AccionTerminadaConjunta", NextTurnDoble);
+        Terraformar.Reset();
 
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
         {

@@ -31,6 +31,7 @@ public class IAArbitro : MonoBehaviour
 
     private void Start()
     {
+        Terraformar.Reset();
         switch (player1)
         {
             case Faccion.minero:

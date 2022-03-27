@@ -8,6 +8,11 @@ public class Terraformar : Efecto
 
     static int tipo_a_terraformar;
 
+    public static void Reset()
+    {
+        tipo_a_terraformar = 0;
+    }
+
     [SerializeField] GameObject sol;
     [SerializeField] GameObject hielo;
     [SerializeField] GameObject volcanico;
