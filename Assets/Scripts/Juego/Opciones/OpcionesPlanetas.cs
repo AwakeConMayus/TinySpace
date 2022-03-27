@@ -7,6 +7,12 @@ public class OpcionesPlanetas : Opciones
     private void Start()
     {
         Preparacion();
+        if (opcionesIniciales[4].GetComponent<Terraformar>())
+        {
+            int index = opcionesDisponibles.IndexOf(4);
+            opcionesDisponibles[index] = opcionesDisponibles[0];
+            opcionesDisponibles[0] = 4;
+        }        
     }
 
     public override bool Ahogado()
