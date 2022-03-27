@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10365,25 +10365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Hole
       objectReference: {fileID: 0}
-    - target: {fileID: 8895968826086751866, guid: 69fda0174a8c67d45a1a232b4f20fc43,
+    - target: {fileID: 7718336293118611258, guid: 69fda0174a8c67d45a1a232b4f20fc43,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 53.757343
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895968826086751866, guid: 69fda0174a8c67d45a1a232b4f20fc43,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 53.757343
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895968826086751866, guid: 69fda0174a8c67d45a1a232b4f20fc43,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 53.757343
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895968826086751866, guid: 69fda0174a8c67d45a1a232b4f20fc43,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.27278
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69fda0174a8c67d45a1a232b4f20fc43, type: 3}
