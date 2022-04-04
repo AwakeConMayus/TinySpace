@@ -145,10 +145,9 @@ public class TitleScreen : MonoBehaviour
         //* Activa todos los botones de facción cuando seleccionas una (para desactivar luego el botón en específico pulsado)
         for (int i = 0; i < 2; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
         {
-            Debug.Log(btnFacciones[i].gameObject.name);
             btnFacciones[i].interactable = true;
         }
-        Debug.Log(AuxFaccionSelecionada);
+        Debug.Log((Faccion)faccionSeleccionada);
         //* Desactiva el botón seleccionado 
       //  btnFacciones[faccionSeleccionada].interactable = false;
         

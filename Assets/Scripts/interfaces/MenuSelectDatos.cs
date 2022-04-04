@@ -100,7 +100,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 opciones_rival = opciones[i];
             }
         }
-
+        Debug.Log("mi selecion " + (Faccion)mi_Seleccion.faccion);
         if (preparado) return;
         //Eleccion de las opciones correctas basadas en la faccion selecionado previamente
         for (int i = 0; i < opciones.Count; ++i)

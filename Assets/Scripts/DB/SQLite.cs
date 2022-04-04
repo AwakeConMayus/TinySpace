@@ -39,6 +39,14 @@ public class SQLite : MonoBehaviour
         return reader;
     }
 
+    protected IDataReader GetRowUsingKeyStringByString(string tableName, string s, string keyName)
+    {
+        IDbCommand dbcmd = db_connection.CreateCommand();
+        dbcmd.CommandText = "SELECT * FROM " + tableName + " WHERE " + keyName + " = " + s;
+        IDataReader reader = dbcmd.ExecuteReader();
+        return reader;
+    }
+
     public void close()
     {
         db_connection.Close();
