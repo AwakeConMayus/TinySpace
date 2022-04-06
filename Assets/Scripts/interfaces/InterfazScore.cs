@@ -45,7 +45,8 @@ public class InterfazScore : MonoBehaviour
 
         puntuacion_aliada += colchon;
         puntuacion_enemiga += colchon;
-        int aux_puntuaciones = puntuacion_aliada + puntuacion_enemiga;
-        fillAliado.GetComponent<BarraScoreAnim>().SetTargetSize((puntuacion_aliada / (float)aux_puntuaciones) * 500);
+
+        float fill = puntuacion_aliada / (puntuacion_aliada + puntuacion_enemiga);
+        fillAliado.GetComponent<Image>().fillAmount = fill;
     }
 }
