@@ -59,6 +59,11 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     {
         jugadores_listos = 0;
 
+
+ 
+
+
+
         btnHeroes     = new Button[3];
         btnHeroes     = menuHeroes.GetComponentsInChildren<Button>();
         ImgHeroes     = new SpriteRenderer[3];

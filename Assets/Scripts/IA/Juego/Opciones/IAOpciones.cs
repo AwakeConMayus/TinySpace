@@ -145,11 +145,14 @@ public abstract class IAOpciones : Opciones
         return bestJugada;
     }
 
+    InfoTablero bestJugada = new InfoTablero();
 
     public InfoTablero JugadaCombinada(Opciones enemigo)
     {
-        InfoTablero bestJugada = new InfoTablero();
-        int bestPuntos = int.MinValue;
+        bestJugada = new InfoTablero();
+        StartCoroutine(CJugadaCombinada(enemigo));
+
+        /*int bestPuntos = int.MinValue;
 
         foreach (InfoTablero newTab in JugadaSimpleOpciones())
         {
@@ -165,17 +168,38 @@ public abstract class IAOpciones : Opciones
                 bestJugada = newTab;
             }
 
-        }       
+        }       */
 
 
         return bestJugada;
     }
+    IEnumerator CJugadaCombinada(Opciones enemigo)
+    {
+        int bestPuntos = int.MinValue;
+        foreach (InfoTablero newTab in JugadaSimpleOpciones())
+        {
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
 
+            puntos = SimulacionEnemiga(enemigo, newTab);
+
+            if (puntos > bestPuntos)
+            {
+                bestPuntos = puntos;
+                bestJugada = newTab;
+            }
+
+            yield return null;
+        }
+
+    }
 
     public InfoTablero JugadaCombinadaPoder(Opciones enemigo, int fase)
     {
-        InfoTablero bestJugada = new InfoTablero();
-        int bestPuntos = int.MinValue;
+        bestJugada = new InfoTablero();
+        StartCoroutine(CJugadaCombinadaPoder(enemigo, fase));
+        /*int bestPuntos = int.MinValue;
 
         foreach (InfoTablero newTab in JugadaSimpleOpciones())
         {
@@ -191,11 +215,33 @@ public abstract class IAOpciones : Opciones
                 bestJugada = newTab;
             }
 
-        }
+        }*/
 
 
         return bestJugada;
     }
+
+    IEnumerator CJugadaCombinadaPoder(Opciones enemigo, int fase)
+    {
+        int bestPuntos = int.MinValue;
+
+        foreach (InfoTablero newTab in JugadaSimpleOpciones())
+        {
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
+
+            if (puntos > bestPuntos)
+            {
+                bestPuntos = puntos;
+                bestJugada = newTab;
+            }
+            yield return null;
+        }
+    }
+
 
 
     public List<InfoTablero> PoderSimpleOpciones(int i)        
@@ -230,7 +276,11 @@ public abstract class IAOpciones : Opciones
 
     public InfoTablero PoderCombinado(Opciones enemigo, int fase)
     {
-        InfoTablero bestJugada = new InfoTablero();
+         bestJugada = new InfoTablero();
+
+        StartCoroutine(CPoderCombinado(enemigo, fase));
+
+        /*
         int bestPuntos = int.MinValue;
 
         foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
@@ -247,16 +297,41 @@ public abstract class IAOpciones : Opciones
                 bestJugada = newTab;
             }
 
-        }
+        }*/
 
 
         return bestJugada;
     }
 
+
+    IEnumerator CPoderCombinado(Opciones enemigo, int fase)
+    {
+        int bestPuntos = int.MinValue;
+
+        foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
+        {
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionEnemiga(enemigo, newTab);
+
+            if (puntos > bestPuntos)
+            {
+                bestPuntos = puntos;
+                bestJugada = newTab;
+            }
+
+            yield return null;
+        }
+    }
+
     public InfoTablero PoderCombinadoPoder(Opciones enemigo, int fase)
     {
-        InfoTablero bestJugada = new InfoTablero();
-        int bestPuntos = int.MinValue;
+         bestJugada = new InfoTablero();
+
+        StartCoroutine(CPoderCombiandoPoder(enemigo, fase));
+        /*int bestPuntos = int.MinValue;
 
         foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
         {
@@ -272,10 +347,33 @@ public abstract class IAOpciones : Opciones
                 bestJugada = newTab;
             }
 
-        }
+        }*/
 
 
         return bestJugada;
+    }
+
+    IEnumerator CPoderCombiandoPoder(Opciones enemigo, int fase)
+    {
+        int bestPuntos = int.MinValue;
+
+        foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
+        {
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos <= PuntosOrigen) continue;
+
+            puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
+
+            if (puntos > bestPuntos)
+            {
+                bestPuntos = puntos;
+                bestJugada = newTab;
+                
+            }
+
+            yield return null;
+        }
     }
 
     public void ActualizarTablero(InfoTablero newTab)
@@ -283,10 +381,14 @@ public abstract class IAOpciones : Opciones
         Tablero.instance.PrintInfoTablero(newTab);
     }
 
+    int worstPuntos;
     public int SimulacionEnemiga(Opciones enemigo, InfoTablero tabBase)
     {
-        int worstPuntos = int.MaxValue;
+        worstPuntos = int.MaxValue;
 
+        StartCoroutine(CSimulacionEnemiga(enemigo, tabBase));
+
+        /*
         foreach (GameObject pieza in enemigo.opcionesIniciales)
         {
             PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
@@ -322,12 +424,56 @@ public abstract class IAOpciones : Opciones
                 worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
             }
         }
-
+        */
         
 
         
 
         return worstPuntos;
+    }
+
+
+    IEnumerator CSimulacionEnemiga(Opciones enemigo, InfoTablero tabBase)
+    {
+        foreach (GameObject pieza in enemigo.opcionesIniciales)
+        {
+            PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
+
+            InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+            IATablero.instance.PrintInfoTablero(newTab);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+
+            yield return null;
+        }
+
+        if (enemigo.gameObject.GetComponent<OpcionesMineros>() && enemigo.gameObject.GetComponent<OpcionesMineros>().mineral >= 3)
+        {
+            foreach (GameObject pieza in enemigo.gameObject.GetComponent<OpcionesMineros>().mejoras)
+            {
+                PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
+
+                InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+                IATablero.instance.PrintInfoTablero(newTab);
+                int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+                yield return null;
+            }
+        }
+
+        else if (enemigo.gameObject.GetComponent<IAOpcionesMineros>() && enemigo.gameObject.GetComponent<IAOpcionesMineros>().mineral >= 3)
+        {
+            foreach (GameObject pieza in enemigo.gameObject.GetComponent<IAOpcionesMineros>().mejoras)
+            {
+                PiezaIA iaPieza = pieza.GetComponent<PiezaIA>();
+
+                InfoTablero newTab = iaPieza.BestInmediateOpcion(tabBase);
+                IATablero.instance.PrintInfoTablero(newTab);
+                int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+                worstPuntos = worstPuntos < puntos ? worstPuntos : puntos;
+                yield return null;
+            }
+        }
     }
 
     public int SimulacionPoderEnemigo(Opciones enemigo, InfoTablero tabBase, int fase)

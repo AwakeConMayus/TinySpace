@@ -24,12 +24,14 @@ public class PiezaIA : MonoBehaviour
         }
 
         return nuevosEstados;
-    }   
-
+    }
+    InfoTablero MejorOpcion;
     public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase)
     {
-        InfoTablero MejorOpcion = tabBase;
-        int mejorPuntuacion = int.MinValue;
+         MejorOpcion = tabBase;
+
+        //StartCoroutine(CBestInmediateOpcion(tabBase));
+       int mejorPuntuacion = int.MinValue;
 
         int numOpciones = 0;
         foreach (InfoTablero it in Opcionificador(tabBase))
@@ -44,6 +46,25 @@ public class PiezaIA : MonoBehaviour
             }
         }
         return MejorOpcion;
+    }
+
+    IEnumerator CBestInmediateOpcion(InfoTablero tabBase)
+    {
+        int mejorPuntuacion = int.MinValue;
+
+        int numOpciones = 0;
+        foreach (InfoTablero it in Opcionificador(tabBase))
+        {
+            ++numOpciones;
+            IATablero.instance.PrintInfoTablero(it);
+            int puntosNuevos = Evaluar(IATablero.instance.mapa, faccion);
+            if (puntosNuevos > mejorPuntuacion)
+            {
+                mejorPuntuacion = puntosNuevos;
+                MejorOpcion = it;
+            }
+            yield return null;
+        }
     }
 
     public static int Evaluar(List<Casilla> mapa, Faccion jugador)
