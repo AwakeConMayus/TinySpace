@@ -11,10 +11,17 @@ public class InterfazScore : MonoBehaviour
     [SerializeField] TextMeshPro scoreEnemigo;
     [SerializeField] GameObject fillEnemigo;
     [SerializeField] GameObject fillAliado;
-    [SerializeField] TuSeleccion mi_seleccion;
+
+    [SerializeField] float timeToChange;
+
+    float timer;
+
+    float fillObjetivo;
+    float diferenciaFill;
     // Start is called before the first frame update
     void Start()
     {
+        timer = timeToChange;
         EventManager.StartListening("Siguiente_turno", Update_Score);
         EventManager.StartListening("UpdateScore", Update_Score);
     }
@@ -46,7 +53,18 @@ public class InterfazScore : MonoBehaviour
         puntuacion_aliada += colchon;
         puntuacion_enemiga += colchon;
 
-        float fill = puntuacion_aliada / (puntuacion_aliada + puntuacion_enemiga);
-        fillAliado.GetComponent<Image>().fillAmount = fill;
+         fillObjetivo = puntuacion_aliada / (float)(puntuacion_aliada + puntuacion_enemiga);
+        diferenciaFill = fillAliado.GetComponent<Image>().fillAmount;
+        timer = 0;
     }
+
+    private void Update()
+    {
+        if(timer < timeToChange)
+        {
+            timer += Time.deltaTime;
+            fillAliado.GetComponent<Image>().fillAmount = Mathf.Lerp(diferenciaFill, fillObjetivo, timer / timeToChange);
+        }
+    }
+
 }

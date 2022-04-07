@@ -25,7 +25,7 @@ public class IALabMejMineros : PiezaIA
 
             foreach(Casilla cc in rangoDestrucciones)
             {
-                if(cc.pieza && cc.pieza.faccion != faccion)
+                if(cc.pieza && cc.pieza.faccion != faccion && !cc.pieza.astro)
                 {
                     Pieza pc = cc.pieza;
                     cc.pieza = null;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-
+using UnityEngine.EventSystems;
 
 public enum Clase
 {
@@ -25,8 +25,9 @@ public enum Faccion
 }
 
 
-public abstract class Pieza : MonoBehaviour
+public abstract class Pieza : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+
     [SerializeField]
     public Faccion faccion;
 
@@ -102,6 +103,7 @@ public abstract class Pieza : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Casilla>())
         {
+            Debug.Log("TRIGGER EXIT destruccion movimiento");
             other.gameObject.GetComponent<Casilla>().Limpiar_Pieza(this);
         }
     }
@@ -123,5 +125,20 @@ public abstract class Pieza : MonoBehaviour
         {
             casilla.Limpiar_Pieza(this);
         }  
+    }
+    public void OnPointerEnter()
+    {
+        Debug.Log("EL PUNTERO ME APUNTA SEGUNDO INTENTO" );
+        this.GetComponent<Renderer>().sharedMaterial.SetInt("_outline", 1);
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("EL PUNTERO ME APUNTA");
+        this.GetComponent<Renderer>().sharedMaterial.SetInt("_outline", 1);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        this.GetComponent<Renderer>().sharedMaterial.SetInt("_outline", 0);
     }
 }

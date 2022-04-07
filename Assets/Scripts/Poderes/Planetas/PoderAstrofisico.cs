@@ -54,19 +54,26 @@ public class PoderAstrofisico : PoderPlanetas
 
         if (!gameObject.GetPhotonView().IsMine && PhotonNetwork.InRoom) return;
 
-        if(mis_BalckHoles.Count > 0) StartCoroutine(Activar(mis_BalckHoles[0].GetComponent<Pieza>().casilla));
+        StartCoroutine(CFirstActionPersonal());
+    }
+
+    IEnumerator CFirstActionPersonal()
+    {
+
+        if (mis_BalckHoles.Count > 0) yield return StartCoroutine(Activar(mis_BalckHoles[0].GetComponent<Pieza>().casilla));
 
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
-        if(posibles_lugares.Count == 0)
+        if (posibles_lugares.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");
-            return;
         }
+        else
+        {
+            Tablero.instance.ResetCasillasEfects();
+            foreach (Casilla casilla in posibles_lugares) casilla.SetState(States.select);
 
-        Tablero.instance.ResetCasillasEfects();
-        foreach (Casilla casilla in posibles_lugares) casilla.SetState(States.select);
-
-        preparado_para_instanciar = true;
+            preparado_para_instanciar = true;
+        }
     }
 
     public void Crear_BlackHole()

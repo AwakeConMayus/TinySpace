@@ -24,7 +24,7 @@ public class BarraScoreAnim : MonoBehaviour
 
     private void Update()
     {
-        if(Mathf.Abs(myTransform.sizeDelta.y - targetSize) > error)
+       /* if(Mathf.Abs(myTransform.sizeDelta.y - targetSize) > error)
         {
             counter += Time.deltaTime;
             if(myTransform.sizeDelta.y >  Mathf.Lerp(myTransform.sizeDelta.y, targetSize, counter / time_toChange) && semaforo == false)
@@ -42,7 +42,7 @@ public class BarraScoreAnim : MonoBehaviour
           
             myTransform.sizeDelta = new Vector2(myTransform.sizeDelta.x, Mathf.Lerp(myTransform.sizeDelta.y, targetSize, counter/time_toChange));
            
-        }
+        }*/
     }
     public void desactivar()
     {

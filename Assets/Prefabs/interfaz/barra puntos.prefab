@@ -464,8 +464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PosicionInicial: 132.486
   PosicionFinal: -91.9
-  FillRellenoInicial: 250.2136
-  FillRellenoFinal: 8
+  FillRellenoInicial: 0
+  FillRellenoFinal: 1
   Fill: {fileID: 6363099241096631881}
 --- !u!1 &3334224236416897548
 GameObject:
@@ -622,7 +622,7 @@ MonoBehaviour:
   scoreEnemigo: {fileID: 796139422}
   fillEnemigo: {fileID: 7258142968976325134}
   fillAliado: {fileID: 3334224236416897548}
-  mi_seleccion: {fileID: 0}
+  timeToChange: 2
 --- !u!1 &5984245717947731923
 GameObject:
   m_ObjectHideFlags: 0

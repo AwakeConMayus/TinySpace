@@ -155,7 +155,7 @@ public class PVEArbitro : MonoBehaviour
     void Turn()
     {
         ++turnoAbsoluto;
-        Debug.Log(turnoAbsoluto);
+        Debug.Log(turnoAbsoluto + " turno");
         EventManager.TriggerEvent("Siguiente_turno");
         
 
@@ -195,8 +195,7 @@ public class PVEArbitro : MonoBehaviour
                 jugador2.poder.GetComponent<Poder>().InitialAction();
                 break;
             default:
-                jugador2.Jugar(jugador1, turnoAbsoluto);
-                NextTurn();
+                StartCoroutine( jugador2.Jugar(jugador1, turnoAbsoluto));
                 break;
         }
         ++numeroPoder2;       
@@ -204,9 +203,7 @@ public class PVEArbitro : MonoBehaviour
 
     void IATurn()
     {
-        jugador2.Jugar(jugador1,turnoAbsoluto);
-
-       NextTurn();
+        StartCoroutine( jugador2.Jugar(jugador1,turnoAbsoluto));
     }
 
     public void EndGame()
