@@ -18,7 +18,7 @@ public class PoderMecanico : PoderMineros
 
     public override void FirstAction()
     {
-        opciones = FiltroCasillas.CasillasDeUnJugador(faccion);
+        opciones = miComodin.GetComponent<Comodin>().CasillasDisponibles();
 
         Tablero.instance.ResetCasillasEfects();
         foreach (Casilla casilla in opciones) casilla.SetState(States.select);
@@ -39,7 +39,7 @@ public class PoderMecanico : PoderMineros
 
         if (opciones.Contains(c))
         {
-            OnlineManager.instance.Destroy_This_Pieza(c.pieza);
+            //OnlineManager.instance.Destroy_This_Pieza(c.pieza);
 
             GameObject thisPieza;
             if (PhotonNetwork.InRoom)

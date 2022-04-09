@@ -11,6 +11,7 @@ public class TextoExplicativo : ScriptableObject
             heroeColono, heroeAstrofisico, heroeLunatico,
             explorador, combate, laboratorio, estratega,
             exploradorMejora, combateMejora, laboratorioMejora, estrategaMejora,
+            estrategaAstro, laboratorioAstro,
             combateColonizador, laboratorioTerraformador, estrategaOrbital,
             comodin, modeloPerfeccionado, supernave,
             planeta, propulsorOrbital, terraformacion,
@@ -54,6 +55,11 @@ public class TextoExplicativo : ScriptableObject
             {
                 texto = laboratorioTerraformador;
             }
+
+            if (prefab.GetComponent<InvestigadorMinerosAstro>())
+            {
+                texto = laboratorioAstro;
+            }
         }
 
         else if (prefab.GetComponent<InvestigadorMinerosMejorado>())
@@ -68,6 +74,11 @@ public class TextoExplicativo : ScriptableObject
             if (prefab.GetComponent<EstrategaPlanetasCuartelesOrbitales>())
             {
                 texto = estrategaOrbital;
+            }
+
+            if (prefab.GetComponent<EstrategaMinerosAstro>())
+            {
+                texto = estrategaAstro;
             }
         }
 

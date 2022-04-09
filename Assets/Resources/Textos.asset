@@ -45,6 +45,8 @@ MonoBehaviour:
   estrategaMejora: "<b>Mejora (Estratega) :</b> Convierte a un estratega en un Astro.<n><b>Efecto:</b><Las
     naves aliadas adyacentes se transforman en  naves de combate.<n><b>Compenetraci\xF3n
     (+4PI) :</b> Por Nave de Combate aliada o enemiga."
+  estrategaAstro: Esta nave no da puntos <n> Se considera un astro
+  laboratorioAstro: 
   combateColonizador: "<b>Compenetraci\xF3n(+3PI) :</b> Por Nave de Combate aliadas
     o Planetas."
   laboratorioTerraformador: "<b>Compenetraci\xF3n (+0PI):</b>Nave Exploradora o Astros<n><n>Cada

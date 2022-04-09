@@ -65,4 +65,26 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     {
         return puntosDestruidos;
     }
+
+    public override int Puntos()
+    {
+        int puntosIniciales = 1;
+        int incremento = 2;
+
+        int puntos = 0;
+
+        puntos += puntosIniciales;
+        puntosIniciales += incremento;
+
+        foreach (Casilla adyacente in casilla.adyacentes)
+        {
+            if (!adyacente || !adyacente.pieza) continue;
+            if (adyacente.pieza.CompareClase(Clase.explorador))
+            {
+                puntos += puntosIniciales;
+                puntosIniciales += incremento;
+            }
+        }
+        return puntos;
+    }
 }

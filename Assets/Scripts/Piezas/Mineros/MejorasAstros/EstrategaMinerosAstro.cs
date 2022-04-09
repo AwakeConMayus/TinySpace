@@ -18,10 +18,10 @@ public class EstrategaMinerosAstro : EstrategaMineros
         {
             foreach (Casilla adyacente in c.adyacentes)
             {
-                if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
-                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro)
+                if (adyacente && !adyacente.pieza/* && adyacente.pieza.faccion == faccion &&
+                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro*/)
                 {
-                    OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
+                    //OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
                     GameObject thisPieza = PhotonNetwork.Instantiate(combateMinero.name, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
@@ -31,10 +31,10 @@ public class EstrategaMinerosAstro : EstrategaMineros
         {
             foreach (Casilla adyacente in c.adyacentes)
             {
-                if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
-                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro)
+                if (adyacente && !adyacente.pieza/* && adyacente.pieza.faccion == faccion &&
+                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro*/)
                 {
-                    Destroy(adyacente.pieza.gameObject);
+                    //Destroy(adyacente.pieza.gameObject);
                     GameObject thisPieza = Instantiate(combateMinero, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
@@ -46,6 +46,8 @@ public class EstrategaMinerosAstro : EstrategaMineros
     }
     public override int Puntos()
     {
+        return 0;
+
         int puntosCombateCercano = 4;
 
         int puntos = 0;

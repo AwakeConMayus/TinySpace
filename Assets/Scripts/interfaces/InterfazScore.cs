@@ -24,6 +24,8 @@ public class InterfazScore : MonoBehaviour
         timer = timeToChange;
         EventManager.StartListening("Siguiente_turno", Update_Score);
         EventManager.StartListening("UpdateScore", Update_Score);
+
+        Update_Score();
     }
 
     public void Update_Score()
@@ -53,7 +55,7 @@ public class InterfazScore : MonoBehaviour
         puntuacion_aliada += colchon;
         puntuacion_enemiga += colchon;
 
-         fillObjetivo = puntuacion_aliada / (float)(puntuacion_aliada + puntuacion_enemiga);
+        fillObjetivo = puntuacion_aliada / (float)(puntuacion_aliada + puntuacion_enemiga);
         diferenciaFill = fillAliado.GetComponent<Image>().fillAmount;
         timer = 0;
     }

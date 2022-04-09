@@ -17,7 +17,7 @@ public class IAPodMecanicoMineros : PoderIABase
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
-        foreach(Casilla c in FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa))
+        foreach(Casilla c in FiltroCasillas.CasillasLibres(IATablero.instance.mapa))
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 

@@ -195,7 +195,7 @@ MonoBehaviour:
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
-  astro: 1
+  astro: 0
 --- !u!1001 &1711688106757121476
 PrefabInstance:
   m_ObjectHideFlags: 0
