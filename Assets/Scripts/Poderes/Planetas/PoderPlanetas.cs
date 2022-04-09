@@ -60,7 +60,6 @@ public abstract class PoderPlanetas : Poder
 
     public override void FirstAction()
     {
-        Debug.Log("PADRE");
         List<Casilla> casillasPosibles = new List<Casilla>();
         casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
 

@@ -24,6 +24,7 @@ public abstract class Opciones : MonoBehaviour
     {
         if (PhotonNetwork.InRoom) poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
         else poder = Instantiate(poder, transform.position, Quaternion.identity);
+        Debug.Log(gameObject.name);
         poder.GetComponent<Poder>().SetPadre(this);
         poder.GetComponent<PoderIA>().Fases[0].padre = this;
         poder.GetComponent<PoderIA>().Fases[1].padre = this;

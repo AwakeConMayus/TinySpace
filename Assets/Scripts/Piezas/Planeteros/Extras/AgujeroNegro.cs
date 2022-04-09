@@ -50,11 +50,9 @@ public class AgujeroNegro : Pieza
 
     static void Atraer_Todo_En_Una_Direccion(Casilla c, int direccion)
     {
-        Debug.Log(c);
         if (!c) return;
         if (c.pieza)
         {
-            Debug.Log(c.pieza);
             if (c.pieza.astro) return;
             int aux_reverseDirection;
             if (direccion < 3) aux_reverseDirection = direccion + 3;

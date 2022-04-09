@@ -361,6 +361,7 @@ public abstract class IAOpciones : Opciones
 
     public virtual void EjecutarJugada(InfoTablero newTab)
     {
+        Debug.Log(" se dibuja el tablero Tablero");
         Tablero.instance.PrintInfoTablero(newTab);
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }

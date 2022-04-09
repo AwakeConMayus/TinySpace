@@ -193,6 +193,7 @@ public class PVEArbitro : MonoBehaviour
         {
             case 0:
                 jugador2.poder.GetComponent<Poder>().InitialAction();
+                Debug.Log(jugador2.poder.gameObject.name + " PODER IA");
                 break;
             default:
                 StartCoroutine( jugador2.Jugar(jugador1, turnoAbsoluto));
