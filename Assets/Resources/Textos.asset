@@ -37,16 +37,15 @@ MonoBehaviour:
   exploradorMejora: "<b>Compenetraci\xF3n (+4PI):</b>  Por el tipo de nave mas repetida."
   combateMejora: "<b>Compenetraci\xF3n (+3PI):</b> Por Nave de Combate aliadas.<n><b>Compenetraci\xF3n
     (+2PI):</b> Por Nave Enemiga."
-  laboratorioMejora: "<b>Mejora(laboratorio):</b> Convierte a un Laboratorio en un
-    Astro.<n><b>Efecto:</b> Destruye, si puede, una nave enemiga a tu eleccion a
-    dos casillas de distancia.<n><b>Compenetraci\xF3n (+1PI):</b> Por Nave Exploradora
-    aliada o enemiga..<n>Cada vez que un laboratorio vuelva a activar compenetracion,
-    suma 2 a los PI otorgados por esta habilidad(+1,+3,+5...PI)."
-  estrategaMejora: "<b>Mejora (Estratega) :</b> Convierte a un estratega en un Astro.<n><b>Efecto:</b><Las
-    naves aliadas adyacentes se transforman en  naves de combate.<n><b>Compenetraci\xF3n
-    (+4PI) :</b> Por Nave de Combate aliada o enemiga."
+  laboratorioMejora: "<b>Mejora(laboratorio):</b> Mejora un laboratorio aliado<n><b>Efecto:</b>
+    Destruye, si puede, una nave enemiga a tu eleccion a dos casillas de distancia.<n><b>Compenetraci\xF3n
+    (+1PI):</b> Por Nave Exploradora aliada o enemiga..<n>Cada vez que un laboratorio
+    vuelva a activar compenetracion, suma 2 a los PI otorgados por esta habilidad(+1,+3,+5...PI)."
+  estrategaMejora: <b>Mejora (Estratega) :</b> Convierte a un estratega en un Astro.<n><b>Efecto:</b><n>Despliega
+    naves de combate en cada casilla adyacente vacia.
   estrategaAstro: Esta nave no da puntos <n> Se considera un astro
-  laboratorioAstro: 
+  laboratorioAstro: "<b>Compenetraci\xF3n (+1PI):</b>Ella misma Y Nave Exploradora.<n><n>Cada
+    vez que se active compenetracion, aumenta su valor en 2PI."
   combateColonizador: "<b>Compenetraci\xF3n(+3PI) :</b> Por Nave de Combate aliadas
     o Planetas."
   laboratorioTerraformador: "<b>Compenetraci\xF3n (+0PI):</b>Nave Exploradora o Astros<n><n>Cada
