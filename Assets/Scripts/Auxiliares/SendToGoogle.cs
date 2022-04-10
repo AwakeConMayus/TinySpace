@@ -28,8 +28,7 @@ public class SendToGoogle : MonoBehaviour
     int Colono, Lunatico, Astrofisico, Combate, Laboratorio, Estratega, Planeta, Terraformador, CambioOrbital;
 
 
-    int inicialV, grupoPlanetario, distTercerPlaneta, rotecionMejorada, handicapHéroe;
-    int grupoMineral, malaMano;
+    string VectorMineros, VectorOyentes;
 
 
 
@@ -61,16 +60,11 @@ public class SendToGoogle : MonoBehaviour
             {
                 if(a.Length == 3)
                 {
-                    grupoMineral = a[1];
-                    malaMano = a[2];
+                    VectorMineros = Auxiliar.StringArrayInt(a);
                 }
                 else if(a.Length == 5) 
                 {
-                    inicialV = a[0];
-                    grupoPlanetario = a[1];
-                    distTercerPlaneta = a[2];
-                    rotecionMejorada = a[3];
-                    handicapHéroe = a[4];
+                    VectorOyentes = Auxiliar.StringArrayInt(a);
                 }
                 else
                 {
@@ -106,7 +100,6 @@ public class SendToGoogle : MonoBehaviour
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
         form.AddField("entry.1671880236", Ganador);
-        form.AddField("entry.1997505452", inicialV);
         form.AddField("entry.1747506782", Faccion1);
         form.AddField("entry.14402550", Faccion2);
         form.AddField("entry.572210542", PartidaConIA);
@@ -118,8 +111,6 @@ public class SendToGoogle : MonoBehaviour
 
         form.AddField("entry.1313404459", ModelPerfeccionado);
         form.AddField("entry.241310762", Supernave);
-        form.AddField("entry.2103168586", grupoMineral);
-        form.AddField("entry.561605195", malaMano);
 
         form.AddField("entry.1367708030", Colono);
         form.AddField("entry.1263929892", Lunatico);
@@ -132,17 +123,17 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1834529338", Terraformador);
 
         form.AddField("entry.1328728453", CambioOrbital);
-        form.AddField("entry.1923921435", grupoPlanetario);
-        form.AddField("entry.1822730851", distTercerPlaneta);
-        form.AddField("entry.820196545", rotecionMejorada);
-        form.AddField("entry.1935288395", handicapHéroe);
+
+        form.AddField("entry.1328728453", VectorMineros);
+        form.AddField("entry.1328728453", VectorOyentes);
+
 
 
 
 
     }
 
-    
+
     //* Obtiene la información que introducirá en el formulario
     void BuscarDatos()
     {
