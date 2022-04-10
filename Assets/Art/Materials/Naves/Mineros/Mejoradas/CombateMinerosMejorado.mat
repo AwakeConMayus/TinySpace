@@ -52,6 +52,7 @@ Material:
     - Vector1_835FA898: 1
     - Vector1_C4FFEE7: -1.6
     - Vector1_E7E823AB: 1
+    - outline: 1
     m_Colors:
     - Color_1FDD30BB: {r: 38.93716, g: 3.87333, b: 0, a: 1}
     - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}

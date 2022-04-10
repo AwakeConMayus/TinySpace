@@ -23,16 +23,14 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
     [SerializeField]
     Button enterMatch;
     [SerializeField]
-    Text faccion_rival_text;
+    TextMeshPro faccion_rival_text;
     [SerializeField]
     DatosIA datosIA;
 
     Button[] btnHeroes;
-    SpriteRenderer[] ImgHeroes;
     Button[] btnEspeciales;
-    SpriteRenderer[] ImgEspeciales;
     Button[] btnMejoradas;
-    SpriteRenderer[] ImgMejoradas;
+
 
     int heroeSel    = -1;
     int especialSel = -1;
@@ -40,12 +38,10 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     int jugadores_listos;
 
-    [SerializeField]
-    List<OpcionesFaccion> opciones = new List<OpcionesFaccion>();
-    [SerializeField]
-    TuSeleccion mi_Seleccion;
-    [SerializeField]
-    TuSeleccion seleccion_rival;
+   // [SerializeField] Image[] Heoreimage;
+    [SerializeField] List<OpcionesFaccion> opciones = new List<OpcionesFaccion>();
+    [SerializeField] TuSeleccion mi_Seleccion;
+    [SerializeField] TuSeleccion seleccion_rival;
 
    
     OpcionesFaccion faccion_Seleccionada;
@@ -61,24 +57,20 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
 
  
-
+       
 
 
         btnHeroes     = new Button[3];
         btnHeroes     = menuHeroes.GetComponentsInChildren<Button>();
-        ImgHeroes     = new SpriteRenderer[3];
-        ImgHeroes     = menuHeroes.GetComponentsInChildren<SpriteRenderer>();
+       
 
 
         btnEspeciales = new Button[3];
         btnEspeciales = menuEspeciales.GetComponentsInChildren<Button>();
-        ImgEspeciales = new SpriteRenderer[3];
-        ImgEspeciales = menuEspeciales.GetComponentsInChildren<SpriteRenderer>();
-
+       
         btnMejoradas  = new Button[3];
         btnMejoradas  = menuMejoradas.GetComponentsInChildren<Button>();
-        ImgMejoradas = new SpriteRenderer[3];
-        ImgMejoradas = menuMejoradas.GetComponentsInChildren<SpriteRenderer>();
+        
 
         if (PhotonNetwork.IsMasterClient && mi_Seleccion.faccion != Faccion.none)
         {
@@ -129,7 +121,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
             Debug.Log("Selecciono faccion de maneras aleatoria");
 
             int rnd = Random.Range(0, opciones.Count);
-
+            print(opciones.Count);
             faccion_Seleccionada = opciones[rnd];
 
             mi_Seleccion.faccion = faccion_Seleccionada.faccion;
@@ -479,21 +471,26 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
 
     public void Poner_Nombres()
     {
-        for(int i = 0; i < 3; ++i)
+        ImagenesDescriptivas images= Resources.Load<ImagenesDescriptivas>("ImagesDescriptivas");
+        TextoExplicativo textos = Resources.Load<TextoExplicativo>("Textos");
+        for (int i = 0; i < btnHeroes.Length; i++)
         {
-            Debug.Log(faccion_Seleccionada);
-            btnHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Poders[i].name;
-            ImgHeroes[i].sprite = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<Image>().sprite;
-            ImgHeroes[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesHeroes[i].GetComponentInChildren<TextMeshPro>().text;
-            btnEspeciales[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especiales[i].name;
-            ImgEspeciales[i].sprite = faccion_Seleccionada.PosiblesImagenesEspeciales[i].GetComponentInChildren<Image>().sprite;
-            ImgEspeciales[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesEspeciales[i].GetComponentInChildren<TextMeshPro>().text;
-            if (faccion_Seleccionada.faccion != Faccion.minero)
-            {
-                btnMejoradas[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.posibles_Piezas_Especializadas[i].name;
-                ImgMejoradas[i].sprite = faccion_Seleccionada.PosiblesImagenesMejoras[i].GetComponentInChildren<Image>().sprite;
-                ImgMejoradas[i].GetComponentInChildren<TextMeshPro>().text = faccion_Seleccionada.PosiblesImagenesMejoras[i].GetComponentInChildren<TextMeshPro>().text;
-            }
+            SetButton(btnHeroes[i].gameObject, images.GetImage(faccion_Seleccionada.posibles_Poders[i]), faccion_Seleccionada.posibles_Poders[i].name, textos.GetTexto(faccion_Seleccionada.posibles_Poders[i]));
         }
+        for (int i = 0; i < btnEspeciales.Length; i++)
+        {
+            SetButton(btnEspeciales[i].gameObject, images.GetImage(faccion_Seleccionada.posibles_Piezas_Especiales[i]), faccion_Seleccionada.posibles_Piezas_Especiales[i].name, textos.GetTexto(faccion_Seleccionada.posibles_Piezas_Especiales[i]));
+        }
+       
+        for (int i = 0; i < faccion_Seleccionada.posibles_Piezas_Especializadas.Count; i++)
+        {
+            SetButton(btnMejoradas[i].gameObject, images.GetImage(faccion_Seleccionada.posibles_Piezas_Especializadas[i]), faccion_Seleccionada.posibles_Piezas_Especializadas[i].name, textos.GetTexto(faccion_Seleccionada.posibles_Piezas_Especializadas[i]));
+        }
+    }
+    void SetButton(GameObject b, Sprite s, string title, string description)
+    {
+        b.transform.GetChild(2).GetComponent<Image>().sprite = s;
+        b.transform.GetChild(0).GetComponent<TextMeshPro>().text = title;
+        b.transform.GetChild(1).GetComponent<TextMeshPro>().text = description;
     }
 }

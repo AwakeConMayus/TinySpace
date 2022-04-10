@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e7f2a5b9185304da7eaf554804744f, type: 3}
+  m_Name: ImagesDescriptivas
+  m_EditorClassIdentifier: 
+  mineral: {fileID: 0}
+  heroeMaquinista: {fileID: 2582148828466338443, guid: 76f77c6e331f204498159a4ebac9a45d,
+    type: 3}
+  heroeMecanico: {fileID: 21300000, guid: 2ac6c44bb7bb844409cd2ddcef14d75e, type: 3}
+  heroeChantajista: {fileID: 21300000, guid: 1e8f80605bef8434696d89e88d53ca20, type: 3}
+  heroeColono: {fileID: 21300000, guid: 5bdc2c6b94c201445a9baa08a812b0e0, type: 3}
+  heroeAstrofisico: {fileID: 21300000, guid: 183b5c4ec10e79244a8b4769c0953663, type: 3}
+  heroeLunatico: {fileID: 21300000, guid: c80925f5c046da84f9e0650b338572b9, type: 3}
+  explorador: {fileID: 0}
+  combate: {fileID: 0}
+  laboratorio: {fileID: 0}
+  estratega: {fileID: 0}
+  exploradorMejora: {fileID: 0}
+  combateMejora: {fileID: 0}
+  laboratorioMejora: {fileID: 0}
+  estrategaMejora: {fileID: 0}
+  estrategaAstro: {fileID: 0}
+  laboratorioAstro: {fileID: 0}
+  combateColonizador: {fileID: 21300000, guid: b0537115adf8dc94fae2f096a8133416, type: 3}
+  laboratorioTerraformador: {fileID: 21300000, guid: 222741a9fa0e42f4d85275484ea53d13,
+    type: 3}
+  estrategaOrbital: {fileID: 21300000, guid: f60f956400f892548ad00acfa0ff9ab4, type: 3}
+  comodin: {fileID: 21300000, guid: bfbfe25ca3d198c41b981436252f7603, type: 3}
+  modeloPerfeccionado: {fileID: 21300000, guid: 60387b6f3c7b4954ea5b65bb5f2a8703,
+    type: 3}
+  supernave: {fileID: 21300000, guid: fae358f0bf4590549956f81b91fcef6d, type: 3}
+  planeta: {fileID: 21300000, guid: dbdb14495e0c9594782cda4c1aa5c427, type: 3}
+  propulsorOrbital: {fileID: 21300000, guid: 01ada2085bd2edf48b52945273f0a1e1, type: 3}
+  terraformacion: {fileID: 21300000, guid: 38d059753db700d4fb22be0ceeb509ba, type: 3}
+  sol: {fileID: 0}
+  planetaHelado: {fileID: 0}
+  planetaVolcanico: {fileID: 0}
+  planetaSagrdo: {fileID: 0}
+  luna: {fileID: 0}
+  agujeroNegro: {fileID: 0}

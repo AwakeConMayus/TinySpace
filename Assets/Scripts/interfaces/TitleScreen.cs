@@ -11,8 +11,6 @@ public class TitleScreen : MonoBehaviour
     [SerializeField]
     GameObject menuFaccion;
     [SerializeField]
-    GameObject salir;
-    [SerializeField]
     GameObject EscojerEjercito;
     Toggle[] btnFacciones;
     int faccionSeleccionada;
@@ -94,13 +92,13 @@ public class TitleScreen : MonoBehaviour
     public void EnterMatchMaking()
     {
         print(pve);
-         if(!pve) SceneManager.LoadScene(1);
-          else
-          {
-             // SceneManager.LoadScene(2);
+        if (!pve) SceneManager.LoadScene(1);
+        else
+        {
+            // SceneManager.LoadScene(2);
             EscojerEjercito.SetActive(true);
-             menuInicio.SetActive(false);
-          }
+            menuInicio.SetActive(false);
+        }
     }
     public void SalirMatchmaking()
     {
@@ -118,45 +116,24 @@ public class TitleScreen : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void SeleccionMinerosOOyentes(bool f)
-    {
-        if (f)
-        {
-            AuxFaccionSelecionada = 1;
-            infoMineros.SetActive(true);
-            infoOyentes.SetActive(false);
-        }
-        else
-        {
-            AuxFaccionSelecionada = 2;
-            infoMineros.SetActive(false);
-            infoOyentes.SetActive(true);
-        }
-
-    }
     public void selectFaccion(int faccion)
     {
-        if ((faccion == 0))
-        faccionSeleccionada = AuxFaccionSelecionada;
-        else
-        faccionSeleccionada = 0;
-       
-        //* Activa todos los botones de facción cuando seleccionas una (para desactivar luego el botón en específico pulsado)
-        for (int i = 0; i < 2; i++) //* tiene que ser i < 4 pero hay 2 facciones sin implementar, así que esas nunca se activan
-        {
-            btnFacciones[i].interactable = true;
-        }
-        Debug.Log((Faccion)faccionSeleccionada);
-        //* Desactiva el botón seleccionado 
-      //  btnFacciones[faccionSeleccionada].interactable = false;
-        
+        faccionSeleccionada = faccion;
         //* Asocia la facción seleccionada a la del scriptable object
-        mi_Seleccion.faccion = (Faccion)faccionSeleccionada;
-
-        
-        //* Activa el botón de Buscar Partida (match making) una vez se vea que tienes una facción seleccionada
-        salir.SetActive(true);
+        mi_Seleccion.faccion = (Faccion)faccion;
+        switch (faccion)
+        {
+            case 1:
+                AuxFaccionSelecionada = 1;
+                infoMineros.SetActive(true);
+                infoOyentes.SetActive(false);
+                break;
+            case 2:
+                AuxFaccionSelecionada = 2;
+                infoMineros.SetActive(false);
+                infoOyentes.SetActive(true);
+                break;
+        }
     }
 
     public void ActivarMenuMineros()

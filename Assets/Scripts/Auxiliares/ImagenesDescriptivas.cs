@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/TextoEsplicativo", order = 1)]
-public class TextoExplicativo : ScriptableObject
+[CreateAssetMenu(fileName = "Images", menuName = "ScriptableObjects/ImagenesDescriptivas", order = 1)]
+
+public class ImagenesDescriptivas : ScriptableObject
 {
+
     [SerializeField]
-    string  mineral,
+    Sprite  mineral,
             heroeMaquinista, heroeMecanico, heroeChantajista,
             heroeColono, heroeAstrofisico, heroeLunatico,
             explorador, combate, laboratorio, estratega,
@@ -19,9 +21,9 @@ public class TextoExplicativo : ScriptableObject
             luna, agujeroNegro;
 
 
-    public string GetTexto(GameObject prefab)
+    public Sprite GetImage(GameObject prefab)
     {
-        string texto = "";
+        Sprite texto = null;
 
         if (prefab.GetComponent<Explorador>())
         {
@@ -33,7 +35,7 @@ public class TextoExplicativo : ScriptableObject
             }
         }
 
-        else if(prefab.GetComponent<NaveCombate>())
+        else if (prefab.GetComponent<NaveCombate>())
         {
             texto = combate;
 
@@ -177,12 +179,6 @@ public class TextoExplicativo : ScriptableObject
             texto = mineral;
         }
 
-        texto = EditTextos(texto);
         return texto;
-    }
-            
-    string EditTextos(string s)
-    {
-        return s.Replace("<n>", "\n");
     }
 }
