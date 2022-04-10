@@ -22,6 +22,7 @@ public class PoderTerraformador : PoderPlanetas
         List<Casilla> casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
         if (casillasPosibles.Count == 0)
         {
+            Debug.Log("terraformador primera parte no se puede");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             return;
         }
@@ -83,6 +84,7 @@ public class PoderTerraformador : PoderPlanetas
         List<Casilla> casillasPosibles = planeta.GetComponent<Pieza>().CasillasDisponibles();
         if (casillasPosibles.Count == 0)
         {
+            Debug.Log("no se puede poner planeta en el terraformador");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             return;
         }
@@ -110,6 +112,7 @@ public class PoderTerraformador : PoderPlanetas
             }
             else
             {
+                Debug.Log("ya no hay nada ,as que poner en el terradformador");
                 planetasPuestos = 0;
                 Tablero.instance.ResetCasillasEfects();
                 EventManager.TriggerEvent("AccionTerminadaConjunta");

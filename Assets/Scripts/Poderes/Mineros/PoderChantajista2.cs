@@ -24,6 +24,7 @@ public class PoderChantajista2 : PoderMineros
         if(casillasDisponibles.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");
+            Debug.Log("termino al no poder mover  con el cahntajkkista");
             return;
         }
         foreach(Casilla c in casillasDisponibles)
@@ -70,7 +71,7 @@ public class PoderChantajista2 : PoderMineros
         Pieza2 = elegida.pieza.gameObject;
 
         Intercambio();
-
+        Debug.Log("chantajista mueve termina turno");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

@@ -26,6 +26,7 @@ public class PropulsorCambioOrbital : Efecto
 
         if (posibles_destinos.Count == 0)
         {
+            Debug.Log("termino al mover planeta cuando no puedo mover");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             preaparado_para_mover = false;
         }
@@ -54,6 +55,7 @@ public class PropulsorCambioOrbital : Efecto
             
             casilla.pieza.transform.position = c.transform.position;
             Tablero.instance.ResetCasillasEfects();
+            Debug.Log("termino al mover planeta");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             Destroy(this.gameObject);
         }

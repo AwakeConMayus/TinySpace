@@ -46,7 +46,11 @@ public class PoderAstrofisico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        if (!sin_pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (!sin_pasar_turno)
+        {
+            Debug.Log("poder astrofisico no paso paso");
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
     }
 
     public override void FirstActionPersonal()
@@ -65,6 +69,7 @@ public class PoderAstrofisico : PoderPlanetas
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
         if (posibles_lugares.Count == 0)
         {
+            Debug.Log("no hay posibles huecos para el astro fisics");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
         }
         else
@@ -120,7 +125,12 @@ public class PoderAstrofisico : PoderPlanetas
         }
         yield return new WaitForSeconds(1.5f);
 
-        if(last)EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (last)
+        {
+            Debug.Log("last poder astro fisico");
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
+        
     }
     public override void SecondAction()
     {

@@ -119,7 +119,6 @@ public abstract class IAOpciones : Opciones
         {
              yield return StartCoroutine( PoderCombinadoPoder(rival, fase));
         }
-        Debug.Log(bestJugada.tablero + " no");
         EjecutarJugada(bestJugada);
     }
 
@@ -159,7 +158,6 @@ public abstract class IAOpciones : Opciones
                 
             yield return StartCoroutine( SimulacionEnemiga(enemigo, newTab));
             puntos = worstPuntos;
-            Debug.Log(worstPuntos);
             if (puntos > bestPuntos)
             {
                 bestPuntos = puntos;
@@ -269,7 +267,6 @@ public abstract class IAOpciones : Opciones
             if (puntos <= PuntosOrigen) continue;
 
             puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
-            Debug.Log(puntos + " puntos ia");
             if (puntos > bestPuntos)
             {
                 bestPuntos = puntos;

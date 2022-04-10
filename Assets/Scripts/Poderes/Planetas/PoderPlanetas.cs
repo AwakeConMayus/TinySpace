@@ -55,7 +55,11 @@ public abstract class PoderPlanetas : Poder
             }
         }
         Tablero.instance.ResetCasillasEfects();
-        if(!sin_pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (!sin_pasar_turno)
+        {
+            Debug.Log("pasar turno no pasado planetas");
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
     }
 
     public override void FirstAction()

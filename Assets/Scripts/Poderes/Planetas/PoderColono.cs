@@ -67,6 +67,7 @@ public class PoderColono : PoderPlanetas
             SetPlanetaSagrado = false;
             Tablero.instance.ResetCasillasEfects();
 
+            Debug.Log("pasar turno colono");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
         }
 

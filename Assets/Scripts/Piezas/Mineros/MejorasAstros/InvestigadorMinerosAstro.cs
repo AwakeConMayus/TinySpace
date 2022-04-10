@@ -32,6 +32,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         if (objetivos.Count == 0)
         {
             EventManager.TriggerEvent("AccionTerminadaConjunta");
+            Debug.Log("termino con astro al no tener casillas");
             primera_vez = false;
         }
         else
@@ -48,7 +49,6 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
     {
         if (!preparado_para_disparar) return;
         Casilla c = ClickCasillas.casillaClick;
-        Debug.Log(objetivos.Contains(c));
         if (objetivos.Contains(c))
         {
             puntosDestruidos = c.pieza.Puntos();
@@ -56,6 +56,7 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
 
             preparado_para_disparar = false;
             Tablero.instance.ResetCasillasEfects();
+            Debug.Log("termino con astro al no poder disparar");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             primera_vez = false;
         }

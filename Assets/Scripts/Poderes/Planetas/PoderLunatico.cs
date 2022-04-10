@@ -44,7 +44,11 @@ public class PoderLunatico : PoderPlanetas
             posibles[rnd].pieza = thisPieza.GetComponent<Pieza>();
         }
 
-        if(!sin_pasar_turno) EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (!sin_pasar_turno)
+        {
+            Debug.Log("sin pasar turno lunatico paso turno");
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
     }
 
     public override void FirstActionPersonal()
@@ -52,6 +56,7 @@ public class PoderLunatico : PoderPlanetas
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
         if(casillasPosibles.Count == 0)
         {
+            Debug.Log("no hay hueco en el poder lunatico");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             return;
         }
@@ -74,6 +79,7 @@ public class PoderLunatico : PoderPlanetas
         List<Casilla> casillasPosibles = luna.GetComponent<Pieza>().CasillasDisponibles();
         if(casillasPosibles.Count == 0)
         {
+            Debug.Log("no hay hueco para poner liuna");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             return;
         }
@@ -103,6 +109,7 @@ public class PoderLunatico : PoderPlanetas
             {
                 lunasPuestas = 0;
                 Tablero.instance.ResetCasillasEfects();
+                Debug.Log("se acabo poner lunas");
                 EventManager.TriggerEvent("AccionTerminadaConjunta");
             }
         }

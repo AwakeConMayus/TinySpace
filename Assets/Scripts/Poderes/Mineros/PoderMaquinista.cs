@@ -83,6 +83,7 @@ public class PoderMaquinista : PoderMineros
             else
             {
                 tps = 0;
+                Debug.Log("termino al mover m,aquinista"); 
                 EventManager.TriggerEvent("AccionTerminadaConjunta");
             }
         }

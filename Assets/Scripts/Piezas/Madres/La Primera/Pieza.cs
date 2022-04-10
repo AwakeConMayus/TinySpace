@@ -66,6 +66,7 @@ public abstract class Pieza : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     void TerminarAccionConjunta()
     {
+        Debug.Log("termino con pieza " + this.gameObject.name);
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 

@@ -39,7 +39,11 @@ public abstract class PoderMineros : Poder
 
         }
 
-        if(!pasar_turno)EventManager.TriggerEvent("AccionTerminadaConjunta");
+        if (!pasar_turno)
+        {
+            Debug.Log("minero no he pasado turno paso");
+            EventManager.TriggerEvent("AccionTerminadaConjunta");
+        }
     }
 
 
