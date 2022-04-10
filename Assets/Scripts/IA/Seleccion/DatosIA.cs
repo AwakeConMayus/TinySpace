@@ -24,29 +24,29 @@ public class DatosIA : ScriptableObject
                         if (win) Mineros.vsOyentes.ganadas++;
 
                         //Heroes
-                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderMaquinista"))
+                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("Maquinista"))
                         {
                             Mineros.vsOyentes.heroe1jugadas++;
                             if (win) Mineros.vsOyentes.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderMecanico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Mecanico"))
                         {
                             Mineros.vsOyentes.heroe2jugadas++;
                             if (win) Mineros.vsOyentes.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderChantajista"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Chantajista"))
                         {
                             Mineros.vsOyentes.heroe3jugadas++;
                             if (win) Mineros.vsOyentes.heroe3ganadas++;
                         }
 
                         //Especiales
-                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros"))
+                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin"))
                         {
                             Mineros.vsOyentes.especial1jugadas++;
                             if (win) Mineros.vsOyentes.especial1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros"))
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado"))
                         {
                             Mineros.vsOyentes.especial2jugadas++;
                             if (win) Mineros.vsOyentes.especial2ganadas++;
@@ -71,51 +71,51 @@ public class DatosIA : ScriptableObject
                         if (win) Oyentes.vsMineros.ganadas++;
 
                         //Heroes
-                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderColono"))
+                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("Colono"))
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderLunatico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Lunatico"))
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("PoderAstrofisico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Astrofisico"))
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
                         }
 
                         //Especiales
-                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios"))
+                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta"))
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Satelite de Comunicacion"))
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital"))
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital Planetas"))
+                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador"))
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
                         }
 
                         //Mejoras
-                        if (IASeleccion.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores"))
+                        if (IASeleccion.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +"))
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores"))
+                        else if (IASeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformacion +"))
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales"))
+                        else if (IASeleccion.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +"))
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;

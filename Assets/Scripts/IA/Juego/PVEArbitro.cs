@@ -93,10 +93,11 @@ public class PVEArbitro : MonoBehaviour
     public void NextTurn()
     {
         IconoPensando.SetActive(false);
-        if (turnoAbsoluto == 1) Vectorizacion();        
-        if (turnoAbsoluto == 25) EndGame();
         if (end) return;
-        if (specialPhase) SpecialTurn();
+        if (turnoAbsoluto == 1) Vectorizacion();  
+        
+        if (turnoAbsoluto == 25) EndGame();
+        else if (specialPhase) SpecialTurn();
         else Turn();
     }
 
@@ -214,17 +215,16 @@ public class PVEArbitro : MonoBehaviour
 
     public void EndGame()
     {
+        end = true;
         bool IAWin = false;
         MenuFinalGame.SetActive(true);
         MenuFinalGame.GetComponent<MenuFinalParitda>().Final_Partida(  new int[2]);
         if (Tablero.instance.Winner() == jugador2.faccion) IAWin = true;
         datosIA.AddData(IAWin);
-        print("Wiiiiiin");
         Faccion initialF = Faccion.none;
         if (initial) initialF = jugador1.faccion;
         else initialF = jugador2.faccion;
         if (SendOnline) SendToGoogle.instance.SendOnline(initialF, true, vectores);
-        end = true;
     }
 
     void SetActiveActive(bool b)

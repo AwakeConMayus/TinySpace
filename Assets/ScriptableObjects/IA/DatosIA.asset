@@ -101,10 +101,10 @@ MonoBehaviour:
       especial3ganadas: 0
   Oyentes:
     vsMineros:
-      jugadas: 0
-      ganadas: 0
-      heroe1jugadas: 0
-      heroe1ganadas: 0
+      jugadas: 2
+      ganadas: 2
+      heroe1jugadas: 4
+      heroe1ganadas: 4
       heroe2jugadas: 0
       heroe2ganadas: 0
       heroe3jugadas: 0

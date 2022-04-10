@@ -28,7 +28,7 @@ public class SendToGoogle : MonoBehaviour
     int Colono, Lunatico, Astrofisico, Combate, Laboratorio, Estratega, Planeta, Terraformador, CambioOrbital;
 
 
-    string VectorMineros, VectorOyentes;
+    int VectorMineros, VectorOyentes;
 
 
 
@@ -54,17 +54,26 @@ public class SendToGoogle : MonoBehaviour
     {
         inicial = _inicial;
         IA = _IA;
-        if(vectores != null)
+        if (vectores != null)
         {
-            foreach(int[] a in vectores)
+            foreach (int[] a in vectores)
             {
-                if(a.Length == 3)
+                if (a.Length == 3)
                 {
-                    VectorMineros = Auxiliar.StringArrayInt(a);
+                    VectorMineros += a[2];
+                    VectorMineros += a[1] * 10;
+                    VectorMineros += a[0] * 100;
+                    VectorMineros += 1000000;
+
                 }
-                else if(a.Length == 5) 
+                else if (a.Length == 5)
                 {
-                    VectorOyentes = Auxiliar.StringArrayInt(a);
+                    VectorOyentes += a[4];
+                    VectorOyentes += a[3] * 10;
+                    VectorOyentes += a[2] * 100;
+                    VectorOyentes += a[1] * 1000;
+                    VectorOyentes += a[0] * 10000;
+                    VectorOyentes += 1000000;
                 }
                 else
                 {
@@ -195,29 +204,29 @@ public class SendToGoogle : MonoBehaviour
 
 
         //Elecciones       
-        
+
         //Heroes
 
         //Mineros
-        if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderMaquinista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderMaquinista")) Maquinista = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderMecanico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderMecanico")) Mecanico = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderChantajista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderChantajista")) Chantajista = 1;
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Maquinista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Maquinista")) Maquinista = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Mecánico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Mecánico")) Mecanico = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Chantajista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Chantajista")) Chantajista = 1;
 
         //Oyentes
-        if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderColono") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderColono")) Colono = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderLunatico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderLunatico")) Lunatico = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("PoderAstrofisico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("PoderAstrofisico")) Astrofisico = 1;
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Colono") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Colono")) Colono = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Lunático") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Lunático")) Lunatico = 1;
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Astrofísico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Astrofísico")) Astrofisico = 1;
 
 
         //Especiales
 
         //Mineros
-        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Comodin Mineros")) Comodin = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado Mineros")) ModelPerfeccionado = 1;
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Comodin")) Comodin = 1;
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado")) ModelPerfeccionado = 1;
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Supernave")) Supernave = 1;
 
         //Oyentes
-        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta Planetarios")) Comodin = 1;
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta")) Comodin = 1;
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Terraformador")) Terraformador = 1;
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital")) CambioOrbital = 1;
 
@@ -225,8 +234,8 @@ public class SendToGoogle : MonoBehaviour
         //Mejoras
 
         //Oyentes
-        if (miSeleccion.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores") || SeleccionRival.mis_opciones[1] == Resources.Load<GameObject>("Combate Planetarios Colonizadores")) Combate = 1;
-        else if (miSeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores") || SeleccionRival.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio Planetarios Terraformadores")) Laboratorio = 1;
-        else if (miSeleccion.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales") || SeleccionRival.mis_opciones[3] == Resources.Load<GameObject>("Estratega Planetarios Cuarteles Orbitales")) Estratega = 1;
+        if (miSeleccion.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +") || SeleccionRival.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +")) Combate = 1;
+        else if (miSeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +") || SeleccionRival.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +")) Laboratorio = 1;
+        else if (miSeleccion.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +") || SeleccionRival.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +")) Estratega = 1;
     }
 }

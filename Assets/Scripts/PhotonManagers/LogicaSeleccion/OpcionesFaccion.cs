@@ -12,9 +12,6 @@ public class OpcionesFaccion : ScriptableObject
 
 
     public GameObject[] posibles_Poders = new GameObject[3];
-    public GameObject[] PosiblesImagenesHeroes = new GameObject[3];
-    public GameObject[] PosiblesImagenesEspeciales = new GameObject[3];
-    public GameObject[] PosiblesImagenesMejoras = new GameObject[3];
 
 
     public List<GameObject> posibles_Piezas_Especializadas = new List<GameObject>();
