@@ -9,10 +9,10 @@ public class MovimientoLineal : MonoBehaviour
     [SerializeField] float FillRellenoInicial;
     [SerializeField] float FillRellenoFinal;
     [SerializeField] Image Fill;
-    RectTransform myTransform;
+    Image myImage;
     private void Awake()
     {
-        myTransform = Fill.GetComponent<RectTransform>();
+        myImage = Fill.GetComponent<Image>();
     }
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class MovimientoLineal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       this.transform.localPosition = new Vector3(this.transform.localPosition.x, (PosicionFinal + (PosicionFinal - PosicionInicial) / (FillRellenoFinal - FillRellenoInicial) * (myTransform.sizeDelta.y - FillRellenoFinal)), this.transform.localPosition.z);
+       this.transform.localPosition = new Vector3(this.transform.localPosition.x, (PosicionFinal + (PosicionFinal - PosicionInicial) / (FillRellenoFinal - FillRellenoInicial) * (myImage.fillAmount - FillRellenoFinal)), this.transform.localPosition.z);
        
     }
 }
