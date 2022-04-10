@@ -212,7 +212,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845102393560154703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 0.19345, y: 0.8712162, z: 1}
   m_Children: []
   m_Father: {fileID: 8731659053276622453}
@@ -341,7 +341,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953702305242191692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436540311}
@@ -402,7 +402,6 @@ GameObject:
   - component: {fileID: 5425714407659678656}
   - component: {fileID: 1820481555537243457}
   - component: {fileID: 9115837001998387535}
-  - component: {fileID: 4477443053622872681}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -418,7 +417,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989019725024441800}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 503603195}
@@ -468,23 +467,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4477443053622872681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989019725024441800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb196fd5b6c1dd40afbe2b998d69916, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PosicionInicial: 132.486
-  PosicionFinal: -91.9
-  FillRellenoInicial: 0
-  FillRellenoFinal: 1
-  Fill: {fileID: 6363099241096631881}
 --- !u!1 &3334224236416897548
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,12 +622,15 @@ MonoBehaviour:
   scoreEnemigo: {fileID: 796139422}
   fillEnemigo: {fileID: 7258142968976325134}
   fillAliado: {fileID: 3334224236416897548}
-  timeToChange: 2
+  timeToChange: 1
   imagenFaccion: {fileID: 2243790626310322639}
   imagenes:
   - {fileID: 21300000, guid: 3869fe471cfad01458782c68058b2088, type: 3}
   - {fileID: 7614321629982468972, guid: 92e3a9bca10ac5c459940ea5a74f2691, type: 3}
   miSeleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  brilliRober:
+  - {fileID: 503603194}
+  - {fileID: 436540310}
 --- !u!1 &5984245717947731923
 GameObject:
   m_ObjectHideFlags: 0

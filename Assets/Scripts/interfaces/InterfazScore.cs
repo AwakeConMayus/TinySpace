@@ -16,12 +16,12 @@ public class InterfazScore : MonoBehaviour
     [SerializeField] Image imagenFaccion;
     [SerializeField] Sprite[] imagenes;
     [SerializeField] TuSeleccion miSeleccion;
+    [SerializeField] GameObject[] brilliRober;
 
     float timer;
 
     float fillObjetivo;
     float diferenciaFill;
-    // Start is called before the first frame update
     void Start()
     {
         timer = timeToChange;
@@ -70,16 +70,21 @@ public class InterfazScore : MonoBehaviour
 
         fillObjetivo = puntuacion_aliada / (float)(puntuacion_aliada + puntuacion_enemiga);
         diferenciaFill = fillAliado.GetComponent<Image>().fillAmount;
+        foreach (GameObject g in brilliRober) g.SetActive(false);
+        if (diferenciaFill < fillObjetivo) brilliRober[0].SetActive(true);
+        else if (diferenciaFill > fillObjetivo) brilliRober[1].SetActive(true);
         timer = 0;
     }
 
     private void Update()
     {
-        if(timer < timeToChange)
+        if (timer < timeToChange)
         {
             timer += Time.deltaTime;
             fillAliado.GetComponent<Image>().fillAmount = Mathf.Lerp(diferenciaFill, fillObjetivo, timer / timeToChange);
         }
+        else foreach (GameObject g in brilliRober) g.SetActive(false);
     }
+
 
 }
