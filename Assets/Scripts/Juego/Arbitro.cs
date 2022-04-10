@@ -160,7 +160,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        //if (turno == 1 && initial) Vectorizacion();
+        if (turno == 1 && initial) Vectorizacion();
         if (turno == 20)
         {
             PhotonNetwork.AutomaticallySyncScene = false;
@@ -208,8 +208,8 @@ public class Arbitro : MonoBehaviourPunCallbacks
         }
         //jugador2.opcionesDisponibles;
         //Vectorizacion
-        //if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, player, jugador2);
-        //else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, player);
+        if (initial) vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, player, jugador2);
+        else vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador2, player);
 
         //print(Auxiliar.StringArrayInt(vectores[0]) + " // " + Auxiliar.StringArrayInt(vectores[1]));
     }
