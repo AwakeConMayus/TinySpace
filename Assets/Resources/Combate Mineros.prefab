@@ -20059,6 +20059,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mineros_combate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1ac105142abcb34a9c7e8492d206b61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5470888042648861998, guid: a1ac105142abcb34a9c7e8492d206b61,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
