@@ -35,7 +35,7 @@ MonoBehaviour:
     type: 3}
   estrategaOrbital: {fileID: 21300000, guid: f60f956400f892548ad00acfa0ff9ab4, type: 3}
   comodin: {fileID: 21300000, guid: bfbfe25ca3d198c41b981436252f7603, type: 3}
-  modeloPerfeccionado: {fileID: 21300000, guid: 60387b6f3c7b4954ea5b65bb5f2a8703,
+  modeloPerfeccionado: {fileID: 21300000, guid: 728fc439fe9c16246a796c1fcf40ec30,
     type: 3}
   supernave: {fileID: 21300000, guid: fae358f0bf4590549956f81b91fcef6d, type: 3}
   planeta: {fileID: 21300000, guid: dbdb14495e0c9594782cda4c1aa5c427, type: 3}

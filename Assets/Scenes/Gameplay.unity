@@ -5887,20 +5887,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837699347}
     m_Modifications:
-    - target: {fileID: 3334224236416897548, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3891012674338539136, guid: e56fc5f2617fcbc46a400ef63257789d,
         type: 3}
       propertyPath: m_Name
       value: barra puntos
-      objectReference: {fileID: 0}
-    - target: {fileID: 6363099241096631881, guid: e56fc5f2617fcbc46a400ef63257789d,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8731659053276622453, guid: e56fc5f2617fcbc46a400ef63257789d,
         type: 3}
