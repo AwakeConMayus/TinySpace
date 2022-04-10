@@ -13,6 +13,9 @@ public class InterfazScore : MonoBehaviour
     [SerializeField] GameObject fillAliado;
 
     [SerializeField] float timeToChange;
+    [SerializeField] Image imagenFaccion;
+    [SerializeField] Sprite[] imagenes;
+    [SerializeField] TuSeleccion miSeleccion;
 
     float timer;
 
@@ -24,6 +27,16 @@ public class InterfazScore : MonoBehaviour
         timer = timeToChange;
         EventManager.StartListening("Siguiente_turno", Update_Score);
         EventManager.StartListening("UpdateScore", Update_Score);
+
+        switch (miSeleccion.faccion)
+        {            
+            case Faccion.minero:
+                imagenFaccion.sprite = imagenes[0];
+                break;
+            case Faccion.oyente:
+                imagenFaccion.sprite = imagenes[1];
+                break;            
+        }
 
         Update_Score();
     }
