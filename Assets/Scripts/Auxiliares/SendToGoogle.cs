@@ -124,8 +124,8 @@ public class SendToGoogle : MonoBehaviour
 
         form.AddField("entry.1328728453", CambioOrbital);
 
-        form.AddField("entry.1328728453", VectorMineros);
-        form.AddField("entry.1328728453", VectorOyentes);
+        form.AddField("entry.2078574632", VectorMineros);
+        form.AddField("entry.24745043", VectorOyentes);
 
 
 
