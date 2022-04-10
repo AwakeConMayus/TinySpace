@@ -29,7 +29,7 @@ public class DatosIA : ScriptableObject
                             Mineros.vsOyentes.heroe1jugadas++;
                             if (win) Mineros.vsOyentes.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Mecanico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Mecánico"))
                         {
                             Mineros.vsOyentes.heroe2jugadas++;
                             if (win) Mineros.vsOyentes.heroe2ganadas++;
@@ -76,12 +76,12 @@ public class DatosIA : ScriptableObject
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Lunatico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Astrofísico"))
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Astrofisico"))
+                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Lunático"))
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
