@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Aviso : MonoBehaviour
 {
+    [SerializeField] float minTime, maxTime;
     float timer = 0;
     [SerializeField] GameObject pulsaParaAvanzar;
     private void Start()
@@ -15,10 +16,10 @@ public class Aviso : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 2 && Input.anyKeyDown || timer > 7)
+        if(timer > minTime && Input.anyKeyDown || timer > maxTime)
         {
             SceneManager.LoadScene("TitleScreen");
         }
-        if (timer > 2 && pulsaParaAvanzar) pulsaParaAvanzar.SetActive(true);
+        if (timer > minTime && pulsaParaAvanzar) pulsaParaAvanzar.SetActive(true);
     }
 }
