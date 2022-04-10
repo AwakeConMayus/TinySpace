@@ -10,6 +10,8 @@ public class PVEArbitro : MonoBehaviour
 
     [SerializeField] TuSeleccion mySeleccion, seleccioRival;
 
+    [SerializeField] GameObject IconoPensando;
+
     Faccion player1, player2;
 
     IAOpciones jugador2;
@@ -90,6 +92,7 @@ public class PVEArbitro : MonoBehaviour
 
     public void NextTurn()
     {
+        IconoPensando.SetActive(false);
         if (turnoAbsoluto == 1) Vectorizacion();        
         if (turnoAbsoluto == 25) EndGame();
         if (end) return;
@@ -188,7 +191,8 @@ public class PVEArbitro : MonoBehaviour
     }
 
     void IASpecialTurn()
-    {        
+    {
+        IconoPensando.SetActive(true);
         switch (numeroPoder2)
         {
             case 0:
@@ -204,6 +208,7 @@ public class PVEArbitro : MonoBehaviour
 
     void IATurn()
     {
+        IconoPensando.SetActive(true);
         StartCoroutine( jugador2.Jugar(jugador1,turnoAbsoluto));
     }
 

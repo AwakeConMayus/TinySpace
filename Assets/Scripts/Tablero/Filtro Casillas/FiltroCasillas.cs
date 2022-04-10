@@ -34,10 +34,8 @@ public static class FiltroCasillas
     }
 
     //Busca todas las casillas que esten en el rango desde X casilla
-    public static List<Casilla> CasillasEnRango(int rango, Casilla origen, bool incluirOrigen = true, List<Casilla> listaBase = null)
+    public static List<Casilla> CasillasEnRango(int rango, Casilla origen, bool incluirOrigen = true)
     {
-        if (listaBase == null) listaBase = Tablero.instance.mapa;
-
         List<Casilla> resultado = new List<Casilla>();
         List<Casilla> nuevas = new List<Casilla>();
         List<Casilla> proximas = new List<Casilla>();
@@ -50,9 +48,9 @@ public static class FiltroCasillas
             {
                 foreach (Casilla adyacente in inexplorada.adyacentes)
                 {
-                    if (!resultado.Contains(adyacente) && !nuevas.Contains(adyacente) && !proximas.Contains(adyacente))
+                    if (adyacente && !resultado.Contains(adyacente) && !nuevas.Contains(adyacente) && !proximas.Contains(adyacente))
                     {
-                        if (listaBase.Contains(adyacente)) proximas.Add(adyacente);
+                        proximas.Add(adyacente);
                     }
                 }
             }

@@ -14,6 +14,8 @@ public class IAPropulsorCambioOrbitalOyentes : PiezaIA
 
         foreach(Casilla c in piezaBase.CasillasDisponibles(IATablero.instance.mapa))
         {
+            IATablero.instance.PrintInfoTablero(tabBase);
+
             Pieza planetaMover = c.pieza;
             c.pieza = null;
             InfoTablero newTab = new InfoTablero(IATablero.instance.mapa);

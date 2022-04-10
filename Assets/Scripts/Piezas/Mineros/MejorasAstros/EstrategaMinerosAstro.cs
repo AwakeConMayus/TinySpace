@@ -16,12 +16,12 @@ public class EstrategaMinerosAstro : EstrategaMineros
     {
         if (PhotonNetwork.InRoom && gameObject.GetPhotonView().IsMine)
         {
-            foreach (Casilla adyacente in c.adyacentes)
+            foreach (Casilla adyacente in FiltroCasillas.CasillasEnRango(2, c, false))
             {
-                if (adyacente && !adyacente.pieza/* && adyacente.pieza.faccion == faccion &&
-                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro*/)
+                if (adyacente && !adyacente.pieza && adyacente.pieza.faccion == faccion &&
+                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro)
                 {
-                    //OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
+                    OnlineManager.instance.Destroy_This_Pieza(adyacente.pieza);
                     GameObject thisPieza = PhotonNetwork.Instantiate(combateMinero.name, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
@@ -29,12 +29,12 @@ public class EstrategaMinerosAstro : EstrategaMineros
         }
         else if (!PhotonNetwork.InRoom)
         {
-            foreach (Casilla adyacente in c.adyacentes)
+            foreach (Casilla adyacente in FiltroCasillas.CasillasEnRango(2, c, false))
             {
-                if (adyacente && !adyacente.pieza/* && adyacente.pieza.faccion == faccion &&
-                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro*/)
+                if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
+                    adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro)
                 {
-                    //Destroy(adyacente.pieza.gameObject);
+                    Destroy(adyacente.pieza.gameObject);
                     GameObject thisPieza = Instantiate(combateMinero, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
@@ -46,9 +46,8 @@ public class EstrategaMinerosAstro : EstrategaMineros
     }
     public override int Puntos()
     {
-        return 0;
 
-        int puntosCombateCercano = 4;
+        int puntosCombateCercano = 5;
 
         int puntos = 0;
         foreach (Casilla adyacente in casilla.adyacentes)
