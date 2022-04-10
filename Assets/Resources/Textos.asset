@@ -17,8 +17,7 @@ MonoBehaviour:
     engranaje (vu\xE9lvelo a pulsar para salir del modo mejora)."
   heroeMaquinista: 'Mitad y final de partida: Teletransporta 2 naves aliadas a otras
     casillas del mapa.'
-  heroeMecanico: "Mitad y final de partida: Cambia una nave aliada a un modelo basico
-    de tu elecci\xF3n."
+  heroeMecanico: "Mitad y final de partida: Coloca una nave b\xE1sica a tu eleccion."
   heroeChantajista: 'Mitad y final de partida: Cambia las posiciones de una nave
     aliada y otra enemiga.'
   heroeColono: 'Mitad de partida: Coloca un planeta extra.<n> Final de partida: Terraforma
@@ -28,55 +27,51 @@ MonoBehaviour:
     todos los agujeros negros en juego.'
   heroeLunatico: 'Inicio: Cada planeta comienza con una luna adyacente<n>Mitad y
     final de partida: Coloca dos lunas adyacentes a tus planetas.'
-  explorador: "<b>Compenetraci\xF3n (+2PI):</b> Cualquier tipo de nave o astro.<n>El
-    explorador solo activa compenetraci\xF3n una vez por cada tipo de nave o astro."
-  combate: "<b>Compenetraci\xF3n (+3PI):</b> Por Nave de Combate aliadas."
-  laboratorio: "<b>Compenetraci\xF3n (+1PI):</b>Nave Exploradora.<n><n>Cada vez que
-    se active compenetracion, aumenta su valor en 2PI."
-  estratega: "<b>Compenetraci\xF3n (+3PI):</b> Por Nave de Combate aliada o enemiga."
-  exploradorMejora: "<b>Compenetraci\xF3n (+4PI):</b>  Por el tipo de nave mas repetida."
-  combateMejora: "<b>Compenetraci\xF3n (+3PI):</b> Por Nave de Combate aliadas.<n><b>Compenetraci\xF3n
-    (+2PI):</b> Por Nave Enemiga."
-  laboratorioMejora: "<b>Mejora(laboratorio):</b> Mejora un laboratorio aliado<n><b>Efecto:</b>
-    Destruye, si puede, una nave enemiga a tu eleccion a dos casillas de distancia.<n><b>Compenetraci\xF3n
-    (+1PI):</b> Por Nave Exploradora aliada o enemiga..<n>Cada vez que un laboratorio
-    vuelva a activar compenetracion, suma 2 a los PI otorgados por esta habilidad(+1,+3,+5...PI)."
-  estrategaMejora: <b>Mejora (Estratega) :</b> Convierte a un estratega en un Astro.<n><b>Efecto:</b><n>Transforma
-    todas las naves aliadas a dos de rango  en naevs de combate
-  estrategaAstro: "Se Considera un Astro<n><b>Compenetraci\xF3n (+5PI):</b> Por Nave
-    de Combate aliada o enemiga."
-  laboratorioAstro: "<b>Compenetraci\xF3n (+1PI):</b>Ella misma Y Nave Exploradora.<n><n>Cada
-    vez que se active compenetracion, aumenta su valor en 2PI."
-  combateColonizador: "<b>Compenetraci\xF3n(+3PI) :</b> Por Nave de Combate aliadas
-    o Planetas."
-  laboratorioTerraformador: "<b>Compenetraci\xF3n (+0PI):</b>Nave Exploradora o Astros<n><n>Cada
-    vez que se active compenetracion, aumenta su valor en 2PI."
-  estrategaOrbital: "Puede colocarse en cualquier casilla libre.<n><b>Compenetraci\xF3n
-    (+2PI):</b> Por Nave de Combate aliada o enemiga.<n><b>+3PI</b> por cada planeta
-    en sus diagonales"
-  comodin: "<b>2 Minerales</b><n>Coloca cualquier tipo de nave b\xE1sica a tu elecci\xF3n."
-  modeloPerfeccionado: <b>0 Minerales</b><n>Mejora una nave aliada sin mejorar.
-  supernave: <b>5 Minerales</b><n>Actua como si se tratase de las cuatro nabes basicas
-    de manera simultanea.<n>(Explorador, Combate, Laboratorio, Estratega)
+  explorador: Gana 2 puntos por cada tipo de nave diferente alrededor.
+  combate: Gana 3 puntos por Nave de Combate aliadas.
+  laboratorio: Gana 1 puntos por cada explorador alrededor, cada explorador aumenta
+    los puntos que otorga en 2.
+  estratega: Gana 3 puntos por cada nave de combate alrededor.
+  exploradorMejora: Gana 4 puntos por cada nave, solo la mas repetida alrededor.
+  combateMejora: Gana 3 puntos por Nave de Combate aliadas y gana 2 puntos por nave
+    de combate enemiga.
+  laboratorioMejora: Mejora un laboratorio aliado en el tablero. Destruye, si puede,
+    una nave enemiga a tu eleccion a dos casillas de distancia. Gana 1 puntos por
+    cada explorador alrededor, cada explorador aumenta los puntos que otorga en 2.
+  estrategaMejora: Convierte a un estratega en el tablero en un Astro. Transforma
+    todas las naves aliadas a dos casillas de rango  en naves de combate
+  estrategaAstro: Se Considera un Astro. Gana 5 puntos por Nave de Combate aliada
+    o enemiga.
+  laboratorioAstro: Gana 1 puntos por cada explorador alrededor, cada explorador
+    aumenta los puntos que otorga en 2, se cuenta asi misma como explorador.
+  combateColonizador: Gana 3 puntos por Nave de Combate aliadas o Planetas.
+  laboratorioTerraformador: Gana 0 puntos por cada explorador o astro alrededor,
+    cada explorador o astro aumenta los puntos que otorga en 2.
+  estrategaOrbital: Puede colocarse en cualquier casilla del tablero. Gana 2 puntos
+    por Nave de Combate aliada o enemiga. Gana 3 puntos por cada planeta en sus diagonales
+  comodin: "Coste: 2 Minerales. Coloca cualquier tipo de nave b\xE1sica a tu elecci\xF3n."
+  modeloPerfeccionado: Mejora una nave aliada sin mejorar.
+  supernave: 'Coste: 5 Minerales. Puntua como las cuatro naves basicas de manera
+    simultanea. (Explorador, Combate, Laboratorio, Estratega).'
   planeta: "Coloca un planeta para poder colocar naves en sus casillas adyacentes.
     Si tienes m\xE1s naves adyacentes al planeta que tu rival, obtienes +3 puntos.
     El planeta es un astro (indestructible)."
-  propulsorOrbital: Mueve un planea a una casilla adyacente.<n>Si esta casilla esta
-    ocupada destruye la anve que la ocupa.
-  terraformacion: "Modifica un planeta, (Cambia la forma con cada uso)<n><b>1\xAA
-    Estrella:</b> Puntua dependiendo de las casillas adyacentes ocupadas (0,1,3,5,10,5,1
-    // 0,1,3,7,1 // 0,1,5,1)<n><b>1\xAA Planeta helado:</b> +2PI por cada tipo de
-    nave distinta adyacente.<n><b>1\xAA Planeta volc\xE1nico:</b> +4PI por cada nave
-    enemiga adyacente.<n><b>1\xAA Planeta sagrado:</b> Si no tiene naves enemigas
-    adyacentes +4PI por cada nave aliada adyacente"
-  sol: "Obtines PI en funcion de las casillas adyacentes ocupadas (0,1,3,5,10,5,1
+  propulsorOrbital: Mueve un planea a una casilla adyacente. Si esta casilla esta
+    ocupada destruye la nave  que la ocupa.
+  terraformacion: "Modifica un planeta, (Cambia la forma con cada uso)<n><b> 1\xAA
+    Estrella: </b>Puntua dependiendo de las casillas adyacentes ocupadas (0,1,3,5,10,5,1
+    // 0,1,3,7,1 // 0,1,5,1)<n><b>1\xAA Planeta helado:</b>Gana 2 puntos por cada
+    tipo de nave distinta adyacente.<n><b>1\xAA Planeta volc\xE1nico:</b> Gana 4
+    puntos por cada nave enemiga adyacente.<n><b>1\xAA Planeta sagrado:</b> Si no
+    tiene naves enemigas adyacentes ganas 4 puntos por cada nave aliada adyacente"
+  sol: "Obtines puntos en funcion de las casillas adyacentes ocupadas (0,1,3,5,10,5,1
     // 0,1,3,7,1 // 0,1,5,1)<n>Si tienes m\xE1s naves adyacentes que tu rival, obtienes
     +3 puntos."
-  planetaHelado: "Obtines +2PI por cada tipo de nave diferente adyacente.<n>Si tienes
+  planetaHelado: "Obtines 2 puntos por cada tipo de nave diferente adyacente.<n>Si
+    tienes m\xE1s naves adyacentes que tu rival, obtienes +3 puntos."
+  planetaVolcanico: "Obtines 4 puntos por cada nave enemiga adyacente.<n>Si tienes
     m\xE1s naves adyacentes que tu rival, obtienes +3 puntos."
-  planetaVolcanico: "Obtines +4PI por cada nave enemiga adyacente.<n>Si tienes m\xE1s
-    naves adyacentes que tu rival, obtienes +3 puntos."
-  planetaSagrdo: "Si no tiene naves enemigas adyacentes +3PI por nave aliada.<n>Si
+  planetaSagrdo: "Si no tiene naves enemigas adyacentes ganas 3 puntos por nave aliada.<n>Si
     tienes m\xE1s naves adyacentes que tu rival, obtienes +3 puntos."
   luna: Puedes colocar naves adyacentes a la luna como si de un planeta se tratase.
   agujeroNegro: El agujero negro destruye todo lo que le rodea y atrae hacia el todas
