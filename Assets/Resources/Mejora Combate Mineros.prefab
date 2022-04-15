@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3830173338414123627
+--- !u!1 &2815733871115166940
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3613795990647983346}
-  - component: {fileID: 5954237560060200735}
-  - component: {fileID: 4763555353116921446}
-  - component: {fileID: 5314526610291999897}
-  - component: {fileID: 3076061011095963741}
-  - component: {fileID: 7594946243373346601}
+  - component: {fileID: 2310967956002021957}
+  - component: {fileID: 1176220560898626042}
+  - component: {fileID: 234402844036479117}
+  - component: {fileID: 3137385418786746049}
+  - component: {fileID: 6949812825956994131}
+  - component: {fileID: 2030938500176684702}
+  - component: {fileID: -6842632134112200150}
   m_Layer: 0
-  m_Name: Modelo Perfeccionado
+  m_Name: Mejora Combate Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3613795990647983346
+--- !u!4 &2310967956002021957
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
@@ -35,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5954237560060200735
+--- !u!114 &1176220560898626042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -53,30 +54,31 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6949812825956994131}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!65 &4763555353116921446
+--- !u!65 &234402844036479117
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5314526610291999897
+--- !u!54 &3137385418786746049
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -86,33 +88,67 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3076061011095963741
+--- !u!114 &6949812825956994131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c74842cc45ebe44e8b81d49656f6590, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 1
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &2030938500176684702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815733871115166940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f6f31fbb6d53a4fae3fa21f5bdc27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
   clase: 0
   casilla: {fileID: 0}
   astro: 0
-  coste: 2
---- !u!114 &7594946243373346601
+  combateMejorado: {fileID: 169998913420755586, guid: 98ea1ee478be89f4cbbc8cfe8be01052,
+    type: 3}
+--- !u!114 &-6842632134112200150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830173338414123627}
+  m_GameObject: {fileID: 2815733871115166940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3676c5d74e1f1fe409060eb6cffe7e48, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e2857f5ad4ee44a9c3c854d61f76c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faccion: 1
+  faccion: 0

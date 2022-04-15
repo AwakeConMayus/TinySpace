@@ -226,6 +226,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         List<int> bestOpciones = new List<int>();
         int bestOption = 0;
         float winrat = 0;
+        float randomSelectionProbability = 10;
 
         switch (mi_Seleccion.faccion)
         {
@@ -272,7 +273,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-
+                if (Random.Range(0, 100) < randomSelectionProbability) bestOption = Random.Range(0, 3);
                 seleccion_rival.mi_poder = opciones[1].posibles_Poders[bestOption];
 
                 //Mejora
@@ -308,7 +309,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-               
+                if (Random.Range(0, 100) < randomSelectionProbability) bestOption = Random.Range(0, 3);
                 seleccion_rival.mis_opciones[opciones[1].huecos_Especializadas[bestOption]] = opciones[1].posibles_Piezas_Especializadas[bestOption];
 
                 //Especial
@@ -344,7 +345,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-
+                if (Random.Range(0, 100) < randomSelectionProbability) bestOption = Random.Range(0, 3);
                 seleccion_rival.mis_opciones[4] = opciones[1].posibles_Piezas_Especiales[bestOption];
                 break;
 
@@ -392,7 +393,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                 }
 
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
-
+                if (Random.Range(0, 100) < randomSelectionProbability) bestOption = Random.Range(0, 3);
                 seleccion_rival.mi_poder = opciones[0].posibles_Poders[bestOption];
 
 
@@ -430,6 +431,7 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
                     bestOpciones.Add(2);
                 }
                 bestOption = bestOpciones[Random.Range(0, bestOpciones.Count)];
+                if (Random.Range(0, 100) < randomSelectionProbability) bestOption = Random.Range(0, 3);
                 seleccion_rival.mis_opciones[4] = opciones[0].posibles_Piezas_Especiales[bestOption];
                 break;
         }

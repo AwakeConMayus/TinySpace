@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DescripcionPezas : MonoBehaviour
 {
-    public GameObject puntosPieza;
     Text textoExplicatvo;
     TextoExplicativo explicaciones;
     bool clantamaforo = false;
@@ -24,7 +23,7 @@ public class DescripcionPezas : MonoBehaviour
 
     public void Active()
     {
-        if (!ClickCasillas.casillaClick || !ClickCasillas.casillaClick.pieza || !puntosPieza.activeSelf) return;
+        if (!ClickCasillas.casillaClick || !ClickCasillas.casillaClick.pieza) return;
         if (!clantamaforo)
         {
             clantamaforo = true;

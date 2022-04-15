@@ -3,37 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class EstrategaMinerosMejorada : Efecto
+
+public class MejoraExploradoresMineros : Efecto
 {
-    [SerializeField] GameObject estratega_astro;
+    public GameObject exploradorMejorado;
+
     public override void Accion()
     {
-        
         // Comprobacion de si el game se esta realizando online u offline
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2 && GetComponent<PhotonView>().IsMine)
         {
             OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
             // Instanciacion que utiliza photon
-            PhotonNetwork.Instantiate(estratega_astro.name, casilla.transform.position, Quaternion.identity);
-
+            GameObject thisPieza = PhotonNetwork.Instantiate(exploradorMejorado.name, casilla.transform.position, Quaternion.identity);
         }
-        else if(!PhotonNetwork.InRoom)
+        else if (!PhotonNetwork.InRoom)
         {
-            if(casilla.pieza) Destroy(casilla.pieza.gameObject);
+            casilla.Clear();
             // Instanciacion de piezas en el offline
-            GameObject thisPieza = Instantiate(estratega_astro, casilla.transform.position, Quaternion.identity);
+            GameObject thisPieza = Instantiate(exploradorMejorado);
             thisPieza.transform.position = casilla.transform.position;
-            //GestorTurnos.instance.realizarJugada();
         }
+
+
     }
+
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.estratega}, casillasDisponibles);
-        foreach (Casilla c in casillasDisponibles)
+        FiltroCasillas.CasillasDeUnTipo(Clase.explorador, casillasDisponibles);
+        foreach(Casilla c in casillasDisponibles)
         {
-            if (c.pieza.gameObject.name == estratega_astro.name) casillasDisponibles.Remove(c);
+            if (c.pieza.gameObject.name == exploradorMejorado.name) casillasDisponibles.Remove(c);
         }
         return casillasDisponibles;
     }

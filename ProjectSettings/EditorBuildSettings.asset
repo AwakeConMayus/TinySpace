@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Aviso.unity
+    guid: a761f5e145fd0474294a18a869ca499d
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: c5958912783d59c479b12bac6a921934

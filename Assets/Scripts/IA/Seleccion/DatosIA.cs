@@ -7,6 +7,7 @@ using UnityEditor;
 public class DatosIA : ScriptableObject
 {
     [SerializeField] TuSeleccion IASeleccion, PlayerSelection;
+    [SerializeField] OpcionesFaccion opcionesMinero, opcionesOyentes;
     public DatosIAFaccion Mineros, Oyentes, Honorables, Simbionte;
 
     public void AddData(bool win)
@@ -24,34 +25,34 @@ public class DatosIA : ScriptableObject
                         if (win) Mineros.vsOyentes.ganadas++;
 
                         //Heroes
-                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("Maquinista"))
+                        if (IASeleccion.mi_poder == opcionesMinero.posibles_Poders[0])
                         {
                             Mineros.vsOyentes.heroe1jugadas++;
                             if (win) Mineros.vsOyentes.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Mecánico"))
+                        else if (IASeleccion.mi_poder == opcionesMinero.posibles_Poders[1])
                         {
                             Mineros.vsOyentes.heroe2jugadas++;
                             if (win) Mineros.vsOyentes.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Chantajista"))
+                        else if (IASeleccion.mi_poder == opcionesMinero.posibles_Poders[2])
                         {
                             Mineros.vsOyentes.heroe3jugadas++;
                             if (win) Mineros.vsOyentes.heroe3ganadas++;
                         }
 
                         //Especiales
-                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin"))
+                        if (IASeleccion.mis_opciones[4] == opcionesMinero.posibles_Piezas_Especiales[0])
                         {
                             Mineros.vsOyentes.especial1jugadas++;
                             if (win) Mineros.vsOyentes.especial1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado"))
+                        else if (IASeleccion.mis_opciones[4] == opcionesMinero.posibles_Piezas_Especiales[1])
                         {
                             Mineros.vsOyentes.especial2jugadas++;
                             if (win) Mineros.vsOyentes.especial2ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave"))
+                        else if (IASeleccion.mis_opciones[4] == opcionesMinero.posibles_Piezas_Especiales[2])
                         {
                             Mineros.vsOyentes.especial3jugadas++;
                             if (win) Mineros.vsOyentes.especial3ganadas++;
@@ -71,52 +72,52 @@ public class DatosIA : ScriptableObject
                         if (win) Oyentes.vsMineros.ganadas++;
 
                         //Heroes
-                        if (IASeleccion.mi_poder == Resources.Load<GameObject>("Colono"))
+                        if (IASeleccion.mi_poder == opcionesOyentes.posibles_Poders[0])
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Astrofísico"))
+                        else if (IASeleccion.mi_poder == opcionesOyentes.posibles_Poders[1])
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mi_poder == Resources.Load<GameObject>("Lunático"))
+                        else if (IASeleccion.mi_poder == opcionesOyentes.posibles_Poders[2])
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
                         }
 
                         //Especiales
-                        if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta"))
+                        if (IASeleccion.mis_opciones[4] == opcionesOyentes.posibles_Piezas_Especiales[0])
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital"))
+                        else if (IASeleccion.mis_opciones[4] == opcionesOyentes.posibles_Piezas_Especiales[1])
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador"))
+                        else if (IASeleccion.mis_opciones[4] == opcionesOyentes.posibles_Piezas_Especiales[2])
                         {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
                         }
 
                         //Mejoras
-                        if (IASeleccion.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +"))
+                        if (IASeleccion.mis_opciones[opcionesOyentes.huecos_Especializadas[0]] == opcionesOyentes.posibles_Piezas_Especializadas[0])
                         {
                             Oyentes.vsMineros.heroe1jugadas++;
                             if (win) Oyentes.vsMineros.heroe1ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformacion +"))
+                        else if (IASeleccion.mis_opciones[opcionesOyentes.huecos_Especializadas[1]] == opcionesOyentes.posibles_Piezas_Especializadas[1])
                         {
                             Oyentes.vsMineros.heroe2jugadas++;
                             if (win) Oyentes.vsMineros.heroe2ganadas++;
                         }
-                        else if (IASeleccion.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +"))
-                        {
+                        else if (IASeleccion.mis_opciones[opcionesOyentes.huecos_Especializadas[2]] == opcionesOyentes.posibles_Piezas_Especializadas[2])
+                {
                             Oyentes.vsMineros.heroe3jugadas++;
                             if (win) Oyentes.vsMineros.heroe3ganadas++;
                         }
@@ -209,8 +210,8 @@ public struct DatosVS
 }
 
 
-
-/*[CustomEditor(typeof(DatosIA))]
+/*
+[CustomEditor(typeof(DatosIA))]
 public class TestScriptableEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -224,6 +225,7 @@ public class TestScriptableEditor : Editor
         }
 
     }
-}*/
+}
+*/
 
 

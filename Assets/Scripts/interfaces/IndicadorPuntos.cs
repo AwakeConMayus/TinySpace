@@ -5,41 +5,75 @@ using UnityEngine.UI;
 
 public class IndicadorPuntos : MonoBehaviour
 {
-    public static IndicadorPuntos instance;
-
     Text textoPuntos;
-    Canvas myCanvas;
     public float posicionVertical;
+    public Casilla casilla;
+
+    bool active, realActive;
 
     private void Awake()
-    {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
-
+    {      
         textoPuntos = GetComponentInChildren<Text>();
-        myCanvas = GetComponentInParent<Canvas>();
 
         EventManager.StartListening("ClickCasilla", Active);
         EventManager.StartListening("DesClickCasilla", Desactive);
+        EventManager.StartListening("UpdateScore", UpdateText);
 
         gameObject.SetActive(false);
     }
-
+    
 
     public void Active()
     {
-        if (!ClickCasillas.casillaClick || !ClickCasillas.casillaClick.pieza) return;
+        if (!ClickCasillas.casillaClick || !ClickCasillas.casillaClick.pieza || ClickCasillas.casillaClick.transform.position != casilla.transform.position || active) return;
         CancelInvoke();
-        Pieza pieza = ClickCasillas.casillaClick.pieza;
+        active = true;
         gameObject.SetActive(true);
-        //transform.localPosition = Camera.main.WorldToScreenPoint(pieza.transform.position) - myCanvas.transform.localPosition + new Vector3(0,posicionVertical,0);
-        transform.position = pieza.transform.position + new Vector3(0, 12, 0);
-        textoPuntos.text = pieza.Puntos().ToString();
         Invoke("Desactive", 2f);
+    }
+
+    public void ActiveInfinite()
+    {
+        print("infinite");
+        CancelInvoke();
+        active = true;
+        gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if(active && casilla.pieza)
+        {
+            if (realActive && !casilla.pieza)
+            {
+                realActive = false;
+                gameObject.SetActive(false);
+            }
+            else if(!realActive && casilla.pieza)
+            {
+                gameObject.SetActive(true);
+                transform.position = casilla.pieza.transform.position + new Vector3(0, 12, 0);
+                realActive = true;
+                UpdateText();
+            }
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void UpdateText()
+    {
+        if (!active || !casilla.pieza) return;
+        if (casilla.pieza.faccion == InstancePiezas.instance.faccion) textoPuntos.color = Color.green;
+        else textoPuntos.color = Color.red;
+        gameObject.SetActive(true);
+        textoPuntos.text = casilla.pieza.Puntos().ToString();
     }
 
     public void Desactive()
     {
-        gameObject.SetActive(false);
+        active = false;
     }
 }

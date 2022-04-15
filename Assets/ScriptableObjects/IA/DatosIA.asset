@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IASeleccion: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
   PlayerSelection: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  opcionesMinero: {fileID: 11400000, guid: 09aebd0a09df4a14f94a147ea5fa0349, type: 2}
+  opcionesOyentes: {fileID: 11400000, guid: 4f0b3c85e0e2c1349a340ebe1ae8b292, type: 2}
   Mineros:
     vsMineros:
       jugadas: 0
@@ -37,12 +39,12 @@ MonoBehaviour:
       especial3jugadas: 0
       especial3ganadas: 0
     vsOyentes:
-      jugadas: 0
-      ganadas: 0
+      jugadas: 1
+      ganadas: 1
       heroe1jugadas: 0
       heroe1ganadas: 0
-      heroe2jugadas: 0
-      heroe2ganadas: 0
+      heroe2jugadas: 1
+      heroe2ganadas: 1
       heroe3jugadas: 0
       heroe3ganadas: 0
       mejora1jugadas: 0
@@ -51,8 +53,8 @@ MonoBehaviour:
       mejora2ganadas: 0
       mejora3jugadas: 0
       mejora3ganadas: 0
-      especial1jugadas: 0
-      especial1ganadas: 0
+      especial1jugadas: 1
+      especial1ganadas: 1
       especial2jugadas: 0
       especial2ganadas: 0
       especial3jugadas: 0
@@ -101,14 +103,14 @@ MonoBehaviour:
       especial3ganadas: 0
   Oyentes:
     vsMineros:
-      jugadas: 8
-      ganadas: 6
-      heroe1jugadas: 9
-      heroe1ganadas: 8
-      heroe2jugadas: 22
-      heroe2ganadas: 21
-      heroe3jugadas: 2
-      heroe3ganadas: 0
+      jugadas: 1
+      ganadas: 1
+      heroe1jugadas: 1
+      heroe1ganadas: 1
+      heroe2jugadas: 1
+      heroe2ganadas: 1
+      heroe3jugadas: 1
+      heroe3ganadas: 1
       mejora1jugadas: 0
       mejora1ganadas: 0
       mejora2jugadas: 0

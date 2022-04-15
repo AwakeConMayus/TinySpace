@@ -15,10 +15,12 @@ public class PoderChantajista2 : PoderMineros
     {
         EventManager.StartListening("ClickCasilla", Seleccion1);
         EventManager.StartListening("ClickCasilla", Seleccion2);
+        EventManager.StartListening("DesClickCasilla", Cancel);
     }
 
     public override void FirstAction()
     {
+        Tablero.instance.ResetCasillasEfects();
         casillasDisponibles = FiltroCasillas.CasillasDeOtroJugador(faccion);
         casillasDisponibles = FiltroCasillas.CasillasNoAstro(casillasDisponibles);
         if(casillasDisponibles.Count == 0)
@@ -33,6 +35,13 @@ public class PoderChantajista2 : PoderMineros
         }
 
         faseSeleccion1 = true;
+    }
+
+    public void Cancel()
+    {
+        if (!faseSeleccion1 && !faseSeleccion2) return;
+        faseSeleccion1 = faseSeleccion2 = false;
+        FirstAction();
     }
 
     public override void SecondAction()

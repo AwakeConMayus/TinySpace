@@ -7,7 +7,7 @@ public class NaveCombateMinerosMejorada : NaveCombateMineros
 
     public override int Puntos()
     {
-        int puntosEnemigoAdyacente = 2;
+        int puntosEnemigoAdyacente = 4;
 
         int puntos =  base.Puntos();
         foreach(Casilla c in casilla.adyacentes)

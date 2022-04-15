@@ -70,6 +70,8 @@ MonoBehaviour:
   - {fileID: 0}
   pieza: {fileID: 0}
   meteorito: 0
+  contadorPuntos: {fileID: 4499122095681811271, guid: 333696683afa6294d888165e57620952,
+    type: 3}
 --- !u!95 &7915210133073511629
 Animator:
   serializedVersion: 3

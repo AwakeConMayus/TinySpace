@@ -29,10 +29,20 @@ public class Casilla : MonoBehaviour
     EfectosCasillas efectos;
     Animator anim;
 
+    public GameObject contadorPuntos;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         efectos = GetComponent<EfectosCasillas>();
+    }
+
+    private void Start()
+    {
+        if (IATablero.instance && IATablero.instance.mapa.Contains(this)) return;
+        GameObject g = Instantiate(contadorPuntos, InstancePiezas.instance.transform);
+        g.GetComponent<IndicadorPuntos>().casilla = this;
+        contadorPuntos = g;
     }
 
     public void Clear()

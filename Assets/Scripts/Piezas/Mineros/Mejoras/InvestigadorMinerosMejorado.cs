@@ -37,6 +37,11 @@ public class InvestigadorMinerosMejorado : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.investigador }, casillasDisponibles);
+        FiltroCasillas.CasillasDeUnTipo(Clase.investigador, casillasDisponibles);
+        foreach (Casilla c in casillasDisponibles)
+        {
+            if (c.pieza.gameObject.name == investigador_astro.name) casillasDisponibles.Remove(c);
+        }
+        return casillasDisponibles;
     }
 }

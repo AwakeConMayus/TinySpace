@@ -7,12 +7,13 @@ public class ExploradorMineroMejorado : ExploradorMinero
 
     public override int Puntos()
     {
-        int numPuntosPorClase = 4;
+        int numPuntosPorClase = 3;
 
         List<Clase> clasesExploradas = new List<Clase>();
         int puntosExploracion = 0;
 
-        foreach (Casilla adyacete in casilla.adyacentes)
+        List<Casilla> casillasRango = FiltroCasillas.CasillasEnRango(2, casilla, false);
+        foreach (Casilla adyacete in casillasRango)
         {
             if (!adyacete || !adyacete.pieza) continue;
 

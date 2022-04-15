@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6304254719590537824
+--- !u!1 &8781235326714547929
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5799647108148714745}
-  - component: {fileID: 3529423100598015764}
-  - component: {fileID: 2324200753262976621}
-  - component: {fileID: 3141904868370699410}
-  - component: {fileID: 2019985237896747794}
-  - component: {fileID: -2397303647024700769}
+  - component: {fileID: 9141318868658800704}
+  - component: {fileID: 5664558935201020927}
+  - component: {fileID: 6741479820025582216}
+  - component: {fileID: 8450005669128586436}
+  - component: {fileID: 4520762974531135062}
+  - component: {fileID: 8781235326714547934}
+  - component: {fileID: 4622793027671241721}
   m_Layer: 0
-  m_Name: Terraformar Planetarios
+  m_Name: Mejora Explorador Mineros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5799647108148714745
+--- !u!4 &9141318868658800704
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
@@ -35,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3529423100598015764
+--- !u!114 &5664558935201020927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -53,30 +54,31 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4520762974531135062}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!65 &2324200753262976621
+--- !u!65 &6741479820025582216
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3141904868370699410
+--- !u!54 &8450005669128586436
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -86,37 +88,67 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2019985237896747794
+--- !u!114 &4520762974531135062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1623fbab5121a0644b8378b866d61feb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faccion: 2
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 1
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &8781235326714547934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781235326714547929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b884f143f5be8a4081505f48262109f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faccion: 1
   clase: 0
   casilla: {fileID: 0}
   astro: 0
-  sol: {fileID: 7024440420229625860, guid: b8fe6bd237c0a8f49846a5d29c470a8d, type: 3}
-  hielo: {fileID: 6742238933231433789, guid: 9f675a892861fbe4b9521034b0072d14, type: 3}
-  volcanico: {fileID: 763168805342163853, guid: 2b2d381f9b670b14e9e116f03964622e,
+  exploradorMejorado: {fileID: 5093249223015093092, guid: bca912307826e6949ba2abd17f1044d6,
     type: 3}
-  sagrado: {fileID: 6596421712654070911, guid: 337f75c2a3274374eb8b71dafc256a85, type: 3}
---- !u!114 &-2397303647024700769
+--- !u!114 &4622793027671241721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304254719590537824}
+  m_GameObject: {fileID: 8781235326714547929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9c2ea150b11424c8cee28f98a31cbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 53f94e7cc612bdf49a58513ea456428d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faccion: 2
+  faccion: 1
