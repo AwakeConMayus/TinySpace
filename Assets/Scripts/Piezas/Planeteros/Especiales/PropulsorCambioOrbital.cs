@@ -11,8 +11,27 @@ public class PropulsorCambioOrbital : Efecto
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
+        //Planetas aliados
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        return FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.planeta}, casillasDisponibles);
+        casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.planeta}, casillasDisponibles);
+
+        List<Casilla> casillasAEliminar = new List<Casilla>();
+        //Discriminacion planetas
+        foreach(Casilla c in casillasDisponibles)
+        {
+            posibles_destinos = FiltroCasillas.CasillasAdyacentes(c, true);
+            List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_destinos);
+            posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
+            List<Casilla> planetas = FiltroCasillas.CasillasDeUnTipo(Clase.planeta, referencia);
+            if(planetas.Contains(c)) planetas.Remove(c);
+            planetas = FiltroCasillas.CasillasAdyacentes(planetas, true);
+            posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, planetas);
+            if (posibles_destinos.Count == 0) casillasAEliminar.Add(c);
+        }
+
+        casillasDisponibles = FiltroCasillas.RestaLista(casillasDisponibles, casillasAEliminar);
+
+        return casillasDisponibles;
     }
 
 
@@ -23,6 +42,10 @@ public class PropulsorCambioOrbital : Efecto
         posibles_destinos = FiltroCasillas.CasillasAdyacentes(casilla, true);
         List<Casilla> mis_cosas = FiltroCasillas.CasillasDeUnJugador(faccion, posibles_destinos);
         posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, mis_cosas);
+        List<Casilla> planetas = FiltroCasillas.CasillasDeUnTipo(Clase.planeta);
+        if (planetas.Contains(casilla)) planetas.Remove(casilla);
+        planetas = FiltroCasillas.CasillasAdyacentes(planetas, true);
+        posibles_destinos = FiltroCasillas.RestaLista(posibles_destinos, planetas);
 
         if (posibles_destinos.Count == 0)
         {

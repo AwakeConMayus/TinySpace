@@ -40,7 +40,7 @@ public class AgujeroNegro : Pieza
             if (casilla.adyacentes[i] && casilla.adyacentes[i].pieza && !casilla.adyacentes[i].pieza.astro || casilla.adyacentes[i] && !casilla.adyacentes[i].pieza)
             {
                 casilla.adyacentes[i].pieza = null;
-                Atraer_Todo_En_Una_Direccion(casilla.adyacentes[i], i);
+                //Atraer_Todo_En_Una_Direccion(casilla.adyacentes[i], i);
             }
         }        
     }

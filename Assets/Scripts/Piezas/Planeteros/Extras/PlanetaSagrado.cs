@@ -7,19 +7,14 @@ public class PlanetaSagrado : Planetas
     public override int Puntos()
     {
         int puntos = base.Puntos();
-        int puntosExtra = 0;
 
         foreach(Casilla c in casilla.adyacentes)
         {
-            if(c && c.pieza)
+            if(c && c.pieza && c.pieza.faccion == faccion)
             {
-                if (c.pieza.faccion != faccion) return puntos;
-
-                puntosExtra += 4;
+                puntos += 4;
             }
         }
-
-        puntos += puntosExtra;
 
         return puntos;
     }

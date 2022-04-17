@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Sol : Planetas
 {
-    [SerializeField] int[] puntos_6Casillas;
+    /*[SerializeField] int[] puntos_6Casillas;
     [SerializeField] int[] puntos_4Casillas;
-    [SerializeField] int[] puntos_3Casillas;
+    [SerializeField] int[] puntos_3Casillas;*/
+
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillas = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
@@ -17,6 +18,18 @@ public class Sol : Planetas
 
 
     public override int Puntos()
+    {
+        int puntos = base.Puntos();
+
+        foreach(Casilla c in casilla.adyacentes)
+        {
+            if (c && !c.pieza) puntos += 2;
+        }
+
+        return puntos;
+    }
+
+    /*public override int Puntos()
     {
         int puntos = base.Puntos();
         int nPiezas = 0;
@@ -52,5 +65,5 @@ public class Sol : Planetas
 
 
         return puntos;
-    }
+    }*/
 }

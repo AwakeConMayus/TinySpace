@@ -8,7 +8,7 @@ public class PlanetaHelado : Planetas
     {
         int puntos = base.Puntos();
 
-        int numPuntosPorClase = 2;
+        int numPuntosPorClase = 3;
 
         List<Clase> clasesExploradas = new List<Clase>();
         int puntosExploracion = 0;

@@ -15,6 +15,14 @@ public class PoderMaquinista : PoderMineros
     public int numeroTps;
     int tps;
 
+    public override void InitialAction(bool pasar_turno)
+    {
+        if(padre.GetComponent<OpcionesMineros>()) padre.GetComponent<OpcionesMineros>().mineral += 3;
+        if (padre.GetComponent<IAOpcionesMineros>()) padre.GetComponent<IAOpcionesMineros>().mineral += 3;
+
+        base.InitialAction(pasar_turno);
+    }
+
     private void Awake()
     {
         EventManager.StartListening("ClickCasilla", SelectOrigen);
