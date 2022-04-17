@@ -30,7 +30,7 @@ public class EstrategaMinerosMejorada : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.estratega}, casillasDisponibles);
+        casillasDisponibles =  FiltroCasillas.CasillasDeUnTipo(new List<Clase> { Clase.estratega}, casillasDisponibles);
         foreach (Casilla c in casillasDisponibles)
         {
             if (c.pieza.gameObject.name == estratega_astro.name) casillasDisponibles.Remove(c);

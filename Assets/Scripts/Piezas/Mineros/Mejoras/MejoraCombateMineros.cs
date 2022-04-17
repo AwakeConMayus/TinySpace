@@ -31,9 +31,10 @@ public class MejoraCombateMineros : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        FiltroCasillas.CasillasDeUnTipo(Clase.combate, casillasDisponibles);
+        casillasDisponibles = FiltroCasillas.CasillasDeUnTipo(Clase.combate, casillasDisponibles);
         foreach (Casilla c in casillasDisponibles)
         {
+          
             if (c.pieza.gameObject.name == combateMejorado.name) casillasDisponibles.Remove(c);
         }
         return casillasDisponibles;

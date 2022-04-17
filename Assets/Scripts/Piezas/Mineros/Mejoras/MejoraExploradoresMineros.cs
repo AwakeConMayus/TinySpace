@@ -32,9 +32,10 @@ public class MejoraExploradoresMineros : Efecto
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        FiltroCasillas.CasillasDeUnTipo(Clase.explorador, casillasDisponibles);
+        casillasDisponibles =  FiltroCasillas.CasillasDeUnTipo(Clase.explorador, casillasDisponibles);
         foreach(Casilla c in casillasDisponibles)
         {
+            Debug.Log(c.transform.position + " " + c.gameObject.name);
             if (c.pieza.gameObject.name == exploradorMejorado.name) casillasDisponibles.Remove(c);
         }
         return casillasDisponibles;
