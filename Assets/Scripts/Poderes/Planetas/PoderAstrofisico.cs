@@ -121,7 +121,7 @@ public class PoderAstrofisico : PoderPlanetas
             {
                 OnlineManager.instance.Destroy_This_Pieza(origen.adyacentes[j].pieza);
             }
-            Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
+            //Atraer_Todo_En_Una_Direccion(origen.adyacentes[j], j);
         }
         yield return new WaitForSeconds(1.5f);
 

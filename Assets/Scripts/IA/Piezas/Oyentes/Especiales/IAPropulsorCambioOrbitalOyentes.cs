@@ -25,8 +25,17 @@ public class IAPropulsorCambioOrbitalOyentes : PiezaIA
                 IATablero.instance.PrintInfoTablero(newTab);
                 if(cc && (!cc.pieza || (cc.pieza.faccion != faccion && !cc.pieza.astro)))
                 {
-                    cc.pieza = planetaMover;
-                    opciones.Add(new InfoTablero(IATablero.instance.mapa));
+                    bool valido = true;
+                    foreach(Casilla ccc in cc.adyacentes)
+                    {
+                        if (ccc && ccc.pieza && ccc.pieza.clase == Clase.planeta) valido = false;
+                    }
+
+                    if(valido)
+                    {
+                        cc.pieza = planetaMover;
+                        opciones.Add(new InfoTablero(IATablero.instance.mapa));
+                    }
                 }
             }
         }
