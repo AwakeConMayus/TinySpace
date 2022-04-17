@@ -16,7 +16,7 @@ public static class Auxiliar
 
     public static string StringListInt(List<int> list)
     {
-        string s = "Opciones: [";
+        string s = "[";
         for (int i = 0; i < list.Count; i++)
         {
             s += list[i];
@@ -28,7 +28,7 @@ public static class Auxiliar
 
     public static string StringArrayInt(int[] list)
     {
-        string s = "Opciones: [";
+        string s = "[";
         for (int i = 0; i < list.Length; i++)
         {
             s += list[i];

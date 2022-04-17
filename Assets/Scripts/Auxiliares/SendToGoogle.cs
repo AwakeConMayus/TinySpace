@@ -24,8 +24,8 @@ public class SendToGoogle : MonoBehaviour
     string PartidaConIA;
 
     //Elecciones
-    int Maquinista, Mecanico, Chantajista, Comodin, ModelPerfeccionado, Supernave;
-    int Colono, Lunatico, Astrofisico, Combate, Laboratorio, Estratega, Planeta, Terraformador, CambioOrbital;
+    string HeroeMinero, EspecialMinero;
+    string HeroeOyente, MejoraOyente, EspecialOyente;
 
 
     int VectorMineros, VectorOyentes;
@@ -46,7 +46,7 @@ public class SendToGoogle : MonoBehaviour
     }    
 
     //* Dirección del formulario al que se suben los datos, para obtenerla lo previsualizamos y copiamos su url, cambiando el final de "viewform" a "formResponse"
-    const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdmH1u9Py0CUHifpeVFgVl-14fxbuQTHJLQiXwpDzSehkgYJw/formResponse";
+    const string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2Ht626ha_IM_aG0_wbf6DPJNyruJ82Hi0im_LdYgfjP-RvA/formResponse";
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
@@ -108,38 +108,22 @@ public class SendToGoogle : MonoBehaviour
         //* Ahí debes coger el número grande poco después de la variable del formulario a la que quieras asociar el field, por ejemplo: (...)"PuntosMineros",null,0,[[435469167,(...)"PuntosPlanetarios",null,0,[[1370920118,(...)
         //* Una vez tengas ese numero, debes ponerlo junto a entry. por lo tanto para asociar el field PuntosMineros a la Score1, el entry será "entry.435469167"
 
-        form.AddField("entry.1671880236", Ganador);
-        form.AddField("entry.1747506782", Faccion1);
-        form.AddField("entry.14402550", Faccion2);
-        form.AddField("entry.572210542", PartidaConIA);
+        form.AddField("entry.952161928", Ganador);
+        form.AddField("entry.917130770", Faccion1);
+        form.AddField("entry.1479737980", Faccion2);
+        form.AddField("entry.940617184", PartidaConIA);
 
-        form.AddField("entry.864094340", Maquinista);
-        form.AddField("entry.1172698563", Mecanico);
-        form.AddField("entry.1792845175", Chantajista);
-        form.AddField("entry.725644111", Comodin);
+        form.AddField("entry.724103590", HeroeMinero);
+        print(EspecialMinero);
+        form.AddField("entry.1738738836", EspecialMinero);
 
-        form.AddField("entry.1313404459", ModelPerfeccionado);
-        form.AddField("entry.241310762", Supernave);
+        form.AddField("entry.1171462077", HeroeOyente);
+        form.AddField("entry.2125969092", MejoraOyente);
+        print(EspecialOyente);
+        form.AddField("entry.1391571527", EspecialOyente);
 
-        form.AddField("entry.1367708030", Colono);
-        form.AddField("entry.1263929892", Lunatico);
-        form.AddField("entry.550311028", Astrofisico);
-
-        form.AddField("entry.1474848063", Combate);
-        form.AddField("entry.758557112", Laboratorio);
-        form.AddField("entry.747600312", Estratega);
-        form.AddField("entry.901872699", Planeta);
-        form.AddField("entry.1834529338", Terraformador);
-
-        form.AddField("entry.1328728453", CambioOrbital);
-
-        form.AddField("entry.2078574632", VectorMineros);
-        form.AddField("entry.24745043", VectorOyentes);
-
-
-
-
-
+        form.AddField("entry.144225273", VectorMineros);
+        form.AddField("entry.675215660", VectorOyentes);
     }
 
 
@@ -208,34 +192,34 @@ public class SendToGoogle : MonoBehaviour
         //Heroes
 
         //Mineros
-        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Maquinista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Maquinista")) Maquinista = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Mecánico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Mecánico")) Mecanico = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Chantajista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Chantajista")) Chantajista = 1;
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Maquinista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Maquinista")) HeroeMinero = "Maquinista";
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Mecánico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Mecánico")) HeroeMinero = "Mecanico";
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Chantajista") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Chantajista")) HeroeMinero = "Chantajista";
 
         //Oyentes
-        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Colono") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Colono")) Colono = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Lunático") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Lunático")) Lunatico = 1;
-        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Astrofísico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Astrofísico")) Astrofisico = 1;
-
+        if (miSeleccion.mi_poder == Resources.Load<GameObject>("Colono") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Colono")) HeroeOyente = "Terraformador";
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Lunático") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Lunático")) HeroeOyente = "Lunatico";
+        else if (miSeleccion.mi_poder == Resources.Load<GameObject>("Astrofísico") || SeleccionRival.mi_poder == Resources.Load<GameObject>("Astrofísico")) HeroeOyente = "Astrofisico";
 
         //Especiales
 
         //Mineros
-        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Comodin")) Comodin = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado")) ModelPerfeccionado = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Supernave")) Supernave = 1;
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Comodin") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Comodin")) EspecialMinero = "Comodin";
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Modelo Perfeccionado")) EspecialMinero = "Modelo Perfeccionado";
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Supernave")) EspecialMinero = "Supernave";
 
-        //Oyentes
-        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta")) Comodin = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Terraformador")) Terraformador = 1;
-        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital")) CambioOrbital = 1;
-
+        //Oyentes       
+        print(miSeleccion.mis_opciones[4].name + " // " + SeleccionRival.mis_opciones[4].name);
+        if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta")) EspecialOyente = "Planeta";
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Terraformador")) EspecialOyente = "Terraformar";
+        else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital")) EspecialOyente = "Propulsor";
+        else print("no encrontre nada");
 
         //Mejoras
 
         //Oyentes
-        if (miSeleccion.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +") || SeleccionRival.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +")) Combate = 1;
-        else if (miSeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +") || SeleccionRival.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +")) Laboratorio = 1;
-        else if (miSeleccion.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +") || SeleccionRival.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +")) Estratega = 1;
+        if (miSeleccion.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +") || SeleccionRival.mis_opciones[1] == Resources.Load<GameObject>("Colonizadores de combate +")) MejoraOyente = "Combate";
+        else if (miSeleccion.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +") || SeleccionRival.mis_opciones[2] == Resources.Load<GameObject>("Laboratorio de Terraformación +")) MejoraOyente = "Laboratorio";
+        else if (miSeleccion.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +") || SeleccionRival.mis_opciones[3] == Resources.Load<GameObject>("Cuartel estratega orbital +")) MejoraOyente = "Estratega";
     }
 }

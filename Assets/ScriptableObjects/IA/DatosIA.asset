@@ -39,14 +39,14 @@ MonoBehaviour:
       especial3jugadas: 0
       especial3ganadas: 0
     vsOyentes:
-      jugadas: 1
-      ganadas: 1
+      jugadas: 3
+      ganadas: 3
       heroe1jugadas: 0
       heroe1ganadas: 0
-      heroe2jugadas: 1
-      heroe2ganadas: 1
-      heroe3jugadas: 0
-      heroe3ganadas: 0
+      heroe2jugadas: 0
+      heroe2ganadas: 0
+      heroe3jugadas: 3
+      heroe3ganadas: 3
       mejora1jugadas: 0
       mejora1ganadas: 0
       mejora2jugadas: 0
@@ -57,8 +57,8 @@ MonoBehaviour:
       especial1ganadas: 1
       especial2jugadas: 0
       especial2ganadas: 0
-      especial3jugadas: 0
-      especial3ganadas: 0
+      especial3jugadas: 2
+      especial3ganadas: 2
     vsHonorables:
       jugadas: 0
       ganadas: 0
@@ -103,23 +103,23 @@ MonoBehaviour:
       especial3ganadas: 0
   Oyentes:
     vsMineros:
-      jugadas: 1
-      ganadas: 1
+      jugadas: 3
+      ganadas: 0
       heroe1jugadas: 1
-      heroe1ganadas: 1
+      heroe1ganadas: 0
       heroe2jugadas: 1
-      heroe2ganadas: 1
+      heroe2ganadas: 0
       heroe3jugadas: 1
-      heroe3ganadas: 1
-      mejora1jugadas: 0
+      heroe3ganadas: 0
+      mejora1jugadas: 3
       mejora1ganadas: 0
       mejora2jugadas: 0
       mejora2ganadas: 0
       mejora3jugadas: 0
       mejora3ganadas: 0
-      especial1jugadas: 0
+      especial1jugadas: 2
       especial1ganadas: 0
-      especial2jugadas: 0
+      especial2jugadas: 1
       especial2ganadas: 0
       especial3jugadas: 0
       especial3ganadas: 0

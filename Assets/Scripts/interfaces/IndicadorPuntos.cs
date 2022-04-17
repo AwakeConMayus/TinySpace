@@ -42,14 +42,14 @@ public class IndicadorPuntos : MonoBehaviour
 
     private void Update()
     {
-        if(active && casilla.pieza)
+        if (active && casilla.pieza && !casilla.pieza.GetComponent<AgujeroNegro>() && casilla.pieza.Puntos() != 0)
         {
             if (realActive && !casilla.pieza)
             {
                 realActive = false;
                 gameObject.SetActive(false);
             }
-            else if(!realActive && casilla.pieza)
+            else if (!realActive && casilla.pieza)
             {
                 gameObject.SetActive(true);
                 transform.position = casilla.pieza.transform.position + new Vector3(0, 12, 0);

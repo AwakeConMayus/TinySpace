@@ -6154,12 +6154,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 388183390}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &388183392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4499122095681811271, guid: 333696683afa6294d888165e57620952,
-    type: 3}
-  m_PrefabInstance: {fileID: 388183390}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &510984301
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,6 +6384,12 @@ PrefabInstance:
       propertyPath: poder
       value: 
       objectReference: {fileID: 5174492570648314811, guid: f7ae77548596bbe45854b90edebe9095,
+        type: 3}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
+      propertyPath: opcionesIniciales.Array.data[1]
+      value: 
+      objectReference: {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85,
         type: 3}
     - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
         type: 3}
@@ -12700,7 +12700,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9563d573761084cbde01abc2bf7311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texto_final_partida: {fileID: 1043212694}
+  texto_final_partida_Enemigo: {fileID: 0}
+  texto_final_partida_Jugador: {fileID: 0}
+  mi_Seleccion: {fileID: 0}
+  seleccion_rival: {fileID: 0}
+  ImagenesRival: {fileID: 0}
+  ImagenesJugador: {fileID: 0}
+  infoMineros: {fileID: 0}
+  infoOyentes: {fileID: 0}
+  Activar: {fileID: 0}
+  MenuOcultar: {fileID: 0}
+  OcularMostrar: {fileID: 0}
 --- !u!224 &1278926702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13010,7 +13020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fba474cb2939a45ba58ce1dbd5760f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosPieza: {fileID: 388183392}
 --- !u!114 &1307925212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14752,6 +14761,7 @@ GameObject:
   - component: {fileID: 1874230210}
   - component: {fileID: 1874230208}
   - component: {fileID: 1874230209}
+  - component: {fileID: 1874230217}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14774,10 +14784,14 @@ MonoBehaviour:
   opciones:
   - {fileID: 1468103201}
   - {fileID: 2050365361}
-  player1: 1
-  player2: 2
   datos: {fileID: 11400000, guid: 2d8d9939a51ef2c4cb62a84495bccb76, type: 2}
-  SendOnline: 0
+  minerosPosiblesOpciones: {fileID: 11400000, guid: 09aebd0a09df4a14f94a147ea5fa0349,
+    type: 2}
+  oyentesPosiblesOpciones: {fileID: 11400000, guid: 4f0b3c85e0e2c1349a340ebe1ae8b292,
+    type: 2}
+  seleccion1: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
+  seleccion2: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
+  SendOnline: 1
 --- !u!114 &1874230209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14931,6 +14945,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1874230217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874230207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bed2a2baf389f844960b63887b5c513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958931740
 GameObject:
   m_ObjectHideFlags: 0

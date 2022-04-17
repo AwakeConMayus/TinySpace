@@ -42,6 +42,7 @@ public abstract class IAOpciones : Opciones
 
     public IEnumerator Jugar(Opciones rival, int turno) 
     {
+        print("empiezo a pensar: " + faccion);
         PuntosOrigen = PiezaIA.Evaluar(Tablero.instance.mapa, faccion);
 
         List<int> jugadasSimples = new List<int> { 2, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 };

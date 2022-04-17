@@ -42,7 +42,6 @@ public class Sol : Planetas
                 puntos += puntos_4Casillas[nPiezas];
                 break;
             case 3:
-                Debug.Log(nPiezas + " puntuaje IA");
                 puntos += puntos_3Casillas[nPiezas];
                 break;
             default:

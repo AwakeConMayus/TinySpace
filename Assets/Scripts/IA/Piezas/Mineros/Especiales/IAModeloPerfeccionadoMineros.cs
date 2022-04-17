@@ -16,32 +16,14 @@ public class IAModeloPerfeccionadoMineros : PiezaIA
 
         opciones.Add(estrategaMejorado.BestInmediateOpcion(tabBase));
 
-        
-        IATablero.instance.PrintInfoTablero(tabBase);
-        Pieza exploradorMejorado = Resources.Load<Pieza>("Explorador Mineros Mejorado");
-        Pieza combateMejorado = Resources.Load<Pieza>("Combate Mineros Mejorado");
+        PiezaIA exploradorMejorado = Resources.Load<GameObject>("Mejora Explorador Mineros").GetComponent<PiezaIA>();
 
+        opciones.Add(exploradorMejorado.BestInmediateOpcion(tabBase));
 
-        foreach (Casilla c in IATablero.instance.mapa)
-        {
-            if (c.pieza && c.pieza.faccion == faccion)
-            {
-                if(c.pieza.clase == Clase.explorador)
-                {
-                    c.pieza = exploradorMejorado;
-                    c.pieza.casilla = c;
-                    opciones.Add(new InfoTablero(IATablero.instance.mapa));
-                    IATablero.instance.PrintInfoTablero(tabBase);
-                }
-                else if (c.pieza.clase == Clase.combate)
-                {
-                    c.pieza = combateMejorado;
-                    c.pieza.casilla = c;
-                    opciones.Add(new InfoTablero(IATablero.instance.mapa));
-                    IATablero.instance.PrintInfoTablero(tabBase);
-                }
-            }
-        }
+        PiezaIA combateMejorado = Resources.Load<GameObject>("Mejora Combate Mineros").GetComponent<PiezaIA>();
+
+        opciones.Add(combateMejorado.BestInmediateOpcion(tabBase));
+
 
         return opciones;
     }

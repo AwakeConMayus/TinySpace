@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IAArbitro : MonoBehaviour
 {
     public IAOpciones[] opciones = new IAOpciones[2];
 
-    public Faccion player1, player2;
-
     IAOpciones jugador1, jugador2;
 
     public DatosIA datos;
 
+    [SerializeField] OpcionesFaccion minerosPosiblesOpciones, oyentesPosiblesOpciones;
+    [SerializeField] TuSeleccion seleccion1, seleccion2;
+
     [SerializeField] bool SendOnline = true;
 
-    
+    int player1Faccion, player2Faccion;
 
     bool active = true;
     bool specialActive = true;
@@ -25,31 +27,27 @@ public class IAArbitro : MonoBehaviour
     int specialTurno = 0;
     int turno = 0;
 
-    int turnoAbsoluto = 0;
+    int turnoAbsoluto = -1;
 
     bool end = false;
 
+    List<int[]> vectores = new List<int[]>();
+
     private void Start()
     {
-        Terraformar.Reset();
-        switch (player1)
+        Terraformar.Reset();        
+        
+
+        player1Faccion = Random.Range(0, opciones.Length);
+        do
         {
-            case Faccion.minero:
-                jugador1 = opciones[0];
-                break;
-            case Faccion.oyente:
-                jugador1 = opciones[1];
-                break;
-        }
-        switch (player2)
-        {
-            case Faccion.minero:
-                jugador2 = opciones[0];
-                break;
-            case Faccion.oyente:
-                jugador2 = opciones[1];
-                break;
-        }
+            player2Faccion = Random.Range(0, opciones.Length);
+        } while (player1Faccion == player2Faccion);
+
+        PrepararOpcionesIA();
+
+        jugador1 = opciones[player1Faccion];
+        jugador2 = opciones[player2Faccion];
 
 
 
@@ -58,31 +56,66 @@ public class IAArbitro : MonoBehaviour
         jugador1.Preparacion();
         jugador2.Preparacion();
 
+        EventManager.StartListening("AccionTerminadaConjunta", TurnoTerminado);
 
-        NextTurn();
-        NextTurn();
-
-
-
+        NextTurn();       
     }
-
-    
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            NextTurn();
-        }
+        //if (Input.GetMouseButtonDown(0)) NextTurn();
     }
 
+    void PrepararOpcionesIA()
+    {
+        if(player1Faccion == 0 || player2Faccion == 0)
+        {
+            if(player1Faccion == 1 || player2Faccion == 1)
+            {
+                //player 1
+                opciones[0].poder = minerosPosiblesOpciones.posibles_Poders[datos.Mineros.vsOyentes.BestHeroe(100)];
+                opciones[0].opcionesIniciales[4] = minerosPosiblesOpciones.posibles_Piezas_Especiales[datos.Mineros.vsOyentes.BestEspecial(100)];
+
+                seleccion1.mi_poder = opciones[0].poder;
+                seleccion1.mis_opciones = opciones[0].opcionesIniciales;
+                
+
+                //player 2
+                opciones[1].poder = oyentesPosiblesOpciones.posibles_Poders[datos.Oyentes.vsMineros.BestHeroe(100)];
+                opciones[1].opcionesIniciales[4] = oyentesPosiblesOpciones.posibles_Piezas_Especiales[datos.Oyentes.vsMineros.BestEspecial(100)];
+                int mejora = datos.Oyentes.vsMineros.BestMejora(100);
+                opciones[1].opcionesIniciales[oyentesPosiblesOpciones.huecos_Especializadas[mejora]] = oyentesPosiblesOpciones.posibles_Piezas_Especializadas[mejora];
+
+                seleccion2.mi_poder = opciones[1].poder;
+                seleccion2.mis_opciones = opciones[1].opcionesIniciales;
+            }
+        }        
+    }
+
+    public void TurnoTerminado()
+    {
+        Invoke(nameof(NextTurn), 1f);
+    }
 
     public void NextTurn()
     {
+        ++turnoAbsoluto;
+        print(turnoAbsoluto);
+        if (turnoAbsoluto == 2) Vectorizacion();
+
+        if (turnoAbsoluto == 26) EndGame();
         if (end) return;
+        print(specialPhase);
         if (specialPhase) SpecialTurn();
         else Turn();
-        ++turnoAbsoluto;
+    }
+
+    void Vectorizacion()
+    {
+        //Vectorizacion
+        vectores = Vectorizador.Vectorizar(Tablero.instance.mapa, jugador1, jugador2);
+
+        print(Auxiliar.StringArrayInt(vectores[0]) + " // " + Auxiliar.StringArrayInt(vectores[1]));
     }
 
     void SpecialTurn()
@@ -108,7 +141,7 @@ public class IAArbitro : MonoBehaviour
                     jugador1.poder.GetComponent<Poder>().InitialAction();
                     break;                
                 default:
-                    jugador1.Jugar(jugador2, turnoAbsoluto);
+                    StartCoroutine(jugador1.Jugar(jugador2, turnoAbsoluto));
                     break;
             }
             ++numeroPoder1;
@@ -121,7 +154,7 @@ public class IAArbitro : MonoBehaviour
                     jugador2.poder.GetComponent<Poder>().InitialAction();
                     break;               
                 default:
-                    jugador2.Jugar(jugador1, turnoAbsoluto);
+                    StartCoroutine(jugador2.Jugar(jugador1, turnoAbsoluto));
                     break;
             }
             ++numeroPoder2;
@@ -130,18 +163,13 @@ public class IAArbitro : MonoBehaviour
 
     void Turn()
     {
-        if (turno == 20)
-        {
-            EndGame();
-        }
-
         if (!active)
         {
-            jugador2.Jugar(jugador1,turnoAbsoluto);
+            StartCoroutine(jugador2.Jugar(jugador1,turnoAbsoluto));
         }
-        else if (active)
+        else
         {
-            jugador1.Jugar(jugador2,turnoAbsoluto);
+            StartCoroutine(jugador1.Jugar(jugador2,turnoAbsoluto));
         }
 
 
@@ -157,8 +185,35 @@ public class IAArbitro : MonoBehaviour
 
     public void EndGame()
     {
-        print("Wiiiiiin");
-        if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, true);
+        int[] puntos = Tablero.instance.RecuentoPuntos();
+        print(jugador1.faccion + " / " + Auxiliar.StringArrayInt(puntos) + " / " + jugador2.faccion);
+
+        int bestPuntos = int.MinValue;
+        int winner = -1;
+
+        {
+            for (int i = 0; i < puntos.Length; i++)
+            {
+                if (puntos[i] == bestPuntos) winner = -1;
+                else if (puntos[i] > bestPuntos)
+                {
+                    bestPuntos = puntos[i];
+                    winner = i;
+                }
+            }
+        }
+
+        bool ganaPlayer2 = jugador2.faccion == (Faccion)winner;
+
+        datos.AddData(ganaPlayer2, true);
+
+        if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, true, vectores);
         end = true;
+        Invoke(nameof(Reset), 3f);
+    }
+
+    private void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

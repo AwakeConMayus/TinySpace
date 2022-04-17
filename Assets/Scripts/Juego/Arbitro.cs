@@ -160,7 +160,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
 
     void Turn()
     {
-        if (turno == 1 && initial) Vectorizacion();
+        if (turno == 2 && initial) Vectorizacion();
         if (turno == 20)
         {
             PhotonNetwork.AutomaticallySyncScene = false;

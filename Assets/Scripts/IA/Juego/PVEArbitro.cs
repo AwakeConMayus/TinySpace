@@ -94,9 +94,9 @@ public class PVEArbitro : MonoBehaviour
     {
         IconoPensando.SetActive(false);
         if (end) return;
-        if (turnoAbsoluto == 1) Vectorizacion();  
+        if (turnoAbsoluto == 2) Vectorizacion();  
         
-        if (turnoAbsoluto == 25) EndGame();
+        if (turnoAbsoluto == 26) EndGame();
         else if (specialPhase) SpecialTurn();
         else Turn();
     }
