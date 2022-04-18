@@ -11,18 +11,7 @@ public class AgujeroNegro : Pieza
     }
     public override int Puntos()
     {
-        int puntos = 0;
-
-        foreach(Casilla c in casilla.adyacentes)
-        {
-            if(c && c.pieza && !c.pieza.astro)
-            {
-                if (c.pieza.faccion == faccion) puntos -= c.pieza.Puntos();
-                else puntos += c.pieza.Puntos();
-            }
-        }
-
-        return puntos;
+        return 0;
     }
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
