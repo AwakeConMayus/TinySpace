@@ -141,6 +141,8 @@ public class IATablero : MonoBehaviour
     {
         if (newTab.tablero == null) return;
 
+        LimpiadorIA.Clean();
+
         for (int i = 0; i < newTab.tablero.Length; i++)
         {
             //Ya esta igual a como debe ser
