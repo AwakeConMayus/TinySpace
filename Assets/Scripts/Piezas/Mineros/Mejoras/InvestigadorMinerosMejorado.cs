@@ -38,10 +38,12 @@ public class InvestigadorMinerosMejorado : Efecto
     {
         List<Casilla> casillasDisponibles = FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
         casillasDisponibles =  FiltroCasillas.CasillasDeUnTipo(Clase.investigador, casillasDisponibles);
+        List<Casilla> casillasEliminar = new List<Casilla>();
         foreach (Casilla c in casillasDisponibles)
         {
-            if (c.pieza.gameObject.name == investigador_astro.name) casillasDisponibles.Remove(c);
+            if (c.pieza.gameObject.GetComponent<InvestigadorMinerosAstro>()) casillasEliminar.Add(c);
         }
+        casillasDisponibles = FiltroCasillas.RestaLista(casillasDisponibles, casillasEliminar);
         return casillasDisponibles;
     }
 }
