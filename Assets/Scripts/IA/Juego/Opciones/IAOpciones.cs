@@ -44,7 +44,7 @@ public abstract class IAOpciones : Opciones
     {
         print("empiezo a pensar: " + faccion);
         PuntosOrigen = PiezaIA.Evaluar(Tablero.instance.mapa, faccion);
-
+        Debug.Log(turno);
         List<int> jugadasSimples = new List<int> { 2, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 };
         List<int> jugadasCombinada = new List<int> {4, 6, 8, 10, 14, 16, 18, 20, 22 };
         List<int> poderesSimple = new List<int> { 25 };
@@ -239,7 +239,7 @@ public abstract class IAOpciones : Opciones
         {
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            if (puntos <= PuntosOrigen) continue;
+            //if (puntos <= PuntosOrigen) continue;
 
             yield return StartCoroutine(SimulacionEnemiga(enemigo, newTab));
             puntos = worstPuntos;
@@ -265,7 +265,7 @@ public abstract class IAOpciones : Opciones
         {
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            if (puntos <= PuntosOrigen) continue;
+            //if (puntos <= PuntosOrigen) continue;
 
             puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
             if (puntos > bestPuntos)
