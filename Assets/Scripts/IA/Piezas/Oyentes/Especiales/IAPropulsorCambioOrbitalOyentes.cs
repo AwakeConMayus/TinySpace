@@ -16,7 +16,7 @@ public class IAPropulsorCambioOrbitalOyentes : PiezaIA
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            Pieza planetaMover = c.pieza;
+            Pieza planetaMover = GetComponent<PropulsorCambioOrbital>().restos.GetComponent<Pieza>();
             c.pieza = null;
             InfoTablero newTab = new InfoTablero(IATablero.instance.mapa);
 

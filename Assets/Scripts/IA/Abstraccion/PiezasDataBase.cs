@@ -20,10 +20,7 @@ public class PiezasDataBase : ScriptableObject
     EstrategaMineroAstro,
 
     //Especiales
-    Supernave,
-
-    //Poderes
-    Garrapata,
+    Supernave,    
 
     //Oyentes
     Planetas,
@@ -42,6 +39,7 @@ public class PiezasDataBase : ScriptableObject
     PlanetaHelado,
     PlanetaVolcanico,
     Sol,
+    Restos,
 
     //Poderes
     PlanetaSagrado,
@@ -107,6 +105,8 @@ public class PiezasDataBase : ScriptableObject
                 return PlanetaVolcanico;
             case IDPieza.Sol:
                 return Sol;
+            case IDPieza.Restos:
+                return Restos;
 
             //Poderes
             case IDPieza.PlanetaSagrado:
@@ -156,6 +156,8 @@ public class PiezasDataBase : ScriptableObject
         else if (piezaName == PlanetaHelado.name) return IDPieza.PlanetaHelado;
         else if (piezaName == PlanetaVolcanico.name) return IDPieza.PlanetaVolcanico;
         else if (piezaName == Sol.name) return IDPieza.Sol;
+        else if (piezaName == Restos.name) return IDPieza.Restos;
+
 
         //Poderes
         else if (piezaName == PlanetaSagrado.name) return IDPieza.PlanetaSagrado;
@@ -205,6 +207,7 @@ public enum IDPieza
     PlanetaHelado,
     PlanetaVolcanico,
     Sol,
+    Restos,
 
     //Poderes
     PlanetaSagrado,

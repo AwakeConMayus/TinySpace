@@ -9,9 +9,11 @@ public class IAPodAstrofisicoOyentes : PoderIABase
     {
         if (fase2)
         {
+            /*
             IATablero.instance.PrintInfoTablero(tabBase);
             AgujeroNegro.ActivarAgujerosNegros(IATablero.instance.mapa);
             tabBase = new InfoTablero(IATablero.instance.mapa);
+            */
         }
         else
         {

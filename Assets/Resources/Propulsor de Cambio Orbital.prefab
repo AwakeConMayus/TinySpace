@@ -102,6 +102,7 @@ MonoBehaviour:
   clase: 0
   casilla: {fileID: 0}
   astro: 0
+  restos: {fileID: 7724486121494119986, guid: d4ecab59049d17c47ae23af1763937e8, type: 3}
 --- !u!114 &-3779590854172769078
 MonoBehaviour:
   m_ObjectHideFlags: 0

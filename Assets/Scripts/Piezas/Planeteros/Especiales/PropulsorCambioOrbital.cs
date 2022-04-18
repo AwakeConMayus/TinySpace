@@ -9,6 +9,8 @@ public class PropulsorCambioOrbital : Efecto
 
     List<Casilla> posibles_destinos = new List<Casilla>();
 
+    public GameObject restos;
+
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
         //Planetas aliados
@@ -75,14 +77,28 @@ public class PropulsorCambioOrbital : Efecto
             {
                 OnlineManager.instance.Destroy_This_Pieza(c.pieza);
             }
-            
-            casilla.pieza.transform.position = c.transform.position;
+
+            // Comprobacion de si el game se esta realizando online u offline
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2 && GetComponent<PhotonView>().IsMine)
+            {
+                OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
+                // Instanciacion que utiliza photon
+                GameObject thisPieza = PhotonNetwork.Instantiate(restos.name, c.transform.position, Quaternion.identity);
+            }
+            else if (!PhotonNetwork.InRoom)
+            {
+                casilla.Clear();
+                // Instanciacion de piezas en el offline
+                GameObject thisPieza = Instantiate(restos);
+                thisPieza.transform.position = c.transform.position;
+            }
+
             Tablero.instance.ResetCasillasEfects();
-            Debug.Log("termino al mover planeta");
             EventManager.TriggerEvent("AccionTerminadaConjunta");
             Destroy(this.gameObject);
         }
     }
+    
 
     public override void Colocar(Casilla c)
     {

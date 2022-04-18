@@ -24,7 +24,7 @@ public class IAEstMejMineros : PiezaIA
 
             foreach (Casilla cc in FiltroCasillas.CasillasEnRango(2, c, false))
             {
-                if (cc && cc.pieza && cc.pieza.faccion == faccion && !cc.pieza.CompareClase(Clase.combate))
+                if (cc && cc.pieza && cc.pieza.faccion == faccion && !cc.pieza.CompareClase(Clase.combate) && !cc.pieza.astro)
                 {
                     Pieza nuevaPieza = Resources.Load<Pieza>("Combate Mineros");
                     cc.pieza = nuevaPieza;

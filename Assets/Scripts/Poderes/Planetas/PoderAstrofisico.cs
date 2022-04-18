@@ -64,7 +64,7 @@ public class PoderAstrofisico : PoderPlanetas
     IEnumerator CFirstActionPersonal()
     {
 
-        if (mis_BalckHoles.Count > 0) yield return StartCoroutine(Activar(mis_BalckHoles[0].GetComponent<Pieza>().casilla));
+        //if (mis_BalckHoles.Count > 0) yield return StartCoroutine(Activar(mis_BalckHoles[0].GetComponent<Pieza>().casilla));
 
         List<Casilla> posibles_lugares = blackHole.GetComponent<Pieza>().CasillasDisponibles();
         if (posibles_lugares.Count == 0)
@@ -79,6 +79,8 @@ public class PoderAstrofisico : PoderPlanetas
 
             preparado_para_instanciar = true;
         }
+
+        yield return null;
     }
 
     public void Crear_BlackHole()

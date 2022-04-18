@@ -15,7 +15,8 @@ public enum Clase
     comodin,
     satelite,
     luna,
-    agujeroNegro
+    agujeroNegro,
+    restos
 }
 public enum Faccion
 {
