@@ -27,23 +27,34 @@ public class MenuComodin : MonoBehaviour
 
     public void Seleccion(GameObject prefab)
     {
-        if (extra)
+
+
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            extra = false;
-            //colocar pieza extra
+            GameObject g = PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
+
+            if (extra)
+            {
+                extra = false;
+                //colocar pieza extra
+                g.GetComponent<Pieza>().Set_Pieza_Extra();
+
+            }
         }
         else
         {
-            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            GameObject thisPieza = Instantiate(prefab);
+            thisPieza.transform.position = casilla.transform.position;
+            if (extra)
             {
-                PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
+                extra = false;
+                //colocar pieza extra
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
+
             }
-            else
-            {
-                GameObject thisPieza = Instantiate(prefab);
-                thisPieza.transform.position = casilla.transform.position;
-            }
+            thisPieza.transform.position = casilla.transform.position;
         }
+
         EventManager.TriggerEvent("DesbloquearInput");
         gameObject.SetActive(false);
     }
