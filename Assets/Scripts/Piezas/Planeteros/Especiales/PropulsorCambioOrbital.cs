@@ -84,6 +84,7 @@ public class PropulsorCambioOrbital : Efecto
                 OnlineManager.instance.Destroy_This_Pieza(casilla.pieza);
                 // Instanciacion que utiliza photon
                 GameObject thisPieza = PhotonNetwork.Instantiate(restos.name, c.transform.position, Quaternion.identity);
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             }
             else if (!PhotonNetwork.InRoom)
             {
