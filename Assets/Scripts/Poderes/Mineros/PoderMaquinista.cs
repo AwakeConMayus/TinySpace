@@ -103,7 +103,7 @@ public class PoderMaquinista : PoderMineros
         {
             if (pieza.GetPhotonView().IsMine)
             {
-                 OnlineManager.instance.Destroy_This_Pieza( pieza.GetComponent<Pieza>());
+                OnlineManager.instance.Destroy_This_Pieza(pieza.GetComponent<Pieza>());
                 MenuComodin.instance.Convocar(destino, true);
             }
             else

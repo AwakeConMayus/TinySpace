@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 public class IATablero : MonoBehaviour
 {
@@ -142,33 +144,39 @@ public class IATablero : MonoBehaviour
         if (newTab.tablero == null) return;
 
         LimpiadorIA.Clean();
-
-        for (int i = 0; i < newTab.tablero.Length; i++)
+        try
         {
-            //Ya esta igual a como debe ser
-            if (!mapa[i].pieza && newTab.tablero[i] == 0) continue;
-            if (mapa[i].pieza && newTab.tablero[i] == (int)DataBase.GetPieza(mapa[i].pieza.gameObject)) continue;
-
-            //Hay algo que no debe estar
-            if(mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
+            for (int i = 0; i < newTab.tablero.Length; i++)
             {
-                if (mapa[i].pieza.gameObject.transform.position == mapa[i].transform.position) mapa[i].pieza.SelfDestruction();
+                //Ya esta igual a como debe ser
+                if (!mapa[i].pieza && newTab.tablero[i] == 0) continue;
+                if (mapa[i].pieza && newTab.tablero[i] == (int)DataBase.GetPieza(mapa[i].pieza.gameObject)) continue;
 
-                mapa[i].pieza = null;
+                //Hay algo que no debe estar
+                if(mapa[i].pieza && newTab.tablero[i] != (int)DataBase.GetPieza(mapa[i].pieza.gameObject))
+                {
+                    if (mapa[i].pieza.gameObject.transform.position == mapa[i].transform.position) mapa[i].pieza.SelfDestruction();
 
-                mapa[i].SetState(States.normal);
-                mapa[i].SetState(States.none);
+                    mapa[i].pieza = null;
+
+                    mapa[i].SetState(States.normal);
+                    mapa[i].SetState(States.none);
+                }
+
+                //Hay que Crear una Pieza
+                if(newTab.tablero[i] != 0)
+                {
+                    GameObject pieza = Instantiate(DataBase.GetPieza((IDPieza)newTab.tablero[i]));
+                    pieza.GetComponent<Pieza>().Set_Pieza_Extra();
+                    pieza.transform.position = mapa[i].transform.position;
+                    pieza.GetComponent<Pieza>().casilla = mapa[i];
+                    mapa[i].pieza = pieza.GetComponent<Pieza>();
+                }
             }
-
-            //Hay que Crear una Pieza
-            if(newTab.tablero[i] != 0)
-            {
-                GameObject pieza = Instantiate(DataBase.GetPieza((IDPieza)newTab.tablero[i]));
-                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
-                pieza.transform.position = mapa[i].transform.position;
-                pieza.GetComponent<Pieza>().casilla = mapa[i];
-                mapa[i].pieza = pieza.GetComponent<Pieza>();
-            }
+        }
+        catch (NullReferenceException ex)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
