@@ -1615,7 +1615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236875167}
-  - component: {fileID: 236875166}
   m_Layer: 0
   m_Name: Main_Menu
   m_TagString: Untagged
@@ -1623,30 +1622,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &236875166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236875165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6e3f7e17c3728478177e113cd5bd8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuInicio: {fileID: 1635068541}
-  menuFaccion: {fileID: 1557570557}
-  EscojerEjercito: {fileID: 917453785}
-  mi_Seleccion: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
-  eleccion_rival: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
-  infoMineros: {fileID: 1317844853}
-  infoOyentes: {fileID: 1402314406}
-  FondoM1: {fileID: 1539134346}
-  FondoM2: {fileID: 1167708898}
-  FondoO1: {fileID: 2045991840}
-  FondoO2: {fileID: 538284674}
-  FrameRateText: {fileID: 678645268}
 --- !u!4 &236875167
 Transform:
   m_ObjectHideFlags: 0
@@ -6072,7 +6047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -8290,7 +8265,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeButtons
         m_Mode: 6
         m_Arguments:
@@ -8481,7 +8456,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: EnterMatchMaking
         m_Mode: 1
         m_Arguments:
@@ -11328,7 +11303,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
@@ -12540,7 +12515,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: selectFaccion
         m_Mode: 3
         m_Arguments:
@@ -12551,7 +12526,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivarMenuOyentes
         m_Mode: 1
         m_Arguments:
@@ -13084,7 +13059,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: selectFaccion
         m_Mode: 3
         m_Arguments:
@@ -13095,7 +13070,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivarMenuMineros
         m_Mode: 1
         m_Arguments:
@@ -14139,7 +14114,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeButtons
         m_Mode: 6
         m_Arguments:
@@ -15676,7 +15651,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeButtons
         m_Mode: 6
         m_Arguments:
@@ -19850,7 +19825,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: selectFaccion
         m_Mode: 3
         m_Arguments:
@@ -19883,7 +19858,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 236875166}
+      - m_Target: {fileID: 0}
         m_MethodName: EnterMatchMaking
         m_Mode: 1
         m_Arguments:
