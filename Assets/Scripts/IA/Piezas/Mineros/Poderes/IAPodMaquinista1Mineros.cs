@@ -8,9 +8,13 @@ public class IAPodMaquinista1Mineros : PoderIABase
     {
         print("poderMaquinista");
 
-        InfoTablero estadoIntermedio = SingleBestInmediateOpcion(tabBase);        
+        InfoTablero estadoIntermedio = SingleBestInmediateOpcion(tabBase);
 
-        return SingleOpcionificador(estadoIntermedio);
+        List<InfoTablero> opciones = new List<InfoTablero>();
+
+        opciones.Add(SingleBestInmediateOpcion(estadoIntermedio));
+
+        return opciones;
     }
 
     List<InfoTablero> SingleOpcionificador (InfoTablero tabBase)
@@ -22,35 +26,22 @@ public class IAPodMaquinista1Mineros : PoderIABase
         List<Casilla> posiblesMovimientos = FiltroCasillas.CasillasDeUnJugador(faccion, IATablero.instance.mapa);
         List<Casilla> posiblesDestinos = FiltroCasillas.CasillasLibres(IATablero.instance.mapa);
 
-        Pieza candidata = null;
-        InfoTablero candidato = new InfoTablero();
-        int bestPuntos = int.MinValue;
+        int actualPuntos = Evaluar(IATablero.instance.mapa, faccion);
 
         foreach (Casilla c in posiblesMovimientos)
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            Pieza posibleCandidata = c.pieza;
             c.pieza = null;
 
-            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
 
-            if(puntos > bestPuntos)
+            foreach(InfoTablero candidato in Resources.Load<GameObject>("Comodin").GetComponent<IAComodinMineros>().Opcionificador(estadoIntermedio))
             {
-                bestPuntos = puntos;
-                candidata = posibleCandidata;
-                candidato = new InfoTablero(IATablero.instance.mapa);
-            }
-        }
-
-        IATablero.instance.PrintInfoTablero(candidato);
-
-        foreach (Casilla c in posiblesDestinos)
-        {
-            IATablero.instance.PrintInfoTablero(candidato);
-            c.pieza = candidata;
-
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+                IATablero.instance.PrintInfoTablero(candidato);
+                print(Evaluar(IATablero.instance.mapa, faccion) + " // " + actualPuntos);
+                if (Evaluar(IATablero.instance.mapa, faccion) > actualPuntos) nuevosEstados.Add(candidato);
+            }            
         }
 
         return nuevosEstados;

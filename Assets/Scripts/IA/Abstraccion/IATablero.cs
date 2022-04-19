@@ -171,6 +171,18 @@ public class IATablero : MonoBehaviour
             }
         }
     }
+
+    public int RecuentoPuntos(Faccion faccion)
+    {
+        int puntos = 0;
+        int[] recuento = RecuentoPuntos();
+        for (int i = 0; i < recuento.Length; i++)
+        {
+            if (i == (int)faccion - 1) puntos += recuento[i];
+            else puntos -= recuento[i];
+        }
+        return puntos;
+    }
  }
 
 public struct InfoTablero

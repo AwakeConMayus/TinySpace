@@ -35,7 +35,6 @@ public class MejoraExploradoresMineros : Efecto
         casillasDisponibles =  FiltroCasillas.CasillasDeUnTipo(Clase.explorador, casillasDisponibles);
         foreach(Casilla c in casillasDisponibles)
         {
-            Debug.Log(c.transform.position + " " + c.gameObject.name);
             if (c.pieza.gameObject.name == exploradorMejorado.name) casillasDisponibles.Remove(c);
         }
         return casillasDisponibles;

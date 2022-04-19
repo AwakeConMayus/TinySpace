@@ -13,10 +13,13 @@ public class MenuComodin : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    bool extra = false;
+
     Casilla casilla;
 
-    public void Convocar(Casilla c)
+    public void Convocar(Casilla c, bool sinPasarTurno = false)
     {
+        extra = sinPasarTurno;
         gameObject.SetActive(true);
         transform.position = c.transform.position;
         casilla = c;
@@ -24,14 +27,22 @@ public class MenuComodin : MonoBehaviour
 
     public void Seleccion(GameObject prefab)
     {
-        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        if (extra)
         {
-            PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
+            extra = false;
+            //colocar pieza extra
         }
         else
         {
-            GameObject thisPieza = Instantiate(prefab);
-            thisPieza.transform.position = casilla.transform.position;
+            if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                PhotonNetwork.Instantiate(prefab.name, casilla.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                GameObject thisPieza = Instantiate(prefab);
+                thisPieza.transform.position = casilla.transform.position;
+            }
         }
         EventManager.TriggerEvent("DesbloquearInput");
         gameObject.SetActive(false);

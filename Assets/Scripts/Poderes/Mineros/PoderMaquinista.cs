@@ -17,7 +17,7 @@ public class PoderMaquinista : PoderMineros
 
     public override void InitialAction(bool pasar_turno)
     {
-        if(padre.GetComponent<OpcionesMineros>()) padre.GetComponent<OpcionesMineros>().mineral += 3;
+        if (padre.GetComponent<OpcionesMineros>()) padre.GetComponent<OpcionesMineros>().mineral += 3;
         if (padre.GetComponent<IAOpcionesMineros>()) padre.GetComponent<IAOpcionesMineros>().mineral += 3;
 
         base.InitialAction(pasar_turno);
@@ -103,9 +103,8 @@ public class PoderMaquinista : PoderMineros
         {
             if (pieza.GetPhotonView().IsMine)
             {
-                pieza.GetComponent<Pieza>().Set_Pieza_Extra();
-                pieza.transform.position = destino.transform.position;
-                pieza.GetComponent<Pieza>().Colocar(destino);
+                pieza.GetComponent<Pieza>().casilla.Clear();
+                MenuComodin.instance.Convocar(destino, true);
             }
             else
             {
@@ -122,8 +121,8 @@ public class PoderMaquinista : PoderMineros
         else
         {
             TPEfects(origen, destino);
-            pieza.GetComponent<Pieza>().Set_Pieza_Extra();
-            pieza.transform.position = destino.transform.position;
+            pieza.GetComponent<Pieza>().casilla.Clear();
+            MenuComodin.instance.Convocar(destino, true);
         }
 
 

@@ -105,7 +105,6 @@ public class IAArbitro : MonoBehaviour
 
         if (turnoAbsoluto == 26) EndGame();
         if (end) return;
-        print(specialPhase);
         if (specialPhase) SpecialTurn();
         else Turn();
     }
