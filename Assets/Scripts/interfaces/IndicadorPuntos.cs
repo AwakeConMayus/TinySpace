@@ -34,7 +34,6 @@ public class IndicadorPuntos : MonoBehaviour
 
     public void ActiveInfinite()
     {
-        print("infinite");
         CancelInvoke();
         active = true;
         gameObject.SetActive(true);
@@ -60,6 +59,7 @@ public class IndicadorPuntos : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            realActive = false;
         }
     }
 
