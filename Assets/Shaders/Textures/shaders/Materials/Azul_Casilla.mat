@@ -27,11 +27,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - uvs_hexa_1_png:
-        m_Texture: {fileID: 2800000, guid: 0f373d2b06860b84aa4af0b10cc75236, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ff5a15f8480f854da9c3cee5b85d79a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_2312A401: 4.62
+    - Vector1_7410162B: 0.84
     m_Colors:
-    - Color_3D739ED8: {r: 1.2129098, g: 1.3831428, b: 4.064312, a: 0.105882354}
+    - Color_3D739ED8: {r: 0, g: 0.029110529, b: 0.33962262, a: 0.105882354}
     - Color_540ACBDC: {r: 2.7252853, g: 2.747442, b: 2.9911668, a: 0.5647059}
