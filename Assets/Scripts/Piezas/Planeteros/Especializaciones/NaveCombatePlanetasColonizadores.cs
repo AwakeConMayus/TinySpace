@@ -15,7 +15,7 @@ public class NaveCombatePlanetasColonizadores : NaveCombatePlanetas
         foreach(Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
-            if(adyacente.pieza.CompareClase(new List<Clase> { Clase.planeta, Clase.luna }))
+            if(adyacente.pieza.CompareClase(new List<Clase> { Clase.planeta, Clase.luna, Clase.restos }))
             {
                 puntos += puntosAstroAdyacente;
             }

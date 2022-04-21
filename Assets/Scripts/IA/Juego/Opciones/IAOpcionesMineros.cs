@@ -26,8 +26,11 @@ public class IAOpcionesMineros : IAOpciones
 
         ResetTableros();
 
+
         for (int i = 0; i < 3; i++)
         {
+            if (opcionesDisponibles[i] == 4) continue;
+
             PiezaIA pieza = opcionesIniciales[opcionesDisponibles[i]].GetComponent<PiezaIA>();
 
             int mineralGastar = 0;
@@ -42,6 +45,27 @@ public class IAOpcionesMineros : IAOpciones
                     tablerosOrden[i].Add(newTab);
                 }
                 
+            }
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (opcionesDisponibles[i] != 4) continue;
+
+            PiezaIA pieza = opcionesIniciales[opcionesDisponibles[i]].GetComponent<PiezaIA>();
+
+            int mineralGastar = 0;
+            if (opcionesDisponibles[i] == 4) mineralGastar = opcionesIniciales[4].GetComponent<Especial>().coste;
+
+            if (mineral >= mineralGastar)
+            {
+                foreach (InfoTablero newTab in pieza.Opcionificador(tabBase))
+                {
+                    opciones.Add(newTab);
+                    tablerosPorCostes[mineralGastar].Add(newTab);
+                    tablerosOrden[i].Add(newTab);
+                }
+
             }
         }
 

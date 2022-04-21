@@ -33,7 +33,7 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
     {
         if (!c) return 0;
         int puntos = 0;
-        if (c.pieza && (c.pieza.CompareClase(Clase.planeta)))
+        if (c.pieza && c.pieza.CompareClase(new List<Clase>{ Clase.planeta, Clase.restos}))
         {
             puntos += puntosPorPlaneta;
         }

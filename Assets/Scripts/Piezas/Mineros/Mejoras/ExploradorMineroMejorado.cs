@@ -7,7 +7,9 @@ public class ExploradorMineroMejorado : ExploradorMinero
 
     public override int Puntos()
     {
-        int numPuntosPorClase = 3;
+        int puntosBase = base.Puntos();
+
+        int numPuntosPorClase = 2;
 
         List<Clase> clasesExploradas = new List<Clase>();
         int puntosExploracion = 0;
@@ -33,6 +35,6 @@ public class ExploradorMineroMejorado : ExploradorMinero
 
         puntosExploracion = repeticionesMaximas * numPuntosPorClase;
 
-        return puntosExploracion;
+        return puntosExploracion + puntosBase;
     }
 }

@@ -15,7 +15,7 @@ public class InvestigadorPlanetasTerraformador : InvestigadorPlanetas
         foreach (Casilla adyacente in casilla.adyacentes)
         {
             if (!adyacente || !adyacente.pieza) continue;
-            if (adyacente.pieza.CompareClase(new List<Clase> { Clase.planeta, Clase.luna, Clase.explorador }))
+            if (adyacente.pieza.CompareClase(new List<Clase> { Clase.planeta, Clase.luna, Clase.explorador, Clase.restos }))
             {
                 puntos += puntosIniciales;
                 puntosIniciales += incremento;
