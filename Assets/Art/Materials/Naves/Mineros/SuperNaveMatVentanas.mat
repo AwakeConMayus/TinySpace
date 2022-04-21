@@ -50,8 +50,9 @@ Material:
     - Vector1_835FA898: 0.19
     - Vector1_C4FFEE7: -1
     - Vector1_E7E823AB: 1.72
+    - outline: 0
     m_Colors:
-    - Color_1FDD30BB: {r: 0.09358637, g: 0.009175135, b: 0, a: 1}
+    - Color_1FDD30BB: {r: 3.2470589, g: 0.28235295, b: 0, a: 1}
     - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}
     - Color_chasis: {r: 0.8018868, g: 0.6514556, b: 0.6014151, a: 0}
     - Color_windows: {r: 7.623529, g: 6.52549, b: 2.007843, a: 0}

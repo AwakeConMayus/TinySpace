@@ -292,7 +292,7 @@ Material:
     - outline: 0
     m_Colors:
     - Color_1FDD30BB: {r: 13.068064, g: 0.62604576, b: 0, a: 1}
-    - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}
+    - Color_E4D04AF8: {r: 1, g: 1, b: 1, a: 0.007843138}
     - Color_chasis: {r: 1, g: 1, b: 1, a: 0}
     - Color_windows: {r: 6.6461353, g: 0.97430235, b: 0.6263372, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

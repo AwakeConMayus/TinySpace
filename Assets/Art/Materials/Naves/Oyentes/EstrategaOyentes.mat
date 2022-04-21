@@ -49,9 +49,12 @@ Material:
     m_Floats:
     - Vector1_3182302F: 2
     - Vector1_5D12A3A7: 0.03
+    - Vector1_835FA898: 1
     - Vector1_C4FFEE7: -1
+    - Vector1_E7E823AB: 1
+    - outline: 0
     m_Colors:
     - Color_1FDD30BB: {r: 54.403954, g: 74.18721, b: 1.163721, a: 1}
-    - Color_E4D04AF8: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0.007843138}
+    - Color_E4D04AF8: {r: 1, g: 1, b: 1, a: 0.007843138}
     - Color_chasis: {r: 1, g: 1, b: 1, a: 0}
     - Color_windows: {r: 0.50890046, g: 1.0676931, b: 1.9058821, a: 0}
