@@ -42,7 +42,7 @@ public abstract class Pieza : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public bool astro;
 
 
-    private bool pieza_extra = false;
+    protected bool pieza_extra = false;
 
     private void Awake()
     {

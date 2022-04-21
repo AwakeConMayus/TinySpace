@@ -31,9 +31,12 @@ public class InvestigadorMinerosAstro : InvestigadorMineros
         objetivos = FiltroCasillas.CasillasNoAstro(objetivos);
         if (objetivos.Count == 0)
         {
-            EventManager.TriggerEvent("AccionTerminadaConjunta");
-            Debug.Log("termino con astro al no tener casillas");
             primera_vez = false;
+            if (!pieza_extra)
+            {
+                EventManager.TriggerEvent("AccionTerminadaConjunta");
+                Debug.Log("termino con astro al no tener casillas");
+            }
         }
         else
         {
