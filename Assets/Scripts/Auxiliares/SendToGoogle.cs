@@ -30,6 +30,8 @@ public class SendToGoogle : MonoBehaviour
 
     int VectorMineros, VectorOyentes;
 
+    string version;
+
 
 
     public static SendToGoogle instance;
@@ -124,6 +126,7 @@ public class SendToGoogle : MonoBehaviour
 
         form.AddField("entry.144225273", VectorMineros);
         form.AddField("entry.675215660", VectorOyentes);
+        form.AddField("entry.1846975952", version);
     }
 
 
@@ -131,6 +134,9 @@ public class SendToGoogle : MonoBehaviour
     void BuscarDatos()
     {
         //Variables Auxiliares
+
+        //Version
+        version = Application.version;
 
         //Partida IA
         if (IA) PartidaConIA = "SI";
