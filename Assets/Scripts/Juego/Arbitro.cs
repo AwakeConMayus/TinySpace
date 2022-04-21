@@ -223,7 +223,7 @@ public class Arbitro : MonoBehaviourPunCallbacks
     void EndGame()
     {
         if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient && SendOnline)
-            SendToGoogle.instance.SendOnline(player.faccion, false, vectores);
+            SendToGoogle.instance.SendOnline(player.faccion, "NO", vectores);
 
         
         Invoke("ActivarMenuFinal",2f);

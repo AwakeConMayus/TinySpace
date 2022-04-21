@@ -36,7 +36,7 @@ public class SendToGoogle : MonoBehaviour
 
     public static SendToGoogle instance;
 
-    bool IA = false;
+    string IA = "NO";
     Faccion inicial = Faccion.none;
     [SerializeField] TuSeleccion miSeleccion, SeleccionRival;
 
@@ -52,7 +52,7 @@ public class SendToGoogle : MonoBehaviour
     WWWForm form;
 
     //* Función que es llamada al finalizar el juego aquí se inicia la corrutina que subirá los datos
-    public void SendOnline(Faccion _inicial, bool _IA = false, List<int[]> vectores = null)
+    public void SendOnline(Faccion _inicial, string _IA = "NO", List<int[]> vectores = null)
     {
         inicial = _inicial;
         IA = _IA;
@@ -116,12 +116,10 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.940617184", PartidaConIA);
 
         form.AddField("entry.724103590", HeroeMinero);
-        print(EspecialMinero);
         form.AddField("entry.1738738836", EspecialMinero);
 
         form.AddField("entry.1171462077", HeroeOyente);
         form.AddField("entry.2125969092", MejoraOyente);
-        print(EspecialOyente);
         form.AddField("entry.1391571527", EspecialOyente);
 
         form.AddField("entry.144225273", VectorMineros);
@@ -139,8 +137,8 @@ public class SendToGoogle : MonoBehaviour
         version = Application.version;
 
         //Partida IA
-        if (IA) PartidaConIA = "SI";
-        else PartidaConIA = "NO";
+        PartidaConIA = IA;
+        
 
         //Ganador
         int[] puntosFinal = Tablero.instance.RecuentoPuntos();
@@ -215,7 +213,6 @@ public class SendToGoogle : MonoBehaviour
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Supernave") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Supernave")) EspecialMinero = "Supernave";
 
         //Oyentes       
-        print(miSeleccion.mis_opciones[4].name + " // " + SeleccionRival.mis_opciones[4].name);
         if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Planeta") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Planeta")) EspecialOyente = "Planeta";
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Terraformador") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Terraformador")) EspecialOyente = "Terraformar";
         else if (miSeleccion.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital") || SeleccionRival.mis_opciones[4] == Resources.Load<GameObject>("Propulsor de Cambio Orbital")) EspecialOyente = "Propulsor";

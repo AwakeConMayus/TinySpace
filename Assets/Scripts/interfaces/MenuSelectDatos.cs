@@ -226,13 +226,14 @@ public class MenuSelectDatos : MonoBehaviourPunCallbacks
         List<int> bestOpciones = new List<int>();
         int bestOption = 0;
         float winrat = 0;
-        float randomSelectionProbability = 10;
+        float randomSelectionProbability = 100;
 
         switch (mi_Seleccion.faccion)
         {
             case Faccion.minero:
                 //Faccion
                 seleccion_rival.faccion = Faccion.oyente;
+
 
                 //Basico
                 for (int i = 0; i < opciones[1].piezas_Basicas.Length; i++)

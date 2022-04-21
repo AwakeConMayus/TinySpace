@@ -211,7 +211,7 @@ public class IAArbitro : MonoBehaviour
 
         datos.AddData(ganaPlayer2, true);
 
-        if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, true, vectores);
+        if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, "SI", vectores);
         end = true;
         Invoke(nameof(Reset), 3f);
     }

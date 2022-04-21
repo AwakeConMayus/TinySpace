@@ -226,7 +226,7 @@ public class PVEArbitro : MonoBehaviour
         Faccion initialF = Faccion.none;
         if (initial) initialF = jugador1.faccion;
         else initialF = jugador2.faccion;
-        if (SendOnline) SendToGoogle.instance.SendOnline(initialF, true, vectores);
+        if (SendOnline) SendToGoogle.instance.SendOnline(initialF, "PVE", vectores);
     }
 
     void SetActiveActive(bool b)
