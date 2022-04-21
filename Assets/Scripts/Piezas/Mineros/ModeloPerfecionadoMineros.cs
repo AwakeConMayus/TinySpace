@@ -41,12 +41,12 @@ public class ModeloPerfecionadoMineros : EfectoEspecial
 
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
-        List<Casilla> casillasDisponiblesBrutas =  FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
-        List<Casilla> casillasDisponiblesNetas = new List<Casilla>();
-        foreach (Casilla c in casillasDisponiblesBrutas)
+        List<Casilla> casillasDisponibles =  FiltroCasillas.CasillasDeUnJugador(faccion, referencia);
+        List<Casilla> casillasRestar = new List<Casilla>();
+        foreach (Casilla c in casillasDisponibles)
         {
-            if (!c.pieza.astro && c.pieza.gameObject.name.Split(' ').Length <= 2) casillasDisponiblesNetas.Add(c);
+            if (c.pieza is EstrategaMinerosAstro || c.pieza is InvestigadorMinerosAstro || c.pieza is ExploradorMineroMejorado || c.pieza is NaveCombateMinerosMejorada) casillasRestar.Add(c);
         }
-        return casillasDisponiblesNetas;
+        return FiltroCasillas.RestaLista(casillasDisponibles, casillasRestar);
     }
 }
