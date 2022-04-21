@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6541008080438924746
 Transform:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.5
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -600,7 +600,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3892,7 +3892,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.31
+      scalar: 0.43
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3947,8 +3947,8 @@ ParticleSystem:
     ribbonCount: 1
     shadowBias: 2.09
     worldSpace: 0
-    dieWithParticles: 1
-    sizeAffectsWidth: 1
+    dieWithParticles: 0
+    sizeAffectsWidth: 0
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0
@@ -3958,7 +3958,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9652157, g: 1, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.19761251, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4019,9 +4019,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     widthOverTrail:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 13.36
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4074,7 +4074,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5000,6 +5000,3 @@ MonoBehaviour:
   clase: 0
   casilla: {fileID: 0}
   astro: 1
-  puntos_6Casillas: 000000000100000003000000050000000a0000000500000001000000
-  puntos_4Casillas: 0000000001000000030000000700000001000000
-  puntos_3Casillas: 00000000010000000500000001000000
