@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3022789849167101676}
   - component: {fileID: 1270637932466487408}
   - component: {fileID: 1498455044448102741}
+  - component: {fileID: 2577970261210294363}
   m_Layer: 0
   m_Name: EstrategaMinerosAstro
   m_TagString: Untagged
@@ -139,6 +140,25 @@ MonoBehaviour:
   astro: 1
   combateMinero: {fileID: 1635237770601094281, guid: e1e6cc1c47eb0264aad664e3c78e3da6,
     type: 3}
+--- !u!95 &2577970261210294363
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510369916829354505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2859364305701308837
 PrefabInstance:
   m_ObjectHideFlags: 0
