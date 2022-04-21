@@ -18,7 +18,7 @@ public enum States
 
 public class Casilla : MonoBehaviour
 {
-
+    public bool ia;
     [HideInInspector]
     public Casilla[] adyacentes = new Casilla[6];
 
@@ -39,7 +39,12 @@ public class Casilla : MonoBehaviour
 
     private void Start()
     {
-        if (IATablero.instance && IATablero.instance.mapa.Contains(this)) return;
+        if (IATablero.instance && IATablero.instance.mapa.Contains(this))
+        {
+            ia = true;
+            return;
+        }
+        ia = false;
         GameObject g = Instantiate(contadorPuntos, InstancePiezas.instance.transform);
         g.GetComponent<IndicadorPuntos>().casilla = this;
         contadorPuntos = g;

@@ -34,7 +34,8 @@ public class EstrategaMinerosAstro : EstrategaMineros
                 if (adyacente && adyacente.pieza && adyacente.pieza.faccion == faccion &&
                     adyacente.pieza.clase != Clase.combate && !adyacente.pieza.astro)
                 {
-                    Destroy(adyacente.pieza.gameObject);
+                    if (!adyacente.ia) Destroy(adyacente.pieza.gameObject);
+                    else adyacente.pieza = null;
                     GameObject thisPieza = Instantiate(combateMinero, adyacente.transform.position, Quaternion.identity);
                     thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
                 }
