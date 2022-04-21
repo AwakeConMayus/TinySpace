@@ -85,8 +85,8 @@ public class PoderMaquinista : PoderMineros
         {
             destino = c;
             selectDestino = false;
-            Teleport(tps < numeroTps);
             ++tps;
+            Teleport(tps < numeroTps);
             if (tps < numeroTps) Invoke("FirstAction", 1f);
             else
             {
