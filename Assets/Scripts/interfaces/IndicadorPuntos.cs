@@ -66,8 +66,15 @@ public class IndicadorPuntos : MonoBehaviour
     public void UpdateText()
     {
         if (!active || !casilla.pieza) return;
-        if (casilla.pieza.faccion == InstancePiezas.instance.faccion) textoPuntos.color = Color.green;
-        else textoPuntos.color = Color.red;
+        switch (casilla.pieza.faccion)
+        {
+            case Faccion.minero:
+                textoPuntos.color = Color.red;
+                break;
+            case Faccion.oyente:
+                textoPuntos.color = Color.yellow;
+                break;
+        }
         gameObject.SetActive(true);
         textoPuntos.text = casilla.pieza.Puntos().ToString();
     }

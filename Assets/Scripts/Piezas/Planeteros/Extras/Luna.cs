@@ -11,7 +11,6 @@ public class Luna : Pieza
     public override int Puntos()
     {
         int puntos = 0;
-        Debug.Log(casilla + " de luna");
         foreach(Casilla c in casilla.adyacentes)
         {
             if (c && c.pieza && c.pieza.clase == Clase.planeta) puntos++;

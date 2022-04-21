@@ -9,7 +9,7 @@ public class PlanetaVolcanico : Planetas
     {
         int puntos = base.Puntos();
 
-        int puntosEnemigoAdyacente = 4;
+        int puntosEnemigoAdyacente = 3;
 
         foreach (Casilla c in casilla.adyacentes)
         {
