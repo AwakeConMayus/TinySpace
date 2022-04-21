@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/IAGameplay.unity
     guid: 47c0ec91502190e448baa4691dbd4637
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TitleScreen.unity
     guid: c5958912783d59c479b12bac6a921934
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/matchmaking.unity
     guid: 13a9413c689b6e842b088561d885fbca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectDatos.unity
     guid: be5478daffd01da44b98ae9cf503a7de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gameplay.unity
     guid: fb07a80ee1ca106448d9c243933f9a36
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PVEGameplay.unity
     guid: fd48732ae0b520e499c2dfa0daa240b1
   m_configObjects: {}

@@ -10,13 +10,7 @@ public class Luna : Pieza
     }
     public override int Puntos()
     {
-        int puntos = 0;
-        foreach(Casilla c in casilla.adyacentes)
-        {
-            if (c && c.pieza && c.pieza.clase == Clase.planeta) puntos++;
-        }
-
-        return puntos;
+        return 1;
     }
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {
