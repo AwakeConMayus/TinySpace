@@ -12,4 +12,9 @@ public class BotonIndicadorPuntos : MonoBehaviour
         else foreach(Casilla c in Tablero.instance.mapa) c.contadorPuntos.GetComponent<IndicadorPuntos>().Desactive();
         active = !active;
     }
+
+    public bool GetActive()
+    {
+        return active;
+    }
 }

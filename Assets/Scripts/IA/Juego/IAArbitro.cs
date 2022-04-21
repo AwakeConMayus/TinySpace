@@ -33,10 +33,14 @@ public class IAArbitro : MonoBehaviour
 
     List<int[]> vectores = new List<int[]>();
 
+    [SerializeField] bool indicadoresPuntos;
+
     private void Start()
     {
-        Terraformar.Reset();        
-        
+        Terraformar.Reset();
+
+        if (indicadoresPuntos && !GetComponent<BotonIndicadorPuntos>().GetActive()) GetComponent<BotonIndicadorPuntos>().Click();
+
 
         player1Faccion = Random.Range(0, opciones.Length);
         do
@@ -162,6 +166,7 @@ public class IAArbitro : MonoBehaviour
 
     void Turn()
     {
+
         if (!active)
         {
             StartCoroutine(jugador2.Jugar(jugador1,turnoAbsoluto));

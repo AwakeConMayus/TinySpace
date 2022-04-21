@@ -14812,6 +14812,7 @@ GameObject:
   - component: {fileID: 1874230208}
   - component: {fileID: 1874230209}
   - component: {fileID: 1874230217}
+  - component: {fileID: 1874230218}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14842,6 +14843,7 @@ MonoBehaviour:
   seleccion1: {fileID: 11400000, guid: 05ca3ca413262ec44938b9f33f0b519d, type: 2}
   seleccion2: {fileID: 11400000, guid: e1246899933242f449c1d35f656f2f94, type: 2}
   SendOnline: 1
+  indicadoresPuntos: 1
 --- !u!114 &1874230209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15005,6 +15007,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bed2a2baf389f844960b63887b5c513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1874230218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874230207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14973251fa35928449c26b9712a33e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1958931740

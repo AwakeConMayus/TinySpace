@@ -20,12 +20,16 @@ public class IAPodLunaticoOyentes : PoderIABase
     InfoTablero BestLuna (InfoTablero tabBase)
     {
         InfoTablero bestTab = new InfoTablero();
-        Pieza luna = Resources.Load<Pieza>("Luna");
+        GameObject luna = Resources.Load<GameObject>("Luna");
         int bestPuntos = int.MinValue;
         IATablero.instance.PrintInfoTablero(tabBase);
-        foreach(Casilla c in luna.CasillasDisponibles(IATablero.instance.mapa))
+        foreach(Casilla c in luna.GetComponent<Pieza>().CasillasDisponibles(IATablero.instance.mapa))
         {
-            c.pieza = luna;
+            GameObject g = Instantiate(luna);
+            g.GetComponent<Pieza>().Set_Pieza_Extra();
+            g.transform.position = c.transform.position;
+            c.pieza = g.GetComponent<Pieza>();
+            g.GetComponent<Pieza>().casilla = c;
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
             if(puntos > bestPuntos)
             {
@@ -41,13 +45,17 @@ public class IAPodLunaticoOyentes : PoderIABase
     List<InfoTablero> OpcionificadorLuna(InfoTablero tabBase)
     {
         List<InfoTablero> bestTab = new List<InfoTablero>();
-        Pieza luna = Resources.Load<Pieza>("Luna");
+        GameObject luna = Resources.Load<GameObject>("Luna");
         IATablero.instance.PrintInfoTablero(tabBase);
-        foreach (Casilla c in luna.CasillasDisponibles(IATablero.instance.mapa))
+        foreach (Casilla c in luna.GetComponent<Pieza>().CasillasDisponibles(IATablero.instance.mapa))
         {
-            c.pieza = luna;
+            IATablero.instance.PrintInfoTablero(tabBase);
+
+            GameObject g = Instantiate(luna);
+            g.GetComponent<Pieza>().Set_Pieza_Extra();
+            g.transform.position = c.transform.position;
+            c.pieza = g.GetComponent<Pieza>();
             bestTab.Add(new InfoTablero(IATablero.instance.mapa));
-            c.pieza = null;
         }
 
         return bestTab;
