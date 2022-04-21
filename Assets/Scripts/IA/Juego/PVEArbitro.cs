@@ -96,7 +96,7 @@ public class PVEArbitro : MonoBehaviour
         if (end) return;
         if (turnoAbsoluto == 2) Vectorizacion();  
         
-        if (turnoAbsoluto == 26) EndGame();
+        if (turnoAbsoluto == 25) EndGame();
         else if (specialPhase) SpecialTurn();
         else Turn();
     }
