@@ -85,18 +85,17 @@ public class PoderMaquinista : PoderMineros
         {
             destino = c;
             selectDestino = false;
-            Teleport();
+            Teleport(tps < numeroTps);
             ++tps;
             if (tps < numeroTps) Invoke("FirstAction", 1f);
             else
             {
                 tps = 0;
                 Debug.Log("termino al mover m,aquinista"); 
-                EventManager.TriggerEvent("AccionTerminadaConjunta");
             }
         }
     }
-    void Teleport()
+    void Teleport(bool extra)
     {
 
         if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
@@ -104,7 +103,7 @@ public class PoderMaquinista : PoderMineros
             if (pieza.GetPhotonView().IsMine)
             {
                 OnlineManager.instance.Destroy_This_Pieza(pieza.GetComponent<Pieza>());
-                MenuComodin.instance.Convocar(destino, true);
+                MenuComodin.instance.Convocar(destino, extra);
             }
             else
             {
@@ -122,7 +121,7 @@ public class PoderMaquinista : PoderMineros
         {
             TPEfects(origen, destino);
             pieza.GetComponent<Pieza>().casilla.Clear();
-            MenuComodin.instance.Convocar(destino, true);
+            MenuComodin.instance.Convocar(destino, extra);
         }
 
 
