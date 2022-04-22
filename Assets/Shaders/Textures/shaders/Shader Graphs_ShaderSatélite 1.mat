@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Shader Graphs_ShaderSat\xE9lite"
+  m_Name: "Shader Graphs_ShaderSat\xE9lite 1"
   m_Shader: {fileID: -6465566751694194690, guid: 87111f9fcff429844bf040a0bdf5f178,
     type: 3}
   m_ShaderKeywords: 
@@ -20,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_90EBD218:
+        m_Texture: {fileID: 2800000, guid: 1dc9e4bbbb7a8014f9b479a9107a3bf5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_6E28ECB5_Texture_1:
         m_Texture: {fileID: 2800000, guid: ef9126edf8523654daf37c905a2b7c69, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -30,4 +34,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_16AACEE3: {r: 21.73585, g: 1.429209, b: 0, a: 0}
+    - Color_16AACEE3: {r: 1024, g: 72.28236, b: 0, a: 0.972549}
