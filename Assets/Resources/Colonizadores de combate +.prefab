@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 8156218396458623999}
   - component: {fileID: 2676887809942984053}
   - component: {fileID: -841934345830106255}
+  - component: {fileID: 496656816719932251}
   m_Layer: 0
   m_Name: Colonizadores de combate +
   m_TagString: Untagged
@@ -210,6 +211,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 2
+--- !u!95 &496656816719932251
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742882276933945149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eec3b48e00352cd4985987dd8f94337d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1563567032346356549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,6 +331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oyentes_combate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 60500f4a483a3444584e4354aec96638,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2114474136317833529, guid: 60500f4a483a3444584e4354aec96638,
         type: 3}
@@ -477,6 +502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oyentes_combate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 60500f4a483a3444584e4354aec96638,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2114474136317833529, guid: 60500f4a483a3444584e4354aec96638,
         type: 3}
@@ -688,6 +718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oyentes_combate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 60500f4a483a3444584e4354aec96638,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2114474136317833529, guid: 60500f4a483a3444584e4354aec96638,
         type: 3}
