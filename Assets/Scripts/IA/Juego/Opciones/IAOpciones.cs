@@ -362,7 +362,7 @@ public abstract class IAOpciones : Opciones
         if (!turnosPoder.Contains(turno)) posibilidades = JugadaSimpleOpciones();
         else posibilidades = PoderSimpleOpciones(turno);
         foreach (InfoTablero it in posibilidades) it.SetFaccion(faccion);
-        posibilidades.Sort(posibilidades[0]);
+        if(posibilidades.Count > 0)posibilidades.Sort(posibilidades[0]);
         List<InfoTablero> posibilidadesReales = new List<InfoTablero>();
         if (posibilidades.Count > jugadasValoradas)
         {
