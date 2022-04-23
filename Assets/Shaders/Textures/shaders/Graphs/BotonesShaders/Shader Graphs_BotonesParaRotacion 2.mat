@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a6d93822628af9d4085e3ec57de8daae, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_78F27470_Texture_1:
@@ -39,4 +39,4 @@ Material:
     - Vector1_F49CB343: -4.53
     m_Colors:
     - Color_3D9CFDAD: {r: 0.6603774, g: 0, b: 0.5226837, a: 0}
-    - Color_6833C47F: {r: 47.116768, g: 74.374405, b: 7.3985014, a: 1}
+    - Color_6833C47F: {r: 1.7522767, g: 1.2655331, b: 17.814812, a: 1}
