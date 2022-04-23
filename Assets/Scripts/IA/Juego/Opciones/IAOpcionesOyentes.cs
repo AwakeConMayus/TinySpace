@@ -6,7 +6,14 @@ public class IAOpcionesOyentes : IAOpciones
 {
 
     List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
-    
+
+    List<PiezaIA> abanicoOpciones = new List<PiezaIA>();
+
+    private void Start()
+    {       
+        foreach (GameObject g in opcionesIniciales) abanicoOpciones.Add(g.GetComponent<PiezaIA>());
+    }
+
 
     public override List<InfoTablero> JugadaSimpleOpciones()
     {
@@ -62,5 +69,22 @@ public class IAOpcionesOyentes : IAOpciones
             if (opcionesIniciales[opcionesDisponibles[i]].GetComponent<Pieza>().CasillasDisponibles().Count > 0) return false;
         }
         return true;
+    }
+
+    public override int BestRespuesta(InfoTablero tabBase)
+    {
+        List<InfoTablero> respuestas = new List<InfoTablero>();
+
+        foreach (PiezaIA pia in abanicoOpciones) respuestas.Add(pia.BestInmediateOpcion(tabBase));
+
+        int bestRespuesta = int.MinValue;
+
+        foreach (InfoTablero it in respuestas)
+        {
+            IATablero.instance.PrintInfoTablero(it);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+        }
+        return bestRespuesta;
     }
 }

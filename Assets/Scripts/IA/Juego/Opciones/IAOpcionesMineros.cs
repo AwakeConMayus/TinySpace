@@ -10,12 +10,15 @@ public class IAOpcionesMineros : IAOpciones
     List<InfoTablero>[] tablerosPorCostes = new List<InfoTablero>[10];
     List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
 
-
+    List<PiezaIA> abanicoOpciones = new List<PiezaIA>();
 
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", AddMineral);
         ResetTableros();
+
+        foreach (GameObject g in opcionesIniciales) abanicoOpciones.Add(g.GetComponent<PiezaIA>());
+        foreach (GameObject g in mejoras) abanicoOpciones.Add(g.GetComponent<PiezaIA>());
     }
 
     public override List<InfoTablero> JugadaSimpleOpciones()
@@ -145,5 +148,22 @@ public class IAOpcionesMineros : IAOpciones
             }
         }
         return true;
+    }
+
+    public override int BestRespuesta(InfoTablero tabBase)
+    {
+        List<InfoTablero> respuestas = new List<InfoTablero>();
+
+        foreach (PiezaIA pia in abanicoOpciones) respuestas.Add(pia.BestInmediateOpcion(tabBase));
+
+        int bestRespuesta = int.MinValue;
+
+        foreach (InfoTablero it in respuestas)
+        {
+            IATablero.instance.PrintInfoTablero(it);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+        }
+        return bestRespuesta;
     }
 }

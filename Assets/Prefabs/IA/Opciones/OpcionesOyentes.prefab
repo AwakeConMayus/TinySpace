@@ -53,3 +53,4 @@ MonoBehaviour:
   faccion: 2
   opcionesDisponibles: 
   mi_reflejo: {fileID: 0}
+  mejorIA: 1

@@ -45,7 +45,7 @@ public class IAPodMaquinista1Mineros : PoderIABase
             }
         }
 
-        worstCasilla.pieza = null;
+        if(worstCasilla) worstCasilla.pieza = null;
 
         InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
 

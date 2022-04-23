@@ -187,10 +187,11 @@ public class IATablero : MonoBehaviour
     }
  }
 
-public struct InfoTablero
+public struct InfoTablero : IComparer<InfoTablero>
 {
     public int[] tablero;
-    
+
+    Faccion faccion;
 
     public InfoTablero(List<Casilla> tabBase)
     {
@@ -202,6 +203,23 @@ public struct InfoTablero
             if (tabBase[i].pieza) tablero[i] = ((int)DataBase.GetPieza(tabBase[i].pieza.gameObject));
             else tablero[i] = (0);
         }
+
+        faccion = Faccion.none;
     }
+
+    public void SetFaccion(Faccion set)
+    {
+        faccion = set;
+    }
+
+    public int Compare(InfoTablero x, InfoTablero y)
+    {
+        int puntosx = PiezaIA.Evaluar(x, faccion);
+        int puntosy = PiezaIA.Evaluar(y, faccion);
+
+        if (puntosx > puntosy) return 1;
+        else if (puntosx == puntosy) return 0;
+        else return -1;
+    }   
 }
 

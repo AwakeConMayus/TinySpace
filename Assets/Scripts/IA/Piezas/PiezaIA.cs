@@ -72,15 +72,47 @@ public class PiezaIA : MonoBehaviour
     public static int Evaluar(List<Casilla> mapa, Faccion jugador)
     {
         int puntos = 0;
+
         foreach(Casilla c in mapa)
         {
             if (c.pieza)
             {
                 if (c.pieza.faccion == jugador)
                 {
-                    puntos += c.pieza.Puntos();
+                    puntos += c.pieza.Puntos() * 2;
                 }
-                else puntos -= c.pieza.Puntos();
+                else puntos -= c.pieza.Puntos() * 2;
+            }
+
+            else if (c.meteorito)
+            {
+                puntos -= 1;
+            }
+        }
+        return puntos;
+    }
+
+    public static int Evaluar(InfoTablero infoMapa, Faccion jugador)
+    {
+        IATablero.instance.PrintInfoTablero(infoMapa);
+        List<Casilla> mapa = IATablero.instance.mapa;
+
+        int puntos = 0;
+
+        foreach (Casilla c in mapa)
+        {
+            if (c.pieza)
+            {
+                if (c.pieza.faccion == jugador)
+                {
+                    puntos += c.pieza.Puntos() * 2;
+                }
+                else puntos -= c.pieza.Puntos() * 2;
+            }
+
+            else if (c.meteorito)
+            {
+                puntos -= 1;
             }
         }
         return puntos;

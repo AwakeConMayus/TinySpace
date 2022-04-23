@@ -14,7 +14,9 @@ public class OpcionesMineros : Opciones
     public bool especial = false;
 
     int mineralGastar;
-    
+
+    List<PiezaIA> abanicoOpciones = new List<PiezaIA>();
+
     private void Start()
     {
         EventManager.StartListening("RecogerMineral", RecogerMineral);
@@ -25,6 +27,9 @@ public class OpcionesMineros : Opciones
         }
         Preparacion();
         if(mi_reflejo) mi_reflejo.poder = this.gameObject;
+
+        foreach (GameObject g in opcionesIniciales) abanicoOpciones.Add(g.GetComponent<PiezaIA>());
+        foreach (GameObject g in mejoras) abanicoOpciones.Add(g.GetComponent<PiezaIA>());
     }
     public void RecogerMineral()
     {
@@ -117,5 +122,22 @@ public class OpcionesMineros : Opciones
             }
         }
         return true;
+    }
+
+    public override int BestRespuesta(InfoTablero tabBase)
+    {
+        List<InfoTablero> respuestas = new List<InfoTablero>();
+
+        foreach (PiezaIA pia in abanicoOpciones) respuestas.Add(pia.BestInmediateOpcion(tabBase));
+
+        int bestRespuesta = int.MinValue;
+
+        foreach (InfoTablero it in respuestas)
+        {
+            IATablero.instance.PrintInfoTablero(it);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+        }
+        return bestRespuesta;
     }
 }

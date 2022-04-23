@@ -6381,6 +6381,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
         type: 3}
+      propertyPath: mejorIA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012030321559239669, guid: 4e50795851fd6e14d8f66567381bf096,
+        type: 3}
       propertyPath: opcionesIniciales.Array.data[1]
       value: 
       objectReference: {fileID: 8661006566940933543, guid: 6c422aba646e8af47959b8b69c169f85,
@@ -12583,6 +12588,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7426800254683519266, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130.10002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550909699239003648, guid: 1c33861baca68794fa4078d40fcadc3e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c33861baca68794fa4078d40fcadc3e, type: 3}
 --- !u!224 &1111196151 stripped
@@ -13281,6 +13296,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9169238251903890521, guid: 5b627107763402a41a1f0f738026bd13,
         type: 3}
+    - target: {fileID: 5049628685469694633, guid: aa91082bb652d5c45a9d4dc6d086afdc,
+        type: 3}
+      propertyPath: mejorIA
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5049628685469694633, guid: aa91082bb652d5c45a9d4dc6d086afdc,
         type: 3}
       propertyPath: opcionesIniciales.Array.data[4]

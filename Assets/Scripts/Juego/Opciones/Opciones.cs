@@ -20,6 +20,8 @@ public abstract class Opciones : MonoBehaviour
 
     public OpcionesRival mi_reflejo;
 
+    protected PoderIA mypoder;
+
     public virtual void PrepararPreparacion()
     {
         if (PhotonNetwork.InRoom) poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);
@@ -29,6 +31,8 @@ public abstract class Opciones : MonoBehaviour
         poder.GetComponent<PoderIA>().Fases[0].padre = this;
         poder.GetComponent<PoderIA>().Fases[1].padre = this;
         Debug.Log(poder.name);
+        mypoder = poder.GetComponent<PoderIA>();
+
     }
 
     public virtual void Preparacion()
@@ -94,4 +98,23 @@ public abstract class Opciones : MonoBehaviour
     }
 
     public abstract bool Ahogado();
+
+    public abstract int BestRespuesta(InfoTablero tabBase);
+    public virtual int BestRespuestaPoder(InfoTablero tabBase, int turno)
+    {
+        List<InfoTablero> respuestas = new List<InfoTablero>();
+
+        if (turno < 15) respuestas = mypoder.Fases[0].Opcionificador(tabBase);
+        else respuestas = mypoder.Fases[0].Opcionificador(tabBase);
+
+        int bestRespuesta = int.MinValue;
+
+        foreach (InfoTablero it in respuestas)
+        {
+            IATablero.instance.PrintInfoTablero(it);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+        }
+        return bestRespuesta;
+    }
 }

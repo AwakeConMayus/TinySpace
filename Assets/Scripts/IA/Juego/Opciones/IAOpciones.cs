@@ -6,6 +6,10 @@ public abstract class IAOpciones : Opciones
 {
     int PuntosOrigen = 0;
 
+    public bool mejorIA;
+
+    
+
     public override void Preparacion()
     {
         opcionesDisponibles = new List<int>();
@@ -15,7 +19,6 @@ public abstract class IAOpciones : Opciones
             fase.padre = this;
         }
 
-        
 
 
         List<int> disponibles = new List<int>();
@@ -40,7 +43,14 @@ public abstract class IAOpciones : Opciones
         opcionesDisponibles.Add(aux);
     }
 
-    public IEnumerator Jugar(Opciones rival, int turno) 
+
+    public IEnumerator Jugar(Opciones rival, int turno)
+    {
+        if (mejorIA) yield return JugarMejor(rival, turno);
+        else yield return JugarPeor(rival, turno);
+    }
+
+    public IEnumerator JugarPeor(Opciones rival, int turno) 
     {
         print("empiezo a pensar: " + faccion);
         PuntosOrigen = PiezaIA.Evaluar(Tablero.instance.mapa, faccion);
@@ -95,8 +105,7 @@ public abstract class IAOpciones : Opciones
          */
         #endregion
 
-        int fase = 0;
-        if (turno > 15) fase = 1;
+        
 
         bestJugada = new InfoTablero();
         if (jugadasSimples.Contains(turno))
@@ -109,15 +118,15 @@ public abstract class IAOpciones : Opciones
         }
         else if (poderesSimple.Contains(turno))
         {
-            yield return StartCoroutine( PoderSimple(fase));
+            yield return StartCoroutine( PoderSimple(turno));
         }
         else if (poderesCombinado.Contains(turno))
         {
-            yield return StartCoroutine( PoderCombinado(rival, fase));
+            yield return StartCoroutine( PoderCombinado(rival, turno));
         }
         else if (poderesCombinadoPoder.Contains(turno))
         {
-             yield return StartCoroutine( PoderCombinadoPoder(rival, fase));
+             yield return StartCoroutine( PoderCombinadoPoder(rival, turno));
         }
         EjecutarJugada(bestJugada);
     }
@@ -188,30 +197,26 @@ public abstract class IAOpciones : Opciones
             }
             yield return null;
         }
-
-
     }
 
-  
-
-
-
-    public List<InfoTablero> PoderSimpleOpciones(int i)        
+    public List<InfoTablero> PoderSimpleOpciones(int turno)        
     {
         List<InfoTablero> jugadas = new List<InfoTablero>();
-        foreach(InfoTablero jugada in poder.GetComponent<PoderIA>().Fases[i].Opcionificador(new InfoTablero(Tablero.instance.mapa)))
+        int fases = 0;
+        if (turno > 15) fases = 1;
+        foreach (InfoTablero jugada in mypoder.Fases[fases].Opcionificador(new InfoTablero(Tablero.instance.mapa)))
         {
             jugadas.Add(jugada);
         }
         return jugadas;
     }
 
-    public IEnumerator PoderSimple(int fase)
+    public IEnumerator PoderSimple(int turno)
     {
 
         int bestPuntos = int.MinValue;
 
-        foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
+        foreach (InfoTablero newTab in PoderSimpleOpciones(turno))
         {
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
@@ -226,7 +231,7 @@ public abstract class IAOpciones : Opciones
 
     }
 
-    public IEnumerator PoderCombinado(Opciones enemigo, int fase)
+    public IEnumerator PoderCombinado(Opciones enemigo, int turno)
     {
 
 
@@ -234,7 +239,7 @@ public abstract class IAOpciones : Opciones
         
         int bestPuntos = int.MinValue;
 
-        foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
+        foreach (InfoTablero newTab in PoderSimpleOpciones(turno))
         {
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
@@ -253,20 +258,20 @@ public abstract class IAOpciones : Opciones
     }
 
 
-    public IEnumerator PoderCombinadoPoder(Opciones enemigo, int fase)
+    public IEnumerator PoderCombinadoPoder(Opciones enemigo, int turno)
     {
 
 
 
         int bestPuntos = int.MinValue;
 
-        foreach (InfoTablero newTab in PoderSimpleOpciones(fase))
+        foreach (InfoTablero newTab in PoderSimpleOpciones(turno))
         {
             IATablero.instance.PrintInfoTablero(newTab);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
             //if (puntos <= PuntosOrigen) continue;
 
-            puntos = SimulacionPoderEnemigo(enemigo, newTab, fase);
+            puntos = SimulacionPoderEnemigo(enemigo, newTab, turno);
             if (puntos > bestPuntos)
             {
                 bestPuntos = puntos;
@@ -328,12 +333,7 @@ public abstract class IAOpciones : Opciones
                 yield return null;
             }
         }
-        
-        
     }
-
-
-
 
     public int SimulacionPoderEnemigo(Opciones enemigo, InfoTablero tabBase, int fase)
     {
@@ -352,7 +352,67 @@ public abstract class IAOpciones : Opciones
         return worstPuntos;
     }
 
-   
+
+    List<int> turnosPoder = new List<int> { 12, 13, 24, 25 };
+    int jugadasValoradas = 20;
+
+    public IEnumerator JugarMejor(Opciones rival, int turno)
+    {
+        List<InfoTablero> posibilidades;
+        if (!turnosPoder.Contains(turno)) posibilidades = JugadaSimpleOpciones();
+        else posibilidades = PoderSimpleOpciones(turno);
+        foreach (InfoTablero it in posibilidades) it.SetFaccion(faccion);
+        posibilidades.Sort(posibilidades[0]);
+        List<InfoTablero> posibilidadesReales = new List<InfoTablero>();
+        if (posibilidades.Count > jugadasValoradas)
+        {
+            for (int i = 0; i < jugadasValoradas; i++)
+            {
+                posibilidadesReales.Add(posibilidades[i]);
+            }
+        }
+        else posibilidadesReales = posibilidades;
+        
+
+        List<int> valoracionesPosibilidades = new List<int>();
+        int[] ponderacion;
+        ponderaciones.TryGetValue(turno, out ponderacion);
+        yield return null;
+
+        foreach(InfoTablero it in posibilidadesReales)
+        {
+            int valor = 0;
+            valor += PiezaIA.Evaluar(it, faccion) * 10;
+            print("Pensando Combo Aliado");
+            if (ponderacion[0] != 0) valor += BestRespuesta(it) * ponderacion[0];
+            yield return null;
+            print("Pensando Counter Enemigo");
+            if (ponderacion[1] != 0) valor -= rival.BestRespuesta(it) * ponderacion[1];
+            yield return null;
+            print("Pensando Combo Poder Aliado");
+            if (ponderacion[2] != 0) valor += BestRespuestaPoder(it, turno) * ponderacion[2];
+            yield return null;
+            print("Pensando counter Poder Enemigo");
+            if (ponderacion[3] != 0) valor -= rival.BestRespuestaPoder(it,turno) * ponderacion[3];
+            yield return null;
+
+            valoracionesPosibilidades.Add(valor);
+        }
+
+        int bestOpcion = 0;
+        int bestValor = int.MinValue;
+
+        for (int i = 0; i < valoracionesPosibilidades.Count; i++)
+        {
+            if(valoracionesPosibilidades[i] > bestValor)
+            {
+                bestValor = valoracionesPosibilidades[i];
+                bestOpcion = i;
+            }
+        }
+
+        EjecutarJugada(posibilidadesReales[bestOpcion]);
+    }
 
     
 
@@ -362,6 +422,34 @@ public abstract class IAOpciones : Opciones
         Tablero.instance.PrintInfoTablero(newTab);
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
+
+    Dictionary<int, int[]> ponderaciones = new Dictionary<int, int[]>
+    {
+        {2,new int[]{5,10,1,2} },
+        {3,new int[]{10,5,2,1} },
+        {4,new int[]{4,8,4,2} },
+        {5,new int[]{8,4,2,4} },
+        {6,new int[]{3,6,3,6} },
+        {7,new int[]{6,3,6,3} },
+        {8,new int[]{2,4,8,4} },
+        {9,new int[]{4,2,4,8} },
+        {10,new int[]{1,2,5,10} },
+        {11,new int[]{2,1,10,5} },
+        {12,new int[]{4,2,0,10} },
+        {13,new int[]{2,4,0,0} },
+        {14,new int[]{4,8,1,2} },
+        {15,new int[]{8,4,2,1} },
+        {16,new int[]{3,6,4,2} },
+        {17,new int[]{6,3,2,4} },
+        {18,new int[]{2,4,3,6} },
+        {19,new int[]{4,2,6,3} },
+        {20,new int[]{1,2,8,4} },
+        {21,new int[]{2,1,4,8} },
+        {22,new int[]{0,1,5,10} },
+        {23,new int[]{0,0,10,5} },
+        {24,new int[]{0,0,0,10} },
+        {25,new int[]{0,0,0,0} }
+    };
 }
 
 
