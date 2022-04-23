@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 0}
   padre: {fileID: 0}
+  comodin: {fileID: -5521382791994187919, guid: 7a4fb95771d1a1845a122276437946a4,
+    type: 3}

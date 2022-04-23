@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class IALabMejMineros : PiezaIA
 {
+    [SerializeField] Pieza laboratorioAstro;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        Pieza piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
-        piezaReferencia = Resources.Load<Pieza>("Laboratorio Mineros Mejorado");
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
@@ -16,10 +16,8 @@ public class IALabMejMineros : PiezaIA
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            Pieza piezaColocar = Resources.Load<Pieza>("LaboratorioMinerosAstro");
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
+            c.pieza = laboratorioAstro;
+            laboratorioAstro.casilla = c;
 
             List<Casilla> rangoDestrucciones = FiltroCasillas.CasillasAdyacentes(FiltroCasillas.CasillasAdyacentes(c, true), false);
 

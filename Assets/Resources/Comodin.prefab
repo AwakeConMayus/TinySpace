@@ -116,3 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 132265879854292404, guid: 2405c6ebbeceb4f4e9a2f24677a82ebc,
+    type: 3}
+  piezasReferencia:
+  - {fileID: -1100639422467597148, guid: 568512d94d6280b4cbc552b99bd6c135, type: 3}
+  - {fileID: -2771539225944925340, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
+  - {fileID: -6172002049296850057, guid: 31a92df0d34a3854cb9a32e104ac4499, type: 3}
+  - {fileID: -6865474447771486654, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}

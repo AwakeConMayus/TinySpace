@@ -14,8 +14,8 @@ public class DescripcionPezas : MonoBehaviour
         textoExplicatvo = GetComponentInChildren<Text>();
         explicaciones = Resources.Load<TextoExplicativo>("Textos");
 
-        EventManager.StartListening("ClickCasilla", Active);
-        EventManager.StartListening("DesClickCasilla", Desactive);
+        EventManager.StartListening("DesClickCasilla", Active);
+        EventManager.StartListening("Click", Desactive);
 
         gameObject.SetActive(false);
     }

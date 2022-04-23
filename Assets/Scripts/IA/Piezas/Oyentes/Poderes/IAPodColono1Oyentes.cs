@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class IAPodColono1Oyentes : PoderIABase
 {
+    [SerializeField] PiezaIA planetaIA;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
-        tabBase = PonerMejorPlaneta(tabBase);
-
-        PiezaIA planetaIA = Resources.Load<GameObject>("Planeta").GetComponent<PiezaIA>();
+        tabBase = PonerMejorPlaneta(tabBase);        
 
         nuevosEstados = planetaIA.Opcionificador(tabBase);        
 

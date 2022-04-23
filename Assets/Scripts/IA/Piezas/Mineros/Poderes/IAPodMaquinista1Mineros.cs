@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class IAPodMaquinista1Mineros : PoderIABase
 {
+    [SerializeField] IAComodinMineros comodin;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         print("poderMaquinista");
@@ -28,20 +30,29 @@ public class IAPodMaquinista1Mineros : PoderIABase
 
         int actualPuntos = Evaluar(IATablero.instance.mapa, faccion);
 
+        int worstPuntos = int.MaxValue;
+        Casilla worstCasilla = null;
+
         foreach (Casilla c in posiblesMovimientos)
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            c.pieza = null;
-
-            InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
-
-            foreach(InfoTablero candidato in Resources.Load<GameObject>("Comodin").GetComponent<IAComodinMineros>().Opcionificador(estadoIntermedio))
+            int puntos = c.pieza.Puntos();
+            if (puntos < worstPuntos)
             {
-                IATablero.instance.PrintInfoTablero(candidato);
-                print(Evaluar(IATablero.instance.mapa, faccion) + " // " + actualPuntos);
-                if (Evaluar(IATablero.instance.mapa, faccion) > actualPuntos) nuevosEstados.Add(candidato);
-            }            
+                worstPuntos = puntos;
+                worstCasilla = c;
+            }
+        }
+
+        worstCasilla.pieza = null;
+
+        InfoTablero estadoIntermedio = new InfoTablero(IATablero.instance.mapa);
+
+        foreach(InfoTablero candidato in comodin.Opcionificador(estadoIntermedio))
+        {
+            IATablero.instance.PrintInfoTablero(candidato);
+            if (Evaluar(IATablero.instance.mapa, faccion) > actualPuntos) nuevosEstados.Add(candidato);
         }
 
         return nuevosEstados;

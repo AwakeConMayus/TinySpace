@@ -6,6 +6,9 @@ public class IAPodLunaticoOyentes : PoderIABase
 {
     public bool fase2 = false;
 
+    [SerializeField] GameObject luna;
+    [SerializeField] Pieza lunaPieza;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         if (!fase2) tabBase = PonerMejorPlaneta(tabBase);
@@ -20,10 +23,9 @@ public class IAPodLunaticoOyentes : PoderIABase
     InfoTablero BestLuna (InfoTablero tabBase)
     {
         InfoTablero bestTab = new InfoTablero();
-        GameObject luna = Resources.Load<GameObject>("Luna");
         int bestPuntos = int.MinValue;
         IATablero.instance.PrintInfoTablero(tabBase);
-        foreach(Casilla c in luna.GetComponent<Pieza>().CasillasDisponibles(IATablero.instance.mapa))
+        foreach(Casilla c in lunaPieza.CasillasDisponibles(IATablero.instance.mapa))
         {
             GameObject g = Instantiate(luna);
             g.GetComponent<Pieza>().Set_Pieza_Extra();
@@ -45,9 +47,8 @@ public class IAPodLunaticoOyentes : PoderIABase
     List<InfoTablero> OpcionificadorLuna(InfoTablero tabBase)
     {
         List<InfoTablero> bestTab = new List<InfoTablero>();
-        GameObject luna = Resources.Load<GameObject>("Luna");
         IATablero.instance.PrintInfoTablero(tabBase);
-        foreach (Casilla c in luna.GetComponent<Pieza>().CasillasDisponibles(IATablero.instance.mapa))
+        foreach (Casilla c in lunaPieza.CasillasDisponibles(IATablero.instance.mapa))
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 

@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 2
+  piezaReferencia: {fileID: 1265694455983658461}
 --- !u!95 &496656816719932251
 Animator:
   serializedVersion: 3

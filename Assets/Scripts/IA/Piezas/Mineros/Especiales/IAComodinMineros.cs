@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class IAComodinMineros : PiezaIA
 {
+    [SerializeField] List<PiezaIA> piezasReferencia;
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        PiezaIA piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
         //Explorador
-        piezaReferencia = Resources.Load<PiezaIA>("Explorador Mineros");
-        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
+        nuevosEstados.Add(piezasReferencia[0].BestInmediateOpcion(tabBase));
 
         
         //Combate
-        piezaReferencia = Resources.Load<PiezaIA>("Combate Mineros");
-        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
+        nuevosEstados.Add(piezasReferencia[1].BestInmediateOpcion(tabBase));
 
 
         //Laboratorio
-        piezaReferencia = Resources.Load<PiezaIA>("Laboratorio Mineros");
-        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
+        nuevosEstados.Add(piezasReferencia[2].BestInmediateOpcion(tabBase));
 
 
         //Estratega
-        piezaReferencia = Resources.Load<PiezaIA>("Estratega Mineros");
-        nuevosEstados.Add(piezaReferencia.BestInmediateOpcion(tabBase));
+        nuevosEstados.Add(piezasReferencia[3].BestInmediateOpcion(tabBase));
 
 
         return nuevosEstados;

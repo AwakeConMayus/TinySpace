@@ -10378,6 +10378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 2371080840239072525}
 --- !u!1 &5146784365339307019
 GameObject:
   m_ObjectHideFlags: 0

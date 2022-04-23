@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 2
+  piezaReferencia: {fileID: 0}
   padre: {fileID: 0}
+  fase2: 0
+  luna: {fileID: 4745022161135342171, guid: 5f501839762e0514c94976ec748dde0d, type: 3}
+  lunaPieza: {fileID: 7726246443530445180, guid: 5f501839762e0514c94976ec748dde0d,
+    type: 3}

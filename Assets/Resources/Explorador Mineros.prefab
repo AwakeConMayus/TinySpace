@@ -15258,6 +15258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 4058615384589163298}
 --- !u!114 &429209731068569276
 MonoBehaviour:
   m_ObjectHideFlags: 0

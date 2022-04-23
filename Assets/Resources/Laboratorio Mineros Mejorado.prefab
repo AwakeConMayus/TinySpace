@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 324663895821786639}
+  laboratorioAstro: {fileID: 3551482723522768286, guid: 6bd3dfa786e831447a8959b6999f7283,
+    type: 3}

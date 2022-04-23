@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class IAEstMejMineros : PiezaIA
 {
+    [SerializeField] Pieza estrategaAstro, combateMinero;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        Pieza piezaReferencia;
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
-        piezaReferencia = GetComponent<Pieza>();
 
         IATablero.instance.PrintInfoTablero(tabBase);
 
@@ -16,18 +16,15 @@ public class IAEstMejMineros : PiezaIA
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            Pieza piezaColocar = Resources.Load<Pieza>("EstrategaMinerosAstro");
-
-            c.pieza = piezaColocar;
-            piezaColocar.casilla = c;
+            c.pieza = estrategaAstro;
+            estrategaAstro.casilla = c;
 
 
             foreach (Casilla cc in FiltroCasillas.CasillasEnRango(2, c, false))
             {
                 if (cc && cc.pieza && cc.pieza.faccion == faccion && !cc.pieza.CompareClase(Clase.combate) && !cc.pieza.astro)
                 {
-                    Pieza nuevaPieza = Resources.Load<Pieza>("Combate Mineros");
-                    cc.pieza = nuevaPieza;
+                    cc.pieza = combateMinero;
                 }
             }
 

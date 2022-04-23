@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class IAComMejMineros : PiezaIA
 {
+    [SerializeField] Pieza piezaColocar;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
-        MejoraCombateMineros piezaReferencia = GetComponent<MejoraCombateMineros>();
-        Pieza piezaColocar = piezaReferencia.combateMejorado.GetComponent<Pieza>();
         IATablero.instance.PrintInfoTablero(tabBase);
 
         foreach (Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))

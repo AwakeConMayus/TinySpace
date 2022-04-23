@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 2
+  piezaReferencia: {fileID: 0}
   padre: {fileID: 0}
+  planetaIA: {fileID: -2925669552993428296, guid: b1bf66a48531b6a43a4a2ecb8b3d0fc3,
+    type: 3}

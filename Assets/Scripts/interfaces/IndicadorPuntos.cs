@@ -15,8 +15,6 @@ public class IndicadorPuntos : MonoBehaviour
     {      
         textoPuntos = GetComponentInChildren<Text>();
 
-        EventManager.StartListening("ClickCasilla", Active);
-        EventManager.StartListening("DesClickCasilla", Desactive);
         EventManager.StartListening("UpdateScore", UpdateText);
 
         gameObject.SetActive(false);

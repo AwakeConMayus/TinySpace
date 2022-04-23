@@ -6,9 +6,11 @@ public class PiezaIA : MonoBehaviour
 {
     [SerializeField]
     public Faccion faccion;
+
+    [SerializeField] protected Pieza piezaReferencia;
+
     public virtual List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        Pieza piezaReferencia = GetComponent<Pieza>();
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
         IATablero.instance.PrintInfoTablero(tabBase);

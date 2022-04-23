@@ -46,3 +46,5 @@ MonoBehaviour:
   faccion: 2
   padre: {fileID: 0}
   fase2: 1
+  agujeroNegro: {fileID: 3262789922430800019, guid: c935041cbb15fd34793ce3c49cf919cf,
+    type: 3}

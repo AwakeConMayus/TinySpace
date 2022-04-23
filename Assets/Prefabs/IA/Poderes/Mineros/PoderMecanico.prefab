@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 0}
   padre: {fileID: 0}
+  piezas:
+  - {fileID: 4058615384589163298, guid: 568512d94d6280b4cbc552b99bd6c135, type: 3}
+  - {fileID: 6968010567253682992, guid: e1e6cc1c47eb0264aad664e3c78e3da6, type: 3}
+  - {fileID: 1518583491010224167, guid: 31a92df0d34a3854cb9a32e104ac4499, type: 3}
+  - {fileID: 3774453793778699197, guid: 21c9282e1f5ed064cac0fa06b0172e73, type: 3}

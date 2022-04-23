@@ -71,15 +71,28 @@ public abstract class Pieza : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
+    List<Clase> clasesComodin = new List<Clase> { Clase.explorador, Clase.combate, Clase.investigador, Clase.estratega };
+
     public virtual bool CompareClase(Clase compare)
     {
-        if (clase == compare || clase == Clase.comodin) return true;
-        else return false;
+        if (clase == compare) return true;
+        if(clase == Clase.comodin)
+        {
+            if (clasesComodin.Contains(compare)) return true;
+        }
+        return false;
     }
     public virtual bool CompareClase(List<Clase> compare)
     {
-        if (compare.Contains(clase) || clase == Clase.comodin) return true;
-        else return false;
+        if (compare.Contains(clase)) return true;
+        if(clase == Clase.comodin)
+        {
+            foreach(Clase c in compare)
+            {
+                if (clasesComodin.Contains(c)) return true;
+            }
+        }
+        return false;
     }
 
 

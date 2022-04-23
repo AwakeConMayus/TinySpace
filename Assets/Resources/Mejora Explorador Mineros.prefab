@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faccion: 1
+  piezaReferencia: {fileID: 8781235326714547934}
+  piezaColocar: {fileID: 2371080840239072525, guid: bca912307826e6949ba2abd17f1044d6,
+    type: 3}

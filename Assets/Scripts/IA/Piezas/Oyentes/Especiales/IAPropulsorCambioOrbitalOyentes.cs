@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class IAPropulsorCambioOrbitalOyentes : PiezaIA
 {
+    [SerializeField] Pieza restos;
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         List<InfoTablero> opciones = new List<InfoTablero>();
 
-        Pieza piezaBase = GetComponent<Pieza>();
-
         IATablero.instance.PrintInfoTablero(tabBase);
 
-        foreach(Casilla c in piezaBase.CasillasDisponibles(IATablero.instance.mapa))
+        foreach(Casilla c in piezaReferencia.CasillasDisponibles(IATablero.instance.mapa))
         {
             IATablero.instance.PrintInfoTablero(tabBase);
 
-            Pieza planetaMover = GetComponent<PropulsorCambioOrbital>().restos.GetComponent<Pieza>();
             c.pieza = null;
             InfoTablero newTab = new InfoTablero(IATablero.instance.mapa);
 
@@ -33,7 +31,7 @@ public class IAPropulsorCambioOrbitalOyentes : PiezaIA
 
                     if(valido)
                     {
-                        cc.pieza = planetaMover;
+                        cc.pieza = restos;
                         opciones.Add(new InfoTablero(IATablero.instance.mapa));
                     }
                 }

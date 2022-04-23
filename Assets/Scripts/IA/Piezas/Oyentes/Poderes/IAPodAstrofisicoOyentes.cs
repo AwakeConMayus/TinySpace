@@ -5,6 +5,9 @@ using UnityEngine;
 public class IAPodAstrofisicoOyentes : PoderIABase
 {
     public bool fase2 = false;
+
+    [SerializeField] AgujeroNegro agujeroNegro;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
         if (fase2)
@@ -20,9 +23,7 @@ public class IAPodAstrofisicoOyentes : PoderIABase
             tabBase = PonerMejorPlaneta(tabBase);
         }
 
-        List<InfoTablero> opciones = new List<InfoTablero>();
-
-        Pieza agujeroNegro = Resources.Load<Pieza>("Agujero Negro");
+        List<InfoTablero> opciones = new List<InfoTablero>();        
 
         IATablero.instance.PrintInfoTablero(tabBase);
 

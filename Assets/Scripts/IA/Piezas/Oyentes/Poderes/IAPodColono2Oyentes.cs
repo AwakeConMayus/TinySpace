@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class IAPodColono2Oyentes : PoderIABase
 {
+    [SerializeField] List<Pieza> planetas;
+
     public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
     {
-        List<InfoTablero> nuevosEstados = new List<InfoTablero>();
-
-        List<Pieza> planetas = new List<Pieza>();
-        planetas.Add(Resources.Load<Pieza>("Planeta Sol Planetarios"));
-        planetas.Add(Resources.Load<Pieza>("Planeta Helado Planetarios"));
-        planetas.Add(Resources.Load<Pieza>("Planeta Volcanico Planetarios"));
-        planetas.Add(Resources.Load<Pieza>("Planeta Sagrado Planetarios"));
+        List<InfoTablero> nuevosEstados = new List<InfoTablero>();        
 
 
         IATablero.instance.PrintInfoTablero(tabBase);
