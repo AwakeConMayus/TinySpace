@@ -92,6 +92,7 @@ public class PropulsorCambioOrbital : Efecto
                 // Instanciacion de piezas en el offline
                 GameObject thisPieza = Instantiate(restos);
                 thisPieza.transform.position = c.transform.position;
+                thisPieza.GetComponent<Pieza>().Set_Pieza_Extra();
             }
 
             Tablero.instance.ResetCasillasEfects();

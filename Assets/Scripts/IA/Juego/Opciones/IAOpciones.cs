@@ -354,7 +354,7 @@ public abstract class IAOpciones : Opciones
 
 
     List<int> turnosPoder = new List<int> { 12, 13, 24, 25 };
-    int jugadasValoradas = 20;
+    int jugadasValoradas = int.MaxValue;
 
     public IEnumerator JugarMejor(Opciones rival, int turno)
     {
@@ -362,7 +362,7 @@ public abstract class IAOpciones : Opciones
         if (!turnosPoder.Contains(turno)) posibilidades = JugadaSimpleOpciones();
         else posibilidades = PoderSimpleOpciones(turno);
         foreach (InfoTablero it in posibilidades) it.SetFaccion(faccion);
-        if(posibilidades.Count > 0)posibilidades.Sort(posibilidades[0]);
+        if (posibilidades.Count > 0) posibilidades.Sort(posibilidades[0]);
         List<InfoTablero> posibilidadesReales = new List<InfoTablero>();
         if (posibilidades.Count > jugadasValoradas)
         {
@@ -379,75 +379,98 @@ public abstract class IAOpciones : Opciones
         ponderaciones.TryGetValue(turno, out ponderacion);
         yield return null;
 
+        List<InfoTablero> posibilidadesAnalizadas = new List<InfoTablero>();
+
+        
+
         foreach(InfoTablero it in posibilidadesReales)
         {
-            int valor = 0;
-            valor += PiezaIA.Evaluar(it, faccion) * 10;
-            print("Pensando Combo Aliado");
-            if (ponderacion[0] != 0) valor += BestRespuesta(it) * ponderacion[0];
-            yield return null;
-            print("Pensando Counter Enemigo");
-            if (ponderacion[1] != 0) valor -= rival.BestRespuesta(it) * ponderacion[1];
-            yield return null;
-            print("Pensando Combo Poder Aliado");
-            if (ponderacion[2] != 0) valor += BestRespuestaPoder(it, turno) * ponderacion[2];
-            yield return null;
-            print("Pensando counter Poder Enemigo");
-            if (ponderacion[3] != 0) valor -= rival.BestRespuestaPoder(it,turno) * ponderacion[3];
-            yield return null;
+            InfoTablero posibilidad = it;
 
-            valoracionesPosibilidades.Add(valor);
+            foreach(int i in ponderacion)
+            {
+                switch (i)
+                {
+                    case 1:
+                        posibilidad = BestRespuesta(posibilidad);
+                        break;
+                    case 2:
+                        posibilidad = rival.BestRespuesta(posibilidad);
+                        break;
+                    case 3:
+                        posibilidad = BestRespuestaPoder(posibilidad,turno);
+                        break;
+                    case 4:
+                        posibilidad = rival.BestRespuestaPoder(posibilidad,turno);
+                        break;
+                }
+                yield return null;
+            }
+
+            posibilidadesAnalizadas.Add(posibilidad);
+            yield return null;
         }
 
-        int bestOpcion = 0;
-        int bestValor = int.MinValue;
+        int best = 0;
+        int bestValue = int.MinValue;
+        int bestValueActual = int.MinValue;
 
-        for (int i = 0; i < valoracionesPosibilidades.Count; i++)
+        for (int i = 0; i < posibilidadesAnalizadas.Count; i++)
         {
-            if(valoracionesPosibilidades[i] > bestValor)
+            int puntos = PiezaIA.Evaluar(posibilidadesAnalizadas[i], faccion);
+            int puntosActuales = PiezaIA.Evaluar(posibilidadesReales[i], faccion);
+            if (puntos > bestValue || (puntos == bestValue && puntosActuales > bestValueActual))
             {
-                bestValor = valoracionesPosibilidades[i];
-                bestOpcion = i;
+                bestValue = puntos;
+                bestValueActual = puntosActuales;
+                best = i;
             }
         }
 
-        EjecutarJugada(posibilidadesReales[bestOpcion]);
+        if (posibilidadesReales.Count > 0) EjecutarJugada(posibilidadesReales[best]);
+        else NoEjecutarJugada();
     }
 
     
 
     public virtual void EjecutarJugada(InfoTablero newTab)
     {
-        Debug.Log(" se dibuja el tablero Tablero");
+        Debug.Log("Se dibuja el tablero Tablero");
         Tablero.instance.PrintInfoTablero(newTab);
+        EventManager.TriggerEvent("AccionTerminadaConjunta");
+    }
+
+    public virtual void NoEjecutarJugada()
+    {
+        Debug.Log("No se dibuja el tablero Tablero");
         EventManager.TriggerEvent("AccionTerminadaConjunta");
     }
 
     Dictionary<int, int[]> ponderaciones = new Dictionary<int, int[]>
     {
-        {2,new int[]{5,10,1,2} },
-        {3,new int[]{10,5,2,1} },
-        {4,new int[]{4,8,4,2} },
-        {5,new int[]{8,4,2,4} },
-        {6,new int[]{3,6,3,6} },
-        {7,new int[]{6,3,6,3} },
-        {8,new int[]{2,4,8,4} },
-        {9,new int[]{4,2,4,8} },
-        {10,new int[]{1,2,5,10} },
-        {11,new int[]{2,1,10,5} },
-        {12,new int[]{4,2,0,10} },
-        {13,new int[]{2,4,0,0} },
-        {14,new int[]{4,8,1,2} },
-        {15,new int[]{8,4,2,1} },
-        {16,new int[]{3,6,4,2} },
-        {17,new int[]{6,3,2,4} },
-        {18,new int[]{2,4,3,6} },
-        {19,new int[]{4,2,6,3} },
-        {20,new int[]{1,2,8,4} },
-        {21,new int[]{2,1,4,8} },
-        {22,new int[]{0,1,5,10} },
-        {23,new int[]{0,0,10,5} },
-        {24,new int[]{0,0,0,10} },
+        {2,new int[]{2,1,4,3} },
+        {3,new int[]{1,2,3,4} },
+        {4,new int[]{2,1,3,4} },
+        {5,new int[]{1,2,4,3} },
+        {6,new int[]{2,1,4,3} },
+        {7,new int[]{1,2,3,4} },
+        {8,new int[]{2,1,3,4} },
+        {9,new int[]{1,2,4,3} },
+        {10,new int[]{2,4,3,0} },
+        {11,new int[]{3,4,0,0} },
+        {12,new int[]{4,1,0,0} },
+        {13,new int[]{2,1,0,0} },
+        {14,new int[]{2,1,4,3} },
+        {15,new int[]{1,2,3,4} },
+        {16,new int[]{2,1,3,4} },
+        {17,new int[]{1,2,4,3} },
+        {18,new int[]{2,1,4,3} },
+        {19,new int[]{1,2,3,4} },
+        {20,new int[]{2,1,3,4} },
+        {21,new int[]{1,2,4,3} },
+        {22,new int[]{2,4,3,0} },
+        {23,new int[]{3,4,0,0} },
+        {24,new int[]{4,0,0,0} },
         {25,new int[]{0,0,0,0} }
     };
 }

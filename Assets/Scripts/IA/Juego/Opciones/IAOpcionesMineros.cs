@@ -150,7 +150,7 @@ public class IAOpcionesMineros : IAOpciones
         return true;
     }
 
-    public override int BestRespuesta(InfoTablero tabBase)
+    public override InfoTablero BestRespuesta(InfoTablero tabBase)
     {
         List<InfoTablero> respuestas = new List<InfoTablero>();
 
@@ -158,12 +158,17 @@ public class IAOpcionesMineros : IAOpciones
 
         int bestRespuesta = int.MinValue;
 
+        InfoTablero respuesta = new InfoTablero();
         foreach (InfoTablero it in respuestas)
         {
             IATablero.instance.PrintInfoTablero(it);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+            if (puntos > bestRespuesta)
+            {
+                bestRespuesta = puntos;
+                respuesta = it;
+            }
         }
-        return bestRespuesta;
+        return respuesta;
     }
 }

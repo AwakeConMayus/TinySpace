@@ -99,8 +99,8 @@ public abstract class Opciones : MonoBehaviour
 
     public abstract bool Ahogado();
 
-    public abstract int BestRespuesta(InfoTablero tabBase);
-    public virtual int BestRespuestaPoder(InfoTablero tabBase, int turno)
+    public abstract InfoTablero BestRespuesta(InfoTablero tabBase);
+    public virtual InfoTablero BestRespuestaPoder(InfoTablero tabBase, int turno)
     {
         List<InfoTablero> respuestas = new List<InfoTablero>();
 
@@ -108,13 +108,17 @@ public abstract class Opciones : MonoBehaviour
         else respuestas = mypoder.Fases[0].Opcionificador(tabBase);
 
         int bestRespuesta = int.MinValue;
-
+        InfoTablero respuesta = new InfoTablero();
         foreach (InfoTablero it in respuestas)
         {
             IATablero.instance.PrintInfoTablero(it);
             int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            bestRespuesta = bestRespuesta > puntos ? bestRespuesta : puntos;
+            if (puntos > bestRespuesta)
+            {
+                bestRespuesta = puntos;
+                respuesta = it;
+            }
         }
-        return bestRespuesta;
+        return respuesta;
     }
 }
