@@ -147,10 +147,12 @@ public abstract class PoderPlanetas : Poder
 
 
                 casillasPosibles = FiltroCasillas.EliminarBordes(casillasPosibles);
+                casillasPosibles = FiltroCasillas.CasillasLibres(casillasPosibles);
                 rnd =  Random.Range(0, casillasPosibles.Count);
                 int patatas = Tablero.instance.mapa.IndexOf(casillasPosibles[rnd]);
                 planetaReferencia = casillasPosibles[rnd];
 
+                Debug.Log(casillasPosibles.Count + " fff " + Tablero.instance.mapa.IndexOf(casillasPosibles[rnd]));
                 if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom.PlayerCount == 2)
                 {
                     if (!planeta) planeta = Resources.Load<GameObject>("Planeta Planetarios");
