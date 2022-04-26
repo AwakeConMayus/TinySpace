@@ -34,7 +34,11 @@ public class IAArbitro : MonoBehaviour
     List<int[]> vectores = new List<int[]>();
 
     [SerializeField] bool indicadoresPuntos;
+    int[] vector = { 1, 0, 2, 0, 0 };
+    int[] vector2 = { 0, 2, 1 };
 
+
+    int ordenPoderInicial = 0;
     private void Start()
     {
         Terraformar.Reset();
@@ -53,7 +57,7 @@ public class IAArbitro : MonoBehaviour
         jugador1 = opciones[player1Faccion];
         jugador2 = opciones[player2Faccion];
 
-
+        RandomizarVectores();
 
         jugador1.PrepararPreparacion();
         jugador2.PrepararPreparacion();
@@ -64,7 +68,40 @@ public class IAArbitro : MonoBehaviour
 
         NextTurn();       
     }
+    public void RandomizarVectores()
+    {
+        if ((active == true && seleccion1.faccion == Faccion.oyente) || (!active && seleccion2.faccion == Faccion.oyente))
+        {
+            vector[0] = 0;
+            vector2[0] = 1;
+        }
+        else
+        {
+            vector[0] = 1;
+            vector2[0] = 0;
+        }
+        vector[1] = Random.Range(0, 2);
+        vector[2] = Random.Range(0, 3);
+        vector[3] = Random.Range(0, 3);
+        vector[4] = Random.Range(0, 2);
 
+        vector2[1] = Random.Range(0, 3);
+        vector2[2] = Random.Range(0, 2);
+
+        Debug.Log("vector[" + vector[0] + "," + vector[1] + "," + vector[2] + "," + vector[3] + "," + vector[4] + "]");
+        Debug.Log("vectorM[" + vector2[0] + "," + vector2[1] + "," + vector2[2] + "]");
+
+        if (vector[0] == 0)
+        {
+            vectores.Add(vector);
+            vectores.Add(vector2);
+        }
+        else
+        {
+            vectores.Add(vector2);
+            vectores.Add(vector);
+        }
+    }
     private void Update()
     {
         //if (Input.GetMouseButtonDown(0)) NextTurn();
@@ -105,7 +142,7 @@ public class IAArbitro : MonoBehaviour
     {
         ++turnoAbsoluto;
         print(turnoAbsoluto);
-        if (turnoAbsoluto == 2) Vectorizacion();
+        //if (turnoAbsoluto == 2) Vectorizacion();
 
         if (turnoAbsoluto == 26) EndGame();
         if (end) return;
@@ -141,7 +178,7 @@ public class IAArbitro : MonoBehaviour
             switch (numeroPoder1)
             {
                 case 0:
-                    jugador1.poder.GetComponent<Poder>().InitialAction();
+                    InicialicacionDePoderes();
                     break;                
                 default:
                     StartCoroutine(jugador1.Jugar(jugador2, turnoAbsoluto));
@@ -154,7 +191,7 @@ public class IAArbitro : MonoBehaviour
             switch (numeroPoder2)
             {
                 case 0:
-                    jugador2.poder.GetComponent<Poder>().InitialAction();
+                    InicialicacionDePoderes();
                     break;               
                 default:
                     StartCoroutine(jugador2.Jugar(jugador1, turnoAbsoluto));
@@ -163,7 +200,43 @@ public class IAArbitro : MonoBehaviour
             ++numeroPoder2;
         }
     }
+    public void InicialicacionDePoderes()
+    {
+        Debug.Log("TURNO ABSOLUTO " + turnoAbsoluto + " orden poder inicial " + ordenPoderInicial);
+        //Cuando haya mas de dos facciones se pone aqui un do while que vaya avanzando el orden hasta que encuentra una con un orden igual a orden poderInicial
+        //el orden puede ser el mismo enumerador u algo que guarde el script opcciones
+        if (ordenPoderInicial == 0)
+        {
 
+            ++ordenPoderInicial;
+
+            if (seleccion1.faccion == Faccion.oyente)
+            {
+                jugador1.poder.GetComponent<Poder>().InitialAction(false, vector);
+                jugador1.HandicapDeMano(vector[3]);
+            }
+            else if (seleccion2.faccion == Faccion.oyente)
+            {
+                jugador2.poder.GetComponent<Poder>().InitialAction(false, vector);
+                jugador2.HandicapDeMano(vector[3]);
+            }
+        }
+        else if (ordenPoderInicial == 1)
+        {
+            ++ordenPoderInicial;
+            if (seleccion1.faccion == Faccion.minero)
+            {
+                jugador1.poder.GetComponent<Poder>().InitialAction(false, vector2);
+                jugador1.HandicapDeMano(vector2[2]);
+            }
+            else if (seleccion2.faccion == Faccion.minero)
+            {
+                jugador2.poder.GetComponent<Poder>().InitialAction(false, vector2);
+                jugador2.HandicapDeMano(vector2[2]);
+            }
+
+        }
+    }
     void Turn()
     {
 
