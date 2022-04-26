@@ -53,4 +53,42 @@ public class OpcionesPlanetas : Opciones
         }
         return respuesta;
     }
+
+    public override void HandicapDeMano(int i)
+    {
+
+        int numero = 0;
+
+        for (int j = 0; j < opcionesIniciales.Length; ++j)
+        {
+            if (opcionesIniciales[j].name.Contains("+"))
+            {
+                numero = j;
+            }
+        }
+        int index = opcionesDisponibles.IndexOf(numero);
+
+        //Debug.Log("handicap de mano del heroe planeter.\n Pieza a Cambiar: " + numero + " comparativa " + opcionesDisponibles[index]+ " Su posicion original: " + (index));
+        switch (i)
+        {
+            case 0://tiene que ser el 1 para que no pise al terraformador
+                   // Debug.Log(" Numero de pieza sutituta " + opcionesDisponibles[1] + " posicon 1");
+                opcionesDisponibles[index] = opcionesDisponibles[1];
+                opcionesDisponibles[1] = numero;
+                break;
+            case 1:
+                // Debug.Log(" Numero de pieza sutituta " + opcionesDisponibles[3] + " posicon 3");
+                opcionesDisponibles[index] = opcionesDisponibles[3];
+                opcionesDisponibles[3] = numero;
+                break;
+            case 2:
+                // Debug.Log(" Numero de pieza sutituta " + opcionesDisponibles[4] + " posicon 4");
+                opcionesDisponibles[index] = opcionesDisponibles[4];
+                opcionesDisponibles[4] = numero;
+                break;
+        }
+
+        EventManager.TriggerEvent("RotacionOpciones");
+    }
+
 }

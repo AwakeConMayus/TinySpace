@@ -104,8 +104,8 @@ public static class Vectorizador
             }
         } while (buscando);
 
-        if (radio >= 5) vector[2] = 2;
-        else if (radio >= 3) vector[2] = 1;
+        if (radio >= 4) vector[2] = 2;
+        else if (radio >= 2) vector[2] = 1;
 
         //Rotacion Mejorada
         int piezaMejorada = 0;

@@ -22,6 +22,9 @@ public abstract class Opciones : MonoBehaviour
 
     protected PoderIA mypoder;
 
+
+    public abstract void HandicapDeMano(int i);
+
     public virtual void PrepararPreparacion()
     {
         if (PhotonNetwork.InRoom) poder = PhotonNetwork.Instantiate(poder.name, transform.position, Quaternion.identity);

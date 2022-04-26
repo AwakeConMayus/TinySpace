@@ -233,7 +233,7 @@ public static class FiltroCasillas
         return result;
     }
 
-    public static List<Casilla> Interseccion(List<Casilla> a, List<Casilla> b)
+    public static List<Casilla> Interseccion(List<Casilla> a, List<Casilla> b )
     {
         List<Casilla> result = new List<Casilla>();
 
@@ -243,7 +243,54 @@ public static class FiltroCasillas
         }
         return result;
     }
+    public static List<Casilla> CasillasEnLineaACasillaDada(Casilla b, List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
 
+        List<Casilla> result = new List<Casilla>();
+
+        for (int i = 0; i < 6; ++i)
+        {
+            if (b.adyacentes[i])
+            {
+                Casilla actual = b.adyacentes[i];
+                int f = 0;
+
+                do
+                {
+                    ++f;
+                    if (listaBase.Contains(actual)) result.Add(actual);
+                    
+                   actual = actual.adyacentes[i];
+
+                } while (actual != null  && f < 100);
+                if (f >= 100) Debug.LogError("casilllas en linea a casilla a llegado al maximo de iteraciones");
+            }
+        }
+    
+
+        return result;
+    }
+
+    public static List<Casilla> CasillasEsquineras(List<Casilla> listaBase = null)
+    {
+        if (listaBase == null) listaBase = Tablero.instance.mapa;
+
+
+        List<Casilla> result = new List<Casilla>();
+
+        foreach(Casilla c in listaBase)
+        {
+            int aux = 0;
+            for(int i = 0; i < c.adyacentes.Length; ++i)
+            {
+                if (!c.adyacentes[i]) ++aux;
+            }
+            if (aux > 2) result.Add(c);
+        }
+
+        return result; 
+    }
     public static List<Casilla> EliminarBordes(List<Casilla> listaBase)
     {
         List<Casilla> result = new List<Casilla>();

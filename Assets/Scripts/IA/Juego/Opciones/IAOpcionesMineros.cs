@@ -171,4 +171,45 @@ public class IAOpcionesMineros : IAOpciones
         }
         return respuesta;
     }
+
+    public override void HandicapDeMano(int i)
+    {
+        int indexLab = opcionesDisponibles.IndexOf(2);
+        int indexEstratega = opcionesDisponibles.IndexOf(3);
+
+        if (i == 1)
+        {
+            int aux1 = opcionesDisponibles[0];
+            int aux2 = opcionesDisponibles[1];
+
+            opcionesDisponibles[0] = 2;
+            opcionesDisponibles[1] = 3;
+
+            opcionesDisponibles[indexLab] = aux1;
+            opcionesDisponibles[indexEstratega] = aux2;
+            EventManager.TriggerEvent("RotacionOpciones");
+        }
+        else
+        {
+            if (indexLab < 3 && indexEstratega < 3)
+            {
+                int nuevaPos = Random.Range(3, opcionesDisponibles.Count);
+                int aux = opcionesDisponibles[nuevaPos];
+
+                if (Random.Range(0, 2) == 0)
+                {
+
+                    opcionesDisponibles[nuevaPos] = 2;
+                    opcionesDisponibles[indexLab] = aux;
+                }
+                else
+                {
+                    opcionesDisponibles[nuevaPos] = 3;
+                    opcionesDisponibles[indexEstratega] = aux;
+                }
+            }
+            EventManager.TriggerEvent("RotacionOpciones");
+        }
+    }
+
 }

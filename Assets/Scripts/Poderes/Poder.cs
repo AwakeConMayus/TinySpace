@@ -7,7 +7,7 @@ public abstract class Poder : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     public Faccion faccion;
-    public abstract void InitialAction(bool sin_pasar_turno = false);
+    public abstract void InitialAction(bool sin_pasar_turno = false, int[] vector = null);
     public abstract void FirstAction();
     public abstract void SecondAction();
 
