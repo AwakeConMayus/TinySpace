@@ -56,7 +56,7 @@ public abstract class PoderMineros : Poder
                     posibles = FiltroCasillas.CasillasLibres();
                     posibles = FiltroCasillas.CasillasSinMeteorito();
                     if (mineralesYaColocados.Count > 0) posibles = FiltroCasillas.RestaLista(posibles, FiltroCasillas.CasillasAdyacentes(mineralesYaColocados, false));
-                    
+                    posibles = FiltroCasillas.CasillasLibres(posibles);
                     int rnd = Random.Range(0, posibles.Count);
 
                     List<Casilla> aux = FiltroCasillas.CasillasAdyacentes(posibles[rnd], true);
