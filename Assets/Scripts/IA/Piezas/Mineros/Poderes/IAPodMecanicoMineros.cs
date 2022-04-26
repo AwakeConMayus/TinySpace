@@ -6,7 +6,7 @@ public class IAPodMecanicoMineros : PoderIABase
 {
     [SerializeField] List<Pieza> piezas;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> opciones = new List<InfoTablero>();
         
@@ -20,7 +20,8 @@ public class IAPodMecanicoMineros : PoderIABase
             foreach(Pieza p in piezas)
             {
                 c.pieza = p;
-                opciones.Add(new InfoTablero(IATablero.instance.mapa));
+                c.pieza.casilla = c;
+                if (!simplify || c.pieza.Puntos() > 0) opciones.Add(new InfoTablero(IATablero.instance.mapa));
             }
         }
 

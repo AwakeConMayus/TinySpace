@@ -9,7 +9,7 @@ public class PiezaIA : MonoBehaviour
 
     [SerializeField] protected Pieza piezaReferencia;
 
-    public virtual List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public virtual List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 
@@ -21,14 +21,15 @@ public class PiezaIA : MonoBehaviour
 
             c.pieza = piezaColocar;
             piezaColocar.casilla = c;
-            nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
+            if (!simplify || c.pieza.Puntos() > 0) nuevosEstados.Add(new InfoTablero(IATablero.instance.mapa));
             c.pieza = null;
         }
 
         return nuevosEstados;
-    }
+    }    
+
     InfoTablero MejorOpcion;
-    public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase)
+    public virtual InfoTablero BestInmediateOpcion(InfoTablero tabBase, bool simplify = false)
     {
          MejorOpcion = tabBase;
 
@@ -36,7 +37,7 @@ public class PiezaIA : MonoBehaviour
        int mejorPuntuacion = int.MinValue;
 
         int numOpciones = 0;
-        foreach (InfoTablero it in Opcionificador(tabBase))
+        foreach (InfoTablero it in Opcionificador(tabBase, simplify))
         {
             ++numOpciones;
             IATablero.instance.PrintInfoTablero(it);

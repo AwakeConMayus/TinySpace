@@ -26077,7 +26077,7 @@ MonoBehaviour:
   clase: 0
   casilla: {fileID: 0}
   astro: 0
-  coste: 5
+  coste: 4
 --- !u!114 &-4150461432680932876
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Luna : Pieza
     }
     public override int Puntos()
     {
-        return 1;
+        return 0;
     }
     public override List<Casilla> CasillasDisponibles(List<Casilla> referencia = null)
     {

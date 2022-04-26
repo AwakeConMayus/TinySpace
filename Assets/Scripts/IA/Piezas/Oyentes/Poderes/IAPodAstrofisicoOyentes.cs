@@ -8,7 +8,7 @@ public class IAPodAstrofisicoOyentes : PoderIABase
 
     [SerializeField] AgujeroNegro agujeroNegro;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         if (fase2)
         {

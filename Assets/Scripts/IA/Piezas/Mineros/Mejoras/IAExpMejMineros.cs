@@ -5,7 +5,7 @@ using UnityEngine;
 public class IAExpMejMineros : PiezaIA
 {
     [SerializeField] Pieza piezaColocar;
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
         

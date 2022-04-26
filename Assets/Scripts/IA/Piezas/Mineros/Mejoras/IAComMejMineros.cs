@@ -6,7 +6,7 @@ public class IAComMejMineros : PiezaIA
 {
     [SerializeField] Pieza piezaColocar;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
         IATablero.instance.PrintInfoTablero(tabBase);

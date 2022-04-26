@@ -307,4 +307,28 @@ public static class FiltroCasillas
 
         return result;
     }
+
+    public static List<Casilla> TableroOriginal(Casilla c)
+    {
+        List<Casilla> result = new List<Casilla>();
+
+        result.Add(c);
+
+        bool final = false;
+
+        while (!final)
+        {
+            final = true;
+            foreach(Casilla cc in CasillasAdyacentes(result, false))
+            {
+                if (!result.Contains(cc))
+                {
+                    final = false;
+                    result.Add(cc);
+                }
+            }
+        }
+
+        return result;
+    }
 }

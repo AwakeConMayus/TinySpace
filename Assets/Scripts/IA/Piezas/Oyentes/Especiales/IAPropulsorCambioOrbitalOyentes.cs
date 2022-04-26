@@ -5,7 +5,7 @@ using UnityEngine;
 public class IAPropulsorCambioOrbitalOyentes : PiezaIA
 {
     [SerializeField] Pieza restos;
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> opciones = new List<InfoTablero>();
 

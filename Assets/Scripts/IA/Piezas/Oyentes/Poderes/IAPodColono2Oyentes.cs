@@ -6,7 +6,7 @@ public class IAPodColono2Oyentes : PoderIABase
 {
     [SerializeField] List<Pieza> planetas;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();        
 

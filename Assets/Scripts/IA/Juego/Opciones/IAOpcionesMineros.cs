@@ -10,7 +10,6 @@ public class IAOpcionesMineros : IAOpciones
     List<InfoTablero>[] tablerosPorCostes = new List<InfoTablero>[10];
     List<InfoTablero>[] tablerosOrden = new List<InfoTablero>[5];
 
-    List<PiezaIA> abanicoOpciones = new List<PiezaIA>();
 
     private void Start()
     {
@@ -150,28 +149,6 @@ public class IAOpcionesMineros : IAOpciones
         return true;
     }
 
-    public override InfoTablero BestRespuesta(InfoTablero tabBase)
-    {
-        List<InfoTablero> respuestas = new List<InfoTablero>();
-
-        foreach (PiezaIA pia in abanicoOpciones) respuestas.Add(pia.BestInmediateOpcion(tabBase));
-
-        int bestRespuesta = int.MinValue;
-
-        InfoTablero respuesta = new InfoTablero();
-        foreach (InfoTablero it in respuestas)
-        {
-            IATablero.instance.PrintInfoTablero(it);
-            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
-            if (puntos > bestRespuesta)
-            {
-                bestRespuesta = puntos;
-                respuesta = it;
-            }
-        }
-        return respuesta;
-    }
-
     public override void HandicapDeMano(int i)
     {
         int indexLab = opcionesDisponibles.IndexOf(2);
@@ -211,5 +188,4 @@ public class IAOpcionesMineros : IAOpciones
             EventManager.TriggerEvent("RotacionOpciones");
         }
     }
-
 }

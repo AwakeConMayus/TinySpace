@@ -6,7 +6,7 @@ public class IAEstMejMineros : PiezaIA
 {
     [SerializeField] Pieza estrategaAstro, combateMinero;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> nuevosEstados = new List<InfoTablero>();
 

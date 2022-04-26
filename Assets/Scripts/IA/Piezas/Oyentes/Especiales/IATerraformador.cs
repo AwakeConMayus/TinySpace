@@ -6,7 +6,7 @@ public class IATerraformador : PiezaIA
 {
     [SerializeField] List<Pieza> formasPlanetas;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> opciones = new List<InfoTablero>();
 

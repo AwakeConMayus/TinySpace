@@ -6,7 +6,7 @@ public class IAPodMaquinista1Mineros : PoderIABase
 {
     [SerializeField] IAComodinMineros comodin;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         print("poderMaquinista");
 

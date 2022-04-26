@@ -22,8 +22,8 @@ public abstract class Opciones : MonoBehaviour
 
     protected PoderIA mypoder;
 
-
     public abstract void HandicapDeMano(int i);
+    protected List<PiezaIA> abanicoOpciones = new List<PiezaIA>();
 
     public virtual void PrepararPreparacion()
     {
@@ -102,13 +102,33 @@ public abstract class Opciones : MonoBehaviour
 
     public abstract bool Ahogado();
 
-    public abstract InfoTablero BestRespuesta(InfoTablero tabBase);
+    public virtual InfoTablero BestRespuesta(InfoTablero tabBase)
+    {
+        List<InfoTablero> respuestas = new List<InfoTablero>();
+
+        foreach (PiezaIA pia in abanicoOpciones) respuestas.Add(pia.BestInmediateOpcion(tabBase, true));
+
+        int bestRespuesta = int.MinValue;
+
+        InfoTablero respuesta = new InfoTablero();
+        foreach (InfoTablero it in respuestas)
+        {
+            IATablero.instance.PrintInfoTablero(it);
+            int puntos = PiezaIA.Evaluar(IATablero.instance.mapa, faccion);
+            if (puntos > bestRespuesta)
+            {
+                bestRespuesta = puntos;
+                respuesta = it;
+            }
+        }
+        return respuesta;
+    }
     public virtual InfoTablero BestRespuestaPoder(InfoTablero tabBase, int turno)
     {
         List<InfoTablero> respuestas = new List<InfoTablero>();
 
-        if (turno < 15) respuestas = mypoder.Fases[0].Opcionificador(tabBase);
-        else respuestas = mypoder.Fases[0].Opcionificador(tabBase);
+        if (turno < 15) respuestas = mypoder.Fases[0].Opcionificador(tabBase, true);
+        else respuestas = mypoder.Fases[0].Opcionificador(tabBase, true);
 
         int bestRespuesta = int.MinValue;
         InfoTablero respuesta = new InfoTablero();

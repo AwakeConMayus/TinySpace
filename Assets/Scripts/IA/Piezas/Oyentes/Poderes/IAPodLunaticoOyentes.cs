@@ -9,7 +9,7 @@ public class IAPodLunaticoOyentes : PoderIABase
     [SerializeField] GameObject luna;
     [SerializeField] Pieza lunaPieza;
 
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         if (!fase2) tabBase = PonerMejorPlaneta(tabBase);
 

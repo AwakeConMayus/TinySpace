@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IAPodChantajistaMineros : PoderIABase
 {
-    public override List<InfoTablero> Opcionificador(InfoTablero tabBase)
+    public override List<InfoTablero> Opcionificador(InfoTablero tabBase, bool simplify = false)
     {
         List<InfoTablero> opciones = new List<InfoTablero>();
 

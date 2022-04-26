@@ -8,10 +8,19 @@ public class Planetas : Pieza
     {
         clase = Clase.planeta;
     }
-
+    List<Casilla> tablero = null;
     public override int Puntos()
     {
         int puntosColonizacion = 3;
+
+        int planetasTablero = 0;
+        if (tablero == null) tablero = FiltroCasillas.TableroOriginal(casilla);
+        foreach (Casilla c in tablero)
+        {
+            if (c.pieza && c.pieza.clase == Clase.planeta) ++planetasTablero;
+        }
+
+        puntosColonizacion = planetasTablero - 1;
 
         int colonizacion = 0;
         foreach (Casilla adyacente in casilla.adyacentes)
