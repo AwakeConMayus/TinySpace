@@ -70,7 +70,7 @@ public abstract class PoderPlanetas : Poder
         else
         {
             Casilla planetaReferencia = null;
-
+            Debug.Log(vector[2]);
             for (int i = 0; i < 3; i++)
             {
                 List<Casilla> casillasPosibles = FiltroCasillas.CasillasLibres();
@@ -87,6 +87,10 @@ public abstract class PoderPlanetas : Poder
                             {
                                 casillasPosibles = FiltroCasillas.CasillasAdyacentes(casillasPosibles, false);
                             }
+                        }
+                        else
+                        {
+                            casillasPosibles = FiltroCasillas.CasillasLibres();
                         }
                         break;
 
