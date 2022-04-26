@@ -20,6 +20,7 @@ public abstract class PoderPlanetas : Poder
 
         if (vector == null || vector.Length != 5)
         {
+            if (vector != null) Debug.Log(vector.Length);
             Debug.LogWarning(" Sin vector introducido o vector erroneo para la faciion de los planetas");
             Casilla planetaReferencia = null;
 

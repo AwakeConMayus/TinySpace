@@ -210,12 +210,12 @@ public class IAArbitro : MonoBehaviour
 
             ++ordenPoderInicial;
 
-            if (seleccion1.faccion == Faccion.oyente)
+            if (player1Faccion == 1)
             {
                 jugador1.poder.GetComponent<Poder>().InitialAction(false, vector);
                 jugador1.HandicapDeMano(vector[3]);
             }
-            else if (seleccion2.faccion == Faccion.oyente)
+            else if (player2Faccion == 1)
             {
                 jugador2.poder.GetComponent<Poder>().InitialAction(false, vector);
                 jugador2.HandicapDeMano(vector[3]);
@@ -224,12 +224,12 @@ public class IAArbitro : MonoBehaviour
         else if (ordenPoderInicial == 1)
         {
             ++ordenPoderInicial;
-            if (seleccion1.faccion == Faccion.minero)
+            if (player1Faccion == 0)
             {
                 jugador1.poder.GetComponent<Poder>().InitialAction(false, vector2);
                 jugador1.HandicapDeMano(vector2[2]);
             }
-            else if (seleccion2.faccion == Faccion.minero)
+            else if (player2Faccion ==0)
             {
                 jugador2.poder.GetComponent<Poder>().InitialAction(false, vector2);
                 jugador2.HandicapDeMano(vector2[2]);

@@ -50,7 +50,6 @@ public class PoderAstrofisico : PoderPlanetas
         }
         else //cuando el vector no lo es
         {
-            Debug.Log("ASTRO " + vector[4]);
             if(vector[4] == 1) // El heroe astrofisico debe tener handicap (dos laboratirios deben estar contiguos)
             {
                 Casilla casillaPlaneta1 = null;
