@@ -28,7 +28,7 @@ public class EstrategaPlanetasCuartelesOrbitales : EstrategaPlanetas
     {
         clase = Clase.estratega;
     }
-    int puntosPorPlaneta = 2;
+    int puntosPorPlaneta = 1;
     int puntosPorPlanetasAlineados(Casilla c, int direccion)
     {
         if (!c) return 0;
