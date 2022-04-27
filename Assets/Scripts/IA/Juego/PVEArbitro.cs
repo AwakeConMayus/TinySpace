@@ -39,7 +39,7 @@ public class PVEArbitro : MonoBehaviour
 
     List<int[]> vectores = new List<int[]>();
 
-    int[] vector = { 1, 0, 2, 0, 0 };
+    int[] vector = { 1, 0, 2, 0, 1 };
     int[] vector2 = { 0, 2, 1 };
     private void Start()
     {
@@ -59,7 +59,7 @@ public class PVEArbitro : MonoBehaviour
         }
         if (vectorAleatorio) 
         {
-            RandomizarVectores();
+            //RandomizarVectores();
         }
         else
         {
