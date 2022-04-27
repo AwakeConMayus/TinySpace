@@ -52,20 +52,24 @@ public class PoderLunatico : PoderPlanetas
         else
         {
             List<Casilla> posibles = new List<Casilla>();
-            if (vector[4] == 1) // cuando el herore tiene handicaop
+            if (vector[4] == 1) // cuando el herore tiene handicap
             {
+                int memoria = 0;//esto evita que pongamos dos lunas en el mismo planeta
+                                //si la intersecion es entre 1 y 2 o 1 y 3 no colocamos en el primer 
+                                //si es entre 2 y 3 es menos uno y asi no colocamos en el tercero 
                 for (int i = 0; i < planetas.Count; ++i) 
                 {
-                    int memoria = 0;//esto evita que pongamos dos lunas en el mismo planeta
-                                    //si la intersecion es entre 1 y 2 o 1 y 3 no colocamos en el primer 
-                                    //si es entre 2 y 3 es menos uno y asi no colocamos en el tercero 
+
 
                     if (i == 0) // nos basta con que la primera luna sea contigua
                     {
                         List<Casilla> planeta1 = new List<Casilla>();
                         List<Casilla> planeta2 = new List<Casilla>();
                         List<Casilla> planeta3 = new List<Casilla>();
-
+                        Debug.Log("PLANETAS");
+                        Debug.Log(Tablero.instance.mapa.IndexOf(planetas[0]));
+                        Debug.Log(Tablero.instance.mapa.IndexOf(planetas[1]));
+                        Debug.Log(Tablero.instance.mapa.IndexOf(planetas[2]));
                         planeta1.Add(planetas[0]);
                         planeta2.Add(planetas[1]);
                         planeta3.Add(planetas[2]);
@@ -78,9 +82,11 @@ public class PoderLunatico : PoderPlanetas
                         posibles = FiltroCasillas.Interseccion(planeta1, planeta2);
                         if (posibles.Count == 0)
                         {
+                            Debug.Log("SE ROMPE 1 3");
                             posibles = FiltroCasillas.Interseccion(planeta1, planeta3);
                             if (posibles.Count == 0)
                             {
+                                Debug.Log("SE ROMPE 2 3");
                                 posibles = FiltroCasillas.Interseccion(planeta2, planeta3);
                                 memoria = 1;
                             }
@@ -89,12 +95,14 @@ public class PoderLunatico : PoderPlanetas
                     }
                     else // el resto pueden salir como quieran 
                     {
+                        Debug.Log(Tablero.instance.mapa.IndexOf(planetas[i - memoria]));
                         posibles = FiltroCasillas.CasillasAdyacentes(planetas[i - memoria], true);
                         posibles = FiltroCasillas.CasillasLibres(posibles);
                     }
 
                     int rnd = Random.Range(0, posibles.Count);
                     GameObject thisPieza;
+                    Debug.Log("HEY " + Tablero.instance.mapa.IndexOf(posibles[rnd]));
                     if (PhotonNetwork.InRoom)
                     {
                         thisPieza = PhotonNetwork.Instantiate(luna.name, posibles[rnd].transform.position, Quaternion.identity);
