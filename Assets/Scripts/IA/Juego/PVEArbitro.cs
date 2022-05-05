@@ -59,7 +59,7 @@ public class PVEArbitro : MonoBehaviour
         }
         if (vectorAleatorio) 
         {
-            //RandomizarVectores();
+            RandomizarVectores();
         }
         else
         {
