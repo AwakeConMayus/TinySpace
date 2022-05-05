@@ -70,6 +70,7 @@ public class IAArbitro : MonoBehaviour
     }
     public void RandomizarVectores()
     {
+        vectores.Clear();
         if ((active == true && seleccion1.faccion == Faccion.oyente) || (!active && seleccion2.faccion == Faccion.oyente))
         {
             vector[0] = 0;
@@ -283,6 +284,15 @@ public class IAArbitro : MonoBehaviour
         bool ganaPlayer2 = jugador2.faccion == (Faccion)winner;
 
         datos.AddData(ganaPlayer2, true);
+
+        for(int i = 0; i < vectores[0].Length; ++i)
+        {
+            Debug.Log("primer vector " + i + " significado " + vectores[0][i]);
+        }
+        for (int i = 0; i < vectores[1].Length; ++i)
+        {
+            Debug.Log("segundo vector " + i + " significado " + vectores[1][i]);
+        }
 
         if (SendOnline) SendToGoogle.instance.SendOnline(jugador1.faccion, "SI+", vectores);
         end = true;
